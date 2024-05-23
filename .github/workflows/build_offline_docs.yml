@@ -1,4 +1,4 @@
-﻿name: Build documentation for offline usage
+name: Build documentation for offline usage
 on:
   workflow_dispatch:
   schedule:
@@ -7,25 +7,26 @@ on:
     - cron: '0 0 * * 1'
 env:
   READTHEDOCS_LANGUAGE: zh_CN
-  
+
 jobs:
   build:
     runs-on: ubuntu-22.04
-    permissions:                # Job-level permissions configuration starts here
+    name: 📚 Build offline documentation
+    permissions: # Job-level permissions configuration starts here
       contents: write           # 'write' access to repository contents
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
-         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Checkout Godot
         uses: actions/checkout@v4
         with:
-            repository: godotengine/godot-docs-l10n
-            ref: 4.x
-            submodules: 'recursive'
-            path: 'godot-docs'
+          repository: godotengine/godot-docs-l10n
+          ref: 4.x
+          submodules: 'recursive'
+          path: 'godot-docs'
       - name: Install dependencies
         run: |
           cd godot-docs
@@ -54,8 +55,31 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          continue-on-error: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           tags: true
           force: true
-      
+  release:
+    needs: [ build ]
+    name: 🚀 Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Download Godot Artifact
+        uses: actions/download-artifact@v4.1.4
+        with:
+          pattern: 'godot-*'
+          merge-multiple: true
+      - name: Set Release version env variable
+        id: release-selector
+        run: |
+          echo "RELEASE_VERSION=$(date "+%y.%m.%d")" >> $GITHUB_OUTPUT
+      - name: Automatic Pre Releases
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: "latest"
+          name: "Latest Release ${{ env.RELEASE_VERSION }}"
+          allowUpdates: true
+          artifacts: |
+            *.zip
