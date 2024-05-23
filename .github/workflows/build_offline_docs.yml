@@ -61,21 +61,31 @@ jobs:
           retention-days: 15
       - uses: actions/upload-artifact@v4
         with:
-          name: docs-html-xml
-          path: ./godot-docs-*.zip
+          name: docs-html
+          path: ./godot–docs-html.zip
+          # Keep the current build and the previous build (in case a scheduled build failed).
+          # This makes it more likely to have at least one successful build available at all times.
+          retention-days: 15
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docs-xml
+          path: ./godot–docs-xml.zip
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15
       - name: Remove HTML/XML
         run: |
-         sudo rm -f godot–docs-html.zip
-         sudo rm -f godot–docs-xml.zip 
+          ls -R
+          sudo rm -f godot–docs-html.zip
+          sudo rm -f godot–docs-xml.zip 
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A .
           git commit -a -m "更新翻译"
+        continue-on-error: true
+        
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
