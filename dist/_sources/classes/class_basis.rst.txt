@@ -10,52 +10,48 @@
 Basis
 =====
 
-A 3×3 matrix for representing 3D rotation and scale.
+用于表示 3D 旋转和缩放的 3×3 矩阵。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-The **Basis** built-in :ref:`Variant<class_Variant>` type is a 3x3 `matrix <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`__ used to represent 3D rotation, scale, and shear. It is frequently used within a :ref:`Transform3D<class_Transform3D>`.
+用于表示 3D 旋转和缩放的 3×3 矩阵。通常用作 :ref:`Transform3D<class_Transform3D>` 的正交基。
 
-A **Basis** is composed by 3 axis vectors, each representing a column of the matrix: :ref:`x<class_Basis_property_x>`, :ref:`y<class_Basis_property_y>`, and :ref:`z<class_Basis_property_z>`. The length of each axis (:ref:`Vector3.length<class_Vector3_method_length>`) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.
+包含 3 个向量字段 X、Y 和 Z 作为其列，它们通常被解释为变换的局部基向量。对于这种用途，它由缩放和旋转矩阵组成，顺序为 (M = R.S)。
 
-A **Basis** is **orthogonal** if its axes are perpendicular to each other. A basis is **normalized** if the length of every axis is ``1``. A basis is **uniform** if all axes share the same length (see :ref:`get_scale<class_Basis_method_get_scale>`). A basis is **orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations. A basis is **conformal** if it is both orthogonal and uniform, which ensures it is not distorted.
+基也可以作为 3D 向量的数组访问。这些向量通常彼此正交，但（由于缩放）不一定是归一化的。
 
-For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
-
-\ **Note:** Godot uses a `right-handed coordinate system <https://en.wikipedia.org/wiki/Right-hand_rule>`__, which is a common standard. For directions, the convention for built-in types like :ref:`Camera3D<class_Camera3D>` is for -Z to point forward (+X is right, +Y is up, and +Z is back). Other objects may use different direction conventions. For more information, see the `Importing 3D Scenes <../tutorials/assets_pipeline/importing_scenes.html#d-asset-direction-conventions>`__ tutorial.
-
-\ **Note:** The basis matrices are exposed as `column-major <https://www.mindcontrol.org/~hplus/graphics/matrix-layout.html>`__ order, which is the same as OpenGL. However, they are stored internally in row-major order, which is the same as DirectX.
+有关一般介绍，请参阅 :doc:`矩阵与变换 <../tutorials/math/matrices_and_transforms>` 教程。
 
 .. note::
 
-	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+教程
+----
 
-- :doc:`Math documentation index <../tutorials/math/index>`
+- :doc:`数学文档索引 <../tutorials/math/index>`
 
-- :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
+- :doc:`矩阵与变换 <../tutorials/math/matrices_and_transforms>`
 
-- :doc:`Using 3D transforms <../tutorials/3d/using_transforms>`
+- :doc:`使用 3D 变换 <../tutorials/3d/using_transforms>`
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `矩阵变换演示 <https://godotengine.org/asset-library/asset/584>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D 平台跳跃演示 <https://godotengine.org/asset-library/asset/125>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D 体素演示 <https://godotengine.org/asset-library/asset/676>`__
 
-- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
+- `2.5D 演示 <https://godotengine.org/asset-library/asset/583>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -70,8 +66,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Constructors
-------------
+构造函数
+--------
 
 .. table::
    :widths: auto
@@ -90,8 +86,8 @@ Constructors
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -138,8 +134,8 @@ Methods
 
 .. rst-class:: classref-reftable-group
 
-Operators
----------
+操作符
+------
 
 .. table::
    :widths: auto
@@ -166,8 +162,8 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+常量
+----
 
 .. _class_Basis_constant_IDENTITY:
 
@@ -175,28 +171,9 @@ Constants
 
 **IDENTITY** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)``
 
-The identity basis. This is a basis with no rotation, no shear, and its scale being ``1``. This means that:
+恒等基，未应用旋转或缩放。
 
-- The :ref:`x<class_Basis_property_x>` points right (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`);
-
-- The :ref:`y<class_Basis_property_y>` points up (:ref:`Vector3.UP<class_Vector3_constant_UP>`);
-
-- The :ref:`z<class_Basis_property_z>` points back (:ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
-
-::
-
-    var basis := Basis.IDENTITY
-    print("| X | Y | Z")
-    print("| %s | %s | %s" % [basis.x.x, basis.y.x, basis.z.x])
-    print("| %s | %s | %s" % [basis.x.y, basis.y.y, basis.z.y])
-    print("| %s | %s | %s" % [basis.x.z, basis.y.z, basis.z.z])
-    # Prints:
-    # | X | Y | Z
-    # | 1 | 0 | 0
-    # | 0 | 1 | 0
-    # | 0 | 0 | 1
-
-This is identical to creating :ref:`Basis<class_Basis_constructor_Basis>` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
+这与不带任何参数调用 :ref:`Basis<class_Basis_constructor_Basis>` 来创建是一样的。这个常量可以用来让你的代码更清晰，并与 C# 保持一致。
 
 .. _class_Basis_constant_FLIP_X:
 
@@ -204,9 +181,7 @@ This is identical to creating :ref:`Basis<class_Basis_constructor_Basis>` withou
 
 **FLIP_X** = ``Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1)``
 
-When any basis is multiplied by :ref:`FLIP_X<class_Basis_constant_FLIP_X>`, it negates all components of the :ref:`x<class_Basis_property_x>` axis (the X column).
-
-When :ref:`FLIP_X<class_Basis_constant_FLIP_X>` is multiplied by any basis, it negates the :ref:`Vector3.x<class_Vector3_property_x>` component of all axes (the X row).
+在变换中使用时，会沿 X 轴翻转某物的基。
 
 .. _class_Basis_constant_FLIP_Y:
 
@@ -214,9 +189,7 @@ When :ref:`FLIP_X<class_Basis_constant_FLIP_X>` is multiplied by any basis, it n
 
 **FLIP_Y** = ``Basis(1, 0, 0, 0, -1, 0, 0, 0, 1)``
 
-When any basis is multiplied by :ref:`FLIP_Y<class_Basis_constant_FLIP_Y>`, it negates all components of the :ref:`y<class_Basis_property_y>` axis (the Y column).
-
-When :ref:`FLIP_Y<class_Basis_constant_FLIP_Y>` is multiplied by any basis, it negates the :ref:`Vector3.y<class_Vector3_property_y>` component of all axes (the Y row).
+在变换中使用时，会沿 Y 轴翻转某物的基。
 
 .. _class_Basis_constant_FLIP_Z:
 
@@ -224,9 +197,7 @@ When :ref:`FLIP_Y<class_Basis_constant_FLIP_Y>` is multiplied by any basis, it n
 
 **FLIP_Z** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, -1)``
 
-When any basis is multiplied by :ref:`FLIP_Z<class_Basis_constant_FLIP_Z>`, it negates all components of the :ref:`z<class_Basis_property_z>` axis (the Z column).
-
-When :ref:`FLIP_Z<class_Basis_constant_FLIP_Z>` is multiplied by any basis, it negates the :ref:`Vector3.z<class_Vector3_property_z>` component of all axes (the Z row).
+在变换中使用时，会沿 Z 轴翻转某物的基。
 
 .. rst-class:: classref-section-separator
 
@@ -234,8 +205,8 @@ When :ref:`FLIP_Z<class_Basis_constant_FLIP_Z>` is multiplied by any basis, it n
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_Basis_property_x:
 
@@ -243,9 +214,7 @@ Property Descriptions
 
 :ref:`Vector3<class_Vector3>` **x** = ``Vector3(1, 0, 0)``
 
-The basis's X axis, and the column ``0`` of the matrix.
-
-On the identity basis, this vector points right (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`).
+基矩阵的 X 向量（第 0 列）。相当于数组索引 ``0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -257,9 +226,7 @@ On the identity basis, this vector points right (:ref:`Vector3.RIGHT<class_Vecto
 
 :ref:`Vector3<class_Vector3>` **y** = ``Vector3(0, 1, 0)``
 
-The basis's Y axis, and the column ``1`` of the matrix.
-
-On the identity basis, this vector points up (:ref:`Vector3.UP<class_Vector3_constant_UP>`).
+基矩阵的 Y 向量（第 1 列）。相当于数组索引 ``1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -271,9 +238,7 @@ On the identity basis, this vector points up (:ref:`Vector3.UP<class_Vector3_con
 
 :ref:`Vector3<class_Vector3>` **z** = ``Vector3(0, 0, 1)``
 
-The basis's Z axis, and the column ``2`` of the matrix.
-
-On the identity basis, this vector points back (:ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
+基矩阵的 Z 向量（第 2 列）。相当于数组索引 ``2``\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -281,8 +246,8 @@ On the identity basis, this vector points back (:ref:`Vector3.BACK<class_Vector3
 
 .. rst-class:: classref-descriptions-group
 
-Constructor Descriptions
-------------------------
+构造函数说明
+------------
 
 .. _class_Basis_constructor_Basis:
 
@@ -290,7 +255,7 @@ Constructor Descriptions
 
 :ref:`Basis<class_Basis>` **Basis** **(** **)**
 
-Constructs a **Basis** identical to the :ref:`IDENTITY<class_Basis_constant_IDENTITY>`.
+构造默认初始化为 :ref:`IDENTITY<class_Basis_constant_IDENTITY>` 的 **Basis** 。
 
 .. rst-class:: classref-item-separator
 
@@ -300,7 +265,7 @@ Constructs a **Basis** identical to the :ref:`IDENTITY<class_Basis_constant_IDEN
 
 :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Basis<class_Basis>` from **)**
 
-Constructs a **Basis** as a copy of the given **Basis**.
+构造给定 **Basis** 的副本。
 
 .. rst-class:: classref-item-separator
 
@@ -310,9 +275,7 @@ Constructs a **Basis** as a copy of the given **Basis**.
 
 :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Constructs a **Basis** that only represents rotation, rotated around the ``axis`` by the given ``angle``, in radians. The axis must be a normalized vector.
-
-\ **Note:** This is the same as using :ref:`rotated<class_Basis_method_rotated>` on the :ref:`IDENTITY<class_Basis_constant_IDENTITY>` basis. With more than one angle consider using :ref:`from_euler<class_Basis_method_from_euler>`, instead.
+构造纯旋转的基矩阵，围绕给定的轴 ``axis`` 旋转 ``angle``\ （单位为弧度）。该轴必须是归一化向量。
 
 .. rst-class:: classref-item-separator
 
@@ -322,9 +285,7 @@ Constructs a **Basis** that only represents rotation, rotated around the ``axis`
 
 :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Quaternion<class_Quaternion>` from **)**
 
-Constructs a **Basis** that only represents rotation from the given :ref:`Quaternion<class_Quaternion>`.
-
-\ **Note:** Quaternions *only* store rotation, not scale. Because of this, conversions from **Basis** to :ref:`Quaternion<class_Quaternion>` cannot always be reversed.
+根据给定的四元数构造纯旋转的基矩阵。
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +295,7 @@ Constructs a **Basis** that only represents rotation from the given :ref:`Quater
 
 :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)**
 
-Constructs a **Basis** from 3 axis vectors. These are the columns of the basis matrix.
+从 3 个轴向量（矩阵列）构造一个基矩阵。
 
 .. rst-class:: classref-section-separator
 
@@ -342,8 +303,8 @@ Constructs a **Basis** from 3 axis vectors. These are the columns of the basis m
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_Basis_method_determinant:
 
@@ -351,13 +312,9 @@ Method Descriptions
 
 :ref:`float<class_float>` **determinant** **(** **)** |const|
 
-Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this basis's matrix. For advanced math, this number can be used to determine a few attributes:
+返回基矩阵的行列式。如果基是均匀缩放的，它的行列式是缩放的平方。
 
-- If the determinant is exactly ``0``, the basis is not invertible (see :ref:`inverse<class_Basis_method_inverse>`).
-
-- If the determinant is a negative number, the basis represents a negative scale.
-
-\ **Note:** If the basis's scale is the same for every axis, its determinant is always that scale by the power of 2.
+负的行列式意味着基的缩放是负的。负的行列式意味着基不可逆，通常被认为无效。
 
 .. rst-class:: classref-item-separator
 
@@ -369,34 +326,7 @@ Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this 
 
 :ref:`Basis<class_Basis>` **from_euler** **(** :ref:`Vector3<class_Vector3>` euler, :ref:`int<class_int>` order=2 **)** |static|
 
-Constructs a new **Basis** that only represents rotation from the given :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
-
-- The :ref:`Vector3.x<class_Vector3_property_x>` should contain the angle around the :ref:`x<class_Basis_property_x>` axis (pitch).
-
-- The :ref:`Vector3.y<class_Vector3_property_y>` should contain the angle around the :ref:`y<class_Basis_property_y>` axis (yaw).
-
-- The :ref:`Vector3.z<class_Vector3_property_z>` should contain the angle around the :ref:`z<class_Basis_property_z>` axis (roll).
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    # Creates a Basis whose z axis points down.
-    var my_basis = Basis.from_euler(Vector3(TAU / 4, 0, 0))
-    
-    print(my_basis.z) # Prints (0, -1, 0).
-
- .. code-tab:: csharp
-
-    // Creates a Basis whose z axis points down.
-    var myBasis = Basis.FromEuler(new Vector3(Mathf.Tau / 4.0f, 0.0f, 0.0f));
-    
-    GD.Print(myBasis.Z); // Prints (0, -1, 0).
-
-
-
-The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): the basis rotates first around the Y axis (yaw), then X (pitch), and lastly Z (roll). When using the opposite method :ref:`get_euler<class_Basis_method_get_euler>`, this order is reversed.
+按照指定的欧拉旋转顺序，从欧拉角中构造一个纯旋转的 Basis 矩阵。默认情况下，使用 YXZ 顺序（最常用）。参见枚举 :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` 的可能值。
 
 .. rst-class:: classref-item-separator
 
@@ -408,30 +338,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 :ref:`Basis<class_Basis>` **from_scale** **(** :ref:`Vector3<class_Vector3>` scale **)** |static|
 
-Constructs a new **Basis** that only represents scale, with no rotation or shear, from the given ``scale`` vector.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis.from_scale(Vector3(2, 4, 8))
-    
-    print(my_basis.x) # Prints (2, 0, 0).
-    print(my_basis.y) # Prints (0, 4, 0).
-    print(my_basis.z) # Prints (0, 0, 8).
-
- .. code-tab:: csharp
-
-    var myBasis = Basis.FromScale(new Vector3(2.0f, 4.0f, 8.0f));
-    
-    GD.Print(myBasis.X); // Prints (2, 0, 0).
-    GD.Print(myBasis.Y); // Prints (0, 4, 0).
-    GD.Print(myBasis.Z); // Prints (0, 0, 8).
-
-
-
-\ **Note:** In linear algebra, the matrix of this basis is also known as a `diagonal matrix <https://en.wikipedia.org/wiki/Diagonal_matrix>`__.
+构造一个没有旋转或剪切的纯缩放基础矩阵。scale 值被设置为矩阵的对角线，矩阵的其他部分为零。
 
 .. rst-class:: classref-item-separator
 
@@ -443,19 +350,9 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
 
 :ref:`Vector3<class_Vector3>` **get_euler** **(** :ref:`int<class_int>` order=2 **)** |const|
 
-Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
+以欧拉角的形式返回基的旋转。欧拉顺序取决于 ``order`` 参数，默认使用 YXZ 惯例：分解时，先 Z、再 X、最后 Y。返回的向量包含格式为（X 角、Y 角、Z 角）的旋转角。
 
-- The :ref:`Vector3.x<class_Vector3_property_x>` contains the angle around the :ref:`x<class_Basis_property_x>` axis (pitch);
-
-- The :ref:`Vector3.y<class_Vector3_property_y>` contains the angle around the :ref:`y<class_Basis_property_y>` axis (yaw);
-
-- The :ref:`Vector3.z<class_Vector3_property_z>` contains the angle around the :ref:`z<class_Basis_property_z>` axis (roll).
-
-The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler<class_Basis_method_from_euler>`, this order is reversed.
-
-\ **Note:** Euler angles are much more intuitive but are not suitable for 3D math. Because of this, consider using the :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>`.
-
-\ **Note:** In the Inspector dock, a basis's rotation is often displayed in Euler angles (in degrees), as is the case with the :ref:`Node3D.rotation<class_Node3D_property_rotation>` property.
+可考虑改用 :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` 方法，将返回 :ref:`Quaternion<class_Quaternion>` 四元数而不是欧拉角。
 
 .. rst-class:: classref-item-separator
 
@@ -467,9 +364,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 :ref:`Quaternion<class_Quaternion>` **get_rotation_quaternion** **(** **)** |const|
 
-Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
-
-\ **Note:** Quatenions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the :ref:`get_euler<class_Basis_method_get_euler>` method, which returns Euler angles.
+以四元数的形式返回基的旋转。如果你需要欧拉角，请参阅 :ref:`get_euler<class_Basis_method_get_euler>` 方法，但通常首选四元数而不是欧拉角。
 
 .. rst-class:: classref-item-separator
 
@@ -481,40 +376,7 @@ Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
 :ref:`Vector3<class_Vector3>` **get_scale** **(** **)** |const|
 
-Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>`. If the basis is not sheared, this is the scaling factor. It is not affected by rotation.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis(
-        Vector3(2, 0, 0),
-        Vector3(0, 4, 0),
-        Vector3(0, 0, 8)
-    )
-    # Rotating the Basis in any way preserves its scale.
-    my_basis = my_basis.rotated(Vector3.UP, TAU / 2)
-    my_basis = my_basis.rotated(Vector3.RIGHT, TAU / 4)
-    
-    print(my_basis.get_scale()) # Prints (2, 4, 8).
-
- .. code-tab:: csharp
-
-    var myBasis = new Basis(
-        Vector3(2.0f, 0.0f, 0.0f),
-        Vector3(0.0f, 4.0f, 0.0f),
-        Vector3(0.0f, 0.0f, 8.0f)
-    );
-    // Rotating the Basis in any way preserves its scale.
-    myBasis = myBasis.Rotated(Vector3.Up, Mathf.Tau / 2.0f);
-    myBasis = myBasis.Rotated(Vector3.Right, Mathf.Tau / 4.0f);
-    
-    GD.Print(myBasis.Scale); // Prints (2, 4, 8).
-
-
-
-\ **Note:** If the value returned by :ref:`determinant<class_Basis_method_determinant>` is negative, the scale is also negative.
+假设矩阵是旋转和缩放的组合，返回沿各轴缩放系数的绝对值。
 
 .. rst-class:: classref-item-separator
 
@@ -526,7 +388,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
 
 :ref:`Basis<class_Basis>` **inverse** **(** **)** |const|
 
-Returns the `inverse of this basis's matrix <https://en.wikipedia.org/wiki/Invertible_matrix>`__.
+返回矩阵的逆值。
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +400,7 @@ Returns the `inverse of this basis's matrix <https://en.wikipedia.org/wiki/Inver
 
 :ref:`bool<class_bool>` **is_conformal** **(** **)** |const|
 
-Returns ``true`` if this basis is conformal. A conformal basis is both *orthogonal* (the axes are perpendicular to each other) and *uniform* (the axes share the same length). This method can be especially useful during physics calculations.
+如果该基是共形的，则返回\ ``true``\ ，这意味着它保留角度和距离比率，并且只能由旋转和均匀缩放组成。如果该基具有不均匀的缩放或剪切/倾斜，则返回 ``false``\ 。这可以用来验证该基是否不失真，这对于物理和其他用例很重要。
 
 .. rst-class:: classref-item-separator
 
@@ -550,7 +412,7 @@ Returns ``true`` if this basis is conformal. A conformal basis is both *orthogon
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b **)** |const|
 
-Returns ``true`` if this basis and ``b`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on all vector components.
+如果该基和 ``b`` 近似相等，则返回 ``true``\ ，判断方法是在每个向量分量上调用 :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -562,7 +424,7 @@ Returns ``true`` if this basis and ``b`` are approximately equal, by calling :re
 
 :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
 
-Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on all vector components.
+如果该基是有限的，则返回 ``true``\ ，判断方法是在每个向量分量上调用 :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -574,11 +436,11 @@ Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finit
 
 :ref:`Basis<class_Basis>` **looking_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0), :ref:`bool<class_bool>` use_model_front=false **)** |static|
 
-Creates a new **Basis** with a rotation such that the forward axis (-Z) points towards the ``target`` position.
+创建旋转 Basis，向前的轴（-Z）指向 ``target`` 的位置。
 
-By default, the -Z axis (camera forward) is treated as forward (implies +X is right). If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forward (implies +X is left) and points toward the ``target`` position.
+向上的轴（+Y）在保持与向前的轴垂直的前提下，尽可能接近 ``up`` 向量。最终的 Basis 是标准正交基。 ``target`` 和 ``up`` 向量不能为零，不能互相平行。
 
-The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The returned basis is orthonormalized (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`). The ``target`` and ``up`` vectors cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and cannot be parallel to each other.
+如果 ``use_model_front`` 为 ``true``\ ，则会将 +Z 轴（资产正面）作为向前的轴（此时 +X 为左），指向 ``target`` 的位置。默认情况下会将 -Z 轴（相机前方）作为向前的轴（此时 +X 为右）。
 
 .. rst-class:: classref-item-separator
 
@@ -590,33 +452,7 @@ The up axis (+Y) points as close to the ``up`` vector as possible while staying 
 
 :ref:`Basis<class_Basis>` **orthonormalized** **(** **)** |const|
 
-Returns the orthonormalized version of this basis. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1``), which also means it can only represent rotation.
-
-It is often useful to call this method to avoid rounding errors on a rotating basis:
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    # Rotate this Node3D every frame.
-    func _process(delta):
-        basis = basis.rotated(Vector3.UP, TAU * delta)
-        basis = basis.rotated(Vector3.RIGHT, TAU * delta)
-    
-        basis = basis.orthonormalized()
-
- .. code-tab:: csharp
-
-    // Rotate this Node3D every frame.
-    public override void _Process(double delta)
-    {
-        Basis = Basis.Rotated(Vector3.Up, Mathf.Tau * (float)delta)
-                     .Rotated(Vector3.Right, Mathf.Tau * (float)delta)
-                     .Orthonormalized();
-    }
-
-
+返回矩阵的正交归一化版本（对于正交矩阵来说，偶尔调用以避免四舍五入错误是有用的）。这将在矩阵的基上执行 Gram-Schmidt 正交化。
 
 .. rst-class:: classref-item-separator
 
@@ -628,32 +464,7 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
 
 :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
-Returns this basis rotated around the given ``axis`` by ``angle`` (in radians). The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`).
-
-Positive values rotate this basis clockwise around the axis, while negative values rotate it counterclockwise.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis.IDENTITY
-    var angle = TAU / 2
-    
-    my_basis = my_basis.rotated(Vector3.UP, angle)    # Rotate around the up axis (yaw).
-    my_basis = my_basis.rotated(Vector3.RIGHT, angle) # Rotate around the right axis (pitch).
-    my_basis = my_basis.rotated(Vector3.BACK, angle)  # Rotate around the back axis (roll).
-
- .. code-tab:: csharp
-
-    var myBasis = Basis.Identity;
-    var angle = Mathf.Tau / 2.0f;
-    
-    myBasis = myBasis.Rotated(Vector3.Up, angle);    // Rotate around the up axis (yaw).
-    myBasis = myBasis.Rotated(Vector3.Right, angle); // Rotate around the right axis (pitch).
-    myBasis = myBasis.Rotated(Vector3.Back, angle);  // Rotate around the back axis (roll).
-
-
+围绕给定轴线引入一个额外的旋转 ``angle``\ （单位为弧度）。该轴必须是一个归一化的向量。
 
 .. rst-class:: classref-item-separator
 
@@ -665,40 +476,7 @@ Positive values rotate this basis clockwise around the axis, while negative valu
 
 :ref:`Basis<class_Basis>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
 
-Returns this basis with each axis's components scaled by the given ``scale``'s components.
-
-The basis matrix's rows are multiplied by ``scale``'s components. This operation is a global scale (relative to the parent).
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis(
-        Vector3(1, 1, 1),
-        Vector3(2, 2, 2),
-        Vector3(3, 3, 3)
-    )
-    my_basis = my_basis.scaled(Vector3(0, 2, -2))
-    
-    print(my_basis.x) # Prints (0, 2, -2).
-    print(my_basis.y) # Prints (0, 4, -4).
-    print(my_basis.z) # Prints (0, 6, -6).
-
- .. code-tab:: csharp
-
-    var myBasis = new Basis(
-        new Vector3(1.0f, 1.0f, 1.0f),
-        new Vector3(2.0f, 2.0f, 2.0f),
-        new Vector3(3.0f, 3.0f, 3.0f)
-    );
-    myBasis = myBasis.Scaled(new Vector3(0.0f, 2.0f, -2.0f));
-    
-    GD.Print(myBasis.X); // Prints (0, 2, -2).
-    GD.Print(myBasis.Y); // Prints (0, 4, -4).
-    GD.Print(myBasis.Z); // Prints (0, 6, -6).
-
-
+引入一个由给定的 3D 缩放因子指定的附加缩放。
 
 .. rst-class:: classref-item-separator
 
@@ -710,20 +488,7 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
 
 :ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)** |const|
 
-Performs a spherical-linear interpolation with the ``to`` basis, given a ``weight``. Both this basis and ``to`` should represent a rotation.
-
-\ **Example:** Smoothly rotate a :ref:`Node3D<class_Node3D>` to the target basis over time, with a :ref:`Tween<class_Tween>`.
-
-::
-
-    var start_basis = Basis.IDENTITY
-    var target_basis = Basis.IDENTITY.rotated(Vector3.UP, TAU / 2)
-    
-    func _ready():
-        create_tween().tween_method(interpolate, 0.0, 1.0, 5.0).set_trans(Tween.TRANS_EXPO)
-    
-    func interpolate(weight):
-        basis = start_basis.slerp(target_basis, weight)
+假设该矩阵是一个合适的旋转矩阵，slerp 与另一个旋转矩阵进行球面直线插值。
 
 .. rst-class:: classref-item-separator
 
@@ -735,9 +500,7 @@ Performs a spherical-linear interpolation with the ``to`` basis, given a ``weigh
 
 :ref:`float<class_float>` **tdotx** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the transposed dot product between ``with`` and the :ref:`x<class_Basis_property_x>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
-
-This is equivalent to ``basis.x.dot(vector)``.
+与矩阵 X 轴的转置点积。
 
 .. rst-class:: classref-item-separator
 
@@ -749,9 +512,7 @@ This is equivalent to ``basis.x.dot(vector)``.
 
 :ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the transposed dot product between ``with`` and the :ref:`y<class_Basis_property_y>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
-
-This is equivalent to ``basis.y.dot(vector)``.
+与矩阵 Y 轴的转置点积。
 
 .. rst-class:: classref-item-separator
 
@@ -763,9 +524,7 @@ This is equivalent to ``basis.y.dot(vector)``.
 
 :ref:`float<class_float>` **tdotz** **(** :ref:`Vector3<class_Vector3>` with **)** |const|
 
-Returns the transposed dot product between ``with`` and the :ref:`z<class_Basis_property_z>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
-
-This is equivalent to ``basis.z.dot(vector)``.
+与矩阵 Z 轴的转置点积。
 
 .. rst-class:: classref-item-separator
 
@@ -777,38 +536,7 @@ This is equivalent to ``basis.z.dot(vector)``.
 
 :ref:`Basis<class_Basis>` **transposed** **(** **)** |const|
 
-Returns the transposed version of this basis. This turns the basis matrix's columns into rows, and its rows into columns.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis(
-        Vector3(1, 2, 3),
-        Vector3(4, 5, 6),
-        Vector3(7, 8, 9)
-    )
-    my_basis = my_basis.transposed()
-    
-    print(my_basis.x) # Prints (1, 4, 7).
-    print(my_basis.y) # Prints (2, 5, 8).
-    print(my_basis.z) # Prints (3, 6, 9).
-
- .. code-tab:: csharp
-
-    var myBasis = new Basis(
-        new Vector3(1.0f, 2.0f, 3.0f),
-        new Vector3(4.0f, 5.0f, 6.0f),
-        new Vector3(7.0f, 8.0f, 9.0f)
-    );
-    myBasis = myBasis.Transposed();
-    
-    GD.Print(myBasis.X); // Prints (1, 4, 7).
-    GD.Print(myBasis.Y); // Prints (2, 5, 8).
-    GD.Print(myBasis.Z); // Prints (3, 6, 9).
-
-
+返回矩阵的转置版本。
 
 .. rst-class:: classref-section-separator
 
@@ -816,8 +544,8 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
 
 .. rst-class:: classref-descriptions-group
 
-Operator Descriptions
----------------------
+操作符说明
+----------
 
 .. _class_Basis_operator_neq_Basis:
 
@@ -825,9 +553,9 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`Basis<class_Basis>` right **)**
 
-Returns ``true`` if the components of both **Basis** matrices are not equal.
+如果 **Basis** 矩阵不相等，则返回 ``true``\ 。
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **注意：**\ 由于浮点数精度误差，请考虑改用 :ref:`is_equal_approx<class_Basis_method_is_equal_approx>`\ ，会更可靠。
 
 .. rst-class:: classref-item-separator
 
@@ -839,9 +567,7 @@ Returns ``true`` if the components of both **Basis** matrices are not equal.
 
 :ref:`Basis<class_Basis>` **operator *** **(** :ref:`Basis<class_Basis>` right **)**
 
-Transforms (multiplies) the ``right`` basis by this basis.
-
-This is the operation performed between parent and child :ref:`Node3D<class_Node3D>`\ s.
+通过将这两个 basis 矩阵相乘来组合它们。这具有使用第一个 basis（父项）变换第二个 basis（子项）的效果。
 
 .. rst-class:: classref-item-separator
 
@@ -853,22 +579,7 @@ This is the operation performed between parent and child :ref:`Node3D<class_Node
 
 :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
 
-Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Vector3<class_Vector3>`.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var my_basis = Basis(Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0, 2, 5))
-    print(my_basis * Vector3(1, 2, 3)) # Prints (7, 3, 16)
-
- .. code-tab:: csharp
-
-    var myBasis = new Basis(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(0, 2, 5));
-    GD.Print(my_basis * new Vector3(1, 2, 3)); // Prints (7, 3, 16)
-
-
+使用给定的 **Basis** 矩阵变换（乘）该 :ref:`Vector3<class_Vector3>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -880,7 +591,7 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 
 :ref:`Basis<class_Basis>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-Multiplies all components of the **Basis** by the given :ref:`float<class_float>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
+该运算符会对 **Basis** 的所有分量进行乘操作，达到统一缩放的效果。
 
 .. rst-class:: classref-item-separator
 
@@ -892,7 +603,7 @@ Multiplies all components of the **Basis** by the given :ref:`float<class_float>
 
 :ref:`Basis<class_Basis>` **operator *** **(** :ref:`int<class_int>` right **)**
 
-Multiplies all components of the **Basis** by the given :ref:`int<class_int>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
+该运算符会对 **Basis** 的所有分量进行乘操作，达到统一缩放的效果。
 
 .. rst-class:: classref-item-separator
 
@@ -904,9 +615,9 @@ Multiplies all components of the **Basis** by the given :ref:`int<class_int>`. T
 
 :ref:`bool<class_bool>` **operator ==** **(** :ref:`Basis<class_Basis>` right **)**
 
-Returns ``true`` if the components of both **Basis** matrices are exactly equal.
+如果 **Basis** 矩阵完全相等，则返回 ``true``\ 。
 
-\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` instead, which is more reliable.
+\ **注意：**\ 由于浮点数精度误差，请考虑改用 :ref:`is_equal_approx<class_Basis_method_is_equal_approx>`\ ，会更可靠。
 
 .. rst-class:: classref-item-separator
 
@@ -918,14 +629,12 @@ Returns ``true`` if the components of both **Basis** matrices are exactly equal.
 
 :ref:`Vector3<class_Vector3>` **operator []** **(** :ref:`int<class_int>` index **)**
 
-Accesses each axis (column) of this basis by their index. Index ``0`` is the same as :ref:`x<class_Basis_property_x>`, index ``1`` is the same as :ref:`y<class_Basis_property_y>`, and index ``2`` is the same as :ref:`z<class_Basis_property_z>`.
+使用索引访问基的分量。\ ``b[0]`` 相当于 ``b.x``\ 、\ ``b[1]`` 相当于 ``b.y``\ 、\ ``b[2]`` 相当于 ``b.z``\ 。
 
-\ **Note:** In C++, this operator accesses the rows of the basis matrix, *not* the columns. For the same behavior as scripting languages, use the ``set_column`` and ``get_column`` methods.
-
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

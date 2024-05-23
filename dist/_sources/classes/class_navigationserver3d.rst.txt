@@ -10,44 +10,44 @@
 NavigationServer3D
 ==================
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-A server interface for low-level 3D navigation access.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-NavigationServer3D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
-
-Maps are made up of regions, which are made of navigation meshes. Together, they define the navigable areas in the 3D world.
-
-\ **Note:** Most **NavigationServer3D** changes take effect after the next physics frame and not immediately. This includes all changes made to maps, regions or agents by navigation-related nodes in the scene tree or made through scripts.
-
-For two regions to be connected to each other, they must share a similar edge. An edge is considered connected to another if both of its two vertices are at a distance less than ``edge_connection_margin`` to the respective other edge's vertex.
-
-You may assign navigation layers to regions with :ref:`region_set_navigation_layers<class_NavigationServer3D_method_region_set_navigation_layers>`, which then can be checked upon when requesting a path with :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>`. This can be used to allow or deny certain areas for some objects.
-
-To use the collision avoidance system, you may use agents. You can set an agent's target velocity, then the servers will emit a callback with a modified velocity.
-
-\ **Note:** The collision avoidance system ignores regions. Using the modified velocity directly may move an agent outside of the traversable area. This is a limitation of the collision avoidance system, any more complex situation may require the use of the physics engine.
-
-This server keeps tracks of any call and executes them during the sync phase. This means that you can request any change to the map, using any thread, without worrying.
+用于访问低阶 3D 导航的服务器接口。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
+NavigationServer3D 是处理导航地图、区块、代理的服务器。它不处理来自 :ref:`AStar3D<class_AStar3D>` 的 A\* 导航。
 
-- :doc:`Using NavigationServer <../tutorials/navigation/navigation_using_navigationservers>`
+地图由区块组成，区块由导航网格组成。它们共同定义了 3D 空间中的可达区域。
+
+\ **注意：**\ 大多数 **NavigationServer3D** 的更改都是在下一个物理帧进行的，不会立即生效。包括所有对地图、区块、代理的更改，无论是通过场景树中导航相关的节点作出的更改，还是通过脚本作出的更改。
+
+两个区块必须共享一条相似的边才能相连。如果一条边的两个顶点与另一条边上相应顶点的距离都小于 ``edge_connection_margin``\ ，那么就会认为这两条边是相连的。
+
+可以使用 :ref:`region_set_navigation_layers<class_NavigationServer3D_method_region_set_navigation_layers>` 为区块分配导航层，使用 :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>` 请求路径时会对导航层进行检查。可用于针对某些对象允许或禁止特定的区域。
+
+使用碰撞躲避系统就需要使用代理。你可以为代理设置目标速度，然后服务器就会发出回调，提供修改后的速度。
+
+\ **注意：**\ 碰撞躲避系统会忽略区块。直接使用修改后的速度可能会将代理移动到可达区域之外。这是碰撞躲避系统的缺陷，更复杂的场合可能需要使用物理引擎。
+
+服务器会对所有调用进行跟踪，并在同步阶段执行。这意味着你可以放心地从任何线程请求对地图作出任何修改。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- `3D 导航网格演示 <https://godotengine.org/asset-library/asset/124>`__
+
+- :doc:`使用 NavigationServer <../tutorials/navigation/navigation_using_navigationservers>`
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -290,8 +290,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_NavigationServer3D_signal_avoidance_debug_changed:
 
@@ -299,7 +299,7 @@ Signals
 
 **avoidance_debug_changed** **(** **)**
 
-Emitted when avoidance debug settings are changed. Only available in debug builds.
+当避障调试设置更改时发出。仅在调试版本中可用。
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +311,7 @@ Emitted when avoidance debug settings are changed. Only available in debug build
 
 **map_changed** **(** :ref:`RID<class_RID>` map **)**
 
-Emitted when a navigation map is updated, when a region moves or is modified.
+当导航地图更新时、地区移动或被修改时发出。
 
 .. rst-class:: classref-item-separator
 
@@ -323,7 +323,7 @@ Emitted when a navigation map is updated, when a region moves or is modified.
 
 **navigation_debug_changed** **(** **)**
 
-Emitted when navigation debug settings are changed. Only available in debug builds.
+当导航调试设置更改时发出。仅在调试版本中可用。
 
 .. rst-class:: classref-section-separator
 
@@ -331,8 +331,8 @@ Emitted when navigation debug settings are changed. Only available in debug buil
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_NavigationServer3D_ProcessInfo:
 
@@ -346,7 +346,7 @@ enum **ProcessInfo**:
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_ACTIVE_MAPS** = ``0``
 
-Constant to get the number of active navigation maps.
+常量，用于获取活动导航地图的数量。
 
 .. _class_NavigationServer3D_constant_INFO_REGION_COUNT:
 
@@ -354,7 +354,7 @@ Constant to get the number of active navigation maps.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_REGION_COUNT** = ``1``
 
-Constant to get the number of active navigation regions.
+常量，用于获取活动导航地区的数量。
 
 .. _class_NavigationServer3D_constant_INFO_AGENT_COUNT:
 
@@ -362,7 +362,7 @@ Constant to get the number of active navigation regions.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_AGENT_COUNT** = ``2``
 
-Constant to get the number of active navigation agents processing avoidance.
+常量，用于获取正在进行避障的活动导航代理的数量。
 
 .. _class_NavigationServer3D_constant_INFO_LINK_COUNT:
 
@@ -370,7 +370,7 @@ Constant to get the number of active navigation agents processing avoidance.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_LINK_COUNT** = ``3``
 
-Constant to get the number of active navigation links.
+常量，用于获取活动导航链接的数量。
 
 .. _class_NavigationServer3D_constant_INFO_POLYGON_COUNT:
 
@@ -378,7 +378,7 @@ Constant to get the number of active navigation links.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_POLYGON_COUNT** = ``4``
 
-Constant to get the number of navigation mesh polygons.
+常量，用于获取导航网格多边形的数量。
 
 .. _class_NavigationServer3D_constant_INFO_EDGE_COUNT:
 
@@ -386,7 +386,7 @@ Constant to get the number of navigation mesh polygons.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_COUNT** = ``5``
 
-Constant to get the number of navigation mesh polygon edges.
+常量，用于获取导航网格多边形的边的数量。
 
 .. _class_NavigationServer3D_constant_INFO_EDGE_MERGE_COUNT:
 
@@ -394,7 +394,7 @@ Constant to get the number of navigation mesh polygon edges.
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_MERGE_COUNT** = ``6``
 
-Constant to get the number of navigation mesh polygon edges that were merged due to edge key overlap.
+常量，用于获取由于边键重叠而被合并的导航网格多边形的边的数量。
 
 .. _class_NavigationServer3D_constant_INFO_EDGE_CONNECTION_COUNT:
 
@@ -402,7 +402,7 @@ Constant to get the number of navigation mesh polygon edges that were merged due
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_CONNECTION_COUNT** = ``7``
 
-Constant to get the number of navigation mesh polygon edges that are considered connected by edge proximity.
+常量，用以获取被认为由于边接近而连接的导航网格多边形的边的数量。
 
 .. _class_NavigationServer3D_constant_INFO_EDGE_FREE_COUNT:
 
@@ -410,7 +410,7 @@ Constant to get the number of navigation mesh polygon edges that are considered 
 
 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_FREE_COUNT** = ``8``
 
-Constant to get the number of navigation mesh polygon edges that could not be merged but may be still connected by edge proximity or with links.
+常量，用于获取无法合并但仍可通过边接近或链接连接的导航网格多边形的边的数量。
 
 .. rst-class:: classref-section-separator
 
@@ -418,8 +418,8 @@ Constant to get the number of navigation mesh polygon edges that could not be me
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_NavigationServer3D_method_agent_create:
 
@@ -427,7 +427,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **agent_create** **(** **)**
 
-Creates the agent.
+创建代理。
 
 .. rst-class:: classref-item-separator
 
@@ -439,7 +439,7 @@ Creates the agent.
 
 :ref:`bool<class_bool>` **agent_get_avoidance_enabled** **(** :ref:`RID<class_RID>` agent **)** |const|
 
-Returns ``true`` if the provided ``agent`` has avoidance enabled.
+如果指定代理 ``agent`` 启用了避障，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -451,7 +451,7 @@ Returns ``true`` if the provided ``agent`` has avoidance enabled.
 
 :ref:`RID<class_RID>` **agent_get_map** **(** :ref:`RID<class_RID>` agent **)** |const|
 
-Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is currently assigned to.
+返回请求 ``agent`` 目前分配到的导航地图 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -463,7 +463,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is curr
 
 :ref:`bool<class_bool>` **agent_get_paused** **(** :ref:`RID<class_RID>` agent **)** |const|
 
-Returns ``true`` if the specified ``agent`` is paused.
+如果指定的 ``agent`` 处于暂停状态，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -475,7 +475,7 @@ Returns ``true`` if the specified ``agent`` is paused.
 
 :ref:`bool<class_bool>` **agent_get_use_3d_avoidance** **(** :ref:`RID<class_RID>` agent **)** |const|
 
-Returns ``true`` if the provided ``agent`` uses avoidance in 3D space Vector3(x,y,z) instead of horizontal 2D Vector2(x,y) / Vector3(x,0.0,z).
+如果指定代理 ``agent`` 使用 3D 空间 Vector3(x,y,z) 的避障而不是水平 2D Vector2(x,y) / Vector3(x,0.0,z) 避障，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -487,7 +487,7 @@ Returns ``true`` if the provided ``agent`` uses avoidance in 3D space Vector3(x,
 
 :ref:`bool<class_bool>` **agent_is_map_changed** **(** :ref:`RID<class_RID>` agent **)** |const|
 
-Returns true if the map got changed the previous frame.
+如果该地图在上一帧发生了改变，则返回 true。
 
 .. rst-class:: classref-item-separator
 
@@ -499,9 +499,9 @@ Returns true if the map got changed the previous frame.
 
 void **agent_set_avoidance_callback** **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the callback :ref:`Callable<class_Callable>` that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be dispatched with a signal to the object just before the physics calculations.
+设置在 ``agent`` 的每个避障处理步骤之后调用的回调 :ref:`Callable<class_Callable>`\ 。计算出的 ``safe_velocity`` 将在物理计算之前通过信号发送。
 
-\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_avoidance_callback<class_NavigationServer3D_method_agent_set_avoidance_callback>` again with an empty :ref:`Callable<class_Callable>`.
+\ **注意：**\ 只要代理还在导航地图上且未被释放，创建的回调就会始终独立于 SceneTree 状态进行处理。要为某个代理禁用回调的发送，请再次使用一个空的 :ref:`Callable<class_Callable>` 来调用 :ref:`agent_set_avoidance_callback<class_NavigationServer3D_method_agent_set_avoidance_callback>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -513,7 +513,7 @@ Sets the callback :ref:`Callable<class_Callable>` that gets called after each av
 
 void **agent_set_avoidance_enabled** **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true``, the provided ``agent`` calculates avoidance.
+如果 ``enabled`` 为 ``true``\ ，则提供的 ``agent`` 会计算避障。
 
 .. rst-class:: classref-item-separator
 
@@ -525,7 +525,7 @@ If ``enabled`` is ``true``, the provided ``agent`` calculates avoidance.
 
 void **agent_set_avoidance_layers** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` layers **)**
 
-Set the agent's ``avoidance_layers`` bitmask.
+设置该代理的 ``avoidance_layers`` 位掩码。
 
 .. rst-class:: classref-item-separator
 
@@ -537,7 +537,7 @@ Set the agent's ``avoidance_layers`` bitmask.
 
 void **agent_set_avoidance_mask** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` mask **)**
 
-Set the agent's ``avoidance_mask`` bitmask.
+设置该代理的 ``avoidance_mask`` 位掩码。
 
 .. rst-class:: classref-item-separator
 
@@ -549,9 +549,9 @@ Set the agent's ``avoidance_mask`` bitmask.
 
 void **agent_set_avoidance_priority** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` priority **)**
 
-Set the agent's ``avoidance_priority`` with a ``priority`` between 0.0 (lowest priority) to 1.0 (highest priority).
+设置该代理的 ``avoidance_priority``\ ，优先级 ``priority`` 在 0.0（最低优先级）到 1.0（最高优先级）之间。
 
-The specified ``agent`` does not adjust the velocity for other agents that would match the ``avoidance_mask`` but have a lower `` avoidance_priority``. This in turn makes the other agents with lower priority adjust their velocities even more to avoid collision with this agent.
+\ ``agent`` 指定的代理不会针对 ``avoidance_mask`` 存在匹配但 `` avoidance_priority`` 更低的代理调整速度。相应地，优先级更低的代理则会对其速度进行更大的调整，从而避免与这个代理发生碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -563,7 +563,7 @@ The specified ``agent`` does not adjust the velocity for other agents that would
 
 void **agent_set_height** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` height **)**
 
-Updates the provided ``agent`` ``height``.
+更新指定代理 ``agent`` 的高度 ``height``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -575,7 +575,7 @@ Updates the provided ``agent`` ``height``.
 
 void **agent_set_map** **(** :ref:`RID<class_RID>` agent, :ref:`RID<class_RID>` map **)**
 
-Puts the agent in the map.
+将代理放入地图中。
 
 .. rst-class:: classref-item-separator
 
@@ -587,7 +587,7 @@ Puts the agent in the map.
 
 void **agent_set_max_neighbors** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` count **)**
 
-Sets the maximum number of other agents the agent takes into account in the navigation. The larger this number, the longer the running time of the simulation. If the number is too low, the simulation will not be safe.
+设置在导航中，该代理所考虑的其他代理的最大数量。这个数越大，模拟的运行时间越长。如果这个数太小，则模拟会不安全。
 
 .. rst-class:: classref-item-separator
 
@@ -599,7 +599,7 @@ Sets the maximum number of other agents the agent takes into account in the navi
 
 void **agent_set_max_speed** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` max_speed **)**
 
-Sets the maximum speed of the agent. Must be positive.
+设置该代理的最大速度。必须为正数。
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +611,7 @@ Sets the maximum speed of the agent. Must be positive.
 
 void **agent_set_neighbor_distance** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` distance **)**
 
-Sets the maximum distance to other agents this agent takes into account in the navigation. The larger this number, the longer the running time of the simulation. If the number is too low, the simulation will not be safe.
+设置在导航中，该代理所考虑的其他代理的最大距离。这个数越大，模拟的运行时间越长。如果这个数太小，则模拟会不安全。
 
 .. rst-class:: classref-item-separator
 
@@ -623,7 +623,7 @@ Sets the maximum distance to other agents this agent takes into account in the n
 
 void **agent_set_paused** **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` paused **)**
 
-If ``paused`` is true the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
+如果 ``paused`` 为 true，则不会对指定的 ``agent`` 进行处理，例如计算避障速度以及收到避障回调。
 
 .. rst-class:: classref-item-separator
 
@@ -635,7 +635,7 @@ If ``paused`` is true the specified ``agent`` will not be processed, e.g. calcul
 
 void **agent_set_position** **(** :ref:`RID<class_RID>` agent, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the position of the agent in world space.
+设置该代理在世界空间中的位置。
 
 .. rst-class:: classref-item-separator
 
@@ -647,7 +647,7 @@ Sets the position of the agent in world space.
 
 void **agent_set_radius** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` radius **)**
 
-Sets the radius of the agent.
+设置该代理的半径。
 
 .. rst-class:: classref-item-separator
 
@@ -659,7 +659,7 @@ Sets the radius of the agent.
 
 void **agent_set_time_horizon_agents** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**
 
-The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
+考虑其他代理的前提下，该代理的速度的最短安全时间，这个速度是通过仿真得到的。数值越大，代理响应其他代理的速度就越快，但该代理选择速度的自由度也就越小。太高的取值会大大降低代理的移动速度。必须为正数。
 
 .. rst-class:: classref-item-separator
 
@@ -671,7 +671,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 void **agent_set_time_horizon_obstacles** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**
 
-The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to static avoidance obstacles. The larger this number, the sooner this agent will respond to the presence of static avoidance obstacles, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
+考虑其他静态避障障碍物的前提下，该代理的速度的最短安全时间，这个速度是通过仿真得到的。数值越大，代理响应存在的静态避障障碍物的速度就越快，但该代理选择速度的自由度也就越小。太高的取值会大大降低代理的移动速度。必须为正数。
 
 .. rst-class:: classref-item-separator
 
@@ -683,11 +683,11 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 void **agent_set_use_3d_avoidance** **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` enabled **)**
 
-Sets if the agent uses the 2D avoidance or the 3D avoidance while avoidance is enabled.
+设置该代理在启用避障时使用 2D 避障还是 3D 避障。
 
-If ``true`` the agent calculates avoidance velocities in 3D for the xyz-axis, e.g. for games that take place in air, underwater or space. The 3D using agent only avoids other 3D avoidance using agent's. The 3D using agent only reacts to radius based avoidance obstacles. The 3D using agent ignores any vertices based obstacles. The 3D using agent only avoids other 3D using agent's.
+如果为 ``true``\ ，则代理会为 XYZ 轴计算 3D 避障速度，例如在空中、水下、太空中进行的游戏。使用 3D 的代理只会躲避其他使用 3D 避障的代理。使用 3D 的代理只会响应基于半径的避障障碍物。使用 3D 的代理会忽略基于顶点的障碍物。使用 3D 的代理只会躲避其他使用 3D 的代理。
 
-If ``false`` the agent calculates avoidance velocities in 2D along the xz-axis ignoring the y-axis. The 2D using agent only avoids other 2D avoidance using agent's. The 2D using agent reacts to radius avoidance obstacles. The 2D using agent reacts to vertices based avoidance obstacles. The 2D using agent only avoids other 2D using agent's. 2D using agents will ignore other 2D using agents or obstacles that are below their current position or above their current position including the agents height in 2D avoidance.
+如果为 ``false``\ ，则代理会沿 XZ 轴计算 2D 避障速度，忽略 Y 轴。使用 2D 的代理只会躲避其他使用 2D 避障的代理。使用 2D 的代理会响应基于半径的避障障碍物。使用 2D 的代理会响应基于顶点的避障障碍物。使用 2D 的代理只会躲避其他使用 2D 的代理。在 2D 避障时，使用 2D 的代理会忽略它们位于当前位置之下或者位于当前位置与代理高度之和之上的其他使用 2D 的代理和障碍物。
 
 .. rst-class:: classref-item-separator
 
@@ -699,7 +699,7 @@ If ``false`` the agent calculates avoidance velocities in 2D along the xz-axis i
 
 void **agent_set_velocity** **(** :ref:`RID<class_RID>` agent, :ref:`Vector3<class_Vector3>` velocity **)**
 
-Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfill this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position use :ref:`agent_set_velocity_forced<class_NavigationServer3D_method_agent_set_velocity_forced>` as well to reset the internal simulation velocity.
+将 ``velocity`` 设置为指定代理 ``agent`` 的新的需求速度。避障仿真会尽可能尝试满足这个速度，但为了躲避与其他代理和障碍物的碰撞也会对它进行修改。将代理传送至新的位置时，请使用 :ref:`agent_set_velocity_forced<class_NavigationServer3D_method_agent_set_velocity_forced>` 重置内部仿真速度。
 
 .. rst-class:: classref-item-separator
 
@@ -711,7 +711,7 @@ Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The av
 
 void **agent_set_velocity_forced** **(** :ref:`RID<class_RID>` agent, :ref:`Vector3<class_Vector3>` velocity **)**
 
-Replaces the internal velocity in the collision avoidance simulation with ``velocity`` for the specified ``agent``. When an agent is teleported to a new position this function should be used in the same frame. If called frequently this function can get agents stuck.
+将指定代理 ``agent`` 的避障仿真内部速度替换为 ``velocity``\ 。将代理传送至新的位置时，应该在同一帧里使用这个函数。频繁调用这个函数可能让代理卡住。
 
 .. rst-class:: classref-item-separator
 
@@ -723,7 +723,7 @@ Replaces the internal velocity in the collision avoidance simulation with ``velo
 
 void **bake_from_source_geometry_data** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**
 
-Bakes the provided ``navigation_mesh`` with the data from the provided ``source_geometry_data``. After the process is finished the optional ``callback`` will be called.
+使用 ``source_geometry_data`` 中提供的数据对 ``navigation_mesh`` 进行烘焙。烘焙过程结束后，会调用可选的 ``callback``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -735,7 +735,7 @@ Bakes the provided ``navigation_mesh`` with the data from the provided ``source_
 
 void **bake_from_source_geometry_data_async** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Callable<class_Callable>` callback=Callable() **)**
 
-Bakes the provided ``navigation_mesh`` with the data from the provided ``source_geometry_data`` as an async task running on a background thread. After the process is finished the optional ``callback`` will be called.
+使用提供的 ``source_geometry_data`` 中的数据烘焙提供的 ``navigation_mesh``\ ，并作为在后台线程上运行的异步任务。该过程完成后，将调用可选的 ``callback``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -747,7 +747,7 @@ Bakes the provided ``navigation_mesh`` with the data from the provided ``source_
 
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Destroys the given RID.
+销毁给定的 RID。
 
 .. rst-class:: classref-item-separator
 
@@ -759,7 +759,7 @@ Destroys the given RID.
 
 :ref:`bool<class_bool>` **get_debug_enabled** **(** **)** |const|
 
-Returns ``true`` when the NavigationServer has debug enabled.
+如果该 NavigationServer 启用了调试，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -771,7 +771,7 @@ Returns ``true`` when the NavigationServer has debug enabled.
 
 :ref:`RID[]<class_RID>` **get_maps** **(** **)** |const|
 
-Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationServer. This returns both 2D and 3D created navigation maps as there is technically no distinction between them.
+返回该 NavigationServer 上所有已创建的导航地图的 :ref:`RID<class_RID>`\ 。会同时返回已创建的 2D 和 3D 导航地图，因为理论上它们之间是没有区别的。
 
 .. rst-class:: classref-item-separator
 
@@ -783,7 +783,7 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 
 :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|
 
-Returns information about the current state of the NavigationServer. See :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` for a list of available states.
+返回有关 NavigationServer 当前状态的信息。有关可用状态的列表，请参阅 :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -795,7 +795,7 @@ Returns information about the current state of the NavigationServer. See :ref:`P
 
 :ref:`RID<class_RID>` **link_create** **(** **)**
 
-Create a new link between two positions on a map.
+在地图上新建两个地点之间的链接。
 
 .. rst-class:: classref-item-separator
 
@@ -807,7 +807,7 @@ Create a new link between two positions on a map.
 
 :ref:`bool<class_bool>` **link_get_enabled** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns ``true`` if the specified ``link`` is enabled.
+如果指定的 ``link`` 已启用，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -819,7 +819,7 @@ Returns ``true`` if the specified ``link`` is enabled.
 
 :ref:`Vector3<class_Vector3>` **link_get_end_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ending position of this ``link``.
+返回链接 ``link`` 的结束位置。
 
 .. rst-class:: classref-item-separator
 
@@ -831,7 +831,7 @@ Returns the ending position of this ``link``.
 
 :ref:`float<class_float>` **link_get_enter_cost** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the enter cost of this ``link``.
+返回 ``link`` 链接的进入消耗。
 
 .. rst-class:: classref-item-separator
 
@@ -843,7 +843,7 @@ Returns the enter cost of this ``link``.
 
 :ref:`RID<class_RID>` **link_get_map** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the navigation map :ref:`RID<class_RID>` the requested ``link`` is currently assigned to.
+返回请求的导航链接 ``link`` 当前分配的导航地图的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -855,7 +855,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``link`` is curre
 
 :ref:`int<class_int>` **link_get_navigation_layers** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the navigation layers for this ``link``.
+返回 ``link`` 的导航层。
 
 .. rst-class:: classref-item-separator
 
@@ -867,7 +867,7 @@ Returns the navigation layers for this ``link``.
 
 :ref:`int<class_int>` **link_get_owner_id** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ``ObjectID`` of the object which manages this link.
+返回管理该链接的对象的 ``ObjectID``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -879,7 +879,7 @@ Returns the ``ObjectID`` of the object which manages this link.
 
 :ref:`Vector3<class_Vector3>` **link_get_start_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the starting position of this ``link``.
+返回 ``link`` 链接的入口位置。
 
 .. rst-class:: classref-item-separator
 
@@ -891,7 +891,7 @@ Returns the starting position of this ``link``.
 
 :ref:`float<class_float>` **link_get_travel_cost** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the travel cost of this ``link``.
+返回 ``link`` 链接的移动消耗。
 
 .. rst-class:: classref-item-separator
 
@@ -903,7 +903,7 @@ Returns the travel cost of this ``link``.
 
 :ref:`bool<class_bool>` **link_is_bidirectional** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns whether this ``link`` can be travelled in both directions.
+返回该 ``link`` 是否能够双向通行。
 
 .. rst-class:: classref-item-separator
 
@@ -915,7 +915,7 @@ Returns whether this ``link`` can be travelled in both directions.
 
 void **link_set_bidirectional** **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` bidirectional **)**
 
-Sets whether this ``link`` can be travelled in both directions.
+设置该 ``link`` 是否能够双向通行。
 
 .. rst-class:: classref-item-separator
 
@@ -927,7 +927,7 @@ Sets whether this ``link`` can be travelled in both directions.
 
 void **link_set_enabled** **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true``, the specified ``link`` will contribute to its current navigation map.
+如果 ``enabled`` 为 ``true``\ ，则指定的 ``link`` 会在它的当前导航地图中生效。
 
 .. rst-class:: classref-item-separator
 
@@ -939,7 +939,7 @@ If ``enabled`` is ``true``, the specified ``link`` will contribute to its curren
 
 void **link_set_end_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the exit position for the ``link``.
+设置 ``link`` 的出口位置。
 
 .. rst-class:: classref-item-separator
 
@@ -951,7 +951,7 @@ Sets the exit position for the ``link``.
 
 void **link_set_enter_cost** **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` enter_cost **)**
 
-Sets the ``enter_cost`` for this ``link``.
+设置 ``link`` 的进入消耗 ``enter_cost``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -963,7 +963,7 @@ Sets the ``enter_cost`` for this ``link``.
 
 void **link_set_map** **(** :ref:`RID<class_RID>` link, :ref:`RID<class_RID>` map **)**
 
-Sets the navigation map :ref:`RID<class_RID>` for the link.
+设置该链接的导航地图 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -975,7 +975,7 @@ Sets the navigation map :ref:`RID<class_RID>` for the link.
 
 void **link_set_navigation_layers** **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` navigation_layers **)**
 
-Set the links's navigation layers. This allows selecting links from a path request (when using :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>`).
+设置该链接的导航层。这允许从路径请求中选择链接（当使用 :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>` 时）。
 
 .. rst-class:: classref-item-separator
 
@@ -987,7 +987,7 @@ Set the links's navigation layers. This allows selecting links from a path reque
 
 void **link_set_owner_id** **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` owner_id **)**
 
-Set the ``ObjectID`` of the object which manages this link.
+设置管理该链接的对象的 ``ObjectID``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -999,7 +999,7 @@ Set the ``ObjectID`` of the object which manages this link.
 
 void **link_set_start_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the entry position for this ``link``.
+设置 ``link`` 的入口位置。
 
 .. rst-class:: classref-item-separator
 
@@ -1011,7 +1011,7 @@ Sets the entry position for this ``link``.
 
 void **link_set_travel_cost** **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` travel_cost **)**
 
-Sets the ``travel_cost`` for this ``link``.
+设置 ``link`` 的移动消耗 ``travel_cost``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1023,7 +1023,7 @@ Sets the ``travel_cost`` for this ``link``.
 
 :ref:`RID<class_RID>` **map_create** **(** **)**
 
-Create a new map.
+创建一张新地图。
 
 .. rst-class:: classref-item-separator
 
@@ -1035,13 +1035,13 @@ Create a new map.
 
 void **map_force_update** **(** :ref:`RID<class_RID>` map **)**
 
-This function immediately forces synchronization of the specified navigation ``map`` :ref:`RID<class_RID>`. By default navigation maps are only synchronized at the end of each physics frame. This function can be used to immediately (re)calculate all the navigation meshes and region connections of the navigation map. This makes it possible to query a navigation path for a changed map immediately and in the same frame (multiple times if needed).
+该函数将立即强制指定的导航 ``map`` :ref:`RID<class_RID>` 的同步。默认情况下，导航地图仅在每个物理帧结束时同步。该函数可用于立即（重新）计算该导航地图的所有导航网格和区块连接。这使得可以在同一帧中对修改后的地图的导航路径立即执行查询（如果需要，可以执行多次）。
 
-Due to technical restrictions the current NavigationServer command queue will be flushed. This means all already queued update commands for this physics frame will be executed, even those intended for other maps, regions and agents not part of the specified map. The expensive computation of the navigation meshes and region connections of a map will only be done for the specified map. Other maps will receive the normal synchronization at the end of the physics frame. Should the specified map receive changes after the forced update it will update again as well when the other maps receive their update.
+由于技术上的限制，当前的 NavigationServer 命令队列将被冲刷。这意味着所有已在当前物理帧中入队的更新命令都会被执行，即使是那些用于其他地图、不属于指定地图的区块和代理的更新命令。 昂贵计算的导航网格和地图的区块连接将仅针对指定地图进行。其他地图将在物理帧结束时接收正常同步。如果指定的地图在强制更新后又收到了修改，则它将在其他地图收到更新时再次更新。
 
-Avoidance processing and dispatch of the ``safe_velocity`` signals is unaffected by this function and continues to happen for all maps and agents at the end of the physics frame.
+避障处理和 ``safe_velocity`` 信号的分发不受该函数影响，仍继续发生在物理帧结束时的所有地图和代理上。
 
-\ **Note:** With great power comes great responsibility. This function should only be used by users that really know what they are doing and have a good reason for it. Forcing an immediate update of a navigation map requires locking the NavigationServer and flushing the entire NavigationServer command queue. Not only can this severely impact the performance of a game but it can also introduce bugs if used inappropriately without much foresight.
+\ **注意：**\ 能力越大，责任越大。该函数仅该用于用户真正知道自己在做什么并且有充分理由的情况。强制立即更新导航地图需要锁定 NavigationServer 并冲刷整个 NavigationServer 命令队列。这不仅会严重影响游戏的性能，而且如果缺乏远见且使用不当，还会引入 bug。
 
 .. rst-class:: classref-item-separator
 
@@ -1053,7 +1053,7 @@ Avoidance processing and dispatch of the ``safe_velocity`` signals is unaffected
 
 :ref:`RID[]<class_RID>` **map_get_agents** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+返回所有与请求的导航地图 ``map`` 关联的导航代理的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1065,7 +1065,7 @@ Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assign
 
 :ref:`float<class_float>` **map_get_cell_height** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the map cell height used to rasterize the navigation mesh vertices on the Y axis.
+返回在 Y 轴上栅格化导航网格顶点所使用的地图单元格高度。
 
 .. rst-class:: classref-item-separator
 
@@ -1077,7 +1077,7 @@ Returns the map cell height used to rasterize the navigation mesh vertices on th
 
 :ref:`float<class_float>` **map_get_cell_size** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the map cell size used to rasterize the navigation mesh vertices on the XZ plane.
+返回在 XZ 平面上栅格化导航网格顶点所使用的地图单元格大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1089,7 +1089,7 @@ Returns the map cell size used to rasterize the navigation mesh vertices on the 
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
+返回导航网格表面上与提供的 ``to_point`` 距离最近的点。
 
 .. rst-class:: classref-item-separator
 
@@ -1101,7 +1101,7 @@ Returns the point closest to the provided ``to_point`` on the navigation mesh su
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point_normal** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the normal for the point returned by :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>`.
+返回 :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>` 所返回的点的法线。
 
 .. rst-class:: classref-item-separator
 
@@ -1113,7 +1113,7 @@ Returns the normal for the point returned by :ref:`map_get_closest_point<class_N
 
 :ref:`RID<class_RID>` **map_get_closest_point_owner** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the owner region RID for the point returned by :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>`.
+返回由 :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>` 返回的点的所有者地区的 RID。
 
 .. rst-class:: classref-item-separator
 
@@ -1125,7 +1125,7 @@ Returns the owner region RID for the point returned by :ref:`map_get_closest_poi
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point_to_segment** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |const|
 
-Returns the closest point between the navigation surface and the segment.
+返回导航表面与该线段之间最接近的点。
 
 .. rst-class:: classref-item-separator
 
@@ -1137,7 +1137,7 @@ Returns the closest point between the navigation surface and the segment.
 
 :ref:`float<class_float>` **map_get_edge_connection_margin** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the edge connection margin of the map. This distance is the minimum vertex distance needed to connect two edges from different regions.
+返回地图的边界连接边距。这是让两个不同地区的边界相连所需的最小顶点距离。
 
 .. rst-class:: classref-item-separator
 
@@ -1149,7 +1149,7 @@ Returns the edge connection margin of the map. This distance is the minimum vert
 
 :ref:`float<class_float>` **map_get_link_connection_radius** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the link connection radius of the map. This distance is the maximum range any link will search for navigation mesh polygons to connect to.
+返回该地图的链接连接半径。该距离是任何链接将搜索要连接的导航网格多边形的最大范围。
 
 .. rst-class:: classref-item-separator
 
@@ -1161,7 +1161,7 @@ Returns the link connection radius of the map. This distance is the maximum rang
 
 :ref:`RID[]<class_RID>` **map_get_links** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+返回当前分配给请求的导航地图 ``map`` 的所有导航链接的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1173,7 +1173,7 @@ Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned
 
 :ref:`RID[]<class_RID>` **map_get_obstacles** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns all navigation obstacle :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+返回当前分配给请求的导航地图 ``map`` 的所有导航障碍物的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1185,7 +1185,7 @@ Returns all navigation obstacle :ref:`RID<class_RID>`\ s that are currently assi
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **map_get_path** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` origin, :ref:`Vector3<class_Vector3>` destination, :ref:`bool<class_bool>` optimize, :ref:`int<class_int>` navigation_layers=1 **)** |const|
 
-Returns the navigation path to reach the destination from the origin. ``navigation_layers`` is a bitmask of all region navigation layers that are allowed to be in the path.
+返回从原点到达目的地的导航路径。\ ``navigation_layers`` 是被允许在路径中的所有区块导航层的位掩码。
 
 .. rst-class:: classref-item-separator
 
@@ -1197,7 +1197,7 @@ Returns the navigation path to reach the destination from the origin. ``navigati
 
 :ref:`RID[]<class_RID>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+返回当前分配给所请求的导航 ``map`` 的所有导航区块的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1209,7 +1209,7 @@ Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assig
 
 :ref:`Vector3<class_Vector3>` **map_get_up** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the map's up direction.
+返回地图的上方向。
 
 .. rst-class:: classref-item-separator
 
@@ -1221,7 +1221,7 @@ Returns the map's up direction.
 
 :ref:`bool<class_bool>` **map_get_use_edge_connections** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns true if the navigation ``map`` allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+如果导航地图 ``map`` 允许导航区块使用边缘连接与位于导航地图边缘连接边距范围内的其他导航区块相连接，则返回 true。
 
 .. rst-class:: classref-item-separator
 
@@ -1233,7 +1233,7 @@ Returns true if the navigation ``map`` allows navigation regions to use edge con
 
 :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns true if the map is active.
+如果地图处于活动状态，则返回 true。
 
 .. rst-class:: classref-item-separator
 
@@ -1245,7 +1245,7 @@ Returns true if the map is active.
 
 void **map_set_active** **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` active **)**
 
-Sets the map active.
+设置地图的激活态。
 
 .. rst-class:: classref-item-separator
 
@@ -1257,7 +1257,7 @@ Sets the map active.
 
 void **map_set_cell_height** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` cell_height **)**
 
-Sets the map cell height used to rasterize the navigation mesh vertices on the Y axis. Must match with the cell height of the used navigation meshes.
+设置在 Y 轴上栅格化导航网格顶点所使用的地图单元格高度。必须与所使用的导航网格的单元格高度相匹配。
 
 .. rst-class:: classref-item-separator
 
@@ -1269,7 +1269,7 @@ Sets the map cell height used to rasterize the navigation mesh vertices on the Y
 
 void **map_set_cell_size** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` cell_size **)**
 
-Sets the map cell size used to rasterize the navigation mesh vertices on the XZ plane. Must match with the cell size of the used navigation meshes.
+设置在 XZ 平面上栅格化导航网格顶点所使用的地图单元格大小。必须与所使用的导航网格的单元格大小相匹配。
 
 .. rst-class:: classref-item-separator
 
@@ -1281,7 +1281,7 @@ Sets the map cell size used to rasterize the navigation mesh vertices on the XZ 
 
 void **map_set_edge_connection_margin** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` margin **)**
 
-Set the map edge connection margin used to weld the compatible region edges.
+设置用于焊接兼容地区边界的地图边界连接边距。
 
 .. rst-class:: classref-item-separator
 
@@ -1293,7 +1293,7 @@ Set the map edge connection margin used to weld the compatible region edges.
 
 void **map_set_link_connection_radius** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` radius **)**
 
-Set the map's link connection radius used to connect links to navigation polygons.
+设置该地图用于连接链接和导航多边形的链接连接半径。
 
 .. rst-class:: classref-item-separator
 
@@ -1305,7 +1305,7 @@ Set the map's link connection radius used to connect links to navigation polygon
 
 void **map_set_up** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` up **)**
 
-Sets the map up direction.
+设置地图的上方向。
 
 .. rst-class:: classref-item-separator
 
@@ -1317,7 +1317,7 @@ Sets the map up direction.
 
 void **map_set_use_edge_connections** **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` enabled **)**
 
-Set the navigation ``map`` edge connection use. If ``enabled`` is ``true``, the navigation map allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+设置导航地图 ``map`` 的边缘连接使用情况。如果 ``enabled`` 为 ``true``\ ，则导航地图允许导航区块使用边缘连接与位于导航地图边缘连接边距范围内的其他导航区块相连接。
 
 .. rst-class:: classref-item-separator
 
@@ -1329,7 +1329,7 @@ Set the navigation ``map`` edge connection use. If ``enabled`` is ``true``, the 
 
 :ref:`RID<class_RID>` **obstacle_create** **(** **)**
 
-Creates a new obstacle.
+新建障碍物。
 
 .. rst-class:: classref-item-separator
 
@@ -1341,7 +1341,7 @@ Creates a new obstacle.
 
 :ref:`bool<class_bool>` **obstacle_get_avoidance_enabled** **(** :ref:`RID<class_RID>` obstacle **)** |const|
 
-Returns ``true`` if the provided ``obstacle`` has avoidance enabled.
+如果给定的 ``obstacle`` 启用了避障，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1353,7 +1353,7 @@ Returns ``true`` if the provided ``obstacle`` has avoidance enabled.
 
 :ref:`RID<class_RID>` **obstacle_get_map** **(** :ref:`RID<class_RID>` obstacle **)** |const|
 
-Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is currently assigned to.
+返回请求的障碍物 ``obstacle`` 当前分配的导航地图 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1365,7 +1365,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is c
 
 :ref:`bool<class_bool>` **obstacle_get_paused** **(** :ref:`RID<class_RID>` obstacle **)** |const|
 
-Returns ``true`` if the specified ``obstacle`` is paused.
+如果指定的 ``obstacle`` 被暂停，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1377,7 +1377,7 @@ Returns ``true`` if the specified ``obstacle`` is paused.
 
 :ref:`bool<class_bool>` **obstacle_get_use_3d_avoidance** **(** :ref:`RID<class_RID>` obstacle **)** |const|
 
-Returns ``true`` if the provided ``obstacle`` uses avoidance in 3D space Vector3(x,y,z) instead of horizontal 2D Vector2(x,y) / Vector3(x,0.0,z).
+如果提供的 ``obstacle`` 使用 3D 空间的 Vector3(x,y,z)，不使用水平 2D Vector2(x,y) / Vector3(x,0.0,z)，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1389,7 +1389,7 @@ Returns ``true`` if the provided ``obstacle`` uses avoidance in 3D space Vector3
 
 void **obstacle_set_avoidance_enabled** **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using agents.
+如果 ``enabled`` 为 ``true``\ ，则提供的障碍物 ``obstacle`` 会影响使用代理的避障。
 
 .. rst-class:: classref-item-separator
 
@@ -1401,7 +1401,7 @@ If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using ag
 
 void **obstacle_set_avoidance_layers** **(** :ref:`RID<class_RID>` obstacle, :ref:`int<class_int>` layers **)**
 
-Set the obstacles's ``avoidance_layers`` bitmask.
+设置障碍物的避障层 ``avoidance_layers`` 位掩码。
 
 .. rst-class:: classref-item-separator
 
@@ -1413,7 +1413,7 @@ Set the obstacles's ``avoidance_layers`` bitmask.
 
 void **obstacle_set_height** **(** :ref:`RID<class_RID>` obstacle, :ref:`float<class_float>` height **)**
 
-Sets the ``height`` for the ``obstacle``. In 3D agents will ignore obstacles that are above or below them while using 2D avoidance.
+设置 ``obstacle`` 的高度 ``height``\ 。3D 代理会忽略位于其上方和下方的障碍物，使用 2D 避障。
 
 .. rst-class:: classref-item-separator
 
@@ -1425,7 +1425,7 @@ Sets the ``height`` for the ``obstacle``. In 3D agents will ignore obstacles tha
 
 void **obstacle_set_map** **(** :ref:`RID<class_RID>` obstacle, :ref:`RID<class_RID>` map **)**
 
-Assigns the ``obstacle`` to a navigation map.
+将 ``obstacle`` 分配给导航地图。
 
 .. rst-class:: classref-item-separator
 
@@ -1437,7 +1437,7 @@ Assigns the ``obstacle`` to a navigation map.
 
 void **obstacle_set_paused** **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` paused **)**
 
-If ``paused`` is true the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
+如果 ``paused`` 为 true，则不会处理指定的障碍物 ``obstacle``\ ，例如不会影响避障速度。
 
 .. rst-class:: classref-item-separator
 
@@ -1449,7 +1449,7 @@ If ``paused`` is true the specified ``obstacle`` will not be processed, e.g. aff
 
 void **obstacle_set_position** **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector3<class_Vector3>` position **)**
 
-Updates the ``position`` in world space for the ``obstacle``.
+为 ``obstacle`` 更新世界空间中的位置 ``position``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1461,7 +1461,7 @@ Updates the ``position`` in world space for the ``obstacle``.
 
 void **obstacle_set_radius** **(** :ref:`RID<class_RID>` obstacle, :ref:`float<class_float>` radius **)**
 
-Sets the radius of the dynamic obstacle.
+设置动态障碍物的半径。
 
 .. rst-class:: classref-item-separator
 
@@ -1473,7 +1473,7 @@ Sets the radius of the dynamic obstacle.
 
 void **obstacle_set_use_3d_avoidance** **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` enabled **)**
 
-Sets if the ``obstacle`` uses the 2D avoidance or the 3D avoidance while avoidance is enabled.
+设置 ``obstacle`` 在启用避障时使用 2D 避障还是 3D 避障。
 
 .. rst-class:: classref-item-separator
 
@@ -1485,7 +1485,7 @@ Sets if the ``obstacle`` uses the 2D avoidance or the 3D avoidance while avoidan
 
 void **obstacle_set_velocity** **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector3<class_Vector3>` velocity **)**
 
-Sets ``velocity`` of the dynamic ``obstacle``. Allows other agents to better predict the movement of the dynamic obstacle. Only works in combination with the radius of the obstacle.
+将动态障碍物 ``obstacle`` 的速度设置为 ``velocity``\ 。能够让其他代理更好地预测该动态障碍物的移动。仅在与障碍物半径一同使用时有效。
 
 .. rst-class:: classref-item-separator
 
@@ -1497,7 +1497,7 @@ Sets ``velocity`` of the dynamic ``obstacle``. Allows other agents to better pre
 
 void **obstacle_set_vertices** **(** :ref:`RID<class_RID>` obstacle, :ref:`PackedVector3Array<class_PackedVector3Array>` vertices **)**
 
-Sets the outline vertices for the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out.
+设置障碍物的轮廓顶点。如果顶点顺时针缠绕，则障碍物会将代理向内部推挤，否则向外推挤。
 
 .. rst-class:: classref-item-separator
 
@@ -1509,11 +1509,11 @@ Sets the outline vertices for the obstacle. If the vertices are winded in clockw
 
 void **parse_source_geometry_data** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` source_geometry_data, :ref:`Node<class_Node>` root_node, :ref:`Callable<class_Callable>` callback=Callable() **)**
 
-Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to the properties of ``navigation_mesh``. Updates the provided ``source_geometry_data`` resource with the resulting data. The resource can then be used to bake a navigation mesh with :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>`. After the process is finished the optional ``callback`` will be called.
+根据 ``navigation_mesh`` 的属性解析 :ref:`SceneTree<class_SceneTree>` 中的源几何体。会使用解析的结果对提供的 ``source_geometry_data`` 资源进行更新。后续可以在使用 :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` 烘焙导航网格时使用该资源。解析过程完成后，会调用可选的 ``callback``\ 。
 
-\ **Note:** This function needs to run on the main thread or with a deferred call as the SceneTree is not thread-safe.
+\ **注意：**\ 因为 SceneTree 并不是线程安全的，所以这个函数需要在主线程执行或使用延迟调用。
 
-\ **Performance:** While convenient, reading data arrays from :ref:`Mesh<class_Mesh>` resources can affect the frame rate negatively. The data needs to be received from the GPU, stalling the :ref:`RenderingServer<class_RenderingServer>` in the process. For performance prefer the use of e.g. collision shapes or creating the data arrays entirely in code.
+\ **注意：**\ 从 :ref:`Mesh<class_Mesh>` 资源读取数据数组虽然很方便，但会对帧率造成负面影响。这些数据需要从 GPU 获取，卡住正在处理的 :ref:`RenderingServer<class_RenderingServer>`\ 。出于性能考量，请优先使用碰撞形状或在代码中创建完整的数据数组等方法。
 
 .. rst-class:: classref-item-separator
 
@@ -1525,7 +1525,7 @@ Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to th
 
 void **query_path** **(** :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` parameters, :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result **)** |const|
 
-Queries a path in a given navigation map. Start and target position and other parameters are defined through :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>`. Updates the provided :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result object with the path among other results requested by the query.
+在给定导航地图中查询路径。起点、目标点以及其他参数通过 :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` 定义。会使用路径和其他查询中请求的信息更新提供的 :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1537,9 +1537,9 @@ Queries a path in a given navigation map. Start and target position and other pa
 
 void **region_bake_navigation_mesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**
 
-Bakes the ``navigation_mesh`` with bake source geometry collected starting from the ``root_node``.
+使用从 ``root_node`` 开始收集的烘焙源几何体来烘焙 ``navigation_mesh``\ 。
 
-\ *Deprecated.* This function is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` to parse the SceneTree for nodes that should contribute to the navigation mesh baking. The SceneTree parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` to bake a navigation mesh.
+\ *已弃用。* 由于核心线程更改，该函数已弃用。要更新现有代码，请先创建一个 :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` 资源。将该资源与 :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` 结合使用来解析 SceneTree 以查找有助于导航网格烘焙的节点。SceneTree 解析需要在主线程上进行。解析完成后，请在调用 :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` 时使用该资源对导航网格进行烘焙。
 
 .. rst-class:: classref-item-separator
 
@@ -1551,7 +1551,7 @@ Bakes the ``navigation_mesh`` with bake source geometry collected starting from 
 
 :ref:`RID<class_RID>` **region_create** **(** **)**
 
-Creates a new region.
+创建一个新的地区。
 
 .. rst-class:: classref-item-separator
 
@@ -1563,7 +1563,7 @@ Creates a new region.
 
 :ref:`Vector3<class_Vector3>` **region_get_connection_pathway_end** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` connection **)** |const|
 
-Returns the ending point of a connection door. ``connection`` is an index between 0 and the return value of :ref:`region_get_connections_count<class_NavigationServer3D_method_region_get_connections_count>`.
+返回连接门的终点。\ ``connection`` 是一个索引，介于 0 和 :ref:`region_get_connections_count<class_NavigationServer3D_method_region_get_connections_count>` 的返回值之间。
 
 .. rst-class:: classref-item-separator
 
@@ -1575,7 +1575,7 @@ Returns the ending point of a connection door. ``connection`` is an index betwee
 
 :ref:`Vector3<class_Vector3>` **region_get_connection_pathway_start** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` connection **)** |const|
 
-Returns the starting point of a connection door. ``connection`` is an index between 0 and the return value of :ref:`region_get_connections_count<class_NavigationServer3D_method_region_get_connections_count>`.
+返回连接门的起点。\ ``connection`` 是一个索引，介于 0 和 :ref:`region_get_connections_count<class_NavigationServer3D_method_region_get_connections_count>` 的返回值之间。
 
 .. rst-class:: classref-item-separator
 
@@ -1587,7 +1587,7 @@ Returns the starting point of a connection door. ``connection`` is an index betw
 
 :ref:`int<class_int>` **region_get_connections_count** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns how many connections this ``region`` has with other regions in the map.
+返回 ``region`` 地区与其他地区在地图上有多少连接。
 
 .. rst-class:: classref-item-separator
 
@@ -1599,7 +1599,7 @@ Returns how many connections this ``region`` has with other regions in the map.
 
 :ref:`bool<class_bool>` **region_get_enabled** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns ``true`` if the specified ``region`` is enabled.
+如果指定的 ``region`` 已启用，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1611,7 +1611,7 @@ Returns ``true`` if the specified ``region`` is enabled.
 
 :ref:`float<class_float>` **region_get_enter_cost** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the enter cost of this ``region``.
+返回 ``region`` 地区的进入消耗。
 
 .. rst-class:: classref-item-separator
 
@@ -1623,7 +1623,7 @@ Returns the enter cost of this ``region``.
 
 :ref:`RID<class_RID>` **region_get_map** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is currently assigned to.
+返回请求的 ``region`` 地区所关联的导航地图的 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1635,7 +1635,7 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is cur
 
 :ref:`int<class_int>` **region_get_navigation_layers** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the region's navigation layers.
+返回该地区的导航层。
 
 .. rst-class:: classref-item-separator
 
@@ -1647,7 +1647,7 @@ Returns the region's navigation layers.
 
 :ref:`int<class_int>` **region_get_owner_id** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the ``ObjectID`` of the object which manages this region.
+返回管理该地区对象的 ``ObjectID``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1659,7 +1659,7 @@ Returns the ``ObjectID`` of the object which manages this region.
 
 :ref:`float<class_float>` **region_get_travel_cost** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the travel cost of this ``region``.
+返回 ``region`` 地区的移动消耗。
 
 .. rst-class:: classref-item-separator
 
@@ -1671,7 +1671,7 @@ Returns the travel cost of this ``region``.
 
 :ref:`bool<class_bool>` **region_get_use_edge_connections** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns true if the navigation ``region`` is set to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+如果导航区块 ``region`` 被设置为使用边缘连接与位于导航地图边缘连接边距范围内的其他导航区块相连接，则返回 true。
 
 .. rst-class:: classref-item-separator
 
@@ -1683,11 +1683,11 @@ Returns true if the navigation ``region`` is set to use edge connections to conn
 
 :ref:`bool<class_bool>` **region_owns_point** **(** :ref:`RID<class_RID>` region, :ref:`Vector3<class_Vector3>` point **)** |const|
 
-Returns ``true`` if the provided ``point`` in world space is currently owned by the provided navigation ``region``. Owned in this context means that one of the region's navigation mesh polygon faces has a possible position at the closest distance to this point compared to all other navigation meshes from other navigation regions that are also registered on the navigation map of the provided region.
+如果提供的世界空间中的 ``point`` 当前由提供的导航区块 ``region`` 拥有，则返回 ``true``\ 。在这里的上下文中，“拥有”意味着与来自其他导航区块的所有其他导航网格相比，该区块的导航网格多边形面中有一个距离该点最近的可能位置，这些其他导航区块也已在提供的区块的导航地图上注册。
 
-If multiple navigation meshes have positions at equal distance the navigation region whose polygons are processed first wins the ownership. Polygons are processed in the same order that navigation regions were registered on the NavigationServer.
+如果有多个导航网格存在符合条件的位置并且距离相等，那么其多边形先被处理的导航区块将赢得所有权。多边形的处理顺序与导航区块在 NavigationServer 上的注册顺序一致。
 
-\ **Note:** If navigation meshes from different navigation regions overlap (which should be avoided in general) the result might not be what is expected.
+\ **注意：**\ 如果来自不同导航区块的导航网格存在重叠（通常应当避免），可能会得到预料之外的结果。
 
 .. rst-class:: classref-item-separator
 
@@ -1699,7 +1699,7 @@ If multiple navigation meshes have positions at equal distance the navigation re
 
 void **region_set_enabled** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true``, the specified ``region`` will contribute to its current navigation map.
+如果 ``enabled`` 为 ``true``\ ，则指定的 ``region`` 会在它的当前导航地图中生效。
 
 .. rst-class:: classref-item-separator
 
@@ -1711,7 +1711,7 @@ If ``enabled`` is ``true``, the specified ``region`` will contribute to its curr
 
 void **region_set_enter_cost** **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` enter_cost **)**
 
-Sets the ``enter_cost`` for this ``region``.
+设置 ``region`` 地区的进入消耗 ``enter_cost``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1723,7 +1723,7 @@ Sets the ``enter_cost`` for this ``region``.
 
 void **region_set_map** **(** :ref:`RID<class_RID>` region, :ref:`RID<class_RID>` map **)**
 
-Sets the map for the region.
+设置该地区的地图。
 
 .. rst-class:: classref-item-separator
 
@@ -1735,7 +1735,7 @@ Sets the map for the region.
 
 void **region_set_navigation_layers** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` navigation_layers **)**
 
-Set the region's navigation layers. This allows selecting regions from a path request (when using :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>`).
+设置地区的导航层。能够在路径请求中选择地区（使用 :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1747,7 +1747,7 @@ Set the region's navigation layers. This allows selecting regions from a path re
 
 void **region_set_navigation_mesh** **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**
 
-Sets the navigation mesh for the region.
+设置该地图的导航网格。
 
 .. rst-class:: classref-item-separator
 
@@ -1759,7 +1759,7 @@ Sets the navigation mesh for the region.
 
 void **region_set_owner_id** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` owner_id **)**
 
-Set the ``ObjectID`` of the object which manages this region.
+设置管理该地区对象的 ``ObjectID``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1771,7 +1771,7 @@ Set the ``ObjectID`` of the object which manages this region.
 
 void **region_set_transform** **(** :ref:`RID<class_RID>` region, :ref:`Transform3D<class_Transform3D>` transform **)**
 
-Sets the global transformation for the region.
+设置该地区的全局变换。
 
 .. rst-class:: classref-item-separator
 
@@ -1783,7 +1783,7 @@ Sets the global transformation for the region.
 
 void **region_set_travel_cost** **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**
 
-Sets the ``travel_cost`` for this ``region``.
+设置 ``region`` 地区的移动消耗 ``travel_cost``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1795,7 +1795,7 @@ Sets the ``travel_cost`` for this ``region``.
 
 void **region_set_use_edge_connections** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
 
-If ``enabled`` is ``true``, the navigation ``region`` will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+如果 ``enabled`` 为 ``true``\ ，则导航区块 ``region`` 将使用边缘连接来与位于导航地图边缘连接边距范围内的其他导航区块相连接。
 
 .. rst-class:: classref-item-separator
 
@@ -1807,7 +1807,7 @@ If ``enabled`` is ``true``, the navigation ``region`` will use edge connections 
 
 void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
-Control activation of this server.
+控制这个服务器是否激活。
 
 .. rst-class:: classref-item-separator
 
@@ -1819,12 +1819,12 @@ Control activation of this server.
 
 void **set_debug_enabled** **(** :ref:`bool<class_bool>` enabled **)**
 
-If ``true`` enables debug mode on the NavigationServer.
+如果为 ``true``\ ，则该 NavigationServer 启用了调试模式。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

@@ -10,23 +10,23 @@
 Shortcut
 ========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A shortcut for binding input.
+用于绑定输入的快捷键。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from an :ref:`InputEvent<class_InputEvent>` (also known as hotkeys).
+快捷键通常用于通过 :ref:`InputEvent<class_InputEvent>` 与 :ref:`Control<class_Control>` 元素进行交互（也叫热键）。
 
-One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`'s, allowing the possibility of triggering one action with multiple different inputs.
+一个快捷键可以包含多个 :ref:`InputEvent<class_InputEvent>`\ ，因此能够使用多种不同的输入触发某个动作。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -37,8 +37,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -57,8 +57,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_Shortcut_property_events:
 
@@ -71,9 +71,9 @@ Property Descriptions
 - void **set_events** **(** :ref:`Array<class_Array>` value **)**
 - :ref:`Array<class_Array>` **get_events** **(** **)**
 
-The shortcut's :ref:`InputEvent<class_InputEvent>` array.
+快捷键的 :ref:`InputEvent<class_InputEvent>` 数组。
 
-Generally the :ref:`InputEvent<class_InputEvent>` used is an :ref:`InputEventKey<class_InputEventKey>`, though it can be any :ref:`InputEvent<class_InputEvent>`, including an :ref:`InputEventAction<class_InputEventAction>`.
+通常使用的 :ref:`InputEvent<class_InputEvent>` 是 :ref:`InputEventKey<class_InputEventKey>`\ ，尽管也可以是任何 :ref:`InputEvent<class_InputEvent>`\ ，包括 :ref:`InputEventAction<class_InputEventAction>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -81,8 +81,8 @@ Generally the :ref:`InputEvent<class_InputEvent>` used is an :ref:`InputEventKey
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_Shortcut_method_get_as_text:
 
@@ -90,7 +90,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_as_text** **(** **)** |const|
 
-Returns the shortcut's first valid :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
+返回该快捷键的第一个有效 :ref:`InputEvent<class_InputEvent>` 的 :ref:`String<class_String>` 形式。
 
 .. rst-class:: classref-item-separator
 
@@ -102,7 +102,7 @@ Returns the shortcut's first valid :ref:`InputEvent<class_InputEvent>` as a :ref
 
 :ref:`bool<class_bool>` **has_valid_event** **(** **)** |const|
 
-Returns whether :ref:`events<class_Shortcut_property_events>` contains an :ref:`InputEvent<class_InputEvent>` which is valid.
+返回 :ref:`events<class_Shortcut_property_events>` 是否包含有效的 :ref:`InputEvent<class_InputEvent>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -114,12 +114,12 @@ Returns whether :ref:`events<class_Shortcut_property_events>` contains an :ref:`
 
 :ref:`bool<class_bool>` **matches_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
 
-Returns whether any :ref:`InputEvent<class_InputEvent>` in :ref:`events<class_Shortcut_property_events>` equals ``event``.
+返回 :ref:`events<class_Shortcut_property_events>` 中是否有等于 ``event`` 的 :ref:`InputEvent<class_InputEvent>`\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

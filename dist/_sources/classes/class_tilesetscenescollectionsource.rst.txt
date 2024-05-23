@@ -10,23 +10,23 @@
 TileSetScenesCollectionSource
 =============================
 
-**Inherits:** :ref:`TileSetSource<class_TileSetSource>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`TileSetSource<class_TileSetSource>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Exposes a set of scenes as tiles for a :ref:`TileSet<class_TileSet>` resource.
+以图块的形式向 :ref:`TileSet<class_TileSet>` 资源暴露一组场景。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-When placed on a :ref:`TileMap<class_TileMap>`, tiles from **TileSetScenesCollectionSource** will automatically instantiate an associated scene at the cell's position in the TileMap.
+当放置在 :ref:`TileMap<class_TileMap>` 上时，来自 **TileSetScenesCollectionSource** 中的图块将在 TileMap 中的单元格位置自动实例化一个关联场景。
 
-Scenes are instantiated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instantiate/free the scene accordingly.
+当该 :ref:`TileMap<class_TileMap>` 进入树时，场景被实例化为该 :ref:`TileMap<class_TileMap>` 的子级。如果在已在树内的 :ref:`TileMap<class_TileMap>` 中添加/移除一个场景图块，则该 :ref:`TileMap<class_TileMap>` 将相应地自动实例化/释放该场景。
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -61,8 +61,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_TileSetScenesCollectionSource_method_create_scene_tile:
 
@@ -70,9 +70,9 @@ Method Descriptions
 
 :ref:`int<class_int>` **create_scene_tile** **(** :ref:`PackedScene<class_PackedScene>` packed_scene, :ref:`int<class_int>` id_override=-1 **)**
 
-Creates a scene-based tile out of the given scene.
+从给定的场景创建基于场景的图块。
 
-Returns a newly generated unique ID.
+返回新生成的唯一 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -84,7 +84,7 @@ Returns a newly generated unique ID.
 
 :ref:`int<class_int>` **get_next_scene_tile_id** **(** **)** |const|
 
-Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetScenesCollectionSource_method_create_scene_tile>` would return.
+返回后续调用 :ref:`create_scene_tile<class_TileSetScenesCollectionSource_method_create_scene_tile>` 时会返回的场景 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -96,7 +96,7 @@ Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetSc
 
 :ref:`bool<class_bool>` **get_scene_tile_display_placeholder** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns whether the scene tile with ``id`` displays a placeholder in the editor.
+返回 ID 为 ``id`` 的场景图块是否在编辑器中显示占位图。
 
 .. rst-class:: classref-item-separator
 
@@ -108,7 +108,7 @@ Returns whether the scene tile with ``id`` displays a placeholder in the editor.
 
 :ref:`int<class_int>` **get_scene_tile_id** **(** :ref:`int<class_int>` index **)**
 
-Returns the scene tile ID of the scene tile at ``index``.
+返回索引为 ``index`` 的场景图块的场景图块 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -120,7 +120,7 @@ Returns the scene tile ID of the scene tile at ``index``.
 
 :ref:`PackedScene<class_PackedScene>` **get_scene_tile_scene** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with ``id``.
+返回 ID 为 ``id`` 的场景图块的 :ref:`PackedScene<class_PackedScene>` 资源。
 
 .. rst-class:: classref-item-separator
 
@@ -132,7 +132,7 @@ Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with ``
 
 :ref:`int<class_int>` **get_scene_tiles_count** **(** **)**
 
-Returns the number or scene tiles this TileSet source has.
+返回该 TileSet 源中场景图块的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -144,7 +144,7 @@ Returns the number or scene tiles this TileSet source has.
 
 :ref:`bool<class_bool>` **has_scene_tile_id** **(** :ref:`int<class_int>` id **)**
 
-Returns whether this TileSet source has a scene tile with ``id``.
+返回该 TileSet 源是否包含 ID 为 ``id`` 的场景图块。
 
 .. rst-class:: classref-item-separator
 
@@ -156,7 +156,7 @@ Returns whether this TileSet source has a scene tile with ``id``.
 
 void **remove_scene_tile** **(** :ref:`int<class_int>` id **)**
 
-Remove the scene tile with ``id``.
+移除 ID 为 ``id`` 的场景图块。
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ Remove the scene tile with ``id``.
 
 void **set_scene_tile_display_placeholder** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` display_placeholder **)**
 
-Sets whether or not the scene tile with ``id`` should display a placeholder in the editor. This might be useful for scenes that are not visible.
+设置 ID 为 ``id`` 的场景图块是否应该在编辑器中显示为占位符。对不可见的场景可能有用。
 
 .. rst-class:: classref-item-separator
 
@@ -180,7 +180,7 @@ Sets whether or not the scene tile with ``id`` should display a placeholder in t
 
 void **set_scene_tile_id** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` new_id **)**
 
-Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with an ID equal to ``new_id``.
+将场景图块的 ID 从 ``id`` 改为 ``new_id``\ 。如果已经存在 ID 为 ``new_id`` 的图块则会失败。
 
 .. rst-class:: classref-item-separator
 
@@ -192,12 +192,12 @@ Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is 
 
 void **set_scene_tile_scene** **(** :ref:`int<class_int>` id, :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
-Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with ``id``. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMap.
+将 :ref:`PackedScene<class_PackedScene>` 资源分配给 ID 为 ``id`` 的场景图块。如果该场景扩展的不是 CanvasItem 则会失败，因为将场景放置到 TileMap 上需要位置属性。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

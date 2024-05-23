@@ -10,18 +10,18 @@
 SpinBox
 =======
 
-**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-An input field for numbers.
+数字的输入字段。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-**SpinBox** is a numerical input text field. It allows entering integers and floating point numbers.
+**SpinBox** 是一种用于输入数值的文本字段，允许输入整数和浮点数。
 
-\ **Example:**\ 
+\ **示例：**\ 
 
 
 .. tabs::
@@ -44,20 +44,20 @@ Description
 
 
 
-The above code will create a **SpinBox**, disable context menu on it and set the text alignment to right.
+上面的代码会创建一个 **SpinBox**\ ，禁用其中的上下文菜单，并将文本设置为右对齐。
 
-See :ref:`Range<class_Range>` class for more options over the **SpinBox**.
+\ **SpinBox** 的更多选项见 :ref:`Range<class_Range>` 类。
 
-\ **Note:** With the **SpinBox**'s context menu disabled, you can right-click the bottom half of the spinbox to set the value to its minimum, while right-clicking the top half sets the value to its maximum.
+\ **注意：**\ **SpinBox** 的上下文菜单被禁用时，右键单击微调框的下半部分可以将取值设置最小值，右键单击上半部分可以将取值设置最大值。
 
-\ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+\ **注意：**\ **SpinBox** 依赖底层的 :ref:`LineEdit<class_LineEdit>` 节点。要为 **SpinBox** 的背景设置主题，请为 :ref:`LineEdit<class_LineEdit>` 添加主题项目并进行自定义。
 
-\ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.
+\ **注意：**\ 如果你想要为底层的 :ref:`LineEdit<class_LineEdit>` 实现拖放，可以对 :ref:`get_line_edit<class_SpinBox_method_get_line_edit>` 所返回的节点使用 :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>`\ 。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -84,8 +84,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -98,8 +98,8 @@ Methods
 
 .. rst-class:: classref-reftable-group
 
-Theme Properties
-----------------
+主题属性
+--------
 
 .. table::
    :widths: auto
@@ -114,8 +114,8 @@ Theme Properties
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_SpinBox_property_alignment:
 
@@ -128,7 +128,7 @@ Property Descriptions
 - void **set_horizontal_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment** **(** **)**
 
-Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
+更改底层 :ref:`LineEdit<class_LineEdit>` 的对齐方式。
 
 .. rst-class:: classref-item-separator
 
@@ -145,7 +145,7 @@ Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
 - void **set_custom_arrow_step** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_custom_arrow_step** **(** **)**
 
-If not ``0``, :ref:`Range.value<class_Range_property_value>` will always be rounded to a multiple of :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` when interacting with the arrow buttons of the **SpinBox**.
+如果不是 ``0``\ ，则在与 **SpinBox** 的箭头按钮交互时，\ :ref:`Range.value<class_Range_property_value>` 将始终四舍五入为 :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` 的倍数。
 
 .. rst-class:: classref-item-separator
 
@@ -162,7 +162,7 @@ If not ``0``, :ref:`Range.value<class_Range_property_value>` will always be roun
 - void **set_editable** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_editable** **(** **)**
 
-If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
+如果为 ``true``\ ，则 **SpinBox** 将是可编辑的。否则，它将是只读的。
 
 .. rst-class:: classref-item-separator
 
@@ -179,7 +179,7 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 - void **set_prefix** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_prefix** **(** **)**
 
-Adds the specified prefix string before the numerical value of the **SpinBox**.
+在 **SpinBox** 的数值前添加指定的前缀字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -196,7 +196,7 @@ Adds the specified prefix string before the numerical value of the **SpinBox**.
 - void **set_select_all_on_focus** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_select_all_on_focus** **(** **)**
 
-If ``true``, the **SpinBox** will select the whole text when the :ref:`LineEdit<class_LineEdit>` gains focus. Clicking the up and down arrows won't trigger this behavior.
+如果为 ``true``\ ，则该 **SpinBox** 会在 :ref:`LineEdit<class_LineEdit>` 获得焦点时选中整个文本。点击上下箭头不会触发这种行为。
 
 .. rst-class:: classref-item-separator
 
@@ -213,7 +213,7 @@ If ``true``, the **SpinBox** will select the whole text when the :ref:`LineEdit<
 - void **set_suffix** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_suffix** **(** **)**
 
-Adds the specified suffix string after the numerical value of the **SpinBox**.
+在 **SpinBox** 的数值后添加指定的后缀字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -230,7 +230,7 @@ Adds the specified suffix string after the numerical value of the **SpinBox**.
 - void **set_update_on_text_changed** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_update_on_text_changed** **(** **)**
 
-Sets the value of the :ref:`Range<class_Range>` for this **SpinBox** when the :ref:`LineEdit<class_LineEdit>` text is *changed* instead of *submitted*. See :ref:`LineEdit.text_changed<class_LineEdit_signal_text_changed>` and :ref:`LineEdit.text_submitted<class_LineEdit_signal_text_submitted>`.
+当 :ref:`LineEdit<class_LineEdit>` 的文本\ *发生变化*\ 而不是\ *被提交*\ 时，设置这个 **SpinBox** 的 :ref:`Range<class_Range>` 的值。见 :ref:`LineEdit.text_changed<class_LineEdit_signal_text_changed>` 和 :ref:`LineEdit.text_submitted<class_LineEdit_signal_text_submitted>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -238,8 +238,8 @@ Sets the value of the :ref:`Range<class_Range>` for this **SpinBox** when the :r
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_SpinBox_method_apply:
 
@@ -247,7 +247,7 @@ Method Descriptions
 
 void **apply** **(** **)**
 
-Applies the current value of this **SpinBox**.
+应用此 **SpinBox** 的当前值。
 
 .. rst-class:: classref-item-separator
 
@@ -259,9 +259,9 @@ Applies the current value of this **SpinBox**.
 
 :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
-Returns the :ref:`LineEdit<class_LineEdit>` instance from this **SpinBox**. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
+返回这个 **SpinBox** 中的 :ref:`LineEdit<class_LineEdit>` 实例。你可以用它来访问 :ref:`LineEdit<class_LineEdit>` 的属性和方法。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是一个必要的内部节点，移除和释放它可能会导致崩溃。如果你想隐藏它或它的任何子节点，请使用其 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-section-separator
 
@@ -269,8 +269,8 @@ Returns the :ref:`LineEdit<class_LineEdit>` instance from this **SpinBox**. You 
 
 .. rst-class:: classref-descriptions-group
 
-Theme Property Descriptions
----------------------------
+主题属性说明
+------------
 
 .. _class_SpinBox_theme_icon_updown:
 
@@ -278,12 +278,12 @@ Theme Property Descriptions
 
 :ref:`Texture2D<class_Texture2D>` **updown**
 
-Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the **SpinBox**.
+为该 **SpinBox** 的上下箭头设置自定义的 :ref:`Texture2D<class_Texture2D>`\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

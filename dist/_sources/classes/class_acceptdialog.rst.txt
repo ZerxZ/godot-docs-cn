@@ -10,23 +10,23 @@
 AcceptDialog
 ============
 
-**Inherits:** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
+**派生：** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
-A base dialog used for user notification.
+用于用户通知的基本对话框。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
+**AcceptDialog** 的默认用途是允许它只被接受或关闭，结果相同。但是，\ :ref:`confirmed<class_AcceptDialog_signal_confirmed>` 和 :ref:`canceled<class_AcceptDialog_signal_canceled>` 信号允许使两个动作不同，\ :ref:`add_button<class_AcceptDialog_method_add_button>` 方法允许添加自定义按钮和动作。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -57,8 +57,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -79,8 +79,8 @@ Methods
 
 .. rst-class:: classref-reftable-group
 
-Theme Properties
-----------------
+主题属性
+--------
 
 .. table::
    :widths: auto
@@ -97,8 +97,8 @@ Theme Properties
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_AcceptDialog_signal_canceled:
 
@@ -106,7 +106,7 @@ Signals
 
 **canceled** **(** **)**
 
-Emitted when the dialog is closed or the button created with :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` is pressed.
+当对话框关闭或按下 :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` 创建的按钮时发出。
 
 .. rst-class:: classref-item-separator
 
@@ -118,7 +118,7 @@ Emitted when the dialog is closed or the button created with :ref:`add_cancel_bu
 
 **confirmed** **(** **)**
 
-Emitted when the dialog is accepted, i.e. the OK button is pressed.
+接受对话框时，即按下确定按钮时发出。
 
 .. rst-class:: classref-item-separator
 
@@ -130,7 +130,7 @@ Emitted when the dialog is accepted, i.e. the OK button is pressed.
 
 **custom_action** **(** :ref:`StringName<class_StringName>` action **)**
 
-Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
+按下自定义按钮时发出。见 :ref:`add_button<class_AcceptDialog_method_add_button>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -138,8 +138,8 @@ Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_AcceptDialog_property_dialog_autowrap:
 
@@ -152,7 +152,7 @@ Property Descriptions
 - void **set_autowrap** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **has_autowrap** **(** **)**
 
-Sets autowrapping for the text in the dialog.
+为对话框中的文本设置自动换行。
 
 .. rst-class:: classref-item-separator
 
@@ -169,7 +169,7 @@ Sets autowrapping for the text in the dialog.
 - void **set_close_on_escape** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_close_on_escape** **(** **)**
 
-If ``true``, the dialog will be hidden when the escape key (:ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`) is pressed.
+如果为 ``true``\ ，当按下退出键（\ :ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`\ ）时，对话框将被隐藏。
 
 .. rst-class:: classref-item-separator
 
@@ -186,9 +186,9 @@ If ``true``, the dialog will be hidden when the escape key (:ref:`@GlobalScope.K
 - void **set_hide_on_ok** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_hide_on_ok** **(** **)**
 
-If ``true``, the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` signal, and handle hiding the dialog in your own logic.
+如果为 ``true``\ ，按下确定按钮时对话框将隐藏。如果要在收到 :ref:`confirmed<class_AcceptDialog_signal_confirmed>` 信号时执行类似输入验证的操作，则可以将其设置为 ``false``\ ，然后在自己的逻辑中处理对话框的隐藏。
 
-\ **Note:** Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such, this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
+\ **注意：**\ 从此类派生的某些节点可以具有不同的默认值，并且可能有自己的内置逻辑会覆盖此设置。例如 :ref:`FileDialog<class_FileDialog>` 默认其为 ``false``\ ，并在按下确定时实现了自己的输入验证代码，如果输入有效，最终将隐藏对话框。因此，不能在 :ref:`FileDialog<class_FileDialog>` 中使用此属性来禁止在按确定时隐藏对话框。
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +205,7 @@ If ``true``, the dialog is hidden when the OK button is pressed. You can set it 
 - void **set_text** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_text** **(** **)**
 
-The text displayed by the dialog.
+对话框显示的文本。
 
 .. rst-class:: classref-item-separator
 
@@ -222,7 +222,7 @@ The text displayed by the dialog.
 - void **set_ok_button_text** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_ok_button_text** **(** **)**
 
-The text displayed by the OK button (see :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>`).
+确定按钮（参见 :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>`\ ）显示的文本。
 
 .. rst-class:: classref-section-separator
 
@@ -230,8 +230,8 @@ The text displayed by the OK button (see :ref:`get_ok_button<class_AcceptDialog_
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_AcceptDialog_method_add_button:
 
@@ -239,11 +239,11 @@ Method Descriptions
 
 :ref:`Button<class_Button>` **add_button** **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)**
 
-Adds a button with label ``text`` and a custom ``action`` to the dialog and returns the created button. ``action`` will be passed to the :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal when pressed.
+将带有标签 ``text`` 和自定义 ``action`` 的按钮添加到对话框，并返回该创建的按钮。\ ``action`` 将在按钮被按下时传递给 :ref:`custom_action<class_AcceptDialog_signal_custom_action>` 信号。
 
-If ``true``, ``right`` will place the button to the right of any sibling buttons.
+如果 ``right`` 为 ``true``\ ，按钮会被放置在所有同级按钮的右侧。
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+可以使用 :ref:`remove_button<class_AcceptDialog_method_remove_button>` 方法从对话框中移除使用该方法创建的按钮。
 
 .. rst-class:: classref-item-separator
 
@@ -255,9 +255,9 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 :ref:`Button<class_Button>` **add_cancel_button** **(** :ref:`String<class_String>` name **)**
 
-Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
+在对话框中添加一个带有标签 ``name`` 和取消动作的按钮，并返回创建的按钮。
 
-You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
+你可以使用 :ref:`remove_button<class_AcceptDialog_method_remove_button>` 方法从对话框中删除用此方法创建的按钮。
 
 .. rst-class:: classref-item-separator
 
@@ -269,9 +269,9 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 :ref:`Label<class_Label>` **get_label** **(** **)**
 
-Returns the label used for built-in text.
+返回内置文本所使用的标签。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是个必要的内部节点，移除并释放它有可能造成崩溃。如果你希望隐藏它或它的任意一个子节点，请使用它们的 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -283,9 +283,9 @@ Returns the label used for built-in text.
 
 :ref:`Button<class_Button>` **get_ok_button** **(** **)**
 
-Returns the OK :ref:`Button<class_Button>` instance.
+返回确定按钮 :ref:`Button<class_Button>` 实例。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是个必要的内部节点，移除并释放它有可能造成崩溃。如果你希望隐藏它或它的任意一个子节点，请使用它们的 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +297,7 @@ Returns the OK :ref:`Button<class_Button>` instance.
 
 void **register_text_enter** **(** :ref:`Control<class_Control>` line_edit **)**
 
-Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
+在对话框中注册 :ref:`LineEdit<class_LineEdit>`\ 。当按下回车键时，对话框将被接受。
 
 .. rst-class:: classref-item-separator
 
@@ -309,7 +309,7 @@ Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is
 
 void **remove_button** **(** :ref:`Control<class_Control>` button **)**
 
-Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
+从对话框中移除 ``button``\ 。但不释放该 ``button`` 对象。\ ``button`` 必须是用 :ref:`add_button<class_AcceptDialog_method_add_button>` 或 :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` 方法添加的 :ref:`Button<class_Button>`\ 。移除后，按下该 ``button`` 将不再发出该对话框的 :ref:`custom_action<class_AcceptDialog_signal_custom_action>` 或 :ref:`canceled<class_AcceptDialog_signal_canceled>` 信号。
 
 .. rst-class:: classref-section-separator
 
@@ -317,8 +317,8 @@ Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``butt
 
 .. rst-class:: classref-descriptions-group
 
-Theme Property Descriptions
----------------------------
+主题属性说明
+------------
 
 .. _class_AcceptDialog_theme_constant_buttons_separation:
 
@@ -326,7 +326,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **buttons_separation** = ``10``
 
-The size of the vertical space between the dialog's content and the button row.
+对话框内容和按钮行之间的垂直空间的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -338,12 +338,12 @@ The size of the vertical space between the dialog's content and the button row.
 
 :ref:`StyleBox<class_StyleBox>` **panel**
 
-The panel that fills the background of the window.
+填充窗口背景的面板。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

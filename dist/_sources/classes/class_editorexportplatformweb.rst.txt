@@ -10,32 +10,23 @@
 EditorExportPlatformWeb
 =======================
 
-**Inherits:** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Exporter for the Web.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-The Web exporter customizes how a web build is handled. In the editor's "Export" window, it is created when adding a new "Web" preset.
-
-\ **Note:** Godot on Web is rendered inside a ``<canvas>`` tag. Normally, the canvas cannot be positioned or resized manually, but otherwise acts as the main :ref:`Window<class_Window>` of the application.
+Web 导出器。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+教程
+----
 
-- :doc:`Exporting for the Web <../tutorials/export/exporting_for_web>`
+- :doc:`为 Web 导出 <../tutorials/export/exporting_for_web>`
 
-- :doc:`Web documentation index <../tutorials/platform/web/index>`
+- :doc:`网页文档索引 <../tutorials/platform/web/index>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -86,8 +77,8 @@ Properties
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_EditorExportPlatformWeb_property_custom_template/debug:
 
@@ -95,7 +86,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **custom_template/debug**
 
-File path to the custom export template used for debug builds. If left empty, the default template is used.
+到自定义导出模板的路径。如果留空，则默认模板将被使用。
 
 .. rst-class:: classref-item-separator
 
@@ -107,7 +98,7 @@ File path to the custom export template used for debug builds. If left empty, th
 
 :ref:`String<class_String>` **custom_template/release**
 
-File path to the custom export template used for release builds. If left empty, the default template is used.
+到自定义导出模板的路径。如果留空，则默认模板将被使用。
 
 .. rst-class:: classref-item-separator
 
@@ -119,13 +110,7 @@ File path to the custom export template used for release builds. If left empty, 
 
 :ref:`int<class_int>` **html/canvas_resize_policy**
 
-Determines how the canvas should be resized by Godot.
-
-- **None:** The canvas is not automatically resized.
-
-- **Project:** The size of the canvas is dependent on the :ref:`ProjectSettings<class_ProjectSettings>`.
-
-- **Adaptive:** The canvas is automatically resized to fit as much of the web page as possible.
+画布大小调整策略决定 Godot 应当如何调整画布的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -137,9 +122,9 @@ Determines how the canvas should be resized by Godot.
 
 :ref:`String<class_String>` **html/custom_html_shell**
 
-The custom HTML page that wraps the exported web build. If left empty, the default HTML shell is used.
+.. container:: contribute
 
-For more information, see the :doc:`Customizing HTML5 Shell <../tutorials/platform/web/customizing_html5_shell>` tutorial.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -151,9 +136,9 @@ For more information, see the :doc:`Customizing HTML5 Shell <../tutorials/platfo
 
 :ref:`bool<class_bool>` **html/experimental_virtual_keyboard**
 
-If ``true``, embeds support for a virtual keyboard into the web page, which is shown when necessary on touchscreen devices.
+.. container:: contribute
 
-\ **Warning:** This feature is experimental and may be changed in a future release.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +150,9 @@ If ``true``, embeds support for a virtual keyboard into the web page, which is s
 
 :ref:`bool<class_bool>` **html/export_icon**
 
-If ``true``, the project icon will be used as the favicon for this application's web page.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +164,9 @@ If ``true``, the project icon will be used as the favicon for this application's
 
 :ref:`bool<class_bool>` **html/focus_canvas_on_start**
 
-If ``true``, the canvas will be focused as soon as the application is loaded, if the browser window is already in focus.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -189,9 +178,9 @@ If ``true``, the canvas will be focused as soon as the application is loaded, if
 
 :ref:`String<class_String>` **html/head_include**
 
-Additional HTML tags to include inside the ``<head>``, such as ``<meta>`` tags.
+.. container:: contribute
 
-\ **Note:** You do not need to add a ``<title>`` tag, as it is automatically included based on the project's name.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +192,9 @@ Additional HTML tags to include inside the ``<head>``, such as ``<meta>`` tags.
 
 :ref:`Color<class_Color>` **progressive_web_app/background_color**
 
-The background color used behind the web application.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -215,15 +206,9 @@ The background color used behind the web application.
 
 :ref:`int<class_int>` **progressive_web_app/display**
 
-The `display mode <https://developer.mozilla.org/en-US/docs/Web/Manifest/display/>`__ to use for this progressive web application. Different browsers and platforms may not behave the same.
+.. container:: contribute
 
-- **Fullscreen:** Displays the app in fullscreen and hides all of the browser's UI elements.
-
-- **Standalone:** Displays the app in a separate window and hides all of the browser's UI elements.
-
-- **Minimal UI:** Displays the app in a separate window and only shows the browser's UI elements for navigation.
-
-- **Browser:** Displays the app as a normal web page.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -235,7 +220,9 @@ The `display mode <https://developer.mozilla.org/en-US/docs/Web/Manifest/display
 
 :ref:`bool<class_bool>` **progressive_web_app/enabled**
 
-If ``true``, turns this web build into a `progressive web application <https://en.wikipedia.org/wiki/Progressive_web_app>`__ (PWA).
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -247,9 +234,9 @@ If ``true``, turns this web build into a `progressive web application <https://e
 
 :ref:`String<class_String>` **progressive_web_app/icon_144x144**
 
-File path to the smallest icon for this web application. If not defined, defaults to the project icon.
+.. container:: contribute
 
-\ **Note:** If the icon is not 144x144, it will be automatically resized for the final build.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -261,9 +248,9 @@ File path to the smallest icon for this web application. If not defined, default
 
 :ref:`String<class_String>` **progressive_web_app/icon_180x180**
 
-File path to the small icon for this web application. If not defined, defaults to the project icon.
+.. container:: contribute
 
-\ **Note:** If the icon is not 180x180, it will be automatically resized for the final build.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -275,9 +262,9 @@ File path to the small icon for this web application. If not defined, defaults t
 
 :ref:`String<class_String>` **progressive_web_app/icon_512x512**
 
-File path to the smallest icon for this web application. If not defined, defaults to the project icon.
+.. container:: contribute
 
-\ **Note:** If the icon is not 512x512, it will be automatically resized for the final build.
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -289,7 +276,9 @@ File path to the smallest icon for this web application. If not defined, default
 
 :ref:`String<class_String>` **progressive_web_app/offline_page**
 
-The page to display, should the server hosting the page not be available. This page is saved in the client's machine.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -301,13 +290,9 @@ The page to display, should the server hosting the page not be available. This p
 
 :ref:`int<class_int>` **progressive_web_app/orientation**
 
-The orientation to use when the web application is run through a mobile device.
+.. container:: contribute
 
-- **Any:** No orientation is forced.
-
-- **Landscape:** Forces a horizontal layout (wider than it is taller).
-
-- **Portrait:** Forces a vertical layout (taller than it is wider).
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +304,9 @@ The orientation to use when the web application is run through a mobile device.
 
 :ref:`bool<class_bool>` **variant/extensions_support**
 
-If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web build.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -331,7 +318,9 @@ If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web b
 
 :ref:`bool<class_bool>` **vram_texture_compression/for_desktop**
 
-If ``true``, allows textures to be optimized for desktop through the S3TC algorithm.
+.. container:: contribute
+
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -343,12 +332,14 @@ If ``true``, allows textures to be optimized for desktop through the S3TC algori
 
 :ref:`bool<class_bool>` **vram_texture_compression/for_mobile**
 
-If ``true`` allows textures to be optimized for mobile through the ETC2 algorithm.
+.. container:: contribute
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

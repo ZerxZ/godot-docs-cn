@@ -10,38 +10,38 @@
 AnimationPlayer
 ===============
 
-**Inherits:** :ref:`AnimationMixer<class_AnimationMixer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`AnimationMixer<class_AnimationMixer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A node used for animation playback.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-An animation player is used for general-purpose playback of animations. It contains a dictionary of :ref:`AnimationLibrary<class_AnimationLibrary>` resources and custom blend times between animation transitions.
-
-Some methods and properties use a single key to reference an animation directly. These keys are formatted as the key for the library, followed by a forward slash, then the key for the animation within the library, for example ``"movement/run"``. If the library's key is an empty string (known as the default library), the forward slash is omitted, being the same key used by the library.
-
-\ **AnimationPlayer** is better-suited than :ref:`Tween<class_Tween>` for more complex animations, for example ones with non-trivial timings. It can also be used over :ref:`Tween<class_Tween>` if the animation track editor is more convenient than doing it in code.
-
-Updating the target properties of animations occurs at the process frame.
+用于播放动画的节点。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
+动画播放器用于动画的通用播放。它包含 :ref:`AnimationLibrary<class_AnimationLibrary>` 资源的字典和动画过渡之间的自定义混合时间。
 
-- :doc:`Animation documentation index <../tutorials/animation/index>`
+某些方法和属性使用单个键直接引用动画。这些键的格式为动画库的键，后跟正斜杠，然后是动画库内动画的键，例如 ``"movement/run"``\ 。如果动画库的键为空字符串（称为默认库），则省略正斜杠，与动画库使用相同的键。
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+\ **AnimationPlayer** 比 :ref:`Tween<class_Tween>` 更适合用于复杂动画，例如不规则计时的动画。如果用动画轨道编辑器比用代码实现更方便，也可以优先于 :ref:`Tween<class_Tween>` 使用。
+
+更新动画的目标属性是在处理帧中进行的。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`2D 精灵动画 <../tutorials/2d/2d_sprite_animation>`
+
+- :doc:`动画教程索引 <../tutorials/animation/index>`
+
+- `第三人称射击演示 <https://godotengine.org/asset-library/asset/678>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -66,8 +66,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -120,8 +120,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_AnimationPlayer_signal_animation_changed:
 
@@ -129,9 +129,9 @@ Signals
 
 **animation_changed** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` new_name **)**
 
-Emitted when a queued animation plays after the previous animation finished. See also :ref:`queue<class_AnimationPlayer_method_queue>`.
+在前一个动画完成后，队列中的动画播放时发出。另见 :ref:`queue<class_AnimationPlayer_method_queue>`\ 。
 
-\ **Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or by an :ref:`AnimationTree<class_AnimationTree>`.
+\ **注意：**\ 通过 :ref:`play<class_AnimationPlayer_method_play>` 或 :ref:`AnimationTree<class_AnimationTree>` 改变动画时，不会发出此信号。
 
 .. rst-class:: classref-item-separator
 
@@ -143,7 +143,7 @@ Emitted when a queued animation plays after the previous animation finished. See
 
 **current_animation_changed** **(** :ref:`String<class_String>` name **)**
 
-Emitted when :ref:`current_animation<class_AnimationPlayer_property_current_animation>` changes.
+当 :ref:`current_animation<class_AnimationPlayer_property_current_animation>` 更改时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -151,8 +151,8 @@ Emitted when :ref:`current_animation<class_AnimationPlayer_property_current_anim
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_AnimationPlayer_AnimationProcessCallback:
 
@@ -166,7 +166,7 @@ enum **AnimationProcessCallback**:
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **ANIMATION_PROCESS_PHYSICS** = ``0``
 
-For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`.
+用于向后兼容。见 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`\ 。
 
 .. _class_AnimationPlayer_constant_ANIMATION_PROCESS_IDLE:
 
@@ -174,7 +174,7 @@ For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PRO
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **ANIMATION_PROCESS_IDLE** = ``1``
 
-For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_IDLE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_IDLE>`.
+用于向后兼容。见 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_IDLE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_IDLE>`\ 。
 
 .. _class_AnimationPlayer_constant_ANIMATION_PROCESS_MANUAL:
 
@@ -182,7 +182,7 @@ For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PRO
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **ANIMATION_PROCESS_MANUAL** = ``2``
 
-For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_MANUAL>`.
+用于向后兼容。见 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_MANUAL>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -200,7 +200,7 @@ enum **AnimationMethodCallMode**:
 
 :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` **ANIMATION_METHOD_CALL_DEFERRED** = ``0``
 
-For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_DEFERRED<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_METHOD_DEFERRED>`.
+用于向后兼容。见 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_DEFERRED<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_METHOD_DEFERRED>`\ 。
 
 .. _class_AnimationPlayer_constant_ANIMATION_METHOD_CALL_IMMEDIATE:
 
@@ -208,7 +208,7 @@ For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_MET
 
 :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` **ANIMATION_METHOD_CALL_IMMEDIATE** = ``1``
 
-For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE>`.
+用于向后兼容。见 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -216,8 +216,8 @@ For backward compatibility. See :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_MET
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_AnimationPlayer_property_assigned_animation:
 
@@ -230,7 +230,7 @@ Property Descriptions
 - void **set_assigned_animation** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_assigned_animation** **(** **)**
 
-If playing, the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
+如果正在播放，则为当前动画的键，否则为上次播放的动画。设置后会改变动画，但除非已经播放，否则不会播放。另见 :ref:`current_animation<class_AnimationPlayer_property_current_animation>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -247,7 +247,7 @@ If playing, the current animation's key, otherwise, the animation last played. W
 - void **set_autoplay** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_autoplay** **(** **)**
 
-The key of the animation to play when the scene loads.
+场景加载时要播放的动画名称。
 
 .. rst-class:: classref-item-separator
 
@@ -264,9 +264,9 @@ The key of the animation to play when the scene loads.
 - void **set_current_animation** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_current_animation** **(** **)**
 
-The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
+当前播放的动画的名称。如果没有动画正在播放，该属性的值是一个空字符串。改变这个值不会重新启动动画。关于播放动画的更多信息请参阅 :ref:`play<class_AnimationPlayer_method_play>`\ 。
 
-\ **Note:** While this property appears in the Inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
+\ **注意：**\ 虽然这个属性会出现在检查器中，但它不是用来编辑的，也不会保存在场景中。该属性主要用于获取当前播放的动画，内部用于动画播放轨道。详情请参阅 :ref:`Animation<class_Animation>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -282,7 +282,7 @@ The key of the currently playing animation. If no animation is playing, the prop
 
 - :ref:`float<class_float>` **get_current_animation_length** **(** **)**
 
-The length (in seconds) of the currently playing animation.
+当前正在播放的动画的长度（以秒为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -298,7 +298,7 @@ The length (in seconds) of the currently playing animation.
 
 - :ref:`float<class_float>` **get_current_animation_position** **(** **)**
 
-The position (in seconds) of the currently playing animation.
+当前播放的动画的位置（以秒为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -315,9 +315,9 @@ The position (in seconds) of the currently playing animation.
 - void **set_movie_quit_on_finish_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_movie_quit_on_finish_enabled** **(** **)**
 
-If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter<class_MovieWriter>`), exits the engine with :ref:`SceneTree.quit<class_SceneTree_method_quit>` as soon as an animation is done playing in this **AnimationPlayer**. A message is printed when the engine quits for this reason.
+如果为 ``true``\ ，并且引擎在 Movie Maker 模式下运行（见 :ref:`MovieWriter<class_MovieWriter>`\ ），则会在此 **AnimationPlayer** 中播放完动画后，立即使用 :ref:`SceneTree.quit<class_SceneTree_method_quit>` 退出引擎。当引擎因此而退出时，会打印一条消息。
 
-\ **Note:** This obeys the same logic as the :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>` signal, so it will not quit the engine if the animation is set to be looping.
+\ **注意：**\ 这与 :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>` 信号遵循相同的逻辑，因此如果动画被设置为循环，它不会退出引擎。
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +334,7 @@ If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter
 - void **set_default_blend_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_default_blend_time** **(** **)**
 
-The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 precision.
+混合动画的默认时间。范围从 0 到 4096，精度为 0.01。
 
 .. rst-class:: classref-item-separator
 
@@ -351,9 +351,9 @@ The default time in which to blend animations. Ranges from 0 to 4096 with 0.01 p
 - void **set_speed_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_speed_scale** **(** **)**
 
-The speed scaling ratio. For example, if this value is ``1``, then the animation plays at normal speed. If it's ``0.5``, then it plays at half speed. If it's ``2``, then it plays at double speed.
+速度缩放比。例如，如果该值为 ``1``\ ，则动画以正常速度播放。如果它是 ``0.5``\ ，那么它会半速播放。如果是 ``2``\ ，则会以双倍速度播放。
 
-If set to a negative value, the animation is played in reverse. If set to ``0``, the animation will not advance.
+如果设置为负值，则动画反向播放。如果设置为\ ``0``\ ，则动画不会前进。
 
 .. rst-class:: classref-section-separator
 
@@ -361,8 +361,8 @@ If set to a negative value, the animation is played in reverse. If set to ``0``,
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_AnimationPlayer_method_animation_get_next:
 
@@ -370,7 +370,7 @@ Method Descriptions
 
 :ref:`StringName<class_StringName>` **animation_get_next** **(** :ref:`StringName<class_StringName>` animation_from **)** |const|
 
-Returns the key of the animation which is queued to play after the ``animation_from`` animation.
+返回在 ``animation_from`` 动画之后排队播放的动画的键。
 
 .. rst-class:: classref-item-separator
 
@@ -382,7 +382,7 @@ Returns the key of the animation which is queued to play after the ``animation_f
 
 void **animation_set_next** **(** :ref:`StringName<class_StringName>` animation_from, :ref:`StringName<class_StringName>` animation_to **)**
 
-Triggers the ``animation_to`` animation when the ``animation_from`` animation completes.
+当 ``animation_from`` 动画完成时，触发 ``animation_to`` 动画。
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +394,7 @@ Triggers the ``animation_to`` animation when the ``animation_from`` animation co
 
 void **clear_queue** **(** **)**
 
-Clears all queued, unplayed animations.
+清除所有已排队、未播放的动画。
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +406,7 @@ Clears all queued, unplayed animations.
 
 :ref:`float<class_float>` **get_blend_time** **(** :ref:`StringName<class_StringName>` animation_from, :ref:`StringName<class_StringName>` animation_to **)** |const|
 
-Returns the blend time (in seconds) between two animations, referenced by their keys.
+返回两个动画之间的混合时间（以秒为单位），由它们的键引用。
 
 .. rst-class:: classref-item-separator
 
@@ -418,7 +418,7 @@ Returns the blend time (in seconds) between two animations, referenced by their 
 
 :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` **get_method_call_mode** **(** **)** |const|
 
-For backward compatibility. See :ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>`.
+用于向后兼容。见 :ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -430,9 +430,9 @@ For backward compatibility. See :ref:`AnimationCallbackModeMethod<enum_Animation
 
 :ref:`float<class_float>` **get_playing_speed** **(** **)** |const|
 
-Returns the actual playing speed of current animation or ``0`` if not playing. This speed is the :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` property multiplied by ``custom_speed`` argument specified when calling the :ref:`play<class_AnimationPlayer_method_play>` method.
+返回当前动画的实际播放速度，未播放时则为 ``0``\ 。这个速度是 :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` 属性乘以调用 :ref:`play<class_AnimationPlayer_method_play>` 时指定的 ``custom_speed`` 参数。
 
-Returns a negative value if the current animation is playing backwards.
+如果当前动画是倒放的，则返回负值。
 
 .. rst-class:: classref-item-separator
 
@@ -444,7 +444,7 @@ Returns a negative value if the current animation is playing backwards.
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **get_process_callback** **(** **)** |const|
 
-For backward compatibility. See :ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>`.
+用于向后兼容。见 :ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +456,7 @@ For backward compatibility. See :ref:`AnimationCallbackModeProcess<enum_Animatio
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_queue** **(** **)**
 
-Returns a list of the animation keys that are currently queued to play.
+返回当前排队播放的动画键列表。
 
 .. rst-class:: classref-item-separator
 
@@ -468,7 +468,7 @@ Returns a list of the animation keys that are currently queued to play.
 
 :ref:`NodePath<class_NodePath>` **get_root** **(** **)** |const|
 
-For backward compatibility. See :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>`.
+用于向后兼容。见 :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -480,7 +480,7 @@ For backward compatibility. See :ref:`AnimationMixer.root_node<class_AnimationMi
 
 :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
-Returns ``true`` if an animation is currently playing (even if :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` and/or ``custom_speed`` are ``0``).
+如果动画目前正在播放，则返回 ``true``\ （即便 :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>` 和/或 ``custom_speed`` 为 ``0``\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -492,9 +492,9 @@ Returns ``true`` if an animation is currently playing (even if :ref:`speed_scale
 
 void **pause** **(** **)**
 
-Pauses the currently playing animation. The :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>` will be kept and calling :ref:`play<class_AnimationPlayer_method_play>` or :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>` without arguments or with the same animation name as :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` will resume the animation.
+暂停当前播放的动画。\ :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>` 将被保留，调用 :ref:`play<class_AnimationPlayer_method_play>` 或 :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>` 时，不带参数或使用与 :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` 相同的动画名称，将恢复动画。
 
-See also :ref:`stop<class_AnimationPlayer_method_stop>`.
+另见 :ref:`stop<class_AnimationPlayer_method_stop>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -506,13 +506,13 @@ See also :ref:`stop<class_AnimationPlayer_method_stop>`.
 
 void **play** **(** :ref:`StringName<class_StringName>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
-Plays the animation with key ``name``. Custom blend times and speed can be set.
+播放键名为 ``name`` 的动画。可以设置自定义混合时间和速度。
 
-The ``from_end`` option only affects when switching to a new animation track, or if the same track but at the start or end. It does not affect resuming playback that was paused in the middle of an animation. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`).
+\ ``from_end`` 选项仅在切换到新的动画轨道，或在相同轨道的开始或结束时生效。它不影响在动画被中途暂停时恢复播放。如果 ``custom_speed`` 为负，且 ``from_end`` 为 ``true``\ ，则动画将向后播放（相当于调用 :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`\ ）。
 
-The **AnimationPlayer** keeps track of its current or last played animation with :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`. If this method is called with that same animation ``name``, or with no ``name`` parameter, the assigned animation will resume playing if it was paused.
+\ **AnimationPlayer** 使用 :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>` 跟踪其当前或上次播放的动画。如果使用相同的动画 ``name`` 或没有 ``name`` 参数调用此方法，则分配的动画将在暂停时恢复播放。
 
-\ **Note:** The animation will be updated the next time the **AnimationPlayer** is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
+\ **注意：**\ 动画将在下次处理 **AnimationPlayer** 时更新。如果在调用该方法的同时更新了其他变量，则它们可能更新得太早。要立即执行更新，请调用 ``advance(0)``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -524,9 +524,9 @@ The **AnimationPlayer** keeps track of its current or last played animation with
 
 void **play_backwards** **(** :ref:`StringName<class_StringName>` name="", :ref:`float<class_float>` custom_blend=-1 **)**
 
-Plays the animation with key ``name`` in reverse.
+倒放名称键为 ``name`` 的动画。
 
-This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` with ``custom_speed = -1.0`` and ``from_end = true``, so see its description for more information.
+这个方法是简写，等价于调用 :ref:`play<class_AnimationPlayer_method_play>` 时使用 ``custom_speed = -1.0`` 和 ``from_end = true``\ ，所以更多信息请参阅其描述。
 
 .. rst-class:: classref-item-separator
 
@@ -538,9 +538,9 @@ This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` wi
 
 void **queue** **(** :ref:`StringName<class_StringName>` name **)**
 
-Queues an animation for playback once the current one is done.
+将动画加入队列，在当前动画播放完毕后播放。
 
-\ **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
+\ **注意：**\ 如果当前正在播放循环动画，除非以某种方式停止循环动画，否则排队的动画将永远不会播放。
 
 .. rst-class:: classref-item-separator
 
@@ -552,11 +552,11 @@ Queues an animation for playback once the current one is done.
 
 void **seek** **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false, :ref:`bool<class_bool>` update_only=false **)**
 
-Seeks the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time. Events between the current frame and ``seconds`` are skipped.
+将动画寻道到时间点 ``seconds``\ （单位为秒）。\ ``update`` 为 ``true`` 时会同时更新动画，否则会在处理时更新。当前帧和 ``seconds`` 之间的事件会被跳过。
 
-If ``update_only`` is true, the method / audio / animation playback tracks will not be processed.
+如果 ``update_only`` 为 true，则不会处理方法轨道、音频轨道、动画播放轨道。
 
-\ **Note:** Seeking to the end of the animation doesn't emit :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>`. If you want to skip animation and emit the signal, use :ref:`AnimationMixer.advance<class_AnimationMixer_method_advance>`.
+\ **注意：**\ 寻道至动画的末尾不会触发 :ref:`AnimationMixer.animation_finished<class_AnimationMixer_signal_animation_finished>`\ 。如果想要跳过动画并触发该信号，请使用 :ref:`AnimationMixer.advance<class_AnimationMixer_method_advance>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -568,7 +568,7 @@ If ``update_only`` is true, the method / audio / animation playback tracks will 
 
 void **set_blend_time** **(** :ref:`StringName<class_StringName>` animation_from, :ref:`StringName<class_StringName>` animation_to, :ref:`float<class_float>` sec **)**
 
-Specifies a blend time (in seconds) between two animations, referenced by their keys.
+指定两个动画（由它们的键所引用）之间的混合时间（以秒为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -580,7 +580,7 @@ Specifies a blend time (in seconds) between two animations, referenced by their 
 
 void **set_method_call_mode** **(** :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>` mode **)**
 
-For backward compatibility. See :ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>`.
+用于向后兼容。见 :ref:`AnimationCallbackModeMethod<enum_AnimationMixer_AnimationCallbackModeMethod>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -592,7 +592,7 @@ For backward compatibility. See :ref:`AnimationCallbackModeMethod<enum_Animation
 
 void **set_process_callback** **(** :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` mode **)**
 
-For backward compatibility. See :ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>`.
+用于向后兼容。见 :ref:`AnimationCallbackModeProcess<enum_AnimationMixer_AnimationCallbackModeProcess>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -604,7 +604,7 @@ For backward compatibility. See :ref:`AnimationCallbackModeProcess<enum_Animatio
 
 void **set_root** **(** :ref:`NodePath<class_NodePath>` path **)**
 
-For backward compatibility. See :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>`.
+用于向后兼容。见 :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -616,16 +616,16 @@ For backward compatibility. See :ref:`AnimationMixer.root_node<class_AnimationMi
 
 void **stop** **(** :ref:`bool<class_bool>` keep_state=false **)**
 
-Stops the currently playing animation. The animation position is reset to ``0`` and the ``custom_speed`` is reset to ``1.0``. See also :ref:`pause<class_AnimationPlayer_method_pause>`.
+停止当前播放的动画。动画位置被重置为 ``0``\ ，\ ``custom_speed`` 被重置为 ``1.0``\ 。另见 :ref:`pause<class_AnimationPlayer_method_pause>`\ 。
 
-If ``keep_state`` is ``true``, the animation state is not updated visually.
+如果 ``keep_state`` 为 ``true``\ ，则动画状态不会在视觉上更新。
 
-\ **Note:** The method / audio / animation playback tracks will not be processed by this method.
+\ **注意：**\ 方法/音频/动画播放轨道不会被该方法处理。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

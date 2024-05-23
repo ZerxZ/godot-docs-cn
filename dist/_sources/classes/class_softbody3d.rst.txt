@@ -10,30 +10,30 @@
 SoftBody3D
 ==========
 
-**Inherits:** :ref:`MeshInstance3D<class_MeshInstance3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`MeshInstance3D<class_MeshInstance3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A deformable 3D physics mesh.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-A deformable 3D physics mesh. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
-
-\ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as trampolines).
+可形变的 3D 物理网格。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
+
+可形变的 3D 物理网格。用于创建弹性或可形变的对象，例如布料、橡胶或其他柔性材质。
+
+\ **注意：**\ **SoftBody3D** 中有许多已知的问题。因此，不建议用于可能影响游戏玩法的东西上（例如蹦床）。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
 
 - :doc:`SoftBody <../tutorials/physics/soft_body>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -64,8 +64,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -100,8 +100,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_SoftBody3D_DisableMode:
 
@@ -115,9 +115,9 @@ enum **DisableMode**:
 
 :ref:`DisableMode<enum_SoftBody3D_DisableMode>` **DISABLE_MODE_REMOVE** = ``0``
 
-When :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`, remove from the physics simulation to stop all physics interactions with this **SoftBody3D**.
+当 :ref:`Node.process_mode<class_Node_property_process_mode>` 被设置为 :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>` 时，从物理仿真中移除，停止与此 **SoftBody3D** 的所有物理交互。
 
-Automatically re-added to the physics simulation when the :ref:`Node<class_Node>` is processed again.
+当该 :ref:`Node<class_Node>` 再次被处理时，会自动重新加入到物理仿真中。
 
 .. _class_SoftBody3D_constant_DISABLE_MODE_KEEP_ACTIVE:
 
@@ -125,7 +125,7 @@ Automatically re-added to the physics simulation when the :ref:`Node<class_Node>
 
 :ref:`DisableMode<enum_SoftBody3D_DisableMode>` **DISABLE_MODE_KEEP_ACTIVE** = ``1``
 
-When :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`, do not affect the physics simulation.
+当 :ref:`Node.process_mode<class_Node_property_process_mode>` 被设置为 :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>` 时，不影响物理仿真。
 
 .. rst-class:: classref-section-separator
 
@@ -133,8 +133,8 @@ When :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_SoftBody3D_property_collision_layer:
 
@@ -147,9 +147,9 @@ Property Descriptions
 - void **set_collision_layer** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_collision_layer** **(** **)**
 
-The physics layers this SoftBody3D **is in**. Collision objects can exist in one or more of 32 different layers. See also :ref:`collision_mask<class_SoftBody3D_property_collision_mask>`.
+该 SoftBody3D **所在**\ 的物理层。碰撞对象可以存在于 32 个不同层中的一个或多个层中。另见 :ref:`collision_mask<class_SoftBody3D_property_collision_mask>`\ 。
 
-\ **Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **注意：**\ 只有当对象 B 位于对象 A 扫描的任意层中时，对象 A 才能检测到与对象 B 的接触。有关更多信息，请参阅文档中的\ `《碰撞层与掩码》 <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -166,9 +166,9 @@ The physics layers this SoftBody3D **is in**. Collision objects can exist in one
 - void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_collision_mask** **(** **)**
 
-The physics layers this SoftBody3D **scans**. Collision objects can scan one or more of 32 different layers. See also :ref:`collision_layer<class_SoftBody3D_property_collision_layer>`.
+该 SoftBody3D **扫描**\ 的物理层。碰撞对象可以扫描 32 个不同层中的一个或多个层。另见 :ref:`collision_layer<class_SoftBody3D_property_collision_layer>`\ 。
 
-\ **Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **注意：**\ 只有当对象 B 位于对象 A 扫描的任何层中时，对象 A 才能检测到与对象 B 的接触。有关更多信息，请参阅文档中的\ `《碰撞层与掩码》 <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -185,7 +185,7 @@ The physics layers this SoftBody3D **scans**. Collision objects can scan one or 
 - void **set_damping_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_damping_coefficient** **(** **)**
 
-The body's damping coefficient. Higher values will slow down the body more noticeably when forces are applied.
+物体的阻尼系数。当施加力时，较高的值会更明显地减慢物体的速度。
 
 .. rst-class:: classref-item-separator
 
@@ -202,7 +202,7 @@ The body's damping coefficient. Higher values will slow down the body more notic
 - void **set_disable_mode** **(** :ref:`DisableMode<enum_SoftBody3D_DisableMode>` value **)**
 - :ref:`DisableMode<enum_SoftBody3D_DisableMode>` **get_disable_mode** **(** **)**
 
-Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`. See :ref:`DisableMode<enum_SoftBody3D_DisableMode>` for more details about the different modes.
+当 :ref:`Node.process_mode<class_Node_property_process_mode>` 被设置为 :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>` 时，定义物理行为。有关不同模式的更多详细信息，请参阅 :ref:`DisableMode<enum_SoftBody3D_DisableMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -219,9 +219,9 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 - void **set_drag_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_drag_coefficient** **(** **)**
 
-The body's drag coefficient. Higher values increase this body's air resistance.
+物体的阻力系数。较高的值会增加该物体的空气阻力。
 
-\ **Note:** This value is currently unused by Godot's default physics implementation.
+\ **注意：**\ Godot 的默认物理实现当前未使用该值。
 
 .. rst-class:: classref-item-separator
 
@@ -238,7 +238,7 @@ The body's drag coefficient. Higher values increase this body's air resistance.
 - void **set_linear_stiffness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_linear_stiffness** **(** **)**
 
-Higher values will result in a stiffer body, while lower values will increase the body's ability to bend. The value can be between ``0.0`` and ``1.0`` (inclusive).
+值越大得到的物体约坚硬，较低的值会提高物体的弯曲能力。取值范围为 ``0.0`` 到 ``1.0`` 之间（含端点）。
 
 .. rst-class:: classref-item-separator
 
@@ -255,7 +255,7 @@ Higher values will result in a stiffer body, while lower values will increase th
 - void **set_parent_collision_ignore** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_parent_collision_ignore** **(** **)**
 
-:ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` this SoftBody3D should avoid clipping.
+指向 :ref:`CollisionObject3D<class_CollisionObject3D>` 的 :ref:`NodePath<class_NodePath>`\ ，这个 SoftBody3D 应该避免穿过它。
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +272,7 @@ Higher values will result in a stiffer body, while lower values will increase th
 - void **set_pressure_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_pressure_coefficient** **(** **)**
 
-The pressure coefficient of this soft body. Simulate pressure build-up from inside this body. Higher values increase the strength of this effect.
+该软体的压力系数。模拟物体内部的压力积聚。较高的值会增加该效果的强度。
 
 .. rst-class:: classref-item-separator
 
@@ -289,7 +289,7 @@ The pressure coefficient of this soft body. Simulate pressure build-up from insi
 - void **set_ray_pickable** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_ray_pickable** **(** **)**
 
-If ``true``, the **SoftBody3D** will respond to :ref:`RayCast3D<class_RayCast3D>`\ s.
+如果为 ``true``\ ，则该 **SoftBody3D** 会响应 :ref:`RayCast3D<class_RayCast3D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +306,7 @@ If ``true``, the **SoftBody3D** will respond to :ref:`RayCast3D<class_RayCast3D>
 - void **set_simulation_precision** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_simulation_precision** **(** **)**
 
-Increasing this value will improve the resulting simulation, but can affect performance. Use with care.
+增加这个值会改善模拟结果，但会影响性能。请小心使用。
 
 .. rst-class:: classref-item-separator
 
@@ -323,7 +323,7 @@ Increasing this value will improve the resulting simulation, but can affect perf
 - void **set_total_mass** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_total_mass** **(** **)**
 
-The SoftBody3D's mass.
+该 SoftBody3D 的质量。
 
 .. rst-class:: classref-section-separator
 
@@ -331,8 +331,8 @@ The SoftBody3D's mass.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_SoftBody3D_method_add_collision_exception_with:
 
@@ -340,7 +340,7 @@ Method Descriptions
 
 void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
-Adds a body to the list of bodies that this body can't collide with.
+将一个物体添加到这个物体不能碰撞的物体列表中。
 
 .. rst-class:: classref-item-separator
 
@@ -352,7 +352,7 @@ Adds a body to the list of bodies that this body can't collide with.
 
 :ref:`PhysicsBody3D[]<class_PhysicsBody3D>` **get_collision_exceptions** **(** **)**
 
-Returns an array of nodes that were added as collision exceptions for this body.
+返回该物体的碰撞例外节点数组。
 
 .. rst-class:: classref-item-separator
 
@@ -364,7 +364,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 :ref:`bool<class_bool>` **get_collision_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
-Returns whether or not the specified layer of the :ref:`collision_layer<class_SoftBody3D_property_collision_layer>` is enabled, given a ``layer_number`` between 1 and 32.
+返回 :ref:`collision_layer<class_SoftBody3D_property_collision_layer>` 中是否启用了指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -376,7 +376,7 @@ Returns whether or not the specified layer of the :ref:`collision_layer<class_So
 
 :ref:`bool<class_bool>` **get_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
-Returns whether or not the specified layer of the :ref:`collision_mask<class_SoftBody3D_property_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
+返回 :ref:`collision_mask<class_SoftBody3D_property_collision_mask>` 中是否启用了指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -388,7 +388,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sof
 
 :ref:`RID<class_RID>` **get_physics_rid** **(** **)** |const|
 
-Returns the internal :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` for this body.
+返回 :ref:`PhysicsServer3D<class_PhysicsServer3D>` 用于该实体的内部 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -400,7 +400,7 @@ Returns the internal :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<cla
 
 :ref:`Vector3<class_Vector3>` **get_point_transform** **(** :ref:`int<class_int>` point_index **)**
 
-Returns local translation of a vertex in the surface array.
+返回表面数组中顶点的局部平移。
 
 .. rst-class:: classref-item-separator
 
@@ -412,7 +412,7 @@ Returns local translation of a vertex in the surface array.
 
 :ref:`bool<class_bool>` **is_point_pinned** **(** :ref:`int<class_int>` point_index **)** |const|
 
-Returns ``true`` if vertex is set to pinned.
+如果顶点设置为固定，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -424,7 +424,7 @@ Returns ``true`` if vertex is set to pinned.
 
 void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
-Removes a body from the list of bodies that this body can't collide with.
+将一个物体从该物体不能碰撞的物体列表中移除。
 
 .. rst-class:: classref-item-separator
 
@@ -436,7 +436,7 @@ Removes a body from the list of bodies that this body can't collide with.
 
 void **set_collision_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
-Based on ``value``, enables or disables the specified layer in the :ref:`collision_layer<class_SoftBody3D_property_collision_layer>`, given a ``layer_number`` between 1 and 32.
+根据 ``value``\ ，启用或禁用 :ref:`collision_layer<class_SoftBody3D_property_collision_layer>` 中指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -448,7 +448,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
-Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_SoftBody3D_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
+根据 ``value``\ ，启用或禁用 :ref:`collision_mask<class_SoftBody3D_property_collision_mask>` 中指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -460,12 +460,12 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 void **set_point_pinned** **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)**
 
-Sets the pinned state of a surface vertex. When set to ``true``, the optional ``attachment_path`` can define a :ref:`Node3D<class_Node3D>` the pinned vertex will be attached to.
+设置表面顶点的固定状态。当设置为 ``true`` 时，可选的 ``attachment_path`` 可以定义一个 :ref:`Node3D<class_Node3D>`\ ，该固定顶点将被附加到该节点。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

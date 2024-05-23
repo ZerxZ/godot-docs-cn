@@ -10,21 +10,21 @@
 TileData
 ========
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-Settings for a single tile in a :ref:`TileSet<class_TileSet>`.
+:ref:`TileSet<class_TileSet>` 中单个图块的设置。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-**TileData** object represents a single tile in a :ref:`TileSet<class_TileSet>`. It is usually edited using the tileset editor, but it can be modified at runtime using :ref:`TileMap._tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>`.
+**TileData** 对象代表 :ref:`TileSet<class_TileSet>` 中的单个图块，通常使用图块集编辑器进行编辑，但也可以在运行时使用 :ref:`TileMap._tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>` 进行修改。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -55,8 +55,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -117,8 +117,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_TileData_signal_changed:
 
@@ -126,7 +126,7 @@ Signals
 
 **changed** **(** **)**
 
-Emitted when any of the properties are changed.
+任何属性发生变化时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -134,8 +134,8 @@ Emitted when any of the properties are changed.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_TileData_property_flip_h:
 
@@ -148,7 +148,7 @@ Property Descriptions
 - void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_flip_h** **(** **)**
 
-If ``true``, the tile will have its texture flipped horizontally.
+如果为 ``true``\ ，则该图块的纹理会被水平翻转。
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +165,7 @@ If ``true``, the tile will have its texture flipped horizontally.
 - void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_flip_v** **(** **)**
 
-If ``true``, the tile will have its texture flipped vertically.
+如果为 ``true``\ ，则该图块的纹理会被垂直翻转。
 
 .. rst-class:: classref-item-separator
 
@@ -182,7 +182,7 @@ If ``true``, the tile will have its texture flipped vertically.
 - void **set_material** **(** :ref:`Material<class_Material>` value **)**
 - :ref:`Material<class_Material>` **get_material** **(** **)**
 
-The :ref:`Material<class_Material>` to use for this **TileData**. This can be a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` to use the default shader, or a :ref:`ShaderMaterial<class_ShaderMaterial>` to use a custom shader.
+用于此 **TileData** 的 :ref:`Material<class_Material>`\ 。使用默认着色器可以设为 :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`\ ，使用自定义着色器可以设为 :ref:`ShaderMaterial<class_ShaderMaterial>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -199,7 +199,7 @@ The :ref:`Material<class_Material>` to use for this **TileData**. This can be a 
 - void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_modulate** **(** **)**
 
-Color modulation of the tile.
+该图块的颜色调制。
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ Color modulation of the tile.
 - void **set_probability** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_probability** **(** **)**
 
-Relative probability of this tile being selected when drawing a pattern of random tiles.
+绘制随机图块图案时选择该图块的相对概率。
 
 .. rst-class:: classref-item-separator
 
@@ -233,7 +233,7 @@ Relative probability of this tile being selected when drawing a pattern of rando
 - void **set_terrain** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_terrain** **(** **)**
 
-ID of the terrain from the terrain set that the tile uses.
+该图块所使用的地形集中地形的 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -250,7 +250,7 @@ ID of the terrain from the terrain set that the tile uses.
 - void **set_terrain_set** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_terrain_set** **(** **)**
 
-ID of the terrain set that the tile uses.
+该图块所使用的地形集的 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +267,7 @@ ID of the terrain set that the tile uses.
 - void **set_texture_origin** **(** :ref:`Vector2i<class_Vector2i>` value **)**
 - :ref:`Vector2i<class_Vector2i>` **get_texture_origin** **(** **)**
 
-Offsets the position of where the tile is drawn.
+该图块绘制时的位置偏移量。
 
 .. rst-class:: classref-item-separator
 
@@ -284,7 +284,7 @@ Offsets the position of where the tile is drawn.
 - void **set_transpose** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_transpose** **(** **)**
 
-If ``true``, the tile will display transposed, i.e. with horizontal and vertical texture UVs swapped.
+如果为 ``true``\ ，则该图块会转置显示，即调换水平和垂直纹理 UV。
 
 .. rst-class:: classref-item-separator
 
@@ -301,7 +301,7 @@ If ``true``, the tile will display transposed, i.e. with horizontal and vertical
 - void **set_y_sort_origin** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_y_sort_origin** **(** **)**
 
-Vertical point of the tile used for determining y-sorted order.
+该图块用于确定 Y 排序顺序的垂直点。
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +318,7 @@ Vertical point of the tile used for determining y-sorted order.
 - void **set_z_index** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_z_index** **(** **)**
 
-Ordering index of this tile, relative to :ref:`TileMap<class_TileMap>`.
+该图块的排序索引，相对于 :ref:`TileMap<class_TileMap>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -326,8 +326,8 @@ Ordering index of this tile, relative to :ref:`TileMap<class_TileMap>`.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_TileData_method_add_collision_polygon:
 
@@ -335,7 +335,7 @@ Method Descriptions
 
 void **add_collision_polygon** **(** :ref:`int<class_int>` layer_id **)**
 
-Adds a collision polygon to the tile on the given TileSet physics layer.
+为该图块在给定的 TileSet 物理层上添加碰撞多边形。
 
 .. rst-class:: classref-item-separator
 
@@ -347,7 +347,7 @@ Adds a collision polygon to the tile on the given TileSet physics layer.
 
 :ref:`float<class_float>` **get_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
-Returns the one-way margin (for one-way platforms) of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+返回在索引为 ``layer_id`` 的 TileSet 物理层上，索引为 ``polygon_index`` 的多边形的单向边距（用于单向平台）。
 
 .. rst-class:: classref-item-separator
 
@@ -359,7 +359,7 @@ Returns the one-way margin (for one-way platforms) of the polygon at index ``pol
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **get_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
-Returns the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+返回在索引为 ``layer_id`` 的 TileSet 物理层上，索引为 ``polygon_index`` 的多边形的点。
 
 .. rst-class:: classref-item-separator
 
@@ -371,7 +371,7 @@ Returns the points of the polygon at index ``polygon_index`` for TileSet physics
 
 :ref:`int<class_int>` **get_collision_polygons_count** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns how many polygons the tile has for TileSet physics layer with index ``layer_id``.
+设置该图块中索引为 ``layer_id`` 的 TileSet 物理层中多边形的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -383,7 +383,7 @@ Returns how many polygons the tile has for TileSet physics layer with index ``la
 
 :ref:`float<class_float>` **get_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns the constant angular velocity applied to objects colliding with this tile.
+返回恒定角速度，将应用于与此图块碰撞的对象。
 
 .. rst-class:: classref-item-separator
 
@@ -395,7 +395,7 @@ Returns the constant angular velocity applied to objects colliding with this til
 
 :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns the constant linear velocity applied to objects colliding with this tile.
+返回恒定线速度，将应用于与此图块碰撞的对象。
 
 .. rst-class:: classref-item-separator
 
@@ -407,7 +407,7 @@ Returns the constant linear velocity applied to objects colliding with this tile
 
 :ref:`Variant<class_Variant>` **get_custom_data** **(** :ref:`String<class_String>` layer_name **)** |const|
 
-Returns the custom data value for custom data layer named ``layer_name``.
+返回自定义数据层的自定义数据值，自定义数据层用名称 ``layer_name`` 指定。
 
 .. rst-class:: classref-item-separator
 
@@ -419,7 +419,7 @@ Returns the custom data value for custom data layer named ``layer_name``.
 
 :ref:`Variant<class_Variant>` **get_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns the custom data value for custom data layer with index ``layer_id``.
+返回自定义数据层的自定义数据值，自定义数据层用索引 ``layer_id`` 指定。
 
 .. rst-class:: classref-item-separator
 
@@ -431,7 +431,7 @@ Returns the custom data value for custom data layer with index ``layer_id``.
 
 :ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns the navigation polygon of the tile for the TileSet navigation layer with index ``layer_id``.
+返回该图块中索引为 ``layer_id`` 的 TileSet 导航层的导航多边形。
 
 .. rst-class:: classref-item-separator
 
@@ -443,7 +443,7 @@ Returns the navigation polygon of the tile for the TileSet navigation layer with
 
 :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder** **(** :ref:`int<class_int>` layer_id **)** |const|
 
-Returns the occluder polygon of the tile for the TileSet occlusion layer with index ``layer_id``.
+返回该图块中索引为 ``layer_id`` 的 TileSet 遮挡层的遮挡器多边形。
 
 .. rst-class:: classref-item-separator
 
@@ -455,7 +455,7 @@ Returns the occluder polygon of the tile for the TileSet occlusion layer with in
 
 :ref:`int<class_int>` **get_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|
 
-Returns the tile's terrain bit for the given ``peering_bit`` direction.
+返回该图块给定 ``peering_bit`` 方向的地形位。
 
 .. rst-class:: classref-item-separator
 
@@ -467,7 +467,7 @@ Returns the tile's terrain bit for the given ``peering_bit`` direction.
 
 :ref:`bool<class_bool>` **is_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
-Returns whether one-way collisions are enabled for the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+返回索引为 ``layer_id`` 的 TileSet 物理层上索引为 ``polygon_index`` 的多边形是否启用了单向碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -479,7 +479,7 @@ Returns whether one-way collisions are enabled for the polygon at index ``polygo
 
 void **remove_collision_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)**
 
-Removes the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+移除索引为 ``layer_id`` 的 TileSet 物理层上索引为 ``polygon_index`` 的多边形。
 
 .. rst-class:: classref-item-separator
 
@@ -491,7 +491,7 @@ Removes the polygon at index ``polygon_index`` for TileSet physics layer with in
 
 void **set_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`bool<class_bool>` one_way **)**
 
-Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+启用/禁用索引为 ``layer_id`` 的 TileSet 物理层上索引为 ``polygon_index`` 的多边形的单向碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -503,7 +503,7 @@ Enables/disables one-way collisions on the polygon at index ``polygon_index`` fo
 
 void **set_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`float<class_float>` one_way_margin **)**
 
-Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+启用/禁用索引为 ``layer_id`` 的 TileSet 物理层上索引为 ``polygon_index`` 的多边形的单向碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -515,7 +515,7 @@ Enables/disables one-way collisions on the polygon at index ``polygon_index`` fo
 
 void **set_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
 
-Sets the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+设置索引为 ``layer_id`` 的 TileSet 物理层上索引为 ``polygon_index`` 的多边形的顶点。
 
 .. rst-class:: classref-item-separator
 
@@ -527,7 +527,7 @@ Sets the points of the polygon at index ``polygon_index`` for TileSet physics la
 
 void **set_collision_polygons_count** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygons_count **)**
 
-Sets the polygons count for TileSet physics layer with index ``layer_id``.
+设置索引为 ``layer_id`` 的 TileSet 物理层中多边形的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -539,7 +539,7 @@ Sets the polygons count for TileSet physics layer with index ``layer_id``.
 
 void **set_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`float<class_float>` velocity **)**
 
-Sets the constant angular velocity. This does not rotate the tile. This angular velocity is applied to objects colliding with this tile.
+设置恒定角速度。不会旋转图块。会对与该图块发生碰撞的对象应用该角速度。
 
 .. rst-class:: classref-item-separator
 
@@ -551,7 +551,7 @@ Sets the constant angular velocity. This does not rotate the tile. This angular 
 
 void **set_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`Vector2<class_Vector2>` velocity **)**
 
-Sets the constant linear velocity. This does not move the tile. This linear velocity is applied to objects colliding with this tile. This is useful to create conveyor belts.
+设置恒定线速度。不会旋转图块。会对与该图块发生碰撞的对象应用该线速度。可用于创建传送带。
 
 .. rst-class:: classref-item-separator
 
@@ -563,7 +563,7 @@ Sets the constant linear velocity. This does not move the tile. This linear velo
 
 void **set_custom_data** **(** :ref:`String<class_String>` layer_name, :ref:`Variant<class_Variant>` value **)**
 
-Sets the tile's custom data value for the TileSet custom data layer with name ``layer_name``.
+设置该图块的自定义数据值，TileSet 自定义数据层由名称 ``layer_name`` 指定。
 
 .. rst-class:: classref-item-separator
 
@@ -575,7 +575,7 @@ Sets the tile's custom data value for the TileSet custom data layer with name ``
 
 void **set_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id, :ref:`Variant<class_Variant>` value **)**
 
-Sets the tile's custom data value for the TileSet custom data layer with index ``layer_id``.
+设置该图块的自定义数据值，TileSet 自定义数据层由索引 ``layer_id`` 指定。
 
 .. rst-class:: classref-item-separator
 
@@ -587,7 +587,7 @@ Sets the tile's custom data value for the TileSet custom data layer with index `
 
 void **set_navigation_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**
 
-Sets the navigation polygon for the TileSet navigation layer with index ``layer_id``.
+设置索引为 ``layer_id`` 的 TileSet 导航层的导航多边形。
 
 .. rst-class:: classref-item-separator
 
@@ -599,7 +599,7 @@ Sets the navigation polygon for the TileSet navigation layer with index ``layer_
 
 void **set_occluder** **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**
 
-Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
+设置索引为 ``layer_id`` 的 TileSet 遮挡层的遮挡器。
 
 .. rst-class:: classref-item-separator
 
@@ -611,12 +611,12 @@ Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
 
 void **set_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**
 
-Sets the tile's terrain bit for the given ``peering_bit`` direction.
+设置该图块给定 ``peering_bit`` 方向的地形位。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

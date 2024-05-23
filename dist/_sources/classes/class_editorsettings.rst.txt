@@ -10,20 +10,20 @@
 EditorSettings
 ==============
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Object that holds the project-independent editor settings.
+保存编辑器设置的对象，这些设置与项目无关。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-Object that holds the project-independent editor settings. These settings are generally visible in the **Editor > Editor Settings** menu.
+保存编辑器设置的对象，这些设置与项目无关，通常在\ **编辑器 > 编辑器设置**\ 菜单中可见。
 
-Property names use slash delimiters to distinguish sections. Setting values can be of any :ref:`Variant<class_Variant>` type. It's recommended to use ``snake_case`` for editor settings to be consistent with the Godot editor itself.
+属性名称中使用斜线分隔符来区分不同的部分。设置的值可以是任何 :ref:`Variant<class_Variant>` 类型。编辑器设置的名称建议使用 ``snake_case`` 形式，与 Godot 编辑器本身保持一致。
 
-Accessing the settings can be done using the following methods, such as:
+可以使用以下方法访问设置，例如：
 
 
 .. tabs::
@@ -31,29 +31,29 @@ Accessing the settings can be done using the following methods, such as:
  .. code-tab:: gdscript
 
     var settings = EditorInterface.get_editor_settings()
-    # `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
+    # 也可以写 `settings.set("some/property", 10)`，因为这个类内部覆盖了 `_set()`。
     settings.set_setting("some/property", 10)
-    # `settings.get("some/property")` also works as this class overrides `_get()` internally.
+    # 也可以写 `settings.get("some/property")` ，因为这个类内部覆盖了 `_get()`。
     settings.get_setting("some/property")
     var list_of_settings = settings.get_property_list()
 
  .. code-tab:: csharp
 
     EditorSettings settings = EditorInterface.Singleton.GetEditorSettings();
-    // `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
+    // 也可以写 `settings.set("some/property", 10)`，因为这个类内部覆盖了 `_set()`。
     settings.SetSetting("some/property", Value);
-    // `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
+    // 也可以写 `settings.get("some/property")` ，因为这个类内部覆盖了 `_get()`。
     settings.GetSetting("some/property");
     Godot.Collections.Array<Godot.Collections.Dictionary> listOfSettings = settings.GetPropertyList();
 
 
 
-\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
+\ **注意：**\ 不能直接实例化这个类。请改用 :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>` 访问单例。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -574,8 +574,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -620,8 +620,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_EditorSettings_signal_settings_changed:
 
@@ -629,7 +629,7 @@ Signals
 
 **settings_changed** **(** **)**
 
-Emitted after any editor setting has changed.
+在编辑器设置改变后触发。
 
 .. rst-class:: classref-section-separator
 
@@ -637,8 +637,8 @@ Emitted after any editor setting has changed.
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+常量
+----
 
 .. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 
@@ -646,7 +646,7 @@ Constants
 
 **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = ``10000``
 
-Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+在编辑器设置改变后触发。它被各种编辑器插件使用，以在主题更改时更新视觉效果，或在配置更改时更新逻辑。
 
 .. rst-class:: classref-section-separator
 
@@ -654,8 +654,8 @@ Emitted after any editor setting has changed. It's used by various editor plugin
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_EditorSettings_property_debugger/auto_switch_to_remote_scene_tree:
 
@@ -663,7 +663,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **debugger/auto_switch_to_remote_scene_tree**
 
-If ``true``, automatically switches to the **Remote** scene tree when running the project from the editor. If ``false``, stays on the **Local** scene tree when running the project from the editor.
+如果为 ``true``\ ，则在从编辑器运行项目时自动切换到\ **远程**\ 场景树。如果为 ``false``\ ，则在从编辑器运行项目时保持\ **本地**\ 场景树。
 
 .. rst-class:: classref-item-separator
 
@@ -675,7 +675,7 @@ If ``true``, automatically switches to the **Remote** scene tree when running th
 
 :ref:`int<class_int>` **debugger/profiler_frame_history_size**
 
-The size of the profiler's frame history. The default value (3600) allows seeing up to 60 seconds of profiling if the project renders at a constant 60 FPS. Higher values allow viewing longer periods of profiling in the graphs, especially when the project is running at high framerates.
+分析器的帧历史的大小。如果项目以恒定的 60 FPS 渲染，则默认值（3600）允许查看最多 60 秒的分析。更高的值允许在图表中查看更长时间的分析，尤其是当项目以高帧率运行时。
 
 .. rst-class:: classref-item-separator
 
@@ -687,9 +687,9 @@ The size of the profiler's frame history. The default value (3600) allows seeing
 
 :ref:`int<class_int>` **debugger/profiler_frame_max_functions**
 
-The maximum number of script functions that can be displayed per frame in the profiler. If there are more script functions called in a given profiler frame, these functions will be discarded from the profiling results entirely.
+性能分析器中，每帧能够显示的脚本函数的最大数量。如果给定的分析器帧中存在超过这个数量的脚本函数，则这些函数会被完全全部丢弃。
 
-\ **Note:** This setting is only read when the profiler is first started, so changing it during profiling will have no effect.
+\ **注意：**\ 这个设置仅在首次启动性能分析器时读取，进行分析时修改无效。
 
 .. rst-class:: classref-item-separator
 
@@ -701,7 +701,7 @@ The maximum number of script functions that can be displayed per frame in the pr
 
 :ref:`float<class_float>` **debugger/remote_inspect_refresh_interval**
 
-The refresh interval for the remote inspector's properties (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the **Remote** scene tree is selected in the Scene tree dock.
+远程检查器属性的刷新间隔（单位为秒）。值越低反应越快，但如果项目从编辑器运行并且“场景”面板中选中了\ **远程**\ 场景树就可能导致卡顿。
 
 .. rst-class:: classref-item-separator
 
@@ -713,7 +713,7 @@ The refresh interval for the remote inspector's properties (in seconds). Lower v
 
 :ref:`float<class_float>` **debugger/remote_scene_tree_refresh_interval**
 
-The refresh interval for the remote scene tree (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the **Remote** scene tree is selected in the Scene tree dock.
+远程场景树的刷新间隔（单位为秒）。值越低反应越快，但如果项目从编辑器运行并且“场景”面板中选中了\ **远程**\ 场景树就可能导致卡顿。
 
 .. rst-class:: classref-item-separator
 
@@ -725,9 +725,9 @@ The refresh interval for the remote scene tree (in seconds). Lower values are mo
 
 :ref:`bool<class_bool>` **docks/filesystem/always_show_folders**
 
-If ``true``, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If ``false``, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the ``res://`` folder path.
+如果为 ``true``\ ，则在启用拆分模式时，在文件系统停靠面板的底部窗格中显示文件夹。如果为 ``false``\ ，则只有文件将显示在底部窗格中。可以通过按 ``res://`` 文件夹路径旁边的图标来切换拆分模式。
 
-\ **Note:** This setting has no effect when split mode is disabled (which is the default).
+\ **注意：**\ 当拆分模式被禁用（这是默认设置）时，该设置无效。
 
 .. rst-class:: classref-item-separator
 
@@ -739,7 +739,7 @@ If ``true``, displays folders in the FileSystem dock's bottom pane when split mo
 
 :ref:`String<class_String>` **docks/filesystem/textfile_extensions**
 
-List of file extensions to consider as editable text files in the FileSystem dock (by double-clicking on the files).
+文件扩展名列表，“文件系统”面板会将这些文件认为是可编辑的文本文件（在文件上双击编辑）。
 
 .. rst-class:: classref-item-separator
 
@@ -751,7 +751,7 @@ List of file extensions to consider as editable text files in the FileSystem doc
 
 :ref:`int<class_int>` **docks/filesystem/thumbnail_size**
 
-The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`.
+“文件系统”面板中使用的缩略图大小（单位为像素）。另见 :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -763,7 +763,7 @@ The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`fil
 
 :ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
 
-The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector refresh more often, but take up more CPU time.
+检查器停靠面板中属性的刷新间隔。当在 2D/3D 编辑器中调整小工具并同时查看检查器时，该设置的效果特别明显。值越低检查器刷新越频繁，也会占用更多 CPU 时间。
 
 .. rst-class:: classref-item-separator
 
@@ -775,7 +775,7 @@ The refresh interval to use for the Inspector dock's properties. The effect of t
 
 :ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
 
-The tint intensity to use for the subresources background in the Inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
+检查器停靠面板中子资源背景的着色强度。着色用于区分检查器中不同的子资源。值越高，背景颜色差异越明显。
 
 .. rst-class:: classref-item-separator
 
@@ -787,7 +787,7 @@ The tint intensity to use for the subresources background in the Inspector dock.
 
 :ref:`bool<class_bool>` **docks/scene_tree/auto_expand_to_selected**
 
-If ``true``, the scene tree dock will automatically unfold nodes when a node that has folded parents is selected.
+如果为 ``true``\ ，则在选中节点时，场景树停靠面板会自动展开该节点已折叠的父节点。
 
 .. rst-class:: classref-item-separator
 
@@ -799,7 +799,7 @@ If ``true``, the scene tree dock will automatically unfold nodes when a node tha
 
 :ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded**
 
-If ``true``, the Create dialog (Create New Node/Create New Resource) will start with all its sections expanded. Otherwise, sections will be collapsed until the user starts searching (which will automatically expand sections as needed).
+如果为 ``true``\ ，则创建对话框（创建新节点/创建新资源）将以展开其所有部分开始。否则，部分将被折叠，直到用户开始搜索（这将根据需要自动展开部分）。
 
 .. rst-class:: classref-item-separator
 
@@ -811,7 +811,7 @@ If ``true``, the Create dialog (Create New Node/Create New Resource) will start 
 
 :ref:`Color<class_Color>` **editors/2d/bone_color1**
 
-The "start" stop of the color gradient to use for bones in the 2D skeleton editor.
+2D 骨架编辑器中，骨骼颜色渐变的“开始”点。
 
 .. rst-class:: classref-item-separator
 
@@ -823,7 +823,7 @@ The "start" stop of the color gradient to use for bones in the 2D skeleton edito
 
 :ref:`Color<class_Color>` **editors/2d/bone_color2**
 
-The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
+2D 骨架编辑器中，骨骼颜色渐变的“结束”点。
 
 .. rst-class:: classref-item-separator
 
@@ -835,7 +835,7 @@ The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
 
 :ref:`Color<class_Color>` **editors/2d/bone_ik_color**
 
-The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
+2D 骨架编辑器中，用于启用了反向运动学的骨骼的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -847,7 +847,7 @@ The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
 
 :ref:`Color<class_Color>` **editors/2d/bone_outline_color**
 
-The outline color to use for non-selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`.
+2D 骨架编辑器中，用于未选中骨骼的轮廓颜色。另见 :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -859,9 +859,9 @@ The outline color to use for non-selected bones in the 2D skeleton editor. See a
 
 :ref:`float<class_float>` **editors/2d/bone_outline_size**
 
-The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`.
+2D 骨架编辑器中轮廓的大小（单位为像素）。另见 :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`\ 。
 
-\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
+\ **注意：**\ 对此值的更改只有在以任何方式修改 :ref:`Bone2D<class_Bone2D>` 节点，或者关闭并重新打开场景后才会生效。
 
 .. rst-class:: classref-item-separator
 
@@ -873,7 +873,7 @@ The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2
 
 :ref:`Color<class_Color>` **editors/2d/bone_selected_color**
 
-The color to use for selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`.
+2D 骨架编辑器中，用于已选中骨骼的颜色。另见 :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -885,9 +885,9 @@ The color to use for selected bones in the 2D skeleton editor. See also :ref:`ed
 
 :ref:`float<class_float>` **editors/2d/bone_width**
 
-The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`.
+2D 骨架编辑器中的骨骼宽度（单位为像素）。另见 :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`\ 。
 
-\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
+\ **注意：**\ 对此值的更改只有在以任何方式修改 :ref:`Bone2D<class_Bone2D>` 节点，或者关闭并重新打开场景后才会生效。
 
 .. rst-class:: classref-item-separator
 
@@ -899,7 +899,7 @@ The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/
 
 :ref:`Color<class_Color>` **editors/2d/grid_color**
 
-The grid color to use in the 2D editor.
+2D 编辑器使用的栅格颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -911,7 +911,7 @@ The grid color to use in the 2D editor.
 
 :ref:`Color<class_Color>` **editors/2d/guides_color**
 
-The guides color to use in the 2D editor. Guides can be created by dragging the mouse cursor from the rulers.
+2D 编辑器使用的参考线颜色。可以通过从标尺上拖动鼠标光标来创建参考线。
 
 .. rst-class:: classref-item-separator
 
@@ -923,7 +923,7 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 
 :ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
 
-The color to use when drawing smart snapping lines in the 2D editor. The smart snapping lines will automatically display when moving 2D nodes if smart snapping is enabled in the Snapping Options menu at the top of the 2D editor viewport.
+在 2D 编辑器中，绘制智能吸附线时使用的颜色。如果在 2D 编辑器视口顶部的“吸附选项”菜单中启用智能吸附，则移动 2D 节点时智能吸附线将自动显示。
 
 .. rst-class:: classref-item-separator
 
@@ -935,7 +935,7 @@ The color to use when drawing smart snapping lines in the 2D editor. The smart s
 
 :ref:`bool<class_bool>` **editors/2d/use_integer_zoom_by_default**
 
-If ``true``, the 2D editor will snap to integer zoom values while not holding the :kbd:`Alt` key and powers of two while holding it. If ``false``, this behavior is swapped.
+如果为 ``true``\ ，2D 编辑器将在不按住 :kbd:`Alt` 键的情况下吸附到整数缩放值，并在按住时吸附到 2 的幂。如果为 ``false``\ ，则交换这种行为。
 
 .. rst-class:: classref-item-separator
 
@@ -947,7 +947,7 @@ If ``true``, the 2D editor will snap to integer zoom values while not holding th
 
 :ref:`Color<class_Color>` **editors/2d/viewport_border_color**
 
-The color of the viewport border in the 2D editor. This border represents the viewport's size at the base resolution defined in the Project Settings. Objects placed outside this border will not be visible unless a :ref:`Camera2D<class_Camera2D>` node is used, or unless the window is resized and the stretch mode is set to ``disabled``.
+2D 编辑器中视口边框的颜色。该边框表示在项目设置中定义的基本分辨率下的视口大小。除非使用 :ref:`Camera2D<class_Camera2D>` 节点，或者除非调整窗口大小并将拉伸模式设置为 ``disabled``\ ，否则放置在该边界之外的对象将不可见。
 
 .. rst-class:: classref-item-separator
 
@@ -959,7 +959,7 @@ The color of the viewport border in the 2D editor. This border represents the vi
 
 :ref:`float<class_float>` **editors/3d/default_fov**
 
-The default camera field of view to use in the 3D editor (in degrees). The camera field of view can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera field of view adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+在 3D 编辑器中使用的默认相机视野（以度为单位）。可以使用 3D 编辑器顶部的\ **查看**\ 菜单，在每个场景的基础上调整相机视野。如果使用\ **查看**\ 菜单调整了场景的相机视野，则该设置将在相关场景中被忽略。在编辑器中预览 Camera3D 节点时，该设置也将被忽略。
 
 .. rst-class:: classref-item-separator
 
@@ -971,7 +971,7 @@ The default camera field of view to use in the 3D editor (in degrees). The camer
 
 :ref:`float<class_float>` **editors/3d/default_z_far**
 
-The default camera far clip distance to use in the 3D editor (in degrees). Higher values make it possible to view objects placed further away from the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera far clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera far clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+在 3D 编辑器中使用的默认相机远剪辑距离（以度为单位）。较高的值可以查看距离相机较远的对象，但会降低深度缓冲区的精度（这可能导致远处可见的 Z 冲突）。可以使用 3D 编辑器顶部的\ **查看**\ 菜单在每个场景的基上，调整相机远剪辑距离。如果一个场景使用\ **查看**\ 菜单调整了其相机远剪辑距离，则该设置在相关场景中将被忽略。在编辑器中预览 Camera3D 节点时，该设置也将被忽略。
 
 .. rst-class:: classref-item-separator
 
@@ -983,7 +983,7 @@ The default camera far clip distance to use in the 3D editor (in degrees). Highe
 
 :ref:`float<class_float>` **editors/3d/default_z_near**
 
-The default camera near clip distance to use in the 3D editor (in degrees). Lower values make it possible to view objects placed closer to the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera near clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera near clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+要在 3D 编辑器中使用的默认相机近剪辑距离（以度为单位）。较低的值可以查看距离相机更近的对象，但会降低深度缓冲区的精度（这可能会导致远处可见的 Z 冲突）。可以使用 3D 编辑器顶部的\ **查看**\ 菜单，在每个场景的基上调整相机近剪辑距离。如果一个场景使用\ **查看**\ 菜单，调整了其相机近剪辑距离，则该设置在相关场景中将被忽略。在编辑器中预览 Camera3D 节点时，该设置也将被忽略。
 
 .. rst-class:: classref-item-separator
 
@@ -995,11 +995,11 @@ The default camera near clip distance to use in the 3D editor (in degrees). Lowe
 
 :ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier**
 
-The modifier key to use to enable freelook in the 3D editor (on top of pressing the right mouse button).
+用于在 3D 编辑器中启用自由观看的修饰键（在按下鼠标右键的同时）。
 
-\ **Note:** Regardless of this setting, the freelook toggle keyboard shortcut (:kbd:`Shift + F` by default) is always available.
+\ **注意：**\ 无论该设置如何，自由观看切换键盘快捷键（默认为 :kbd:`Shift + F`\ ）始终可用。
 
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+\ **注意：**\ 在 Linux 的某些窗口管理器上，\ :kbd:`Alt` 键在同时单击鼠标按钮时会被窗口管理器拦截。这意味着 Godot 不会看到该修饰键被按下。
 
 .. rst-class:: classref-item-separator
 
@@ -1011,7 +1011,7 @@ The modifier key to use to enable freelook in the 3D editor (on top of pressing 
 
 :ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed**
 
-The base 3D freelook speed in units per second. This can be adjusted by using the mouse wheel while in freelook mode, or by holding down the "fast" or "slow" modifier keys (:kbd:`Shift` and :kbd:`Alt` by default, respectively).
+基本 3D 自由观看速度（单位：3D 单位（unit）每秒）。这可以通过在自由观看模式下使用鼠标滚轮进行调整，或者按住“快速”或“慢速”修饰键（默认分别为 :kbd:`Shift` 和 :kbd:`Alt` ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1023,7 +1023,7 @@ The base 3D freelook speed in units per second. This can be adjusted by using th
 
 :ref:`float<class_float>` **editors/3d/freelook/freelook_inertia**
 
-The inertia of the 3D freelook camera. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+3D 自由观看相机的惯性。较高的值会使相机启动和停止更慢，这看起来更流畅但会增加延迟。
 
 .. rst-class:: classref-item-separator
 
@@ -1035,15 +1035,15 @@ The inertia of the 3D freelook camera. Higher values make the camera start and s
 
 :ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme**
 
-The navigation scheme to use when freelook is enabled in the 3D editor. Some of the navigation schemes below may be more convenient when designing specific levels in the 3D editor.
+在 3D 编辑器中启用自由观看时使用的导航方案。在 3D 编辑器中设计特定关卡时，下面的一些导航方案可能会更方便。
 
-- **Default:** The "Freelook Forward", "Freelook Backward", "Freelook Up" and "Freelook Down" keys will move relative to the camera, taking its pitch angle into account for the movement.
+- **默认值：**\ “自由观看向前”、“自由观看向后”、“自由观看向上”和“自由观看向下”键将相对于相机移动，运动时考虑相机的俯仰角。
 
-- **Partially Axis-Locked:** The "Freelook Forward" and "Freelook Backward" keys will move relative to the camera, taking its pitch angle into account for the movement. The "Freelook Up" and "Freelook Down" keys will move in an "absolute" manner, *not* taking the camera's pitch angle into account for the movement.
+- **部分轴锁定：**\ “自由观看向前”和“自由观看向后”键将相对于相机移动，运动时考虑相机的俯仰角。“自由观看向上”和“自由观看向下”键将以“绝对的”方式移动，运动时\ *不*\ 考虑相机的俯仰角。
 
-- **Fully Axis-Locked:** The "Freelook Forward", "Freelook Backward", "Freelook Up" and "Freelook Down" keys will move in an "absolute" manner, *not* taking the camera's pitch angle into account for the movement.
+- **完全轴锁定：**\ “自由观看向前”、“自由观看向后”、“自由观看向上”和“自由观看向下”键将以“绝对的”方式移动，运动时\ *不*\ 考虑相机的俯仰角。
 
-See also :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`.
+另见 :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1055,7 +1055,7 @@ See also :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_prop
 
 :ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity**
 
-The mouse sensitivity to use while freelook mode is active in the 3D editor. See also :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`.
+在 3D 编辑器中启用自由观看模式时使用的鼠标灵敏度。另见 :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1067,7 +1067,7 @@ The mouse sensitivity to use while freelook mode is active in the 3D editor. See
 
 :ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link**
 
-If ``true``, freelook speed is linked to the zoom value used in the camera orbit mode in the 3D editor.
+如果为 ``true``\ ，则自由观看速度与 3D 编辑器中相机轨道模式中使用的缩放值相关联。
 
 .. rst-class:: classref-item-separator
 
@@ -1079,7 +1079,7 @@ If ``true``, freelook speed is linked to the zoom value used in the camera orbit
 
 :ref:`float<class_float>` **editors/3d/grid_division_level_bias**
 
-The grid division bias to use in the 3D editor. Negative values will cause small grid divisions to appear earlier, whereas positive values will cause small grid divisions to appear later.
+在 3D 编辑器中使用的栅格划分偏差。负值会使小的栅格划分出现得更早，而正值会使小的栅格划分出现得更晚。
 
 .. rst-class:: classref-item-separator
 
@@ -1091,7 +1091,7 @@ The grid division bias to use in the 3D editor. Negative values will cause small
 
 :ref:`int<class_int>` **editors/3d/grid_division_level_max**
 
-The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` units each (so primary grid lines are ``512`` units apart), no matter how far away the camera is from the grid.
+在 3D 编辑器中使用的最大栅格划分。这个属性与 :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` 一同决定栅格划分的大小。栅格不能大于 ``primary_grid_steps ^ grid_division_level_max`` 个单位。默认情况下 :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` 为 ``8``\ ，这意味着无论相机离栅格有多远，每个栅格划分都不能大于 ``64`` 个单位（因此主栅格线之间相距 ``512`` 个单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -1103,7 +1103,7 @@ The largest grid division to use in the 3D editor. Together with :ref:`editors/3
 
 :ref:`int<class_int>` **editors/3d/grid_division_level_min**
 
-The smallest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how small the grid divisions can be. The grid divisions will not be able to get smaller than ``primary_grid_steps ^ grid_division_level_min`` units. By default, this means grid divisions cannot get smaller than 1 unit each, no matter how close the camera is from the grid.
+在 3D 编辑器中使用的最小栅格划分。这个属性与 :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` 一同决定栅格划分的大小。栅格不能小于 ``primary_grid_steps ^ grid_division_level_min`` 个单位。默认情况下这意味着无论相机离栅格有多近，每个栅格划分都不能小于 1 个单位。
 
 .. rst-class:: classref-item-separator
 
@@ -1115,7 +1115,7 @@ The smallest grid division to use in the 3D editor. Together with :ref:`editors/
 
 :ref:`int<class_int>` **editors/3d/grid_size**
 
-The grid size in units. Higher values prevent the grid from appearing "cut off" at certain angles, but make the grid more demanding to render. Depending on the camera's position, the grid may not be fully visible since a shader is used to fade it progressively.
+栅格大小，单位：3D 单位（unit）。较高的值可防止栅格在某些角度出现“截断”，但会使栅格对渲染的要求更高。根据相机的位置，栅格可能不会完全可见，因为着色器用于逐渐淡化它。
 
 .. rst-class:: classref-item-separator
 
@@ -1127,7 +1127,7 @@ The grid size in units. Higher values prevent the grid from appearing "cut off" 
 
 :ref:`bool<class_bool>` **editors/3d/grid_xy_plane**
 
-If ``true``, render the grid on an XY plane. This can be useful for 3D side-scrolling games.
+如果为 ``true``\ ，则在 XY 平面上渲染栅格。可用于 3D 横向卷轴游戏。
 
 .. rst-class:: classref-item-separator
 
@@ -1139,7 +1139,7 @@ If ``true``, render the grid on an XY plane. This can be useful for 3D side-scro
 
 :ref:`bool<class_bool>` **editors/3d/grid_xz_plane**
 
-If ``true``, render the grid on an XZ plane.
+如果为 ``true``\ ，则在 XZ 平面上渲染栅格。
 
 .. rst-class:: classref-item-separator
 
@@ -1151,7 +1151,7 @@ If ``true``, render the grid on an XZ plane.
 
 :ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
 
-If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrolling games.
+如果为 ``true``\ ，则在 YZ 平面上渲染栅格。可用于 3D 横向卷轴游戏。
 
 .. rst-class:: classref-item-separator
 
@@ -1163,11 +1163,11 @@ If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrol
 
 :ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse**
 
-If ``true``, enables 3-button mouse emulation mode. This is useful on laptops when using a trackpad.
+如果为 ``true``\ ，启用 3 键鼠标模拟模式。这在使用触控板的笔记本电脑上很有用。
 
-When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers can always be used in the 3D editor viewport, even when not holding down any mouse button.
+启用 3 键鼠标模拟模式后，即使未按住任何鼠标按钮，也始终可以在 3D 编辑器视口中使用平移、缩放、和视轨修饰键。
 
-\ **Note:** No matter the orbit modifier configured in :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`, :kbd:`Alt` will always remain usable for orbiting in this mode to improve usability with graphics tablets.
+\ **注意：**\ 无论 :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>` 中配置的视轨修饰键如何，\ :kbd:`Alt` 在该模式下始终可用于视轨，以提高绘图板的可用性。
 
 .. rst-class:: classref-item-separator
 
@@ -1179,7 +1179,7 @@ When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers
 
 :ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad**
 
-If ``true``, allows using the top row :kbd:`0`-:kbd:`9` keys to function as their equivalent numpad keys for 3D editor navigation. This should be enabled on keyboards that have no numeric keypad available.
+如果为 ``true``\ ，则允许使用顶行 :kbd:`0`-:kbd:`9` 键作为 3D 编辑器导航的等效数字键盘键。应该在没有可用数字小键盘的键盘上启用。
 
 .. rst-class:: classref-item-separator
 
@@ -1191,7 +1191,7 @@ If ``true``, allows using the top row :kbd:`0`-:kbd:`9` keys to function as thei
 
 :ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis**
 
-If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D editor. This setting does *not* apply to freelook mode.
+如果为 ``true``\ ，则在 3D 编辑器中平移或视轨时，反转鼠标水平轴。该设置\ *不*\ 适用于自由观看模式。
 
 .. rst-class:: classref-item-separator
 
@@ -1203,7 +1203,7 @@ If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D
 
 :ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis**
 
-If ``true``, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
+如果为 ``true``\ ，则在 3D 编辑器中平移、视轨、或使用自由观看模式时，反转鼠标垂直轴。
 
 .. rst-class:: classref-item-separator
 
@@ -1215,17 +1215,17 @@ If ``true``, invert the vertical mouse axis when panning, orbiting, or using fre
 
 :ref:`int<class_int>` **editors/3d/navigation/navigation_scheme**
 
-The navigation scheme to use in the 3D editor. Changing this setting will affect the mouse buttons that must be held down to perform certain operations in the 3D editor viewport.
+在 3D 编辑器中使用的导航方案。更改该设置将影响鼠标按钮，这些鼠标按钮必须被按住才能在 3D 编辑器视口中执行某些操作。
 
-- **Godot** Middle mouse button to orbit, :kbd:`Shift + Middle mouse button` to pan. :kbd:`Mouse wheel` to zoom.
+- **Godot**\ 鼠标中键进行视轨，\ :kbd:`Shift + 鼠标中键`\ 进行平移。\ :kbd:`鼠标滚轮`\ 进行缩放。
 
-- **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Mouse wheel` to zoom.
+- **Maya：**\ :kbd:`Alt + 鼠标左键`\ 进行视轨。\ :kbd:`鼠标中键`\ 进行平移，\ :kbd:`Shift + 鼠标中键` 平移速度提高 10 倍。\ :kbd:`鼠标滚轮`\ 进行缩放。
 
-- **Modo:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
+- **Modo：**\ :kbd:`Alt + 鼠标左键`\ 进行视轨。 :kbd:`Alt + Shift + 鼠标左键`\ 进行平移。 :kbd:`Ctrl + Alt + 鼠标左键`\ 进行缩放。
 
-See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
+另请参阅 :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`\ 。
 
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+\ **注意：**\ 在 Linux 的某些窗口管理器上，\ :kbd:`Alt` 键在同时点击鼠标按钮时会被窗口管理器拦截。这意味着 Godot 不会看到该修饰键被按下。
 
 .. rst-class:: classref-item-separator
 
@@ -1237,11 +1237,11 @@ See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettin
 
 :ref:`int<class_int>` **editors/3d/navigation/orbit_modifier**
 
-The modifier key that must be held to orbit in the 3D editor.
+必须被按住以在 3D 编辑器中进行视轨的修饰键。
 
-\ **Note:** If :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>` is ``true``, :kbd:`Alt` will always remain usable for orbiting to improve usability with graphics tablets.
+\ **注意：**\ 如果 :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>` 为 ``true``\ ，则 :kbd:`Alt` 将始终可用于视轨以提高绘图板的可用性。
 
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+\ **注意：**\ 在 Linux 的某些窗口管理器上，\ :kbd:`Alt` 键在同时点击鼠标按钮时会被窗口管理器拦截。这意味着 Godot 不会看到该修饰键被按下。
 
 .. rst-class:: classref-item-separator
 
@@ -1253,9 +1253,9 @@ The modifier key that must be held to orbit in the 3D editor.
 
 :ref:`int<class_int>` **editors/3d/navigation/pan_modifier**
 
-The modifier key that must be held to pan in the 3D editor.
+必须被按住以在 3D 编辑器中进行平移的修饰键。
 
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+\ **注意：**\ 在 Linux 的某些窗口管理器上，\ :kbd:`Alt` 键在同时点击鼠标按钮时会被窗口管理器拦截。这意味着 Godot 不会看到该修饰键被按下。
 
 .. rst-class:: classref-item-separator
 
@@ -1267,7 +1267,7 @@ The modifier key that must be held to pan in the 3D editor.
 
 :ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
+如果为 ``true``\ ，则会在 3D 编辑器中平移时，鼠标超出 3D 视口范围后将其传送到对侧。这样在大型区域中平移就不必先退出平移然后调整鼠标光标。
 
 .. rst-class:: classref-item-separator
 
@@ -1279,9 +1279,9 @@ If ``true``, warps the mouse around the 3D viewport while panning in the 3D edit
 
 :ref:`int<class_int>` **editors/3d/navigation/zoom_modifier**
 
-The modifier key that must be held to zoom in the 3D editor.
+必须被按住以在 3D 编辑器中进行放大的修饰键。
 
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+\ **注意：**\ 在 Linux 的某些窗口管理器上，\ :kbd:`Alt` 键在同时点击鼠标按钮时会被窗口管理器拦截。这意味着 Godot 不会看到该修改键被按下。
 
 .. rst-class:: classref-item-separator
 
@@ -1293,7 +1293,7 @@ The modifier key that must be held to zoom in the 3D editor.
 
 :ref:`int<class_int>` **editors/3d/navigation/zoom_style**
 
-The mouse cursor movement direction to use when zooming by moving the mouse. This does not affect zooming with the mouse wheel.
+当通过移动鼠标进行缩放时要使用的鼠标光标移动方向。这不会影响使用鼠标滚轮进行缩放。
 
 .. rst-class:: classref-item-separator
 
@@ -1305,7 +1305,7 @@ The mouse cursor movement direction to use when zooming by moving the mouse. Thi
 
 :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia**
 
-The inertia to use when orbiting in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+在 3D 编辑器中进行视轨时要使用的惯性。更高的值会使相机启动和停止更慢，这看起来更流畅但会增加延迟。
 
 .. rst-class:: classref-item-separator
 
@@ -1317,7 +1317,7 @@ The inertia to use when orbiting in the 3D editor. Higher values make the camera
 
 :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity**
 
-The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`.
+在 3D 编辑器中进行视轨时要使用的鼠标灵敏度。另请参阅 :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1329,7 +1329,7 @@ The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`edit
 
 :ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia**
 
-The inertia to use when panning in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+在 3D 编辑器中进行平移时要使用的惯性。更高的值会使相机启动和停止更慢，这看起来更流畅但会增加延迟。
 
 .. rst-class:: classref-item-separator
 
@@ -1341,7 +1341,7 @@ The inertia to use when panning in the 3D editor. Higher values make the camera 
 
 :ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia**
 
-The inertia to use when zooming in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+在 3D 编辑器中进行缩放时要使用的惯性。更高的值会使相机启动和停止更慢，这看起来更流畅但会增加延迟。
 
 .. rst-class:: classref-item-separator
 
@@ -1353,7 +1353,7 @@ The inertia to use when zooming in the 3D editor. Higher values make the camera 
 
 :ref:`Color<class_Color>` **editors/3d/primary_grid_color**
 
-The color to use for the primary 3D grid. The color's alpha channel affects the grid's opacity.
+用于主要 3D 栅格的颜色。颜色的 Alpha 通道会影响栅格的不透明度。
 
 .. rst-class:: classref-item-separator
 
@@ -1365,7 +1365,7 @@ The color to use for the primary 3D grid. The color's alpha channel affects the 
 
 :ref:`int<class_int>` **editors/3d/primary_grid_steps**
 
-If set above 0, where a primary grid line should be drawn. By default, primary lines are configured to be more visible than secondary lines. This helps with measurements in the 3D editor. See also :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>` and :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`.
+如果被设置为大于 0 的值，则主栅格线应在其中被绘制。默认情况下，主栅格线被配置的比次要栅格线更显眼。这有助于在 3D 编辑器中进行测量。另请参阅 :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>` 和 :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1377,7 +1377,7 @@ If set above 0, where a primary grid line should be drawn. By default, primary l
 
 :ref:`Color<class_Color>` **editors/3d/secondary_grid_color**
 
-The color to use for the secondary 3D grid. This is generally a less visible color than :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`. The color's alpha channel affects the grid's opacity.
+用于次要 3D 栅格的颜色。这通常是没有 :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>` 显眼的颜色。颜色的 Alpha 通道影响栅格的不透明度。
 
 .. rst-class:: classref-item-separator
 
@@ -1389,7 +1389,7 @@ The color to use for the secondary 3D grid. This is generally a less visible col
 
 :ref:`Color<class_Color>` **editors/3d/selection_box_color**
 
-The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+用于在 3D 编辑器视口中围绕选定节点的选择框的颜色。颜色的 Alpha 通道影响选择框的不透明度。
 
 .. rst-class:: classref-item-separator
 
@@ -1401,7 +1401,7 @@ The color to use for the selection box that surrounds selected nodes in the 3D e
 
 :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instantiated**
 
-The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>` in question is part of an instantiated scene file (from the perspective of the current scene).
+用于 3D 编辑器小工具的颜色覆盖，适用于相关的 :ref:`Node3D<class_Node3D>`\ （从当前场景的角度看）属于实例化场景文件的情况。
 
 .. rst-class:: classref-item-separator
 
@@ -1413,7 +1413,7 @@ The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>
 
 :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint**
 
-The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`PhysicalBone3D<class_PhysicalBone3D>`\ s.
+用于 :ref:`Joint3D<class_Joint3D>` 和 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 的 3D 编辑器小工具颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1425,7 +1425,7 @@ The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`Physica
 
 :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/shape**
 
-The 3D editor gizmo color for :ref:`CollisionShape3D<class_CollisionShape3D>`\ s, :ref:`VehicleWheel3D<class_VehicleWheel3D>`\ s, :ref:`RayCast3D<class_RayCast3D>`\ s and :ref:`SpringArm3D<class_SpringArm3D>`\ s.
+用于 :ref:`CollisionShape3D<class_CollisionShape3D>`\ 、\ :ref:`VehicleWheel3D<class_VehicleWheel3D>`\ 、\ :ref:`RayCast3D<class_RayCast3D>`\ 、\ :ref:`SpringArm3D<class_SpringArm3D>` 的 3D 编辑器小工具颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1437,7 +1437,7 @@ The 3D editor gizmo color for :ref:`CollisionShape3D<class_CollisionShape3D>`\ s
 
 :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
 
-If ``true``, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
+如果为 ``true``\ ，则在“场景”面板中重命名节点或重设节点的父节点时，会自动更新动画轨道的目标路径。
 
 .. rst-class:: classref-item-separator
 
@@ -1449,7 +1449,7 @@ If ``true``, automatically updates animation tracks' target paths when renaming 
 
 :ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks**
 
-If ``true``, create a Bezier track instead of a standard track when pressing the "key" icon next to a property. Bezier tracks provide more control over animation curves, but are more difficult to adjust quickly.
+如果为 ``true``\ ，则在按下属性旁的“钥匙”图标向动画中添加新轨道时，创建贝塞尔轨道而不是标准轨道。贝塞尔轨道可以更精细地控制动画曲线，但调整的难度也会大一些。
 
 .. rst-class:: classref-item-separator
 
@@ -1461,7 +1461,7 @@ If ``true``, create a Bezier track instead of a standard track when pressing the
 
 :ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks**
 
-If ``true``, create a ``RESET`` track when creating a new animation track. This track can be used to restore the animation to a "default" state.
+如果为 ``true``\ ，则会在新建动画轨道时创建 ``RESET`` 轨道。这个轨道会用于将动画恢复到“默认”状态。
 
 .. rst-class:: classref-item-separator
 
@@ -1473,7 +1473,7 @@ If ``true``, create a ``RESET`` track when creating a new animation track. This 
 
 :ref:`Color<class_Color>` **editors/animation/onion_layers_future_color**
 
-The modulate color to use for "future" frames displayed in the animation editor's onion skinning feature.
+调制颜色，用于在动画编辑器的洋葱皮功能中显示“未来”帧。
 
 .. rst-class:: classref-item-separator
 
@@ -1485,7 +1485,7 @@ The modulate color to use for "future" frames displayed in the animation editor'
 
 :ref:`Color<class_Color>` **editors/animation/onion_layers_past_color**
 
-The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
+调制颜色，用于在动画编辑器的洋葱皮功能中显示“过去”帧。
 
 .. rst-class:: classref-item-separator
 
@@ -1497,7 +1497,7 @@ The modulate color to use for "past" frames displayed in the animation editor's 
 
 :ref:`float<class_float>` **editors/grid_map/pick_distance**
 
-The maximum distance at which tiles can be placed on a GridMap, relative to the camera position (in 3D units).
+可以在 GridMap 上放置图块的最大距离，相对于相机位置（使用 3D 单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -1509,7 +1509,7 @@ The maximum distance at which tiles can be placed on a GridMap, relative to the 
 
 :ref:`int<class_int>` **editors/panning/2d_editor_pan_speed**
 
-The panning speed when using the mouse wheel or touchscreen events in the 2D editor. This setting does not apply to panning by holding down the middle or right mouse buttons.
+在 2D 编辑器中使用鼠标滚轮或触摸屏事件进行平移的速度。该设置不适用于通过按住鼠标中键或鼠标右键进行的平移。
 
 .. rst-class:: classref-item-separator
 
@@ -1521,7 +1521,7 @@ The panning speed when using the mouse wheel or touchscreen events in the 2D edi
 
 :ref:`int<class_int>` **editors/panning/2d_editor_panning_scheme**
 
-Controls whether the mouse wheel scroll zooms or pans in the 2D editor. See also :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
+控制在 2D 编辑器中滚动鼠标滚轮是缩放还是平移。另请参阅 :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>` 和 :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1533,7 +1533,7 @@ Controls whether the mouse wheel scroll zooms or pans in the 2D editor. See also
 
 :ref:`int<class_int>` **editors/panning/animation_editors_panning_scheme**
 
-Controls whether the mouse wheel scroll zooms or pans in the animation track and Bezier editors. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>` (which controls the animation blend tree editor's pan behavior).
+控制在动画轨道编辑器和贝塞尔编辑器中滚动鼠标滚轮是缩放还是平移。另请参阅 :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` 和 :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>`\ （控制的是动画混合树编辑器中的平移行为）。
 
 .. rst-class:: classref-item-separator
 
@@ -1545,7 +1545,7 @@ Controls whether the mouse wheel scroll zooms or pans in the animation track and
 
 :ref:`bool<class_bool>` **editors/panning/simple_panning**
 
-If ``true``, allows panning by holding down :kbd:`Space` in the 2D editor viewport (in addition to panning with the middle or right mouse buttons). If ``false``, the left mouse button must be held down while holding down :kbd:`Space` to pan in the 2D editor viewport.
+如果为 ``true``\ ，允许通过在 2D 编辑器视口中，按住 :kbd:`Space` 进行平移（除了使用鼠标中键或鼠标右键进行平移）。如果为 ``false``\ ，则必须在按住 :kbd:`Space` 的同时，按住鼠标左键才能在 2D 编辑器视口中进行平移。
 
 .. rst-class:: classref-item-separator
 
@@ -1557,7 +1557,7 @@ If ``true``, allows panning by holding down :kbd:`Space` in the 2D editor viewpo
 
 :ref:`int<class_int>` **editors/panning/sub_editors_panning_scheme**
 
-Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of affected subeditors is: animation blend tree editor, :ref:`Polygon2D<class_Polygon2D>` editor, tileset editor, texture region editor and visual shader editor. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
+控制鼠标滚轮滚动在子编辑器中是缩放还是平移。受影响的子编辑器列表有：动画混合树编辑器、\ :ref:`Polygon2D<class_Polygon2D>` 编辑器、图块集编辑器、纹理区域编辑器、和可视着色器编辑器。另请参阅 :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` 和 :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1569,7 +1569,7 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 
 :ref:`bool<class_bool>` **editors/panning/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
+如果为 ``true``\ ，则会在 2D 编辑器中平移时，鼠标超出 2D 视口范围后将其传送到对侧。这样在大型区域中平移就不必先退出平移然后调整鼠标光标。
 
 .. rst-class:: classref-item-separator
 
@@ -1581,7 +1581,7 @@ If ``true``, warps the mouse around the 2D viewport while panning in the 2D edit
 
 :ref:`int<class_int>` **editors/polygon_editor/point_grab_radius**
 
-The radius in which points can be selected in the :ref:`Polygon2D<class_Polygon2D>` and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` editors (in pixels). Higher values make it easier to select points quickly, but can make it more difficult to select the expected point when several points are located close to each other.
+在 :ref:`Polygon2D<class_Polygon2D>` 和 :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` 编辑器中，点可以被选择的半径（以像素为单位）。更高的值可以更轻松地快速地选择点，但是当多个点彼此靠近时，可能会使选择想要的点变得更加困难。
 
 .. rst-class:: classref-item-separator
 
@@ -1593,7 +1593,7 @@ The radius in which points can be selected in the :ref:`Polygon2D<class_Polygon2
 
 :ref:`bool<class_bool>` **editors/polygon_editor/show_previous_outline**
 
-If ``true``, displays the polygon's previous shape in the 2D polygon editors with an opaque gray outline. This outline is displayed while dragging a point until the left mouse button is released.
+如果为 ``true``\ ，则在 2D 多边形编辑器中，以不透明的灰色轮廓，显示多边形先前的形状。拖动一个点直到释放鼠标左键前，会显示该轮廓。
 
 .. rst-class:: classref-item-separator
 
@@ -1605,7 +1605,7 @@ If ``true``, displays the polygon's previous shape in the 2D polygon editors wit
 
 :ref:`bool<class_bool>` **editors/shader_editor/behavior/files/restore_shaders_on_load**
 
-If ``true``, reopens shader files that were open in the shader editor when the project was last closed.
+如果为 ``true``\ ，则会重新打开项目上一次关闭时着色器编辑器中打开的着色器文件。
 
 .. rst-class:: classref-item-separator
 
@@ -1617,7 +1617,7 @@ If ``true``, reopens shader files that were open in the shader editor when the p
 
 :ref:`bool<class_bool>` **editors/tiles_editor/display_grid**
 
-If ``true``, displays a grid while the TileMap editor is active. See also :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`.
+如果为 ``true``\ ，则在 TileMap 编辑器处于活动状态时显示一个栅格。另请参阅 :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1629,9 +1629,9 @@ If ``true``, displays a grid while the TileMap editor is active. See also :ref:`
 
 :ref:`Color<class_Color>` **editors/tiles_editor/grid_color**
 
-The color to use for the TileMap editor's grid.
+用于 TileMap 编辑器栅格的颜色。
 
-\ **Note:** Only effective if :ref:`editors/tiles_editor/display_grid<class_EditorSettings_property_editors/tiles_editor/display_grid>` is ``true``.
+\ **注意：**\ 仅当 :ref:`editors/tiles_editor/display_grid<class_EditorSettings_property_editors/tiles_editor/display_grid>` 为 ``true`` 时有效。
 
 .. rst-class:: classref-item-separator
 
@@ -1643,7 +1643,7 @@ The color to use for the TileMap editor's grid.
 
 :ref:`float<class_float>` **editors/visual_editors/lines_curvature**
 
-The curvature to use for connection lines in the visual shader editor. Higher values will make connection lines appear more curved, with values above ``0.5`` resulting in more "angular" turns in the middle of connection lines.
+用于可视着色器编辑器中连接线的曲率。更高的值会使连接线看起来更弯曲，值高于 ``0.5`` 会导致连接线中间出现更多“角度”转折。
 
 .. rst-class:: classref-item-separator
 
@@ -1655,7 +1655,7 @@ The curvature to use for connection lines in the visual shader editor. Higher va
 
 :ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
 
-The opacity of the minimap displayed in the bottom-right corner of the visual shader editor.
+在可视着色器编辑器的右下角显示的小地图的不透明度。
 
 .. rst-class:: classref-item-separator
 
@@ -1667,7 +1667,7 @@ The opacity of the minimap displayed in the bottom-right corner of the visual sh
 
 :ref:`int<class_int>` **editors/visual_editors/visual_shader/port_preview_size**
 
-The size to use for port previews in the visual shader uniforms (toggled by clicking the "eye" icon next to an output). The value is defined in pixels at 100% zoom, and will scale with zoom automatically.
+在可视着色器 uniform 中用于端口预览的大小（通过点击输出旁边的“眼睛”图标进行切换）。该值以像素为单位且以 100% 缩放时的值定义，并将随缩放自动缩放。
 
 .. rst-class:: classref-item-separator
 
@@ -1679,9 +1679,9 @@ The size to use for port previews in the visual shader uniforms (toggled by clic
 
 :ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
 
-The folder where projects should be scanned for (recursively), in a way similar to the project manager's **Scan** button. This can be set to the same value as :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` for convenience.
+项目应该被（递归地）扫描的文件夹，其方式类似于项目经理的\ **扫描**\ 按钮。为方便起见，可以将其设置为与 :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` 相同的值。
 
-\ **Note:** Setting this path to a folder with very large amounts of files/folders can slow down the project manager startup significantly. To keep the project manager quick to start up, it is recommended to set this value to a folder as "specific" as possible.
+\ **注意：**\ 将该路径设置为一个包含大量文件/文件夹的文件夹，会显著减慢项目管理器的启动速度。为了让项目管理器快速启动，建议将该值设置为一个尽可能“具体”的文件夹。
 
 .. rst-class:: classref-item-separator
 
@@ -1693,7 +1693,7 @@ The folder where projects should be scanned for (recursively), in a way similar 
 
 :ref:`String<class_String>` **filesystem/directories/default_project_path**
 
-The folder where new projects should be created by default when clicking the project manager's **New Project** button. This can be set to the same value as :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>` for convenience.
+点击项目管理器的\ **新建项目**\ 按钮时，默认应在其中创建新项目的文件夹。为方便起见，可以将其设置为与 :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>` 相同的值。
 
 .. rst-class:: classref-item-separator
 
@@ -1705,7 +1705,7 @@ The folder where new projects should be created by default when clicking the pro
 
 :ref:`String<class_String>` **filesystem/external_programs/3d_model_editor**
 
-The program that opens 3D model scene files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+点击文件系统面板中的“在外部程序中打开”选项时，用于打开 3D 模型场景文件的程序。如果未指定，则该文件会使用系统默认的程序打开。
 
 .. rst-class:: classref-item-separator
 
@@ -1717,7 +1717,7 @@ The program that opens 3D model scene files when clicking "Open in External Prog
 
 :ref:`String<class_String>` **filesystem/external_programs/audio_editor**
 
-The program that opens audio files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+点击文件系统面板中的“在外部程序中打开”选项时，用于打开音频文件的程序。如果未指定，则该文件会使用系统默认的程序打开。
 
 .. rst-class:: classref-item-separator
 
@@ -1729,7 +1729,7 @@ The program that opens audio files when clicking "Open in External Program" opti
 
 :ref:`String<class_String>` **filesystem/external_programs/raster_image_editor**
 
-The program that opens raster image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+点击文件系统面板中的“在外部程序中打开”选项时，用于打开位图文件的程序。如果未指定，则该文件会使用系统默认的程序打开。
 
 .. rst-class:: classref-item-separator
 
@@ -1741,7 +1741,7 @@ The program that opens raster image files when clicking "Open in External Progra
 
 :ref:`String<class_String>` **filesystem/external_programs/vector_image_editor**
 
-The program that opens vector image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+点击文件系统面板中的“在外部程序中打开”选项时，用于打开矢量图文件的程序。如果未指定，则该文件会使用系统默认的程序打开。
 
 .. rst-class:: classref-item-separator
 
@@ -1753,11 +1753,11 @@ The program that opens vector image files when clicking "Open in External Progra
 
 :ref:`int<class_int>` **filesystem/file_dialog/display_mode**
 
-The display mode to use in the editor's file dialogs.
+编辑器的文件对话框所使用的显示模式。
 
-- **Thumbnails** takes more space, but displays dynamic resource thumbnails, making resources easier to preview without having to open them.
+- **Thumbnails**\ （缩略图）占据更多空间，但可以显示动态资源缩略图，无需打开也能够方便地预览资源。
 
-- **List** is more compact but doesn't display dynamic resource thumbnails. Instead, it displays static icons based on the file extension.
+- **List**\ （列表）更紧凑，但不显示动态资源缩略图，而是根据文件扩展名显示静态图标。
 
 .. rst-class:: classref-item-separator
 
@@ -1769,7 +1769,7 @@ The display mode to use in the editor's file dialogs.
 
 :ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files**
 
-If ``true``, display hidden files in the editor's file dialogs. Files that have names starting with ``.`` are considered hidden (e.g. ``.hidden_file``).
+如果为 ``true``\ ，则在编辑器的文件对话框中显示隐藏文件。名称以 ``.`` 开头的文件被视为隐藏文件（例如 ``.hidden_file``\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1781,7 +1781,7 @@ If ``true``, display hidden files in the editor's file dialogs. Files that have 
 
 :ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
 
-The thumbnail size to use in the editor's file dialogs (in pixels). See also :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`.
+编辑器的文件对话框中使用的缩略图大小（单位为像素）。另请参阅 :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1793,9 +1793,9 @@ The thumbnail size to use in the editor's file dialogs (in pixels). See also :re
 
 :ref:`String<class_String>` **filesystem/import/blender/blender3_path**
 
-The path to the directory containing the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
+包含 Blender 可执行文件的目录，导入时会使用 Blender 将 Blender 3D 场景文件 ``.blend`` 转换为 glTF 2.0 格式。需要 Blender 3.0 及更高版本。
 
-To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`.
+要为指定项目启用这个功能，请使用 :ref:`ProjectSettings.filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1807,9 +1807,9 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.file
 
 :ref:`int<class_int>` **filesystem/import/blender/rpc_port**
 
-The port number used for Remote Procedure Call (RPC) communication with Godot's created process of the blender executable.
+用于与 Godot 创建的 Blender 可执行文件进程进行远程过程调用（RPC）通信的端口号。
 
-Setting this to 0 effectively disables communication with Godot and the blender process, making performance slower.
+将其设置为 0 会有效禁用与 Godot 的通信和 Blender 进程，从而降低性能。
 
 .. rst-class:: classref-item-separator
 
@@ -1821,9 +1821,9 @@ Setting this to 0 effectively disables communication with Godot and the blender 
 
 :ref:`float<class_float>` **filesystem/import/blender/rpc_server_uptime**
 
-The maximum idle uptime (in seconds) of the Blender process.
+Blender 进程的最大空闲运行时间（单位为秒）。
 
-This prevents Godot from having to create a new process for each import within the given seconds.
+能够在给定的秒数内，防止 Godot 每次导入都创建一个新的进程。
 
 .. rst-class:: classref-item-separator
 
@@ -1835,9 +1835,9 @@ This prevents Godot from having to create a new process for each import within t
 
 :ref:`String<class_String>` **filesystem/import/fbx/fbx2gltf_path**
 
-The path to the FBX2glTF executable used for converting Autodesk FBX 3D scene files ``.fbx`` to glTF 2.0 format during import.
+包含 FBX2glTF 可执行文件的目录，导入时会使用 FBX2glTF 将 Autodesk FBX 3D 场景文件 ``.fbx`` 转换为 glTF 2.0 格式。
 
-To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`.
+要为指定项目启用这个功能，请使用 :ref:`ProjectSettings.filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1849,7 +1849,7 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.file
 
 :ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources**
 
-If ``true``, uses lossless compression for binary resources.
+如果为 ``true``\ ，则对二进制资源使用无损压缩。
 
 .. rst-class:: classref-item-separator
 
@@ -1861,9 +1861,9 @@ If ``true``, uses lossless compression for binary resources.
 
 :ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename**
 
-If ``true``, when saving a file, the editor will rename the old file to a different name, save a new file, then only remove the old file once the new file has been saved. This makes loss of data less likely to happen if the editor or operating system exits unexpectedly while saving (e.g. due to a crash or power outage).
+如果为 ``true``\ ，当保存文件时，编辑器会将旧文件重命名为不同的名称，保存一个新文件，然后只有在新文件保存后，才删除旧文件。如果编辑器或操作系统在保存时意外退出（例如，由于崩溃或断电），这会降低数据丢失的可能性。
 
-\ **Note:** On Windows, this feature can interact negatively with certain antivirus programs. In this case, you may have to set this to ``false`` to prevent file locking issues.
+\ **注意：**\ 在 Windows 上，该功能可能会与某些防病毒程序产生负面的交互。在这种情况下，可能必须将其设置为 ``false``\ ，以防止出现文件锁定问题。
 
 .. rst-class:: classref-item-separator
 
@@ -1875,9 +1875,9 @@ If ``true``, when saving a file, the editor will rename the old file to a differ
 
 :ref:`String<class_String>` **filesystem/tools/oidn/oidn_denoise_path**
 
-The path to the directory containing the Open Image Denoise (OIDN) executable, used optionally for denoising lightmaps. It can be downloaded from `openimagedenoise.org <https://www.openimagedenoise.org/downloads.html>`__.
+包含开放图像去噪（OIDN）可执行文件的目录路径，可选择用于去噪光照贴图。它可以从 `openimagedenoise.org <https://www.openimagedenoise.org/downloads.html>`__ 下载。
 
-To enable this feature for your specific project, use :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`.
+要为特定项目启用该功能，请使用 :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1889,13 +1889,13 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.rend
 
 :ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons**
 
-How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
+如何在编辑器的 :ref:`AcceptDialog<class_AcceptDialog>` 中定位取消和确定按钮。不同的平台有不同的标准行为，可以用这个设置来覆盖。如果你在 Windows 和 macOS/Linux 上都使用 Godot，而且你的 Godot 肌肉记忆比你的操作系统记忆更强，那么这一点很有用。
 
-- **Auto** follows the platform convention: Cancel first on macOS and Linux, OK first on Windows.
+- **Auto** 遵守平台约定：在 macOS 和 Linux 上取消在前，在 Windows 上确定在前。
 
-- **Cancel First** forces the ordering Cancel/OK.
+- **Cancel First** 强制为取消/确定的顺序。
 
-- **OK First** forces the ordering OK/Cancel.
+- **OK First** 强制为确定/取消的顺序。
 
 .. rst-class:: classref-item-separator
 
@@ -1907,7 +1907,7 @@ How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<cla
 
 :ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
 
-If ``true``, automatically opens screenshots with the default program associated to ``.png`` files after a screenshot is taken using the **Editor > Take Screenshot** action.
+如果为 ``true``\ ，则在使用\ **编辑器 > 截图**\ 动作截取屏幕截图后，使用与 ``.png`` 文件关联的默认程序自动打开该屏幕截图。
 
 .. rst-class:: classref-item-separator
 
@@ -1919,7 +1919,7 @@ If ``true``, automatically opens screenshots with the default program associated
 
 :ref:`String<class_String>` **interface/editor/code_font**
 
-The font to use for the script editor. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+脚本编辑器所使用的字体。必须是 :ref:`Font<class_Font>` 类型的资源，例如 ``.ttf`` 或 ``.otf`` 字体文件。
 
 .. rst-class:: classref-item-separator
 
@@ -1931,9 +1931,9 @@ The font to use for the script editor. Must be a resource of a :ref:`Font<class_
 
 :ref:`int<class_int>` **interface/editor/code_font_contextual_ligatures**
 
-The font ligatures to enable for the currently configured code font. Not all fonts include support for ligatures.
+为当前配置的代码字体启用的字体连字。并非所有字体都包含对连字的支持。
 
-\ **Note:** The default editor code font (`JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__) has contextual ligatures in its font file.
+\ **注意：**\ 编辑器默认的代码字体（\ `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__\ ）在其字体文件中具有上下文连字。
 
 .. rst-class:: classref-item-separator
 
@@ -1945,9 +1945,9 @@ The font ligatures to enable for the currently configured code font. Not all fon
 
 :ref:`String<class_String>` **interface/editor/code_font_custom_opentype_features**
 
-List of custom OpenType features to use, if supported by the currently configured code font. Not all fonts include support for custom OpenType features. The string should follow the OpenType specification.
+要使用的自定义 OpenType 特性列表，需要当前配置的代码字体支持。并非所有字体都支持自定义 OpenType 特性。该字符串应遵循 OpenType 规范。
 
-\ **Note:** The default editor code font (`JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__) has custom OpenType features in its font file, but there is no documented list yet.
+\ **注意：**\ 编辑器默认的代码字体（\ `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__\ ）在其字体文件中具有自定义 OpenType 特性，但是目前还没有文档记录的清单。
 
 .. rst-class:: classref-item-separator
 
@@ -1959,9 +1959,9 @@ List of custom OpenType features to use, if supported by the currently configure
 
 :ref:`String<class_String>` **interface/editor/code_font_custom_variations**
 
-List of alternative characters to use, if supported by the currently configured code font. Not all fonts include support for custom variations. The string should follow the OpenType specification.
+要使用的备选字符列表，需要当前配置的代码字体支持。并非所有字体都支持自定义变体。该字符串应遵循 OpenType 规范。
 
-\ **Note:** The default editor code font (`JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__) has alternate characters in its font file, but there is no documented list yet.
+\ **注意：**\ 编辑器默认的代码字体（\ `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`__\ ）在其字体文件中有备选字符，但是有还没有文档记录的清单。
 
 .. rst-class:: classref-item-separator
 
@@ -1973,7 +1973,7 @@ List of alternative characters to use, if supported by the currently configured 
 
 :ref:`int<class_int>` **interface/editor/code_font_size**
 
-The size of the font in the script editor. This setting does not impact the font size of the Output panel (see :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`).
+脚本编辑器中的字体大小。该设置不会影响“输出”面板的字体大小（请参阅 :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1985,9 +1985,9 @@ The size of the font in the script editor. This setting does not impact the font
 
 :ref:`float<class_float>` **interface/editor/custom_display_scale**
 
-The custom editor scale factor to use. This can be used for displays with very high DPI where a scale factor of 200% is not sufficient.
+要使用的自定义编辑器缩放系数。这可用于具有非常高 DPI 的显示器，其中 200% 的缩放系数是不够的。
 
-\ **Note:** Only effective if :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>` is set to **Custom**.
+\ **注意：**\ 只有当 :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>` 被设置为 **自定义（Custom）** 时才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -1999,9 +1999,9 @@ The custom editor scale factor to use. This can be used for displays with very h
 
 :ref:`bool<class_bool>` **interface/editor/debug/enable_pseudolocalization**
 
-If ``true``, lengthens the editor's localizable strings and replaces their characters with accented variants. This allows spotting non-localizable strings easily, while also ensuring the UI layout doesn't break when strings are made longer (as many languages require strings to be longer).
+如果为 ``true``\ ，则延长编辑器的可本地化字符串，并将其字符替换为重音变体。这允许轻松发现不可本地化的字符串，同时还确保 UI 布局在字符串变长时不会中断（因为许多语言会要求字符串变长）。
 
-This is a debugging feature and should only be enabled when working on the editor itself.
+这是一个调试功能，只有在编辑器本身工作时才能启用。
 
 .. rst-class:: classref-item-separator
 
@@ -2013,11 +2013,11 @@ This is a debugging feature and should only be enabled when working on the edito
 
 :ref:`int<class_int>` **interface/editor/display_scale**
 
-The display scale factor to use for the editor interface. Higher values are more suited to hiDPI/Retina displays.
+用于编辑器界面的显示缩放系数。更高的值更适合 hiDPI/Retina 显示器。
 
-If set to **Auto**, the editor scale is automatically determined based on the screen resolution and reported display DPI. This heuristic is not always ideal, which means you can get better results by setting the editor scale manually.
+如果被设置为 **Auto**\ ，则编辑器缩放将根据屏幕分辨率和报告的显示 DPI 自动确定。这种启发式算法并不总是理想的，这意味着可以通过手动设置编辑器缩放来获得更好的结果。
 
-If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>` will be used.
+如果被设置为 **Custom**\ ，则将使用 :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>` 中的缩放值。
 
 .. rst-class:: classref-item-separator
 
@@ -2029,9 +2029,9 @@ If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display
 
 :ref:`String<class_String>` **interface/editor/editor_language**
 
-The language to use for the editor interface.
+用于编辑器界面的语言。
 
-Translations are provided by the community. If you spot a mistake, :doc:`contribute to editor translations on Weblate! <../contributing/documentation/editor_and_docs_localization>`
+翻译由社区提供。如果发现错误，\ :doc:`请在 Weblate 上为编辑器翻译作出贡献！ <../contributing/documentation/editor_and_docs_localization>`
 
 .. rst-class:: classref-item-separator
 
@@ -2043,7 +2043,7 @@ Translations are provided by the community. If you spot a mistake, :doc:`contrib
 
 :ref:`int<class_int>` **interface/editor/editor_screen**
 
-The preferred monitor to display the editor.
+显示编辑器所优先使用的监视器。
 
 .. rst-class:: classref-item-separator
 
@@ -2055,9 +2055,9 @@ The preferred monitor to display the editor.
 
 :ref:`bool<class_bool>` **interface/editor/expand_to_title**
 
-Expanding main editor window content to the title, if supported by :ref:`DisplayServer<class_DisplayServer>`. See :ref:`DisplayServer.WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`.
+将主编辑窗口内容扩展到标题区域，需要 :ref:`DisplayServer<class_DisplayServer>` 支持。见 :ref:`DisplayServer.WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`\ 。
 
-Specific to the macOS platform.
+专用于 macOS 平台。
 
 .. rst-class:: classref-item-separator
 
@@ -2069,7 +2069,7 @@ Specific to the macOS platform.
 
 :ref:`int<class_int>` **interface/editor/font_antialiasing**
 
-FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts are not designed to look good with anti-aliasing disabled, so it's recommended to leave this enabled unless you're using a pixel art font.
+FreeType 的字体抗锯齿模式，用于渲染编辑器字体。大多数字体在禁用抗锯齿的情况下并不好看，所以建议保持启用，除非你使用的是像素风字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2081,15 +2081,15 @@ FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts a
 
 :ref:`int<class_int>` **interface/editor/font_hinting**
 
-The font hinting mode to use for the editor fonts. FreeType supports the following font hinting modes:
+用于编辑器字体的字体提示模式。FreeType 支持以下字体提示模式：
 
-- **None:** Don't use font hinting when rasterizing the font. This results in a smooth font, but it can look blurry.
+- **无（None）：**\ 光栅化字体时不使用字体提示。这会产生一个流畅的字体，但看起来可能会模糊。
 
-- **Light:** Use hinting on the X axis only. This is a compromise between font sharpness and smoothness.
+- **Light：**\ 仅在 X 轴上使用提示。这是字体清晰度和平滑度之间的折衷。
 
-- **Normal:** Use hinting on both X and Y axes. This results in a sharp font, but it doesn't look very smooth.
+- **Normal：**\ 在 X 和 Y 轴上使用提示。这会产生清晰的字体，但看起来不是很流畅。
 
-If set to **Auto**, the font hinting mode will be set to match the current operating system in use. This means the **Light** hinting mode will be used on Windows and Linux, and the **None** hinting mode will be used on macOS.
+如果被设置为 **Auto**\ ，字体提示模式将被设置为匹配当前使用的操作系统。这意味着 **Light** 提示模式将在 Windows 和 Linux 上使用，而 **None** 提示模式将在 macOS 上使用。
 
 .. rst-class:: classref-item-separator
 
@@ -2101,7 +2101,7 @@ If set to **Auto**, the font hinting mode will be set to match the current opera
 
 :ref:`int<class_int>` **interface/editor/font_subpixel_positioning**
 
-The subpixel positioning mode to use when rendering editor font glyphs. This affects both the main and code fonts. **Disabled** is the fastest to render and uses the least memory. **Auto** only uses subpixel positioning for small font sizes (where the benefit is the most noticeable). **One Half of a Pixel** and **One Quarter of a Pixel** force the same subpixel positioning mode for all editor fonts, regardless of their size (with **One Quarter of a Pixel** being the highest-quality option).
+渲染编辑器字体字形时要使用的子像素定位模式。这对主字体和代码字体都有影响。\ **禁用** ，渲染速度最快，使用的内存最少。\ **自动** ，只对小尺寸的字体使用子像素定位（这里的好处是最明显的）。\ **二分之一像素**\ 和\ **四分之一像素**\ 对所有编辑器字体强制使用相同的子像素定位模式，无论其大小如何（其中\ **四分之一像素**\ 是最高质量的选项）。
 
 .. rst-class:: classref-item-separator
 
@@ -2113,7 +2113,7 @@ The subpixel positioning mode to use when rendering editor font glyphs. This aff
 
 :ref:`float<class_float>` **interface/editor/low_processor_mode_sleep_usec**
 
-The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`.
+启用低处理器使用模式时帧之间的睡眠时间（以微秒为单位）。更高的值将导致更低的 CPU/GPU 使用率，这可以延长笔记本电脑的电池寿命。但是，更高的值会导致编辑器的响应速度更慢。默认值设置为允许在高达 144 Hz 的显示器上实现最大流畅度。另见 :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2125,7 +2125,7 @@ The amount of sleeping between frames when the low-processor usage mode is enabl
 
 :ref:`String<class_String>` **interface/editor/main_font**
 
-The font to use for the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+用于编辑器界面的字体。必须是 :ref:`Font<class_Font>` 类型的资源，例如 ``.ttf`` 或 ``.otf`` 字体文件。
 
 .. rst-class:: classref-item-separator
 
@@ -2137,7 +2137,7 @@ The font to use for the editor interface. Must be a resource of a :ref:`Font<cla
 
 :ref:`String<class_String>` **interface/editor/main_font_bold**
 
-The font to use for bold text in the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+用于编辑器界面中粗体文本的字体。必须是 :ref:`Font<class_Font>` 类型的资源，例如 ``.ttf`` 或 ``.otf`` 字体文件。
 
 .. rst-class:: classref-item-separator
 
@@ -2149,7 +2149,7 @@ The font to use for bold text in the editor interface. Must be a resource of a :
 
 :ref:`int<class_int>` **interface/editor/main_font_size**
 
-The size of the font in the editor interface.
+编辑器界面中字体的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2161,7 +2161,7 @@ The size of the font in the editor interface.
 
 :ref:`bool<class_bool>` **interface/editor/mouse_extra_buttons_navigate_history**
 
-If ``true``, the mouse's additional side buttons will be usable to navigate in the script editor's file history. Set this to ``false`` if you're using the side buttons for other purposes (such as a push-to-talk button in a VoIP program).
+如果为 ``true``\ ，鼠标的额外侧键将可用于在脚本编辑器的文件历史记录中导航。如果正将侧键用于其他目的（例如 VoIP 程序中的一键通按钮），请将该项设置为 ``false``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2173,7 +2173,7 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 
 :ref:`int<class_int>` **interface/editor/project_manager_screen**
 
-The preferred monitor to display the project manager.
+显示项目管理器的首选显示器。
 
 .. rst-class:: classref-item-separator
 
@@ -2185,7 +2185,7 @@ The preferred monitor to display the project manager.
 
 :ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
 
-If ``false``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``true``, the editor will ask to save each scene individually.
+如果为 ``false``\ ，则当正退出编辑器或正退出到项目列表时，确认\ **保存**\ 动作后，编辑器将保存所有场景。如果为 ``true``\ ，则编辑器将要求单独保存每个场景。
 
 .. rst-class:: classref-item-separator
 
@@ -2197,7 +2197,7 @@ If ``false``, the editor will save all scenes when confirming the **Save** actio
 
 :ref:`bool<class_bool>` **interface/editor/separate_distraction_mode**
 
-If ``true``, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/AssetLib tabs. If ``false``, the distraction-free mode toggle is shared between all tabs.
+如果为 ``true``\ ，则编辑器的 Script 选项卡，将具有与 2D/3D/AssetLib 选项卡不同的干扰模式设置。如果为 ``false``\ ，无干扰模式切换在所有选项卡之间共享。
 
 .. rst-class:: classref-item-separator
 
@@ -2209,9 +2209,9 @@ If ``true``, the editor's Script tab will have a separate distraction mode setti
 
 :ref:`int<class_int>` **interface/editor/show_internal_errors_in_toast_notifications**
 
-If enabled, displays internal engine errors in toast notifications (toggleable by clicking the "bell" icon at the bottom of the editor). No matter the value of this setting, non-internal engine errors will always be visible in toast notifications.
+如果启用，则会使用吐司通知的形式显示引擎的内部错误（可通过点击编辑器底部的“铃铛”图标切换）。无论这个设置项是什么值，非引擎内部错误都会在吐司通知中显示。
 
-The default **Auto** value will only enable this if the editor was compiled with the ``dev=yes`` option (the default is ``dev=no``).
+默认的 **Auto** 只会在使用 ``dev=yes`` 选项（默认为 ``dev=no``\ ）编译的编辑器中启用这个行为。
 
 .. rst-class:: classref-item-separator
 
@@ -2223,7 +2223,7 @@ The default **Auto** value will only enable this if the editor was compiled with
 
 :ref:`bool<class_bool>` **interface/editor/single_window_mode**
 
-If ``true``, embed modal windows such as docks inside the main editor window. When single-window mode is enabled, tooltips will also be embedded inside the main editor window, which means they can't be displayed outside of the editor window.
+如果为 ``true``\ ，则在主编辑器窗口中嵌入停靠面板等模态窗口。当启用单窗口模式时，工具提示也将被嵌入到主编辑器窗口中，这意味着它们不能显示在编辑器窗口之外。
 
 .. rst-class:: classref-item-separator
 
@@ -2235,7 +2235,7 @@ If ``true``, embed modal windows such as docks inside the main editor window. Wh
 
 :ref:`float<class_float>` **interface/editor/unfocused_low_processor_mode_sleep_usec**
 
-When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 20 FPS when the editor window is unfocused. See also :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`.
+当编辑器窗口未聚焦时，启用低处理器使用模式时帧之间的睡眠量（以微秒为单位）。更高的值将导致更低的 CPU/GPU 使用率，这可以延长笔记本电脑的电池寿命（如果编辑器必须连续重绘，还可以提高正在运行的项目的性能）。但是，更高的值会导致编辑器的响应速度变慢。默认值设置会在编辑器窗口未聚焦时，将编辑器限制为 20 FPS。另见 :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2247,9 +2247,9 @@ When the editor window is unfocused, the amount of sleeping between frames when 
 
 :ref:`bool<class_bool>` **interface/editor/use_embedded_menu**
 
-If ``true``, editor main menu is using embedded :ref:`MenuBar<class_MenuBar>` instead of system global menu.
+如果为 ``true``\ ，则编辑器的主菜单使用嵌入式 :ref:`MenuBar<class_MenuBar>`\ ，不使用系统全局菜单。
 
-Specific to the macOS platform.
+专用于 macOS 平台。
 
 .. rst-class:: classref-item-separator
 
@@ -2261,7 +2261,7 @@ Specific to the macOS platform.
 
 :ref:`float<class_float>` **interface/inspector/float_drag_speed**
 
-Base speed for increasing/decreasing float values by dragging them in the inspector.
+在检查器中通过拖动来调整浮点数大小时的基础变化速度。
 
 .. rst-class:: classref-item-separator
 
@@ -2273,7 +2273,7 @@ Base speed for increasing/decreasing float values by dragging them in the inspec
 
 :ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
 
-The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` items to display on each "page" in the inspector. Higher values allow viewing more values per page, but take more time to load. This increased load time is noticeable when selecting nodes that have array or dictionary properties in the editor.
+在检查器中，为 :ref:`Array<class_Array>` 或 :ref:`Dictionary<class_Dictionary>` 的每一“页”显示多少项目。值越高，每一页可以查看的值就越多，但也会花越多的时间进行加载。在编辑器中选中具有很多数组或字典属性的节点时，这些多出来的加载时间就会很显著。
 
 .. rst-class:: classref-item-separator
 
@@ -2285,7 +2285,7 @@ The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` i
 
 :ref:`bool<class_bool>` **interface/inspector/show_low_level_opentype_features**
 
-If ``true``, display OpenType features marked as ``hidden`` by the font file in the :ref:`Font<class_Font>` editor.
+如果为 ``true``\ ，则在 :ref:`Font<class_Font>` 编辑器中，显示被字体文件标记为 ``hidden`` 的 OpenType 特性。
 
 .. rst-class:: classref-item-separator
 
@@ -2297,9 +2297,9 @@ If ``true``, display OpenType features marked as ``hidden`` by the font file in 
 
 :ref:`bool<class_bool>` **interface/multi_window/enable**
 
-If ``true``, the multi window support in editor is enabled. The following panels can become dedicated windows (made floating): Docks, Script editor, and Shader editor.
+如果为 ``true``\ ，将启用编辑器的多窗口支持。以下面板可以成为独立窗口（浮动）：停靠面板、脚本编辑器、着色器编辑器。
 
-\ **Note:** When :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` is ``true``, the multi window support is always disabled.
+\ **注意：**\ :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` 为 ``true`` 时，多窗口支持始终处于禁用状态。
 
 .. rst-class:: classref-item-separator
 
@@ -2311,9 +2311,9 @@ If ``true``, the multi window support in editor is enabled. The following panels
 
 :ref:`bool<class_bool>` **interface/multi_window/maximize_window**
 
-If ``true``, when panels are made floating they will be maximized.
+如果为 ``true``\ ，则将面板设为浮动时会将其最大化。
 
-If ``false``, when panels are made floating their position and size will match the ones when they are attached (excluding window border) to the editor window.
+如果为 ``false``\ ，则将面板设为浮动时，位置和大小会和编辑器窗口中的状态一致（不含窗口边框）。
 
 .. rst-class:: classref-item-separator
 
@@ -2325,7 +2325,7 @@ If ``false``, when panels are made floating their position and size will match t
 
 :ref:`bool<class_bool>` **interface/multi_window/restore_windows_on_load**
 
-If ``true``, the floating panel position, size, and screen will be saved on editor exit. On next launch the panels that were floating will be made floating in the saved positions, sizes and screens, if possible.
+如果为 ``true``\ ，则编辑器在退出时会保存浮动面板的位置、大小、屏幕。下次启动时，会尽可能让浮动面板在保存的位置、大小、屏幕处保持浮动。
 
 .. rst-class:: classref-item-separator
 
@@ -2337,7 +2337,7 @@ If ``true``, the floating panel position, size, and screen will be saved on edit
 
 :ref:`int<class_int>` **interface/scene_tabs/display_close_button**
 
-Controls when the Close (X) button is displayed on scene tabs at the top of the editor.
+控制关闭（X）按钮何时显示在编辑器顶部的场景选项卡上。
 
 .. rst-class:: classref-item-separator
 
@@ -2349,7 +2349,7 @@ Controls when the Close (X) button is displayed on scene tabs at the top of the 
 
 :ref:`int<class_int>` **interface/scene_tabs/maximum_width**
 
-The maximum width of each scene tab at the top editor (in pixels).
+顶部编辑器中每个场景选项卡的最大宽度（以像素为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -2361,7 +2361,7 @@ The maximum width of each scene tab at the top editor (in pixels).
 
 :ref:`bool<class_bool>` **interface/scene_tabs/show_script_button**
 
-If ``true``, show a button next to each scene tab that opens the scene's "dominant" script when clicked. The "dominant" script is the one that is at the highest level in the scene's hierarchy.
+如果为 ``true``\ ，则在每个场景选项卡旁边显示一个按钮，点击该按钮会打开场景的“主导”脚本。“主导”脚本是场景层次结构中位于最高级别的脚本。
 
 .. rst-class:: classref-item-separator
 
@@ -2373,7 +2373,7 @@ If ``true``, show a button next to each scene tab that opens the scene's "domina
 
 :ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover**
 
-If ``true``, display an automatically-generated thumbnail when hovering scene tabs with the mouse. Scene thumbnails are generated when saving the scene.
+如果为 ``true``\ ，当鼠标悬停在场景选项卡上时，会显示自动生成的缩略图。场景缩略图在保存场景时生成。
 
 .. rst-class:: classref-item-separator
 
@@ -2385,7 +2385,7 @@ If ``true``, display an automatically-generated thumbnail when hovering scene ta
 
 :ref:`Color<class_Color>` **interface/theme/accent_color**
 
-The color to use for "highlighted" user interface elements in the editor (pressed and hovered items).
+用于编辑器中“高亮显示”的用户界面元素（按下和悬停的项目）的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -2397,7 +2397,7 @@ The color to use for "highlighted" user interface elements in the editor (presse
 
 :ref:`float<class_float>` **interface/theme/additional_spacing**
 
-The spacing to add for buttons and list items in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
+在编辑器中为按钮和列表项添加的间距（以像素为单位）。增加该值有助于提高触摸屏的可用性，但代价是减少可用屏幕空间。
 
 .. rst-class:: classref-item-separator
 
@@ -2409,7 +2409,7 @@ The spacing to add for buttons and list items in the editor (in pixels). Increas
 
 :ref:`Color<class_Color>` **interface/theme/base_color**
 
-The base color to use for user interface elements in the editor. Secondary colors (such as darker/lighter variants) are derived from this color.
+用于编辑器中用户界面元素的基色。次要颜色（例如较深/较浅的变体）是从这种颜色派生的。
 
 .. rst-class:: classref-item-separator
 
@@ -2421,7 +2421,7 @@ The base color to use for user interface elements in the editor. Secondary color
 
 :ref:`int<class_int>` **interface/theme/border_size**
 
-The border size to use for interface elements (in pixels).
+界面元素的边框大小（单位为像素）。
 
 .. rst-class:: classref-item-separator
 
@@ -2433,7 +2433,7 @@ The border size to use for interface elements (in pixels).
 
 :ref:`float<class_float>` **interface/theme/contrast**
 
-The contrast factor to use when deriving the editor theme's base color (see :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`). When using a positive values, the derived colors will be *darker* than the base color. This contrast factor can be set to a negative value, which will make the derived colors *brighter* than the base color. Negative contrast rates often look better for light themes.
+当派生编辑器主题的基色时，使用的对比度系数（参见 :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`\ ）。当使用正值时，派生的颜色将比基色\ *更深*\ 。该对比度系数可以设置为负值，这将使派生颜色比基色\ *更浅*\ 。对于浅色主题，负对比度通常看起来更好。
 
 .. rst-class:: classref-item-separator
 
@@ -2445,7 +2445,7 @@ The contrast factor to use when deriving the editor theme's base color (see :ref
 
 :ref:`int<class_int>` **interface/theme/corner_radius**
 
-The corner radius to use for interface elements (in pixels). ``0`` is square.
+界面元素的圆角半径（单位为像素）。\ ``0`` 则为正方形。
 
 .. rst-class:: classref-item-separator
 
@@ -2457,7 +2457,7 @@ The corner radius to use for interface elements (in pixels). ``0`` is square.
 
 :ref:`String<class_String>` **interface/theme/custom_theme**
 
-The custom theme resource to use for the editor. Must be a Godot theme resource in ``.tres`` or ``.res`` format.
+用于编辑器的自定义主题资源。必须是 ``.tres`` 或 ``.res`` 格式的 Godot 主题资源。
 
 .. rst-class:: classref-item-separator
 
@@ -2469,7 +2469,7 @@ The custom theme resource to use for the editor. Must be a Godot theme resource 
 
 :ref:`bool<class_bool>` **interface/theme/draw_extra_borders**
 
-If ``true``, draws additional borders around interactive UI elements in the editor. This is automatically enabled when using the **Black (OLED)** theme preset, as this theme preset uses a fully black background.
+如果 ``true``\ ，则在编辑器中的交互式 UI 元素周围绘制额外的边框。使用\ **Black (OLED)**\ 主题预设时该项会自动启用，因为该主题预设使用全黑背景。
 
 .. rst-class:: classref-item-separator
 
@@ -2481,13 +2481,13 @@ If ``true``, draws additional borders around interactive UI elements in the edit
 
 :ref:`int<class_int>` **interface/theme/icon_and_font_color**
 
-The icon and font color scheme to use in the editor.
+在编辑器中使用的图标和字体的配色方案。
 
-- **Auto** determines the color scheme to use automatically based on :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`.
+- **Auto** 根据 :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>` 自动确定要使用的配色方案。
 
-- **Dark** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following the set of rules defined in `this file <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp>`__.
+- **Dark** 使字体和图标变暗（适合浅色主题）。图标颜色由编辑器按照\ `该文件 <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp>`__\ 中定义的一组规则自动转换。
 
-- **Light** makes fonts and icons light (suitable for dark themes).
+- **Light** 使字体和图标变亮（适合深色主题）。
 
 .. rst-class:: classref-item-separator
 
@@ -2499,9 +2499,9 @@ The icon and font color scheme to use in the editor.
 
 :ref:`float<class_float>` **interface/theme/icon_saturation**
 
-The saturation to use for editor icons. Higher values result in more vibrant colors.
+用于编辑器图标的饱和度。值越高，颜色越鲜艳。
 
-\ **Note:** The default editor icon saturation was increased by 30% in Godot 4.0 and later. To get Godot 3.x's icon saturation back, set :ref:`interface/theme/icon_saturation<class_EditorSettings_property_interface/theme/icon_saturation>` to ``0.77``.
+\ **注意：**\ 在 Godot 4.0 及更高版本中，默认编辑器图标饱和度增加了 30%。要恢复为 Godot 3.x 的图标饱和度，请将 :ref:`interface/theme/icon_saturation<class_EditorSettings_property_interface/theme/icon_saturation>` 设置为 ``0.77``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2513,7 +2513,7 @@ The saturation to use for editor icons. Higher values result in more vibrant col
 
 :ref:`String<class_String>` **interface/theme/preset**
 
-The editor theme preset to use.
+要使用的编辑器主题预设。
 
 .. rst-class:: classref-item-separator
 
@@ -2525,7 +2525,7 @@ The editor theme preset to use.
 
 :ref:`float<class_float>` **interface/theme/relationship_line_opacity**
 
-The opacity to use when drawing relationship lines in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
+在编辑器的基于 :ref:`Tree<class_Tree>` 的 GUI（例如场景树停靠栏）中，绘制关系线时使用的不透明度。
 
 .. rst-class:: classref-item-separator
 
@@ -2537,9 +2537,9 @@ The opacity to use when drawing relationship lines in the editor's :ref:`Tree<cl
 
 :ref:`bool<class_bool>` **interface/touchscreen/enable_long_press_as_right_click**
 
-If ``true``, long press on touchscreen is treated as right click.
+如果为 ``true``\ ，长按触摸屏被视为右键点击。
 
-\ **Note:** Defaults to ``true`` on touchscreen devices.
+\ **注意：**\ 在触摸屏设备上默认为 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2551,9 +2551,9 @@ If ``true``, long press on touchscreen is treated as right click.
 
 :ref:`bool<class_bool>` **interface/touchscreen/enable_pan_and_scale_gestures**
 
-If ``true``, enable two finger pan and scale gestures on touchscreen devices.
+如果为 ``true``\ ，则在触摸屏设备上启用两指平移和缩放手势。
 
-\ **Note:** Defaults to ``true`` on touchscreen devices.
+\ **注意：**\ 在触摸屏设备上默认为 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2565,9 +2565,9 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
 :ref:`bool<class_bool>` **interface/touchscreen/increase_scrollbar_touch_area**
 
-If ``true``, increases the scrollbar touch area to improve usability on touchscreen devices.
+如果为 ``true``\ ，则增加滚动条触摸区域以提高触摸屏设备的可用性。
 
-\ **Note:** Defaults to ``true`` on touchscreen devices.
+\ **注意：**\ 在触摸屏设备上默认为 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2579,9 +2579,9 @@ If ``true``, increases the scrollbar touch area to improve usability on touchscr
 
 :ref:`float<class_float>` **interface/touchscreen/scale_gizmo_handles**
 
-Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
+指定为了在提高触摸屏设备的可用性而对编辑器小工具手柄应用的缩放乘数。
 
-\ **Note:** Defaults to ``1`` on non-touchscreen devices.
+\ **注意：**\ 在非触摸屏设备上默认为 ``1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2593,7 +2593,7 @@ Specify the multiplier to apply to the scale for the editor gizmo handles to imp
 
 :ref:`String<class_String>` **network/debug/remote_host**
 
-The address to listen to when starting the remote debugger. This can be set to ``0.0.0.0`` to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from ``localhost``).
+启动远程调试器时要监听的地址。这可以设置为 ``0.0.0.0`` 以允许外部客户端连接到远程调试器（而不是将远程调试器限制为来自 ``localhost`` 的连接）。
 
 .. rst-class:: classref-item-separator
 
@@ -2605,7 +2605,7 @@ The address to listen to when starting the remote debugger. This can be set to `
 
 :ref:`int<class_int>` **network/debug/remote_port**
 
-The port to listen to when starting the remote debugger. Godot will try to use port numbers above the configured number if the configured number is already taken by another application.
+启动远程调试器时要监听的端口。如果配置的数字已被另一个应用程序占用，Godot 将尝试使用高于该配置数字的端口号。
 
 .. rst-class:: classref-item-separator
 
@@ -2617,9 +2617,9 @@ The port to listen to when starting the remote debugger. Godot will try to use p
 
 :ref:`String<class_String>` **network/http_proxy/host**
 
-The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
+用于在编辑器中联系 HTTP 和 HTTPS 代理的主机（用于资产库和导出模板下载）。另见 :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`\ 。
 
-\ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
+\ **注意：**\ Godot 目前不会自动使用系统代理设置，所以如果需要，必须在此处手动输入。
 
 .. rst-class:: classref-item-separator
 
@@ -2631,9 +2631,9 @@ The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset
 
 :ref:`int<class_int>` **network/http_proxy/port**
 
-The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
+用于在编辑器中联系 HTTP 和 HTTPS 代理的端口号（用于资产库和导出模板下载）。另请参阅 :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`\ 。
 
-\ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
+\ **注意：**\ Godot 目前不会自动使用系统代理设置，所以如果需要，必须在此处手动输入。
 
 .. rst-class:: classref-item-separator
 
@@ -2645,7 +2645,7 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 :ref:`String<class_String>` **network/tls/editor_tls_certificates**
 
-The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+用于在编辑器中发出的 HTTP 请求（例如来自 AssetLib 选项卡）的 TLS 证书包。如果留空，将使用\ `包含的 Mozilla 证书包 <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2657,7 +2657,7 @@ The TLS certificate bundle to use for HTTP requests made within the editor (e.g.
 
 :ref:`String<class_String>` **project_manager/default_renderer**
 
-The renderer type that will be checked off by default when creating a new project. Accepted strings are "forward_plus", "mobile" or "gl_compatibility".
+创建新项目时默认勾选的渲染器类型。可接受的字符串是“forward_plus”、“mobile”、或“gl_compatibility”。
 
 .. rst-class:: classref-item-separator
 
@@ -2669,7 +2669,7 @@ The renderer type that will be checked off by default when creating a new projec
 
 :ref:`int<class_int>` **project_manager/sorting_order**
 
-The sorting order to use in the project manager. When changing the sorting order in the project manager, this setting is set permanently in the editor settings.
+在项目管理器中使用的排序顺序。在项目管理器中更改排序顺序时，该设置将在编辑器设置中被永久设置。
 
 .. rst-class:: classref-item-separator
 
@@ -2681,7 +2681,7 @@ The sorting order to use in the project manager. When changing the sorting order
 
 :ref:`bool<class_bool>` **run/auto_save/save_before_running**
 
-If ``true``, saves all scenes and scripts automatically before running the project. Setting this to ``false`` prevents the editor from saving if there are no changes which can speed up the project startup slightly, but it makes it possible to run a project that has unsaved changes. (Unsaved changes will not be visible in the running project.)
+如果为 ``true``\ ，则在运行游戏项目之前会自动保存所有场景和脚本。将该项设置为 ``false`` 可防止编辑器在没有更改的情况下保存，这可以稍微加快该游戏项目的启动速度，但它可以运行带有未保存的更改的游戏项目。（未保存的更改在正在运行的项目中将不可见。）
 
 .. rst-class:: classref-item-separator
 
@@ -2693,7 +2693,7 @@ If ``true``, saves all scenes and scripts automatically before running the proje
 
 :ref:`bool<class_bool>` **run/output/always_clear_output_on_play**
 
-If ``true``, the editor will clear the Output panel when running the project.
+如果为 ``true``\ ，则编辑器会在运行游戏项目时清空“输出”面板。
 
 .. rst-class:: classref-item-separator
 
@@ -2705,7 +2705,7 @@ If ``true``, the editor will clear the Output panel when running the project.
 
 :ref:`bool<class_bool>` **run/output/always_close_output_on_stop**
 
-If ``true``, the editor will collapse the Output panel when stopping the project.
+如果为 ``true``\ ，则编辑器会在停止游戏项目时折叠“输出”面板。
 
 .. rst-class:: classref-item-separator
 
@@ -2717,7 +2717,7 @@ If ``true``, the editor will collapse the Output panel when stopping the project
 
 :ref:`bool<class_bool>` **run/output/always_open_output_on_play**
 
-If ``true``, the editor will expand the Output panel when running the project.
+如果为 ``true``\ ，则编辑器会在运行游戏项目时展开“输出”面板。
 
 .. rst-class:: classref-item-separator
 
@@ -2729,7 +2729,7 @@ If ``true``, the editor will expand the Output panel when running the project.
 
 :ref:`int<class_int>` **run/output/font_size**
 
-The size of the font in the **Output** panel at the bottom of the editor. This setting does not impact the font size of the script editor (see :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`).
+编辑器底部\ **输出**\ 面板中的字体大小。该设置不会影响脚本编辑器的字体大小（见 :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -2741,9 +2741,9 @@ The size of the font in the **Output** panel at the bottom of the editor. This s
 
 :ref:`int<class_int>` **run/window_placement/android_window**
 
-The Android window to display the project on when starting the project from the editor.
+从编辑器中启动项目时，用于显示项目的 Android 窗口。
 
-\ **Note:** Only available in the Android editor.
+\ **注意：**\ 仅在 Android 编辑器中可用。
 
 .. rst-class:: classref-item-separator
 
@@ -2755,7 +2755,7 @@ The Android window to display the project on when starting the project from the 
 
 :ref:`int<class_int>` **run/window_placement/rect**
 
-The window mode to use to display the project when starting the project from the editor.
+从编辑器启动游戏项目时，用于显示该游戏项目的窗口模式。
 
 .. rst-class:: classref-item-separator
 
@@ -2767,7 +2767,7 @@ The window mode to use to display the project when starting the project from the
 
 :ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position**
 
-The custom position to use when starting the project from the editor (in pixels from the top-left corner). Only effective if :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is set to **Custom Position**.
+从编辑器启动游戏项目时，使用的自定义位置（相对于左上角，单位为像素）。仅当 :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` 设置为 **Custom Position** 时才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -2779,7 +2779,7 @@ The custom position to use when starting the project from the editor (in pixels 
 
 :ref:`int<class_int>` **run/window_placement/screen**
 
-The monitor to display the project on when starting the project from the editor.
+从编辑器启动游戏项目时，用于显示该游戏项目的显示屏。
 
 .. rst-class:: classref-item-separator
 
@@ -2791,7 +2791,7 @@ The monitor to display the project on when starting the project from the editor.
 
 :ref:`bool<class_bool>` **text_editor/appearance/caret/caret_blink**
 
-If ``true``, makes the caret blink according to :ref:`text_editor/appearance/caret/caret_blink_interval<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>`. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
+如果为 ``true`` ，则文本光标按照 :ref:`text_editor/appearance/caret/caret_blink_interval<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>` 来闪烁。如果长时间使用脚本编辑器，禁用这个设置可以改善笔记本电脑的电池寿命，因为可以减少编辑器需要重绘的频率。
 
 .. rst-class:: classref-item-separator
 
@@ -2803,7 +2803,7 @@ If ``true``, makes the caret blink according to :ref:`text_editor/appearance/car
 
 :ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval**
 
-The interval at which the caret will blink (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
+文本光标闪烁的时间间隔（单位为秒）。另见 :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2815,7 +2815,7 @@ The interval at which the caret will blink (in seconds). See also :ref:`text_edi
 
 :ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_all_occurrences**
 
-If ``true``, highlights all occurrences of the currently selected text in the script editor. See also :ref:`text_editor/theme/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`.
+如果为 ``true``\ ，则在脚本编辑器中高亮显示当前所选文本的所有匹配项。另请参阅 :ref:`text_editor/theme/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2827,7 +2827,7 @@ If ``true``, highlights all occurrences of the currently selected text in the sc
 
 :ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_current_line**
 
-If ``true``, colors the background of the line the caret is currently on with :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
+如果为 ``true``\ ，则使用 :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>` 为文本光标当前所在行的背景着色。
 
 .. rst-class:: classref-item-separator
 
@@ -2839,7 +2839,7 @@ If ``true``, colors the background of the line the caret is currently on with :r
 
 :ref:`int<class_int>` **text_editor/appearance/caret/type**
 
-The shape of the caret to use in the script editor. **Line** displays a vertical line to the left of the current character, whereas **Block** displays an outline over the current character.
+在脚本编辑器中使用的文本光标的形状。\ **Line** 会在当前字符的左侧显示一条垂直线，而 **Block** 会在当前字符上方显示一个轮廓。
 
 .. rst-class:: classref-item-separator
 
@@ -2851,7 +2851,7 @@ The shape of the caret to use in the script editor. **Line** displays a vertical
 
 :ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_hard_column**
 
-The column at which to display a subtle line as a line length guideline for scripts. This should generally be greater than :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>`.
+在哪列将细线显示为脚本的行长参考线。这通常应该大于 :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2863,7 +2863,7 @@ The column at which to display a subtle line as a line length guideline for scri
 
 :ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_soft_column**
 
-The column at which to display a *very* subtle line as a line length guideline for scripts. This should generally be lower than :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`.
+在哪行将一条\ *非常*\ 细的线显示为脚本的行长参考线。这通常应该低于 :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2875,7 +2875,7 @@ The column at which to display a *very* subtle line as a line length guideline f
 
 :ref:`bool<class_bool>` **text_editor/appearance/guidelines/show_line_length_guidelines**
 
-If ``true``, displays line length guidelines to help you keep line lengths in check. See also :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>` and :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`.
+如果为 ``true``\ ，则显示行长度参考线以帮助控制行的长度。另请参阅 :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>` 和 :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2887,7 +2887,7 @@ If ``true``, displays line length guidelines to help you keep line lengths in ch
 
 :ref:`bool<class_bool>` **text_editor/appearance/gutters/highlight_type_safe_lines**
 
-If ``true``, highlights type-safe lines by displaying their line number color with :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>` instead of :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines may run faster thanks to typed instructions.
+如果为 ``true``\ ，则通过使用 :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>` 而不是 :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`\ ，来显示行号颜色以突出显示类型安全行。类型安全行是指所有变量的类型在编译时已知的代码行。由于类型化的指令，这些类型安全的行可能会运行得更快。
 
 .. rst-class:: classref-item-separator
 
@@ -2899,7 +2899,7 @@ If ``true``, highlights type-safe lines by displaying their line number color wi
 
 :ref:`bool<class_bool>` **text_editor/appearance/gutters/line_numbers_zero_padded**
 
-If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``7``).
+如果为 ``true``\ ，则显示的行号使用零填充（例如 ``7`` 会变成 ``007``\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -2911,7 +2911,7 @@ If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``
 
 :ref:`bool<class_bool>` **text_editor/appearance/gutters/show_info_gutter**
 
-If ``true``, displays a gutter at the left containing icons for methods with signal connections and for overridden methods.
+如果为 ``true``\ ，则会在左侧显示一个装订线，为存在信号连接和覆盖方法的方法显示图标。
 
 .. rst-class:: classref-item-separator
 
@@ -2923,7 +2923,7 @@ If ``true``, displays a gutter at the left containing icons for methods with sig
 
 :ref:`bool<class_bool>` **text_editor/appearance/gutters/show_line_numbers**
 
-If ``true``, displays line numbers in a gutter at the left.
+如果为 ``true``\ ，则会在左侧的装订线中显示行号。
 
 .. rst-class:: classref-item-separator
 
@@ -2935,7 +2935,7 @@ If ``true``, displays line numbers in a gutter at the left.
 
 :ref:`int<class_int>` **text_editor/appearance/lines/autowrap_mode**
 
-If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>` is set to ``1``, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+如果 :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>` 设置为 ``1``\ ，则设置文本换行模式。每种模式的行为见 :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2947,7 +2947,7 @@ If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_te
 
 :ref:`bool<class_bool>` **text_editor/appearance/lines/code_folding**
 
-If ``true``, displays the folding arrows next to indented code sections and allows code folding. If ``false``, hides the folding arrows next to indented code sections and disallows code folding.
+如果为 ``true``\ ，则显示缩进的代码小节旁边的折叠箭头，并允许代码折叠。如果为 ``false``\ ，则隐藏缩进的代码小节旁边的折叠箭头，并禁止代码折叠。
 
 .. rst-class:: classref-item-separator
 
@@ -2959,7 +2959,7 @@ If ``true``, displays the folding arrows next to indented code sections and allo
 
 :ref:`int<class_int>` **text_editor/appearance/lines/word_wrap**
 
-If ``true``, wraps long lines over multiple lines to avoid horizontal scrolling. This is a display-only feature; it does not actually insert line breaks in your scripts.
+如果为 ``true``\ ，则将长行换成多行以避免水平滚动。这是一个仅显示的功能；它实际上并没有在脚本中插入换行符。
 
 .. rst-class:: classref-item-separator
 
@@ -2971,7 +2971,7 @@ If ``true``, wraps long lines over multiple lines to avoid horizontal scrolling.
 
 :ref:`int<class_int>` **text_editor/appearance/minimap/minimap_width**
 
-The width of the minimap in the script editor (in pixels).
+脚本编辑器中小地图的宽度（单位为像素）。
 
 .. rst-class:: classref-item-separator
 
@@ -2983,7 +2983,7 @@ The width of the minimap in the script editor (in pixels).
 
 :ref:`bool<class_bool>` **text_editor/appearance/minimap/show_minimap**
 
-If ``true``, draws an overview of the script near the scroll bar. The minimap can be left-clicked to scroll directly to a location in an "absolute" manner.
+如果为 ``true``\ ，则在滚动条附近绘制脚本概览。小地图可以被左键点击，以“绝对”的方式直接滚动到某个位置。
 
 .. rst-class:: classref-item-separator
 
@@ -2995,7 +2995,7 @@ If ``true``, draws an overview of the script near the scroll bar. The minimap ca
 
 :ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_spaces**
 
-If ``true``, draws space characters as centered points.
+如果为 ``true``\ ，则会将空格字符绘制为居中的点。
 
 .. rst-class:: classref-item-separator
 
@@ -3007,7 +3007,7 @@ If ``true``, draws space characters as centered points.
 
 :ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_tabs**
 
-If ``true``, draws tab characters as chevrons.
+如果为 ``true``\ ，则会将制表符绘制为人字形。
 
 .. rst-class:: classref-item-separator
 
@@ -3019,7 +3019,7 @@ If ``true``, draws tab characters as chevrons.
 
 :ref:`int<class_int>` **text_editor/appearance/whitespace/line_spacing**
 
-The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
+行与行之间要增加的空间（像素）。更大的行间距可以帮助提高可读性，但代价是在屏幕上显示更少的行。
 
 .. rst-class:: classref-item-separator
 
@@ -3031,7 +3031,7 @@ The space to add between lines (in pixels). Greater line spacing can help improv
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/auto_reload_scripts_on_external_change**
 
-If ``true``, automatically reloads scripts in the editor when they have been modified and saved by external editors.
+如果为 ``true``\ ，当脚本被外部编辑器修改和保存时，会自动在编辑器中重新加载脚本。
 
 .. rst-class:: classref-item-separator
 
@@ -3043,7 +3043,7 @@ If ``true``, automatically reloads scripts in the editor when they have been mod
 
 :ref:`int<class_int>` **text_editor/behavior/files/autosave_interval_secs**
 
-If set to a value greater than ``0``, automatically saves the current script following the specified interval (in seconds). This can be used to prevent data loss if the editor crashes.
+如果设置为大于 ``0`` 的值，则按照指定的时间间隔（以秒为单位）会自动保存当前脚本。这可用于防止编辑器崩溃时的数据丢失。
 
 .. rst-class:: classref-item-separator
 
@@ -3055,7 +3055,7 @@ If set to a value greater than ``0``, automatically saves the current script fol
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/convert_indent_on_save**
 
-If ``true``, converts indentation to match the script editor's indentation settings when saving a script. See also :ref:`text_editor/behavior/indent/type<class_EditorSettings_property_text_editor/behavior/indent/type>`.
+如果为 ``true``\ ，则在保存脚本时转换缩进，以匹配脚本编辑器的缩进设置。另见 :ref:`text_editor/behavior/indent/type<class_EditorSettings_property_text_editor/behavior/indent/type>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3067,7 +3067,7 @@ If ``true``, converts indentation to match the script editor's indentation setti
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/restore_scripts_on_load**
 
-If ``true``, reopens scripts that were opened in the last session when the editor is reopened on a given project.
+如果为 ``true``\ ，则在给定项目上重新打开编辑器时，重新打开在上次会话中打开的脚本。
 
 .. rst-class:: classref-item-separator
 
@@ -3079,7 +3079,7 @@ If ``true``, reopens scripts that were opened in the last session when the edito
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/trim_trailing_whitespace_on_save**
 
-If ``true``, trims trailing whitespace when saving a script. Trailing whitespace refers to tab and space characters placed at the end of lines. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
+如果为 ``true``\ ，则在保存脚本时修剪尾随空格。尾随空格是指放置在行尾的制表符和空格字符。由于这些没有任何实际用途，因此可以并且应该将其移除，以减少版本控制差异的干扰。
 
 .. rst-class:: classref-item-separator
 
@@ -3091,7 +3091,7 @@ If ``true``, trims trailing whitespace when saving a script. Trailing whitespace
 
 :ref:`bool<class_bool>` **text_editor/behavior/indent/auto_indent**
 
-If ``true``, automatically indents code when pressing the :kbd:`Enter` key based on blocks above the new line.
+如果为 ``true``\ ，则在按 :kbd:`Enter` 键时，将根据新行上方的代码块，自动缩进代码。
 
 .. rst-class:: classref-item-separator
 
@@ -3103,7 +3103,7 @@ If ``true``, automatically indents code when pressing the :kbd:`Enter` key based
 
 :ref:`int<class_int>` **text_editor/behavior/indent/size**
 
-When using tab indentation, determines the length of each tab. When using space indentation, determines how many spaces are inserted when pressing :kbd:`Tab` and when automatic indentation is performed.
+使用制表符缩进时，确定每个制表符的长度。使用空格缩进时，确定按下 :kbd:`Tab` 和执行自动缩进时，插入了多少空格。
 
 .. rst-class:: classref-item-separator
 
@@ -3115,9 +3115,9 @@ When using tab indentation, determines the length of each tab. When using space 
 
 :ref:`int<class_int>` **text_editor/behavior/indent/type**
 
-The indentation style to use (tabs or spaces).
+要使用的缩进风格（制表符或空格）。
 
-\ **Note:** The :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>` recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
+\ **注意：**\ :doc:`GDScript 风格指南 <../tutorials/scripting/gdscript/gdscript_styleguide>`\ 建议使用制表符进行缩进。建议仅当需要处理当前使用空格进行缩进的游戏项目时，才更改这项设置。
 
 .. rst-class:: classref-item-separator
 
@@ -3129,7 +3129,7 @@ The indentation style to use (tabs or spaces).
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/drag_and_drop_selection**
 
-If ``true``, allows drag-and-dropping text in the script editor to move text. Disable this if you find yourself accidentally drag-and-dropping text in the script editor.
+如果为 ``true``\ ，则允许在脚本编辑器中拖放文本以移动文本。如果发现不小心在脚本编辑器中拖放了文本，请禁用该项。
 
 .. rst-class:: classref-item-separator
 
@@ -3141,7 +3141,7 @@ If ``true``, allows drag-and-dropping text in the script editor to move text. Di
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/move_caret_on_right_click**
 
-If ``true``, the caret will be moved when right-clicking somewhere in the script editor (like when left-clicking or middle-clicking). If ``false``, the caret will only be moved when left-clicking or middle-clicking somewhere.
+如果为 ``true``\ ，则在脚本编辑器中右键点击某处时，文本光标将被移动（像左键点击或中键点击时一样）。如果为 ``false``\ ，文本光标只会在左键点击或中键点击某个位置时移动。
 
 .. rst-class:: classref-item-separator
 
@@ -3153,7 +3153,7 @@ If ``true``, the caret will be moved when right-clicking somewhere in the script
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/scroll_past_end_of_file**
 
-If ``true``, allows scrolling past the end of the file.
+如果为 ``true``\ ，则允许滚动越过文件的末尾。
 
 .. rst-class:: classref-item-separator
 
@@ -3165,9 +3165,9 @@ If ``true``, allows scrolling past the end of the file.
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/smooth_scrolling**
 
-If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolling animation when using the mouse wheel to scroll.
+如果为 ``true``\ ，则允许在子行间隔内滚动，并在使用鼠标滚轮滚动时启用平滑的滚动动画。
 
-\ **Note:** :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>` currently behaves poorly in projects where :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` has been increased significantly from its default value (``60``). In this case, it is recommended to disable this setting.
+\ **注意：**\ :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>` 当前在 :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` 从其默认值（\ ``60``\ ）显著增加的游戏项目中表现不佳。在这种情况下，建议禁用该设置。
 
 .. rst-class:: classref-item-separator
 
@@ -3179,7 +3179,7 @@ If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolli
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/stay_in_script_editor_on_node_selected**
 
-If ``true``, prevents automatically switching between the Script and 2D/3D screens when selecting a node in the Scene tree dock.
+如果为 ``true``\ ，则在场景树面板中选择节点时，可防止自动在脚本和 2D/3D 屏幕之间切换。
 
 .. rst-class:: classref-item-separator
 
@@ -3191,9 +3191,9 @@ If ``true``, prevents automatically switching between the Script and 2D/3D scree
 
 :ref:`int<class_int>` **text_editor/behavior/navigation/v_scroll_speed**
 
-The number of pixels to scroll with every mouse wheel increment. Higher values make the script scroll by faster when using the mouse wheel.
+每个鼠标滚轮增量滚动的像素数。使用鼠标滚轮时，较高的值会使脚本滚动得更快。
 
-\ **Note:** You can hold down :kbd:`Alt` while using the mouse wheel to temporarily scroll 5 times faster.
+\ **注意：**\ 可以在按住 :kbd:`Alt` 的同时，使用鼠标滚轮将滚动速度暂时提高 5 倍。
 
 .. rst-class:: classref-item-separator
 
@@ -3205,7 +3205,7 @@ The number of pixels to scroll with every mouse wheel increment. Higher values m
 
 :ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
 
-If ``true``, adds static typing hints such as ``-> void`` and ``: int`` when using code autocompletion or when creating onready variables by drag and dropping nodes into the script editor while pressing the :kbd:`Ctrl` key.
+如果为 ``true`` ，则在使用代码自动补全时，或在按下 :kbd:`Ctrl` 键的同时将节点拖放到脚本编辑器中创建 onready 变量时，将添加静态类型提示，类型提示类似 ``-> void`` 和 ``: int`` 。
 
 .. rst-class:: classref-item-separator
 
@@ -3217,7 +3217,7 @@ If ``true``, adds static typing hints such as ``-> void`` and ``: int`` when usi
 
 :ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete**
 
-If ``true``, automatically completes braces when making use of code completion.
+如果为 ``true``\ ，则在使用代码补全时，自动补全括号。
 
 .. rst-class:: classref-item-separator
 
@@ -3229,7 +3229,7 @@ If ``true``, automatically completes braces when making use of code completion.
 
 :ref:`float<class_float>` **text_editor/completion/code_complete_delay**
 
-The delay in seconds after which autocompletion suggestions should be displayed when the user stops typing.
+用户停止输入后，应显示自动补全建议的延迟时间（以秒为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -3241,7 +3241,7 @@ The delay in seconds after which autocompletion suggestions should be displayed 
 
 :ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled**
 
-If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
+如果为 ``true``\ ，代码补全将在 :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>` 之后自动触发。如果为 ``false``\ ，你仍然可以通过按 :kbd:`Ctrl + Space`\ （在 macOS 上为 :kbd:`Cmd + Space`\ ）手动触发补全。
 
 .. rst-class:: classref-item-separator
 
@@ -3253,7 +3253,7 @@ If ``true``, code completion will be triggered automatically after :ref:`text_ed
 
 :ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions**
 
-If ``true`` enables the coloring for some items in the autocompletion suggestions, like vector components.
+如果为 ``true``\ ，则启用自动补全建议中某些项目的着色，例如向量分量。
 
 .. rst-class:: classref-item-separator
 
@@ -3265,7 +3265,7 @@ If ``true`` enables the coloring for some items in the autocompletion suggestion
 
 :ref:`bool<class_bool>` **text_editor/completion/complete_file_paths**
 
-If ``true``, provides autocompletion suggestions for file paths in methods such as ``load()`` and ``preload()``.
+如果为 ``true``\ ，则在 ``load()`` 和 ``preload()`` 等方法中，为文件路径提供自动补全建议。
 
 .. rst-class:: classref-item-separator
 
@@ -3277,7 +3277,7 @@ If ``true``, provides autocompletion suggestions for file paths in methods such 
 
 :ref:`float<class_float>` **text_editor/completion/idle_parse_delay**
 
-The delay in seconds after which the script editor should check for errors when the user stops typing.
+用户停止输入后，脚本编辑器应检查错误的延迟时间（以秒为单位）。
 
 .. rst-class:: classref-item-separator
 
@@ -3289,7 +3289,7 @@ The delay in seconds after which the script editor should check for errors when 
 
 :ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line**
 
-If ``true``, the code completion tooltip will appear below the current line unless there is no space on screen below the current line. If ``false``, the code completion tooltip will appear above the current line.
+如果为 ``true``\ ，除非当前行下方的屏幕上没有空间，否则代码补全工具提示，将出现在当前行下方。如果为 ``false``\ ，则代码补全工具提示，将出现在当前行上方。
 
 .. rst-class:: classref-item-separator
 
@@ -3301,7 +3301,7 @@ If ``true``, the code completion tooltip will appear below the current line unle
 
 :ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
 
-If ``true``, performs string autocompletion with single quotes. If ``false``, performs string autocompletion with double quotes (which matches the :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>`).
+如果为 ``true``\ ，则执行带单引号的字符串自动补全。如果为 ``false``\ ，则执行带双引号的字符串自动补全（则与 :doc:`GDScript 风格指南 <../tutorials/scripting/gdscript/gdscript_styleguide>`\ 一致）。
 
 .. rst-class:: classref-item-separator
 
@@ -3313,7 +3313,7 @@ If ``true``, performs string autocompletion with single quotes. If ``false``, pe
 
 :ref:`int<class_int>` **text_editor/help/class_reference_examples**
 
-Controls which multi-line code blocks should be displayed in the editor help. This setting does not affect single-line code literals in the editor help.
+控制应在编辑器帮助中显示哪些多行代码块。该设置不会影响编辑器帮助中的单行代码文字。
 
 .. rst-class:: classref-item-separator
 
@@ -3325,7 +3325,7 @@ Controls which multi-line code blocks should be displayed in the editor help. Th
 
 :ref:`int<class_int>` **text_editor/help/help_font_size**
 
-The font size to use for the editor help (built-in class reference).
+编辑器帮助（内置类参考）的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -3337,7 +3337,7 @@ The font size to use for the editor help (built-in class reference).
 
 :ref:`int<class_int>` **text_editor/help/help_source_font_size**
 
-The font size to use for code samples in the editor help (built-in class reference).
+编辑器帮助（内置类参考）中示例代码的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -3349,7 +3349,7 @@ The font size to use for code samples in the editor help (built-in class referen
 
 :ref:`int<class_int>` **text_editor/help/help_title_font_size**
 
-The font size to use for headings in the editor help (built-in class reference).
+编辑器帮助（内置类参考）中标题的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -3361,7 +3361,7 @@ The font size to use for headings in the editor help (built-in class reference).
 
 :ref:`bool<class_bool>` **text_editor/help/show_help_index**
 
-If ``true``, displays a table of contents at the left of the editor help (at the location where the members overview would appear when editing a script).
+如果为 ``true``\ ，则在编辑器帮助的左侧显示目录（编辑脚本时出现成员概览的位置）。
 
 .. rst-class:: classref-item-separator
 
@@ -3373,7 +3373,7 @@ If ``true``, displays a table of contents at the left of the editor help (at the
 
 :ref:`bool<class_bool>` **text_editor/script_list/show_members_overview**
 
-If ``true``, displays an overview of the current script's member variables and functions at the left of the script editor. See also :ref:`text_editor/script_list/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/script_list/sort_members_outline_alphabetically>`.
+如果为 ``true``\ ，则在脚本编辑器的左侧显示当前脚本的成员变量和函数的概览。另见 :ref:`text_editor/script_list/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/script_list/sort_members_outline_alphabetically>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3385,9 +3385,9 @@ If ``true``, displays an overview of the current script's member variables and f
 
 :ref:`bool<class_bool>` **text_editor/script_list/sort_members_outline_alphabetically**
 
-If ``true``, sorts the members outline (located at the left of the script editor) using alphabetical order. If ``false``, sorts the members outline depending on the order in which members are found in the script.
+如果为 ``true``\ ，则使用字母顺序，对成员大纲（位于脚本编辑器的左侧）进行排序。如果为 ``false``\ ，则根据在脚本中找到成员的顺序，对成员大纲进行排序。
 
-\ **Note:** Only effective if :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>` is ``true``.
+\ **注意：**\ 仅当 :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>` 为 ``true`` 时有效。
 
 .. rst-class:: classref-item-separator
 
@@ -3399,11 +3399,11 @@ If ``true``, sorts the members outline (located at the left of the script editor
 
 :ref:`String<class_String>` **text_editor/theme/color_theme**
 
-The syntax theme to use in the script editor.
+脚本编辑器中，使用的语法主题。
 
-You can save your own syntax theme from your current settings by using **File > Theme > Save As...** at the top of the script editor. The syntax theme will then be available locally in the list of color themes.
+可以使用脚本编辑器顶部的\ **文件 > 主题 > 另存为...**\ ，从当前设置中保存自己的语法主题。然后，语法主题将在本地颜色主题列表中可用。
 
-You can find additional syntax themes to install in the `godot-syntax-themes <https://github.com/godotengine/godot-syntax-themes>`__ repository.
+可以在 `godot-syntax-themes <https://github.com/godotengine/godot-syntax-themes>`__ 存储库中，找到要安装的其他语法主题。
 
 .. rst-class:: classref-item-separator
 
@@ -3415,7 +3415,7 @@ You can find additional syntax themes to install in the `godot-syntax-themes <ht
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/background_color**
 
-The script editor's background color. If set to a translucent color, the editor theme's base color will be visible behind.
+脚本编辑器中，背景的颜色。如果设置为半透明的颜色，会透出后面的编辑器主题的基础色。
 
 .. rst-class:: classref-item-separator
 
@@ -3427,7 +3427,7 @@ The script editor's background color. If set to a translucent color, the editor 
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/base_type_color**
 
-The script editor's base type color (used for types like :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
+脚本编辑器中，基础类型的颜色（用于 :ref:`Vector2<class_Vector2>`\ 、\ :ref:`Vector3<class_Vector3>`\ 、\ :ref:`Color<class_Color>` 等类型）。
 
 .. rst-class:: classref-item-separator
 
@@ -3439,7 +3439,7 @@ The script editor's base type color (used for types like :ref:`Vector2<class_Vec
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/bookmark_color**
 
-The script editor's bookmark icon color (displayed in the gutter).
+脚本编辑器中，书签图标的颜色（在装订线中显示）。
 
 .. rst-class:: classref-item-separator
 
@@ -3451,7 +3451,7 @@ The script editor's bookmark icon color (displayed in the gutter).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/brace_mismatch_color**
 
-The script editor's brace mismatch color. Used when the caret is currently on a mismatched brace, parenthesis or bracket character.
+脚本编辑器中，括号不匹配的颜色。当文本光标位于不匹配的大括号、圆括号或方括号字符上时使用。
 
 .. rst-class:: classref-item-separator
 
@@ -3463,7 +3463,7 @@ The script editor's brace mismatch color. Used when the caret is currently on a 
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/breakpoint_color**
 
-The script editor's breakpoint icon color (displayed in the gutter).
+脚本编辑器中，断点图标的颜色（在装订线中显示）。
 
 .. rst-class:: classref-item-separator
 
@@ -3475,9 +3475,9 @@ The script editor's breakpoint icon color (displayed in the gutter).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_background_color**
 
-The script editor's caret background color.
+脚本编辑器中，文本光标的背景色。
 
-\ **Note:** This setting has no effect as it's currently unused.
+\ **注意：**\ 该设置无效，因为当前未使用。
 
 .. rst-class:: classref-item-separator
 
@@ -3489,7 +3489,7 @@ The script editor's caret background color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_color**
 
-The script editor's caret color.
+脚本编辑器中，文本光标的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3501,7 +3501,7 @@ The script editor's caret color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/code_folding_color**
 
-The script editor's color for the code folding icon (displayed in the gutter).
+脚本编辑器中，代码折叠图标的颜色（在装订线中显示）。
 
 .. rst-class:: classref-item-separator
 
@@ -3513,9 +3513,9 @@ The script editor's color for the code folding icon (displayed in the gutter).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_color**
 
-The script editor's comment color.
+脚本编辑器中，注释的颜色。
 
-\ **Note:** In GDScript, unlike Python, multiline strings are not considered to be comments, and will use the string highlighting color instead.
+\ **注意：**\ 在 GDScript 中，与 Python 不同，多行字符串不被视为注释，而是使用字符串高亮显示颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3527,7 +3527,7 @@ The script editor's comment color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_background_color**
 
-The script editor's autocompletion box background color.
+脚本编辑器中，自动补全框的背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -3539,7 +3539,7 @@ The script editor's autocompletion box background color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_existing_color**
 
-The script editor's autocompletion box background color to highlight existing characters in the completion results. This should be a translucent color so that :ref:`text_editor/theme/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/theme/highlighting/completion_selected_color>` can be seen behind.
+脚本编辑器中，自动补全框的背景颜色，用于高亮显示补全结果中的现有字符。这应该是半透明的颜色，以便在后面可以看到 :ref:`text_editor/theme/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/theme/highlighting/completion_selected_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3551,7 +3551,7 @@ The script editor's autocompletion box background color to highlight existing ch
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_font_color**
 
-The script editor's autocompletion box text color.
+脚本编辑器中，自动补全框的文本颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3563,7 +3563,7 @@ The script editor's autocompletion box text color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_color**
 
-The script editor's autocompletion box scroll bar color.
+脚本编辑器中，自动补全框的滚动条颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3575,7 +3575,7 @@ The script editor's autocompletion box scroll bar color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_hovered_color**
 
-The script editor's autocompletion box scroll bar color when hovered or pressed with the mouse.
+脚本编辑器中，自动补全框的滚动条被鼠标悬停或按下时的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3587,7 +3587,7 @@ The script editor's autocompletion box scroll bar color when hovered or pressed 
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_selected_color**
 
-The script editor's autocompletion box background color for the currently selected line.
+脚本编辑器中，自动补全框的当前选中行的背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -3599,7 +3599,7 @@ The script editor's autocompletion box background color for the currently select
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/control_flow_keyword_color**
 
-The script editor's control flow keyword color (used for keywords like ``if``, ``for``, ``return``, ...).
+脚本编辑器中，控制流关键字的颜色（用于 ``if``\ 、\ ``for``\ 、\ ``return`` 等关键字）。
 
 .. rst-class:: classref-item-separator
 
@@ -3611,7 +3611,7 @@ The script editor's control flow keyword color (used for keywords like ``if``, `
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/current_line_color**
 
-The script editor's background color for the line the caret is currently on. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/mark_color<class_EditorSettings_property_text_editor/theme/highlighting/mark_color>`.
+脚本编辑器中，文本光标当前所在行的背景色。这应该被设置为半透明颜色，以便它可以显示在其他的行颜色修饰之上，例如 :ref:`text_editor/theme/highlighting/mark_color<class_EditorSettings_property_text_editor/theme/highlighting/mark_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3623,7 +3623,7 @@ The script editor's background color for the line the caret is currently on. Thi
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/doc_comment_color**
 
-The script editor's documentation comment color. In GDScript, this is used for comments starting with ``##``. In C#, this is used for comments starting with ``///`` or ``/**``.
+脚本编辑器的文档注释颜色。在 GDScript 中，这被用于以 ``##`` 开头的注释。在 C# 中，这被用于以 ``///`` 或 ``/**`` 开头的注释。
 
 .. rst-class:: classref-item-separator
 
@@ -3635,7 +3635,7 @@ The script editor's documentation comment color. In GDScript, this is used for c
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/engine_type_color**
 
-The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
+脚本编辑器中，引擎类型的颜色（\ :ref:`Vector2<class_Vector2>`\ 、\ :ref:`Vector3<class_Vector3>`\ 、\ :ref:`Color<class_Color>`\ ……）。
 
 .. rst-class:: classref-item-separator
 
@@ -3647,7 +3647,7 @@ The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vect
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/executing_line_color**
 
-The script editor's color for the debugger's executing line icon (displayed in the gutter).
+脚本编辑器中，调试器执行行图标（显示在装订线中）的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3659,7 +3659,7 @@ The script editor's color for the debugger's executing line icon (displayed in t
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/folded_code_region_color**
 
-The script editor's background line highlighting color for folded code region.
+脚本编辑器的背景行高亮颜色，用于折叠代码区块。
 
 .. rst-class:: classref-item-separator
 
@@ -3671,9 +3671,9 @@ The script editor's background line highlighting color for folded code region.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/function_color**
 
-The script editor's function call color.
+脚本编辑器中，函数调用的颜色。
 
-\ **Note:** When using the GDScript syntax highlighter, this is replaced by the function definition color configured in the syntax theme for function definitions (e.g. ``func _ready():``).
+\ **注意：**\ 当使用 GDScript 语法高亮器时，这将被语法主题中为函数定义（例如：\ ``func _ready():`` ）配置的函数定义颜色所取代。
 
 .. rst-class:: classref-item-separator
 
@@ -3685,7 +3685,7 @@ The script editor's function call color.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/keyword_color**
 
-The script editor's non-control flow keyword color (used for keywords like ``var``, ``func``, ``extends``, ...).
+脚本编辑器中，非控制流关键字的颜色（用于关键字，如 ``var``\ 、\ ``func``\ 、\ ``extends``\ 、...）。
 
 .. rst-class:: classref-item-separator
 
@@ -3697,7 +3697,7 @@ The script editor's non-control flow keyword color (used for keywords like ``var
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/line_length_guideline_color**
 
-The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with half of its opacity.
+脚本编辑器中，行长参考线的颜色。“硬”行长参考线将使用该颜色绘制，而“软”行长参考线将使用其一半的不透明度绘制。
 
 .. rst-class:: classref-item-separator
 
@@ -3709,7 +3709,7 @@ The script editor's color for the line length guideline. The "hard" line length 
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/line_number_color**
 
-The script editor's color for line numbers. See also :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>`.
+脚本编辑器中，行号的颜色。另请参阅 :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3721,7 +3721,7 @@ The script editor's color for line numbers. See also :ref:`text_editor/theme/hig
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/mark_color**
 
-The script editor's background color for lines with errors. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
+脚本编辑器中，有错误的行的背景颜色。这应该被设置为半透明颜色，以便它可以显示在其他的行颜色修饰之上，例如 :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3733,9 +3733,9 @@ The script editor's background color for lines with errors. This should be set t
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/member_variable_color**
 
-The script editor's color for member variables on objects (e.g. ``self.some_property``).
+脚本编辑器中，对象上成员变量（例如 ``self.some_property``\ ）的颜色。
 
-\ **Note:** This color is not used for local variable declaration and access.
+\ **注意：**\ 该颜色不用于局部变量的声明和访问。
 
 .. rst-class:: classref-item-separator
 
@@ -3747,7 +3747,7 @@ The script editor's color for member variables on objects (e.g. ``self.some_prop
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/number_color**
 
-The script editor's color for numbers (integer and floating-point).
+脚本编辑器中，数字（整数和浮点数）的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3759,9 +3759,9 @@ The script editor's color for numbers (integer and floating-point).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/safe_line_number_color**
 
-The script editor's color for type-safe line numbers. See also :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`.
+脚本编辑器中，类型安全行号的颜色。另请参阅 :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`\ 。
 
-\ **Note:** Only displayed if :ref:`text_editor/appearance/gutters/highlight_type_safe_lines<class_EditorSettings_property_text_editor/appearance/gutters/highlight_type_safe_lines>` is ``true``.
+\ **注意：**\ 仅当 :ref:`text_editor/appearance/gutters/highlight_type_safe_lines<class_EditorSettings_property_text_editor/appearance/gutters/highlight_type_safe_lines>` 为 ``true`` 时才显示。
 
 .. rst-class:: classref-item-separator
 
@@ -3773,7 +3773,7 @@ The script editor's color for type-safe line numbers. See also :ref:`text_editor
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_border_color**
 
-The script editor's color for the border of search results. This border helps bring further attention to the search result. Set this color's opacity to 0 to disable the border.
+脚本编辑器中，搜索结果边框的颜色。该边框有助于进一步关注搜索结果。将该颜色的不透明度设置为 0 可禁用该边框。
 
 .. rst-class:: classref-item-separator
 
@@ -3785,7 +3785,7 @@ The script editor's color for the border of search results. This border helps br
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_color**
 
-The script editor's background color for search results.
+脚本编辑器中，搜索结果的背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -3797,7 +3797,7 @@ The script editor's background color for search results.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/selection_color**
 
-The script editor's background color for the currently selected text.
+脚本编辑器中，当前选中文本的背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -3809,7 +3809,7 @@ The script editor's background color for the currently selected text.
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/string_color**
 
-The script editor's color for strings (single-line and multi-line).
+脚本编辑器中，字符串的颜色（单行和多行）。
 
 .. rst-class:: classref-item-separator
 
@@ -3821,7 +3821,7 @@ The script editor's color for strings (single-line and multi-line).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/symbol_color**
 
-The script editor's color for operators (``( ) [ ] { } + - * /``, ...).
+脚本编辑器中，运算符的颜色（\ ``( ) [ ] { } + - * /`` 等）。
 
 .. rst-class:: classref-item-separator
 
@@ -3833,7 +3833,7 @@ The script editor's color for operators (``( ) [ ] { } + - * /``, ...).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/text_color**
 
-The script editor's color for text not highlighted by any syntax highlighting rule.
+脚本编辑器中，所有语法高亮规则均未高亮显示的文本的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3845,7 +3845,7 @@ The script editor's color for text not highlighted by any syntax highlighting ru
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/text_selected_color**
 
-The script editor's background color for text. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
+脚本编辑器中，文本的背景颜色。这应该被设置为半透明颜色，以便它可以显示在其他的行颜色修饰之上，例如 :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3857,7 +3857,7 @@ The script editor's background color for text. This should be set to a transluce
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/user_type_color**
 
-The script editor's color for user-defined types (using ``class_name``).
+脚本编辑器中，用户定义的类型（使用 ``class_name`` ）的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -3869,7 +3869,7 @@ The script editor's color for user-defined types (using ``class_name``).
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/word_highlighted_color**
 
-The script editor's color for words highlighted by selecting them. Only visible if :ref:`text_editor/appearance/caret/highlight_all_occurrences<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>` is ``true``.
+脚本编辑器中，通过选择单词而高亮显示的颜色。仅当 :ref:`text_editor/appearance/caret/highlight_all_occurrences<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>` 为 ``true`` 时可见。
 
 .. rst-class:: classref-section-separator
 
@@ -3877,8 +3877,8 @@ The script editor's color for words highlighted by selecting them. Only visible 
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_EditorSettings_method_add_property_info:
 
@@ -3886,15 +3886,15 @@ Method Descriptions
 
 void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` info **)**
 
-Adds a custom property info to a property. The dictionary must contain:
+向属性添加自定义属性信息。该字典必须包含：
 
-- ``name``: :ref:`String<class_String>` (the name of the property)
+- ``name``: :ref:`String<class_String>`\ （属性名称）
 
-- ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
+- ``type``: :ref:`int<class_int>`\ （参见 :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ）
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
+- （可选） ``hint``: :ref:`int<class_int>` （参见 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`\ ）和 ``hint_string``: :ref:`String<class_String>`\ 
 
-\ **Example:**\ 
+\ **示例：**\ 
 
 
 .. tabs::
@@ -3940,7 +3940,7 @@ Adds a custom property info to a property. The dictionary must contain:
 
 :ref:`bool<class_bool>` **check_changed_settings_in_group** **(** :ref:`String<class_String>` setting_prefix **)** |const|
 
-Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`.
+检查已改变的设置中是否存在前缀为 ``setting_prefix`` 的设置项。另见 :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3952,7 +3952,7 @@ Checks if any settings with the prefix ``setting_prefix`` exist in the set of ch
 
 void **erase** **(** :ref:`String<class_String>` property **)**
 
-Erases the setting whose name is specified by ``property``.
+擦除名称由 ``property`` 指定的设置项。
 
 .. rst-class:: classref-item-separator
 
@@ -3964,7 +3964,7 @@ Erases the setting whose name is specified by ``property``.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings** **(** **)** |const|
 
-Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`.
+获取上次保存以来发生更改的设置项数组。请注意，成功保存后内部会将 ``changed_settings`` 清空，所以一般最适合使用该方法的地方是在处理 :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>` 时。
 
 .. rst-class:: classref-item-separator
 
@@ -3976,7 +3976,7 @@ Gets an array of the settings which have been changed since the last save. Note 
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_favorites** **(** **)** |const|
 
-Returns the list of favorite files and directories for this project.
+返回该游戏项目收藏的文件和目录的列表。
 
 .. rst-class:: classref-item-separator
 
@@ -3988,7 +3988,7 @@ Returns the list of favorite files and directories for this project.
 
 :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
-Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
+返回由 ``section`` 和 ``key`` 指定的特定于项目的元数据。如果该元数据不存在，则将返回 ``default``\ 。另见 :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4000,7 +4000,7 @@ Returns project-specific metadata for the ``section`` and ``key`` specified. If 
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_recent_dirs** **(** **)** |const|
 
-Returns the list of recently visited folders in the file dialog for this project.
+返回该游戏项目在文件对话框中最近访问的文件夹的列表。
 
 .. rst-class:: classref-item-separator
 
@@ -4012,7 +4012,7 @@ Returns the list of recently visited folders in the file dialog for this project
 
 :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
+返回由 ``name`` 指定的设置项的值。等价于在 EditorSettings 实例上使用 :ref:`Object.get<class_Object_method_get>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4024,7 +4024,7 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 
 :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
+如果由 ``name`` 指定的设置项存在则返回 ``true``\ ，否则返回 ``false``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4036,7 +4036,7 @@ Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwis
 
 void **mark_setting_changed** **(** :ref:`String<class_String>` setting **)**
 
-Marks the passed editor setting as being changed, see :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting<class_EditorSettings_method_has_setting>`) will be accepted.
+将传入的编辑器设置项标记为已更改，请参阅 :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`\ 。只有存在的设置（参见 :ref:`has_setting<class_EditorSettings_method_has_setting>`\ ）才会被接受。
 
 .. rst-class:: classref-item-separator
 
@@ -4048,7 +4048,7 @@ Marks the passed editor setting as being changed, see :ref:`get_changed_settings
 
 void **set_builtin_action_override** **(** :ref:`String<class_String>` name, :ref:`InputEvent[]<class_InputEvent>` actions_list **)**
 
-Overrides the built-in editor action ``name`` with the input actions defined in ``actions_list``.
+使用 ``actions_list`` 中定义的输入动作，覆盖内置的编辑器动作 ``name``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4060,7 +4060,7 @@ Overrides the built-in editor action ``name`` with the input actions defined in 
 
 void **set_favorites** **(** :ref:`PackedStringArray<class_PackedStringArray>` dirs **)**
 
-Sets the list of favorite files and directories for this project.
+设置该游戏项目收藏的文件和目录的列表。
 
 .. rst-class:: classref-item-separator
 
@@ -4072,7 +4072,7 @@ Sets the list of favorite files and directories for this project.
 
 void **set_initial_value** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**
 
-Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is true, the current value of the setting will be set to ``value`` as well.
+将由 ``name`` 指定的设置项的初始值设置为 ``value``\ 。用于在“编辑器设置”中为“恢复”按钮提供值。如果 ``update_current`` 为 true，则该设置的当前值也会被设为 ``value``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4084,7 +4084,7 @@ Sets the initial value of the setting specified by ``name`` to ``value``. This i
 
 void **set_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**
 
-Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`.
+设置由 ``section``\ 、\ ``key``\ 、\ ``data`` 指定的特定于项目的元数据。该元数据保存在项目文件夹之外，因此不会加入到版本控制中。另见 :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4096,7 +4096,7 @@ Sets project-specific metadata with the ``section``, ``key`` and ``data`` specif
 
 void **set_recent_dirs** **(** :ref:`PackedStringArray<class_PackedStringArray>` dirs **)**
 
-Sets the list of recently visited folders in the file dialog for this project.
+设置该游戏项目在文件对话框中最近访问的文件夹的列表。
 
 .. rst-class:: classref-item-separator
 
@@ -4108,12 +4108,12 @@ Sets the list of recently visited folders in the file dialog for this project.
 
 void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
-Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
+将由 ``name`` 指定的设置项设置为 ``value``\ 。等价于在 EditorSettings 实例上使用 :ref:`Object.set<class_Object_method_set>`\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

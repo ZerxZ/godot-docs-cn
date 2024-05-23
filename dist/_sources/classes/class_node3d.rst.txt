@@ -10,38 +10,38 @@
 Node3D
 ======
 
-**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
+**派生：** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
 
-Most basic 3D game object, parent of all 3D-related nodes.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visibility settings. All other 3D game objects inherit from **Node3D**. Use **Node3D** as a parent node to move, scale, rotate and show/hide children in a 3D project.
-
-Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the **Node3D** object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the **Node3D**'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the **Node3D** object itself is referred to as object-local coordinate system.
-
-\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>`.
-
-\ **Note:** Be aware that "Spatial" nodes are now called "Node3D" starting with Godot 4. Any Godot 3.x references to "Spatial" nodes refer to "Node3D" in Godot 4.
+最基本的 3D 游戏对象，所有 3D 相关节点的父类。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Introduction to 3D <../tutorials/3d/introduction_to_3d>`
+最基本的 3D 游戏对象，具有 :ref:`Transform3D<class_Transform3D>` 和可见性设置。所有其他的 3D 游戏对象都继承自 **Node3D**\ 。在 3D 项目中，请使用 **Node3D** 作为父节点对子节点进行移动、缩放、旋转和显示/隐藏。
 
-- `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
+除非该 **Node3D** 对象被设置为顶层，否则仿射操作（旋转、缩放、平移）会在父节点的本地坐标系中进行。在这个坐标系中的仿射操作对应于对 **Node3D** 变换的直接仿射运算。下文中的本地一词指的就是这个坐标系。附加到 **Node3D** 对象本身的坐标系被称为对象本地坐标系。
+
+\ **注意：**\ 除非另有规定，所有有角度参数的方法必须将角度指定为\ *弧度*\ 。请使用 :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>` 将度数转换为弧度。
+
+\ **注意：**\ 请注意，从 Godot 4 开始，“Spatial”节点现在被称为“Node3D”。Godot 3.x 中指的“Spatial”节点，均指的是 Godot 4 中的“Node3D”。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`3D 简介 <../tutorials/3d/introduction_to_3d>`
+
+- `所有 3D 演示 <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -84,8 +84,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -170,8 +170,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_Node3D_signal_visibility_changed:
 
@@ -179,7 +179,7 @@ Signals
 
 **visibility_changed** **(** **)**
 
-Emitted when node visibility changes.
+当节点可见性更改时触发。
 
 .. rst-class:: classref-section-separator
 
@@ -187,8 +187,8 @@ Emitted when node visibility changes.
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_Node3D_RotationEditMode:
 
@@ -202,7 +202,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_EULER** = ``0``
 
-The rotation is edited using :ref:`Vector3<class_Vector3>` Euler angles.
+旋转量以 :ref:`Vector3<class_Vector3>` 欧拉角的形式编辑。
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_QUATERNION:
 
@@ -210,7 +210,7 @@ The rotation is edited using :ref:`Vector3<class_Vector3>` Euler angles.
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_QUATERNION** = ``1``
 
-The rotation is edited using a :ref:`Quaternion<class_Quaternion>`.
+旋转量以 :ref:`Quaternion<class_Quaternion>` 的形式编辑。
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_BASIS:
 
@@ -218,7 +218,7 @@ The rotation is edited using a :ref:`Quaternion<class_Quaternion>`.
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_BASIS** = ``2``
 
-The rotation is edited using a :ref:`Basis<class_Basis>`. In this mode, :ref:`scale<class_Node3D_property_scale>` can't be edited separately.
+旋转量以 :ref:`Basis<class_Basis>` 的形式编辑。此模式下无法单独编辑 :ref:`scale<class_Node3D_property_scale>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -226,8 +226,8 @@ The rotation is edited using a :ref:`Basis<class_Basis>`. In this mode, :ref:`sc
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+常量
+----
 
 .. _class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED:
 
@@ -235,9 +235,9 @@ Constants
 
 **NOTIFICATION_TRANSFORM_CHANGED** = ``2000``
 
-**Node3D** nodes receive this notification when their global transform changes. This means that either the current or a parent node changed its transform.
+**Node3D** 节点在自己的全局变换发生改变时，会收到这个通知。这意味着当前节点或者某个父节点的变换发生了改变。
 
-In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Node3D_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has at least one valid gizmo.
+用户需要使用 :ref:`set_notify_transform<class_Node3D_method_set_notify_transform>` 手动申请才能够收到 :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>`\ 。如果该节点在编辑器环境中，并且拥有至少一个有效的小工具，则也会发送这个通知。
 
 .. _class_Node3D_constant_NOTIFICATION_ENTER_WORLD:
 
@@ -245,7 +245,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **NOTIFICATION_ENTER_WORLD** = ``41``
 
-**Node3D** nodes receive this notification when they are registered to new :ref:`World3D<class_World3D>` resource.
+**Node3D** 节点在注册到新的 :ref:`World3D<class_World3D>` 资源时，会收到这个通知。
 
 .. _class_Node3D_constant_NOTIFICATION_EXIT_WORLD:
 
@@ -253,7 +253,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **NOTIFICATION_EXIT_WORLD** = ``42``
 
-**Node3D** nodes receive this notification when they are unregistered from current :ref:`World3D<class_World3D>` resource.
+**Node3D** 节点从当前的 :ref:`World3D<class_World3D>` 资源中取消注册时，会收到这个通知。
 
 .. _class_Node3D_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
@@ -261,7 +261,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **NOTIFICATION_VISIBILITY_CHANGED** = ``43``
 
-**Node3D** nodes receive this notification when their visibility changes.
+**Node3D** 节点在其可见性发生变化时，会收到该通知。
 
 .. _class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
 
@@ -269,9 +269,9 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``44``
 
-**Node3D** nodes receive this notification when their local transform changes. This is not received when the transform of a parent node is changed.
+**Node3D** 节点在其局部变换发生改变时，会收到这个通知。父节点的变换发生改变时不会收到这个通知。
 
-In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_local_transform<class_Node3D_method_set_notify_local_transform>`.
+为了使 :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` 起作用，用户首先需要使用 :ref:`set_notify_local_transform<class_Node3D_method_set_notify_local_transform>` 请求它。
 
 .. rst-class:: classref-section-separator
 
@@ -279,8 +279,8 @@ In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NO
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_Node3D_property_basis:
 
@@ -293,7 +293,7 @@ Property Descriptions
 - void **set_basis** **(** :ref:`Basis<class_Basis>` value **)**
 - :ref:`Basis<class_Basis>` **get_basis** **(** **)**
 
-Direct access to the 3x3 basis of the :ref:`transform<class_Node3D_property_transform>` property.
+直接访问 :ref:`transform<class_Node3D_property_transform>` 属性的 3x3 基。
 
 .. rst-class:: classref-item-separator
 
@@ -310,7 +310,7 @@ Direct access to the 3x3 basis of the :ref:`transform<class_Node3D_property_tran
 - void **set_global_basis** **(** :ref:`Basis<class_Basis>` value **)**
 - :ref:`Basis<class_Basis>` **get_global_basis** **(** **)**
 
-Global basis of this node. This is equivalent to ``global_transform.basis``.
+这个节点的全局基。与 ``global_transform.basis`` 等价。
 
 .. rst-class:: classref-item-separator
 
@@ -327,7 +327,7 @@ Global basis of this node. This is equivalent to ``global_transform.basis``.
 - void **set_global_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_global_position** **(** **)**
 
-Global position of this node. This is equivalent to ``global_transform.origin``.
+这个节点的全局位置。与 ``global_transform.origin`` 等价。
 
 .. rst-class:: classref-item-separator
 
@@ -344,9 +344,9 @@ Global position of this node. This is equivalent to ``global_transform.origin``.
 - void **set_global_rotation** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_global_rotation** **(** **)**
 
-Rotation part of the global transformation in radians, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
+全局变换的旋转部分，单位为弧度，以 YXZ 欧拉角的形式表示（X 角、Y 角、Z 角）。
 
-\ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+\ **注意：**\ 在数学意义上，旋转是一个矩阵而不是一个向量。这三个欧拉角是旋转矩阵欧拉角参数化的三个独立参数，存储在 :ref:`Vector3<class_Vector3>` 数据结构中并不是因为旋转是一个矢量，而是因为 :ref:`Vector3<class_Vector3>` 是一种方便存储 3 个浮点数的数据结构。因此，对旋转“向量”应用仿射操作是没有意义的。
 
 .. rst-class:: classref-item-separator
 
@@ -363,7 +363,7 @@ Rotation part of the global transformation in radians, specified in terms of YXZ
 - void **set_global_rotation_degrees** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_global_rotation_degrees** **(** **)**
 
-Helper property to access :ref:`global_rotation<class_Node3D_property_global_rotation>` in degrees instead of radians.
+辅助属性，用于按度数访问 :ref:`global_rotation<class_Node3D_property_global_rotation>` 而不是弧度数。
 
 .. rst-class:: classref-item-separator
 
@@ -380,7 +380,7 @@ Helper property to access :ref:`global_rotation<class_Node3D_property_global_rot
 - void **set_global_transform** **(** :ref:`Transform3D<class_Transform3D>` value **)**
 - :ref:`Transform3D<class_Transform3D>` **get_global_transform** **(** **)**
 
-World3D space (global) :ref:`Transform3D<class_Transform3D>` of this node.
+该节点在 World3D 空间的（全局）\ :ref:`Transform3D<class_Transform3D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -397,7 +397,7 @@ World3D space (global) :ref:`Transform3D<class_Transform3D>` of this node.
 - void **set_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)**
 
-Local position or translation of this node relative to the parent. This is equivalent to ``transform.origin``.
+该节点相对于父节点的局部位置或平移。相当于 ``transform.origin``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -414,7 +414,7 @@ Local position or translation of this node relative to the parent. This is equiv
 - void **set_quaternion** **(** :ref:`Quaternion<class_Quaternion>` value **)**
 - :ref:`Quaternion<class_Quaternion>` **get_quaternion** **(** **)**
 
-Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This property is ideal for tweening complex rotations.
+以一个 :ref:`Quaternion<class_Quaternion>` 的形式访问该节点的旋转。该属性非常适合补间复杂的旋转。
 
 .. rst-class:: classref-item-separator
 
@@ -431,11 +431,11 @@ Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This prope
 - void **set_rotation** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_rotation** **(** **)**
 
-Rotation part of the local transformation in radians, specified in terms of Euler angles. The angles construct a rotation in the order specified by the :ref:`rotation_order<class_Node3D_property_rotation_order>` property.
+以弧度为单位的，局部变换的旋转部分，根据欧拉角指定。角度按照 :ref:`rotation_order<class_Node3D_property_rotation_order>` 属性指定的顺序，构造一个旋转。
 
-\ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+\ **注意：**\ 在数学意义上，旋转是一个矩阵，而不是一个向量。三个欧拉角，即旋转矩阵的欧拉角参数化的三个独立参数，存储在一个 :ref:`Vector3<class_Vector3>` 数据结构中，并不是因为旋转是一个向量，而是因为 :ref:`Vector3<class_Vector3>` 是一个方便存储 3 个浮点数的数据结构。因此，对旋转“向量”，应用仿射操作是没有意义的。
 
-\ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use :ref:`rotation_degrees<class_Node3D_property_rotation_degrees>`.
+\ **注意：**\ 该属性在检查器中以度为单位进行编辑。如果要在脚本中使用度数，请使用 :ref:`rotation_degrees<class_Node3D_property_rotation_degrees>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -452,7 +452,7 @@ Rotation part of the local transformation in radians, specified in terms of Eule
 - void **set_rotation_degrees** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_rotation_degrees** **(** **)**
 
-Helper property to access :ref:`rotation<class_Node3D_property_rotation>` in degrees instead of radians.
+辅助属性，用于按度数访问 :ref:`rotation<class_Node3D_property_rotation>` 而不是弧度数。
 
 .. rst-class:: classref-item-separator
 
@@ -469,7 +469,7 @@ Helper property to access :ref:`rotation<class_Node3D_property_rotation>` in deg
 - void **set_rotation_edit_mode** **(** :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` value **)**
 - :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **get_rotation_edit_mode** **(** **)**
 
-Specify how rotation (and scale) will be presented in the editor.
+指定旋转（和缩放）在编辑器中的显示方式。
 
 .. rst-class:: classref-item-separator
 
@@ -486,7 +486,7 @@ Specify how rotation (and scale) will be presented in the editor.
 - void **set_rotation_order** **(** :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` value **)**
 - :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` **get_rotation_order** **(** **)**
 
-Specify the axis rotation order of the :ref:`rotation<class_Node3D_property_rotation>` property. The final orientation is constructed by rotating the Euler angles in the order specified by this property.
+指定 :ref:`rotation<class_Node3D_property_rotation>` 属性的轴旋转顺序。最终的方向是通过按该属性指定的顺序旋转欧拉角来构建的。
 
 .. rst-class:: classref-item-separator
 
@@ -503,11 +503,11 @@ Specify the axis rotation order of the :ref:`rotation<class_Node3D_property_rota
 - void **set_scale** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
 
-Scale part of the local transformation.
+局部变换的缩放部分。
 
-\ **Note:** Mixed negative scales in 3D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, the scale values will either be all positive or all negative.
+\ **注意：**\ 3D 中，变换矩阵是无法分解出正负混合的缩放的。由于 Godot 中使用变换矩阵来表示缩放，得到的缩放值要么全正、要么全负。
 
-\ **Note:** Not all nodes are visually scaled by the :ref:`scale<class_Node3D_property_scale>` property. For example, :ref:`Light3D<class_Light3D>`\ s are not visually affected by :ref:`scale<class_Node3D_property_scale>`.
+\ **注意：**\ 并不是所有节点的外观都会被 :ref:`scale<class_Node3D_property_scale>` 属性缩放。例如，\ :ref:`Light3D<class_Light3D>` 的外观就不受 :ref:`scale<class_Node3D_property_scale>` 影响。
 
 .. rst-class:: classref-item-separator
 
@@ -524,7 +524,7 @@ Scale part of the local transformation.
 - void **set_as_top_level** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_set_as_top_level** **(** **)**
 
-If ``true``, the node will not inherit its transformations from its parent. Node transformations are only in global space.
+如果为 ``true``\ ，则该节点将不会从其父节点继承其变换。节点变换仅在全局空间中。
 
 .. rst-class:: classref-item-separator
 
@@ -541,7 +541,7 @@ If ``true``, the node will not inherit its transformations from its parent. Node
 - void **set_transform** **(** :ref:`Transform3D<class_Transform3D>` value **)**
 - :ref:`Transform3D<class_Transform3D>` **get_transform** **(** **)**
 
-Local space :ref:`Transform3D<class_Transform3D>` of this node, with respect to the parent node.
+该节点的局部空间 :ref:`Transform3D<class_Transform3D>`\ ，相对于父节点。
 
 .. rst-class:: classref-item-separator
 
@@ -558,7 +558,7 @@ Local space :ref:`Transform3D<class_Transform3D>` of this node, with respect to 
 - void **set_visibility_parent** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_visibility_parent** **(** **)**
 
-Defines the visibility range parent for this node and its subtree. The visibility parent must be a GeometryInstance3D. Any visual instance will only be visible if the visibility parent (and all of its visibility ancestors) is hidden by being closer to the camera than its own :ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>`. Nodes hidden via the :ref:`visible<class_Node3D_property_visible>` property are essentially removed from the visibility dependency tree, so dependent instances will not take the hidden node or its ancestors into account.
+定义该节点及其子树的可见性范围父级。可见性父级必须是一个 GeometryInstance3D。仅当可见性父级（及其所有可见性祖先）通过比其自身 :ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` 更靠近相机而被隐藏时，任何视觉实例才会可见。通过 :ref:`visible<class_Node3D_property_visible>` 属性隐藏的节点，基本上可以从可见性依赖树中移除，因此依赖实例不会考虑隐藏节点或其祖先。
 
 .. rst-class:: classref-item-separator
 
@@ -575,7 +575,7 @@ Defines the visibility range parent for this node and its subtree. The visibilit
 - void **set_visible** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_visible** **(** **)**
 
-If ``true``, this node is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_Node3D_method_is_visible_in_tree>` must return ``true``).
+如果为 ``true``\ ，这个节点就会被画出来。只有当它的所有前项也是可见的时候，这个节点才是可见的（换句话说，\ :ref:`is_visible_in_tree<class_Node3D_method_is_visible_in_tree>` 必须返回 ``true``\ ）。
 
 .. rst-class:: classref-section-separator
 
@@ -583,8 +583,8 @@ If ``true``, this node is drawn. The node is only visible if all of its ancestor
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_Node3D_method_add_gizmo:
 
@@ -592,9 +592,9 @@ Method Descriptions
 
 void **add_gizmo** **(** :ref:`Node3DGizmo<class_Node3DGizmo>` gizmo **)**
 
-Attach an editor gizmo to this **Node3D**.
+将编辑器小工具附加到该 **Node3D**\ 。
 
-\ **Note:** The gizmo object would typically be an instance of :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, but the argument type is kept generic to avoid creating a dependency on editor classes in **Node3D**.
+\ **注意：**\ 小工具对象通常是 :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` 的一个实例，但参数类型保持通用以避免在 **Node3D** 中创建对编辑器类的依赖。
 
 .. rst-class:: classref-item-separator
 
@@ -606,7 +606,7 @@ Attach an editor gizmo to this **Node3D**.
 
 void **clear_gizmos** **(** **)**
 
-Clear all gizmos attached to this **Node3D**.
+清除附加于该 **Node3D** 的所有小工具。
 
 .. rst-class:: classref-item-separator
 
@@ -618,7 +618,7 @@ Clear all gizmos attached to this **Node3D**.
 
 void **clear_subgizmo_selection** **(** **)**
 
-Clears subgizmo selection for this node in the editor. Useful when subgizmo IDs become invalid after a property change.
+在编辑器中，清除该节点的子小工具选择。在一个属性更改后，子小工具 ID 变得无效时很有用。
 
 .. rst-class:: classref-item-separator
 
@@ -630,7 +630,7 @@ Clears subgizmo selection for this node in the editor. Useful when subgizmo IDs 
 
 void **force_update_transform** **(** **)**
 
-Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
+强制更新变换。由于性能原因，物理中的变换改变不是即时的。变换是在累积后再设置。如果你在进行物理操作时需要最新的变换，请使用此功能。
 
 .. rst-class:: classref-item-separator
 
@@ -642,7 +642,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 :ref:`Node3DGizmo[]<class_Node3DGizmo>` **get_gizmos** **(** **)** |const|
 
-Returns all the gizmos attached to this **Node3D**.
+返回附加到该 **Node3D** 的所有小工具。
 
 .. rst-class:: classref-item-separator
 
@@ -654,9 +654,7 @@ Returns all the gizmos attached to this **Node3D**.
 
 :ref:`Node3D<class_Node3D>` **get_parent_node_3d** **(** **)** |const|
 
-Returns the parent **Node3D**, or ``null`` if no parent exists, the parent is not of type **Node3D**, or :ref:`top_level<class_Node3D_property_top_level>` is ``true``.
-
-\ **Note:** Calling this method is not equivalent to ``get_parent() as Node3D``, which does not take :ref:`top_level<class_Node3D_property_top_level>` into account.
+返回父节点 **Node3D**\ ，如果不存在父节点，或父节点不是 **Node3D** 类型，则返回空的 :ref:`Object<class_Object>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -668,7 +666,7 @@ Returns the parent **Node3D**, or ``null`` if no parent exists, the parent is no
 
 :ref:`World3D<class_World3D>` **get_world_3d** **(** **)** |const|
 
-Returns the current :ref:`World3D<class_World3D>` resource this **Node3D** node is registered to.
+返回此 **Node3D** 节点所注册的当前 :ref:`World3D<class_World3D>` 资源。
 
 .. rst-class:: classref-item-separator
 
@@ -680,7 +678,7 @@ Returns the current :ref:`World3D<class_World3D>` resource this **Node3D** node 
 
 void **global_rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the global (world) transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in global coordinate system.
+将全局（世界）变换围绕某个轴（单位 :ref:`Vector3<class_Vector3>`\ ）旋转指定的弧度。旋转轴使用全局坐标系。
 
 .. rst-class:: classref-item-separator
 
@@ -692,7 +690,7 @@ Rotates the global (world) transformation around axis, a unit :ref:`Vector3<clas
 
 void **global_scale** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-Scales the global (world) transformation by the given :ref:`Vector3<class_Vector3>` scale factors.
+将全局（世界）变换按照给定的 :ref:`Vector3<class_Vector3>` 缩放因子进行缩放。
 
 .. rst-class:: classref-item-separator
 
@@ -704,7 +702,7 @@ Scales the global (world) transformation by the given :ref:`Vector3<class_Vector
 
 void **global_translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset. The offset is in global coordinate system.
+将全局（世界）变换按照 :ref:`Vector3<class_Vector3>` 偏移量进行移动。偏移量使用全局坐标系。
 
 .. rst-class:: classref-item-separator
 
@@ -716,7 +714,7 @@ Moves the global (world) transformation by :ref:`Vector3<class_Vector3>` offset.
 
 void **hide** **(** **)**
 
-Disables rendering of this node. Changes :ref:`visible<class_Node3D_property_visible>` to ``false``.
+禁用该节点的渲染。会将 :ref:`visible<class_Node3D_property_visible>` 改为 ``false``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -728,7 +726,7 @@ Disables rendering of this node. Changes :ref:`visible<class_Node3D_property_vis
 
 :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** |const|
 
-Returns whether node notifies about its local transformation changes. **Node3D** will not propagate this by default.
+返回该节点是否通知其局部变换的更改。\ **Node3D** 默认不会传播此属性。
 
 .. rst-class:: classref-item-separator
 
@@ -740,7 +738,7 @@ Returns whether node notifies about its local transformation changes. **Node3D**
 
 :ref:`bool<class_bool>` **is_scale_disabled** **(** **)** |const|
 
-Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformation scale.
+返回该节点是否使用 ``(1, 1, 1)`` 的比例或其本地变换比例。
 
 .. rst-class:: classref-item-separator
 
@@ -752,7 +750,7 @@ Returns whether this node uses a scale of ``(1, 1, 1)`` or its local transformat
 
 :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** |const|
 
-Returns whether the node notifies about its global and local transformation changes. **Node3D** will not propagate this by default.
+返回该节点是否通知其全局和局部变换的更改。\ **Node3D** 默认不会传播此属性。
 
 .. rst-class:: classref-item-separator
 
@@ -764,7 +762,7 @@ Returns whether the node notifies about its global and local transformation chan
 
 :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Node3D_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree.
+如果该节点位于 :ref:`SceneTree<class_SceneTree>` 中，并且其 :ref:`visible<class_Node3D_property_visible>` 属性为 ``true``\ ，并且其所有上层节点也均可见，则返回 ``true``\ 。如果任何上层节点被隐藏，则该节点在场景树中将不可见。
 
 .. rst-class:: classref-item-separator
 
@@ -776,15 +774,15 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 void **look_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0), :ref:`bool<class_bool>` use_model_front=false **)**
 
-Rotates the node so that the local forward axis (-Z, :ref:`Vector3.FORWARD<class_Vector3_constant_FORWARD>`) points toward the ``target`` position.
+旋转该节点，让局部向前的轴（-Z，\ :ref:`Vector3.FORWARD<class_Vector3_constant_FORWARD>`\ ）指向 ``target`` 的位置。
 
-The local up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the local forward axis. The resulting transform is orthogonal, and the scale is preserved. Non-uniform scaling may not work correctly.
+局部向上的轴（+Y）在保持与局部向前的轴垂直的前提下，尽可能接近 ``up`` 向量。最终的变换是正交变换，并且保留了原有缩放。非统一缩放可能无法正常工作。
 
-The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero, and the direction from the node's position to the ``target`` vector cannot be parallel to the ``up`` vector.
+\ ``target`` 位置不能和该节点的位置相同，\ ``up`` 向量不能为零，从节点的位置到 ``target`` 的向量不能与 ``up`` 平行。
 
-Operations take place in global space, which means that the node must be in the scene tree.
+操作发生在全局空间，也就是说该节点必须位于场景树中。
 
-If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forward (implies +X is left) and points toward the ``target`` position. By default, the -Z axis (camera forward) is treated as forward (implies +X is right).
+如果 ``use_model_front`` 为 ``true``\ ，则会将 +Z 轴（资产正面）作为向前的轴（此时 +X 为左），指向 ``target`` 的位置。默认情况下会将 -Z 轴（相机前方）作为向前的轴（此时 +X 为右）。
 
 .. rst-class:: classref-item-separator
 
@@ -796,7 +794,7 @@ If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forw
 
 void **look_at_from_position** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0), :ref:`bool<class_bool>` use_model_front=false **)**
 
-Moves the node to the specified ``position``, and then rotates the node to point toward the ``target`` as per :ref:`look_at<class_Node3D_method_look_at>`. Operations take place in global space.
+将节点移动到指定的 ``position``\ ，然后根据 :ref:`look_at<class_Node3D_method_look_at>` 旋转该节点以指向 ``target``\ 。操作发生在全局空间中。
 
 .. rst-class:: classref-item-separator
 
@@ -808,7 +806,7 @@ Moves the node to the specified ``position``, and then rotates the node to point
 
 void **orthonormalize** **(** **)**
 
-Resets this node's transformations (like scale, skew and taper) preserving its rotation and translation by performing Gram-Schmidt orthonormalization on this node's :ref:`Transform3D<class_Transform3D>`.
+通过在该节点的 :ref:`Transform3D<class_Transform3D>` 上执行 Gram-Schmidt 正交归一化，重置该节点的变换（如缩放、倾斜和锥度），以保留其旋转和平移。
 
 .. rst-class:: classref-item-separator
 
@@ -820,7 +818,7 @@ Resets this node's transformations (like scale, skew and taper) preserving its r
 
 void **rotate** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians.
+围绕轴（单位 :ref:`Vector3<class_Vector3>`\ ）旋转局部变换，指定角度（弧度）。
 
 .. rst-class:: classref-item-separator
 
@@ -832,7 +830,7 @@ Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3
 
 void **rotate_object_local** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3>`, by specified angle in radians. The rotation axis is in object-local coordinate system.
+围绕轴（单位 :ref:`Vector3<class_Vector3>`\ ）旋转局部变换，指定角度（弧度）。旋转轴是在物体的本地坐标系中。
 
 .. rst-class:: classref-item-separator
 
@@ -844,7 +842,7 @@ Rotates the local transformation around axis, a unit :ref:`Vector3<class_Vector3
 
 void **rotate_x** **(** :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around the X axis by angle in radians.
+围绕 X 轴旋转局部变换，旋转角度为弧度。
 
 .. rst-class:: classref-item-separator
 
@@ -856,7 +854,7 @@ Rotates the local transformation around the X axis by angle in radians.
 
 void **rotate_y** **(** :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around the Y axis by angle in radians.
+围绕 Y 轴旋转局部变换，旋转角度为弧度。
 
 .. rst-class:: classref-item-separator
 
@@ -868,7 +866,7 @@ Rotates the local transformation around the Y axis by angle in radians.
 
 void **rotate_z** **(** :ref:`float<class_float>` angle **)**
 
-Rotates the local transformation around the Z axis by angle in radians.
+围绕 Z 轴旋转局部变换，旋转角度为弧度。
 
 .. rst-class:: classref-item-separator
 
@@ -880,7 +878,7 @@ Rotates the local transformation around the Z axis by angle in radians.
 
 void **scale_object_local** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-Scales the local transformation by given 3D scale factors in object-local coordinate system.
+在物体局部坐标系中，通过给定的 3D 比例因子来缩放局部变换。
 
 .. rst-class:: classref-item-separator
 
@@ -892,7 +890,7 @@ Scales the local transformation by given 3D scale factors in object-local coordi
 
 void **set_disable_scale** **(** :ref:`bool<class_bool>` disable **)**
 
-Sets whether the node uses a scale of ``(1, 1, 1)`` or its local transformation scale. Changes to the local transformation scale are preserved.
+设置节点是否使用 ``(1, 1, 1)`` 的比例或其本地变换比例。对本地变换比例的改变会被保留下来。
 
 .. rst-class:: classref-item-separator
 
@@ -904,7 +902,7 @@ Sets whether the node uses a scale of ``(1, 1, 1)`` or its local transformation 
 
 void **set_identity** **(** **)**
 
-Reset all transformations for this node (sets its :ref:`Transform3D<class_Transform3D>` to the identity matrix).
+重置此节点的所有变换（将其 :ref:`Transform3D<class_Transform3D>` 设置为单位矩阵）。
 
 .. rst-class:: classref-item-separator
 
@@ -916,7 +914,7 @@ Reset all transformations for this node (sets its :ref:`Transform3D<class_Transf
 
 void **set_ignore_transform_notification** **(** :ref:`bool<class_bool>` enabled **)**
 
-Sets whether the node ignores notification that its transformation (global or local) changed.
+设置该节点是否忽略其转换（全局或局部）改变的通知。
 
 .. rst-class:: classref-item-separator
 
@@ -928,7 +926,7 @@ Sets whether the node ignores notification that its transformation (global or lo
 
 void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Sets whether the node notifies about its local transformation changes. **Node3D** will not propagate this by default.
+设置该节点是否通知其局部变换的更改。\ **Node3D** 默认不会传播此属性。
 
 .. rst-class:: classref-item-separator
 
@@ -940,7 +938,7 @@ Sets whether the node notifies about its local transformation changes. **Node3D*
 
 void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-Sets whether the node notifies about its global and local transformation changes. **Node3D** will not propagate this by default, unless it is in the editor context and it has a valid gizmo.
+设置该节点是否通知其全局和局部变换的更改。\ **Node3D** 默认不会传播此属性，除非位于编辑器上下文中，并且存在有效的小工具。
 
 .. rst-class:: classref-item-separator
 
@@ -952,9 +950,9 @@ Sets whether the node notifies about its global and local transformation changes
 
 void **set_subgizmo_selection** **(** :ref:`Node3DGizmo<class_Node3DGizmo>` gizmo, :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` transform **)**
 
-Set subgizmo selection for this node in the editor.
+在编辑器中为该节点设置子小工具选区。
 
-\ **Note:** The gizmo object would typically be an instance of :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, but the argument type is kept generic to avoid creating a dependency on editor classes in **Node3D**.
+\ **注意：**\ 小工具对象通常是 :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` 的一个实例，但参数类型保持通用以避免在 **Node3D** 中创建对编辑器类的依赖。
 
 .. rst-class:: classref-item-separator
 
@@ -966,7 +964,7 @@ Set subgizmo selection for this node in the editor.
 
 void **show** **(** **)**
 
-Enables rendering of this node. Changes :ref:`visible<class_Node3D_property_visible>` to ``true``.
+启用此节点的呈现。将 :ref:`visible<class_Node3D_property_visible>` 更改为 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -978,7 +976,7 @@ Enables rendering of this node. Changes :ref:`visible<class_Node3D_property_visi
 
 :ref:`Vector3<class_Vector3>` **to_global** **(** :ref:`Vector3<class_Vector3>` local_point **)** |const|
 
-Transforms ``local_point`` from this node's local space to world space.
+将 ``local_point`` 从这个节点的局部空间转换为世界空间。
 
 .. rst-class:: classref-item-separator
 
@@ -990,7 +988,7 @@ Transforms ``local_point`` from this node's local space to world space.
 
 :ref:`Vector3<class_Vector3>` **to_local** **(** :ref:`Vector3<class_Vector3>` global_point **)** |const|
 
-Transforms ``global_point`` from world space to this node's local space.
+将 ``global_point`` 从世界空间转换到这个节点的局部空间。
 
 .. rst-class:: classref-item-separator
 
@@ -1002,9 +1000,9 @@ Transforms ``global_point`` from world space to this node's local space.
 
 void **translate** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Changes the node's position by the given offset :ref:`Vector3<class_Vector3>`.
+通过给定的偏移量 :ref:`Vector3<class_Vector3>` 更改该节点的位置。
 
-Note that the translation ``offset`` is affected by the node's scale, so if scaled by e.g. ``(10, 1, 1)``, a translation by an offset of ``(2, 0, 0)`` would actually add 20 (``2 * 10``) to the X coordinate.
+请注意，平移 ``offset`` 受节点缩放的影响，因此如果按例如 ``(10, 1, 1)`` 的比例缩放，那么偏移 ``(2, 0, 0)`` 的平移，实际上会在 X 坐标上增加 20（\ ``2 * 10``\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1016,7 +1014,7 @@ Note that the translation ``offset`` is affected by the node's scale, so if scal
 
 void **translate_object_local** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in local space.
+通过给定的局部空间偏移量 :ref:`Vector3<class_Vector3>` 改变该节点的位置。
 
 .. rst-class:: classref-item-separator
 
@@ -1028,12 +1026,12 @@ Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in
 
 void **update_gizmos** **(** **)**
 
-Updates all the **Node3D** gizmos attached to this node.
+更新附加于该节点的所有 **Node3D** 小工具。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

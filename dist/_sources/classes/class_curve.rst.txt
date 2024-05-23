@@ -10,23 +10,23 @@
 Curve
 =====
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A mathematical curve.
+数学曲线。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-This resource describes a mathematical curve by defining a set of points and tangents at each point. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
+该资源通过定义一组点和每个点的切线来描述数学曲线。默认情况下，它在 Y 轴上的范围在 ``0`` 到 ``1`` 之间，并且位置点相对于 ``0.5`` Y 位置。
 
-See also :ref:`Gradient<class_Gradient>` which is designed for color interpolation. See also :ref:`Curve2D<class_Curve2D>` and :ref:`Curve3D<class_Curve3D>`.
+另请参阅为颜色插值设计的 :ref:`Gradient<class_Gradient>`\ 。另请参阅 :ref:`Curve2D<class_Curve2D>` 和 :ref:`Curve3D<class_Curve3D>`\ 。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -43,8 +43,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -93,8 +93,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_Curve_signal_range_changed:
 
@@ -102,7 +102,7 @@ Signals
 
 **range_changed** **(** **)**
 
-Emitted when :ref:`max_value<class_Curve_property_max_value>` or :ref:`min_value<class_Curve_property_min_value>` is changed.
+更改 :ref:`max_value<class_Curve_property_max_value>` 或 :ref:`min_value<class_Curve_property_min_value>` 时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -110,8 +110,8 @@ Emitted when :ref:`max_value<class_Curve_property_max_value>` or :ref:`min_value
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_Curve_TangentMode:
 
@@ -125,7 +125,7 @@ enum **TangentMode**:
 
 :ref:`TangentMode<enum_Curve_TangentMode>` **TANGENT_FREE** = ``0``
 
-The tangent on this side of the point is user-defined.
+点这边的切线是用户自定义的。
 
 .. _class_Curve_constant_TANGENT_LINEAR:
 
@@ -133,7 +133,7 @@ The tangent on this side of the point is user-defined.
 
 :ref:`TangentMode<enum_Curve_TangentMode>` **TANGENT_LINEAR** = ``1``
 
-The curve calculates the tangent on this side of the point as the slope halfway towards the adjacent point.
+曲线计算点的这一侧的切线，作为向相邻点的一半的斜率。
 
 .. _class_Curve_constant_TANGENT_MODE_COUNT:
 
@@ -141,7 +141,7 @@ The curve calculates the tangent on this side of the point as the slope halfway 
 
 :ref:`TangentMode<enum_Curve_TangentMode>` **TANGENT_MODE_COUNT** = ``2``
 
-The total number of available tangent modes.
+可用切线模式的总数。
 
 .. rst-class:: classref-section-separator
 
@@ -149,8 +149,8 @@ The total number of available tangent modes.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_Curve_property_bake_resolution:
 
@@ -163,7 +163,7 @@ Property Descriptions
 - void **set_bake_resolution** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_bake_resolution** **(** **)**
 
-The number of points to include in the baked (i.e. cached) curve data.
+烘焙（即缓存）曲线数据中包含的点的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -180,7 +180,7 @@ The number of points to include in the baked (i.e. cached) curve data.
 - void **set_max_value** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_max_value** **(** **)**
 
-The maximum value the curve can reach.
+曲线能达到的最大值。
 
 .. rst-class:: classref-item-separator
 
@@ -197,7 +197,7 @@ The maximum value the curve can reach.
 - void **set_min_value** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_min_value** **(** **)**
 
-The minimum value the curve can reach.
+曲线能达到的最小值。
 
 .. rst-class:: classref-item-separator
 
@@ -214,7 +214,7 @@ The minimum value the curve can reach.
 - void **set_point_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_point_count** **(** **)**
 
-The number of points describing the curve.
+描述该曲线的点的数量。
 
 .. rst-class:: classref-section-separator
 
@@ -222,8 +222,8 @@ The number of points describing the curve.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_Curve_method_add_point:
 
@@ -231,7 +231,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)**
 
-Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`.
+在曲线上添加一个点。对于每一侧，如果 ``*_mode`` 为 :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`\ ，则 ``*_tangent`` 角度（以度为单位）将使用曲线到邻近点的一半的斜率。如果 ``*_mode`` 设置为 :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`\ ，则允许自定义分配给 ``*_tangent`` 的角度。
 
 .. rst-class:: classref-item-separator
 
@@ -243,7 +243,7 @@ Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LIN
 
 void **bake** **(** **)**
 
-Recomputes the baked cache of points for the curve.
+重新计算曲线的烘焙点缓存。
 
 .. rst-class:: classref-item-separator
 
@@ -255,7 +255,7 @@ Recomputes the baked cache of points for the curve.
 
 void **clean_dupes** **(** **)**
 
-Removes duplicate points, i.e. points that are less than 0.00001 units (engine epsilon value) away from their neighbor on the curve.
+移除重复点，即与曲线上相邻点的距离小于 0.00001 个单位（引擎中的 epsilon 值）的点。
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +267,7 @@ Removes duplicate points, i.e. points that are less than 0.00001 units (engine e
 
 void **clear_points** **(** **)**
 
-Removes all points from the curve.
+从曲线中移除所有点。
 
 .. rst-class:: classref-item-separator
 
@@ -279,7 +279,7 @@ Removes all points from the curve.
 
 :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
+返回索引为 ``index`` 的点的左侧切线模式 :ref:`TangentMode<enum_Curve_TangentMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -291,7 +291,7 @@ Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``i
 
 :ref:`float<class_float>` **get_point_left_tangent** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the left tangent angle (in degrees) for the point at ``index``.
+返回索引为 ``index`` 的点的左侧切线夹角（单位为度）。
 
 .. rst-class:: classref-item-separator
 
@@ -303,7 +303,7 @@ Returns the left tangent angle (in degrees) for the point at ``index``.
 
 :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the curve coordinates for the point at ``index``.
+返回索引为 ``index`` 的点的曲线坐标。
 
 .. rst-class:: classref-item-separator
 
@@ -315,7 +315,7 @@ Returns the curve coordinates for the point at ``index``.
 
 :ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
+返回索引为 ``index`` 的点的右侧切线模式 :ref:`TangentMode<enum_Curve_TangentMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -327,7 +327,7 @@ Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``
 
 :ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the right tangent angle (in degrees) for the point at ``index``.
+返回索引为 ``index`` 的点的右侧切线夹角（单位为度）。
 
 .. rst-class:: classref-item-separator
 
@@ -339,7 +339,7 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 void **remove_point** **(** :ref:`int<class_int>` index **)**
 
-Removes the point at ``index`` from the curve.
+移除曲线中索引为 ``index`` 的点。
 
 .. rst-class:: classref-item-separator
 
@@ -351,7 +351,7 @@ Removes the point at ``index`` from the curve.
 
 :ref:`float<class_float>` **sample** **(** :ref:`float<class_float>` offset **)** |const|
 
-Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
+返回沿曲线的 X 位置 ``offset`` 处将存在的点的 Y 值。
 
 .. rst-class:: classref-item-separator
 
@@ -363,7 +363,7 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 :ref:`float<class_float>` **sample_baked** **(** :ref:`float<class_float>` offset **)** |const|
 
-Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
+使用烘焙的缓存返回沿曲线的 X 位置 ``offset`` 处将存在的点的 Y 值。烘焙尚未烘焙的曲线的点。
 
 .. rst-class:: classref-item-separator
 
@@ -375,7 +375,7 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
-Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
+将索引为 ``index`` 的点的左侧 :ref:`TangentMode<enum_Curve_TangentMode>` 设置为 ``mode``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -387,7 +387,7 @@ Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``inde
 
 void **set_point_left_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
 
-Sets the left tangent angle for the point at ``index`` to ``tangent``.
+将索引为 ``index`` 的点的左侧切线角度设置为 ``tangent``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -399,7 +399,7 @@ Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
 :ref:`int<class_int>` **set_point_offset** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**
 
-Sets the offset from ``0.5``.
+设置相对于 ``0.5`` 的偏移量。
 
 .. rst-class:: classref-item-separator
 
@@ -411,7 +411,7 @@ Sets the offset from ``0.5``.
 
 void **set_point_right_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
 
-Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
+将索引为 ``index`` 的点的右侧 :ref:`TangentMode<enum_Curve_TangentMode>` 设置为 ``mode``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +423,7 @@ Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``ind
 
 void **set_point_right_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
 
-Sets the right tangent angle for the point at ``index`` to ``tangent``.
+将索引为 ``index`` 的点的右侧切线角度设置为 ``tangent``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -435,12 +435,12 @@ Sets the right tangent angle for the point at ``index`` to ``tangent``.
 
 void **set_point_value** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` y **)**
 
-Assigns the vertical position ``y`` to the point at ``index``.
+将索引为 ``index`` 的点的垂直位置设置为 ``y``\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

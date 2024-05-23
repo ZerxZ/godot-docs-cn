@@ -10,21 +10,21 @@
 RDTextureFormat
 ===============
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Texture format (used by :ref:`RenderingDevice<class_RenderingDevice>`).
+纹理格式（由 :ref:`RenderingDevice<class_RenderingDevice>` 使用）。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
+这个对象由 :ref:`RenderingDevice<class_RenderingDevice>` 使用。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -51,8 +51,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -69,8 +69,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_RDTextureFormat_property_array_layers:
 
@@ -83,7 +83,7 @@ Property Descriptions
 - void **set_array_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_array_layers** **(** **)**
 
-The number of layers in the texture. Only relevant for 2D texture arrays.
+纹理的层数。仅适用于 2D 纹理数组。
 
 .. rst-class:: classref-item-separator
 
@@ -100,7 +100,7 @@ The number of layers in the texture. Only relevant for 2D texture arrays.
 - void **set_depth** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_depth** **(** **)**
 
-The texture's depth (in pixels). This is always ``1`` for 2D textures.
+纹理的深度（单位为像素）。2D 纹理始终为 ``1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -117,7 +117,7 @@ The texture's depth (in pixels). This is always ``1`` for 2D textures.
 - void **set_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
 - :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format** **(** **)**
 
-The texture's pixel data format.
+纹理的像素数据格式。
 
 .. rst-class:: classref-item-separator
 
@@ -134,7 +134,7 @@ The texture's pixel data format.
 - void **set_height** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_height** **(** **)**
 
-The texture's height (in pixels).
+纹理的高度（单位为像素）。
 
 .. rst-class:: classref-item-separator
 
@@ -151,7 +151,7 @@ The texture's height (in pixels).
 - void **set_mipmaps** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_mipmaps** **(** **)**
 
-The number of mipmaps available in the texture.
+纹理中可用的 mipmap 数。
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ The number of mipmaps available in the texture.
 - void **set_samples** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
 - :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples** **(** **)**
 
-The number of samples used when sampling the texture.
+对纹理进行采样时所使用的样本数。
 
 .. rst-class:: classref-item-separator
 
@@ -185,7 +185,7 @@ The number of samples used when sampling the texture.
 - void **set_texture_type** **(** :ref:`TextureType<enum_RenderingDevice_TextureType>` value **)**
 - :ref:`TextureType<enum_RenderingDevice_TextureType>` **get_texture_type** **(** **)**
 
-The texture type.
+纹理类型。
 
 .. rst-class:: classref-item-separator
 
@@ -202,7 +202,7 @@ The texture type.
 - void **set_usage_bits** **(** |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> value **)**
 - |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> **get_usage_bits** **(** **)**
 
-The texture's usage bits, which determine what can be done using the texture.
+纹理的用途位，决定使用该纹理时能做什么。
 
 .. rst-class:: classref-item-separator
 
@@ -219,7 +219,7 @@ The texture's usage bits, which determine what can be done using the texture.
 - void **set_width** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_width** **(** **)**
 
-The texture's width (in pixels).
+纹理的宽度（单位为像素）。
 
 .. rst-class:: classref-section-separator
 
@@ -227,8 +227,8 @@ The texture's width (in pixels).
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_RDTextureFormat_method_add_shareable_format:
 
@@ -238,7 +238,7 @@ void **add_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFo
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -252,12 +252,12 @@ void **remove_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_Dat
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

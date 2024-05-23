@@ -10,30 +10,30 @@
 SplitContainer
 ==============
 
-**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
+**派生：** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
 
-A container that splits two child controls horizontally or vertically and provides a grabber for adjusting the split ratio.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-A container that accepts only two child controls, then arranges them horizontally or vertically and creates a divisor between them. The divisor can be dragged around to change the size relation between the child controls.
+将两个子控件垂直或水平分隔的容器，提供了用于调整分隔比例的抓取器。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Using Containers <../tutorials/ui/gui_containers>`
+仅接受两个子控件的容器，会将它们垂直或水平排列，在中间创建一个分隔条。分隔条可以拖拽，从而改变两个控件的大小关系。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`使用容器 <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -50,8 +50,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -62,8 +62,8 @@ Methods
 
 .. rst-class:: classref-reftable-group
 
-Theme Properties
-----------------
+主题属性
+--------
 
 .. table::
    :widths: auto
@@ -88,8 +88,8 @@ Theme Properties
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_SplitContainer_signal_dragged:
 
@@ -97,7 +97,7 @@ Signals
 
 **dragged** **(** :ref:`int<class_int>` offset **)**
 
-Emitted when the dragger is dragged by user.
+当用户拖动拖动器时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -105,8 +105,8 @@ Emitted when the dragger is dragged by user.
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_SplitContainer_DraggerVisibility:
 
@@ -120,7 +120,7 @@ enum **DraggerVisibility**:
 
 :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_VISIBLE** = ``0``
 
-The split dragger is visible when the cursor hovers it.
+当光标悬停时，拆分拖动器是可见的。
 
 .. _class_SplitContainer_constant_DRAGGER_HIDDEN:
 
@@ -128,7 +128,7 @@ The split dragger is visible when the cursor hovers it.
 
 :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_HIDDEN** = ``1``
 
-The split dragger is never visible.
+拆分拖动器永远不可见。
 
 .. _class_SplitContainer_constant_DRAGGER_HIDDEN_COLLAPSED:
 
@@ -136,7 +136,7 @@ The split dragger is never visible.
 
 :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_HIDDEN_COLLAPSED** = ``2``
 
-The split dragger is never visible and its space collapsed.
+拆分拖动器永远不可见，其空间也被折叠。
 
 .. rst-class:: classref-section-separator
 
@@ -144,8 +144,8 @@ The split dragger is never visible and its space collapsed.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_SplitContainer_property_collapsed:
 
@@ -158,7 +158,7 @@ Property Descriptions
 - void **set_collapsed** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collapsed** **(** **)**
 
-If ``true``, the area of the first :ref:`Control<class_Control>` will be collapsed and the dragger will be disabled.
+如果为 ``true``\ ，第一个 :ref:`Control<class_Control>` 的区域将被折叠并且拖动器将被禁用。
 
 .. rst-class:: classref-item-separator
 
@@ -175,7 +175,7 @@ If ``true``, the area of the first :ref:`Control<class_Control>` will be collaps
 - void **set_dragger_visibility** **(** :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` value **)**
 - :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **get_dragger_visibility** **(** **)**
 
-Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` for details.
+确定拖动器的可见性。有关详细信息，请参阅 :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitConta
 - void **set_split_offset** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_split_offset** **(** **)**
 
-The initial offset of the splitting between the two :ref:`Control<class_Control>`\ s, with ``0`` being at the end of the first :ref:`Control<class_Control>`.
+两个 :ref:`Control<class_Control>` 之间拆分的初始偏移量，\ ``0`` 位于第一个 :ref:`Control<class_Control>` 的末尾。
 
 .. rst-class:: classref-item-separator
 
@@ -209,9 +209,9 @@ The initial offset of the splitting between the two :ref:`Control<class_Control>
 - void **set_vertical** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_vertical** **(** **)**
 
-If ``true``, the **SplitContainer** will arrange its children vertically, rather than horizontally.
+如果为 ``true``\ ，则该 **SplitContainer** 会垂直排列其子代，而不是水平排列。
 
-Can't be changed when using :ref:`HSplitContainer<class_HSplitContainer>` and :ref:`VSplitContainer<class_VSplitContainer>`.
+在使用 :ref:`HSplitContainer<class_HSplitContainer>` 和 :ref:`VSplitContainer<class_VSplitContainer>` 时无法改变。
 
 .. rst-class:: classref-section-separator
 
@@ -219,8 +219,8 @@ Can't be changed when using :ref:`HSplitContainer<class_HSplitContainer>` and :r
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_SplitContainer_method_clamp_split_offset:
 
@@ -228,7 +228,7 @@ Method Descriptions
 
 void **clamp_split_offset** **(** **)**
 
-Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
+限制 :ref:`split_offset<class_SplitContainer_property_split_offset>` 值不超出当前可能的最小值和最大值。
 
 .. rst-class:: classref-section-separator
 
@@ -236,8 +236,8 @@ Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value
 
 .. rst-class:: classref-descriptions-group
 
-Theme Property Descriptions
----------------------------
+主题属性说明
+------------
 
 .. _class_SplitContainer_theme_constant_autohide:
 
@@ -245,7 +245,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **autohide** = ``1``
 
-Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+布尔值。如果1 (``true``)，抓取器将在不在光标下时自动隐藏。如果0 (``false``)，抓取器总是可见。
 
 .. rst-class:: classref-item-separator
 
@@ -257,7 +257,7 @@ Boolean value. If 1 (``true``), the grabber will hide automatically when it isn'
 
 :ref:`int<class_int>` **minimum_grab_thickness** = ``6``
 
-The minimum thickness of the area users can click on to grab the splitting line. If :ref:`separation<class_SplitContainer_theme_constant_separation>` or :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>` / :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`'s thickness are too small, this ensure that the splitting line can still be dragged.
+用户可以点击以抓取分割线的区域的最小厚度。如果 :ref:`separation<class_SplitContainer_theme_constant_separation>` 或 :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>` / :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>` 的厚度太小，这样可以确保拆分线仍然可以被拖动。
 
 .. rst-class:: classref-item-separator
 
@@ -269,7 +269,7 @@ The minimum thickness of the area users can click on to grab the splitting line.
 
 :ref:`int<class_int>` **separation** = ``12``
 
-The space between sides of the container.
+容器两侧之间的空间。
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ The space between sides of the container.
 
 :ref:`Texture2D<class_Texture2D>` **grabber**
 
-The icon used for the grabber drawn in the middle area.
+在中间区域绘制的抓取图标。
 
 .. rst-class:: classref-item-separator
 
@@ -293,7 +293,7 @@ The icon used for the grabber drawn in the middle area.
 
 :ref:`Texture2D<class_Texture2D>` **h_grabber**
 
-The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``false``.
+:ref:`vertical<class_SplitContainer_property_vertical>` 为 ``false`` 时绘制在中间区域的抓取器图标。
 
 .. rst-class:: classref-item-separator
 
@@ -305,12 +305,12 @@ The icon used for the grabber drawn in the middle area when :ref:`vertical<class
 
 :ref:`Texture2D<class_Texture2D>` **v_grabber**
 
-The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``true``.
+:ref:`vertical<class_SplitContainer_property_vertical>` 为 ``true`` 时绘制在中间区域的抓取器图标。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

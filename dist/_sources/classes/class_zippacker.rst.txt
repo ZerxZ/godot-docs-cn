@@ -10,16 +10,16 @@
 ZIPPacker
 =========
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Allows the creation of zip files.
+允许创建 zip 文件。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-This class implements a writer that allows storing the multiple blobs in a zip archive.
+该类实现了一个写入器，可以将多个 blob 存储在一个压缩文件中。
 
 ::
 
@@ -37,8 +37,8 @@ This class implements a writer that allows storing the multiple blobs in a zip a
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -61,8 +61,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_ZIPPacker_ZipAppend:
 
@@ -76,7 +76,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATE** = ``0``
 
-Create a new zip archive at the given path.
+在给定的路径新建 Zip 归档文件。
 
 .. _class_ZIPPacker_constant_APPEND_CREATEAFTER:
 
@@ -84,7 +84,7 @@ Create a new zip archive at the given path.
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATEAFTER** = ``1``
 
-Append a new zip archive to the end of the already existing file at the given path.
+在位于给定路径的已有文件的末尾追加新的 Zip 归档文件。
 
 .. _class_ZIPPacker_constant_APPEND_ADDINZIP:
 
@@ -92,7 +92,7 @@ Append a new zip archive to the end of the already existing file at the given pa
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_ADDINZIP** = ``2``
 
-Add new files to the existing zip archive at the given path.
+在位于给定路径的已有 Zip 归档文件中添加新文件。
 
 .. rst-class:: classref-section-separator
 
@@ -100,8 +100,8 @@ Add new files to the existing zip archive at the given path.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_ZIPPacker_method_close:
 
@@ -109,7 +109,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
 
-Closes the underlying resources used by this instance.
+关闭该实例底层所使用的资源。
 
 .. rst-class:: classref-item-separator
 
@@ -121,9 +121,9 @@ Closes the underlying resources used by this instance.
 
 :ref:`Error<enum_@GlobalScope_Error>` **close_file** **(** **)**
 
-Stops writing to a file within the archive.
+停止向归档中的文件进行写入。
 
-It will fail if there is no open file.
+如果没有打开文件，则会失败。
 
 .. rst-class:: classref-item-separator
 
@@ -135,9 +135,9 @@ It will fail if there is no open file.
 
 :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path, :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` append=0 **)**
 
-Opens a zip file for writing at the given path using the specified write mode.
+打开给定路径处的 Zip 文件，使用指定的写入模式进行写入。
 
-This must be called before everything else.
+必须在其他调用前调用。
 
 .. rst-class:: classref-item-separator
 
@@ -149,9 +149,9 @@ This must be called before everything else.
 
 :ref:`Error<enum_@GlobalScope_Error>` **start_file** **(** :ref:`String<class_String>` path **)**
 
-Starts writing to a file within the archive. Only one file can be written at the same time.
+开始向存档中的一个文件写入。同一时间只能写一个文件。
 
-Must be called after :ref:`open<class_ZIPPacker_method_open>`.
+必须在\ :ref:`open<class_ZIPPacker_method_open>`\ 之后调用。
 
 .. rst-class:: classref-item-separator
 
@@ -163,14 +163,14 @@ Must be called after :ref:`open<class_ZIPPacker_method_open>`.
 
 :ref:`Error<enum_@GlobalScope_Error>` **write_file** **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
-Write the given ``data`` to the file.
+将给定的 ``data`` 写到文件中。
 
-Needs to be called after :ref:`start_file<class_ZIPPacker_method_start_file>`.
+需要在 :ref:`start_file<class_ZIPPacker_method_start_file>` 之后调用。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

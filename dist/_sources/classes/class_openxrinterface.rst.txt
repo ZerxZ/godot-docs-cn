@@ -10,30 +10,30 @@
 OpenXRInterface
 ===============
 
-**Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Our OpenXR interface.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-The OpenXR interface allows Godot to interact with OpenXR runtimes and make it possible to create XR experiences and games.
-
-Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialized when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
+OpenXR 接口。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Setting up XR <../tutorials/xr/setting_up_xr>`
+OpenXR 接口允许 Godot 与 OpenXR 运行时进行交互，并使创建 XR 体验和游戏成为可能。
+
+由于 OpenXR 的需要，该接口的工作方式与其他基于插件的 XR 接口略有不同。它需要在 Godot 启动时被初始化。若需要启用 OpenXR，相关设置可以在游戏项目设置中的 XR 标题下找到。你确实需要标记一个视口以与 XR 一起使用，以便 Godot 知道应该将哪个渲染结果输出到头戴式设备。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`设置 XR <../tutorials/xr/setting_up_xr>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -50,8 +50,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -94,8 +94,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_OpenXRInterface_signal_pose_recentered:
 
@@ -103,7 +103,7 @@ Signals
 
 **pose_recentered** **(** **)**
 
-Informs the user queued a recenter of the player position.
+通知用户队列玩家位置的重新居中。
 
 .. rst-class:: classref-item-separator
 
@@ -115,7 +115,7 @@ Informs the user queued a recenter of the player position.
 
 **session_begun** **(** **)**
 
-Informs our OpenXR session has been started.
+通知我们的 OpenXR 会话已经开始。
 
 .. rst-class:: classref-item-separator
 
@@ -127,7 +127,7 @@ Informs our OpenXR session has been started.
 
 **session_focussed** **(** **)**
 
-Informs our OpenXR session now has focus.
+通知我们的 OpenXR 会话现在获得了焦点。
 
 .. rst-class:: classref-item-separator
 
@@ -139,7 +139,7 @@ Informs our OpenXR session now has focus.
 
 **session_stopping** **(** **)**
 
-Informs our OpenXR session is stopping.
+通知我们的 OpenXR 会话正在停止。
 
 .. rst-class:: classref-item-separator
 
@@ -151,7 +151,7 @@ Informs our OpenXR session is stopping.
 
 **session_visible** **(** **)**
 
-Informs our OpenXR session is now visible (output is being sent to the HMD).
+通知我们的 OpenXR 会话现在可见（输出正在发送到 HMD）。
 
 .. rst-class:: classref-section-separator
 
@@ -159,8 +159,8 @@ Informs our OpenXR session is now visible (output is being sent to the HMD).
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_OpenXRInterface_Hand:
 
@@ -174,7 +174,7 @@ enum **Hand**:
 
 :ref:`Hand<enum_OpenXRInterface_Hand>` **HAND_LEFT** = ``0``
 
-Left hand.
+左手。
 
 .. _class_OpenXRInterface_constant_HAND_RIGHT:
 
@@ -182,7 +182,7 @@ Left hand.
 
 :ref:`Hand<enum_OpenXRInterface_Hand>` **HAND_RIGHT** = ``1``
 
-Right hand.
+右手。
 
 .. _class_OpenXRInterface_constant_HAND_MAX:
 
@@ -190,7 +190,7 @@ Right hand.
 
 :ref:`Hand<enum_OpenXRInterface_Hand>` **HAND_MAX** = ``2``
 
-Maximum value for the hand enum.
+手部枚举的最大值。
 
 .. rst-class:: classref-item-separator
 
@@ -242,7 +242,7 @@ enum **HandJoints**:
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_PALM** = ``0``
 
-Palm joint.
+掌关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_WRIST:
 
@@ -250,7 +250,7 @@ Palm joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_WRIST** = ``1``
 
-Wrist joint.
+腕关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_THUMB_METACARPAL:
 
@@ -258,7 +258,7 @@ Wrist joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_THUMB_METACARPAL** = ``2``
 
-Thumb metacarpal joint.
+掌骨拇指关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_THUMB_PROXIMAL:
 
@@ -266,7 +266,7 @@ Thumb metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_THUMB_PROXIMAL** = ``3``
 
-Thumb proximal joint.
+拇指近端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_THUMB_DISTAL:
 
@@ -274,7 +274,7 @@ Thumb proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_THUMB_DISTAL** = ``4``
 
-Thumb distal joint.
+拇指远端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_THUMB_TIP:
 
@@ -282,7 +282,7 @@ Thumb distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_THUMB_TIP** = ``5``
 
-Thumb tip joint.
+拇指尖端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_METACARPAL:
 
@@ -290,7 +290,7 @@ Thumb tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_METACARPAL** = ``6``
 
-Index metacarpal joint.
+掌骨食指关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_PROXIMAL:
 
@@ -298,7 +298,7 @@ Index metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_PROXIMAL** = ``7``
 
-Index proximal joint.
+食指近端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_INTERMEDIATE:
 
@@ -306,7 +306,7 @@ Index proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_INTERMEDIATE** = ``8``
 
-Index intermediate joint.
+食指中间关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_DISTAL:
 
@@ -314,7 +314,7 @@ Index intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_DISTAL** = ``9``
 
-Index distal joint.
+食指远端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_INDEX_TIP:
 
@@ -322,7 +322,7 @@ Index distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_INDEX_TIP** = ``10``
 
-Index tip joint.
+食指尖端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_METACARPAL:
 
@@ -330,7 +330,7 @@ Index tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_METACARPAL** = ``11``
 
-Middle metacarpal joint.
+掌骨中指关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_PROXIMAL:
 
@@ -338,7 +338,7 @@ Middle metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_PROXIMAL** = ``12``
 
-Middle proximal joint.
+中指近端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_INTERMEDIATE:
 
@@ -346,7 +346,7 @@ Middle proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_INTERMEDIATE** = ``13``
 
-Middle intermediate joint.
+中指中间关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_DISTAL:
 
@@ -354,7 +354,7 @@ Middle intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_DISTAL** = ``14``
 
-Middle distal joint.
+中指远端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MIDDLE_TIP:
 
@@ -362,7 +362,7 @@ Middle distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MIDDLE_TIP** = ``15``
 
-Middle tip joint.
+中指尖端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_METACARPAL:
 
@@ -370,7 +370,7 @@ Middle tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_METACARPAL** = ``16``
 
-Ring metacarpal joint.
+环指掌骨关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_PROXIMAL:
 
@@ -378,7 +378,7 @@ Ring metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_PROXIMAL** = ``17``
 
-Ring proximal joint.
+环指近端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_INTERMEDIATE:
 
@@ -386,7 +386,7 @@ Ring proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_INTERMEDIATE** = ``18``
 
-Ring intermediate joint.
+环指中间关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_DISTAL:
 
@@ -394,7 +394,7 @@ Ring intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_DISTAL** = ``19``
 
-Ring distal joint.
+环指远端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_RING_TIP:
 
@@ -402,7 +402,7 @@ Ring distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_RING_TIP** = ``20``
 
-Ring tip joint.
+环指尖端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_METACARPAL:
 
@@ -410,7 +410,7 @@ Ring tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_METACARPAL** = ``21``
 
-Little metacarpal joint.
+掌骨小指关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_PROXIMAL:
 
@@ -418,7 +418,7 @@ Little metacarpal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_PROXIMAL** = ``22``
 
-Little proximal joint.
+小指近端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_INTERMEDIATE:
 
@@ -426,7 +426,7 @@ Little proximal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_INTERMEDIATE** = ``23``
 
-Little intermediate joint.
+小指中间关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_DISTAL:
 
@@ -434,7 +434,7 @@ Little intermediate joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_DISTAL** = ``24``
 
-Little distal joint.
+小指远端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LITTLE_TIP:
 
@@ -442,7 +442,7 @@ Little distal joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_LITTLE_TIP** = ``25``
 
-Little tip joint.
+小指尖端关节。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_MAX:
 
@@ -450,7 +450,7 @@ Little tip joint.
 
 :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` **HAND_JOINT_MAX** = ``26``
 
-Maximum value for the hand joint enum.
+手关节枚举的最大值。
 
 .. rst-class:: classref-item-separator
 
@@ -468,7 +468,7 @@ flags **HandJointFlags**:
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_NONE** = ``0``
 
-No flags are set.
+没有标志被设置。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_ORIENTATION_VALID:
 
@@ -476,7 +476,7 @@ No flags are set.
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_ORIENTATION_VALID** = ``1``
 
-If set, the orientation data is valid, otherwise, the orientation data is unreliable and should not be used.
+如果设置，则方向数据有效；否则，方向数据不可靠，且不应被使用。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_ORIENTATION_TRACKED:
 
@@ -484,7 +484,7 @@ If set, the orientation data is valid, otherwise, the orientation data is unreli
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_ORIENTATION_TRACKED** = ``2``
 
-If set, the orientation data comes from tracking data, otherwise, the orientation data contains predicted data.
+如果设置，则方向数据来自跟踪数据；否则，该方向数据包含预测数据。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_POSITION_VALID:
 
@@ -492,7 +492,7 @@ If set, the orientation data comes from tracking data, otherwise, the orientatio
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_POSITION_VALID** = ``4``
 
-If set, the positional data is valid, otherwise, the positional data is unreliable and should not be used.
+如果设置，则位置数据有效；否则，该位置数据不可靠，且不应被使用。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_POSITION_TRACKED:
 
@@ -500,7 +500,7 @@ If set, the positional data is valid, otherwise, the positional data is unreliab
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_POSITION_TRACKED** = ``8``
 
-If set, the positional data comes from tracking data, otherwise, the positional data contains predicted data.
+如果设置，则位置数据来自跟踪数据；否则，该位置数据包含预测数据。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_LINEAR_VELOCITY_VALID:
 
@@ -508,7 +508,7 @@ If set, the positional data comes from tracking data, otherwise, the positional 
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_LINEAR_VELOCITY_VALID** = ``16``
 
-If set, our linear velocity data is valid, otherwise, the linear velocity data is unreliable and should not be used.
+如果设置，则线速度数据有效；否则，线速度数据不可靠，且不应被使用。
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_ANGULAR_VELOCITY_VALID:
 
@@ -516,7 +516,7 @@ If set, our linear velocity data is valid, otherwise, the linear velocity data i
 
 :ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>` **HAND_JOINT_ANGULAR_VELOCITY_VALID** = ``32``
 
-If set, our angular velocity data is valid, otherwise, the angular velocity data is unreliable and should not be used.
+如果设置，则角速度数据是有效的；否则，角速度数据不可靠，且不应被使用。
 
 .. rst-class:: classref-section-separator
 
@@ -524,8 +524,8 @@ If set, our angular velocity data is valid, otherwise, the angular velocity data
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_OpenXRInterface_property_display_refresh_rate:
 
@@ -538,7 +538,7 @@ Property Descriptions
 - void **set_display_refresh_rate** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_display_refresh_rate** **(** **)**
 
-The display refresh rate for the current HMD. Only functional if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+当前 HMD 的显示刷新率。仅当 OpenXR 运行时支持该功能并且接口已被初始化后才会有效。
 
 .. rst-class:: classref-item-separator
 
@@ -555,7 +555,7 @@ The display refresh rate for the current HMD. Only functional if this feature is
 - void **set_foveation_dynamic** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_foveation_dynamic** **(** **)**
 
-Enable dynamic foveation adjustment, the interface must be initialized before this is accessible. If enabled foveation will automatically adjusted between low and :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>`.
+启用动态注视点调整，必须先初始化接口才能访问该功能。如果启用，注视点将在低和 :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>` 之间自动调整。
 
 .. rst-class:: classref-item-separator
 
@@ -572,7 +572,7 @@ Enable dynamic foveation adjustment, the interface must be initialized before th
 - void **set_foveation_level** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_foveation_level** **(** **)**
 
-Set foveation level from 0 (off) to 3 (high), the interface must be initialized before this is accessible.
+将注视点级别设置为从 0（关闭）到 3（高），必须先初始化接口，然后才能访问该接口。
 
 .. rst-class:: classref-item-separator
 
@@ -589,7 +589,7 @@ Set foveation level from 0 (off) to 3 (high), the interface must be initialized 
 - void **set_render_target_size_multiplier** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_render_target_size_multiplier** **(** **)**
 
-The render size multiplier for the current HMD. Must be set before the interface has been initialized.
+当前 HMD 的渲染大小乘数。必须在接触初始化之前设置。
 
 .. rst-class:: classref-section-separator
 
@@ -597,8 +597,8 @@ The render size multiplier for the current HMD. Must be set before the interface
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_OpenXRInterface_method_get_action_sets:
 
@@ -606,7 +606,7 @@ Method Descriptions
 
 :ref:`Array<class_Array>` **get_action_sets** **(** **)** |const|
 
-Returns a list of action sets registered with Godot (loaded from the action map at runtime).
+返回向 Godot 注册的动作集的列表（在运行时从动作映射加载）。
 
 .. rst-class:: classref-item-separator
 
@@ -618,7 +618,7 @@ Returns a list of action sets registered with Godot (loaded from the action map 
 
 :ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
 
-Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+返回当前 HMD 支持的显示刷新率。仅当 OpenXR 运行时支持该功能并且接口已被初始化后才会返回。
 
 .. rst-class:: classref-item-separator
 
@@ -630,7 +630,7 @@ Returns display refresh rates supported by the current HMD. Only returned if thi
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_angular_velocity** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns the angular velocity of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>`!
+如果启用了手部跟踪，则返回 OpenXR 提供的手（\ ``hand``\ ）的关节（\ ``joint``\ ）的角速度。这是相对于 :ref:`XROrigin3D<class_XROrigin3D>` 而言的！
 
 .. rst-class:: classref-item-separator
 
@@ -642,7 +642,7 @@ If handtracking is enabled, returns the angular velocity of a joint (``joint``) 
 
 |bitfield|\<:ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>`\> **get_hand_joint_flags** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns flags that inform us of the validity of the tracking data.
+如果启用了手动跟踪，则返回通知我们跟踪数据有效性的标志。
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +654,7 @@ If handtracking is enabled, returns flags that inform us of the validity of the 
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_linear_velocity** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns the linear velocity of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>` without worldscale applied!
+如果启用了手部跟踪，则返回 OpenXR 提供的手（\ ``hand``\ ）的关节（\ ``joint``\ ）的线速度。这是相对于没有应用世界尺度的 :ref:`XROrigin3D<class_XROrigin3D>` 而言的！
 
 .. rst-class:: classref-item-separator
 
@@ -666,7 +666,7 @@ If handtracking is enabled, returns the linear velocity of a joint (``joint``) o
 
 :ref:`Vector3<class_Vector3>` **get_hand_joint_position** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns the position of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is relative to :ref:`XROrigin3D<class_XROrigin3D>` without worldscale applied!
+如果启用了手部跟踪，则返回 OpenXR 提供的手（\ ``hand``\ ）的关节（\ ``joint``\ ）的位置。这是相对于没有应用世界尺度的 :ref:`XROrigin3D<class_XROrigin3D>` 而言的！
 
 .. rst-class:: classref-item-separator
 
@@ -678,7 +678,7 @@ If handtracking is enabled, returns the position of a joint (``joint``) of a han
 
 :ref:`float<class_float>` **get_hand_joint_radius** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns the radius of a joint (``joint``) of a hand (``hand``) as provided by OpenXR. This is without worldscale applied!
+如果启用了手部跟踪，则返回 OpenXR 提供的手（\ ``hand``\ ）的关节（\ ``joint``\ ）的半径。这是没有应用世界尺度的情况！
 
 .. rst-class:: classref-item-separator
 
@@ -690,7 +690,7 @@ If handtracking is enabled, returns the radius of a joint (``joint``) of a hand 
 
 :ref:`Quaternion<class_Quaternion>` **get_hand_joint_rotation** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
-If handtracking is enabled, returns the rotation of a joint (``joint``) of a hand (``hand``) as provided by OpenXR.
+如果启用了手部跟踪，则返回 OpenXR 提供的手（\ ``hand``\ ）的关节（\ ``joint``\ ）的旋转。
 
 .. rst-class:: classref-item-separator
 
@@ -702,7 +702,7 @@ If handtracking is enabled, returns the rotation of a joint (``joint``) of a han
 
 :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **get_motion_range** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand **)** |const|
 
-If handtracking is enabled and motion range is supported, gets the currently configured motion range for ``hand``.
+如果启用了手部跟踪并且支持运动范围，则获取 ``hand`` 当前配置的运动范围。
 
 .. rst-class:: classref-item-separator
 
@@ -714,7 +714,7 @@ If handtracking is enabled and motion range is supported, gets the currently con
 
 :ref:`bool<class_bool>` **is_action_set_active** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns ``true`` if the given action set is active.
+如果给定的动作集处于活动状态，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -726,9 +726,9 @@ Returns ``true`` if the given action set is active.
 
 :ref:`bool<class_bool>` **is_eye_gaze_interaction_supported** **(** **)**
 
-Returns the capabilities of the eye gaze interaction extension.
+返回眼睛注视交互扩展的功能。
 
-\ **Note:** This only returns a valid value after OpenXR has been initialized.
+\ **注意：**\ 这仅在 OpenXR 被初始化后返回一个有效值。
 
 .. rst-class:: classref-item-separator
 
@@ -740,9 +740,9 @@ Returns the capabilities of the eye gaze interaction extension.
 
 :ref:`bool<class_bool>` **is_foveation_supported** **(** **)** |const|
 
-Returns ``true`` if OpenXR's foveation extension is supported, the interface must be initialized before this returns a valid value.
+如果支持 OpenXR 的注视点扩展，则返回 ``true``\ ，在返回有效值之前必须初始化该接口。
 
-\ **Note:** This feature is only available on the compatibility renderer and currently only available on some stand alone headsets. For Vulkan set :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to ``VRS_XR`` on desktop.
+\ **注意：**\ 该功能仅在兼容性渲染器上可用，并且目前仅在某些独立头戴设备上可用。对于 Vulkan，在桌面上将 :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` 设置为 ``VRS_XR``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -754,9 +754,9 @@ Returns ``true`` if OpenXR's foveation extension is supported, the interface mus
 
 :ref:`bool<class_bool>` **is_hand_tracking_supported** **(** **)**
 
-Returns ``true`` if OpenXR's hand tracking is supported and enabled.
+如果支持且已启用 OpenXR 的手部跟踪，则返回 ``true``\ 。
 
-\ **Note:** This only returns a valid value after OpenXR has been initialized.
+\ **注意：**\ 这仅在 OpenXR 已被初始化后返回一个有效值。
 
 .. rst-class:: classref-item-separator
 
@@ -768,7 +768,7 @@ Returns ``true`` if OpenXR's hand tracking is supported and enabled.
 
 void **set_action_set_active** **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` active **)**
 
-Sets the given action set as active or inactive.
+将给定的动作集设置为活动或非活动。
 
 .. rst-class:: classref-item-separator
 
@@ -780,12 +780,12 @@ Sets the given action set as active or inactive.
 
 void **set_motion_range** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` motion_range **)**
 
-If handtracking is enabled and motion range is supported, sets the currently configured motion range for ``hand`` to ``motion_range``.
+如果启用了手部跟踪并且支持运动范围，请将 ``hand`` 当前配置的运动范围设置为 ``motion_range``\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

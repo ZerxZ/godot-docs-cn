@@ -10,21 +10,21 @@
 EditorFileSystemDirectory
 =========================
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-A directory for the resource filesystem.
+资源文件系统的目录。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-A more generalized, low-level variation of the directory concept.
+目录概念的一个更概括的、低级的概念。
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -65,8 +65,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_EditorFileSystemDirectory_method_find_dir_index:
 
@@ -74,7 +74,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **find_dir_index** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns the index of the directory with name ``name`` or ``-1`` if not found.
+返回名为 ``name`` 的目录索引，如果未找到返回 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -86,7 +86,7 @@ Returns the index of the directory with name ``name`` or ``-1`` if not found.
 
 :ref:`int<class_int>` **find_file_index** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns the index of the file with name ``name`` or ``-1`` if not found.
+返回名为 ``name`` 的文件索引，如果未找到返回 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -98,7 +98,7 @@ Returns the index of the file with name ``name`` or ``-1`` if not found.
 
 :ref:`String<class_String>` **get_file** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the name of the file at index ``idx``.
+返回索引 ``idx`` 处的文件名。
 
 .. rst-class:: classref-item-separator
 
@@ -110,7 +110,7 @@ Returns the name of the file at index ``idx``.
 
 :ref:`int<class_int>` **get_file_count** **(** **)** |const|
 
-Returns the number of files in this directory.
+返回目录里文件的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ Returns the number of files in this directory.
 
 :ref:`bool<class_bool>` **get_file_import_is_valid** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns ``true`` if the file at index ``idx`` imported properly.
+如果索引 ``idx`` 处的文件正确导入，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -134,7 +134,7 @@ Returns ``true`` if the file at index ``idx`` imported properly.
 
 :ref:`String<class_String>` **get_file_path** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the path to the file at index ``idx``.
+返回索引 ``idx`` 处的文件所在路径。
 
 .. rst-class:: classref-item-separator
 
@@ -146,7 +146,7 @@ Returns the path to the file at index ``idx``.
 
 :ref:`String<class_String>` **get_file_script_class_extends** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the base class of the script class defined in the file at index ``idx``. If the file doesn't define a script class using the ``class_name`` syntax, this will return an empty string.
+返回在索引 ``idx`` 的文件中定义的脚本类的基类。如果该文件未使用 ``class_name`` 语法定义脚本类，则返回空字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ Returns the base class of the script class defined in the file at index ``idx``.
 
 :ref:`String<class_String>` **get_file_script_class_name** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the name of the script class defined in the file at index ``idx``. If the file doesn't define a script class using the ``class_name`` syntax, this will return an empty string.
+返回索引 ``idx`` 处文件中定义的脚本类的名称。如果文件没有使用 ``class_name`` 语法定义脚本类，这将返回一个空字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +170,7 @@ Returns the name of the script class defined in the file at index ``idx``. If th
 
 :ref:`StringName<class_StringName>` **get_file_type** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the resource type of the file at index ``idx``. This returns a string such as ``"Resource"`` or ``"GDScript"``, *not* a file extension such as ``".gd"``.
+返回在索引 ``idx`` 处文件的资源类型。返回的是类似 ``"Resource"`` 和 ``"GDScript"`` 的字符串，\ *而不是*\ 类似 ``".gd"`` 的文件扩展名。
 
 .. rst-class:: classref-item-separator
 
@@ -182,7 +182,7 @@ Returns the resource type of the file at index ``idx``. This returns a string su
 
 :ref:`String<class_String>` **get_name** **(** **)**
 
-Returns the name of this directory.
+返回这个目录的名字。
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +194,7 @@ Returns the name of this directory.
 
 :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_parent** **(** **)**
 
-Returns the parent directory for this directory or ``null`` if called on a directory at ``res://`` or ``user://``.
+返回这个目录的上层目录，如果在 ``res://`` 或 ``user://`` 调用这个方法，将会返回 ``null``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +206,7 @@ Returns the parent directory for this directory or ``null`` if called on a direc
 
 :ref:`String<class_String>` **get_path** **(** **)** |const|
 
-Returns the path to this directory.
+返回这个目录的路径。
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ Returns the path to this directory.
 
 :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_subdir** **(** :ref:`int<class_int>` idx **)**
 
-Returns the subdirectory at index ``idx``.
+返回在索引 ``idx`` 处的子目录。
 
 .. rst-class:: classref-item-separator
 
@@ -230,12 +230,12 @@ Returns the subdirectory at index ``idx``.
 
 :ref:`int<class_int>` **get_subdir_count** **(** **)** |const|
 
-Returns the number of subdirectories in this directory.
+返回这个目录的子目录的数量。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

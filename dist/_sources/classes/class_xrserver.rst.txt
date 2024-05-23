@@ -10,28 +10,28 @@
 XRServer
 ========
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-Server for AR and VR features.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-The AR/VR server is the heart of our Advanced and Virtual Reality solution and handles all the processing.
+用于 AR 和 VR 功能的服务。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`XR documentation index <../tutorials/xr/index>`
+AR/VR 服务器是我们“高级虚拟现实”解决方案的核心，负责执行所有处理。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`XR 文档索引 <../tutorials/xr/index>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -46,8 +46,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -86,8 +86,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_XRServer_signal_interface_added:
 
@@ -95,7 +95,7 @@ Signals
 
 **interface_added** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
-Emitted when a new interface has been added.
+添加新接口时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -107,7 +107,7 @@ Emitted when a new interface has been added.
 
 **interface_removed** **(** :ref:`StringName<class_StringName>` interface_name **)**
 
-Emitted when an interface is removed.
+当接口被移除时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -119,7 +119,7 @@ Emitted when an interface is removed.
 
 **tracker_added** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type **)**
 
-Emitted when a new tracker has been added. If you don't use a fixed number of controllers or if you're using :ref:`XRAnchor3D<class_XRAnchor3D>`\ s for an AR solution, it is important to react to this signal to add the appropriate :ref:`XRController3D<class_XRController3D>` or :ref:`XRAnchor3D<class_XRAnchor3D>` nodes related to this new tracker.
+当一个新的追踪器被添加时发出。如果你不使用一个固定数量的控制器，或者如果你将 :ref:`XRAnchor3D<class_XRAnchor3D>` 用于一个 AR 解决方案，请务必对此信号做出反应，以添加与该新追踪器相适的 :ref:`XRController3D<class_XRController3D>` 或 :ref:`XRAnchor3D<class_XRAnchor3D>` 节点 。
 
 .. rst-class:: classref-item-separator
 
@@ -131,7 +131,7 @@ Emitted when a new tracker has been added. If you don't use a fixed number of co
 
 **tracker_removed** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type **)**
 
-Emitted when a tracker is removed. You should remove any :ref:`XRController3D<class_XRController3D>` or :ref:`XRAnchor3D<class_XRAnchor3D>` points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
+当一个追踪器被移除时发出。如此，你应该移除任何 :ref:`XRController3D<class_XRController3D>` 或 :ref:`XRAnchor3D<class_XRAnchor3D>` 点。这不是强制性的，这些节点只是变得不活动，并且当一个新的追踪器可用时，将再次激活（即打开一个新的控制器，来代替前一个控制器）。
 
 .. rst-class:: classref-item-separator
 
@@ -143,7 +143,7 @@ Emitted when a tracker is removed. You should remove any :ref:`XRController3D<cl
 
 **tracker_updated** **(** :ref:`StringName<class_StringName>` tracker_name, :ref:`int<class_int>` type **)**
 
-Emitted when an existing tracker has been updated. This can happen if the user switches controllers.
+当现有追踪器被更新时发出。如果用户切换控制器，则可能会发生这种情况。
 
 .. rst-class:: classref-section-separator
 
@@ -151,8 +151,8 @@ Emitted when an existing tracker has been updated. This can happen if the user s
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_XRServer_TrackerType:
 
@@ -166,7 +166,7 @@ enum **TrackerType**:
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_HEAD** = ``1``
 
-The tracker tracks the location of the players head. This is usually a location centered between the players eyes. Note that for handheld AR devices this can be the current location of the device.
+追踪器追踪玩家头部的位置。这通常是玩家眼睛之间的中心位置。请注意，对于手持式 AR 设备，这可能是该设备的当前位置。
 
 .. _class_XRServer_constant_TRACKER_CONTROLLER:
 
@@ -174,7 +174,7 @@ The tracker tracks the location of the players head. This is usually a location 
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_CONTROLLER** = ``2``
 
-The tracker tracks the location of a controller.
+追踪器追踪控制器的位置。
 
 .. _class_XRServer_constant_TRACKER_BASESTATION:
 
@@ -182,7 +182,7 @@ The tracker tracks the location of a controller.
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_BASESTATION** = ``4``
 
-The tracker tracks the location of a base station.
+追踪器追踪基站的位置。
 
 .. _class_XRServer_constant_TRACKER_ANCHOR:
 
@@ -190,7 +190,7 @@ The tracker tracks the location of a base station.
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_ANCHOR** = ``8``
 
-The tracker tracks the location and size of an AR anchor.
+追踪器追踪 AR 锚的位置和大小。
 
 .. _class_XRServer_constant_TRACKER_ANY_KNOWN:
 
@@ -198,7 +198,7 @@ The tracker tracks the location and size of an AR anchor.
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_ANY_KNOWN** = ``127``
 
-Used internally to filter trackers of any known type.
+内部用于过滤任何已知类型的跟踪器。
 
 .. _class_XRServer_constant_TRACKER_UNKNOWN:
 
@@ -206,7 +206,7 @@ Used internally to filter trackers of any known type.
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_UNKNOWN** = ``128``
 
-Used internally if we haven't set the tracker type yet.
+如果我们尚未设置跟踪器类型，则在内部使用。
 
 .. _class_XRServer_constant_TRACKER_ANY:
 
@@ -214,7 +214,7 @@ Used internally if we haven't set the tracker type yet.
 
 :ref:`TrackerType<enum_XRServer_TrackerType>` **TRACKER_ANY** = ``255``
 
-Used internally to select all trackers.
+在内部用于选择所有跟踪器。
 
 .. rst-class:: classref-item-separator
 
@@ -232,7 +232,7 @@ enum **RotationMode**:
 
 :ref:`RotationMode<enum_XRServer_RotationMode>` **RESET_FULL_ROTATION** = ``0``
 
-Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
+完全重置 HMD 的方向。无论用户在现实世界中看向哪个方向。将在虚拟世界中锁定视角。
 
 .. _class_XRServer_constant_RESET_BUT_KEEP_TILT:
 
@@ -240,7 +240,7 @@ Fully reset the orientation of the HMD. Regardless of what direction the user is
 
 :ref:`RotationMode<enum_XRServer_RotationMode>` **RESET_BUT_KEEP_TILT** = ``1``
 
-Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
+重置方向，但保持设备的倾斜度。因此，如果我们正在往下看，会继续往下看，但航向会被重置。
 
 .. _class_XRServer_constant_DONT_RESET_ROTATION:
 
@@ -248,7 +248,7 @@ Resets the orientation but keeps the tilt of the device. So if we're looking dow
 
 :ref:`RotationMode<enum_XRServer_RotationMode>` **DONT_RESET_ROTATION** = ``2``
 
-Does not reset the orientation of the HMD, only the position of the player gets centered.
+不重置 HMD 的方向，只让玩家的位置居中。
 
 .. rst-class:: classref-section-separator
 
@@ -256,8 +256,8 @@ Does not reset the orientation of the HMD, only the position of the player gets 
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_XRServer_property_primary_interface:
 
@@ -270,7 +270,7 @@ Property Descriptions
 - void **set_primary_interface** **(** :ref:`XRInterface<class_XRInterface>` value **)**
 - :ref:`XRInterface<class_XRInterface>` **get_primary_interface** **(** **)**
 
-The primary :ref:`XRInterface<class_XRInterface>` currently bound to the **XRServer**.
+当前绑定到 **XRServer** 的主 :ref:`XRInterface<class_XRInterface>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -287,9 +287,9 @@ The primary :ref:`XRInterface<class_XRInterface>` currently bound to the **XRSer
 - void **set_world_origin** **(** :ref:`Transform3D<class_Transform3D>` value **)**
 - :ref:`Transform3D<class_Transform3D>` **get_world_origin** **(** **)**
 
-The current origin of our tracking space in the virtual world. This is used by the renderer to properly position the camera with new tracking data.
+我们的跟踪空间在虚拟世界中的原点。渲染器会用到这个信息，根据新的跟踪数据来正确放置相机。
 
-\ **Note:** This property is managed by the current :ref:`XROrigin3D<class_XROrigin3D>` node. It is exposed for access from GDExtensions.
+\ **注意：**\ 这个属性由当前的 :ref:`XROrigin3D<class_XROrigin3D>` 节点管理。暴露的目的是方便在 GDExtension 使用。
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +306,7 @@ The current origin of our tracking space in the virtual world. This is used by t
 - void **set_world_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_world_scale** **(** **)**
 
-The scale of the game world compared to the real world. By default, most AR/VR platforms assume that 1 game unit corresponds to 1 real world meter.
+允许你根据你的游戏的单位来调整缩放。大多数 AR/VR 平台假定 1 个游戏世界单位 = 1 个现实世界的米。
 
 .. rst-class:: classref-section-separator
 
@@ -314,8 +314,8 @@ The scale of the game world compared to the real world. By default, most AR/VR p
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_XRServer_method_add_interface:
 
@@ -323,7 +323,7 @@ Method Descriptions
 
 void **add_interface** **(** :ref:`XRInterface<class_XRInterface>` interface **)**
 
-Registers an :ref:`XRInterface<class_XRInterface>` object.
+注册一个 :ref:`XRInterface<class_XRInterface>` 对象。
 
 .. rst-class:: classref-item-separator
 
@@ -335,7 +335,7 @@ Registers an :ref:`XRInterface<class_XRInterface>` object.
 
 void **add_tracker** **(** :ref:`XRPositionalTracker<class_XRPositionalTracker>` tracker **)**
 
-Registers a new :ref:`XRPositionalTracker<class_XRPositionalTracker>` that tracks a spatial location in real space.
+注册一个新的 :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ ，用于跟踪现实空间中的一个空间位置。
 
 .. rst-class:: classref-item-separator
 
@@ -347,17 +347,17 @@ Registers a new :ref:`XRPositionalTracker<class_XRPositionalTracker>` that track
 
 void **center_on_hmd** **(** :ref:`RotationMode<enum_XRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)**
 
-This is an important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
+正确地理解这个函数非常重要。AR 和 VR 平台处理定位的方式略有不同。
 
-For platforms that do not offer spatial tracking, our origin point (0, 0, 0) is the location of our HMD, but you have little control over the direction the player is facing in the real world.
+对于不提供空间跟踪的平台，我们的原点 (0,0,0) 是 HMD 的位置，但你几乎无法控制玩家在现实世界中面对的方向。
 
-For platforms that do offer spatial tracking, our origin point depends very much on the system. For OpenVR, our origin point is usually the center of the tracking space, on the ground. For other platforms, it's often the location of the tracking camera.
+对于提供空间跟踪的平台，我们的原点在很大程度上取决于系统。对于 OpenVR，原点通常是地面上跟踪空间的中心。对于其他平台，它通常是跟踪相机的位置。
 
-This method allows you to center your tracker on the location of the HMD. It will take the current location of the HMD and use that to adjust all your tracking data; in essence, realigning the real world to your player's current position in the game world.
+此方法允许你将跟踪器置于 HMD 的位置。它将获取 HMD 的当前位置并使用它来调整你的所有跟踪数据；从本质上讲，将现实世界重新调整到玩家在游戏世界中的当前位置。
 
-For this method to produce usable results, tracking information must be available. This often takes a few frames after starting your game.
+为了使这种方法产生可用的结果，跟踪信息必须可用。这通常在开始游戏后需要几帧。
 
-You should call this method after a few seconds have passed. For example, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
+你应该在几秒钟后调用此方法。例如，当用户请求重新调整显示时，按住控制器上的指定按钮一小段时间，或者当实现传送机制时。
 
 .. rst-class:: classref-item-separator
 
@@ -369,7 +369,7 @@ You should call this method after a few seconds have passed. For example, when t
 
 :ref:`XRInterface<class_XRInterface>` **find_interface** **(** :ref:`String<class_String>` name **)** |const|
 
-Finds an interface by its ``name``. For example, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
+通过名称 ``name`` 查找接口。例如，如果你的项目使用 AR/VR 平台的功能，你可以通过名称找到该平台的接口并初始化。
 
 .. rst-class:: classref-item-separator
 
@@ -381,7 +381,7 @@ Finds an interface by its ``name``. For example, if your project uses capabiliti
 
 :ref:`Transform3D<class_Transform3D>` **get_hmd_transform** **(** **)**
 
-Returns the primary interface's transformation.
+返回主界面的变换。
 
 .. rst-class:: classref-item-separator
 
@@ -393,7 +393,7 @@ Returns the primary interface's transformation.
 
 :ref:`XRInterface<class_XRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the interface registered at the given ``idx`` index in the list of interfaces.
+返回在接口列表中给定 ``idx`` 索引处注册的接口。
 
 .. rst-class:: classref-item-separator
 
@@ -405,7 +405,7 @@ Returns the interface registered at the given ``idx`` index in the list of inter
 
 :ref:`int<class_int>` **get_interface_count** **(** **)** |const|
 
-Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns ``true``.
+返回当前在AR/VR服务上注册的界面数量。如果你的项目支持多个AR/VR平台，你可以查看可用的界面，并向用户展示一个选择，或者简单地尝试初始化每个界面，并使用第一个返回 ``true``\ 的界面。
 
 .. rst-class:: classref-item-separator
 
@@ -417,7 +417,7 @@ Returns the number of interfaces currently registered with the AR/VR server. If 
 
 :ref:`Dictionary[]<class_Dictionary>` **get_interfaces** **(** **)** |const|
 
-Returns a list of available interfaces the ID and name of each interface.
+返回可用界面的列表，每个界面的ID和名称。
 
 .. rst-class:: classref-item-separator
 
@@ -429,7 +429,7 @@ Returns a list of available interfaces the ID and name of each interface.
 
 :ref:`Transform3D<class_Transform3D>` **get_reference_frame** **(** **)** |const|
 
-Returns the reference frame transform. Mostly used internally and exposed for GDExtension build interfaces.
+返回引用帧的变换。主要在内部使用，并公开以用于 GDExtension 构建接口。
 
 .. rst-class:: classref-item-separator
 
@@ -441,7 +441,7 @@ Returns the reference frame transform. Mostly used internally and exposed for GD
 
 :ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_tracker** **(** :ref:`StringName<class_StringName>` tracker_name **)** |const|
 
-Returns the positional tracker with the given ``tracker_name``.
+返回具有给定 ``tracker_name`` 的位置追踪器。
 
 .. rst-class:: classref-item-separator
 
@@ -453,7 +453,7 @@ Returns the positional tracker with the given ``tracker_name``.
 
 :ref:`Dictionary<class_Dictionary>` **get_trackers** **(** :ref:`int<class_int>` tracker_types **)**
 
-Returns a dictionary of trackers for ``tracker_types``.
+返回 ``tracker_types`` 的追踪器字典。
 
 .. rst-class:: classref-item-separator
 
@@ -465,7 +465,7 @@ Returns a dictionary of trackers for ``tracker_types``.
 
 void **remove_interface** **(** :ref:`XRInterface<class_XRInterface>` interface **)**
 
-Removes this ``interface``.
+移除该 ``interface``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -477,12 +477,12 @@ Removes this ``interface``.
 
 void **remove_tracker** **(** :ref:`XRPositionalTracker<class_XRPositionalTracker>` tracker **)**
 
-Removes this positional ``tracker``.
+移除该位置 ``tracker``\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

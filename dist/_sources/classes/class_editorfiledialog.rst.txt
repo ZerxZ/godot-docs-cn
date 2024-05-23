@@ -10,21 +10,21 @@
 EditorFileDialog
 ================
 
-**Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A modified version of :ref:`FileDialog<class_FileDialog>` used by the editor.
+编辑器使用的 :ref:`FileDialog<class_FileDialog>` 的修改版。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-**EditorFileDialog** is an enhanced version of :ref:`FileDialog<class_FileDialog>` available only to editor plugins. Additional features include list of favorited/recent files and the ability to see files as thumbnails grid instead of list.
+**EditorFileDialog** 是 :ref:`FileDialog<class_FileDialog>` 的增强版，只对编辑器插件可用。额外的功能包括收藏列表、最近文件列表和以缩略图网格而不是列表的形式查看文件的能力。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -55,8 +55,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -81,8 +81,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_EditorFileDialog_signal_dir_selected:
 
@@ -90,7 +90,7 @@ Signals
 
 **dir_selected** **(** :ref:`String<class_String>` dir **)**
 
-Emitted when a directory is selected.
+选择目录时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -102,7 +102,7 @@ Emitted when a directory is selected.
 
 **file_selected** **(** :ref:`String<class_String>` path **)**
 
-Emitted when a file is selected.
+选择文件时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -114,7 +114,7 @@ Emitted when a file is selected.
 
 **files_selected** **(** :ref:`PackedStringArray<class_PackedStringArray>` paths **)**
 
-Emitted when multiple files are selected.
+选择多个文件时触发。
 
 .. rst-class:: classref-section-separator
 
@@ -122,8 +122,8 @@ Emitted when multiple files are selected.
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_EditorFileDialog_FileMode:
 
@@ -137,7 +137,7 @@ enum **FileMode**:
 
 :ref:`FileMode<enum_EditorFileDialog_FileMode>` **FILE_MODE_OPEN_FILE** = ``0``
 
-The **EditorFileDialog** can select only one file. Accepting the window will open the file.
+**EditorFileDialog** 仅可以选择一个文件，选择同意窗口将会打开这个文件。
 
 .. _class_EditorFileDialog_constant_FILE_MODE_OPEN_FILES:
 
@@ -145,7 +145,7 @@ The **EditorFileDialog** can select only one file. Accepting the window will ope
 
 :ref:`FileMode<enum_EditorFileDialog_FileMode>` **FILE_MODE_OPEN_FILES** = ``1``
 
-The **EditorFileDialog** can select multiple files. Accepting the window will open all files.
+**EditorFileDialog** 可以选择多个文件，选择同意窗口将会打开所有选择的文件。
 
 .. _class_EditorFileDialog_constant_FILE_MODE_OPEN_DIR:
 
@@ -153,7 +153,7 @@ The **EditorFileDialog** can select multiple files. Accepting the window will op
 
 :ref:`FileMode<enum_EditorFileDialog_FileMode>` **FILE_MODE_OPEN_DIR** = ``2``
 
-The **EditorFileDialog** can select only one directory. Accepting the window will open the directory.
+**EditorFileDialog** 可以选择一个目录，选择同意窗口将会打开这个目录。
 
 .. _class_EditorFileDialog_constant_FILE_MODE_OPEN_ANY:
 
@@ -161,7 +161,7 @@ The **EditorFileDialog** can select only one directory. Accepting the window wil
 
 :ref:`FileMode<enum_EditorFileDialog_FileMode>` **FILE_MODE_OPEN_ANY** = ``3``
 
-The **EditorFileDialog** can select a file or directory. Accepting the window will open it.
+**EditorFileDialog** 可以选择一个文件或者目录，选择同意窗口将会打开这个文件或目录。
 
 .. _class_EditorFileDialog_constant_FILE_MODE_SAVE_FILE:
 
@@ -169,7 +169,7 @@ The **EditorFileDialog** can select a file or directory. Accepting the window wi
 
 :ref:`FileMode<enum_EditorFileDialog_FileMode>` **FILE_MODE_SAVE_FILE** = ``4``
 
-The **EditorFileDialog** can select only one file. Accepting the window will save the file.
+**EditorFileDialog** 可以选择一个文件，选择同意窗口将会保存这个文件。
 
 .. rst-class:: classref-item-separator
 
@@ -187,7 +187,7 @@ enum **Access**:
 
 :ref:`Access<enum_EditorFileDialog_Access>` **ACCESS_RESOURCES** = ``0``
 
-The **EditorFileDialog** can only view ``res://`` directory contents.
+**EditorFileDialog** 只能查看 ``res://`` 目录里的内容。
 
 .. _class_EditorFileDialog_constant_ACCESS_USERDATA:
 
@@ -195,7 +195,7 @@ The **EditorFileDialog** can only view ``res://`` directory contents.
 
 :ref:`Access<enum_EditorFileDialog_Access>` **ACCESS_USERDATA** = ``1``
 
-The **EditorFileDialog** can only view ``user://`` directory contents.
+**EditorFileDialog** 只能查看\ ``user://`` 目录里的内容。
 
 .. _class_EditorFileDialog_constant_ACCESS_FILESYSTEM:
 
@@ -203,7 +203,7 @@ The **EditorFileDialog** can only view ``user://`` directory contents.
 
 :ref:`Access<enum_EditorFileDialog_Access>` **ACCESS_FILESYSTEM** = ``2``
 
-The **EditorFileDialog** can view the entire local file system.
+**EditorFileDialog** 可以查看整个本地文件系统。
 
 .. rst-class:: classref-item-separator
 
@@ -221,7 +221,7 @@ enum **DisplayMode**:
 
 :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **DISPLAY_THUMBNAILS** = ``0``
 
-The **EditorFileDialog** displays resources as thumbnails.
+**EditorFileDialog** 以图标的形式显示资源。
 
 .. _class_EditorFileDialog_constant_DISPLAY_LIST:
 
@@ -229,7 +229,7 @@ The **EditorFileDialog** displays resources as thumbnails.
 
 :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **DISPLAY_LIST** = ``1``
 
-The **EditorFileDialog** displays resources as a list of filenames.
+**EditorFileDialog** 以文件名列表的形式显示资源。
 
 .. rst-class:: classref-section-separator
 
@@ -237,8 +237,8 @@ The **EditorFileDialog** displays resources as a list of filenames.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_EditorFileDialog_property_access:
 
@@ -251,7 +251,7 @@ Property Descriptions
 - void **set_access** **(** :ref:`Access<enum_EditorFileDialog_Access>` value **)**
 - :ref:`Access<enum_EditorFileDialog_Access>` **get_access** **(** **)**
 
-The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
+用户可以选择文件的位置，包括 ``res://``\ 、\ ``user://`` 和本地文件系统。
 
 .. rst-class:: classref-item-separator
 
@@ -268,7 +268,7 @@ The location from which the user may select a file, including ``res://``, ``user
 - void **set_current_dir** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_current_dir** **(** **)**
 
-The currently occupied directory.
+当前占用的目录。
 
 .. rst-class:: classref-item-separator
 
@@ -285,7 +285,7 @@ The currently occupied directory.
 - void **set_current_file** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_current_file** **(** **)**
 
-The currently selected file.
+当前选择的文件。
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +302,7 @@ The currently selected file.
 - void **set_current_path** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_current_path** **(** **)**
 
-The file system path in the address bar.
+地址栏中的文件系统路径。
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +319,7 @@ The file system path in the address bar.
 - void **set_disable_overwrite_warning** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_overwrite_warning_disabled** **(** **)**
 
-If ``true``, the **EditorFileDialog** will not warn the user before overwriting files.
+如果为 ``true``\ ，\ **EditorFileDialog** 将不会在覆盖文件之前警告用户。
 
 .. rst-class:: classref-item-separator
 
@@ -336,7 +336,7 @@ If ``true``, the **EditorFileDialog** will not warn the user before overwriting 
 - void **set_display_mode** **(** :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` value **)**
 - :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **get_display_mode** **(** **)**
 
-The view format in which the **EditorFileDialog** displays resources to the user.
+**EditorFileDialog** 向用户显示资源的视图格式。
 
 .. rst-class:: classref-item-separator
 
@@ -353,7 +353,7 @@ The view format in which the **EditorFileDialog** displays resources to the user
 - void **set_file_mode** **(** :ref:`FileMode<enum_EditorFileDialog_FileMode>` value **)**
 - :ref:`FileMode<enum_EditorFileDialog_FileMode>` **get_file_mode** **(** **)**
 
-The dialog's open or save mode, which affects the selection behavior. See :ref:`FileMode<enum_EditorFileDialog_FileMode>`.
+对话框的打开或保存模式，会影响选择行为。见 :ref:`FileMode<enum_EditorFileDialog_FileMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -370,7 +370,7 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 - void **set_filters** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_filters** **(** **)**
 
-The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``. Multiple file types can also be specified in a single filter. ``"*.png, *.jpg, *.jpeg ; Supported Images"`` will show both PNG and JPEG files when selected.
+可用的文件类型过滤器。例如，这样就只会显示 ``.png`` 和 ``.gd`` 文件：\ ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``\ 。也可以在单个过滤器中指定多种文件类型。选中 ``"*.png, *.jpg, *.jpeg ; 支持的图片"`` 时，将同时显示 PNG 和 JPEG 文件。
 
 .. rst-class:: classref-item-separator
 
@@ -387,7 +387,7 @@ The available file type filters. For example, this shows only ``.png`` and ``.gd
 - void **set_show_hidden_files** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)**
 
-If ``true``, hidden files and directories will be visible in the **EditorFileDialog**. This property is synchronized with :ref:`EditorSettings.filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`.
+如果为 ``true``\ ，隐藏的文件和目录将在 **EditorFileDialog** 中可见。该属性与 :ref:`EditorSettings.filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>` 同步。
 
 .. rst-class:: classref-section-separator
 
@@ -395,8 +395,8 @@ If ``true``, hidden files and directories will be visible in the **EditorFileDia
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_EditorFileDialog_method_add_filter:
 
@@ -404,11 +404,11 @@ Method Descriptions
 
 void **add_filter** **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)**
 
-Adds a comma-delimited file name ``filter`` option to the **EditorFileDialog** with an optional ``description``, which restricts what files can be picked.
+将一个逗号分隔的文件名 ``filter`` 且带有可选 ``description`` 的选项添加到的 **EditorFileDialog**\ ，这限制了可以选择的文件。
 
-A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
+\ ``filter`` 的格式应为 ``"文件名.扩展名"``\ ，其中文件名和扩展名可以是 ``*``\ ，以匹配任意字符串。不允许使用以 ``.`` 开头的过滤器（即空文件名）。
 
-For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
+例如，\ ``"*.tscn, *.scn"`` 的 ``filter`` 和 ``"场景"`` 的 ``description`` 会产生过滤文本“场景 (\* .tscn, \*.scn)”。
 
 .. rst-class:: classref-item-separator
 
@@ -420,7 +420,7 @@ For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Sce
 
 void **add_side_menu** **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)**
 
-Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
+将给定的 ``menu`` 添加到文件对话框的侧边，在顶部显示标题文本 ``title``\ 。仅支持一个侧边菜单。
 
 .. rst-class:: classref-item-separator
 
@@ -432,7 +432,7 @@ Adds the given ``menu`` to the side of the file dialog with the given ``title`` 
 
 void **clear_filters** **(** **)**
 
-Removes all filters except for "All Files (\*)".
+移除“All Files(\*)”筛选器之外的所有筛选器。
 
 .. rst-class:: classref-item-separator
 
@@ -444,9 +444,9 @@ Removes all filters except for "All Files (\*)".
 
 :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
-Returns the LineEdit for the selected file.
+返回所选文件的 LineEdit。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是一个必需的内部节点，删除和释放它可能会导致崩溃。如果你希望隐藏它或其任何子项，请使用它们的 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -458,9 +458,9 @@ Returns the LineEdit for the selected file.
 
 :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
-Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file system.
+返回用于显示文件系统的 :ref:`VBoxContainer<class_VBoxContainer>`\ 。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是一个必需的内部节点，移除和释放它可能会导致崩溃。如果你想隐藏它或它的任何子节点，请使用 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -472,12 +472,12 @@ Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file s
 
 void **invalidate** **(** **)**
 
-Notify the **EditorFileDialog** that its view of the data is no longer accurate. Updates the view contents on next view update.
+通知 **EditorFileDialog** 它的数据视图不再准确。在下次视图更新时更新视图内容。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

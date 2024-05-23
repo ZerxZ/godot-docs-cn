@@ -10,40 +10,40 @@
 RichTextLabel
 =============
 
-**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A control for displaying text that can contain different font styles, images, and basic formatting.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-A control for displaying text that can contain custom fonts, images, and basic formatting. **RichTextLabel** manages these as an internal tag stack. It also adapts itself to given width/heights.
-
-\ **Note:** Assignments to :ref:`text<class_RichTextLabel_property_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`text<class_RichTextLabel_property_text>` will erase previous edits made from other manual sources such as :ref:`append_text<class_RichTextLabel_method_append_text>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
-
-\ **Note:** RichTextLabel doesn't support entangled BBCode tags. For example, instead of using ``[b]bold[i]bold italic[/b]italic[/i]``, use ``[b]bold[i]bold italic[/i][/b][i]italic[/i]``.
-
-\ **Note:** ``push_*/pop_*`` functions won't affect BBCode.
-
-\ **Note:** Unlike :ref:`Label<class_Label>`, **RichTextLabel** doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content<class_RichTextLabel_property_fit_content>` property.
+用于显示文本的控件，文本中能够包含不同的字体样式、图片以及基础格式。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`BBCode in RichTextLabel <../tutorials/ui/bbcode_in_richtextlabel>`
+用于显示文本的控件，文本中能够包含自定义字体、图片以及基础格式。\ **RichTextLabel** 使用内部标签栈管理这些内容。它还可以适应给定的宽度和高度。
 
-- `GUI Rich Text/BBcode Demo <https://godotengine.org/asset-library/asset/132>`__
+\ **注意：**\ 对 :ref:`text<class_RichTextLabel_property_text>` 赋值会将标签栈清空并根据该属性的内容重建。对 :ref:`text<class_RichTextLabel_property_text>` 所做的任何编辑都将擦除之前从 :ref:`append_text<class_RichTextLabel_method_append_text>` 和 ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` 方法等其他手动来源所做的编辑。
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+\ **注意：**\ RichTextLabel 不支持纠缠的 BBCode 标签。例如，请不要使用 ``[b]加粗[i]加粗斜体[/b]斜体[/i]``\ ，请改为 ``[b]加粗[i]加粗斜体[/i][/b][i]斜体[/i]``\ 。
+
+\ **注意：**\ ``push_*/pop`` 函数不会影响 BBCode。
+
+\ **注意：**\ 与 :ref:`Label<class_Label>` 不同，\ **RichTextLabel** 没有使文本水平居中的\ *属性*\ 。请启用 :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` 并将文本包围在 ``[center]`` 标签中，类似：\ ``[center]示例[/center]``\ 。目前也没有垂直对齐文本的内置方法，但这可以通过使用锚点/容器和 :ref:`fit_content<class_RichTextLabel_property_fit_content>` 属性来模拟。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`RichTextLabel 中的 BBCode <../tutorials/ui/bbcode_in_richtextlabel>`
+
+- `GUI 富文本/BBcode 演示 <https://godotengine.org/asset-library/asset/132>`__
+
+- `操作系统测试演示 <https://godotengine.org/asset-library/asset/677>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -102,8 +102,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -248,8 +248,8 @@ Methods
 
 .. rst-class:: classref-reftable-group
 
-Theme Properties
-----------------
+主题属性
+--------
 
 .. table::
    :widths: auto
@@ -320,8 +320,8 @@ Theme Properties
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_RichTextLabel_signal_finished:
 
@@ -329,7 +329,7 @@ Signals
 
 **finished** **(** **)**
 
-Triggered when the document is fully loaded.
+当文档完全加载时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -341,22 +341,7 @@ Triggered when the document is fully loaded.
 
 **meta_clicked** **(** :ref:`Variant<class_Variant>` meta **)**
 
-Triggered when the user clicks on content between meta (URL) tags. If the meta is defined in BBCode, e.g. ``[url={"key": "value"}]Text[/url]``, then the parameter for this signal will always be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack. Alternatively, you can convert the :ref:`String<class_String>` input to the desired type based on its contents (such as calling :ref:`JSON.parse<class_JSON_method_parse>` on it).
-
-For example, the following method can be connected to :ref:`meta_clicked<class_RichTextLabel_signal_meta_clicked>` to open clicked URLs using the user's default web browser:
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    # This assumes RichTextLabel's `meta_clicked` signal was connected to
-    # the function below using the signal connection dialog.
-    func _richtextlabel_on_meta_clicked(meta):
-        # `meta` is of Variant type, so convert it to a String to avoid script errors at run-time.
-        OS.shell_open(str(meta))
-
-
+当用户点击元标记之间的内容时触发。如果元是在文本中定义的，例如 ``[url={"data"="hi"}]hi[/url]``\ ，则该信号的参数为 :ref:`String<class_String>` 类型。如果需要特定类型或对象，则必须使用 :ref:`push_meta<class_RichTextLabel_method_push_meta>` 方法将数据手动插入标签栈。
 
 .. rst-class:: classref-item-separator
 
@@ -368,7 +353,7 @@ For example, the following method can be connected to :ref:`meta_clicked<class_R
 
 **meta_hover_ended** **(** :ref:`Variant<class_Variant>` meta **)**
 
-Triggers when the mouse exits a meta tag.
+当鼠标退出元标签时触发。
 
 .. rst-class:: classref-item-separator
 
@@ -380,7 +365,7 @@ Triggers when the mouse exits a meta tag.
 
 **meta_hover_started** **(** :ref:`Variant<class_Variant>` meta **)**
 
-Triggers when the mouse enters a meta tag.
+当鼠标进入元标签时触发。
 
 .. rst-class:: classref-section-separator
 
@@ -388,8 +373,8 @@ Triggers when the mouse enters a meta tag.
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_RichTextLabel_ListType:
 
@@ -403,7 +388,7 @@ enum **ListType**:
 
 :ref:`ListType<enum_RichTextLabel_ListType>` **LIST_NUMBERS** = ``0``
 
-Each list item has a number marker.
+每个列表项都有数字标记。
 
 .. _class_RichTextLabel_constant_LIST_LETTERS:
 
@@ -411,7 +396,7 @@ Each list item has a number marker.
 
 :ref:`ListType<enum_RichTextLabel_ListType>` **LIST_LETTERS** = ``1``
 
-Each list item has a letter marker.
+每个列表项都有字母标记。
 
 .. _class_RichTextLabel_constant_LIST_ROMAN:
 
@@ -419,7 +404,7 @@ Each list item has a letter marker.
 
 :ref:`ListType<enum_RichTextLabel_ListType>` **LIST_ROMAN** = ``2``
 
-Each list item has a roman number marker.
+每个列表项都有罗马数字标记。
 
 .. _class_RichTextLabel_constant_LIST_DOTS:
 
@@ -427,7 +412,7 @@ Each list item has a roman number marker.
 
 :ref:`ListType<enum_RichTextLabel_ListType>` **LIST_DOTS** = ``3``
 
-Each list item has a filled circle marker.
+每个列表项都有实心圆标记。
 
 .. rst-class:: classref-item-separator
 
@@ -445,7 +430,7 @@ enum **MenuItems**:
 
 :ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_COPY** = ``0``
 
-Copies the selected text.
+复制选中的文本。
 
 .. _class_RichTextLabel_constant_MENU_SELECT_ALL:
 
@@ -453,7 +438,7 @@ Copies the selected text.
 
 :ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_SELECT_ALL** = ``1``
 
-Selects the whole **RichTextLabel** text.
+全选 :ref:`TextEdit<class_TextEdit>` 文本。
 
 .. _class_RichTextLabel_constant_MENU_MAX:
 
@@ -461,7 +446,7 @@ Selects the whole **RichTextLabel** text.
 
 :ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_MAX** = ``2``
 
-Represents the size of the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
+代表 :ref:`MenuItems<enum_RichTextLabel_MenuItems>` 枚举的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -479,7 +464,7 @@ flags **ImageUpdateMask**:
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_TEXTURE** = ``1``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image texture.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像纹理。
 
 .. _class_RichTextLabel_constant_UPDATE_SIZE:
 
@@ -487,7 +472,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_SIZE** = ``2``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image size.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像大小。
 
 .. _class_RichTextLabel_constant_UPDATE_COLOR:
 
@@ -495,7 +480,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_COLOR** = ``4``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image color.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像颜色。
 
 .. _class_RichTextLabel_constant_UPDATE_ALIGNMENT:
 
@@ -503,7 +488,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_ALIGNMENT** = ``8``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image inline alignment.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像内联对齐方式。
 
 .. _class_RichTextLabel_constant_UPDATE_REGION:
 
@@ -511,7 +496,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_REGION** = ``16``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image texture region.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像纹理区块。
 
 .. _class_RichTextLabel_constant_UPDATE_PAD:
 
@@ -519,7 +504,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_PAD** = ``32``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image padding.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像填充。
 
 .. _class_RichTextLabel_constant_UPDATE_TOOLTIP:
 
@@ -527,7 +512,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_TOOLTIP** = ``64``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image tooltip.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会更改图像工具提示。
 
 .. _class_RichTextLabel_constant_UPDATE_WIDTH_IN_PERCENT:
 
@@ -535,7 +520,7 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 :ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>` **UPDATE_WIDTH_IN_PERCENT** = ``128``
 
-If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>` changes image width from/to percents.
+如果设置了该位，\ :ref:`update_image<class_RichTextLabel_method_update_image>` 会将图像宽度更改自/为百分比。
 
 .. rst-class:: classref-section-separator
 
@@ -543,8 +528,8 @@ If this bit is set, :ref:`update_image<class_RichTextLabel_method_update_image>`
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_RichTextLabel_property_autowrap_mode:
 
@@ -557,7 +542,7 @@ Property Descriptions
 - void **set_autowrap_mode** **(** :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` value **)**
 - :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode** **(** **)**
 
-If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+如果设置为 :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>` 以外的值，则文本将在节点的边界矩形内换行。要了解每种模式的行为，请参见 :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -574,7 +559,7 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 - void **set_use_bbcode** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_bbcode** **(** **)**
 
-If ``true``, the label uses BBCode formatting.
+如果为 ``true``\ ，则该标签使用 BBCode 格式。
 
 .. rst-class:: classref-item-separator
 
@@ -591,7 +576,7 @@ If ``true``, the label uses BBCode formatting.
 - void **set_context_menu_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_context_menu_enabled** **(** **)**
 
-If ``true``, a right-click displays the context menu.
+为 ``true`` 时右键单击会显示上下文菜单。
 
 .. rst-class:: classref-item-separator
 
@@ -608,9 +593,9 @@ If ``true``, a right-click displays the context menu.
 - void **set_effects** **(** :ref:`Array<class_Array>` value **)**
 - :ref:`Array<class_Array>` **get_effects** **(** **)**
 
-The currently installed custom effects. This is an array of :ref:`RichTextEffect<class_RichTextEffect>`\ s.
+当前配置的自定义效果。这是一个\ :ref:`RichTextEffect<class_RichTextEffect>`\ 的数组。
 
-To add a custom effect, it's more convenient to use :ref:`install_effect<class_RichTextLabel_method_install_effect>`.
+要添加一个自定义效果，使用\ :ref:`install_effect<class_RichTextLabel_method_install_effect>`\ 会更方便。
 
 .. rst-class:: classref-item-separator
 
@@ -627,7 +612,7 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 - void **set_deselect_on_focus_loss_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_deselect_on_focus_loss_enabled** **(** **)**
 
-If ``true``, the selected text will be deselected when focus is lost.
+如果为 ``true``\ ，则在丢失焦点时会取消选中文本。
 
 .. rst-class:: classref-item-separator
 
@@ -644,7 +629,7 @@ If ``true``, the selected text will be deselected when focus is lost.
 - void **set_drag_and_drop_selection_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_drag_and_drop_selection_enabled** **(** **)**
 
-If ``true``, allow drag and drop of selected text.
+如果为 ``true``\ ，则允许拖放选中的文本。
 
 .. rst-class:: classref-item-separator
 
@@ -661,7 +646,7 @@ If ``true``, allow drag and drop of selected text.
 - void **set_fit_content** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_fit_content_enabled** **(** **)**
 
-If ``true``, the label's minimum size will be automatically updated to fit its content, matching the behavior of :ref:`Label<class_Label>`.
+如果为 ``true``\ ，该标签的最小尺寸会自动更新，适应其内容，与 :ref:`Label<class_Label>` 的行为相匹配。
 
 .. rst-class:: classref-item-separator
 
@@ -678,7 +663,7 @@ If ``true``, the label's minimum size will be automatically updated to fit its c
 - void **set_hint_underline** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_hint_underlined** **(** **)**
 
-If ``true``, the label underlines hint tags such as ``[hint=description]{text}[/hint]``.
+如果为 ``true``\ ，则该标签节点会在 hint 标记下，加下划线，例如 ``[hint=description]{text}[/hint]``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -695,7 +680,7 @@ If ``true``, the label underlines hint tags such as ``[hint=description]{text}[/
 - void **set_language** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_language** **(** **)**
 
-Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+语言代码，用于断行和文本塑形算法，如果留空则使用当前区域设置。
 
 .. rst-class:: classref-item-separator
 
@@ -712,7 +697,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 - void **set_meta_underline** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_meta_underlined** **(** **)**
 
-If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. These tags can call a function when clicked if :ref:`meta_clicked<class_RichTextLabel_signal_meta_clicked>` is connected to a function.
+如果为 ``true``\ ，则会在元标签下划线，例如 ``[url]{text}[/url]``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -729,9 +714,9 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. These
 - void **set_progress_bar_delay** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_progress_bar_delay** **(** **)**
 
-The delay after which the loading progress bar is displayed, in milliseconds. Set to ``-1`` to disable progress bar entirely.
+加载进度条显示的延迟时间，单位为毫秒。将其设置为 ``-1`` 将完全禁用进度条。
 
-\ **Note:** Progress bar is displayed only if :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled.
+\ **注意：**\ 仅当 :ref:`threaded<class_RichTextLabel_property_threaded>` 已启用时才会显示进度条。
 
 .. rst-class:: classref-item-separator
 
@@ -748,7 +733,7 @@ The delay after which the loading progress bar is displayed, in milliseconds. Se
 - void **set_scroll_active** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_scroll_active** **(** **)**
 
-If ``true``, the scrollbar is visible. Setting this to ``false`` does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`.
+如果为 ``true``\ ，则滚动条可见。将此设置为 ``false`` 不会完全阻止滚动。见\ :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -765,7 +750,7 @@ If ``true``, the scrollbar is visible. Setting this to ``false`` does not block 
 - void **set_scroll_follow** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_scroll_following** **(** **)**
 
-If ``true``, the window scrolls down to display new content automatically.
+如果为 ``true``\ ，则窗口向下滚动以自动显示新内容。
 
 .. rst-class:: classref-item-separator
 
@@ -782,7 +767,7 @@ If ``true``, the window scrolls down to display new content automatically.
 - void **set_selection_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_selection_enabled** **(** **)**
 
-If ``true``, the label allows text selection.
+如果为 ``true``\ ，标签允许文本选择。
 
 .. rst-class:: classref-item-separator
 
@@ -799,7 +784,7 @@ If ``true``, the label allows text selection.
 - void **set_shortcut_keys_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_shortcut_keys_enabled** **(** **)**
 
-If ``true``, shortcut keys for context menu items are enabled, even if the context menu is disabled.
+为 ``true`` 时，即使上下文菜单已被禁用，也会启用该上下文菜单的快捷键。
 
 .. rst-class:: classref-item-separator
 
@@ -816,7 +801,7 @@ If ``true``, shortcut keys for context menu items are enabled, even if the conte
 - void **set_structured_text_bidi_override** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` value **)**
 - :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** **)**
 
-Set BiDi algorithm override for the structured text.
+为结构化文本设置 BiDi 算法覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -833,7 +818,7 @@ Set BiDi algorithm override for the structured text.
 - void **set_structured_text_bidi_override_options** **(** :ref:`Array<class_Array>` value **)**
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
 
-Set additional options for BiDi override.
+设置 BiDi 覆盖的附加选项。
 
 .. rst-class:: classref-item-separator
 
@@ -850,7 +835,7 @@ Set additional options for BiDi override.
 - void **set_tab_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_tab_size** **(** **)**
 
-The number of spaces associated with a single tab length. Does not affect ``\t`` in text tags, only indent tags.
+与单个制表符长度关联的空格数。不影响文本标签中的 ``\t``\ ，只影响缩进标签。
 
 .. rst-class:: classref-item-separator
 
@@ -867,9 +852,9 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 - void **set_text** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_text** **(** **)**
 
-The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
+该标签的在 BBCode 格式中的文本。不代表对内部标签堆栈的手动修改。编辑时擦除通过其他方法所做的更改。
 
-\ **Note:** If :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` is ``true``, it is unadvised to use the ``+=`` operator with :ref:`text<class_RichTextLabel_property_text>` (e.g. ``text += "some string"``) as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using ``push_*`` methods. Use :ref:`append_text<class_RichTextLabel_method_append_text>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
+\ **注意：**\ 如果 :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` 为 ``true``\ ，则不建议将 ``+=`` 运算符与 :ref:`text<class_RichTextLabel_property_text>` 一起使用（例如 ``text += "some string"``\ ）因为它会替换整个文本并可能导致速度变慢。它还将擦除使用 ``push_*`` 方法添加到堆栈中的所有 BBCode。请改用 :ref:`append_text<class_RichTextLabel_method_append_text>` 添加文本，除非你绝对需要关闭在之前的方法调用中打开的标签。
 
 .. rst-class:: classref-item-separator
 
@@ -886,7 +871,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 - void **set_text_direction** **(** :ref:`TextDirection<enum_Control_TextDirection>` value **)**
 - :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction** **(** **)**
 
-Base text writing direction.
+基础文本书写方向。
 
 .. rst-class:: classref-item-separator
 
@@ -903,7 +888,7 @@ Base text writing direction.
 - void **set_threaded** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_threaded** **(** **)**
 
-If ``true``, text processing is done in a background thread.
+如果为 ``true``\ ，则文本处理在后台线程中完成。
 
 .. rst-class:: classref-item-separator
 
@@ -920,9 +905,9 @@ If ``true``, text processing is done in a background thread.
 - void **set_visible_characters** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_visible_characters** **(** **)**
 
-The number of characters to display. If set to ``-1``, all characters are displayed. This can be useful when animating the text appearing in a dialog box.
+要显示的字符数。如果设置为 ``-1``\ ，则显示所有字符。这用于在对话框中为显示的文本设置动画。
 
-\ **Note:** Setting this property updates :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` accordingly.
+\ **注意：**\ 设置该属性会相应地更新 :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -939,7 +924,7 @@ The number of characters to display. If set to ``-1``, all characters are displa
 - void **set_visible_characters_behavior** **(** :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` value **)**
 - :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **get_visible_characters_behavior** **(** **)**
 
-Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+设置 :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` 或 :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` 被设置时的裁剪行为。有关详细信息，请参阅 :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -956,9 +941,9 @@ Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_pro
 - void **set_visible_ratio** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_visible_ratio** **(** **)**
 
-The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
+相对于字符总数（参见 :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`\ ），要显示的字符的占比。如果设置为 ``1.0``\ ，则显示所有字符。如果设置为 ``0.5``\ ，则只显示一半的字符。这用于在对话框中为显示的文本设置动画。
 
-\ **Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` accordingly.
+\ **注意：**\ 设置该属性会相应地更新 :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -966,8 +951,8 @@ The fraction of characters to display, relative to the total number of character
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_RichTextLabel_method_add_image:
 
@@ -975,17 +960,17 @@ Method Descriptions
 
 void **add_image** **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`Variant<class_Variant>` key=null, :ref:`bool<class_bool>` pad=false, :ref:`String<class_String>` tooltip="", :ref:`bool<class_bool>` size_in_percent=false **)**
 
-Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image, a ``color`` to tint the image and a ``region`` to only use parts of the image.
+将图像的开始和结束标签添加到标签栈中，可选择提供 ``width`` 和 ``height`` 来调整图像大小，提供 ``color`` 来给图像混色， ``region`` 只使用图像的一部分。
 
-If ``width`` or ``height`` is set to 0, the image size will be adjusted in order to keep the original aspect ratio.
+如果 ``width`` 或 ``height`` 被设置为 0，图像的大小将被调整以保持原始长宽比。
 
-If ``width`` and ``height`` are not set, but ``region`` is, the region's rect will be used.
+如果未设置 ``width`` 和 ``height``\ ，但设置了 ``region``\ ，则将使用该区域的矩形。
 
-\ ``key`` is an optional identifier, that can be used to modify the image via :ref:`update_image<class_RichTextLabel_method_update_image>`.
+\ ``key`` 是一个可选标识符，可用于通过 :ref:`update_image<class_RichTextLabel_method_update_image>` 修改图像。
 
-If ``pad`` is set, and the image is smaller than the size specified by ``width`` and ``height``, the image padding is added to match the size instead of upscaling.
+如果设置了 ``pad``\ ，并且该图像小于 ``width`` 和 ``height`` 指定的大小，则添加图像填充以匹配大小而不是放大图像。
 
-If ``size_in_percent`` is set, ``width`` and ``height`` values are percentages of the control width instead of pixels.
+如果设置了 ``size_in_percent``\ ，则 ``width`` 和 ``height`` 值是控件宽度的百分比而不是像素。
 
 .. rst-class:: classref-item-separator
 
@@ -997,7 +982,7 @@ If ``size_in_percent`` is set, ``width`` and ``height`` values are percentages o
 
 void **add_text** **(** :ref:`String<class_String>` text **)**
 
-Adds raw non-BBCode-parsed text to the tag stack.
+将非 BBCode 解析的原始文本添加到标签栈中。
 
 .. rst-class:: classref-item-separator
 
@@ -1009,9 +994,9 @@ Adds raw non-BBCode-parsed text to the tag stack.
 
 void **append_text** **(** :ref:`String<class_String>` bbcode **)**
 
-Parses ``bbcode`` and adds tags to the tag stack as needed.
+解析 ``bbcode`` 并根据需要将标签添加到标签栈中。
 
-\ **Note:** Using this method, you can't close a tag that was opened in a previous :ref:`append_text<class_RichTextLabel_method_append_text>` call. This is done to improve performance, especially when updating large RichTextLabels since rebuilding the whole BBCode every time would be slower. If you absolutely need to close a tag in a future method call, append the :ref:`text<class_RichTextLabel_property_text>` instead of using :ref:`append_text<class_RichTextLabel_method_append_text>`.
+\ **注意：**\ 使用该方法，无法关闭在之前的 :ref:`append_text<class_RichTextLabel_method_append_text>` 调用中打开的标签。这样做是为了提高性能，尤其是在更新大型 RichTextLabel 时，因为每次都重建整个 BBCode 会比较慢。如果你绝对需要在接下来的方法调用中关闭标签，请追加 :ref:`text<class_RichTextLabel_property_text>` 而不是使用 :ref:`append_text<class_RichTextLabel_method_append_text>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1023,9 +1008,9 @@ Parses ``bbcode`` and adds tags to the tag stack as needed.
 
 void **clear** **(** **)**
 
-Clears the tag stack.
+清空标签栈。
 
-\ **Note:** This method will not modify :ref:`text<class_RichTextLabel_property_text>`, but setting :ref:`text<class_RichTextLabel_property_text>` to an empty string also clears the stack.
+\ **注意：**\ 这个方法不会修改 :ref:`text<class_RichTextLabel_property_text>`\ ，但将 :ref:`text<class_RichTextLabel_property_text>` 设置为空字符串也能清空标签栈。
 
 .. rst-class:: classref-item-separator
 
@@ -1037,7 +1022,7 @@ Clears the tag stack.
 
 void **deselect** **(** **)**
 
-Clears the current selection.
+清除当前选择。
 
 .. rst-class:: classref-item-separator
 
@@ -1049,9 +1034,9 @@ Clears the current selection.
 
 :ref:`int<class_int>` **get_character_line** **(** :ref:`int<class_int>` character **)**
 
-Returns the line number of the character position provided. Line and character numbers are both zero-indexed.
+返回提供的字符位置的行号。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1063,9 +1048,9 @@ Returns the line number of the character position provided. Line and character n
 
 :ref:`int<class_int>` **get_character_paragraph** **(** :ref:`int<class_int>` character **)**
 
-Returns the paragraph number of the character position provided. Paragraph and character numbers are both zero-indexed.
+返回提供的字符位置的段号。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1077,9 +1062,9 @@ Returns the paragraph number of the character position provided. Paragraph and c
 
 :ref:`int<class_int>` **get_content_height** **(** **)** |const|
 
-Returns the height of the content.
+返回内容的高度。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1091,9 +1076,9 @@ Returns the height of the content.
 
 :ref:`int<class_int>` **get_content_width** **(** **)** |const|
 
-Returns the width of the content.
+返回内容的宽度。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1105,9 +1090,9 @@ Returns the width of the content.
 
 :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
-Returns the total number of lines in the text. Wrapped text is counted as multiple lines.
+返回文本中的总行数。自动换行的文本计为多行。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1119,9 +1104,9 @@ Returns the total number of lines in the text. Wrapped text is counted as multip
 
 :ref:`float<class_float>` **get_line_offset** **(** :ref:`int<class_int>` line **)**
 
-Returns the vertical offset of the line found at the provided index.
+返回位于提供的索引处的行的垂直偏移量。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1133,9 +1118,9 @@ Returns the vertical offset of the line found at the provided index.
 
 :ref:`PopupMenu<class_PopupMenu>` **get_menu** **(** **)** |const|
 
-Returns the :ref:`PopupMenu<class_PopupMenu>` of this **RichTextLabel**. By default, this menu is displayed when right-clicking on the **RichTextLabel**.
+返回该 **RichTextLabel** 的 :ref:`PopupMenu<class_PopupMenu>`\ 。默认情况下，这个菜单会在右键单击 **RichTextLabel** 时显示。
 
-You can add custom menu items or remove standard ones. Make sure your IDs don't conflict with the standard ones (see :ref:`MenuItems<enum_RichTextLabel_MenuItems>`). For example:
+你可以加入自定义的菜单项，或者移除标准菜单项。请确保你的 ID 与标准 ID 不冲突（见 :ref:`MenuItems<enum_RichTextLabel_MenuItems>`\ ）。例如：
 
 
 .. tabs::
@@ -1144,12 +1129,12 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
     func _ready():
         var menu = get_menu()
-        # Remove "Select All" item.
+        # 移除“全选”菜单项。
         menu.remove_item(MENU_SELECT_ALL)
-        # Add custom items.
+        # 添加自定义菜单项。
         menu.add_separator()
-        menu.add_item("Duplicate Text", MENU_MAX + 1)
-        # Connect callback.
+        menu.add_item("制作文本副本", MENU_MAX + 1)
+        # 连接回调。
         menu.id_pressed.connect(_on_item_pressed)
     
     func _on_item_pressed(id):
@@ -1161,12 +1146,12 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
     public override void _Ready()
     {
         var menu = GetMenu();
-        // Remove "Select All" item.
+        // 移除“全选”菜单项。
         menu.RemoveItem(RichTextLabel.MenuItems.SelectAll);
-        // Add custom items.
+        // 添加自定义菜单项。
         menu.AddSeparator();
-        menu.AddItem("Duplicate Text", RichTextLabel.MenuItems.Max + 1);
-        // Add event handler.
+        menu.AddItem("制作文本副本", RichTextLabel.MenuItems.Max + 1);
+        // 添加事件处理器。
         menu.IdPressed += OnItemPressed;
     }
     
@@ -1180,7 +1165,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
+\ **警告：**\ 这是必要的内部节点，将其移除或释放可能导致崩溃。如果你想要将其隐藏，或者隐藏其子节点，请使用其 :ref:`Window.visible<class_Window_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -1192,7 +1177,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 :ref:`int<class_int>` **get_paragraph_count** **(** **)** |const|
 
-Returns the total number of paragraphs (newlines or ``p`` tags in the tag stack's text tags). Considers wrapped text as one paragraph.
+返回段落的总数（换行符或标记栈文本标签中的 ``p`` 标签）。自动换行的文本视为一个段落。
 
 .. rst-class:: classref-item-separator
 
@@ -1204,9 +1189,9 @@ Returns the total number of paragraphs (newlines or ``p`` tags in the tag stack'
 
 :ref:`float<class_float>` **get_paragraph_offset** **(** :ref:`int<class_int>` paragraph **)**
 
-Returns the vertical offset of the paragraph found at the provided index.
+返回位于提供的索引处的段落的垂直偏移量。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1218,7 +1203,7 @@ Returns the vertical offset of the paragraph found at the provided index.
 
 :ref:`String<class_String>` **get_parsed_text** **(** **)** |const|
 
-Returns the text without BBCode mark-up.
+返回没有 BBCode 标记的文本。
 
 .. rst-class:: classref-item-separator
 
@@ -1230,7 +1215,7 @@ Returns the text without BBCode mark-up.
 
 :ref:`String<class_String>` **get_selected_text** **(** **)** |const|
 
-Returns the current selection text. Does not include BBCodes.
+返回当前选中的文本。不包括 BBCode。
 
 .. rst-class:: classref-item-separator
 
@@ -1242,7 +1227,7 @@ Returns the current selection text. Does not include BBCodes.
 
 :ref:`int<class_int>` **get_selection_from** **(** **)** |const|
 
-Returns the current selection first character index if a selection is active, ``-1`` otherwise. Does not include BBCodes.
+如果选区处于活动状态，则返回当前选区第一个字符的索引，否则返回 ``-1``\ 。不包括 BBCode。
 
 .. rst-class:: classref-item-separator
 
@@ -1254,7 +1239,7 @@ Returns the current selection first character index if a selection is active, ``
 
 :ref:`int<class_int>` **get_selection_to** **(** **)** |const|
 
-Returns the current selection last character index if a selection is active, ``-1`` otherwise. Does not include BBCodes.
+如果选择处于活动状态，则返回当前选区最后一个字符的索引，否则返回 ``-1``\ 。不包括 BBCode。
 
 .. rst-class:: classref-item-separator
 
@@ -1266,7 +1251,7 @@ Returns the current selection last character index if a selection is active, ``-
 
 :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
-Returns the total number of characters from text tags. Does not include BBCodes.
+返回文本标签的总字符数。不包括 BBCode。
 
 .. rst-class:: classref-item-separator
 
@@ -1278,9 +1263,9 @@ Returns the total number of characters from text tags. Does not include BBCodes.
 
 :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar** **(** **)**
 
-Returns the vertical scrollbar.
+返回垂直滚动条。
 
-\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **警告：**\ 这是一个必需的内部节点，删除和释放它可能会导致崩溃。如果你希望隐藏它或其任何子项，请使用它们的 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
 
 .. rst-class:: classref-item-separator
 
@@ -1292,9 +1277,9 @@ Returns the vertical scrollbar.
 
 :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
-Returns the number of visible lines.
+返回可见行数。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回的是文档已加载部分的值。请使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1306,9 +1291,9 @@ Returns the number of visible lines.
 
 :ref:`int<class_int>` **get_visible_paragraph_count** **(** **)** |const|
 
-Returns the number of visible paragraphs. A paragraph is considered visible if at least one of its lines is visible.
+返回可见段落的数量。如果段落中至少有一行是可见的，则该段落被认为是可见的。
 
-\ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
+\ **注意：**\ 如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则此方法返回文档已加载部分的值。使用 :ref:`is_ready<class_RichTextLabel_method_is_ready>` 或 :ref:`finished<class_RichTextLabel_signal_finished>` 来确定文档是否已完全加载。
 
 .. rst-class:: classref-item-separator
 
@@ -1320,9 +1305,9 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
 
-Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+安装自定义效果。这也可以在 RichTextLabel 检查器中使用 :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` 属性来完成。\ ``effect`` 应该是一个有效的 :ref:`RichTextEffect<class_RichTextEffect>`\ 。
 
-Example RichTextEffect:
+RichTextEffect 示例：
 
 ::
 
@@ -1334,7 +1319,7 @@ Example RichTextEffect:
     
     # ...
 
-Registering the above effect in RichTextLabel from script:
+通过脚本在 RichTextLabel 中注册上述效果：
 
 ::
 
@@ -1344,7 +1329,7 @@ Registering the above effect in RichTextLabel from script:
     func _ready():
         install_effect(MyCustomEffect.new())
     
-        # Alternatively, if not using `class_name` in the script that extends RichTextEffect:
+        # 或者，如果在扩展 RichTextEffect 的脚本中不使用“class_name”：
         install_effect(preload("res://effect.gd").new())
 
 .. rst-class:: classref-item-separator
@@ -1357,7 +1342,7 @@ Registering the above effect in RichTextLabel from script:
 
 :ref:`bool<class_bool>` **is_menu_visible** **(** **)** |const|
 
-Returns whether the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided).
+返回菜单是否可见。请使用这个方法来代替 ``get_menu().visible``\ ，可以提高性能（因为避免了菜单的创建）。
 
 .. rst-class:: classref-item-separator
 
@@ -1369,7 +1354,7 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 
 :ref:`bool<class_bool>` **is_ready** **(** **)** |const|
 
-If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always return ``true``.
+如果启用了 :ref:`threaded<class_RichTextLabel_property_threaded>`\ ，则在后台线程完成文本处理后，返回 ``true``\ ，否则始终返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1381,7 +1366,7 @@ If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``
 
 void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Executes a given action as defined in the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
+执行 :ref:`MenuItems<enum_RichTextLabel_MenuItems>` 枚举中定义的给定操作。
 
 .. rst-class:: classref-item-separator
 
@@ -1393,7 +1378,7 @@ Executes a given action as defined in the :ref:`MenuItems<enum_RichTextLabel_Men
 
 void **newline** **(** **)**
 
-Adds a newline tag to the tag stack.
+在标签栈中添加一个换行标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1405,7 +1390,7 @@ Adds a newline tag to the tag stack.
 
 void **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
-The assignment version of :ref:`append_text<class_RichTextLabel_method_append_text>`. Clears the tag stack and inserts the new content.
+:ref:`append_text<class_RichTextLabel_method_append_text>` 的赋值版本。清空标签栈并插入新内容。
 
 .. rst-class:: classref-item-separator
 
@@ -1417,7 +1402,7 @@ The assignment version of :ref:`append_text<class_RichTextLabel_method_append_te
 
 :ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values** **(** :ref:`PackedStringArray<class_PackedStringArray>` expressions **)**
 
-Parses BBCode parameter ``expressions`` into a dictionary.
+将 BBCode 参数 ``expressions`` 解析为字典。
 
 .. rst-class:: classref-item-separator
 
@@ -1429,7 +1414,7 @@ Parses BBCode parameter ``expressions`` into a dictionary.
 
 void **pop** **(** **)**
 
-Terminates the current tag. Use after ``push_*`` methods to close BBCodes manually. Does not need to follow ``add_*`` methods.
+终止当前标签。使用 ``push_*`` 方法之后手动关闭 BBCodes。不需要遵循 ``add_*`` 方法。
 
 .. rst-class:: classref-item-separator
 
@@ -1441,7 +1426,7 @@ Terminates the current tag. Use after ``push_*`` methods to close BBCodes manual
 
 void **pop_all** **(** **)**
 
-Terminates all tags opened by ``push_*`` methods.
+终止由 ``push_*`` 方法打开的所有标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1453,7 +1438,7 @@ Terminates all tags opened by ``push_*`` methods.
 
 void **pop_context** **(** **)**
 
-Terminates tags opened after the last :ref:`push_context<class_RichTextLabel_method_push_context>` call (including context marker), or all tags if there's no context marker on the stack.
+终止上一次 :ref:`push_context<class_RichTextLabel_method_push_context>` 调用后打开的标签（包括上下文标记）；或者如果堆栈上没有上下文标记，则终止所有标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1465,7 +1450,7 @@ Terminates tags opened after the last :ref:`push_context<class_RichTextLabel_met
 
 void **push_bgcolor** **(** :ref:`Color<class_Color>` bgcolor **)**
 
-Adds a ``[bgcolor]`` tag to the tag stack.
+向标签栈中添加 ``[bgcolor]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1477,7 +1462,7 @@ Adds a ``[bgcolor]`` tag to the tag stack.
 
 void **push_bold** **(** **)**
 
-Adds a ``[font]`` tag with a bold font to the tag stack. This is the same as adding a ``[b]`` tag if not currently in a ``[i]`` tag.
+在标签栈中添加 ``[font]`` 标签，字体为黑体。如果当前没有 ``[i]`` 标签，则与添加 ``[b]`` 标签相同。
 
 .. rst-class:: classref-item-separator
 
@@ -1489,7 +1474,7 @@ Adds a ``[font]`` tag with a bold font to the tag stack. This is the same as add
 
 void **push_bold_italics** **(** **)**
 
-Adds a ``[font]`` tag with a bold italics font to the tag stack.
+在标签栈中添加 ``[font]`` 标签，字体为粗斜体。
 
 .. rst-class:: classref-item-separator
 
@@ -1501,7 +1486,7 @@ Adds a ``[font]`` tag with a bold italics font to the tag stack.
 
 void **push_cell** **(** **)**
 
-Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_method_push_table>` for details.
+在标签栈中添加 ``[cell]`` 标签。必须位于 ``[table]`` 标签内。详见 :ref:`push_table<class_RichTextLabel_method_push_table>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1513,7 +1498,7 @@ Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :r
 
 void **push_color** **(** :ref:`Color<class_Color>` color **)**
 
-Adds a ``[color]`` tag to the tag stack.
+在标签栈中添加 ``[color]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1525,7 +1510,7 @@ Adds a ``[color]`` tag to the tag stack.
 
 void **push_context** **(** **)**
 
-Adds a context marker to the tag stack. See :ref:`pop_context<class_RichTextLabel_method_pop_context>`.
+将上下文标记添加到标记堆栈。请参阅 :ref:`pop_context<class_RichTextLabel_method_pop_context>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1537,7 +1522,7 @@ Adds a context marker to the tag stack. See :ref:`pop_context<class_RichTextLabe
 
 void **push_customfx** **(** :ref:`RichTextEffect<class_RichTextEffect>` effect, :ref:`Dictionary<class_Dictionary>` env **)**
 
-Adds a custom effect tag to the tag stack. The effect does not need to be in :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`. The environment is directly passed to the effect.
+将一个自定义效果标签添加到标签栈。效果不需要在 :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` 中。环境被直接传入给效果。
 
 .. rst-class:: classref-item-separator
 
@@ -1549,7 +1534,7 @@ Adds a custom effect tag to the tag stack. The effect does not need to be in :re
 
 void **push_dropcap** **(** :ref:`String<class_String>` string, :ref:`Font<class_Font>` font, :ref:`int<class_int>` size, :ref:`Rect2<class_Rect2>` dropcap_margins=Rect2(0, 0, 0, 0), :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`Color<class_Color>` outline_color=Color(0, 0, 0, 0) **)**
 
-Adds a ``[dropcap]`` tag to the tag stack. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
+将 ``[dropcap]`` 标签添加到标签堆栈中。首字下沉是一种装饰性元素，位于段落开头，比其余文本要大。
 
 .. rst-class:: classref-item-separator
 
@@ -1561,7 +1546,7 @@ Adds a ``[dropcap]`` tag to the tag stack. Drop cap (dropped capital) is a decor
 
 void **push_fgcolor** **(** :ref:`Color<class_Color>` fgcolor **)**
 
-Adds a ``[fgcolor]`` tag to the tag stack.
+向标签栈中添加 ``[fgcolor]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1573,9 +1558,9 @@ Adds a ``[fgcolor]`` tag to the tag stack.
 
 void **push_font** **(** :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size=0 **)**
 
-Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration.
+在标签栈中添加 ``[font]`` 标签。在其有效期内覆盖默认字体。
 
-Passing ``0`` to ``font_size`` will use the existing default font size.
+将 ``font_size`` 设置为 ``0`` 会使用默认字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1587,7 +1572,7 @@ Passing ``0`` to ``font_size`` will use the existing default font size.
 
 void **push_font_size** **(** :ref:`int<class_int>` font_size **)**
 
-Adds a ``[font_size]`` tag to the tag stack. Overrides default font size for its duration.
+在标签栈中添加 ``[font_size]`` 标签。在其有效期内覆盖默认字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1599,7 +1584,7 @@ Adds a ``[font_size]`` tag to the tag stack. Overrides default font size for its
 
 void **push_hint** **(** :ref:`String<class_String>` description **)**
 
-Adds a ``[hint]`` tag to the tag stack. Same as BBCode ``[hint=something]{text}[/hint]``.
+向标签栈中添加 ``[hint]`` 标签。类似于 BBCode 的 ``[hint=something]{text}[/hint]``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1611,7 +1596,7 @@ Adds a ``[hint]`` tag to the tag stack. Same as BBCode ``[hint=something]{text}[
 
 void **push_indent** **(** :ref:`int<class_int>` level **)**
 
-Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
+添加一个 ``[indent]`` 标签到标签栈。将 ``level`` 乘以当前 :ref:`tab_size<class_RichTextLabel_property_tab_size>` 以确定新的边距长度。
 
 .. rst-class:: classref-item-separator
 
@@ -1623,7 +1608,7 @@ Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:
 
 void **push_italics** **(** **)**
 
-Adds a ``[font]`` tag with an italics font to the tag stack. This is the same as adding an ``[i]`` tag if not currently in a ``[b]`` tag.
+在标签栈中添加 ``[font]`` 标签，字体为斜体。如果当前不在 ``[b]`` 标签中，则与添加 ``[i]`` 标签相同。
 
 .. rst-class:: classref-item-separator
 
@@ -1635,7 +1620,7 @@ Adds a ``[font]`` tag with an italics font to the tag stack. This is the same as
 
 void **push_language** **(** :ref:`String<class_String>` language **)**
 
-Adds language code used for text shaping algorithm and Open-Type font features.
+添加用于文本塑形算法和 Open-Type 字体功能的语言代码。
 
 .. rst-class:: classref-item-separator
 
@@ -1647,7 +1632,7 @@ Adds language code used for text shaping algorithm and Open-Type font features.
 
 void **push_list** **(** :ref:`int<class_int>` level, :ref:`ListType<enum_RichTextLabel_ListType>` type, :ref:`bool<class_bool>` capitalize, :ref:`String<class_String>` bullet="•" **)**
 
-Adds ``[ol]`` or ``[ul]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
+将 ``[ol]`` 或 ``[ul]`` 标签添加到标签堆栈中。将 ``level`` 乘以当前 :ref:`tab_size<class_RichTextLabel_property_tab_size>` 来确定新的边距长度。
 
 .. rst-class:: classref-item-separator
 
@@ -1659,9 +1644,7 @@ Adds ``[ol]`` or ``[ul]`` tag to the tag stack. Multiplies ``level`` by current 
 
 void **push_meta** **(** :ref:`Variant<class_Variant>` data **)**
 
-Adds a meta tag to the tag stack. Similar to the BBCode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
-
-\ **Note:** Meta tags do nothing by default when clicked. To assign behavior when clicked, connect :ref:`meta_clicked<class_RichTextLabel_signal_meta_clicked>` to a function that is called when the meta tag is clicked.
+在标签栈中添加元标签。类似于 BBCode 的 ``[url=something]{text}[/url]``\ ，但支持非 :ref:`String<class_String>` 元数据类型。
 
 .. rst-class:: classref-item-separator
 
@@ -1673,7 +1656,7 @@ Adds a meta tag to the tag stack. Similar to the BBCode ``[url=something]{text}[
 
 void **push_mono** **(** **)**
 
-Adds a ``[font]`` tag with a monospace font to the tag stack.
+在标签栈中添加 ``[font]`` 标签，该标签为等宽字体。
 
 .. rst-class:: classref-item-separator
 
@@ -1685,7 +1668,7 @@ Adds a ``[font]`` tag with a monospace font to the tag stack.
 
 void **push_normal** **(** **)**
 
-Adds a ``[font]`` tag with a normal font to the tag stack.
+在标签栈中添加具有正常字体的 ``[font]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1697,7 +1680,7 @@ Adds a ``[font]`` tag with a normal font to the tag stack.
 
 void **push_outline_color** **(** :ref:`Color<class_Color>` color **)**
 
-Adds a ``[outline_color]`` tag to the tag stack. Adds text outline for its duration.
+在标签栈中添加 ``[outline_color]`` 标签。在其有效期内为文本添加轮廓。
 
 .. rst-class:: classref-item-separator
 
@@ -1709,7 +1692,7 @@ Adds a ``[outline_color]`` tag to the tag stack. Adds text outline for its durat
 
 void **push_outline_size** **(** :ref:`int<class_int>` outline_size **)**
 
-Adds a ``[outline_size]`` tag to the tag stack. Overrides default text outline size for its duration.
+在标签栈中添加 ``[outline_size]`` 标签。在其有效期内覆盖默认的文本轮廓大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1721,7 +1704,7 @@ Adds a ``[outline_size]`` tag to the tag stack. Overrides default text outline s
 
 void **push_paragraph** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment, :ref:`TextDirection<enum_Control_TextDirection>` base_direction=0, :ref:`String<class_String>` language="", :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` st_parser=0, |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> justification_flags=163, :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops=PackedFloat32Array() **)**
 
-Adds a ``[p]`` tag to the tag stack.
+向标签栈中添加 ``[p]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1733,7 +1716,7 @@ Adds a ``[p]`` tag to the tag stack.
 
 void **push_strikethrough** **(** **)**
 
-Adds a ``[s]`` tag to the tag stack.
+向标签栈中添加 ``[s]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1745,7 +1728,7 @@ Adds a ``[s]`` tag to the tag stack.
 
 void **push_table** **(** :ref:`int<class_int>` columns, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=0, :ref:`int<class_int>` align_to_row=-1 **)**
 
-Adds a ``[table=columns,inline_align]`` tag to the tag stack.
+向标签栈中添加 ``[table=columns,inline_align]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1757,7 +1740,7 @@ Adds a ``[table=columns,inline_align]`` tag to the tag stack.
 
 void **push_underline** **(** **)**
 
-Adds a ``[u]`` tag to the tag stack.
+向标签栈中添加 ``[u]`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1769,9 +1752,9 @@ Adds a ``[u]`` tag to the tag stack.
 
 :ref:`bool<class_bool>` **remove_paragraph** **(** :ref:`int<class_int>` paragraph **)**
 
-Removes a paragraph of content from the label. Returns ``true`` if the paragraph exists.
+从标签中移除一段内容。如果该段落存在，则返回 ``true``\ 。
 
-The ``paragraph`` argument is the index of the paragraph to remove, it can take values in the interval ``[0, get_paragraph_count() - 1]``.
+\ ``paragraph`` 参数是要移除的段落的索引，它可以在 ``[0, get_paragraph_count() - 1]`` 区间内取值。
 
 .. rst-class:: classref-item-separator
 
@@ -1783,7 +1766,7 @@ The ``paragraph`` argument is the index of the paragraph to remove, it can take 
 
 void **scroll_to_line** **(** :ref:`int<class_int>` line **)**
 
-Scrolls the window's top line to match ``line``.
+滚动窗口，让第一行与 ``line`` 匹配。
 
 .. rst-class:: classref-item-separator
 
@@ -1795,7 +1778,7 @@ Scrolls the window's top line to match ``line``.
 
 void **scroll_to_paragraph** **(** :ref:`int<class_int>` paragraph **)**
 
-Scrolls the window's top line to match first line of the ``paragraph``.
+滚动窗口，让第一行与 ``paragraph`` 的第一行匹配。
 
 .. rst-class:: classref-item-separator
 
@@ -1807,7 +1790,7 @@ Scrolls the window's top line to match first line of the ``paragraph``.
 
 void **scroll_to_selection** **(** **)**
 
-Scrolls to the beginning of the current selection.
+滚动到当前选区的开头。
 
 .. rst-class:: classref-item-separator
 
@@ -1819,9 +1802,9 @@ Scrolls to the beginning of the current selection.
 
 void **select_all** **(** **)**
 
-Select all the text.
+全选文本。
 
-If :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is ``false``, no selection will occur.
+如果 :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` 为 ``false``\ ，则不会进行选择。
 
 .. rst-class:: classref-item-separator
 
@@ -1833,7 +1816,7 @@ If :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is `
 
 void **set_cell_border_color** **(** :ref:`Color<class_Color>` color **)**
 
-Sets color of a table cell border.
+设置表格的单元格边框颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1845,7 +1828,7 @@ Sets color of a table cell border.
 
 void **set_cell_padding** **(** :ref:`Rect2<class_Rect2>` padding **)**
 
-Sets inner padding of a table cell.
+设置表格的单元格内边距。
 
 .. rst-class:: classref-item-separator
 
@@ -1857,7 +1840,7 @@ Sets inner padding of a table cell.
 
 void **set_cell_row_background_color** **(** :ref:`Color<class_Color>` odd_row_bg, :ref:`Color<class_Color>` even_row_bg **)**
 
-Sets color of a table cell. Separate colors for alternating rows can be specified.
+设置某个表格单元格的颜色。可以为交替行指定单独的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1869,7 +1852,7 @@ Sets color of a table cell. Separate colors for alternating rows can be specifie
 
 void **set_cell_size_override** **(** :ref:`Vector2<class_Vector2>` min_size, :ref:`Vector2<class_Vector2>` max_size **)**
 
-Sets minimum and maximum size overrides for a table cell.
+设置某个表格单元格的最小和最大尺寸覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -1881,11 +1864,11 @@ Sets minimum and maximum size overrides for a table cell.
 
 void **set_table_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio=1 **)**
 
-Edits the selected column's expansion options. If ``expand`` is ``true``, the column expands in proportion to its expansion ratio versus the other columns' ratios.
+编辑选定列的扩展选项。如果 ``expand`` 为 ``true``\ ，则该列按其扩展比率相对于其他列的比率进行扩展。
 
-For example, 2 columns with ratios 3 and 4 plus 70 pixels in available width would expand 30 and 40 pixels, respectively.
+例如，比率为 3 和 4 的两列，加上 70 像素的可用宽度，将分别扩展 30 和 40 像素。
 
-If ``expand`` is ``false``, the column will not contribute to the total ratio.
+如果 ``expand`` 为 ``false``\ ，则该列将不会对总比率产生影响。
 
 .. rst-class:: classref-item-separator
 
@@ -1897,7 +1880,7 @@ If ``expand`` is ``false``, the column will not contribute to the total ratio.
 
 void **update_image** **(** :ref:`Variant<class_Variant>` key, |bitfield|\<:ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>`\> mask, :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`bool<class_bool>` pad=false, :ref:`String<class_String>` tooltip="", :ref:`bool<class_bool>` size_in_percent=false **)**
 
-Updates the existing images with the key ``key``. Only properties specified by ``mask`` bits are updated. See :ref:`add_image<class_RichTextLabel_method_add_image>`.
+使用键 ``key`` 更新已有图像。仅更新 ``mask`` 位指定的属性。请参阅 :ref:`add_image<class_RichTextLabel_method_add_image>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -1905,8 +1888,8 @@ Updates the existing images with the key ``key``. Only properties specified by `
 
 .. rst-class:: classref-descriptions-group
 
-Theme Property Descriptions
----------------------------
+主题属性说明
+------------
 
 .. _class_RichTextLabel_theme_color_default_color:
 
@@ -1914,7 +1897,7 @@ Theme Property Descriptions
 
 :ref:`Color<class_Color>` **default_color** = ``Color(1, 1, 1, 1)``
 
-The default text color.
+默认文本颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1926,7 +1909,7 @@ The default text color.
 
 :ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
 
-The default tint of text outline.
+文本轮廓的默认色调。
 
 .. rst-class:: classref-item-separator
 
@@ -1938,7 +1921,7 @@ The default tint of text outline.
 
 :ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)``
 
-The color of selected text, used when :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is ``true``. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
+选中文本的颜色，当 :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` 为 ``true`` 时使用。如果等于 ``Color(0, 0, 0, 0)``\ ，则它将被忽略。
 
 .. rst-class:: classref-item-separator
 
@@ -1950,7 +1933,7 @@ The color of selected text, used when :ref:`selection_enabled<class_RichTextLabe
 
 :ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 0)``
 
-The color of the font's shadow.
+字体阴影的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1962,7 +1945,7 @@ The color of the font's shadow.
 
 :ref:`Color<class_Color>` **selection_color** = ``Color(0.1, 0.1, 1, 0.8)``
 
-The color of the selection box.
+选择框的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1974,7 +1957,7 @@ The color of the selection box.
 
 :ref:`Color<class_Color>` **table_border** = ``Color(0, 0, 0, 0)``
 
-The default cell border color.
+默认单元格边框颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1986,7 +1969,7 @@ The default cell border color.
 
 :ref:`Color<class_Color>` **table_even_row_bg** = ``Color(0, 0, 0, 0)``
 
-The default background color for even rows.
+偶数行的默认背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -1998,7 +1981,7 @@ The default background color for even rows.
 
 :ref:`Color<class_Color>` **table_odd_row_bg** = ``Color(0, 0, 0, 0)``
 
-The default background color for odd rows.
+奇数行的默认背景色。
 
 .. rst-class:: classref-item-separator
 
@@ -2010,7 +1993,7 @@ The default background color for odd rows.
 
 :ref:`int<class_int>` **line_separation** = ``0``
 
-The vertical space between lines.
+行之间的垂直空间。
 
 .. rst-class:: classref-item-separator
 
@@ -2022,9 +2005,9 @@ The vertical space between lines.
 
 :ref:`int<class_int>` **outline_size** = ``0``
 
-The size of the text outline.
+文字轮廓的大小。
 
-\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_RichTextLabel_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+\ **注意：**\ 如果使用启用了 :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` 的字体，其 :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` 必须至少设置为 :ref:`outline_size<class_RichTextLabel_theme_constant_outline_size>` 的\ *两倍*\ ，轮廓渲染才能看起来正确。否则，轮廓可能会比预期的更早被切断。
 
 .. rst-class:: classref-item-separator
 
@@ -2036,7 +2019,7 @@ The size of the text outline.
 
 :ref:`int<class_int>` **shadow_offset_x** = ``1``
 
-The horizontal offset of the font's shadow.
+字体阴影的水平偏移量。
 
 .. rst-class:: classref-item-separator
 
@@ -2048,7 +2031,7 @@ The horizontal offset of the font's shadow.
 
 :ref:`int<class_int>` **shadow_offset_y** = ``1``
 
-The vertical offset of the font's shadow.
+字体阴影的垂直偏移。
 
 .. rst-class:: classref-item-separator
 
@@ -2060,7 +2043,7 @@ The vertical offset of the font's shadow.
 
 :ref:`int<class_int>` **shadow_outline_size** = ``1``
 
-The size of the shadow outline.
+阴影轮廓的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2072,7 +2055,7 @@ The size of the shadow outline.
 
 :ref:`int<class_int>` **table_h_separation** = ``3``
 
-The horizontal separation of elements in a table.
+表中元素的水平间距。
 
 .. rst-class:: classref-item-separator
 
@@ -2084,7 +2067,7 @@ The horizontal separation of elements in a table.
 
 :ref:`int<class_int>` **table_v_separation** = ``3``
 
-The vertical separation of elements in a table.
+表中元素的垂直间距。
 
 .. rst-class:: classref-item-separator
 
@@ -2096,7 +2079,7 @@ The vertical separation of elements in a table.
 
 :ref:`int<class_int>` **text_highlight_h_padding** = ``3``
 
-The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
+由 ``[fgcolor]`` 和 ``[bgcolor]`` 标记绘制的框周围的水平填充。这不会影响文本选择的外观。
 
 .. rst-class:: classref-item-separator
 
@@ -2108,7 +2091,7 @@ The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]``
 
 :ref:`int<class_int>` **text_highlight_v_padding** = ``3``
 
-The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
+由 ``[fgcolor]`` 和 ``[bgcolor]`` 标记绘制的框周围的垂直填充。这不会影响文本选择的外观。
 
 .. rst-class:: classref-item-separator
 
@@ -2120,7 +2103,7 @@ The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` t
 
 :ref:`Font<class_Font>` **bold_font**
 
-The font used for bold text.
+用于粗体字的字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2132,7 +2115,7 @@ The font used for bold text.
 
 :ref:`Font<class_Font>` **bold_italics_font**
 
-The font used for bold italics text.
+用于粗斜体文字的字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2144,7 +2127,7 @@ The font used for bold italics text.
 
 :ref:`Font<class_Font>` **italics_font**
 
-The font used for italics text.
+用于斜体字的字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2156,7 +2139,7 @@ The font used for italics text.
 
 :ref:`Font<class_Font>` **mono_font**
 
-The font used for monospace text.
+用于等宽文本的字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2168,7 +2151,7 @@ The font used for monospace text.
 
 :ref:`Font<class_Font>` **normal_font**
 
-The default text font.
+默认的文本字体。
 
 .. rst-class:: classref-item-separator
 
@@ -2180,7 +2163,7 @@ The default text font.
 
 :ref:`int<class_int>` **bold_font_size**
 
-The font size used for bold text.
+用于粗体文本的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2192,7 +2175,7 @@ The font size used for bold text.
 
 :ref:`int<class_int>` **bold_italics_font_size**
 
-The font size used for bold italics text.
+用于粗斜体文本的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2204,7 +2187,7 @@ The font size used for bold italics text.
 
 :ref:`int<class_int>` **italics_font_size**
 
-The font size used for italics text.
+用于斜体文本的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2216,7 +2199,7 @@ The font size used for italics text.
 
 :ref:`int<class_int>` **mono_font_size**
 
-The font size used for monospace text.
+用于等宽文本的字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2228,7 +2211,7 @@ The font size used for monospace text.
 
 :ref:`int<class_int>` **normal_font_size**
 
-The default text font size.
+默认文本字体大小。
 
 .. rst-class:: classref-item-separator
 
@@ -2240,7 +2223,7 @@ The default text font size.
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-The background used when the **RichTextLabel** is focused. The :ref:`focus<class_RichTextLabel_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+该 **RichTextLabel** 处于聚焦状态时使用的背景。\ :ref:`focus<class_RichTextLabel_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` 显示在基础 :ref:`StyleBox<class_StyleBox>` *之上*\ ，所以应该使用部分透明的 :ref:`StyleBox<class_StyleBox>`\ ，确保基础 :ref:`StyleBox<class_StyleBox>` 仍然可见。代表轮廓或下划线的 :ref:`StyleBox<class_StyleBox>` 可以很好地实现这个目的。要禁用聚焦的视觉效果，请指定 :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` 资源。请注意，禁用聚焦的视觉效果会影响使用键盘/手柄进行导航的可用性，所以出于可访问性的原因，不建议这样做。
 
 .. rst-class:: classref-item-separator
 
@@ -2252,12 +2235,12 @@ The background used when the **RichTextLabel** is focused. The :ref:`focus<class
 
 :ref:`StyleBox<class_StyleBox>` **normal**
 
-The normal background for the **RichTextLabel**.
+**RichTextLabel** 的正常背景。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

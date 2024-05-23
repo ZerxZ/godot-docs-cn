@@ -10,21 +10,21 @@
 EditorExportPlatformWindows
 ===========================
 
-**Inherits:** :ref:`EditorExportPlatformPC<class_EditorExportPlatformPC>` **<** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`EditorExportPlatformPC<class_EditorExportPlatformPC>` **<** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Exporter for Windows.
+Windows 导出器。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+教程
+----
 
-- :doc:`Exporting for Windows <../tutorials/export/exporting_for_windows>`
+- :doc:`为 Windows 导出 <../tutorials/export/exporting_for_windows>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -111,8 +111,8 @@ Properties
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_EditorExportPlatformWindows_property_application/company_name:
 
@@ -120,7 +120,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **application/company_name**
 
-Company that produced the application. Required. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+出品该程序的公司。必填。见 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -132,7 +132,7 @@ Company that produced the application. Required. See `StringFileInfo <https://le
 
 :ref:`String<class_String>` **application/console_wrapper_icon**
 
-Console wrapper icon file. If left empty, it will fallback to :ref:`application/icon<class_EditorExportPlatformWindows_property_application/icon>`, then to :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`, and lastly, :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
+控制台封装图标文件。如果留空，则依次回退至 :ref:`application/icon<class_EditorExportPlatformWindows_property_application/icon>`\ 、\ :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`\ 、\ :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -144,7 +144,7 @@ Console wrapper icon file. If left empty, it will fallback to :ref:`application/
 
 :ref:`String<class_String>` **application/copyright**
 
-Copyright notice for the bundle visible to the user. Optional. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+用户可见的捆绑包版权声明。选填。见 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -156,7 +156,7 @@ Copyright notice for the bundle visible to the user. Optional. See `StringFileIn
 
 :ref:`int<class_int>` **application/export_angle**
 
-If set to ``1``, ANGLE libraries are exported with the exported application. If set to ``0``, ANGLE libraries are exported only if :ref:`ProjectSettings.rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>` is set to ``"opengl3_angle"``.
+如果设置为 ``1``\ ，ANGLE 库将随导出的应用程序一起导出。如果设置为 ``0``\ ，则仅当 :ref:`ProjectSettings.rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>` 被设置为 ``"opengl3_angle"`` 时才会导出 ANGLE 库。
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ If set to ``1``, ANGLE libraries are exported with the exported application. If 
 
 :ref:`String<class_String>` **application/file_description**
 
-File description to be presented to users. Required. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+展示给用户的文件说明。必填。见 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -180,7 +180,7 @@ File description to be presented to users. Required. See `StringFileInfo <https:
 
 :ref:`String<class_String>` **application/file_version**
 
-Version number of the file. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+文件的版本号。如果留空，则回退到 :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>`\ 。请参阅 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ Version number of the file. Falls back to :ref:`ProjectSettings.application/conf
 
 :ref:`String<class_String>` **application/icon**
 
-Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`, and then to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
+应用程序图标文件。如果留空，则会回退至 :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`\ ，继而回退至 :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.
 
 :ref:`int<class_int>` **application/icon_interpolation**
 
-Interpolation method used to resize application icon.
+用于调整应用程序图标大小的插值方法。
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ Interpolation method used to resize application icon.
 
 :ref:`bool<class_bool>` **application/modify_resources**
 
-If enabled, icon and metadata of the exported executable is set according to the other ``application/*`` values.
+如果启用，则会根据 ``application/*`` 中的其他值设置导出后可执行文件的图标和元数据。
 
 .. rst-class:: classref-item-separator
 
@@ -228,7 +228,7 @@ If enabled, icon and metadata of the exported executable is set according to the
 
 :ref:`String<class_String>` **application/product_name**
 
-Name of the application. Required. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+应用程序的名称。必填。见 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -240,7 +240,7 @@ Name of the application. Required. See `StringFileInfo <https://learn.microsoft.
 
 :ref:`String<class_String>` **application/product_version**
 
-Application version visible to the user. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+用户可见的应用程序版本。如果留空，则回退到 :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>`\ 。请参阅 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -252,7 +252,7 @@ Application version visible to the user. Falls back to :ref:`ProjectSettings.app
 
 :ref:`String<class_String>` **application/trademarks**
 
-Trademarks and registered trademarks that apply to the file. Optional. See `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__.
+适用于该文件的商标及注册商标。选填。见 `StringFileInfo <https://learn.microsoft.com/en-us/windows/win32/menurc/stringfileinfo-block>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -264,11 +264,11 @@ Trademarks and registered trademarks that apply to the file. Optional. See `Stri
 
 :ref:`String<class_String>` **binary_format/architecture**
 
-Application executable architecture.
+应用程序可执行文件的架构。
 
-Supported architectures: ``x86_32``, ``x86_64``, and ``arm64``.
+支持的架构：\ ``x86_32``\ 、\ ``x86_64``\ 、\ ``arm64``\ 。
 
-Official export templates include ``x86_32`` and ``x86_64`` binaries only.
+官方导出模板中仅包含 ``x86_32`` 和 ``x86_64`` 的二进制文件。
 
 .. rst-class:: classref-item-separator
 
@@ -280,7 +280,7 @@ Official export templates include ``x86_32`` and ``x86_64`` binaries only.
 
 :ref:`bool<class_bool>` **binary_format/embed_pck**
 
-If ``true``, project resources are embedded into the executable.
+如果为 ``true``\ ，则会将项目资源嵌入到可执行文件中。
 
 .. rst-class:: classref-item-separator
 
@@ -292,7 +292,7 @@ If ``true``, project resources are embedded into the executable.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **codesign/custom_options**
 
-Array of the additional command line arguments passed to the code signing tool. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+要传给代码签名工具的额外命令行参数的数据。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -304,7 +304,7 @@ Array of the additional command line arguments passed to the code signing tool. 
 
 :ref:`String<class_String>` **codesign/description**
 
-Description of the signed content. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+对被签名内容的描述。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -316,7 +316,7 @@ Description of the signed content. See `Sign Tool <https://learn.microsoft.com/e
 
 :ref:`int<class_int>` **codesign/digest_algorithm**
 
-Digest algorithm to use for creating signature. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+创建签名所使用的摘要算法。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -328,7 +328,7 @@ Digest algorithm to use for creating signature. See `Sign Tool <https://learn.mi
 
 :ref:`bool<class_bool>` **codesign/enable**
 
-If ``true``, executable signing is enabled.
+如果为 ``true``\ ，则启用可执行文件签名。
 
 .. rst-class:: classref-item-separator
 
@@ -340,9 +340,9 @@ If ``true``, executable signing is enabled.
 
 :ref:`String<class_String>` **codesign/identity**
 
-PKCS #12 certificate file used to sign executable or certificate SHA-1 hash (if :ref:`codesign/identity_type<class_EditorExportPlatformWindows_property_codesign/identity_type>` is set to "Use certificate store"). See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+用于对可执行文件签名的 PKCS #12 证书文件，或证书的 SHA-1 哈希（如果 :ref:`codesign/identity_type<class_EditorExportPlatformWindows_property_codesign/identity_type>` 为 "Use certificate store"）。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
-Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_IDENTITY``.
+可以使用环境变量 ``GODOT_WINDOWS_CODESIGN_IDENTITY`` 覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -354,9 +354,9 @@ Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_IDENTIT
 
 :ref:`int<class_int>` **codesign/identity_type**
 
-Type of identity to use. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+要使用的身份类型。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
-Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE``.
+可以使用环境变量 ``GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE`` 覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -368,9 +368,9 @@ Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_IDENTIT
 
 :ref:`String<class_String>` **codesign/password**
 
-Password for the certificate file used to sign executable. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+用于对可执行文件签名的证书文件的密码。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
-Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_PASSWORD``.
+可以使用环境变量 ``GODOT_WINDOWS_CODESIGN_PASSWORD`` 覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -382,7 +382,7 @@ Can be overridden with the environment variable ``GODOT_WINDOWS_CODESIGN_PASSWOR
 
 :ref:`bool<class_bool>` **codesign/timestamp**
 
-If ``true``, time-stamp is added to the signature. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+如果为 ``true``\ ，则会在签名中添加时间戳。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +394,7 @@ If ``true``, time-stamp is added to the signature. See `Sign Tool <https://learn
 
 :ref:`String<class_String>` **codesign/timestamp_server_url**
 
-URL of the time stamp server. If left empty, the default server is used. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+时间戳服务器的 URL。如果留空则使用默认服务器。见\ `签名工具 <https://learn.microsoft.com/zh-cn/dotnet/framework/tools/signtool-exe>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +406,7 @@ URL of the time stamp server. If left empty, the default server is used. See `Si
 
 :ref:`String<class_String>` **custom_template/debug**
 
-Path to the custom export template. If left empty, default template is used.
+到自定义导出模板的路径。如果留空，则默认模板将被使用。
 
 .. rst-class:: classref-item-separator
 
@@ -418,7 +418,7 @@ Path to the custom export template. If left empty, default template is used.
 
 :ref:`String<class_String>` **custom_template/release**
 
-Path to the custom export template. If left empty, default template is used.
+到自定义导出模板的路径。如果留空，则默认模板将被使用。
 
 .. rst-class:: classref-item-separator
 
@@ -430,7 +430,7 @@ Path to the custom export template. If left empty, default template is used.
 
 :ref:`int<class_int>` **debug/export_console_wrapper**
 
-If ``true``, a console wrapper executable is exported alongside the main executable, which allows running the project with enabled console output.
+如果为 ``true``\ ，则会在导出主可执行文件的同时导出一个控制台封装可执行文件，能够在运行项目时启用控制台输出。
 
 .. rst-class:: classref-item-separator
 
@@ -442,17 +442,17 @@ If ``true``, a console wrapper executable is exported alongside the main executa
 
 :ref:`String<class_String>` **ssh_remote_deploy/cleanup_script**
 
-Script code to execute on the remote host when app is finished.
+应用结束时，要在远程主机上执行的脚本代码。
 
-The following variables can be used in the script:
+可以在脚本中使用以下变量：
 
-- ``{temp_dir}`` - Path of temporary folder on the remote, used to upload app and scripts to.
+- ``{temp_dir}`` - 远程的临时文件夹路径，用于上传应用和脚本。
 
-- ``{archive_name}`` - Name of the ZIP containing uploaded application.
+- ``{archive_name}`` - 包含上传的应用程序的 ZIP 文件的名称。
 
-- ``{exe_name}`` - Name of application executable.
+- ``{exe_name}`` - 应用程序可执行文件的名称。
 
-- ``{cmd_args}`` - Array of the command line argument for the application.
+- ``{cmd_args}`` - 应用程序命令行参数的数组。
 
 .. rst-class:: classref-item-separator
 
@@ -464,7 +464,7 @@ The following variables can be used in the script:
 
 :ref:`bool<class_bool>` **ssh_remote_deploy/enabled**
 
-Enables remote deploy using SSH/SCP.
+启用通过 SSH/SCP 进行远程部署。
 
 .. rst-class:: classref-item-separator
 
@@ -476,7 +476,7 @@ Enables remote deploy using SSH/SCP.
 
 :ref:`String<class_String>` **ssh_remote_deploy/extra_args_scp**
 
-Array of the additional command line arguments passed to the SCP.
+要传给 SCP 的额外命令行参数的数组。
 
 .. rst-class:: classref-item-separator
 
@@ -488,7 +488,7 @@ Array of the additional command line arguments passed to the SCP.
 
 :ref:`String<class_String>` **ssh_remote_deploy/extra_args_ssh**
 
-Array of the additional command line arguments passed to the SSH.
+要传给 SSH 的额外命令行参数的数组。
 
 .. rst-class:: classref-item-separator
 
@@ -500,7 +500,7 @@ Array of the additional command line arguments passed to the SSH.
 
 :ref:`String<class_String>` **ssh_remote_deploy/host**
 
-Remote host SSH user name and address, in ``user@address`` format.
+远程主机 SSH 用户名及地址，格式为 ``用户名@地址``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -512,7 +512,7 @@ Remote host SSH user name and address, in ``user@address`` format.
 
 :ref:`String<class_String>` **ssh_remote_deploy/port**
 
-Remote host SSH port number.
+远程主机 SSH 端口号。
 
 .. rst-class:: classref-item-separator
 
@@ -524,17 +524,17 @@ Remote host SSH port number.
 
 :ref:`String<class_String>` **ssh_remote_deploy/run_script**
 
-Script code to execute on the remote host when running the app.
+运行应用时，要在远程主机上执行的脚本代码。
 
-The following variables can be used in the script:
+可以在脚本中使用以下变量：
 
-- ``{temp_dir}`` - Path of temporary folder on the remote, used to upload app and scripts to.
+- ``{temp_dir}`` - 远程的临时文件夹路径，用于上传应用和脚本。
 
-- ``{archive_name}`` - Name of the ZIP containing uploaded application.
+- ``{archive_name}`` - 包含上传的应用程序的 ZIP 文件的名称。
 
-- ``{exe_name}`` - Name of application executable.
+- ``{exe_name}`` - 应用程序可执行文件的名称。
 
-- ``{cmd_args}`` - Array of the command line argument for the application.
+- ``{cmd_args}`` - 应用程序命令行参数的数组。
 
 .. rst-class:: classref-item-separator
 
@@ -546,7 +546,7 @@ The following variables can be used in the script:
 
 :ref:`bool<class_bool>` **texture_format/bptc**
 
-If ``true``, project textures are exported in the BPTC format.
+如果为 ``true``\ ，则项目中的纹理在导出时使用 BPTC 格式。
 
 .. rst-class:: classref-item-separator
 
@@ -558,7 +558,7 @@ If ``true``, project textures are exported in the BPTC format.
 
 :ref:`bool<class_bool>` **texture_format/etc**
 
-If ``true``, project textures are exported in the ETC format.
+如果为 ``true``\ ，则项目中的纹理在导出时使用 ETC 格式。
 
 .. rst-class:: classref-item-separator
 
@@ -570,7 +570,7 @@ If ``true``, project textures are exported in the ETC format.
 
 :ref:`bool<class_bool>` **texture_format/etc2**
 
-If ``true``, project textures are exported in the ETC2 format.
+如果为 ``true``\ ，则项目中的纹理在导出时使用 ETC2 格式。
 
 .. rst-class:: classref-item-separator
 
@@ -582,12 +582,12 @@ If ``true``, project textures are exported in the ETC2 format.
 
 :ref:`bool<class_bool>` **texture_format/s3tc**
 
-If ``true``, project textures are exported in the S3TC format.
+如果为 ``true``\ ，则项目中的纹理在导出时使用 S3TC 格式。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

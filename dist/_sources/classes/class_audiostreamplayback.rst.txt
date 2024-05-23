@@ -10,30 +10,30 @@
 AudioStreamPlayback
 ===================
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamPlaybackPolyphonic<class_AudioStreamPlaybackPolyphonic>`, :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
+**派生：** :ref:`AudioStreamPlaybackPolyphonic<class_AudioStreamPlaybackPolyphonic>`, :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
 
-Meta class for playing back audio.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioStream>` and :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` for usage.
+播放音频的元类。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+可以播放、循环播放、暂停滚动播放音频。有关用法，请参阅 :ref:`AudioStream<class_AudioStream>` 和 :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>`\ 。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- `音频生成器演示 <https://godotengine.org/asset-library/asset/526>`__
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -62,8 +62,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_AudioStreamPlayback_private_method__get_loop_count:
 
@@ -71,7 +71,9 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_loop_count** **(** **)** |virtual| |const|
 
-Overridable method. Should return how many times this audio stream has looped. Most built-in playbacks always return ``0``.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -83,7 +85,9 @@ Overridable method. Should return how many times this audio stream has looped. M
 
 :ref:`float<class_float>` **_get_playback_position** **(** **)** |virtual| |const|
 
-Overridable method. Should return the current progress along the audio stream, in seconds.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -95,7 +99,9 @@ Overridable method. Should return the current progress along the audio stream, i
 
 :ref:`bool<class_bool>` **_is_playing** **(** **)** |virtual| |const|
 
-Overridable method. Should return ``true`` if this playback is active and playing its audio stream.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -107,9 +113,9 @@ Overridable method. Should return ``true`` if this playback is active and playin
 
 :ref:`int<class_int>` **_mix** **(** AudioFrame* buffer, :ref:`float<class_float>` rate_scale, :ref:`int<class_int>` frames **)** |virtual|
 
-Override this method to customize how the audio stream is mixed. This method is called even if the playback is not active.
+.. container:: contribute
 
-\ **Note:** It is not useful to override this method in GDScript or C#. Only GDExtension can take advantage of it.
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -121,7 +127,9 @@ Override this method to customize how the audio stream is mixed. This method is 
 
 void **_seek** **(** :ref:`float<class_float>` position **)** |virtual|
 
-Override this method to customize what happens when seeking this audio stream at the given ``position``, such as by calling :ref:`AudioStreamPlayer.seek<class_AudioStreamPlayer_method_seek>`.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -133,7 +141,9 @@ Override this method to customize what happens when seeking this audio stream at
 
 void **_start** **(** :ref:`float<class_float>` from_pos **)** |virtual|
 
-Override this method to customize what happens when the playback starts at the given position, such as by calling :ref:`AudioStreamPlayer.play<class_AudioStreamPlayer_method_play>`.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -145,7 +155,9 @@ Override this method to customize what happens when the playback starts at the g
 
 void **_stop** **(** **)** |virtual|
 
-Override this method to customize what happens when the playback is stopped, such as by calling :ref:`AudioStreamPlayer.stop<class_AudioStreamPlayer_method_stop>`.
+.. container:: contribute
+
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -157,12 +169,14 @@ Override this method to customize what happens when the playback is stopped, suc
 
 void **_tag_used_streams** **(** **)** |virtual|
 
-Overridable method. Called whenever the audio stream is mixed if the playback is active and :ref:`AudioServer.set_enable_tagging_used_audio_streams<class_AudioServer_method_set_enable_tagging_used_audio_streams>` has been set to ``true``. Editor plugins may use this method to "tag" the current position along the audio stream and display it in a preview.
+.. container:: contribute
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

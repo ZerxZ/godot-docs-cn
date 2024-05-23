@@ -10,36 +10,36 @@
 SpotLight3D
 ===========
 
-**Inherits:** :ref:`Light3D<class_Light3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Light3D<class_Light3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A spotlight, such as a reflector spotlight or a lantern.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-A Spotlight is a type of :ref:`Light3D<class_Light3D>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light3D<class_Light3D>`.
-
-\ **Note:** When using the Mobile rendering method, only 8 spot lights can be displayed on each mesh resource. Attempting to display more than 8 spot lights on a single mesh resource will result in spot lights flickering in and out as the camera moves. When using the Compatibility rendering method, only 8 spot lights can be displayed on each mesh resource by default, but this can be increased by adjusting :ref:`ProjectSettings.rendering/limits/opengl/max_lights_per_object<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>`.
-
-\ **Note:** When using the Mobile or Compatibility rendering methods, spot lights will only correctly affect meshes whose visibility AABB intersects with the light's AABB. If using a shader to deform the mesh in a way that makes it go outside its AABB, :ref:`GeometryInstance3D.extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>` must be increased on the mesh. Otherwise, the light may not be visible on the mesh.
+聚光灯，如反射器聚光灯或灯笼。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
+聚光灯是一种 :ref:`Light3D<class_Light3D>` 节点，向指定的方向发出圆锥形的灯光。光线会随距离增大而衰减。衰减可以通过修改 :ref:`Light3D<class_Light3D>` 的能量、半径、衰减参数进行控制。
 
-- :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
+\ **注意：**\ 使用 Mobile 渲染方法时，单个网格资源只能用到 8 盏聚光灯。尝试对单个网格资源使用超过 8 盏聚光灯会导致聚光灯在相机移动时产生闪烁。使用 Compatibility 渲染方法时，单个网格资源默认只能用到 8 盏聚光灯，但可以通过调整 :ref:`ProjectSettings.rendering/limits/opengl/max_lights_per_object<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>` 增加。
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+\ **注意：**\ 使用 Mobile 或 Compatibility 渲染方法时，聚光灯只能影响可见 AABB 与灯光 AABB 相交的网格。如果使用了着色器将网格进行了变形，超出了 AABB 的范围，则必须将该网格的 :ref:`GeometryInstance3D.extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>` 增大。否则灯光在该网格上可能不可见。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`3D 灯光与阴影 <../tutorials/3d/lights_and_shadows>`
+
+- :doc:`伪造全局光照 <../tutorials/3d/global_illumination/faking_global_illumination>`
+
+- `第三人称射击演示 <https://godotengine.org/asset-library/asset/678>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -64,8 +64,8 @@ Properties
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_SpotLight3D_property_spot_angle:
 
@@ -78,9 +78,9 @@ Property Descriptions
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The spotlight's angle in degrees.
+聚光灯的角度，单位为度。
 
-\ **Note:** :ref:`spot_angle<class_SpotLight3D_property_spot_angle>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+\ **注意：**\ :ref:`spot_angle<class_SpotLight3D_property_spot_angle>` 不受 :ref:`Node3D.scale<class_Node3D_property_scale>` 的影响（无论是该灯光的缩放还是其父节点的缩放）。
 
 .. rst-class:: classref-item-separator
 
@@ -97,7 +97,7 @@ The spotlight's angle in degrees.
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`.
+聚光灯的\ *角度*\ 衰减曲线。另见 :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -114,9 +114,9 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The spotlight's light energy (drop-off) attenuation curve. A number of presets are available in the **Inspector** by right-clicking the curve. Zero and negative values are allowed but can produce unusual effects. See also :ref:`spot_angle_attenuation<class_SpotLight3D_property_spot_angle_attenuation>`.
+聚光灯的光照能量（下降）衰减曲线。在\ **检查器**\ 中右键单击曲线会提供一些预设。允许零和负数，但可能产生异常效果。另见 :ref:`spot_angle_attenuation<class_SpotLight3D_property_spot_angle_attenuation>`\ 。
 
-\ **Note:** Very high :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` values (typically above 10) can impact performance negatively if the light is made to use a larger :ref:`spot_range<class_SpotLight3D_property_spot_range>` to compensate. This is because culling opportunities will become less common and shading costs will be increased (as the light will cover more pixels on screen while resulting in the same amount of brightness). To improve performance, use the lowest :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` value possible for the visuals you're trying to achieve.
+\ **注意：**\ 如果 :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` 值很高（一般大于 10），将灯光的 :ref:`spot_range<class_SpotLight3D_property_spot_range>` 调大去进行补偿会对性能产生负面影响。这是因为剔除的机会会变少，从而增加在着色上的消耗（因为在亮度相同的前提下，灯光会覆盖屏幕上的更多像素）。为了提升性能，请使用尽可能低的 :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` 值来达成想要的显示效果。
 
 .. rst-class:: classref-item-separator
 
@@ -133,14 +133,14 @@ The spotlight's light energy (drop-off) attenuation curve. A number of presets a
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The maximal range that can be reached by the spotlight. Note that the effectively lit area may appear to be smaller depending on the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use. No matter the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use, the light will never reach anything outside this range.
+聚光灯可以达到的最大范围。请注意，根据使用的 :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`\ ，有效照明区域可能看起来更小。无论 :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` 为何值，光都不会到达此范围之外的任何东西。
 
-\ **Note:** :ref:`spot_range<class_SpotLight3D_property_spot_range>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+\ **注意：**\ :ref:`spot_angle<class_SpotLight3D_property_spot_angle>` 不受 :ref:`Node3D.scale<class_Node3D_property_scale>` 的影响（无论是该灯光的缩放还是其父节点的缩放）。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

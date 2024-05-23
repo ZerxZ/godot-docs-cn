@@ -10,22 +10,22 @@
 MainLoop
 ========
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`SceneTree<class_SceneTree>`
+**派生：** :ref:`SceneTree<class_SceneTree>`
 
-Abstract base class for the game's main loop.
+游戏主循环的抽象基类。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-**MainLoop** is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own **MainLoop** subclass instead of the scene tree.
+**MainLoop** 是 Godot 项目中游戏循环的抽象基类。它被 :ref:`SceneTree<class_SceneTree>` 继承，\ :ref:`SceneTree<class_SceneTree>` 是 Godot 项目中使用的默认游戏循环的实现，不过也可以编写和使用自己的 **MainLoop** 子类，来代替场景树。
 
-Upon the application start, a **MainLoop** implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a **MainLoop** :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``) or the "Main Loop Type" project setting is overwritten.
+在应用程序启动时，必须向操作系统提供一个 **MainLoop** 实现；否则，应用程序将退出。这会自动发生（并创建一个 :ref:`SceneTree<class_SceneTree>`\ ），除非从命令行提供一个 **MainLoop** :ref:`Script<class_Script>`\ （例如 ``godot -s my_loop.gd``\ ，或“主循环类型（Main Loop Type）”项目设置被覆盖。
 
-Here is an example script implementing a simple **MainLoop**:
+有一个实现简单 **MainLoop** 的示例脚本：
 
 
 .. tabs::
@@ -43,7 +43,7 @@ Here is an example script implementing a simple **MainLoop**:
     
     func _process(delta):
         time_elapsed += delta
-        # Return true to end the main loop.
+        # 返回 true 结束主循环。
         return Input.get_mouse_button_mask() != 0 || Input.is_key_pressed(KEY_ESCAPE)
     
     func _finalize():
@@ -54,7 +54,6 @@ Here is an example script implementing a simple **MainLoop**:
 
     using Godot;
     
-    [GlobalClass]
     public partial class CustomMainLoop : MainLoop
     {
         private double _timeElapsed = 0;
@@ -68,7 +67,7 @@ Here is an example script implementing a simple **MainLoop**:
         public override bool _Process(double delta)
         {
             _timeElapsed += delta;
-            // Return true to end the main loop.
+            // 返回 true 结束主循环。
             return Input.GetMouseButtonMask() != 0 || Input.IsKeyPressed(Key.Escape);
         }
     
@@ -83,8 +82,8 @@ Here is an example script implementing a simple **MainLoop**:
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -105,8 +104,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_MainLoop_signal_on_request_permissions_result:
 
@@ -114,7 +113,7 @@ Signals
 
 **on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
 
-Emitted when a user responds to a permission request.
+当用户对权限请求作出反应时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -122,8 +121,8 @@ Emitted when a user responds to a permission request.
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+常量
+----
 
 .. _class_MainLoop_constant_NOTIFICATION_OS_MEMORY_WARNING:
 
@@ -131,9 +130,9 @@ Constants
 
 **NOTIFICATION_OS_MEMORY_WARNING** = ``2009``
 
-Notification received from the OS when the application is exceeding its allocated memory.
+当应用程序超过其分配的内存时，从操作系统收到的通知。
 
-Specific to the iOS platform.
+仅限 iOS 平台。
 
 .. _class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED:
 
@@ -141,7 +140,7 @@ Specific to the iOS platform.
 
 **NOTIFICATION_TRANSLATION_CHANGED** = ``2010``
 
-Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+当翻译可能发生变化时收到的通知。会在用户改变区域设置时触发。可以用来响应语言的变化，例如实时改变 UI 字符串。可配合内置的翻译支持使用，比如 :ref:`Object.tr<class_Object_method_tr>`\ 。
 
 .. _class_MainLoop_constant_NOTIFICATION_WM_ABOUT:
 
@@ -149,9 +148,9 @@ Notification received when translations may have changed. Can be triggered by th
 
 **NOTIFICATION_WM_ABOUT** = ``2011``
 
-Notification received from the OS when a request for "About" information is sent.
+当发出“关于”信息请求时，从操作系统收到的通知。
 
-Specific to the macOS platform.
+仅限 macOS 平台。
 
 .. _class_MainLoop_constant_NOTIFICATION_CRASH:
 
@@ -159,9 +158,9 @@ Specific to the macOS platform.
 
 **NOTIFICATION_CRASH** = ``2012``
 
-Notification received from Godot's crash handler when the engine is about to crash.
+当引擎即将崩溃时，从Godot的崩溃处理程序收到的通知。
 
-Implemented on desktop platforms if the crash handler is enabled.
+如果崩溃处理程序被启用，这只会在桌面平台上实现。
 
 .. _class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE:
 
@@ -169,9 +168,9 @@ Implemented on desktop platforms if the crash handler is enabled.
 
 **NOTIFICATION_OS_IME_UPDATE** = ``2013``
 
-Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
+当输入法引擎发生更新时，从操作系统收到的通知（例如，IME 光标位置或组成字符串的变化）。
 
-Specific to the macOS platform.
+仅限 macOS 平台。
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_RESUMED:
 
@@ -179,9 +178,9 @@ Specific to the macOS platform.
 
 **NOTIFICATION_APPLICATION_RESUMED** = ``2014``
 
-Notification received from the OS when the application is resumed.
+当应用程序恢复时，从操作系统收到的通知。
 
-Specific to the Android platform.
+仅限 Android 平台。
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_PAUSED:
 
@@ -189,9 +188,9 @@ Specific to the Android platform.
 
 **NOTIFICATION_APPLICATION_PAUSED** = ``2015``
 
-Notification received from the OS when the application is paused.
+当应用程序暂停时，从操作系统收到的通知。
 
-Specific to the Android platform.
+仅限 Android 平台。
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_IN:
 
@@ -199,9 +198,9 @@ Specific to the Android platform.
 
 **NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016``
 
-Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
+当应用程序获得焦点时从操作系统收到的通知，即焦点将从操作系统桌面或第三方应用程序更改为 Godot 实例的任何一个打开窗口时。
 
-Implemented on desktop platforms.
+在桌面平台上被实现。
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_OUT:
 
@@ -209,9 +208,9 @@ Implemented on desktop platforms.
 
 **NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017``
 
-Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
+当应用程序失去焦点时从操作系统收到通知，即焦点将从 Godot 实例的任何一个打开窗口，更改为操作系统桌面或第三方应用程序时。
 
-Implemented on desktop platforms.
+在桌面平台上被实现。
 
 .. _class_MainLoop_constant_NOTIFICATION_TEXT_SERVER_CHANGED:
 
@@ -219,7 +218,7 @@ Implemented on desktop platforms.
 
 **NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018``
 
-Notification received when text server is changed.
+文本服务器被更改时，收到的通知。
 
 .. rst-class:: classref-section-separator
 
@@ -227,8 +226,8 @@ Notification received when text server is changed.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_MainLoop_private_method__finalize:
 
@@ -236,7 +235,7 @@ Method Descriptions
 
 void **_finalize** **(** **)** |virtual|
 
-Called before the program exits.
+在程序退出前调用。
 
 .. rst-class:: classref-item-separator
 
@@ -248,7 +247,7 @@ Called before the program exits.
 
 void **_initialize** **(** **)** |virtual|
 
-Called once during initialization.
+在初始化时调用一次。
 
 .. rst-class:: classref-item-separator
 
@@ -260,9 +259,9 @@ Called once during initialization.
 
 :ref:`bool<class_bool>` **_physics_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
-Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_private_method__physics_process>`.
+在每个物理帧中调用，并将自上一个物理帧以来的时间作为参数（\ ``delta``\ ，以秒为单位）。相当于\ :ref:`Node._physics_process<class_Node_private_method__physics_process>`\ 。
 
-If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
+如果实现，该方法必须返回一个布尔值。\ ``true`` 会结束主循环，而 ``false`` 会让它继续下一帧。
 
 .. rst-class:: classref-item-separator
 
@@ -274,14 +273,14 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 :ref:`bool<class_bool>` **_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
-Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_private_method__process>`.
+使用自上一个进程帧以来的时间作为参数（单位为秒），在每个进程（空闲）帧上被调用。相当于 :ref:`Node._process<class_Node_private_method__process>`\ 。
 
-If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
+如果被实现，该方法必须返回一个布尔值。\ ``true`` 会结束主循环，而 ``false`` 会让它继续到下一帧。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

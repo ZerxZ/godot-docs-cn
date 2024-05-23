@@ -10,23 +10,23 @@
 ResourceUID
 ===========
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-A singleton that manages the unique identifiers of all resources within a project.
+管理项目中所有资源的唯一标识符的单例。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-Resource UIDs (Unique IDentifiers) allow the engine to keep references between resources intact, even if files can renamed or moved. They can be accessed with ``uid://``.
+资源 UID（Unique IDentifier，唯一标识符）可以使引擎保持资源之间引用关系的完整性，即使文件发生重命名或移动。可以使用 ``uid://`` 访问。
 
-\ **ResourceUID** keeps track of all registered resource UIDs in a project, generates new UIDs, and converts between their string and integer representations.
+\ **ResourceUID** 能够跟踪项目中所有已注册的资源 UID，生成新的 UID，也能够将标识符在字符串表示和整数表示之间进行转换。
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -55,8 +55,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+常量
+----
 
 .. _class_ResourceUID_constant_INVALID_ID:
 
@@ -64,9 +64,9 @@ Constants
 
 **INVALID_ID** = ``-1``
 
-The value to use for an invalid UID, for example if the resource could not be loaded.
+用于无效 UID 的值，例如无法加载的资源。
 
-Its text representation is ``uid://<invalid>``.
+对应的文本表示为 ``uid://<invalid>``\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -74,8 +74,8 @@ Its text representation is ``uid://<invalid>``.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_ResourceUID_method_add_id:
 
@@ -83,9 +83,9 @@ Method Descriptions
 
 void **add_id** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` path **)**
 
-Adds a new UID value which is mapped to the given resource path.
+添加一个新的 UID 值，将其映射到给定的资源路径。
 
-Fails with an error if the UID already exists, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`set_id<class_ResourceUID_method_set_id>` instead.
+如果 UID 已经存在，则会返回错误，因此请务必先使用 :ref:`has_id<class_ResourceUID_method_has_id>` 进行检查，或者改用 :ref:`set_id<class_ResourceUID_method_set_id>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -97,9 +97,9 @@ Fails with an error if the UID already exists, so be sure to check :ref:`has_id<
 
 :ref:`int<class_int>` **create_id** **(** **)**
 
-Generates a random resource UID which is guaranteed to be unique within the list of currently loaded UIDs.
+生成随机的资源 UID，该 UID 在当前加载的 UID 列表中保证唯一。
 
-In order for this UID to be registered, you must call :ref:`add_id<class_ResourceUID_method_add_id>` or :ref:`set_id<class_ResourceUID_method_set_id>`.
+要注册这个 UID，你必须调用 :ref:`add_id<class_ResourceUID_method_add_id>` 或 :ref:`set_id<class_ResourceUID_method_set_id>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -111,9 +111,9 @@ In order for this UID to be registered, you must call :ref:`add_id<class_Resourc
 
 :ref:`String<class_String>` **get_id_path** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns the path that the given UID value refers to.
+返回给定 UID 值引用的路径。
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
+如果 UID 不存在则失败并报错，因此请务必使用 :ref:`has_id<class_ResourceUID_method_has_id>` 事先检查。
 
 .. rst-class:: classref-item-separator
 
@@ -125,7 +125,7 @@ Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<
 
 :ref:`bool<class_bool>` **has_id** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns whether the given UID value is known to the cache.
+返回给定的 UID 值是否为缓存所知。
 
 .. rst-class:: classref-item-separator
 
@@ -137,7 +137,7 @@ Returns whether the given UID value is known to the cache.
 
 :ref:`String<class_String>` **id_to_text** **(** :ref:`int<class_int>` id **)** |const|
 
-Converts the given UID to a ``uid://`` string value.
+将给定的 UID 转换为 ``uid://`` 字符串值。
 
 .. rst-class:: classref-item-separator
 
@@ -149,9 +149,9 @@ Converts the given UID to a ``uid://`` string value.
 
 void **remove_id** **(** :ref:`int<class_int>` id **)**
 
-Removes a loaded UID value from the cache.
+从缓存中删除一个已加载的 UID 值。
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
+如果 UID 不存在则失败并报错，因此请务必提前使用 :ref:`has_id<class_ResourceUID_method_has_id>` 检查。
 
 .. rst-class:: classref-item-separator
 
@@ -163,9 +163,9 @@ Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<
 
 void **set_id** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` path **)**
 
-Updates the resource path of an existing UID.
+更新现有 UID 的资源路径。
 
-Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`add_id<class_ResourceUID_method_add_id>` instead.
+如果 UID 不存在，则失败并出现错误，因此请务必提前使用 :ref:`has_id<class_ResourceUID_method_has_id>` 检查，或者改用 :ref:`add_id<class_ResourceUID_method_add_id>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -177,12 +177,12 @@ Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<
 
 :ref:`int<class_int>` **text_to_id** **(** :ref:`String<class_String>` text_id **)** |const|
 
-Extracts the UID value from the given ``uid://`` string.
+从给定的 ``uid://`` 字符串中提取 UID 值。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

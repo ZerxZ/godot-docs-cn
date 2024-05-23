@@ -10,34 +10,34 @@
 AudioServer
 ===========
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-Server interface for low-level audio access.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-**AudioServer** is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+低级音频访问的服务器接口。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+**AudioServer** 是用于音频访问的底层服务器接口。它负责创建样本数据（可播放的音频）以及通过语音接口进行播放。
 
-- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`__
+.. rst-class:: classref-introduction-group
 
-- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+教程
+----
 
-- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
+- :doc:`音频总线 <../tutorials/audio/audio_buses>`
+
+- `音频设备切换演示 <https://godotengine.org/asset-library/asset/525>`__
+
+- `音频麦克风录音演示 <https://godotengine.org/asset-library/asset/527>`__
+
+- `音频频谱演示 <https://godotengine.org/asset-library/asset/528>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -54,8 +54,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -146,8 +146,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
+信号
+----
 
 .. _class_AudioServer_signal_bus_layout_changed:
 
@@ -155,7 +155,7 @@ Signals
 
 **bus_layout_changed** **(** **)**
 
-Emitted when an audio bus is added, deleted, or moved.
+添加、修改、删除音频总线时发出。
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Emitted when an audio bus is added, deleted, or moved.
 
 **bus_renamed** **(** :ref:`int<class_int>` bus_index, :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` new_name **)**
 
-Emitted when the audio bus at ``bus_index`` is renamed from ``old_name`` to ``new_name``.
+当索引为 ``bus_index`` 的音频总线的名称从 ``old_name`` 更改为 ``new_name`` 时发出。
 
 .. rst-class:: classref-section-separator
 
@@ -175,8 +175,8 @@ Emitted when the audio bus at ``bus_index`` is renamed from ``old_name`` to ``ne
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_AudioServer_SpeakerMode:
 
@@ -190,7 +190,7 @@ enum **SpeakerMode**:
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **SPEAKER_MODE_STEREO** = ``0``
 
-Two or fewer speakers were detected.
+检测到两个或更少的扬声器。
 
 .. _class_AudioServer_constant_SPEAKER_SURROUND_31:
 
@@ -198,7 +198,7 @@ Two or fewer speakers were detected.
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **SPEAKER_SURROUND_31** = ``1``
 
-A 3.1 channel surround setup was detected.
+检测到 3.1 声道环绕声设置。
 
 .. _class_AudioServer_constant_SPEAKER_SURROUND_51:
 
@@ -206,7 +206,7 @@ A 3.1 channel surround setup was detected.
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **SPEAKER_SURROUND_51** = ``2``
 
-A 5.1 channel surround setup was detected.
+检测到 5.1 声道环绕声设置。
 
 .. _class_AudioServer_constant_SPEAKER_SURROUND_71:
 
@@ -214,7 +214,7 @@ A 5.1 channel surround setup was detected.
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **SPEAKER_SURROUND_71** = ``3``
 
-A 7.1 channel surround setup was detected.
+检测到 7.1 声道环绕声设置。
 
 .. rst-class:: classref-section-separator
 
@@ -222,8 +222,8 @@ A 7.1 channel surround setup was detected.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_AudioServer_property_bus_count:
 
@@ -236,7 +236,7 @@ Property Descriptions
 - void **set_bus_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_bus_count** **(** **)**
 
-Number of available audio buses.
+可用音频总线的数量。
 
 .. rst-class:: classref-item-separator
 
@@ -253,9 +253,9 @@ Number of available audio buses.
 - void **set_input_device** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_input_device** **(** **)**
 
-Name of the current device for audio input (see :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+当前音频输入设备的名称（见 :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>`\ ）。在具有多个音频输入（例如模拟、USB、HDMI 音频）的系统中，可用于选择音频输入设备。为 ``"Default"`` 时会从系统默认的音频输入录制音频。如果设置了无效的设备名称，该值会被恢复为 ``"Default"``\ 。
 
-\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
+\ **注意：**\ :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` 必须为 ``true`` 音频输入才能正常工作。另请参阅该设置项的描述，了解权限和操作系统隐私设置相关的说明。
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +272,7 @@ Name of the current device for audio input (see :ref:`get_input_device_list<clas
 - void **set_output_device** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_output_device** **(** **)**
 
-Name of the current device for audio output (see :ref:`get_output_device_list<class_AudioServer_method_get_output_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+当前音频输出设备的名称（见 :ref:`get_output_device_list<class_AudioServer_method_get_output_device_list>`\ ）。在具有多个音频输出（例如模拟、USB、HDMI 音频）的系统中，可用于选择音频输出设备。为 ``"Default"`` 时会从系统默认的音频输出播放音频。如果设置了无效的设备名称，该值会被恢复为 ``"Default"``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -289,7 +289,7 @@ Name of the current device for audio output (see :ref:`get_output_device_list<cl
 - void **set_playback_speed_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_playback_speed_scale** **(** **)**
 
-Scales the rate at which audio is played (i.e. setting it to ``0.5`` will make the audio be played at half its speed).
+音频播放的缩放速率（即将其设置为 ``0.5`` 将使音频以其一半的速度播放）。
 
 .. rst-class:: classref-section-separator
 
@@ -297,8 +297,8 @@ Scales the rate at which audio is played (i.e. setting it to ``0.5`` will make t
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_AudioServer_method_add_bus:
 
@@ -306,7 +306,7 @@ Method Descriptions
 
 void **add_bus** **(** :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a bus at ``at_position``.
+在 ``at_position`` 处添加一条总线。
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +318,7 @@ Adds a bus at ``at_position``.
 
 void **add_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**
 
-Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at ``at_position``.
+为在 ``at_position`` 处索引为 ``bus_idx`` 的总线添加 :ref:`AudioEffect<class_AudioEffect>` 效果。
 
 .. rst-class:: classref-item-separator
 
@@ -330,7 +330,7 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 :ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout** **(** **)** |const|
 
-Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available buses and effects.
+使用可用的总线和效果来生成 :ref:`AudioBusLayout<class_AudioBusLayout>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -342,7 +342,7 @@ Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available bus
 
 :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-Returns the number of channels of the bus at index ``bus_idx``.
+返回索引为 ``bus_idx`` 的总线的通道数。
 
 .. rst-class:: classref-item-separator
 
@@ -354,7 +354,7 @@ Returns the number of channels of the bus at index ``bus_idx``.
 
 :ref:`AudioEffect<class_AudioEffect>` **get_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**
 
-Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in bus ``bus_idx``.
+返回索引为 ``bus_idx`` 的总线中位于 ``effect_idx`` 的 :ref:`AudioEffect<class_AudioEffect>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -366,7 +366,7 @@ Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in 
 
 :ref:`int<class_int>` **get_bus_effect_count** **(** :ref:`int<class_int>` bus_idx **)**
 
-Returns the number of effects on the bus at ``bus_idx``.
+返回索引为 ``bus_idx`` 的总线上的效果数。
 
 .. rst-class:: classref-item-separator
 
@@ -378,7 +378,7 @@ Returns the number of effects on the bus at ``bus_idx``.
 
 :ref:`AudioEffectInstance<class_AudioEffectInstance>` **get_bus_effect_instance** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` channel=0 **)**
 
-Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to the given bus and effect indices (and optionally channel).
+返回分配给给定总线和效果索引（以及可选的通道）的\ :ref:`AudioEffectInstance<class_AudioEffectInstance>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -390,7 +390,7 @@ Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to th
 
 :ref:`int<class_int>` **get_bus_index** **(** :ref:`StringName<class_StringName>` bus_name **)** |const|
 
-Returns the index of the bus with the name ``bus_name``. Returns ``-1`` if no bus with the specified name exist.
+返回名称为 ``bus_name`` 的总线的索引。如果不存在指定名称的总线，则返回 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -402,7 +402,7 @@ Returns the index of the bus with the name ``bus_name``. Returns ``-1`` if no bu
 
 :ref:`String<class_String>` **get_bus_name** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-Returns the name of the bus with the index ``bus_idx``.
+返回索引为 ``bus_idx`` 的总线的名称。
 
 .. rst-class:: classref-item-separator
 
@@ -414,7 +414,7 @@ Returns the name of the bus with the index ``bus_idx``.
 
 :ref:`float<class_float>` **get_bus_peak_volume_left_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|
 
-Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel index ``channel``.
+返回总线索引为 ``bus_idx`` 且通道索引为 ``channel`` 处的左扬声器的峰值音量。
 
 .. rst-class:: classref-item-separator
 
@@ -426,7 +426,7 @@ Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel
 
 :ref:`float<class_float>` **get_bus_peak_volume_right_db** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel **)** |const|
 
-Returns the peak volume of the right speaker at bus index ``bus_idx`` and channel index ``channel``.
+返回总线索引为 ``bus_idx`` 且通道索引为 ``channel`` 处的右扬声器的峰值音量。
 
 .. rst-class:: classref-item-separator
 
@@ -438,7 +438,7 @@ Returns the peak volume of the right speaker at bus index ``bus_idx`` and channe
 
 :ref:`StringName<class_StringName>` **get_bus_send** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-Returns the name of the bus that the bus at index ``bus_idx`` sends to.
+返回索引为 ``bus_idx`` 的总线的发送目标总线的名称。
 
 .. rst-class:: classref-item-separator
 
@@ -450,7 +450,7 @@ Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
 :ref:`float<class_float>` **get_bus_volume_db** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-Returns the volume of the bus at index ``bus_idx`` in dB.
+返回索引为 ``bus_idx`` 的总线的音量，单位为 dB。
 
 .. rst-class:: classref-item-separator
 
@@ -462,9 +462,9 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_input_device_list** **(** **)**
 
-Returns the names of all audio input devices detected on the system.
+返回系统中检测到的所有音频输入设备的名称。
 
-\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
+\ **注意：**\ :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` 必须为 ``true`` 音频输入才能正常工作。另请参阅该设置的说明，了解与权限和操作系统隐私设置相关的注意事项。
 
 .. rst-class:: classref-item-separator
 
@@ -476,7 +476,7 @@ Returns the names of all audio input devices detected on the system.
 
 :ref:`float<class_float>` **get_mix_rate** **(** **)** |const|
 
-Returns the sample rate at the output of the **AudioServer**.
+返回 **AudioServer** 输出的采样率。
 
 .. rst-class:: classref-item-separator
 
@@ -488,7 +488,7 @@ Returns the sample rate at the output of the **AudioServer**.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_output_device_list** **(** **)**
 
-Returns the names of all audio output devices detected on the system.
+返回系统中检测到的所有音频输出设备的名称。
 
 .. rst-class:: classref-item-separator
 
@@ -500,9 +500,9 @@ Returns the names of all audio output devices detected on the system.
 
 :ref:`float<class_float>` **get_output_latency** **(** **)** |const|
 
-Returns the audio driver's effective output latency. This is based on :ref:`ProjectSettings.audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>`, but the exact returned value will differ depending on the operating system and audio driver.
+返回音频驱动的实际输出延迟。基于 :ref:`ProjectSettings.audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>`\ ，但实际的返回值取决于操作系统和音频驱动。
 
-\ **Note:** This can be expensive; it is not recommended to call :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` every frame.
+\ **注意：**\ 可能开销较大；不建议每帧都调用 :ref:`get_output_latency<class_AudioServer_method_get_output_latency>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -514,7 +514,7 @@ Returns the audio driver's effective output latency. This is based on :ref:`Proj
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode** **(** **)** |const|
 
-Returns the speaker configuration.
+返回扬声器的配置。
 
 .. rst-class:: classref-item-separator
 
@@ -526,7 +526,7 @@ Returns the speaker configuration.
 
 :ref:`float<class_float>` **get_time_since_last_mix** **(** **)** |const|
 
-Returns the relative time since the last mix occurred.
+返回自上次混合以来的相对时间。
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +538,7 @@ Returns the relative time since the last mix occurred.
 
 :ref:`float<class_float>` **get_time_to_next_mix** **(** **)** |const|
 
-Returns the relative time until the next mix occurs.
+返回下一次混合之前的相对时间。
 
 .. rst-class:: classref-item-separator
 
@@ -550,7 +550,7 @@ Returns the relative time until the next mix occurs.
 
 :ref:`bool<class_bool>` **is_bus_bypassing_effects** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-If ``true``, the bus at index ``bus_idx`` is bypassing effects.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线会绕过效果。
 
 .. rst-class:: classref-item-separator
 
@@ -562,7 +562,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 :ref:`bool<class_bool>` **is_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)** |const|
 
-If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线上启用了索引为 ``effect_idx`` 的效果。
 
 .. rst-class:: classref-item-separator
 
@@ -574,7 +574,7 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 :ref:`bool<class_bool>` **is_bus_mute** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-If ``true``, the bus at index ``bus_idx`` is muted.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线已静音。
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +586,7 @@ If ``true``, the bus at index ``bus_idx`` is muted.
 
 :ref:`bool<class_bool>` **is_bus_solo** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-If ``true``, the bus at index ``bus_idx`` is in solo mode.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线处于独奏模式。
 
 .. rst-class:: classref-item-separator
 
@@ -598,9 +598,9 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 void **lock** **(** **)**
 
-Locks the audio driver's main loop.
+锁定音频驱动程序的主循环。
 
-\ **Note:** Remember to unlock it afterwards.
+\ **注意：**\ 之后记得解锁。
 
 .. rst-class:: classref-item-separator
 
@@ -612,7 +612,7 @@ Locks the audio driver's main loop.
 
 void **move_bus** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` to_index **)**
 
-Moves the bus from index ``index`` to index ``to_index``.
+将总线从索引 ``index`` 移动到索引 ``to_index``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -624,7 +624,7 @@ Moves the bus from index ``index`` to index ``to_index``.
 
 void **remove_bus** **(** :ref:`int<class_int>` index **)**
 
-Removes the bus at index ``index``.
+移除索引 ``index`` 处的总线。
 
 .. rst-class:: classref-item-separator
 
@@ -636,7 +636,7 @@ Removes the bus at index ``index``.
 
 void **remove_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx **)**
 
-Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
+将索引 ``effect_idx`` 的效果从索引 ``bus_idx`` 的总线上移除。
 
 .. rst-class:: classref-item-separator
 
@@ -648,7 +648,7 @@ Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 
 void **set_bus_bypass_effects** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, the bus at index ``bus_idx`` is bypassing effects.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线会绕过效果。
 
 .. rst-class:: classref-item-separator
 
@@ -660,7 +660,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 void **set_bus_effect_enabled** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线上启用了索引为 ``effect_idx`` 的效果。
 
 .. rst-class:: classref-item-separator
 
@@ -672,7 +672,7 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 void **set_bus_layout** **(** :ref:`AudioBusLayout<class_AudioBusLayout>` bus_layout **)**
 
-Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
+覆盖当前使用的 :ref:`AudioBusLayout<class_AudioBusLayout>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -684,7 +684,7 @@ Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
 
 void **set_bus_mute** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, the bus at index ``bus_idx`` is muted.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线已静音。
 
 .. rst-class:: classref-item-separator
 
@@ -696,7 +696,7 @@ If ``true``, the bus at index ``bus_idx`` is muted.
 
 void **set_bus_name** **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_String>` name **)**
 
-Sets the name of the bus at index ``bus_idx`` to ``name``.
+将索引为 ``bus_idx`` 的总线的名称设为 ``name``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -708,7 +708,7 @@ Sets the name of the bus at index ``bus_idx`` to ``name``.
 
 void **set_bus_send** **(** :ref:`int<class_int>` bus_idx, :ref:`StringName<class_StringName>` send **)**
 
-Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
+将索引为 ``bus_idx`` 处的总线输出连接到名为 ``send`` 的总线。
 
 .. rst-class:: classref-item-separator
 
@@ -720,7 +720,7 @@ Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
 void **set_bus_solo** **(** :ref:`int<class_int>` bus_idx, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, the bus at index ``bus_idx`` is in solo mode.
+如果为 ``true``\ ，则索引为 ``bus_idx`` 的总线处于独奏模式。
 
 .. rst-class:: classref-item-separator
 
@@ -732,7 +732,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 void **set_bus_volume_db** **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**
 
-Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
+将索引为 ``bus_idx`` 的总线的音量设为 ``volume_db``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -744,9 +744,9 @@ Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
 void **set_enable_tagging_used_audio_streams** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` will call :ref:`AudioStreamPlayback._tag_used_streams<class_AudioStreamPlayback_private_method__tag_used_streams>` every mix step.
+.. container:: contribute
 
-\ **Note:** This is enabled by default in the editor, as it is used by editor plugins for the audio stream previews.
+	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -758,7 +758,7 @@ If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStream
 
 void **swap_bus_effects** **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**
 
-Swaps the position of two effects in bus ``bus_idx``.
+在索引为 ``bus_idx`` 的总线中交换两个效果的位置。
 
 .. rst-class:: classref-item-separator
 
@@ -770,12 +770,12 @@ Swaps the position of two effects in bus ``bus_idx``.
 
 void **unlock** **(** **)**
 
-Unlocks the audio driver's main loop. (After locking it, you should always unlock it.)
+解锁音频驱动程序的主循环。（锁定后，你始终需要手动解锁它。）
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

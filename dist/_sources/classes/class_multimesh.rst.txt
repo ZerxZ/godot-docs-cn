@@ -10,42 +10,42 @@
 MultiMesh
 =========
 
-**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides high-performance drawing of a mesh multiple times using GPU instancing.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-MultiMesh provides low-level mesh instancing. Drawing thousands of :ref:`MeshInstance3D<class_MeshInstance3D>` nodes can be slow, since each object is submitted to the GPU then drawn individually.
-
-MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead.
-
-As a drawback, if the instances are too far away from each other, performance may be reduced as every single instance will always render (they are spatially indexed as one, for the whole object).
-
-Since instances may have any behavior, the AABB used for visibility must be provided by the user.
-
-\ **Note:** A MultiMesh is a single object, therefore the same maximum lights per object restriction applies. This means, that once the maximum lights are consumed by one or more instances, the rest of the MultiMesh instances will **not** receive any lighting.
-
-\ **Note:** Blend Shapes will be ignored if used in a MultiMesh.
+使用 GPU 实例提供单一网格的高性能多次绘制。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Using MultiMeshInstance <../tutorials/3d/using_multi_mesh_instance>`
+MultiMesh 提供了低级别的网格实例化功能。绘制数以千计的 :ref:`MeshInstance3D<class_MeshInstance3D>` 节点可能会很慢，因为每个对象都要提交给 GPU 然后单独绘制。
 
-- :doc:`Optimization using MultiMeshes <../tutorials/performance/using_multimesh>`
+MultiMesh 要快得多，因为它可以通过一次绘制调用来绘制成千上万的实例，从而减少 API 的开销。
 
-- :doc:`Animating thousands of fish with MultiMeshInstance <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
+缺点是，如果实例之间的距离太远，性能可能会降低，因为每一个实例总是会被渲染（对于整个对象，它们在空间上被索引为一个）。
+
+由于实例可能具有任何行为，因此用于可见性的 AABB 必须由用户提供。
+
+\ **注意：**\ MultiMesh 是单个对象，因此适用相同的对每个对象的最大灯光限制。这意味着，一旦最大灯光被一个或多个实例消耗了，其余的 MultiMesh 实例将\ **不会**\ 接收任何光照。
+
+\ **注意：**\ 在 MultiMesh 中使用的 Blend Shape 将被忽略。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`使用 MultiMeshInstance <../tutorials/3d/using_multi_mesh_instance>`
+
+- :doc:`使用 MultiMesh 进行优化 <../tutorials/performance/using_multimesh>`
+
+- :doc:`使用 MultiMeshInstance 动画化数千条鱼 <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -76,8 +76,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -108,8 +108,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_MultiMesh_TransformFormat:
 
@@ -123,7 +123,7 @@ enum **TransformFormat**:
 
 :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **TRANSFORM_2D** = ``0``
 
-Use this when using 2D transforms.
+使用 2D 变换时使用此选项。
 
 .. _class_MultiMesh_constant_TRANSFORM_3D:
 
@@ -131,7 +131,7 @@ Use this when using 2D transforms.
 
 :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **TRANSFORM_3D** = ``1``
 
-Use this when using 3D transforms.
+使用 3D 变换时使用此选项。
 
 .. rst-class:: classref-section-separator
 
@@ -139,8 +139,8 @@ Use this when using 3D transforms.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_MultiMesh_property_buffer:
 
@@ -155,7 +155,7 @@ Property Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Property Descriptions
 
 :ref:`PackedColorArray<class_PackedColorArray>` **color_array**
 
-See :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`.
+见 :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -179,7 +179,7 @@ See :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`.
 
 :ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array**
 
-See :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`.
+见 :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -196,9 +196,9 @@ See :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_da
 - void **set_instance_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_instance_count** **(** **)**
 
-Number of instances that will get drawn. This clears and (re)sizes the buffers. Setting data format or flags afterwards will have no effect.
+将被绘制的实例数。这会清除缓冲区，并（重新）调整其大小。之后设置的数据格式或标志将无效。
 
-By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
+默认情况下，所有实例都会被绘制，但可以使用 :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>` 来限制它。
 
 .. rst-class:: classref-item-separator
 
@@ -215,9 +215,9 @@ By default, all instances are drawn but you can limit this with :ref:`visible_in
 - void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
 - :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
 
-:ref:`Mesh<class_Mesh>` resource to be instanced.
+要被实例化的 :ref:`Mesh<class_Mesh>` 资源。
 
-The looks of the individual instances can be modified using :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` and :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`.
+各个实例的外观可以通过 :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` 和 :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` 来修改。
 
 .. rst-class:: classref-item-separator
 
@@ -229,7 +229,7 @@ The looks of the individual instances can be modified using :ref:`set_instance_c
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array**
 
-See :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`.
+见 :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +241,7 @@ See :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transfor
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array**
 
-See :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`.
+见 :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -258,7 +258,7 @@ See :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`
 - void **set_transform_format** **(** :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` value **)**
 - :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **get_transform_format** **(** **)**
 
-Format of transform used to transform mesh, either 2D or 3D.
+用于变换网格的变换格式，可以是 2D 或 3D。
 
 .. rst-class:: classref-item-separator
 
@@ -275,7 +275,7 @@ Format of transform used to transform mesh, either 2D or 3D.
 - void **set_use_colors** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_colors** **(** **)**
 
-If ``true``, the **MultiMesh** will use color data (see :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`). Can only be set when :ref:`instance_count<class_MultiMesh_property_instance_count>` is ``0`` or less. This means that you need to call this method before setting the instance count, or temporarily reset it to ``0``.
+如果为 ``true``\ ，则该 **MultiMesh** 将使用颜色数据（参见 :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`\ ）。只有在 :ref:`instance_count<class_MultiMesh_property_instance_count>` 为 ``0`` 或更少时才能被设置。这意味着需要在设置实例计数之前调用该方法，或者暂时将实例计数重置为 ``0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -292,7 +292,7 @@ If ``true``, the **MultiMesh** will use color data (see :ref:`set_instance_color
 - void **set_use_custom_data** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_custom_data** **(** **)**
 
-If ``true``, the **MultiMesh** will use custom data (see :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`). Can only be set when :ref:`instance_count<class_MultiMesh_property_instance_count>` is ``0`` or less. This means that you need to call this method before setting the instance count, or temporarily reset it to ``0``.
+如果为 ``true``\ ，则该 **MultiMesh** 将使用自定义数据（参见 :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`\ ）。只有在 :ref:`instance_count<class_MultiMesh_property_instance_count>` 为 ``0`` 或更少时才能被设置。这意味着需要在设置实例计数之前调用该方法，或者暂时将实例计数重置为 ``0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -309,7 +309,7 @@ If ``true``, the **MultiMesh** will use custom data (see :ref:`set_instance_cust
 - void **set_visible_instance_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_visible_instance_count** **(** **)**
 
-Limits the number of instances drawn, -1 draws all instances. Changing this does not change the sizes of the buffers.
+限制绘制的实例数量，-1 会绘制所有的实例。改变这一点并不改变缓冲区的大小。
 
 .. rst-class:: classref-section-separator
 
@@ -317,8 +317,8 @@ Limits the number of instances drawn, -1 draws all instances. Changing this does
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_MultiMesh_method_get_aabb:
 
@@ -326,7 +326,7 @@ Method Descriptions
 
 :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the visibility axis-aligned bounding box in local space.
+返回局部空间中的可见性轴对齐包围框。
 
 .. rst-class:: classref-item-separator
 
@@ -338,7 +338,7 @@ Returns the visibility axis-aligned bounding box in local space.
 
 :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** |const|
 
-Gets a specific instance's color multiplier.
+获取特定实例的颜色倍数。
 
 .. rst-class:: classref-item-separator
 
@@ -350,7 +350,7 @@ Gets a specific instance's color multiplier.
 
 :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** |const|
 
-Returns the custom data that has been set for a specific instance.
+返回已经为特定实例设置的自定义数据。
 
 .. rst-class:: classref-item-separator
 
@@ -362,7 +362,7 @@ Returns the custom data that has been set for a specific instance.
 
 :ref:`Transform3D<class_Transform3D>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** |const|
 
-Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
+返回指定实例的 :ref:`Transform3D<class_Transform3D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -374,7 +374,7 @@ Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
 
 :ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d** **(** :ref:`int<class_int>` instance **)** |const|
 
-Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
+返回指定实例的 :ref:`Transform2D<class_Transform2D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -386,9 +386,9 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors. This allows for different color tinting per instance.
+设置一个特定实例的颜色，通过\ *乘以*\ 该网格的现有顶点颜色来设置。这允许每个实例使用不同的颜色。
 
-For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the **MultiMesh** and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material. If you intend to set an absolute color instead of tinting, make sure the material's albedo color is set to pure white (``Color(1, 1, 1)``).
+要使颜色生效，请确保该 **MultiMesh** 上的 :ref:`use_colors<class_MultiMesh_property_use_colors>` 为 ``true``\ ，并且材质上的 :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` 为 ``true``\ 。如果打算设置绝对颜色而不是着色，请确保材质的反照率颜色被设置为纯白色 (``Color(1, 1, 1)``)。
 
 .. rst-class:: classref-item-separator
 
@@ -400,11 +400,11 @@ For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_prope
 
 void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 floating point numbers.
+为特定的实例设置自定义数据。虽然使用了 :ref:`Color<class_Color>`\ ，但它只是一个容纳 4 个浮点数的容器。
 
-For the custom data to be used, ensure that :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>` is ``true``.
+对于要使用的自定义数据，请确保 :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>` 为 ``true``\ 。
 
-This custom instance data has to be manually accessed in your custom shader using ``INSTANCE_CUSTOM``.
+必须使用 ``INSTANCE_CUSTOM`` 在自定义着色器中，手动访问该自定义实例数据。
 
 .. rst-class:: classref-item-separator
 
@@ -416,7 +416,7 @@ This custom instance data has to be manually accessed in your custom shader usin
 
 void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform3D<class_Transform3D>` transform **)**
 
-Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
+为指定实例设置 :ref:`Transform3D<class_Transform3D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -428,12 +428,12 @@ Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
 
 void **set_instance_transform_2d** **(** :ref:`int<class_int>` instance, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Sets the :ref:`Transform2D<class_Transform2D>` for a specific instance.
+为指定实例设置 :ref:`Transform2D<class_Transform2D>`\ 。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

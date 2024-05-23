@@ -10,21 +10,21 @@
 TextParagraph
 =============
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Holds a paragraph of text.
+持有一个文本段落。
 
 .. rst-class:: classref-introduction-group
 
-Description
------------
+描述
+----
 
-Abstraction over :ref:`TextServer<class_TextServer>` for handling a single paragraph of text.
+对 :ref:`TextServer<class_TextServer>` 的抽象，用于处理单个文本段落。
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -55,8 +55,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -133,8 +133,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_TextParagraph_property_alignment:
 
@@ -147,7 +147,7 @@ Property Descriptions
 - void **set_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_alignment** **(** **)**
 
-Paragraph horizontal alignment.
+段落的水平对齐。
 
 .. rst-class:: classref-item-separator
 
@@ -164,7 +164,7 @@ Paragraph horizontal alignment.
 - void **set_break_flags** **(** |bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\> value **)**
 - |bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\> **get_break_flags** **(** **)**
 
-Line breaking rules. For more info see :ref:`TextServer<class_TextServer>`.
+断行规则。详情见 :ref:`TextServer<class_TextServer>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -181,7 +181,7 @@ Line breaking rules. For more info see :ref:`TextServer<class_TextServer>`.
 - void **set_custom_punctuation** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_custom_punctuation** **(** **)**
 
-Custom punctuation character list, used for word breaking. If set to empty string, server defaults are used.
+自定义标点字符列表，用于分词。如果设置为空字符串，则使用服务器的默认值。
 
 .. rst-class:: classref-item-separator
 
@@ -198,7 +198,7 @@ Custom punctuation character list, used for word breaking. If set to empty strin
 - void **set_direction** **(** :ref:`Direction<enum_TextServer_Direction>` value **)**
 - :ref:`Direction<enum_TextServer_Direction>` **get_direction** **(** **)**
 
-Text writing direction.
+文本书写方向。
 
 .. rst-class:: classref-item-separator
 
@@ -215,7 +215,7 @@ Text writing direction.
 - void **set_justification_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
 - |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_justification_flags** **(** **)**
 
-Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
+行两端对齐规则。详见 :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -232,7 +232,7 @@ Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextSe
 - void **set_max_lines_visible** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_max_lines_visible** **(** **)**
 
-Limits the lines of text shown.
+限制显示文本的行数。
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +249,7 @@ Limits the lines of text shown.
 - void **set_orientation** **(** :ref:`Orientation<enum_TextServer_Orientation>` value **)**
 - :ref:`Orientation<enum_TextServer_Orientation>` **get_orientation** **(** **)**
 
-Text orientation.
+文本朝向。
 
 .. rst-class:: classref-item-separator
 
@@ -266,7 +266,7 @@ Text orientation.
 - void **set_preserve_control** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_preserve_control** **(** **)**
 
-If set to ``true`` text will display control characters.
+如果设置为 ``true``\ ，则将在文本中显示控制字符。
 
 .. rst-class:: classref-item-separator
 
@@ -283,7 +283,7 @@ If set to ``true`` text will display control characters.
 - void **set_preserve_invalid** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_preserve_invalid** **(** **)**
 
-If set to ``true`` text will display invalid characters.
+如果设置为 ``true``\ ，则将在文本中显示无效字符。
 
 .. rst-class:: classref-item-separator
 
@@ -300,7 +300,7 @@ If set to ``true`` text will display invalid characters.
 - void **set_text_overrun_behavior** **(** :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` value **)**
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** **)**
 
-Sets the clipping behavior when the text exceeds the paragraph's set width. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+设置当文本超过段落的设置宽度时的裁剪行为。有关所有模式的描述，请参阅 :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -317,7 +317,7 @@ Sets the clipping behavior when the text exceeds the paragraph's set width. See 
 - void **set_width** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_width** **(** **)**
 
-Paragraph width.
+段落宽度。
 
 .. rst-class:: classref-section-separator
 
@@ -325,8 +325,8 @@ Paragraph width.
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_TextParagraph_method_add_object:
 
@@ -334,7 +334,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **add_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**
 
-Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
+向文本缓冲中添加内联对象，\ ``key`` 必须唯一。在文本中，对象使用 ``length`` 个对象替换字符表示。
 
 .. rst-class:: classref-item-separator
 
@@ -346,7 +346,7 @@ Adds inline object to the text buffer, ``key`` must be unique. In the text, obje
 
 :ref:`bool<class_bool>` **add_string** **(** :ref:`String<class_String>` text, :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**
 
-Adds text span and font to draw it.
+添加文本区间以及用于绘制的字体。
 
 .. rst-class:: classref-item-separator
 
@@ -358,7 +358,7 @@ Adds text span and font to draw it.
 
 void **clear** **(** **)**
 
-Clears text paragraph (removes text and inline objects).
+清空文本段落（移除文本和内联对象）。
 
 .. rst-class:: classref-item-separator
 
@@ -370,7 +370,7 @@ Clears text paragraph (removes text and inline objects).
 
 void **clear_dropcap** **(** **)**
 
-Removes dropcap.
+移除首字下沉。
 
 .. rst-class:: classref-item-separator
 
@@ -382,7 +382,7 @@ Removes dropcap.
 
 void **draw** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`Color<class_Color>` dc_color=Color(1, 1, 1, 1) **)** |const|
 
-Draw all lines of the text and drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制文本中所有行和首字下沉，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +394,7 @@ Draw all lines of the text and drop cap into a canvas item at a given position, 
 
 void **draw_dropcap** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
 
-Draw drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制首字下沉，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +406,7 @@ Draw drop cap into a canvas item at a given position, with ``color``. ``pos`` sp
 
 void **draw_dropcap_outline** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
 
-Draw drop cap outline into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制首字下沉的轮廓，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -418,7 +418,7 @@ Draw drop cap outline into a canvas item at a given position, with ``color``. ``
 
 void **draw_line** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` line, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
 
-Draw single line of text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制一行文本，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -430,7 +430,7 @@ Draw single line of text into a canvas item at a given position, with ``color``.
 
 void **draw_line_outline** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` line, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
 
-Draw outline of the single line of text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制一行文本的轮廓，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -442,7 +442,7 @@ Draw outline of the single line of text into a canvas item at a given position, 
 
 void **draw_outline** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`Color<class_Color>` dc_color=Color(1, 1, 1, 1) **)** |const|
 
-Draw outlines of all lines of the text and drop cap into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
+在画布项中的给定位置绘制文本中所有行和首字下沉的轮廓，颜色为 ``color``\ 。\ ``pos`` 指定的是边界框的左上角。
 
 .. rst-class:: classref-item-separator
 
@@ -454,7 +454,7 @@ Draw outlines of all lines of the text and drop cap into a canvas item at a give
 
 :ref:`int<class_int>` **get_dropcap_lines** **(** **)** |const|
 
-Returns number of lines used by dropcap.
+返回首字下沉使用的行数。
 
 .. rst-class:: classref-item-separator
 
@@ -466,7 +466,7 @@ Returns number of lines used by dropcap.
 
 :ref:`RID<class_RID>` **get_dropcap_rid** **(** **)** |const|
 
-Returns drop cap text buffer RID.
+返回首字下沉文本缓冲 RID。
 
 .. rst-class:: classref-item-separator
 
@@ -478,7 +478,7 @@ Returns drop cap text buffer RID.
 
 :ref:`Vector2<class_Vector2>` **get_dropcap_size** **(** **)** |const|
 
-Returns drop cap bounding box size.
+返回首字下沉边界框大小。
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +490,7 @@ Returns drop cap bounding box size.
 
 :ref:`float<class_float>` **get_line_ascent** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns the text line ascent (number of pixels above the baseline for horizontal layout or to the left of baseline for vertical).
+返回文本行上高（对于水平布局，为基线上方的像素数；或对于垂直布局，基线左侧的像素数）。
 
 .. rst-class:: classref-item-separator
 
@@ -502,7 +502,7 @@ Returns the text line ascent (number of pixels above the baseline for horizontal
 
 :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
-Returns number of lines in the paragraph.
+返回段落中的行数。
 
 .. rst-class:: classref-item-separator
 
@@ -514,7 +514,7 @@ Returns number of lines in the paragraph.
 
 :ref:`float<class_float>` **get_line_descent** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns the text line descent (number of pixels below the baseline for horizontal layout or to the right of baseline for vertical).
+返回文本行下深（对于水平布局，为基线下方的像素数；或对于垂直布局，基线右侧的像素数）。
 
 .. rst-class:: classref-item-separator
 
@@ -526,7 +526,7 @@ Returns the text line descent (number of pixels below the baseline for horizonta
 
 :ref:`Rect2<class_Rect2>` **get_line_object_rect** **(** :ref:`int<class_int>` line, :ref:`Variant<class_Variant>` key **)** |const|
 
-Returns bounding rectangle of the inline object.
+返回内联对象的边界矩形。
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +538,7 @@ Returns bounding rectangle of the inline object.
 
 :ref:`Array<class_Array>` **get_line_objects** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns array of inline objects in the line.
+返回某行中内联对象的数组。
 
 .. rst-class:: classref-item-separator
 
@@ -550,7 +550,7 @@ Returns array of inline objects in the line.
 
 :ref:`Vector2i<class_Vector2i>` **get_line_range** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns character range of the line.
+返回某行中的字符范围。
 
 .. rst-class:: classref-item-separator
 
@@ -562,7 +562,7 @@ Returns character range of the line.
 
 :ref:`RID<class_RID>` **get_line_rid** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns TextServer line buffer RID.
+返回 TextServer 行缓冲 RID。
 
 .. rst-class:: classref-item-separator
 
@@ -574,7 +574,7 @@ Returns TextServer line buffer RID.
 
 :ref:`Vector2<class_Vector2>` **get_line_size** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns size of the bounding box of the line of text.
+返回文本行边界框的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +586,7 @@ Returns size of the bounding box of the line of text.
 
 :ref:`float<class_float>` **get_line_underline_position** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns pixel offset of the underline below the baseline.
+返回基线下方下划线的像素偏移。
 
 .. rst-class:: classref-item-separator
 
@@ -598,7 +598,7 @@ Returns pixel offset of the underline below the baseline.
 
 :ref:`float<class_float>` **get_line_underline_thickness** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns thickness of the underline.
+返回下划线的粗细度。
 
 .. rst-class:: classref-item-separator
 
@@ -610,7 +610,7 @@ Returns thickness of the underline.
 
 :ref:`float<class_float>` **get_line_width** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns width (for horizontal layout) or height (for vertical) of the line of text.
+返回文本行的宽度（水平排版）或高度（垂直排版）。
 
 .. rst-class:: classref-item-separator
 
@@ -622,7 +622,7 @@ Returns width (for horizontal layout) or height (for vertical) of the line of te
 
 :ref:`Vector2<class_Vector2>` **get_non_wrapped_size** **(** **)** |const|
 
-Returns the size of the bounding box of the paragraph, without line breaks.
+返回段落边界框的大小，不带换行符。
 
 .. rst-class:: classref-item-separator
 
@@ -634,7 +634,7 @@ Returns the size of the bounding box of the paragraph, without line breaks.
 
 :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
-Returns TextServer full string buffer RID.
+返回 TextServer 完整字符串缓冲区的 RID。
 
 .. rst-class:: classref-item-separator
 
@@ -646,7 +646,7 @@ Returns TextServer full string buffer RID.
 
 :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
 
-Returns the size of the bounding box of the paragraph.
+返回段落边界框的大小。
 
 .. rst-class:: classref-item-separator
 
@@ -658,7 +658,7 @@ Returns the size of the bounding box of the paragraph.
 
 :ref:`int<class_int>` **hit_test** **(** :ref:`Vector2<class_Vector2>` coords **)** |const|
 
-Returns caret character offset at the specified coordinates. This function always returns a valid position.
+返回指定坐标处的文本光标的偏移量。该函数始终返回一个有效位置。
 
 .. rst-class:: classref-item-separator
 
@@ -670,7 +670,7 @@ Returns caret character offset at the specified coordinates. This function alway
 
 :ref:`bool<class_bool>` **resize_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**
 
-Sets new size and alignment of embedded object.
+设置嵌入对象的新大小和对齐方式。
 
 .. rst-class:: classref-item-separator
 
@@ -682,9 +682,9 @@ Sets new size and alignment of embedded object.
 
 void **set_bidi_override** **(** :ref:`Array<class_Array>` override **)**
 
-Overrides BiDi for the structured text.
+覆盖用于结构化文本的 BiDi。
 
-Override ranges should cover full source text without overlaps. BiDi algorithm will be used on each range separately.
+覆盖范围应覆盖完整的源文本而没有重叠。BiDi 算法将分别被用于每个范围。
 
 .. rst-class:: classref-item-separator
 
@@ -696,7 +696,7 @@ Override ranges should cover full source text without overlaps. BiDi algorithm w
 
 :ref:`bool<class_bool>` **set_dropcap** **(** :ref:`String<class_String>` text, :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size, :ref:`Rect2<class_Rect2>` dropcap_margins=Rect2(0, 0, 0, 0), :ref:`String<class_String>` language="" **)**
 
-Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
+设置首字下沉，会覆盖之前设置的首字下沉。首字下沉是段落开头的装饰元素，比文本的其余部分大。
 
 .. rst-class:: classref-item-separator
 
@@ -708,12 +708,12 @@ Sets drop cap, overrides previously set drop cap. Drop cap (dropped capital) is 
 
 void **tab_align** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)**
 
-Aligns paragraph to the given tab-stops.
+将段落与给定的制表位对齐。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

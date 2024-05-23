@@ -10,30 +10,30 @@
 OS
 ==
 
-**Inherits:** :ref:`Object<class_Object>`
+**继承：** :ref:`Object<class_Object>`
 
-Provides access to common operating system functionalities.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-This class wraps the most common functionalities for communicating with the host operating system, such as the video driver, delays, environment variables, execution of binaries, command line, etc.
-
-\ **Note:** In Godot 4, **OS** functions related to window management were moved to the :ref:`DisplayServer<class_DisplayServer>` singleton.
+提供对常见操作系统功能的访问。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
+这个类封装了与主机操作系统通信的最常见功能，例如视频驱动、延时、环境变量、二进制文件的执行、命令行等。
+
+\ **注意：**\ 在 Godot 4 中，窗口管理相关的 **OS** 函数已移动至 :ref:`DisplayServer<class_DisplayServer>` 单例。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- `操作系统测试演示 <https://godotengine.org/asset-library/asset/677>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -48,8 +48,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -190,8 +190,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_OS_RenderingDriver:
 
@@ -205,7 +205,7 @@ enum **RenderingDriver**:
 
 :ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_VULKAN** = ``0``
 
-The Vulkan rendering driver. It requires Vulkan 1.0 support and automatically uses features from Vulkan 1.1 and 1.2 if available.
+Vulkan 渲染驱动。需要支持 Vulkan 1.0，而 Vulkan 1.1 和 1.2 的功能则会在支持时自动使用。
 
 .. _class_OS_constant_RENDERING_DRIVER_OPENGL3:
 
@@ -213,7 +213,7 @@ The Vulkan rendering driver. It requires Vulkan 1.0 support and automatically us
 
 :ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_OPENGL3** = ``1``
 
-The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
+OpenGL 3 渲染驱动。在桌面平台上使用 OpenGL 3.3 核心配置，在移动设备上使用 OpenGL ES 3.0，在 Web 上使用 WebGL 2.0。
 
 .. rst-class:: classref-item-separator
 
@@ -231,7 +231,7 @@ enum **SystemDir**:
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_DESKTOP** = ``0``
 
-Desktop directory path.
+桌面目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_DCIM:
 
@@ -239,7 +239,7 @@ Desktop directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_DCIM** = ``1``
 
-DCIM (Digital Camera Images) directory path.
+DCIM（数码相机图像）目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_DOCUMENTS:
 
@@ -247,7 +247,7 @@ DCIM (Digital Camera Images) directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_DOCUMENTS** = ``2``
 
-Documents directory path.
+文档目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_DOWNLOADS:
 
@@ -255,7 +255,7 @@ Documents directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_DOWNLOADS** = ``3``
 
-Downloads directory path.
+下载目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_MOVIES:
 
@@ -263,7 +263,7 @@ Downloads directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_MOVIES** = ``4``
 
-Movies directory path.
+影片目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_MUSIC:
 
@@ -271,7 +271,7 @@ Movies directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_MUSIC** = ``5``
 
-Music directory path.
+音乐目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_PICTURES:
 
@@ -279,7 +279,7 @@ Music directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_PICTURES** = ``6``
 
-Pictures directory path.
+图片目录路径。
 
 .. _class_OS_constant_SYSTEM_DIR_RINGTONES:
 
@@ -287,7 +287,7 @@ Pictures directory path.
 
 :ref:`SystemDir<enum_OS_SystemDir>` **SYSTEM_DIR_RINGTONES** = ``7``
 
-Ringtones directory path.
+铃声目录路径。
 
 .. rst-class:: classref-section-separator
 
@@ -295,8 +295,8 @@ Ringtones directory path.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_OS_property_delta_smoothing:
 
@@ -309,7 +309,7 @@ Property Descriptions
 - void **set_delta_smoothing** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_delta_smoothing_enabled** **(** **)**
 
-If ``true``, the engine filters the time delta measured between each frame, and attempts to compensate for random variation. This will only operate on systems where V-Sync is active.
+如果为 ``true``\ ，则引擎会在每帧之间过滤测量得到的时间增量，并尝试补偿随机变化。仅在启用垂直同步的系统上有效。
 
 .. rst-class:: classref-item-separator
 
@@ -326,7 +326,7 @@ If ``true``, the engine filters the time delta measured between each frame, and 
 - void **set_low_processor_usage_mode** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_in_low_processor_usage_mode** **(** **)**
 
-If ``true``, the engine optimizes for low processor usage by only refreshing the screen if needed. Can improve battery consumption on mobile.
+如果为 ``true``\ ，则引擎会通过只在需要时刷新屏幕来优化处理器的使用。可以改善移动设备上的电池消耗。
 
 .. rst-class:: classref-item-separator
 
@@ -343,7 +343,7 @@ If ``true``, the engine optimizes for low processor usage by only refreshing the
 - void **set_low_processor_usage_mode_sleep_usec** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_low_processor_usage_mode_sleep_usec** **(** **)**
 
-The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU usage.
+启用低处理器使用模式时，帧之间的休眠量（单位为微秒）。较高的值将导致较低的 CPU 使用率。
 
 .. rst-class:: classref-section-separator
 
@@ -351,8 +351,8 @@ The amount of sleeping between frames when the low-processor usage mode is enabl
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_OS_method_alert:
 
@@ -360,7 +360,7 @@ Method Descriptions
 
 void **alert** **(** :ref:`String<class_String>` text, :ref:`String<class_String>` title="Alert!" **)**
 
-Displays a modal dialog box using the host OS' facilities. Execution is blocked until the dialog is closed.
+使用主机操作系统显示一个模式化的对话框。执行将被阻塞，直到该对话框被关闭。
 
 .. rst-class:: classref-item-separator
 
@@ -372,9 +372,9 @@ Displays a modal dialog box using the host OS' facilities. Execution is blocked 
 
 void **close_midi_inputs** **(** **)**
 
-Shuts down system MIDI driver.
+关闭系统 MIDI 驱动程序。
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **注意：**\ 该方法只在 Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -386,7 +386,7 @@ Shuts down system MIDI driver.
 
 void **crash** **(** :ref:`String<class_String>` message **)**
 
-Crashes the engine (or the editor if called within a ``@tool`` script). This should *only* be used for testing the system's crash handler, not for any other purpose. For general error reporting, use (in order of preference) :ref:`@GDScript.assert<class_@GDScript_method_assert>`, :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` or :ref:`alert<class_OS_method_alert>`. See also :ref:`kill<class_OS_method_kill>`.
+使引擎崩溃（如果是在 ``@tool`` 脚本中调用则为编辑器崩溃）。应该\ *仅*\ 用于测试系统的崩溃处理器，其他情况下都不应使用。普通的错误汇报请使用 :ref:`@GDScript.assert<class_@GDScript_method_assert>`\ 、\ :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>`\ 、\ :ref:`alert<class_OS_method_alert>`\ （按推荐顺序排列）。另见 :ref:`kill<class_OS_method_kill>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -398,11 +398,11 @@ Crashes the engine (or the editor if called within a ``@tool`` script). This sho
 
 :ref:`int<class_int>` **create_instance** **(** :ref:`PackedStringArray<class_PackedStringArray>` arguments **)**
 
-Creates a new instance of Godot that runs independently. The ``arguments`` are used in the given order and separated by a space.
+创建一个独立运行的 Godot 新实例。\ ``arguments`` 按给定顺序使用，并以空格分隔。
 
-If the process creation succeeds, the method will return the new process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process creation fails, the method will return ``-1``.
+如果进程创建成功，则该方法将返回新的进程 ID，可以使用它来监视该进程（并可能使用 :ref:`kill<class_OS_method_kill>` 终止它）。如果进程创建失败，则该方法将返回 ``-1``\ 。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -414,13 +414,13 @@ If the process creation succeeds, the method will return the new process ID, whi
 
 :ref:`int<class_int>` **create_process** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` arguments, :ref:`bool<class_bool>` open_console=false **)**
 
-Creates a new process that runs independently of Godot. It will not terminate if Godot terminates. The path specified in ``path`` must exist and be executable file or macOS .app bundle. Platform path resolution will be used. The ``arguments`` are used in the given order and separated by a space.
+创建一个独立于 Godot 运行的新进程。如果 Godot 终止，它也不会终止。\ ``path`` 中指定的路径必须存在，并且是可执行文件或 macOS .app 包。将使用平台路径解析。\ ``arguments`` 按给定顺序使用，并以空格分隔。
 
-On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window will be opened. This is ignored on other platforms.
+在 Windows 上，如果 ``open_console`` 为 ``true``\ ，并且该进程是一个控制台应用程序，则一个新的终端窗口将被打开。这在其他平台上将被忽略。
 
-If the process creation succeeds, the method will return the new process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process creation fails, the method will return ``-1``.
+如果进程创建成功，则该方法将返回新的进程 ID，可以使用它来监视进程（并可能使用 :ref:`kill<class_OS_method_kill>` 终止它）。如果进程创建失败，则该方法将返回 ``-1``\ 。
 
-For example, running another instance of the project:
+例如，运行项目的另一个实例：
 
 
 .. tabs::
@@ -435,11 +435,11 @@ For example, running another instance of the project:
 
 
 
-See :ref:`execute<class_OS_method_execute>` if you wish to run an external command and retrieve the results.
+如果希望运行一个外部命令并检索结果，请参阅 :ref:`execute<class_OS_method_execute>`\ 。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
-\ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export or system .app bundle, system .app bundles will ignore arguments.
+\ **注意：**\ 在 macOS 上，沙盒应用程序被限制为只能运行嵌入式辅助可执行文件，在导出或系统 .app 包期间指定，系统 .app 包将忽略参数。
 
 .. rst-class:: classref-item-separator
 
@@ -451,11 +451,11 @@ See :ref:`execute<class_OS_method_execute>` if you wish to run an external comma
 
 void **delay_msec** **(** :ref:`int<class_int>` msec **)** |const|
 
-Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_msec<class_OS_method_delay_msec>` will do nothing and will print an error message.
+将当前线程的执行延迟 ``msec`` 毫秒。\ ``msec`` 必须大于或等于 ``0``\ 。否则，\ :ref:`delay_msec<class_OS_method_delay_msec>` 将不执行任何操作并打印一条错误消息。
 
-\ **Note:** :ref:`delay_msec<class_OS_method_delay_msec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, see :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`. Awaiting with :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` will delay the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
+\ **注意：**\ :ref:`delay_msec<class_OS_method_delay_msec>` 是一种\ *阻塞*\ 延迟代码执行的方式。要以非阻塞的方式延迟代码执行，请参阅 :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`\ 。使用 :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` 等待将会延迟那些放置在 ``await`` 下方的代码的执行，而不会影响该项目（或编辑器，对于 :ref:`EditorPlugin<class_EditorPlugin>` 和 :ref:`EditorScript<class_EditorScript>`\ ）的其余部分。
 
-\ **Note:** When :ref:`delay_msec<class_OS_method_delay_msec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_msec<class_OS_method_delay_msec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
+\ **注意：**\ 当在主线程上调用 :ref:`delay_msec<class_OS_method_delay_msec>` 时，它将冻结项目并阻止它重新绘制和注册输入，直到延迟结束。当使用 :ref:`delay_msec<class_OS_method_delay_msec>` 作为 :ref:`EditorPlugin<class_EditorPlugin>` 或 :ref:`EditorScript<class_EditorScript>` 的一部分时，它会冻结编辑器但不会冻结当前正在运行的项目（因为项目是一个独立的子进程）。
 
 .. rst-class:: classref-item-separator
 
@@ -467,11 +467,11 @@ Delays execution of the current thread by ``msec`` milliseconds. ``msec`` must b
 
 void **delay_usec** **(** :ref:`int<class_int>` usec **)** |const|
 
-Delays execution of the current thread by ``usec`` microseconds. ``usec`` must be greater than or equal to ``0``. Otherwise, :ref:`delay_usec<class_OS_method_delay_usec>` will do nothing and will print an error message.
+将当前线程的执行延迟 ``usec`` 微秒。\ ``usec`` 必须大于或等于 ``0``\ 。否则，\ :ref:`delay_usec<class_OS_method_delay_usec>` 将不执行任何操作并打印一条错误消息。
 
-\ **Note:** :ref:`delay_usec<class_OS_method_delay_usec>` is a *blocking* way to delay code execution. To delay code execution in a non-blocking way, see :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`. Awaiting with :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` will delay the execution of code placed below the ``await`` without affecting the rest of the project (or editor, for :ref:`EditorPlugin<class_EditorPlugin>`\ s and :ref:`EditorScript<class_EditorScript>`\ s).
+\ **注意：**\ :ref:`delay_usec<class_OS_method_delay_usec>` 是一种\ *阻塞*\ 延迟代码执行的方式。要以非阻塞的方式延迟代码执行，请参阅 :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`\ 。使用 :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` 等待将会延迟那些放置在 ``await`` 下方的代码的执行，而不会影响该项目（或编辑器，对于 :ref:`EditorPlugin<class_EditorPlugin>` 和 :ref:`EditorScript<class_EditorScript>`\ ）的其余部分。
 
-\ **Note:** When :ref:`delay_usec<class_OS_method_delay_usec>` is called on the main thread, it will freeze the project and will prevent it from redrawing and registering input until the delay has passed. When using :ref:`delay_usec<class_OS_method_delay_usec>` as part of an :ref:`EditorPlugin<class_EditorPlugin>` or :ref:`EditorScript<class_EditorScript>`, it will freeze the editor but won't freeze the project if it is currently running (since the project is an independent child process).
+\ **注意：**\ 当在主线程上调用 :ref:`delay_usec<class_OS_method_delay_usec>` 时，它将冻结项目并阻止它重新绘制和注册输入，直到延迟结束。当使用 :ref:`delay_usec<class_OS_method_delay_usec>` 作为 :ref:`EditorPlugin<class_EditorPlugin>` 或 :ref:`EditorScript<class_EditorScript>` 的一部分时，它会冻结编辑器但不会冻结当前正在运行的项目（因为项目是一个独立的子进程）。
 
 .. rst-class:: classref-item-separator
 
@@ -483,15 +483,15 @@ Delays execution of the current thread by ``usec`` microseconds. ``usec`` must b
 
 :ref:`int<class_int>` **execute** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` arguments, :ref:`Array<class_Array>` output=[], :ref:`bool<class_bool>` read_stderr=false, :ref:`bool<class_bool>` open_console=false **)**
 
-Executes a command. The file specified in ``path`` must exist and be executable. Platform path resolution will be used. The ``arguments`` are used in the given order, separated by spaces, and wrapped in quotes. If an ``output`` :ref:`Array<class_Array>` is provided, the complete shell output of the process will be appended as a single :ref:`String<class_String>` element in ``output``. If ``read_stderr`` is ``true``, the output to the standard error stream will be included too.
+执行一条命令。\ ``path`` 中指定的文件必须存在且可执行。将使用平台路径解析。\ ``arguments`` 按给定顺序使用，以空格分隔，会使用引号包裹。如果提供了 ``output`` :ref:`Array<class_Array>`\ ，则进程的完整 shell 输出，将作为单个 :ref:`String<class_String>` 元素追加到 ``output`` 中。如果 ``read_stderr`` 为 ``true``\ ，则标准错误流的输出也将被包含在内。
 
-On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window will be opened. This is ignored on other platforms.
+在 Windows 上，如果 ``open_console`` 为 ``true`` 并且进程是控制台应用程序，则将打开一个新的终端窗口。该参数在其他平台上被忽略。
 
-If the command is successfully executed, the method will return the exit code of the command, or ``-1`` if it fails.
+如果命令执行成功，该方法将返回命令的退出代码，如果失败则返回 ``-1``\ 。
 
-\ **Note:** The Godot thread will pause its execution until the executed command terminates. Use :ref:`Thread<class_Thread>` to create a separate thread that will not pause the Godot thread, or use :ref:`create_process<class_OS_method_create_process>` to create a completely independent process.
+\ **注意：**\ Godot 线程将暂停执行，直到执行的命令终止。使用 :ref:`Thread<class_Thread>` 创建一个不会暂停 Godot 线程的独立线程，或者使用 :ref:`create_process<class_OS_method_create_process>` 创建一个完全独立的进程。
 
-For example, to retrieve a list of the working directory's contents:
+例如，要检索工作目录内容的列表：
 
 
 .. tabs::
@@ -508,7 +508,7 @@ For example, to retrieve a list of the working directory's contents:
 
 
 
-If you wish to access a shell built-in or execute a composite command, a platform-specific shell can be invoked. For example:
+如果希望访问内置的 shell 或执行复合命令，则可以调用特定于平台的 shell。例如：
 
 
 .. tabs::
@@ -525,17 +525,15 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
-\ **Note:** To execute a Windows command interpreter built-in command, specify ``cmd.exe`` in ``path``, ``/c`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 Windows 命令解释器的内置命令，在 ``path`` 中指定 ``cmd.exe``\ ，将 ``/c`` 作为第一个参数，并将所需的命令作为第二个参数。
 
-\ **Note:** To execute a PowerShell built-in command, specify ``powershell.exe`` in ``path``, ``-Command`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 PowerShell 的内置命令，在 ``path`` 中指定 ``powershell.exe``\ ，将 ``-Command`` 作为第一个参数，然后将所需的命令作为第二个参数。
 
-\ **Note:** To execute a Unix shell built-in command, specify shell executable name in ``path``, ``-c`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 Unix shell 内置命令，请在 ``path`` 中指定 shell 可执行文件名称，将 ``-c`` 作为第一个参数，并将所需的命令作为第二个参数。
 
-\ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export.
-
-\ **Note:** On Android, system commands such as ``dumpsys`` can only be run on a rooted device.
+\ **注意：**\ 在 macOS 上，沙盒应用程序仅限于运行在导出期间指定的嵌入的辅助可执行文件。
 
 .. rst-class:: classref-item-separator
 
@@ -547,7 +545,7 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 :ref:`Key<enum_@GlobalScope_Key>` **find_keycode_from_string** **(** :ref:`String<class_String>` string **)** |const|
 
-Returns the keycode of the given string (e.g. "Escape").
+返回给定字符串（例如“Escape”）的键码。
 
 .. rst-class:: classref-item-separator
 
@@ -559,9 +557,9 @@ Returns the keycode of the given string (e.g. "Escape").
 
 :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
 
-Returns the *global* cache data directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+根据操作系统的标准返回\ *全局*\ 缓存数据目录。在 Linux/BSD 平台上，可以通过在启动项目之前设置 ``XDG_CACHE_HOME`` 环境变量来覆盖该路径。有关详细信息，请参阅文档中的\ :doc:`《Godot 项目中的文件路径》 <../tutorials/io/data_paths>`\ 。另请参阅 :ref:`get_config_dir<class_OS_method_get_config_dir>` 和 :ref:`get_data_dir<class_OS_method_get_data_dir>`\ 。
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+不要与 :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>` 混淆，后者返回\ *项目特定的*\ 用户数据路径。
 
 .. rst-class:: classref-item-separator
 
@@ -573,15 +571,15 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_args** **(** **)**
 
-Returns the command-line arguments passed to the engine.
+返回传递给引擎的命令行参数。
 
-Command-line arguments can be written in any form, including both ``--key value`` and ``--key=value`` forms so they can be properly parsed, as long as custom command-line arguments do not conflict with engine arguments.
+命令行参数可以写成任何形式，包括 ``--key value`` 和 ``--key=value`` 两种形式，这样它们就可以被正确解析，只要自定义命令行参数不与引擎参数冲突。
 
-You can also incorporate environment variables using the :ref:`get_environment<class_OS_method_get_environment>` method.
+还可以使用 :ref:`get_environment<class_OS_method_get_environment>` 方法合并环境变量。
 
-You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
+可以设置 :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` 来定义编辑器在运行项目时传递的命令行参数。
 
-Here's a minimal example on how to parse command-line arguments into a dictionary using the ``--key=value`` form for arguments:
+下面是一个关于如何使用参数的 ``--key=value`` 形式，将命令行参数解析为一个字典的最小示例：
 
 
 .. tabs::
@@ -594,8 +592,8 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
             var key_value = argument.split("=")
             arguments[key_value[0].lstrip("--")] = key_value[1]
         else:
-            # Options without an argument will be present in the dictionary,
-            # with the value set to an empty string.
+            # 没有参数的选项将出现在字典中，
+            # 其值被设置为空字符串。
             arguments[argument.lstrip("--")] = ""
 
  .. code-tab:: csharp
@@ -610,15 +608,15 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
         }
         else
         {
-            // Options without an argument will be present in the dictionary,
-            // with the value set to an empty string.
+            // 没有参数的选项将出现在字典中，
+            // 其值被设置为空字符串。
             arguments[keyValue[0].LStrip("--")] = "";
         }
     }
 
 
 
-\ **Note:** Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, the best way is to use the standard UNIX double dash (``--``) and then pass custom arguments, which the engine itself will ignore. These can be read via :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`.
+\ **注意：**\ 不建议直接传递自定义用户参数，因为引擎可能会丢弃或修改它们。相反，最好的方法是使用标准的 UNIX 双破折号（\ ``--``\ ），然后传递自定义参数，引擎本身将忽略这些参数。这些可以通过 :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` 读取。
 
 .. rst-class:: classref-item-separator
 
@@ -630,17 +628,15 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_user_args** **(** **)**
 
-Similar to :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>`, but this returns the user arguments (any argument passed after the double dash ``--`` or double plus ``++`` argument). These are left untouched by Godot for the user. ``++`` can be used in situations where ``--`` is intercepted by another program (such as ``startx``).
+类似于 :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>`\ ，但它返回用户参数（在双破折号 ``--`` 或双加号 ``++`` 参数之后传递的任何参数）。这些都是 Godot 为用户留下的，不做任何改动。\ ``++`` 可用于 ``--`` 被其他程序拦截的情况（如 ``startx``\ ）。
 
-For example, in the command line below, ``--fullscreen`` will not be returned in :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` and ``--level 1`` will only be returned in :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`:
+例如，在下面的命令行中，\ ``--fullscreen`` 不会在 :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` 中返回，\ ``--level 1`` 只会在 :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` 中返回：
 
 ::
 
-    # Godot has been executed with the following command:
-    # godot --fullscreen -- --level=2 --hardcore
-    
-    OS.get_cmdline_args()      # Returns ["--fullscreen", "--level=2", "--hardcore"]
-    OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
+    godot --fullscreen -- --level 1
+    # 或：
+    godot --fullscreen ++ --level 1
 
 .. rst-class:: classref-item-separator
 
@@ -652,9 +648,9 @@ For example, in the command line below, ``--fullscreen`` will not be returned in
 
 :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
 
-Returns the *global* user configuration directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+根据操作系统的标准，返回\ *全局*\ 用户配置目录。在 Linux/BSD 平台上，可以通过在启动项目之前设置 ``XDG_CONFIG_HOME`` 环境变量来覆盖该路径。有关详细信息，请参阅文档中的\ :doc:`《Godot 项目中的文件路径》 <../tutorials/io/data_paths>`\ 。另请参阅 :ref:`get_cache_dir<class_OS_method_get_cache_dir>` 和 :ref:`get_data_dir<class_OS_method_get_data_dir>`\ 。
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+不要与 :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>` 混淆，后者返回\ *项目专用的*\ 用户数据路径。
 
 .. rst-class:: classref-item-separator
 
@@ -666,11 +662,11 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_connected_midi_inputs** **(** **)**
 
-Returns an array of MIDI device names.
+返回 MIDI 设备名称数组。
 
-The returned array will be empty if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`.
+如果系统 MIDI 驱动程序之前没有使用 :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` 进行初始化，则返回的数组将为空。
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -682,9 +678,9 @@ The returned array will be empty if the system MIDI driver has not previously be
 
 :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
 
-Returns the *global* user data directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+根据操作系统的标准返回\ *全局*\ 用户数据目录。在 Linux/BSD 平台上，可以通过在启动项目之前设置 ``XDG_DATA_HOME`` 环境变量来覆盖该路径。有关详细信息，请参阅文档中的\ :doc:`《Godot 项目中的文件路径》 <../tutorials/io/data_paths>`\ 。另请参阅 :ref:`get_cache_dir<class_OS_method_get_cache_dir>` 和 :ref:`get_config_dir<class_OS_method_get_config_dir>`\ 。
 
-Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+不要与 :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>` 混淆，后者返回\ *项目专用的*\ 用户数据路径。
 
 .. rst-class:: classref-item-separator
 
@@ -696,13 +692,13 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 :ref:`String<class_String>` **get_distribution_name** **(** **)** |const|
 
-Returns the name of the distribution for Linux and BSD platforms (e.g. Ubuntu, Manjaro, OpenBSD, etc.).
+返回 Linux 和 BSD 平台的发行版名称（例如 Ubuntu、Manjaro、OpenBSD 等）。
 
-Returns the same value as :ref:`get_name<class_OS_method_get_name>` for stock Android ROMs, but attempts to return the custom ROM name for popular Android derivatives such as LineageOS.
+对于原生 Android 系统，返回与 :ref:`get_name<class_OS_method_get_name>` 相同的值，但对于 LineageOS 等流行的 Android 派生系统，尝试返回自定义 ROM 名称。
 
-Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other platforms.
+对于其他平台，返回与 :ref:`get_name<class_OS_method_get_name>` 相同的值。
 
-\ **Note:** This method is not supported on the web platform. It returns an empty string.
+\ **注意：**\ Web 平台上不支持这个方法。返回的是空字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -714,9 +710,9 @@ Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other pl
 
 :ref:`String<class_String>` **get_environment** **(** :ref:`String<class_String>` variable **)** |const|
 
-Returns the value of an environment variable. Returns an empty string if the environment variable doesn't exist.
+返回环境变量的值。如果环境变量不存在，则返回一个空字符串。
 
-\ **Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
+\ **注意：**\ 请仔细检查 ``variable`` 的大小写。环境变量名称在除 Windows 之外的所有平台上都区分大小写。
 
 .. rst-class:: classref-item-separator
 
@@ -728,9 +724,9 @@ Returns the value of an environment variable. Returns an empty string if the env
 
 :ref:`String<class_String>` **get_executable_path** **(** **)** |const|
 
-Returns the path to the current engine executable.
+返回当前引擎可执行文件的路径。
 
-\ **Note:** On macOS, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on executable path.
+\ **注意：**\ 在 macOS 上，请始终使用 :ref:`create_instance<class_OS_method_create_instance>`\ ，不要依赖可执行文件的路径。
 
 .. rst-class:: classref-item-separator
 
@@ -742,9 +738,9 @@ Returns the path to the current engine executable.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_granted_permissions** **(** **)** |const|
 
-On Android devices: With this function, you can get the list of dangerous permissions that have been granted.
+在 Android 设备上：通过该功能，你可以获取已被授予的危险权限列表。
 
-On macOS (sandboxed applications only): This function returns the list of user selected folders accessible to the application. Use native file dialog to request folder access permission.
+在 macOS 上（仅限沙盒应用程序）：该函数返回应用程序可访问的用户选择的文件夹列表。使用原生文件对话框请求文件夹访问权限。
 
 .. rst-class:: classref-item-separator
 
@@ -756,9 +752,9 @@ On macOS (sandboxed applications only): This function returns the list of user s
 
 :ref:`String<class_String>` **get_keycode_string** **(** :ref:`Key<enum_@GlobalScope_Key>` code **)** |const|
 
-Returns the given keycode as a string (e.g. Return values: ``"Escape"``, ``"Shift+Escape"``).
+返回给定键码的字符串形式（例如，返回值：\ ``"Escape"``\ 、\ ``"Shift+Escape"``\ ）。
 
-See also :ref:`InputEventKey.keycode<class_InputEventKey_property_keycode>` and :ref:`InputEventKey.get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>`.
+另见 :ref:`InputEventKey.keycode<class_InputEventKey_property_keycode>` 和 :ref:`InputEventKey.get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -770,17 +766,17 @@ See also :ref:`InputEventKey.keycode<class_InputEventKey_property_keycode>` and 
 
 :ref:`String<class_String>` **get_locale** **(** **)** |const|
 
-Returns the host OS locale as a string of the form ``language_Script_COUNTRY_VARIANT@extra``. If you want only the language code and not the fully specified locale from the OS, you can use :ref:`get_locale_language<class_OS_method_get_locale_language>`.
+将主机操作系统区域设置为 ``language_Script_COUNTRY_VARIANT@extra`` 形式的字符串。如果你只想要语言代码而不是操作系统中完全指定的语言环境，可以使用 :ref:`get_locale_language<class_OS_method_get_locale_language>`\ 。
 
-\ ``language`` - 2 or 3-letter `language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__, in lower case.
+\ ``language`` - 2 个或 3 个字母的\ `语言代码 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__\ ，小写。
 
-\ ``Script`` - optional, 4-letter `script code <https://en.wikipedia.org/wiki/ISO_15924>`__, in title case.
+\ ``Script`` - 可选，4 个字母的\ `文字代码 <https://en.wikipedia.org/wiki/ISO_15924>`__\ ，首字母大写。
 
-\ ``COUNTRY`` - optional, 2 or 3-letter `country code <https://en.wikipedia.org/wiki/ISO_3166-1>`__, in upper case.
+\ ``COUNTRY`` - 可选，2 个或 3 个字母的\ `国家地区代码 <https://en.wikipedia.org/wiki/ISO_3166-1>`__\ ，大写。
 
-\ ``VARIANT`` - optional, language variant, region and sort order. Variant can have any number of underscored keywords.
+\ ``VARIANT`` - 可选，语言变体，地区和排序顺序。变体可以有任意数量的带下划线的关键字。
 
-\ ``extra`` - optional, semicolon separated list of additional key words. Currency, calendar, sort order and numbering system information.
+\ ``extra`` - 可选，分号分隔的附加关键字列表。货币、日历、排序顺序和编号系统信息。
 
 .. rst-class:: classref-item-separator
 
@@ -792,9 +788,9 @@ Returns the host OS locale as a string of the form ``language_Script_COUNTRY_VAR
 
 :ref:`String<class_String>` **get_locale_language** **(** **)** |const|
 
-Returns the host OS locale's 2 or 3-letter `language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__ as a string which should be consistent on all platforms. This is equivalent to extracting the ``language`` part of the :ref:`get_locale<class_OS_method_get_locale>` string.
+将主机操作系统区域设置的 2 或 3 个字母的\ `语言代码 <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__\ 作为字符串返回，该字符串应在所有平台上保持一致。这相当于提取 :ref:`get_locale<class_OS_method_get_locale>` 字符串的 ``language`` 部分。
 
-This can be used to narrow down fully specified locale strings to only the "common" language code, when you don't need the additional information about country code or variants. For example, for a French Canadian user with ``fr_CA`` locale, this would return ``fr``.
+当你不需要有关国家/地区代码或变体的附加信息时，这可用于将完全指定的区域设置字符串缩小为“通用”语言代码。例如，对于使用 ``fr_CA`` 语言环境的加拿大法语用户，这将返回 ``fr``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -806,9 +802,9 @@ This can be used to narrow down fully specified locale strings to only the "comm
 
 :ref:`int<class_int>` **get_main_thread_id** **(** **)** |const|
 
-Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`.
+返回主线程的 ID。请参阅 :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`\ 。
 
-\ **Note:** Thread IDs are not deterministic and may be reused across application restarts.
+\ **注意：**\ 线程 ID 不是确定的，也许会在应用程序重新启动时被重复使用。
 
 .. rst-class:: classref-item-separator
 
@@ -820,15 +816,15 @@ Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_metho
 
 :ref:`Dictionary<class_Dictionary>` **get_memory_info** **(** **)** |const|
 
-Returns the :ref:`Dictionary<class_Dictionary>` with the following keys:
+返回带有以下键的 :ref:`Dictionary<class_Dictionary>`\ ：
 
-\ ``"physical"`` - total amount of usable physical memory, in bytes or ``-1`` if unknown. This value can be slightly less than the actual physical memory amount, since it does not include memory reserved by kernel and devices.
+\ ``"physical"`` - 可用物理内存的总大小，单位为字节，未知时为 ``-1``\ 。这个值可能比实际的物理内存略小，因为计算时不含内核以及各种设备所保留的内存。
 
-\ ``"free"`` - amount of physical memory, that can be immediately allocated without disk access or other costly operation, in bytes or ``-1`` if unknown. The process might be able to allocate more physical memory, but such allocation will require moving inactive pages to disk and can take some time.
+\ ``"free"`` - 在不访问磁盘、不进行其他高成本操作的前提下，能够立即分配的物理内存大小，单位为字节，未知时为 ``-1``\ 。进程也许能够分配更多的物理内存，但是这种分配会需要将不活跃的内存页移动至磁盘，可能花费较长时间。
 
-\ ``"available"`` - amount of memory, that can be allocated without extending the swap file(s), in bytes or ``-1`` if unknown. This value include both physical memory and swap.
+\ ``"available"`` - 在不扩展交换文件的前提下，能够分配的内存大小，单位为字节，未知时为 ``-1``\ 。包括物理内存和交换分区大小。
 
-\ ``"stack"`` - size of the current thread stack, in bytes or ``-1`` if unknown.
+\ ``"stack"`` - 当前线程的栈大小，单位为字节，未知时为 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -840,9 +836,9 @@ Returns the :ref:`Dictionary<class_Dictionary>` with the following keys:
 
 :ref:`String<class_String>` **get_model_name** **(** **)** |const|
 
-Returns the model name of the current device.
+返回当前设备的模型名称。
 
-\ **Note:** This method is implemented on Android and iOS. Returns ``"GenericDevice"`` on unsupported platforms.
+\ **注意：**\ 此方法仅在Android和iOS上实现。在不支持的平台上返回 ``"GenericDevice"``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -854,23 +850,23 @@ Returns the model name of the current device.
 
 :ref:`String<class_String>` **get_name** **(** **)** |const|
 
-Returns the name of the host OS.
+返回主机操作系统的名称。
 
-On Windows, this is ``"Windows"``.
+在 Windows 上为 ``"Windows"``\ 。
 
-On macOS, this is ``"macOS"``.
+在 macOS 上为 ``"macOS"``\ 。
 
-On Linux-based operating systems, this is ``"Linux"``.
+在基于 Linux 的操作系统上为 ``"Linux"``\ 。
 
-On BSD-based operating systems, this is ``"FreeBSD"``, ``"NetBSD"``, ``"OpenBSD"``, or ``"BSD"`` as a fallback.
+在基于 BSD 的操作系统上为 ``"FreeBSD"``\ 、\ ``"NetBSD"``\ 、\ ``"OpenBSD"``, 会使用 ``"BSD"`` 作为回退方案。
 
-On Android, this is ``"Android"``.
+在 Android 上为 ``"Android"``\ 。
 
-On iOS, this is ``"iOS"``.
+在 iOS 上为 ``"iOS"``\ 。
 
-On the web, this is ``"Web"``.
+在 Web 上为 ``"Web"``\ 。
 
-\ **Note:** Custom builds of the engine may support additional platforms, such as consoles, yielding other return values.
+\ **注意：**\ 自定义构建的引擎可能支持其他平台，例如游戏主机，可能返回其他值。
 
 
 .. tabs::
@@ -931,9 +927,9 @@ On the web, this is ``"Web"``.
 
 :ref:`int<class_int>` **get_process_id** **(** **)** |const|
 
-Returns the project's process ID.
+返回项目的进程 ID。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 这个方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -945,7 +941,7 @@ Returns the project's process ID.
 
 :ref:`int<class_int>` **get_processor_count** **(** **)** |const|
 
-Returns the number of *logical* CPU cores available on the host machine. On CPUs with HyperThreading enabled, this number will be greater than the number of *physical* CPU cores.
+返回主机的\ *逻辑* CPU 核心数。对于启用了超线程的 CPU，这个数会比\ *物理* CPU 核心数大。
 
 .. rst-class:: classref-item-separator
 
@@ -957,9 +953,9 @@ Returns the number of *logical* CPU cores available on the host machine. On CPUs
 
 :ref:`String<class_String>` **get_processor_name** **(** **)** |const|
 
-Returns the name of the CPU model on the host machine (e.g. "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz").
+返回主机 CPU 型号的名称（例如 "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz"）。
 
-\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android and Web, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
+\ **注意：**\ 该方法仅在 Windows、macOS、Linux 和 iOS 上实现。在 Android 和 Web 上，\ :ref:`get_processor_name<class_OS_method_get_processor_name>` 返回空字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -971,7 +967,7 @@ Returns the name of the CPU model on the host machine (e.g. "Intel(R) Core(TM) i
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_restart_on_exit_arguments** **(** **)** |const|
 
-Returns the list of command line arguments that will be used when the project automatically restarts using :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>`. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>`.
+返回当项目使用 :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` 自动重新启动时，将使用的命令行参数列表。另请参阅 :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -983,7 +979,7 @@ Returns the list of command line arguments that will be used when the project au
 
 :ref:`int<class_int>` **get_static_memory_peak_usage** **(** **)** |const|
 
-Returns the maximum amount of static memory used (only works in debug).
+返回使用的静态内存的最大数量（仅在调试时有效）。
 
 .. rst-class:: classref-item-separator
 
@@ -995,7 +991,7 @@ Returns the maximum amount of static memory used (only works in debug).
 
 :ref:`int<class_int>` **get_static_memory_usage** **(** **)** |const|
 
-Returns the amount of static memory being used by the program in bytes (only works in debug).
+返回程序所使用的静态内存量，以字节为单位（仅在调试时有效）。
 
 .. rst-class:: classref-item-separator
 
@@ -1007,11 +1003,11 @@ Returns the amount of static memory being used by the program in bytes (only wor
 
 :ref:`String<class_String>` **get_system_dir** **(** :ref:`SystemDir<enum_OS_SystemDir>` dir, :ref:`bool<class_bool>` shared_storage=true **)** |const|
 
-Returns the actual path to commonly used folders across different platforms. Available locations are specified in :ref:`SystemDir<enum_OS_SystemDir>`.
+返回不同平台上常用文件夹的实际路径。可用的位置在 :ref:`SystemDir<enum_OS_SystemDir>` 中指定。
 
-\ **Note:** This method is implemented on Android, Linux, macOS and Windows.
+\ **注意：**\ 这个方法在 Android、Linux、macOS 和 Windows 上实现。
 
-\ **Note:** Shared storage is implemented on Android and allows to differentiate between app specific and shared directories. Shared directories have additional restrictions on Android.
+\ **注意：**\ 共享存储在 Android 上实现，并允许区分应用程序特定目录和共享目录。共享目录在 Android 上有额外的限制。
 
 .. rst-class:: classref-item-separator
 
@@ -1023,13 +1019,13 @@ Returns the actual path to commonly used folders across different platforms. Ava
 
 :ref:`String<class_String>` **get_system_font_path** **(** :ref:`String<class_String>` font_name, :ref:`int<class_int>` weight=400, :ref:`int<class_int>` stretch=100, :ref:`bool<class_bool>` italic=false **)** |const|
 
-Returns path to the system font file with ``font_name`` and style. Returns empty string if no matching fonts found.
+返回名称为 ``font_name`` 并且其他风格也相符的系统字体文件路径。如果没有相匹配的字体，则返回空字符串。
 
-The following aliases can be used to request default fonts: "sans-serif", "serif", "monospace", "cursive", and "fantasy".
+下列别名可用于请求默认字体：无衬线“sans-serif”、有衬线“serif”、等宽“monospace”、手写体“cursive”、花体“fantasy”。
 
-\ **Note:** Returned font might have different style if the requested style is not available.
+\ **注意：**\ 如果没有请求的风格，则可能返回不同风格的字体。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS、Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1041,15 +1037,15 @@ The following aliases can be used to request default fonts: "sans-serif", "serif
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_system_font_path_for_text** **(** :ref:`String<class_String>` font_name, :ref:`String<class_String>` text, :ref:`String<class_String>` locale="", :ref:`String<class_String>` script="", :ref:`int<class_int>` weight=400, :ref:`int<class_int>` stretch=100, :ref:`bool<class_bool>` italic=false **)** |const|
 
-Returns an array of the system substitute font file paths, which are similar to the font with ``font_name`` and style for the specified text, locale and script. Returns empty array if no matching fonts found.
+返回系统替换字体文件路径的数组，这些字体与名称为 ``font_name`` 并且其他风格也相符的字体相近，可用于指定的文本、区域设置以及文字。如果没有相匹配的字体，则返回空数组。
 
-The following aliases can be used to request default fonts: "sans-serif", "serif", "monospace", "cursive", and "fantasy".
+下列别名可用于请求默认字体：无衬线“sans-serif”、有衬线“serif”、等宽“monospace”、手写体“cursive”、花体“fantasy”。
 
-\ **Note:** Depending on OS, it's not guaranteed that any of the returned fonts will be suitable for rendering specified text. Fonts should be loaded and checked in the order they are returned, and the first suitable one used.
+\ **注意：**\ 根据操作系统的不同，无法保证任何返回的字体都适合渲染指定的文本。应该按照返回的顺序加载并检查字体，选用第一个合适的字体。
 
-\ **Note:** Returned fonts might have different style if the requested style is not available or belong to a different font family.
+\ **注意：**\ 如果没有请求的风格，或者属于不同的字体家族，则可能返回不同风格的字体。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS、Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1061,9 +1057,9 @@ The following aliases can be used to request default fonts: "sans-serif", "serif
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_system_fonts** **(** **)** |const|
 
-Returns list of font family names available.
+返回可用的字体家族名称列表。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS、Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1075,9 +1071,9 @@ Returns list of font family names available.
 
 :ref:`int<class_int>` **get_thread_caller_id** **(** **)** |const|
 
-Returns the ID of the current thread. This can be used in logs to ease debugging of multi-threaded applications.
+返回当前线程的 ID。这可用于日志，以简化多线程应用程序的调试。
 
-\ **Note:** Thread IDs are not deterministic and may be reused across application restarts.
+\ **注意：**\ 线程 ID 不是确定的，也许会在应用程序重新启动时被重复使用。
 
 .. rst-class:: classref-item-separator
 
@@ -1089,11 +1085,11 @@ Returns the ID of the current thread. This can be used in logs to ease debugging
 
 :ref:`String<class_String>` **get_unique_id** **(** **)** |const|
 
-Returns a string that is unique to the device.
+返回特定于该设备的一个字符串。
 
-\ **Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
+\ **注意：**\ 如果用户重新安装/升级他们的操作系统或更改他们的硬件，该字符串可能会更改，恕不另行通知。这意味着它通常不应用于加密持久数据，因为在意外的 ID 更改会使之前保存的数据将变得不可访问。返回的字符串也可能会被外部程序伪造，因此出于安全目的，不要依赖 :ref:`get_unique_id<class_OS_method_get_unique_id>` 返回的字符串。
 
-\ **Note:** Returns an empty string and prints an error on Web, as this method cannot be implemented on this platform.
+\ **注意：**\ 在 Web 上返回一个空字符串，因为该方法尚未在该平台上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1105,21 +1101,21 @@ Returns a string that is unique to the device.
 
 :ref:`String<class_String>` **get_user_data_dir** **(** **)** |const|
 
-Returns the absolute directory path where user data is written (``user://``).
+返回用于写入用户数据的绝对目录路径（\ ``user://``\ ）。
 
-On Windows, this is ``%AppData%\Godot\app_userdata\[project_name]``, or ``%AppData%\[custom_name]`` if ``use_custom_user_dir`` is set. ``%AppData%`` expands to ``%UserProfile%\AppData\Roaming``.
+在 Windows 上，这是 ``%AppData%\Godot\app_userdata\[project_name]``\ ；如果已设置 ``use_custom_user_dir``\ ，则为 ``%AppData%\[custom_name]``\ 。\ ``%AppData%`` 扩展为 ``%UserProfile%\AppData\Roaming``\ 。
 
-On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
+在 macOS 上，这是 ``~/Library/Application Support/Godot/app_userdata/[project_name]``\ ；如果已设置 ``use_custom_user_dir``\ ，则为 ``~/Library/Application Support/[custom_name]`` 。
 
-On Linux and BSD, this is ``~/.local/share/godot/app_userdata/[project_name]``, or ``~/.local/share/[custom_name]`` if ``use_custom_user_dir`` is set.
+在 Linux 和 BSD 上，这是 ``~/.local/share/godot/app_userdata/[project_name]``\ ；如果已设置 ``use_custom_user_dir``\ ，则为 ``~/.local/share/[custom_name]``\ 。
 
-On Android and iOS, this is a sandboxed directory in either internal or external storage, depending on the user's configuration.
+在 Android 和 iOS 上，这是内部存储或外部存储中的沙盒目录，具体取决于用户的配置。
 
-On the web, this is a virtual directory managed by the browser.
+在 Web 上，这是由浏览器管理的虚拟目录。
 
-If the project name is empty, ``[project_name]`` falls back to ``[unnamed project]``.
+如果项目名称为空，则 ``[project_name]`` 将回退为 ``[unnamed project]``\ 。
 
-Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which returns the *global* (non-project-specific) user home directory.
+请勿与 :ref:`get_data_dir<class_OS_method_get_data_dir>` 混淆，后者返回的是\ *全局*\ （非项目特定的）用户主目录。
 
 .. rst-class:: classref-item-separator
 
@@ -1131,17 +1127,17 @@ Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which
 
 :ref:`String<class_String>` **get_version** **(** **)** |const|
 
-Returns the exact production and build version of the operating system. This is different from the branded version used in marketing. This helps to distinguish between different releases of operating systems, including minor versions, and insider and custom builds.
+返回操作系统的确切生产和构建版本。这与营销中使用的品牌版本不同。这有助于区分操作系统的不同版本，包括次要版本、内部版本和自定义版本。
 
-For Windows, the major and minor version are returned, as well as the build number. For example, the returned string can look like ``10.0.9926`` for a build of Windows 10, and it can look like ``6.1.7601`` for a build of Windows 7 SP1.
+对于 Windows，返回主要和次要版本，以及构建号。例如，对于 Windows 10 版本，返回的字符串可能看起来像 ``10.0.9926``\ ，对于 Windows 7 SP1 版本，它可能看起来像 ``6.1.7601``\ 。
 
-For rolling distributions, such as Arch Linux, an empty string is returned.
+对于滚动发行版，例如 Arch Linux，会返回一个空字符串。
 
-For macOS and iOS, the major and minor version are returned, as well as the patch number.
+对于 macOS 和 iOS，会返回主要和次要版本，以及补丁号。
 
-For Android, the SDK version and the incremental build number are returned. If it's a custom ROM, it attempts to return its version instead.
+对于 Android，会返回 SDK 版本和增量构建号。如果是自定义的 ROM，将会尝试返回其版本。
 
-\ **Note:** This method is not supported on the web platform. It returns an empty string.
+\ **注意：**\ 该方法在 web 平台上不被支持。它将返回一个空字符串。
 
 .. rst-class:: classref-item-separator
 
@@ -1153,13 +1149,13 @@ For Android, the SDK version and the incremental build number are returned. If i
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info** **(** **)** |const|
 
-Returns the video adapter driver name and version for the user's currently active graphics card. See also :ref:`RenderingServer.get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>`.
+返回用户当前激活的显卡的视频适配器驱动程序名称和版本。另见 :ref:`RenderingServer.get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>`\ 。
 
-The first element holds the driver name, such as ``nvidia``, ``amdgpu``, etc.
+第一个元素保存驱动程序的名称，如 ``nvidia``\ 、\ ``amdgpu`` 等。
 
-The second element holds the driver version. For e.g. the ``nvidia`` driver on a Linux/BSD platform, the version is in the format ``510.85.02``. For Windows, the driver's format is ``31.0.15.1659``.
+第二个元素保存驱动程序的版本。例如 Linux/BSD 平台上的 ``nvidia`` 驱动程序，其版本格式为 ``510.85.02``\ 。对于 Windows，其驱动程序的格式是 ``31.0.15.1659``\ 。
 
-\ **Note:** This method is only supported on the platforms Linux/BSD and Windows when not running in headless mode. It returns an empty array on other platforms.
+\ **注意：**\ 该方法仅在 Linux/BSD 和 Windows 平台上不以无头模式运行时才受支持。在其他平台上返回一个空数组。
 
 .. rst-class:: classref-item-separator
 
@@ -1171,9 +1167,9 @@ The second element holds the driver version. For e.g. the ``nvidia`` driver on a
 
 :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` variable **)** |const|
 
-Returns ``true`` if the environment variable with the name ``variable`` exists.
+如果名称为 ``variable`` 的环境变量存在，则返回 ``true``\ 。
 
-\ **Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
+\ **注意：**\ 请仔细检查 ``variable`` 的大小写。环境变量名称在除 Windows 之外的所有平台上都区分大小写。
 
 .. rst-class:: classref-item-separator
 
@@ -1185,13 +1181,13 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 
 :ref:`bool<class_bool>` **has_feature** **(** :ref:`String<class_String>` tag_name **)** |const|
 
-Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build, etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
+如果当前运行的实例支持给定功能标签的功能，则返回 ``true``\ ，具体取决于平台、构建等。可用于检查当前是否正在运行调试构建，是否在某个平台或架构上，等等。详情见\ :doc:`《功能标签》 <../tutorials/export/feature_tags>`\ 文档。
 
-\ **Note:** Tag names are case-sensitive.
+\ **注意：**\ 标签名称区分大小写。
 
-\ **Note:** On the web platform, one of the following additional tags is defined to indicate host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
+\ **注意：**\ 在 Web 平台上，会定义 ``web_android``\ 、\ ``web_ios``\ 、\ ``web_linuxbsd``\ 、\ ``web_macos``\ 、\ ``web_windows`` 的其中之一，表示宿主平台。
 
-\ **Note:** On the iOS simulator, the additional ``simulator`` tag is defined.
+\ **注意：**\ 在 iOS 模拟器中，还会定义 ``simulator`` 标签。
 
 .. rst-class:: classref-item-separator
 
@@ -1203,11 +1199,11 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 
 :ref:`bool<class_bool>` **is_debug_build** **(** **)** |const|
 
-Returns ``true`` if the Godot binary used to run the project is a *debug* export template, or when running in the editor.
+如果用于运行项目的 Godot 二进制文件是\ *调试*\ 导出模板，或是在编辑器中运行时，则返回 ``true``\ 。
 
-Returns ``false`` if the Godot binary used to run the project is a *release* export template.
+如果用于运行项目的 Godot 二进制文件是\ *发布*\ 导出模板，则返回 ``false``\ 。
 
-To check whether the Godot binary used to run the project is an export template (debug or release), use ``OS.has_feature("template")`` instead.
+要检查用于运行项目的 Godot 二进制文件是否是导出模板（调试或发布），请改用 ``OS.has_feature("template")``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1219,7 +1215,7 @@ To check whether the Godot binary used to run the project is an export template 
 
 :ref:`bool<class_bool>` **is_keycode_unicode** **(** :ref:`int<class_int>` code **)** |const|
 
-Returns ``true`` if the input keycode corresponds to a Unicode character.
+如果输入键码对应一个 Unicode 字符，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1231,11 +1227,11 @@ Returns ``true`` if the input keycode corresponds to a Unicode character.
 
 :ref:`bool<class_bool>` **is_process_running** **(** :ref:`int<class_int>` pid **)** |const|
 
-Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated.
+如果该子进程 ID（\ ``pid``\ ）仍在运行，则返回 ``true``\ ；如果它已终止，则返回 ``false``\ 。
 
-Must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
+必须是从 :ref:`create_process<class_OS_method_create_process>` 生成的有效 ID。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1247,7 +1243,7 @@ Must be a valid ID generated from :ref:`create_process<class_OS_method_create_pr
 
 :ref:`bool<class_bool>` **is_restart_on_exit_set** **(** **)** |const|
 
-Returns ``true`` if the project will automatically restart when it exits for any reason, ``false`` otherwise. See also :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+如果项目因任何原因退出时将自动重新启动，则返回 ``true``\ ，否则返回 ``false``\ 。另请参阅 :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` 和 :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1259,9 +1255,9 @@ Returns ``true`` if the project will automatically restart when it exits for any
 
 :ref:`bool<class_bool>` **is_sandboxed** **(** **)** |const|
 
-Returns ``true`` if application is running in the sandbox.
+如果应用程序在沙箱中运行，则返回 ``true``\ 。
 
-\ **Note:** This method is implemented on macOS and Linux.
+\ **注意：**\ 该方法在 macOS 和 Linux 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1273,7 +1269,7 @@ Returns ``true`` if application is running in the sandbox.
 
 :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** |const|
 
-Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` command line argument, or if :ref:`ProjectSettings.debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>` is ``true``. See also :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
+如果引擎是使用 ``--verbose`` 或 ``-v`` 命令行参数执行的，或者如果 :ref:`ProjectSettings.debug/settings/stdout/verbose_stdout<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>` 为 ``true``\ ，则返回 ``true``\ 。另请参阅 :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1285,7 +1281,7 @@ Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` com
 
 :ref:`bool<class_bool>` **is_userfs_persistent** **(** **)** |const|
 
-If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the Web platform, where this persistence may be unavailable.
+如果为 ``true``\ ，则 ``user://`` 文件系统是持久的，所以在玩家退出并再次开始游戏后，它的状态是相同的。与 Web 平台相关时，该持久性可能不可用。
 
 .. rst-class:: classref-item-separator
 
@@ -1297,11 +1293,11 @@ If ``true``, the ``user://`` file system is persistent, so that its state is the
 
 :ref:`Error<enum_@GlobalScope_Error>` **kill** **(** :ref:`int<class_int>` pid **)**
 
-Kill (terminate) the process identified by the given process ID (``pid``), e.g. the one returned by :ref:`execute<class_OS_method_execute>` in non-blocking mode. See also :ref:`crash<class_OS_method_crash>`.
+杀死（终止）由给定进程 ID（\ ``pid``\ ）标识的进程，例如由 :ref:`execute<class_OS_method_execute>` 在非阻塞模式下返回的那个进程 ID。另请参阅 :ref:`crash<class_OS_method_crash>`\ 。
 
-\ **Note:** This method can also be used to kill processes that were not spawned by the game.
+\ **注意：**\ 该方法也可用于杀死不是由游戏产生的进程。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1313,11 +1309,11 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 :ref:`Error<enum_@GlobalScope_Error>` **move_to_trash** **(** :ref:`String<class_String>` path **)** |const|
 
-Moves the file or directory to the system's recycle bin. See also :ref:`DirAccess.remove<class_DirAccess_method_remove>`.
+将文件或目录移动到系统的回收站。另见 :ref:`DirAccess.remove<class_DirAccess_method_remove>`\ 。
 
-The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported projects.
+该方法仅支持全局路径，所以可能需要使用 :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`\ 。请勿将其用于 ``res://`` 中的文件，因为它在导出后的项目中是无法正常工作的。
 
-\ **Note:** If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.
+\ **注意：**\ 如果用户在系统上禁用了回收站，则该文件将被永久删除。
 
 
 .. tabs::
@@ -1344,9 +1340,9 @@ The method takes only global paths, so you may need to use :ref:`ProjectSettings
 
 void **open_midi_inputs** **(** **)**
 
-Initializes the singleton for the system MIDI driver.
+初始化系统 MIDI 驱动的单例。
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Linux、macOS、Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1358,9 +1354,9 @@ Initializes the singleton for the system MIDI driver.
 
 :ref:`String<class_String>` **read_string_from_stdin** **(** **)**
 
-Reads a user input string from the standard input (usually the terminal). This operation is *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread. The thread calling :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
+从标准输入（通常是终端）读取一个用户输入字符串。这个操作是\ *阻塞的* ，如果在主线程上调用 :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>`\ ，就会导致窗口冻结。调用 :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` 的线程将被阻塞，直到程序在标准输入中接收到一个断行（通常由用户按下 :kbd:`Enter`\ ）。
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **注意：**\ 该方法在 Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1372,7 +1368,7 @@ Reads a user input string from the standard input (usually the terminal). This o
 
 :ref:`bool<class_bool>` **request_permission** **(** :ref:`String<class_String>` name **)**
 
-At the moment this function is only used by ``AudioDriverOpenSL`` to request permission for ``RECORD_AUDIO`` on Android.
+目前，这个函数只被 ``AudioDriverOpenSL`` 用来请求 Android 上 ``RECORD_AUDIO`` 的权限。
 
 .. rst-class:: classref-item-separator
 
@@ -1384,9 +1380,9 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 
 :ref:`bool<class_bool>` **request_permissions** **(** **)**
 
-With this function, you can request dangerous permissions since normal permissions are automatically granted at install time in Android applications.
+你可以通过这个函数申请危险的权限，因为在 Android 应用程序中，正常的权限会在安装时自动授予。
 
-\ **Note:** This method is implemented only on Android.
+\ **注意：**\ 该方法仅在 Android 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1398,7 +1394,7 @@ With this function, you can request dangerous permissions since normal permissio
 
 void **revoke_granted_permissions** **(** **)**
 
-On macOS (sandboxed applications only), this function clears list of user selected folders accessible to the application.
+在 macOS（仅限沙盒应用程序）上，该功能会清除应用程序可访问的用户选择的文件夹列表。
 
 .. rst-class:: classref-item-separator
 
@@ -1410,9 +1406,9 @@ On macOS (sandboxed applications only), this function clears list of user select
 
 void **set_environment** **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|
 
-Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
+将环境变量 ``variable`` 的值设置为 ``value``\ 。运行 :ref:`set_environment<class_OS_method_set_environment>` 后，会为 Godot 进程和任何用 :ref:`execute<class_OS_method_execute>` 执行的进程设置该环境变量。该环境变量\ *不会*\ 持续存在于 Godot 进程终止后运行的进程中。
 
-\ **Note:** Environment variable names are case-sensitive on all platforms except Windows. The ``variable`` name cannot be empty or include the ``=`` character. On Windows, there is a 32767 characters limit for the combined length of ``variable``, ``value``, and the ``=`` and null terminator characters that will be registered in the environment block.
+\ **注意：**\ 环境变量的名称在除 Windows 外的所有平台上都是区分大小写的。名称 ``variable`` 不能为空，也不能包含 ``=`` 字符。在 Windows 上，在环境块中注册的 ``variable``\ 、\ ``value``\ 、\ ``=`` 以及 null 终止符的总长度有 32767 个字符的限制。
 
 .. rst-class:: classref-item-separator
 
@@ -1424,13 +1420,13 @@ Sets the value of the environment variable ``variable`` to ``value``. The enviro
 
 void **set_restart_on_exit** **(** :ref:`bool<class_bool>` restart, :ref:`PackedStringArray<class_PackedStringArray>` arguments=PackedStringArray() **)**
 
-If ``restart`` is ``true``, restarts the project automatically when it is exited with :ref:`SceneTree.quit<class_SceneTree_method_quit>` or :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>`. Command line ``arguments`` can be supplied. To restart the project with the same command line arguments as originally used to run the project, pass :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` as the value for ``arguments``.
+如果 ``restart`` 为 ``true``\ ，则项目在使用 :ref:`SceneTree.quit<class_SceneTree_method_quit>` 或 :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>` 退出时，会自动重新启动。可以提供命令行 ``arguments``\ 。要使用最初用于运行项目的命令行参数重新启动项目，请将 :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` 作为 ``arguments`` 的值传递。
 
-\ :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` can be used to apply setting changes that require a restart. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+\ :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` 可用于应用需要重新启动的设置更改。另见 :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` 和 :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`\ 。
 
-\ **Note:** This method is only effective on desktop platforms, and only when the project isn't started from the editor. It will have no effect on mobile and Web platforms, or when the project is started from the editor.
+\ **注意：**\ 该方法只在桌面平台上有效，并且只在项目不是从编辑器启动时有效。不会影响移动和 Web 平台，或者当项目从编辑器启动时。
 
-\ **Note:** If the project process crashes or is *killed* by the user (by sending ``SIGKILL`` instead of the usual ``SIGTERM``), the project won't restart automatically.
+\ **注意：**\ 如果项目进程崩溃或被用户\ *杀死*\ （通过发送 ``SIGKILL`` 而不是通常的 ``SIGTERM``\ ），项目不会自动重新启动。
 
 .. rst-class:: classref-item-separator
 
@@ -1442,7 +1438,7 @@ If ``restart`` is ``true``, restarts the project automatically when it is exited
 
 :ref:`Error<enum_@GlobalScope_Error>` **set_thread_name** **(** :ref:`String<class_String>` name **)**
 
-Sets the name of the current thread.
+设置当前线程的名称。
 
 .. rst-class:: classref-item-separator
 
@@ -1454,7 +1450,7 @@ Sets the name of the current thread.
 
 void **set_use_file_access_save_and_swap** **(** :ref:`bool<class_bool>` enabled **)**
 
-Enables backup saves if ``enabled`` is ``true``.
+如果 ``enabled`` 为 ``true``\ ，则启用备份保存。
 
 .. rst-class:: classref-item-separator
 
@@ -1466,19 +1462,19 @@ Enables backup saves if ``enabled`` is ``true``.
 
 :ref:`Error<enum_@GlobalScope_Error>` **shell_open** **(** :ref:`String<class_String>` uri **)**
 
-Requests the OS to open a resource with the most appropriate program. For example:
+请求操作系统使用最合适的程序打开资源。例如：
 
-- ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
+- ``OS.shell_open("C:\\Users\name\Downloads")`` 在 Windows 上会用资源管理器打开用户的 Downloads 文件夹。
 
-- ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
+- ``OS.shell_open("https://godotengine.org")`` 会使用默认网页浏览器打开 Godot 官方网站。
 
-- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `RFC 2368 - The [code]mailto[/code] URL scheme <https://datatracker.ietf.org/doc/html/rfc2368>`__ for a list of fields that can be added.
+- ``OS.shell_open("mailto:example@example.com")`` 会打开默认电子邮件客户端并将“收件人”字段设置为 ``example@example.com``\ 。其他支持自定义的字段见 `RFC 2368 - [code]mailto[/code] URL 方案 <https://datatracker.ietf.org/doc/html/rfc2368>`__\ 。
 
-Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
+可以使用 :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` 将 ``res://`` 和 ``user://`` 路径转换为本方法所使用的系统路径。
 
-\ **Note:** Use :ref:`String.uri_encode<class_String_method_uri_encode>` to encode characters within URLs in a URL-safe, portable way. This is especially required for line breaks. Otherwise, :ref:`shell_open<class_OS_method_shell_open>` may not work correctly in a project exported to the Web platform.
+\ **注意：**\ 请使用 :ref:`String.uri_encode<class_String_method_uri_encode>` 对 URL 中的字符进行编码，得到的 URL 才能安全使用、可移植。尤其是在包含换行的情况下。否则项目导出至 Web 平台后 :ref:`shell_open<class_OS_method_shell_open>` 可能无法正常工作。
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS and Windows.
+\ **注意：**\ 这个方法在 Android、iOS、HTML5、Linux、macOS、以及 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1490,13 +1486,13 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 :ref:`Error<enum_@GlobalScope_Error>` **shell_show_in_file_manager** **(** :ref:`String<class_String>` file_or_dir_path, :ref:`bool<class_bool>` open_folder=true **)**
 
-Requests the OS to open the file manager, then navigate to the given ``file_or_dir_path`` and select the target file or folder.
+请求操作系统打开文件管理器，然后导航至给定的文件或目录路径 ``file_or_dir_path`` 并选中目标文件或文件夹。
 
-If ``file_or_dir_path`` is a valid directory path, and ``open_folder`` is ``true``, the method will open the file manager and enter the target folder without selecting anything.
+如果 ``file_or_dir_path`` 为有效的目录路径，并且 ``open_folder`` 为 ``true``\ ，则该方法会打开文件管理器并进入目标文件夹，不会选中任何东西。
 
-Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
+请使用 :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` 将 ``res://`` 和 ``user://`` 路径转换为能够用于这个方法的文件系统路径。
 
-\ **Note:** Currently this method is only implemented on Windows and macOS. On other platforms, it will fallback to :ref:`shell_open<class_OS_method_shell_open>` with a directory path of ``file_or_dir_path`` with prefix ``file://``.
+\ **注意：**\ 目前该方法仅在 Windows 和 macOS 上实现。在其他平台上会回退至使用前缀 ``file://`` 的 ``file_or_dir_path`` 目录路径调用 :ref:`shell_open<class_OS_method_shell_open>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1508,14 +1504,14 @@ Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_
 
 void **unset_environment** **(** :ref:`String<class_String>` variable **)** |const|
 
-Removes the environment ``variable`` from the current environment, if it exists. The environment variable will be removed for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`unset_environment<class_OS_method_unset_environment>`. The removal of the environment variable will *not* persist to processes run after the Godot process was terminated.
+从当前环境中移除环境变量 ``variable``\ （如果存在）。在运行 :ref:`unset_environment<class_OS_method_unset_environment>` 后，将为 Godot 进程和使用 :ref:`execute<class_OS_method_execute>` 执行的任何进程移除环境变量。环境变量的移除并\ *不会*\ 持续到 Godot 进程终止后运行的进程。
 
-\ **Note:** Environment variable names are case-sensitive on all platforms except Windows. The ``variable`` name cannot be empty or include the ``=`` character.
+\ **注意：**\ 环境变量名称在除 Windows 以外的所有平台上都区分大小写。\ ``variable`` 名称不能为空或包含 ``=`` 字符。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

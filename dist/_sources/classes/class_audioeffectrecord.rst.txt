@@ -10,34 +10,34 @@
 AudioEffectRecord
 =================
 
-**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Audio effect used for recording the sound from an audio bus.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-Allows the user to record the sound from an audio bus. This can include all audio output by Godot when used on the "Master" audio bus.
-
-Can be used (with an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`) to record from a microphone.
-
-It sets and gets the format in which the audio file will be recorded (8-bit, 16-bit, or compressed). It checks whether or not the recording is active, and if it is, records the sound. It then returns the recorded sample.
+用于录制来自音频总线的声音的音频效果。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Recording with microphone <../tutorials/audio/recording_with_microphone>`
+允许用户录制来自音频总线的声音。在“Master”音频总线上使用时会包含所有 Godot 输出的音频。
 
-- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+可以用于录制麦克风（使用 :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`\ ）。
+
+它设置和获取记录音频文件的格式（8位，16位或压缩）。它检查录音是否处于活动状态，如果是，则记录声音。然后返回记录的样本。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`使用麦克风录音 <../tutorials/audio/recording_with_microphone>`
+
+- `音频麦克风录音演示 <https://godotengine.org/asset-library/asset/527>`__
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -48,8 +48,8 @@ Properties
 
 .. rst-class:: classref-reftable-group
 
-Methods
--------
+方法
+----
 
 .. table::
    :widths: auto
@@ -68,8 +68,8 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_AudioEffectRecord_property_format:
 
@@ -82,7 +82,7 @@ Property Descriptions
 - void **set_format** **(** :ref:`Format<enum_AudioStreamWAV_Format>` value **)**
 - :ref:`Format<enum_AudioStreamWAV_Format>` **get_format** **(** **)**
 
-Specifies the format in which the sample will be recorded. See :ref:`Format<enum_AudioStreamWAV_Format>` for available formats.
+指定样本将被记录的格式。有关可用格式，请参阅 :ref:`Format<enum_AudioStreamWAV_Format>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -90,8 +90,8 @@ Specifies the format in which the sample will be recorded. See :ref:`Format<enum
 
 .. rst-class:: classref-descriptions-group
 
-Method Descriptions
--------------------
+方法说明
+--------
 
 .. _class_AudioEffectRecord_method_get_recording:
 
@@ -99,7 +99,7 @@ Method Descriptions
 
 :ref:`AudioStreamWAV<class_AudioStreamWAV>` **get_recording** **(** **)** |const|
 
-Returns the recorded sample.
+返回录音的样本。
 
 .. rst-class:: classref-item-separator
 
@@ -111,7 +111,7 @@ Returns the recorded sample.
 
 :ref:`bool<class_bool>` **is_recording_active** **(** **)** |const|
 
-Returns whether the recording is active or not.
+返回录音是否处于激活状态。
 
 .. rst-class:: classref-item-separator
 
@@ -123,12 +123,12 @@ Returns whether the recording is active or not.
 
 void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
 
-If ``true``, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
+如果为 ``true``\ ，将录制声音。请注意，重新开始录音将移除先前录音的样本。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`

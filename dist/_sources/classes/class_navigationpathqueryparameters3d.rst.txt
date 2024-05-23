@@ -10,28 +10,28 @@
 NavigationPathQueryParameters3D
 ===============================
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides parameters for 3D navigation path queries.
-
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-By changing various properties of this object, such as the start and target position, you can configure path queries to the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+为 3D 导航路径查询提供参数。
 
 .. rst-class:: classref-introduction-group
 
-Tutorials
----------
+描述
+----
 
-- :doc:`Using NavigationPathQueryObjects <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
+更改该对象的起始和结束位置等属性可以配置对 :ref:`NavigationServer3D<class_NavigationServer3D>` 的路径查询。
+
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`使用 NavigationPathQueryObject <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
+属性
+----
 
 .. table::
    :widths: auto
@@ -58,8 +58,8 @@ Properties
 
 .. rst-class:: classref-descriptions-group
 
-Enumerations
-------------
+枚举
+----
 
 .. _enum_NavigationPathQueryParameters3D_PathfindingAlgorithm:
 
@@ -73,7 +73,7 @@ enum **PathfindingAlgorithm**:
 
 :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **PATHFINDING_ALGORITHM_ASTAR** = ``0``
 
-The path query uses the default A\* pathfinding algorithm.
+路径查询使用默认的 A\* 寻路算法。
 
 .. rst-class:: classref-item-separator
 
@@ -91,7 +91,7 @@ enum **PathPostProcessing**:
 
 :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **PATH_POSTPROCESSING_CORRIDORFUNNEL** = ``0``
 
-Applies a funnel algorithm to the raw path corridor found by the pathfinding algorithm. This will result in the shortest path possible inside the path corridor. This postprocessing very much depends on the navigation mesh polygon layout and the created corridor. Especially tile- or gridbased layouts can face artificial corners with diagonal movement due to a jagged path corridor imposed by the cell shapes.
+将漏斗算法应用于寻路算法找到的原始路径走廊。这将导致最短路径可能在路径走廊内。该后处理在很大程度上取决于导航网格多边形布局和创建的走廊。特别是基于图块和网格的布局，可能会由于单元格形状强加的锯齿状的路径走廊，而面临对角线移动的人工角落。
 
 .. _class_NavigationPathQueryParameters3D_constant_PATH_POSTPROCESSING_EDGECENTERED:
 
@@ -99,7 +99,7 @@ Applies a funnel algorithm to the raw path corridor found by the pathfinding alg
 
 :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **PATH_POSTPROCESSING_EDGECENTERED** = ``1``
 
-Centers every path position in the middle of the traveled navigation mesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
+将路径上的所有位置在经过的导航网格多边形边缘上居中。这样就把移动限制在了单元格的中心，能够为基于图块或栅格的布局创建更好的路径。
 
 .. rst-class:: classref-item-separator
 
@@ -117,7 +117,7 @@ flags **PathMetadataFlags**:
 
 :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_NONE** = ``0``
 
-Don't include any additional metadata about the returned path.
+不要包含任何关于返回路径的额外元数据。
 
 .. _class_NavigationPathQueryParameters3D_constant_PATH_METADATA_INCLUDE_TYPES:
 
@@ -125,7 +125,7 @@ Don't include any additional metadata about the returned path.
 
 :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_TYPES** = ``1``
 
-Include the type of navigation primitive (region or link) that each point of the path goes through.
+包含路径上的各个点所经过的导航图元类型（地区或链接）。
 
 .. _class_NavigationPathQueryParameters3D_constant_PATH_METADATA_INCLUDE_RIDS:
 
@@ -133,7 +133,7 @@ Include the type of navigation primitive (region or link) that each point of the
 
 :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_RIDS** = ``2``
 
-Include the :ref:`RID<class_RID>`\ s of the regions and links that each point of the path goes through.
+包含路径上的各个点所经过的地区和链接的 :ref:`RID<class_RID>`\ 。
 
 .. _class_NavigationPathQueryParameters3D_constant_PATH_METADATA_INCLUDE_OWNERS:
 
@@ -141,7 +141,7 @@ Include the :ref:`RID<class_RID>`\ s of the regions and links that each point of
 
 :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_OWNERS** = ``4``
 
-Include the ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regions and links each point of the path goes through.
+包含管理路径上的各个点所经过的地区和链接的 :ref:`Object<class_Object>` 的 ``ObjectID``\ 。
 
 .. _class_NavigationPathQueryParameters3D_constant_PATH_METADATA_INCLUDE_ALL:
 
@@ -149,7 +149,7 @@ Include the ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage t
 
 :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_ALL** = ``7``
 
-Include all available metadata about the returned path.
+包含关于返回路径的所有可用元数据。
 
 .. rst-class:: classref-section-separator
 
@@ -157,8 +157,8 @@ Include all available metadata about the returned path.
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
+属性说明
+--------
 
 .. _class_NavigationPathQueryParameters3D_property_map:
 
@@ -171,7 +171,7 @@ Property Descriptions
 - void **set_map** **(** :ref:`RID<class_RID>` value **)**
 - :ref:`RID<class_RID>` **get_map** **(** **)**
 
-The navigation map :ref:`RID<class_RID>` used in the path query.
+在路径查询中使用的导航地图 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -188,7 +188,7 @@ The navigation map :ref:`RID<class_RID>` used in the path query.
 - void **set_metadata_flags** **(** |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>`\> value **)**
 - |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>`\> **get_metadata_flags** **(** **)**
 
-Additional information to include with the navigation path.
+包含在导航路径中的额外信息。
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +205,7 @@ Additional information to include with the navigation path.
 - void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
-The navigation layers the query will use (as a bitmask).
+查询所使用的导航层（形式为位掩码）。
 
 .. rst-class:: classref-item-separator
 
@@ -222,7 +222,7 @@ The navigation layers the query will use (as a bitmask).
 - void **set_path_postprocessing** **(** :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` value **)**
 - :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **get_path_postprocessing** **(** **)**
 
-The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>`.
+对 :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>` 找到的原始路径走廊应用的路径后期处理。
 
 .. rst-class:: classref-item-separator
 
@@ -239,7 +239,7 @@ The path postprocessing applied to the raw path corridor found by the :ref:`path
 - void **set_pathfinding_algorithm** **(** :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` value **)**
 - :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **get_pathfinding_algorithm** **(** **)**
 
-The pathfinding algorithm used in the path query.
+路径查询中使用的寻路算法。
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ The pathfinding algorithm used in the path query.
 - void **set_start_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_start_position** **(** **)**
 
-The pathfinding start position in global coordinates.
+寻路起始点，使用全局坐标。
 
 .. rst-class:: classref-item-separator
 
@@ -273,12 +273,12 @@ The pathfinding start position in global coordinates.
 - void **set_target_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_target_position** **(** **)**
 
-The pathfinding target position in global coordinates.
+寻路目标点，使用全局坐标。
 
-.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
-.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
-.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
-.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
-.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
-.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
-.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
+.. |const| replace:: :abbr:`const (本方法没有副作用。不会修改该实例的任何成员变量。)`
+.. |vararg| replace:: :abbr:`vararg (本方法除了在此处描述的参数外，还能够继续接受任意数量的参数。)`
+.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
+.. |static| replace:: :abbr:`static (调用本方法无需实例，所以可以直接使用类名调用。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
