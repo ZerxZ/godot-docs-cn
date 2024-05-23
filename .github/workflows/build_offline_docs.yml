@@ -5,12 +5,14 @@ on:
     # Every week on Monday at midnight (UTC).
     # This keeps the generated HTML documentation fresh.
     - cron: '0 0 * * 1'
-env:
-  READTHEDOCS_LANGUAGE: zh_CN
+
 
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      READTHEDOCS_LANGUAGE: 'zh_CN'
+      SPHINX_TAGS: "i18n"
     name: 📚 Build offline documentation
     permissions: # Job-level permissions configuration starts here
       contents: write           # 'write' access to repository contents
