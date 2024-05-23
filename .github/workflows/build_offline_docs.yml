@@ -5,11 +5,13 @@ on:
     # Every week on Monday at midnight (UTC).
     # This keeps the generated HTML documentation fresh.
     - cron: '0 0 * * 1'
-permissions: write-all
   
 jobs:
   build:
     runs-on: ubuntu-22.04
+    permissions:                # Job-level permissions configuration starts here
+      contents: write           # 'write' access to repository contents
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
