@@ -49,12 +49,8 @@ jobs:
           python -m sphinx -T -b xml -d _build/doctrees -D language=zh_CN ./docs  ../xml
       - name: Zip HTML/XML
         run: |
-          cd dist
-          zip -r godot–docs-html.zip .
-          mv godot–docs-html.zip ../godot-docs
-          cd ../xml
-          zip -r ./godot–docs-xml.zip .
-          mv godot–docs-xml.zip ../godot-docs
+         sudo zip -r godot–docs-html.zip dist
+         sudo zip -r godot–docs-xml.zip xml
          
       - uses: actions/upload-artifact@v4
         with:
@@ -66,10 +62,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: docs-html-xml
-          path: godot-docs/godot-docs-*.zip
+          path: ./godot-docs-*.zip
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15
+      - name: Remove HTML/XML
+        run: |
+         sudo rm -f godot–docs-html.zip
+         sudo rm -f godot–docs-xml.zip 
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
