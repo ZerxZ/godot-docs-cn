@@ -51,10 +51,10 @@ jobs:
         run: |
           cd dist
           zip -r godot–docs-html.zip .
+          mv godot–docs-html.zip ../godot-docs
           cd ../xml
           zip -r ./godot–docs-xml.zip .
-          mv dist/godot–docs-html.zip ./godot-docs
-          mv xml/godot–docs-xml.zip ./godot-docs
+          mv godot–docs-xml.zip ../godot-docs
          
       - uses: actions/upload-artifact@v4
         with:
