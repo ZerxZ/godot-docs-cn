@@ -60,8 +60,7 @@
                                 <paragraph>Godot 4.3（<title_reference>master</title_reference>）</paragraph>
                             </entry>
                             <entry>
-                                <paragraph>June 2024
-                                    (estimate)</paragraph>
+                                <paragraph>2024 年六月（预计）</paragraph>
                             </entry>
                             <entry>
                                 <paragraph><image alt="unstable" candidates="{'*': 'about/img/unstable.png'}" uri="about/img/unstable.png"></image> <emphasis>开发版。</emphasis>在开发过程中接收新功能、可用性和性能的改进，以及错误修复。</paragraph>
@@ -255,9 +254,7 @@
         <section ids="when-is-the-next-release-out doc-release-policy-when-is-next-release-out" names="when\ is\ the\ next\ release\ out? 下一个版本什么时候发布？ doc_release_policy_when_is_next_release_out">
             <title>下一个版本什么时候发布？</title>
             <paragraph>虽然 Godot 贡献者的工作没有设置截止日期，次要版本我们会尽量相对高频率地发布。</paragraph>
-            <paragraph>In particular, after the very length release cycle for 4.0, we are pivoting to
-                a faster paced development workflow, 4.1 released 4 months after 4.0, and 4.2
-                released 4 months after 4.1</paragraph>
+            <paragraph>尤其是在 4.0 经历了漫长的发布周期之后，我们正在转向更快节奏的开发工作流程，4.0 的 4 个月后发布了 4.1 版本，4.1 的 4 个月后发布了 4.2 版本</paragraph>
             <paragraph>频繁发布的次要版本可以让我们能够更快地发布新功能（有可能是实验性的），快速获得用户反馈，并迭代以改进这些功能及其可用性。 同样地，更快到达最终用户，一般用户的体验就能够得到更稳定的改善。</paragraph>
             <paragraph>维护（补丁）版本是按需发布的，开发周期可能很短，作用是为当前稳定分支的用户提供最新的错误修复，以满足他们的生产需求。</paragraph>
             <paragraph>3.6 版本仍在计划中，它应该是 Godot 3.x 的最后一个稳定分支。 这将是一个长期支持 (LTS) 版本，只要用户仍然需要它，我们就计划对其提供支持（由于 Godot 4.x 中缺少功能，或者已发行的游戏需要持续更新以满足平台需求）。</paragraph>
@@ -315,7 +312,11 @@
             </bullet_list>
             <paragraph>由于 Godot 5.0 分支目前还没有建立，我们不建议这种破坏兼容性的更改。</paragraph>
             <note>
-                <paragraph>当以任何方式修改一个方法的签名（包括添加可选参数）时，必须创建一个 GDExtension 兼容方法。这将确保现有的 GDExtensions 能够在补丁版本和次要版本中继续工作，如此用户就不必重新编译它们。更多信息请参见`拉取清求 #76446 &lt;<reference refuri="https://github.com/godotengine/godot/pull/76446">https://github.com/godotengine/godot/pull/76446</reference>&gt;`_ 。</paragraph>
+                <paragraph>When modifying a method's signature in any fashion (including adding an
+                    optional parameter), a GDExtension compatibility method must be created.
+                    This ensures that existing GDExtensions continue to work across patch and
+                    minor releases, so that users don't have to recompile them.
+                    See <reference internal="True" refuri="../contributing/development/handling_compatibility_breakages#doc-handling-compatibility-breakages"><inline classes="std std-ref">Handling compatibility breakages</inline></reference> for more information.</paragraph>
             </note>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

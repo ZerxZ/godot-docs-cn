@@ -103,17 +103,18 @@
 }</literal_block>
                 </div>
             </container>
-            <note>
-                <paragraph>Modifications in the editor are permanent. For example, in the following
-                    case, when we remove the script, the node will keep its rotation. Be careful
-                    to avoid making unwanted modifications.</paragraph>
-            </note>
-            <note>
-                <paragraph>Extending a <literal>@tool</literal> script does not automatically make the extending script
-                    a <literal>@tool</literal>. Omitting <literal>@tool</literal> from the extending script will disable tool
-                    behavior from the super class. Therefore the extending script should also
-                    specify the <literal>@tool</literal> annotation.</paragraph>
-            </note>
+        </section>
+        <section ids="important-information" names="important\ information">
+            <title>Important information</title>
+            <paragraph>Any other GDScript that your tool script uses must <emphasis>also</emphasis> be a tool. Any
+                GDScript without <literal>@tool</literal> used by the editor will act like an empty file!</paragraph>
+            <paragraph>Extending a <literal>@tool</literal> script does not automatically make the extending script
+                a <literal>@tool</literal>. Omitting <literal>@tool</literal> from the extending script will disable tool
+                behavior from the super class. Therefore the extending script should also
+                specify the <literal>@tool</literal> annotation.</paragraph>
+            <paragraph>Modifications in the editor are permanent. For example, in the next
+                section when we remove the script, the node will keep its rotation. Be careful
+                to avoid making unwanted modifications.</paragraph>
         </section>
         <section ids="try-tool-out" names="try\ @tool\ out">
             <title>Try <literal>@tool</literal> out</title>
@@ -238,6 +239,182 @@ public partial class MySprite : Sprite2D
                     all.</paragraph>
             </note>
         </section>
+        <section ids="getting-notified-when-resources-change" names="getting\ notified\ when\ resources\ change">
+            <title>Getting notified when resources change</title>
+            <paragraph>Some times you want your tool to use a resource. However, when you change a
+                property of that resource in the editor, the <literal>set()</literal> method of your tool will
+                not be called.</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-6-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-6-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-6-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">@tool
+class_name MyTool
+extends Node
+
+@export var resource: MyResource:
+    set(new_resource):
+        resource = new_resource
+        _on_resource_set()
+
+# This will only be called when you create, delete, or paste a resource.
+# You will not get an update when tweaking properties of it.
+func _on_resource_set():
+    print("My resource was set!")</literal_block>
+                </div>
+                <div aria-labelledby="tab-6-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-6-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
+
+[Tool]
+public partial class MyTool : Node
+{
+    private MyResource _resource;
+
+    [Export]
+    public MyResource Resource
+    {
+        get =&gt; _resource;
+        set
+        {
+            _resource = value;
+            OnResourceSet();
+        }
+    }
+}
+
+// This will only be called when you create, delete, or paste a resource.
+// You will not get an update when tweaking properties of it.
+private void OnResourceSet()
+{
+    GD.Print("My resource was set!");
+}</literal_block>
+                </div>
+            </container>
+            <paragraph>To get around this problem you first have to make your resource a tool and make it
+                emit the <literal>changed</literal> signal whenever a property is set:</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-7-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-7-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-7-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Make Your Resource a tool.
+@tool
+class_name MyResource
+extends Resource
+
+@export var property = 1:
+    set(new_setting):
+        property = new_setting
+        # Emit a signal when the property is changed.
+        changed.emit()</literal_block>
+                </div>
+                <div aria-labelledby="tab-7-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-7-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
+
+[Tool]
+public partial class MyResource : Resource
+{
+    private float _property = 1;
+
+    [Export]
+    public float Property
+    {
+        get =&gt; _property;
+        set
+        {
+            _property = value;
+            // Emit a signal when the property is changed.
+            EmitChanged();
+        }
+    }
+}</literal_block>
+                </div>
+            </container>
+            <paragraph>You then want to connect the signal when a new resource is set:</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-8-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-8-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-8-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-8-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-8-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-8-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">@tool
+class_name MyTool
+extends Node
+
+@export var resource: MyResource:
+    set(new_resource):
+        resource = new_resource
+        # Connect the changed signal as soon as a new resource is being added.
+        resource.changed.connect(_on_resource_changed)
+
+func _on_resource_changed():
+    print("My resource just changed!")</literal_block>
+                </div>
+                <div aria-labelledby="tab-8-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-8-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
+
+[Tool]
+public partial class MyTool : Node
+{
+    private MyResource _resource;
+
+    [Export]
+    public MyResource Resource
+    {
+        get =&gt; _resource;
+        set
+        {
+            _resource = value;
+            // Connect the changed signal as soon as a new resource is being added.
+            _resource.Changed += OnResourceChanged;
+        }
+    }
+}
+
+private void OnResourceChanged()
+{
+    GD.Print("My resource just changed!");
+}</literal_block>
+                </div>
+            </container>
+            <paragraph>Lastly, remember to disconnect the signal as the old resource being used and changed somewhere else
+                would cause unneeded updates.</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-9-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-9-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-9-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-9-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-9-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-9-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">@export var resource: MyResource:
+    set(new_resource):
+        # Disconnect the signal if the previous resource was not null.
+        if resource != null:
+            resource.changed.disconnect(_on_resource_changed)
+        resource = new_resource
+        resource.changed.connect(_on_resource_changed)</literal_block>
+                </div>
+                <div aria-labelledby="tab-9-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-9-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public MyResource Resource
+{
+    get =&gt; _resource;
+    set
+    {
+        // Disconnect the signal if the previous resource was not null.
+        if (_resource != null)
+        {
+            _resource.Changed -= OnResourceChanged;
+        }
+        _resource = value;
+        _resource.Changed += OnResourceChanged;
+    }
+}</literal_block>
+                </div>
+            </container>
+        </section>
         <section ids="reporting-node-configuration-warnings" names="reporting\ node\ configuration\ warnings 报告节点配置警告">
             <title>报告节点配置警告</title>
             <paragraph>Godot uses a <emphasis>node configuration warning</emphasis> system to warn users about incorrectly
@@ -251,9 +428,9 @@ public partial class MySprite : Sprite2D
                 By default, the warning only updates when closing and reopening the scene.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-6-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-10-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-10-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
                 </div>
-                <div aria-labelledby="tab-6-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-10-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-10-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Use setters to update the configuration warning automatically.
 @export var title = "":
     set(p_title):
@@ -369,10 +546,10 @@ func get_all_children(in_node, children_acc = []):
             <paragraph>If you are using <literal>@tool</literal>:</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-7-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-7-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-11-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-11-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-11-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-11-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-7-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-11-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-11-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func _ready():
     var node = Node3D.new()
     add_child(node) # Parent could be any node in the scene
@@ -381,7 +558,7 @@ func get_all_children(in_node, children_acc = []):
     # and persist changes made by the tool script to the saved scene file.
     node.owner = get_tree().edited_scene_root</literal_block>
                 </div>
-                <div aria-labelledby="tab-7-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-7-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-11-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-11-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public override void _Ready()
 {
     var node = new Node3D();
@@ -396,10 +573,10 @@ func get_all_children(in_node, children_acc = []):
             <paragraph>如果你使用 <reference internal="True" refuri="../../classes/class_editorscript#class-editorscript"><inline classes="std std-ref">EditorScript</inline></reference> :</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-8-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-8-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-8-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-8-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-12-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-12-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-12-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-12-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-8-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-8-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-12-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-12-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func _run():
     # `parent` could be any node in the scene.
     var parent = get_scene().get_node("Parent")
@@ -410,7 +587,7 @@ func get_all_children(in_node, children_acc = []):
     # and persist changes made by the tool script to the saved scene file.
     node.owner = get_scene()</literal_block>
                 </div>
-                <div aria-labelledby="tab-8-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-8-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-12-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-12-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public override void _Run()
 {
     // `parent` could be any node in the scene.

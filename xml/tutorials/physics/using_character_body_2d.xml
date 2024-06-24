@@ -43,8 +43,7 @@
                     <list_item>
                         <paragraph><literal>velocity</literal> - <emphasis>default value:</emphasis> <literal>Vector2( 0, 0 )</literal></paragraph>
                         <block_quote>
-                            <paragraph>This property represents the body's velocity vector in pixels per second.
-                                <literal>move_and_slide()</literal> will modify this value automatically when colliding.</paragraph>
+                            <paragraph>此属性表示身体的速度向量（以每秒像素为单位）。 <literal>move_and_slide()</literal> 会在碰撞时自动修改此值。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
@@ -76,8 +75,7 @@
                     <list_item>
                         <paragraph><literal>wall_min_slide_angle</literal> - <emphasis>default value:</emphasis> <literal>0.261799</literal> (in radians, equivalent to <literal>15</literal> degrees)</paragraph>
                         <block_quote>
-                            <paragraph>This is the minimum angle where the body is allowed to slide when it hits a
-                                slope.</paragraph>
+                            <paragraph>这是当身体在遇到斜坡时允许滑动的最小角度。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
@@ -87,9 +85,7 @@
                         </block_quote>
                     </list_item>
                 </bullet_list>
-                <paragraph>There are many other properties that can be used to modify the body's behavior under
-                    specific circumstances. See the <reference internal="True" refuri="../../classes/class_characterbody2d#class-characterbody2d"><inline classes="std std-ref">CharacterBody2D</inline></reference> docs
-                    for full details.</paragraph>
+                <paragraph>在特定情况下，还有许多其他属性可用于修改身体的行为。详情请参见 <reference internal="True" refuri="../../classes/class_characterbody2d#class-characterbody2d"><inline classes="std std-ref">CharacterBody2D</inline></reference> 文档。</paragraph>
             </section>
         </section>
         <section ids="detecting-collisions" names="detecting\ collisions 检测碰撞">
@@ -185,8 +181,7 @@ MoveAndSlide();</literal_block>
         </section>
         <section ids="examples" names="examples 示例">
             <title>示例</title>
-            <paragraph>To see these examples in action, download the sample project:
-                <reference name="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip">character_body_2d_starter.zip</reference><target ids="character-body-2d-starter-zip" names="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip"></target></paragraph>
+            <paragraph>若要查看这些案例的实际效果，请下载示例项目：<reference name="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip">character_body_2d_starter.zip</reference><target ids="character-body-2d-starter-zip" names="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip"></target></paragraph>
             <section ids="movement-and-walls" names="movement\ and\ walls 移动和墙壁">
                 <title>移动和墙壁</title>
                 <paragraph>If you've downloaded the sample project, this example is in "basic_movement.tscn".</paragraph>
@@ -471,15 +466,8 @@ public partial class MyCharacterBody2D : CharacterBody2D
                     </div>
                 </container>
                 <image candidates="{'*': 'tutorials/physics/img/k2d_platform.gif'}" uri="tutorials/physics/img/k2d_platform.gif"></image>
-                <paragraph>In this code we're using <literal>move_and_slide()</literal> as described above - to move the body
-                    along its velocity vector, sliding along any collision surfaces such as the ground
-                    or a platform. We're also using <literal>is_on_floor()</literal> to check if a jump should be
-                    allowed. Without this, you'd be able to "jump" in midair; great if you're making
-                    Flappy Bird, but not for a platformer game.</paragraph>
-                <paragraph>There is a lot more that goes into a complete platformer character: acceleration,
-                    double-jumps, coyote-time, and many more. The code above is just a starting point.
-                    You can use it as a base to expand into whatever movement behavior you need for
-                    your own projects.</paragraph>
+                <paragraph>在本段代码实现中，我们调用了 <literal>move_and_slide()</literal> 方法，该方法根据物体的速度向量对物体进行平移，并在碰撞检测到地面或平台等碰撞体时，使物体沿碰撞表面滑动。此外，我们还利用了 <literal>is_on_floor()</literal> 方法来判断角色是否处于可跳跃状态。若缺少这一逻辑判断，角色将能够在非地面状态下执行跳跃动作；这种情况在开发如 “Flappy Bird” 这类的飞行躲避游戏中可能是可取的，但在开发平台跳跃类型的游戏中则不适宜。</paragraph>
+                <paragraph>一个完整的平台游戏角色还有很多内容：加速度、二段跳、土狼时间，等等。上面的代码只是一个起点。你可以在此基础上扩展，以得到你的项目所需的任何运动行为。</paragraph>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>
         </section>

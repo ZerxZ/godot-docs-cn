@@ -40,12 +40,7 @@ public partial class Player : Area2D
 }</literal_block>
             </div>
         </container>
-        <paragraph>Using the <literal>export</literal> keyword on the first variable <literal>speed</literal> allows us to set
-            its value in the Inspector. This can be handy for values that you want to be
-            able to adjust just like a node's built-in properties. Click on the <literal>Player</literal>
-            node and you'll see the property now appears in the Inspector in a new section
-            with the name of the script. Remember, if you change the value here, it will
-            override the value written in the script.</paragraph>
+        <paragraph>在第一个变量 <literal>speed</literal> 上使用 <literal>export</literal> 关键字，这样我们就可以在“检查器”中设置其值。对于希望能够像节点的内置属性一样进行调整的值，这可能很方便。点击 <literal>Player</literal> 节点，你将看到该属性现在显示在“检查器”的“Script Variables”（脚本变量）部分。请记住，如果你在此处更改值，它将覆盖脚本中所写的值。</paragraph>
         <warning>
             <paragraph>如果你在使用 C# ，想要查看新的导出变量或信号，就需要（重新）构建项目程序集。可以通过点击编辑器右上角的 <strong>构建</strong> 按钮手动触发构建过程。</paragraph>
             <image candidates="{'*': 'getting_started/first_2d_game/img/build_dotnet.webp'}" uri="getting_started/first_2d_game/img/build_dotnet.webp"></image>
@@ -178,7 +173,7 @@ public partial class Player : Area2D
         <paragraph>我们还会检查玩家是否正在移动，以便在 AnimatedSprite2D 上调用 <literal>play()</literal> 或 <literal>stop()</literal> 。</paragraph>
         <tip>
             <paragraph><literal>$</literal> 是 <literal>get_node()</literal> 的简写。因此在上面的代码中，<literal>$AnimatedSprite2D.play()</literal> 与 <literal>get_node("AnimatedSprite2D").play()</literal> 相同。</paragraph>
-            <paragraph>在 GDScript 中， <literal>$</literal> 返回从当前节点开始的相对路径上的节点，如果找不到该节点，则返回 <literal>null</literal> 。当前 AnimatedSprite2D 是该节点子节点，所以可以使用 <literal>$AnimatedSprite2D</literal> 以获取。</paragraph>
+            <paragraph>在 GDScript 中， <literal>$</literal> 返回从当前节点开始的相对路径上的节点，如果找不到该节点，则返回 <literal>null</literal> 。当前 AnimatedSprite2D 是该节点子节点，因而可以使用 <literal>$AnimatedSprite2D</literal> 以获取。</paragraph>
         </tip>
         <paragraph>现在我们有了一个运动方向，我们可以更新玩家的位置了。我们也可以使用 <literal>clamp()</literal> 来防止它离开屏幕。 <emphasis>clamp</emphasis> 一个值意味着将其限制在给定范围内。将以下内容添加到 <literal>_process</literal> 函数的底部：</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
@@ -201,8 +196,7 @@ Position = new Vector2(
         <tip>
             <paragraph><title_reference>_process()</title_reference> 函数的 <title_reference>delta</title_reference> 参数是 <emphasis>帧长度</emphasis> ——完成上一帧所花费的时间. 使用这个值的话, 可以保证你的移动不会被帧率的变化所影响.</paragraph>
         </tip>
-        <paragraph>Click "Run Current Scene" (<literal classes="kbd">F6</literal>, <literal classes="kbd">Cmd + R</literal> on macOS) and confirm you can move
-            the player around the screen in all directions.</paragraph>
+        <paragraph>点击“运行当前场景”（<literal classes="kbd">F6</literal>，macOS 上为 <literal classes="kbd">Cmd + R</literal>）并确认你能够在屏幕中沿任一方向移动玩家。</paragraph>
         <warning>
             <paragraph>如果在“调试器”面板中出现错误</paragraph>
             <paragraph><literal>Attempt to call function 'play' in base 'null instance' on a null instance</literal>（尝试调用空实例在基类“空实例”上的“play”函数）</paragraph>
@@ -220,7 +214,7 @@ Position = new Vector2(
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">if velocity.x != 0:
     $AnimatedSprite2D.animation = "walk"
     $AnimatedSprite2D.flip_v = false
-    # See the note below about boolean assignment.
+    # See the note below about the following boolean assignment.
     $AnimatedSprite2D.flip_h = velocity.x &lt; 0
 elif velocity.y != 0:
     $AnimatedSprite2D.animation = "up"
@@ -231,7 +225,7 @@ elif velocity.y != 0:
 {
     animatedSprite2D.Animation = "walk";
     animatedSprite2D.FlipV = false;
-    // See the note below about boolean assignment.
+    // See the note below about the following boolean assignment.
     animatedSprite2D.FlipH = velocity.X &lt; 0;
 }
 else if (velocity.Y != 0)
@@ -328,7 +322,8 @@ public delegate void HitEventHandler();</literal_block>
     $CollisionShape2D.set_deferred("disabled", true)</literal_block>
                 </div>
                 <div aria-labelledby="tab-8-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-8-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void OnBodyEntered(Node2D body)
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
+private void OnBodyEntered(Node2D body)
 {
     Hide(); // Player disappears after being hit.
     EmitSignal(SignalName.Hit);

@@ -160,8 +160,8 @@ vec3 get_green_color() {
                         are therefore excluded from the final compiled shader) will appear grayed
                         out. This does not apply to run-time <literal>if</literal> statements.</paragraph>
                 </tip>
-                <paragraph><strong>#if preprocessor versus if statement: Performance caveats</strong></paragraph>
-                <paragraph>The <reference internal="True" refuri="shading_language#doc-shading-language"><inline classes="std std-ref">shading language</inline></reference> supports run-time <literal>if</literal> statements:</paragraph>
+                <paragraph><strong>#if 预处理器与 if 语句：性能注意事项</strong></paragraph>
+                <paragraph><reference internal="True" refuri="shading_language#doc-shading-language"><inline classes="std std-ref">着色语言</inline></reference>支持运行时 <literal>if</literal> 语句：</paragraph>
                 <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">uniform bool USE_LIGHT = true;
 
 if (USE_LIGHT) {
@@ -169,8 +169,7 @@ if (USE_LIGHT) {
 } else {
     // This part is included in the compiled shader, but never run.
 }</literal_block>
-                <paragraph>If the uniform is never changed, this behaves identical to the following usage
-                    of the <literal>#if</literal> preprocessor statement:</paragraph>
+                <paragraph>如果 uniform 从未改变，那么行为和下面的 <literal>#if</literal> 预处理语句用法是等价的：</paragraph>
                 <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">#define USE_LIGHT
 
 #if defined(USE_LIGHT)
@@ -178,21 +177,12 @@ if (USE_LIGHT) {
 #else
 // This part is *not* included in the compiled shader (and therefore never run).
 #endif</literal_block>
-                <paragraph>However, the <literal>#if</literal> variant can be faster in certain scenarios. This is because
-                    all run-time branches in a shader are still compiled and variables within
-                    those branches may still take up register space, even if they are never run in
-                    practice.</paragraph>
-                <paragraph>Modern GPUs are <reference name="quite effective" refuri="https://medium.com/@jasonbooth_86226/branching-on-a-gpu-18bfc83694f2">quite effective</reference>
-                    at performing "static" branching. "Static" branching refers to <literal>if</literal> statements where
-                    <emphasis>all</emphasis> pixels/vertices evaluate to the same result in a given shader invocation. However,
-                    high amounts of <abbreviation explanation="Vector General-Purpose Register">VGPRs</abbreviation> (which can be caused by
-                    having too many branches) can still slow down shader execution significantly.</paragraph>
+                <paragraph>不过部分场合 <literal>#if</literal> 的版本会更快一些。这是因为着色器中的运行时分支仍然是会参与编译的，即便运行时不会用到，这些分支中的变量仍然可能会占据寄存器空间。</paragraph>
+                <paragraph>现代 GPU 在执行“静态”分支时<reference name="相当高效" refuri="https://medium.com/@jasonbooth_86226/branching-on-a-gpu-18bfc83694f2">相当高效</reference>。这里的“静态”分支指的是在一次给定的着色器调用中，对<emphasis>所有</emphasis>像素/顶点都求得相同结果的 <literal>if</literal> 语句。不过大量的 <abbreviation explanation="Vector General-Purpose Register">VGPR</abbreviation>（分支过多就可能造成这种情况）仍然会显著拖慢着色器的运行。</paragraph>
             </section>
             <section ids="elif" names="#elif">
                 <title>#elif</title>
-                <paragraph>The <literal>#elif</literal> directive stands for "else if" and checks the condition passed if
-                    the above <literal>#if</literal> evaluated to <literal>false</literal>. <literal>#elif</literal> can only be used within an
-                    <literal>#if</literal> block. It is possible to use several <literal>#elif</literal> statements after an <literal>#if</literal> statement.</paragraph>
+                <paragraph><literal>#elif</literal> 指令就是“else if”的意思，会在之前的 <literal>#if</literal> 求得 <literal>false</literal> 时检查条件是否成立。<literal>#elif</literal> 只能在 <literal>#if</literal> 块中使用。一个 <literal>#if</literal> 语句后面可以使用多个 <literal>#elif</literal>。</paragraph>
                 <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">#define VAR 2
 
 #if VAR == 0
@@ -204,7 +194,7 @@ if (USE_LIGHT) {
 #else
 // Not included.
 #endif</literal_block>
-                <paragraph>Like with <literal>#if</literal>, the <literal>defined()</literal> preprocessor function can be used:</paragraph>
+                <paragraph>可以和 <literal>#if</literal> 一样使用预处理器函数 <literal>defined()</literal>：</paragraph>
                 <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">#define SHADOW_QUALITY_MEDIUM
 
 #if defined(SHADOW_QUALITY_HIGH)

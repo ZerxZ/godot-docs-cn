@@ -12,7 +12,10 @@
         </note>
         <section ids="language-specification" names="language\ specification 语言规范">
             <title>语言规范</title>
-            <paragraph>Godot当前在其引擎和示例源代码中使用 <strong>C# 7.0 版本</strong> . 因此, 在我们迁移使用较新版本之前, 必须注意避免混合仅在 C# 7.1 或更高版本中可用的语言功能.</paragraph>
+            <paragraph>Godot currently uses <strong>C# version 10.0</strong> in its engine and example source code,
+                as this is the version supported by .NET 6.0 (the current baseline requirement).
+                So, before we move to a newer version, care must be taken to avoid mixing
+                language features only available in C# 11.0 or later.</paragraph>
             <paragraph>有关不同版本的C#功能的详细信息, 请参阅 <reference name="C #中的新功能" refuri="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/">C #中的新功能</reference><target ids="c" names="c\ #中的新功能" refuri="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/"></target> .</paragraph>
         </section>
         <section ids="formatting" names="formatting 格式">
@@ -174,14 +177,14 @@ public class MyClass
                     <list_item>
                         <paragraph>在单行注释符号（<literal>//</literal>）之后，并且如果在行末使用，则在它之前。</paragraph>
                     </list_item>
+                    <list_item>
+                        <paragraph>After the opening brace, and before the closing brace in a single line initializer.</paragraph>
+                    </list_item>
                 </bullet_list>
                 <paragraph>不要使用空格：</paragraph>
                 <bullet_list bullet="*">
                     <list_item>
                         <paragraph>在类型转换括号后.</paragraph>
-                    </list_item>
-                    <list_item>
-                        <paragraph>在单行初始化括号内侧.</paragraph>
                     </list_item>
                 </bullet_list>
                 <paragraph>下面的示例根据上述的一些约定显示了对空格的正确使用：</paragraph>
@@ -196,7 +199,7 @@ public class MyClass
 
     public void MyMethod()
     {
-        int[] values = {1, 2, 3, 4}; // No space within initializer brackets.
+        int[] values = { 1, 2, 3, 4 };
         int sum = 0;
 
         // Single line comment.

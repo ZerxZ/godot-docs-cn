@@ -27,7 +27,7 @@
                 </list_item>
             </bullet_list>
             <paragraph>Clang 格式使用的规则在 Godot 仓库的 <reference name=".clang-format" refuri="https://github.com/godotengine/godot/blob/master/.clang-format">.clang-format</reference> 文件中进行了概述。</paragraph>
-            <paragraph>As long as you ensure that your style matches the surrounding code and that you
+            <paragraph>As long as you ensure that your style matches the surrounding code and that you're
                 not introducing trailing whitespace or space-based indentation, you should be
                 fine. If you plan to contribute regularly, however, we strongly advise that you
                 set up clang-format locally to check and automatically fix all your commits.</paragraph>
@@ -45,7 +45,25 @@
             </seealso>
             <section ids="using-clang-format-locally" names="using\ clang-format\ locally 在本地使用\ clang-format">
                 <title>在本地使用 clang-format</title>
-                <paragraph>首先，你需要安装 clang-format。截至目前，你需要使用 <strong>clang-format 13</strong> 才能与 Godot 的格式兼容。后续版本可能也能用，但更早的版本就可能无法支持所有用到的选项，或者使用不同的格式，导致拉取请求存在样式问题。</paragraph>
+                <paragraph>You need to use <strong>clang-format 17</strong> to be compatible with Godot's format. Later versions might
+                    be suitable, but previous versions may not support all used options, or format
+                    some things differently, leading to style issues in pull requests.</paragraph>
+                <section dupnames="pre-commit\ hook" ids="pre-commit-hook" names="预提交钩子">
+                    <title>预提交钩子</title>
+                    <paragraph>For ease of use, we provide hooks for Git with the <reference name="pre-commit" refuri="https://pre-commit.com/">pre-commit</reference>
+                        Python framework that will run clang-format automatically on all your commits with the
+                        correct version of clang-format.
+                        To set up:</paragraph>
+                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pip install pre-commit
+pre-commit install</literal_block>
+                    <paragraph>You can also run the hook manually with <literal>pre-commit run</literal>.</paragraph>
+                    <note>
+                        <paragraph>Previously, we supplied a hook in the folder <literal>misc/hooks</literal>. If you copied the
+                            script manually, these hooks should still work, but symlinks will be broken.
+                            If you are using the new system, run <literal>rm .git/hooks/*</literal> to remove the old hooks
+                            that are no longer needed.</paragraph>
+                    </note>
+                </section>
                 <section dupnames="installation" ids="installation" names="安装">
                     <title>安装</title>
                     <paragraph>以下是如何安装 clang-format：</paragraph>
@@ -61,7 +79,7 @@
                             <paragraph>macOS and Windows: You can download precompiled binaries from the
                                 <reference name="LLVM website" refuri="https://releases.llvm.org/download.html">LLVM website</reference>. You may need to add
                                 the path to the binary's folder to your system's <literal>PATH</literal> environment
-                                variable to be able to call <literal>clang-format</literal> out of the box.</paragraph>
+                                variable to be able to call clang-format out of the box.</paragraph>
                         </list_item>
                     </bullet_list>
                     <paragraph>然后, 你就有不同的可能性将clang-format应用于你的更改:</paragraph>
@@ -79,13 +97,6 @@
                             <paragraph>该路径可以指向几个文件, 一个接一个, 也可以使用如在典型的Unix shell中的通配符. 在通配时要小心, 以免对Godot树中的已编译对象(.o和.a文件)运行clang格式. 因此, 最好使用 <literal>core/*. {cpp,h}</literal> 而不是 <literal>core/*</literal>.</paragraph>
                         </list_item>
                     </bullet_list>
-                </section>
-                <section dupnames="pre-commit\ hook" ids="pre-commit-hook" names="预提交钩子">
-                    <title>预提交钩子</title>
-                    <paragraph>为了易于使用, 我们为Git提供了一个预提交钩子, 它将在你的所有提交上自动运行clang-format来检查它们, 并允许你在最终提交中应用其更改.</paragraph>
-                    <paragraph>This "hook" is a script that can be found in <literal>misc/hooks</literal>, refer to that
-                        folder's README.md for installation instructions.</paragraph>
-                    <paragraph>如果你的clang-format不在 <literal>PATH</literal> 中, 你可能需要编辑 <literal>pre-commit-clang-format</literal> 来指向正确的二进制格式才能工作. 钩子在Linux和macOS上测试过, 但也应该在Windows上的Git Shell中运行.</paragraph>
                 </section>
                 <section ids="ide-plugin" names="ide\ plugin ide插件">
                     <title>IDE插件</title>
@@ -225,20 +236,21 @@
         <section ids="python" names="python">
             <title>Python</title>
             <paragraph>Godot的SCons构建系统是用Python编写的, 源代码树中包含的各种脚本也使用Python.</paragraph>
-            <paragraph>对于这些, 我们遵循 <reference name="黑色风格指南" refuri="https://github.com/psf/black#the-黑色代码样式">黑色风格指南</reference> . 使用 <reference name="Black使Python 更改变黑" refuri="https://pypi.org/project/black/">Black使Python 更改变黑</reference> .</paragraph>
-            <section ids="using-black-locally" names="using\ black\ locally 本地使用\ black">
-                <title>本地使用 black</title>
-                <paragraph>首先你需要安装 Black。Black 需要 Python 3.7+ 才能运行。</paragraph>
+            <paragraph>For those, we use the <reference name="Ruff linter and code formatter" refuri="https://docs.astral.sh/ruff/">Ruff linter and code formatter</reference>.</paragraph>
+            <section ids="using-ruff-locally" names="using\ ruff\ locally">
+                <title>Using ruff locally</title>
+                <paragraph>First of all, you will need to install Ruff. Ruff requires Python 3.7+ to run.</paragraph>
                 <section dupnames="installation" ids="id1" names="安装">
                     <title>安装</title>
-                    <paragraph>下面介绍如何安装black:</paragraph>
-                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pip3 install black --user</literal_block>
-                    <paragraph>然后, 你有不同的可能性将黑色应用于你的更改:</paragraph>
+                    <paragraph>Here's how to install ruff:</paragraph>
+                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pip3 install ruff --user</literal_block>
+                    <paragraph>You then have different possibilities to apply ruff to your changes:</paragraph>
                 </section>
                 <section dupnames="manual\ usage" ids="id2" names="手动使用">
                     <title>手动使用</title>
-                    <paragraph>你可以使用以下命令将 <literal>black</literal> 手动应用于一个或多个文件:</paragraph>
-                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">black -l 120 &lt;path/to/file(s)&gt;</literal_block>
+                    <paragraph>You can apply <literal>ruff</literal> manually to one or more files with the following
+                        command:</paragraph>
+                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">ruff -l 120 &lt;path/to/file(s)&gt;</literal_block>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph><literal>-l 120</literal> 表示每行允许的字符数为 120。这个数字是经过开发者们商定的。</paragraph>
@@ -248,16 +260,27 @@
                         </list_item>
                     </bullet_list>
                 </section>
-                <section dupnames="pre-commit\ hook" ids="id3" names="预提交钩子">
-                    <title>预提交钩子</title>
-                    <paragraph>为了便于使用, 我们为Git提供了一个预提交钩子, 它将在你的所有提交上自动运行以检查你的提交, 并让你在最终提交中应用其更改.</paragraph>
-                    <paragraph>这个 "hook" 是一个脚本, 可以在 <literal>misc/hooks</literal> 中找到. 请参考该文件夹的 <literal>README.md</literal> , 了解安装说明.</paragraph>
-                </section>
+            </section>
+            <section dupnames="pre-commit\ hook" ids="id3" names="预提交钩子">
+                <title>预提交钩子</title>
+                <paragraph>For ease of use, we provide hooks for Git with the <reference name="pre-commit" refuri="https://pre-commit.com/">pre-commit</reference>
+                    Python framework that will run <literal>ruff</literal> automatically on all your commits with the
+                    correct version of <literal>ruff</literal>.
+                    To set up:</paragraph>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pip install pre-commit
+pre-commit install</literal_block>
+                <paragraph>You can also run the hook manually with <literal>pre-commit run</literal>.</paragraph>
+                <note>
+                    <paragraph>Previously, we supplied a hook in the folder <literal>misc/hooks</literal>. If you copied the
+                        script manually, these hooks should still work, but symlinks will be broken.
+                        If you are using the new system, run <literal>rm .git/hooks/*</literal> to remove the old hooks
+                        that are no longer needed.</paragraph>
+                </note>
                 <section ids="editor-integration" names="editor\ integration 编辑器集成">
                     <title>编辑器集成</title>
                     <paragraph>Many IDEs or code editors have beautifier plugins that can be configured to run
-                        black automatically, for example, each time you save a file. For details, you can
-                        check <reference name="Black editor integration" refuri="https://github.com/psf/black#editor-integration">Black editor integration</reference>.</paragraph>
+                        ruff automatically, for example, each time you save a file. For details, you can
+                        check <reference name="Ruff Integrations" refuri="https://docs.astral.sh/ruff/integrations/">Ruff Integrations</reference>.</paragraph>
                 </section>
             </section>
         </section>

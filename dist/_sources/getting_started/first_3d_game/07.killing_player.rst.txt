@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_killing_the_player:
 
 Killing the player
@@ -96,30 +94,11 @@ a ``die()`` function that helps us put a descriptive label on the code.
         QueueFree();
     }
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnMobDetectorBodyEntered(Node3D body)
     {
         Die();
     }
-
-Try the game again by pressing :kbd:`F5`. If everything is set up correctly,
-the character should die when an enemy runs into the collider. Note that without a ``Player``, the following line
-
-.. tabs::
-   .. code-tab:: gdscript GDScript
-
-    var player_position = $Player.position
-
-   .. code-tab:: csharp
-
-    Vector3 playerPosition = GetNode<Player>("Player").Position;
-
-
-gives error because there is no $Player!
-
-Also note that the enemy colliding with the player and dying depends on the size and position of the
-``Player`` and the ``Mob``\ 's collision shapes. You may need to move them
-and resize them to achieve a tight game feel.
 
 Ending the game
 ---------------
@@ -143,7 +122,7 @@ Get the timer, and stop it, in the ``_on_player_hit()`` function.
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnPlayerHit()
     {
         GetNode<Timer>("MobTimer").Stop();
@@ -151,6 +130,13 @@ Get the timer, and stop it, in the ``_on_player_hit()`` function.
 
 If you try the game now, the monsters will stop spawning when you die,
 and the remaining ones will leave the screen.
+
+Notice also that the game no longer crashes or displays an error when the player dies. Because
+we are stopping the MobTimer, it no longer triggers the ``_on_mob_timer_timeout()`` function.
+
+Also note that the enemy colliding with the player and dying depends on the size and position of the
+``Player`` and the ``Mob``\ 's collision shapes. You may need to move them
+and resize them to achieve a tight game feel.
 
 You can pat yourself in the back: you prototyped a complete 3D game,
 even if it's still a bit rough.

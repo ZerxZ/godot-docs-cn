@@ -29,15 +29,8 @@
                 </list_item>
             </bullet_list>
             <paragraph>别忘了设置子项，使其无法被选中，就像你对 Player 场景所做的那样。</paragraph>
-            <paragraph>Select the <literal>Mob</literal> node and set its <literal>Gravity Scale</literal>
-                property in the <reference internal="True" refuri="../../classes/class_rigidbody2d#class-rigidbody2d"><inline classes="std std-ref">RigidBody2D</inline></reference>
-                section of the inspector to <literal>0</literal>.
-                This will prevent the mob from falling downwards.</paragraph>
-            <paragraph>In addition, under the <reference internal="True" refuri="../../classes/class_collisionobject2d#class-collisionobject2d"><inline classes="std std-ref">CollisionObject2D</inline></reference>
-                section just beneath the <strong>RigidBody2D</strong> section,
-                expand the <strong>Collision</strong> group and
-                uncheck the <literal>1</literal> inside the <literal>Mask</literal> property.
-                This will ensure the mobs do not collide with each other.</paragraph>
+            <paragraph>选择 <literal>Mob</literal> 节点，并在检查器的 <reference internal="True" refuri="../../classes/class_rigidbody2d#class-rigidbody2d"><inline classes="std std-ref">RigidBody2D</inline></reference> 部分中把它的 <literal>Gravity Scale</literal> 属性设置为 <literal>0</literal> 。这样可以防止怪物向下坠落。</paragraph>
+            <paragraph>此外，在 <strong>RigidBody2D</strong> 部分下方的 <reference internal="True" refuri="../../classes/class_collisionobject2d#class-collisionobject2d"><inline classes="std std-ref">CollisionObject2D</inline></reference> 部分下，展开 <strong>Collision</strong> 分组并取消选中 <literal>Mask</literal> 属性里的 <literal>1</literal>。这将确保怪物们不会相互碰撞。</paragraph>
             <image candidates="{'*': 'getting_started/first_2d_game/img/set_collision_mask.webp'}" uri="getting_started/first_2d_game/img/set_collision_mask.webp"></image>
             <paragraph>像设置玩家一样设置 <reference internal="True" refuri="../../classes/class_animatedsprite2d#class-animatedsprite2d"><inline classes="std std-ref">AnimatedSprite2D</inline></reference>。这一次，我们有 3 个动画：<literal>fly</literal>、<literal>swim</literal>、<literal>walk</literal>，每个动画在 art 文件夹中都有两张图片。</paragraph>
             <paragraph>必须为每个单独动画设置 <literal>动画速度</literal> 属性，将三个动画的对应动画速度值都调整为 <literal>3</literal>。</paragraph>
@@ -101,7 +94,8 @@ public partial class Mob : RigidBody2D
     queue_free()</literal_block>
                 </div>
                 <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void OnVisibleOnScreenNotifier2DScreenExited()
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
+private void OnVisibleOnScreenNotifier2DScreenExited()
 {
     QueueFree();
 }</literal_block>

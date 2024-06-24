@@ -8,11 +8,8 @@
         <seealso>
             <paragraph>更多关于游戏进度的保存和读取的信息见 <reference internal="True" refuri="saving_games#doc-saving-games"><inline classes="std std-ref">保存游戏</inline></reference>。</paragraph>
         </seealso>
-        <paragraph>Sometimes, <reference internal="True" refuri="../export/exporting_pcks#doc-exporting-pcks"><inline classes="std std-ref">exporting packs, patches, and mods</inline></reference> is not
-            ideal when you want players to be able to load user-generated content in your
-            project. It requires users to generate a PCK or ZIP file through the Godot
-            editor, which contains resources imported by Godot.</paragraph>
-        <paragraph>Example use cases for runtime file loading and saving include:</paragraph>
+        <paragraph>有时，当你希望玩家能够在项目中加载用户生成的内容时，：ref:<title_reference>exporting packs, patches, and mods &lt;doc_exporting_pcks&gt;</title_reference> 并不理想。它要求用户通过Godot编辑器生成PCK或ZIP文件，其中包含Godot导入的资源。</paragraph>
+        <paragraph>运行时文件加载和保存的示例用例包括：</paragraph>
         <bullet_list bullet="-">
             <list_item>
                 <paragraph>加载为游戏设计的纹理包。</paragraph>
@@ -27,12 +24,10 @@
                 <paragraph>为菜单和 HUD 使用用户提供的字体。</paragraph>
             </list_item>
             <list_item>
-                <paragraph>Saving/loading a file format that can contain multiple files but can still
-                    easily be read by other applications (ZIP).</paragraph>
+                <paragraph>Saving/loading 一种文件格式，该文件格式可以包含多个文件，但仍然可以被其他应用程序轻松读取(ZIP)。</paragraph>
             </list_item>
             <list_item>
-                <paragraph>Loading files created by another game or program, or even game data files from
-                    another game not made with Godot.</paragraph>
+                <paragraph>Loading 由另一个游戏或程序创建的文件，甚至是来自另一个非Godot游戏的游戏数据文件。</paragraph>
             </list_item>
         </bullet_list>
         <paragraph>运行时文件加载可以和 <reference internal="True" refuri="../networking/http_request_class#doc-http-request-class"><inline classes="std std-ref">HTTP 请求</inline></reference>结合起来，直接加载互联网上的资源。</paragraph>
@@ -46,7 +41,7 @@
         <section ids="plain-text-and-binary-files" names="plain\ text\ and\ binary\ files 纯文本文件和二进制文件">
             <title>纯文本文件和二进制文件</title>
             <paragraph>Godot 的 <reference internal="True" refuri="../../classes/class_fileaccess#class-fileaccess"><inline classes="std std-ref">FileAccess</inline></reference> 类提供了读写文件系统中文件的方法：</paragraph>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func save_file(content):
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"> func save_file(content):
     var file = FileAccess.open("/path/to/file.txt", FileAccess.WRITE)
     file.store_string(content)
 
@@ -67,7 +62,8 @@ func load_file():
             <paragraph>Image's <reference internal="True" refuri="../../classes/class_image#class-image-method-load-from-file"><inline classes="std std-ref">Image.load_from_file</inline></reference> static method
                 handles everything, from format detection based on file extension to reading the
                 file from disk.</paragraph>
-            <paragraph>如果你需要错误处理或者更多的控制（例如更改加载SVG的比例）， 请使用下列一个依赖文件格式的方法：</paragraph>
+            <paragraph>If you need error handling or more control (such as changing the scale an SVG is
+                loaded at), use one of the following methods depending on the file format:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><reference internal="True" refuri="../../classes/class_image#class-image-method-load-jpg-from-buffer"><inline classes="std std-ref">Image.load_jpg_from_buffer</inline></reference></paragraph>
@@ -105,14 +101,9 @@ func load_file():
             </bullet_list>
             <paragraph>那些有着 <literal>to_buffer</literal> 前缀的方法将图片保存至 PackedByteArray 中，而不是文件系统。这对于通过网络发送图像或将图像发送到 ZIP 压缩包 中非常有用，而无需将其写入文件系统。它可以通过降低 I/O 利用率来提高性能。</paragraph>
             <note>
-                <paragraph>If displaying the loaded image on a 3D surface, make sure to call
-                    <reference internal="True" refuri="../../classes/class_image#class-image-method-generate-mipmaps"><inline classes="std std-ref">Image.generate_mipmaps</inline></reference>
-                    so that the texture doesn't look grainy when viewed at a distance.
-                    This is also useful in 2D when following instructions on
-                    <reference internal="True" refuri="../rendering/multiple_resolutions#doc-multiple-resolutions-reducing-aliasing-on-downsampling"><inline classes="std std-ref">reducing aliasing when downsampling</inline></reference>.</paragraph>
+                <paragraph>如果在3D曲面上显示加载的图像，请确保调用：ref:<title_reference>image.generate_mipmaps&lt;class_image_method_generate_mip maps&gt;</title_reference> ，以便在远处观察时纹理看起来不会有颗粒感。在2D中，当遵循以下说明时，这也很有用：ref:<title_reference>reducing aliasing when downsampling &lt;doc_multiple_resolutions_reducing_aliasing_on_downsampling&gt;</title_reference> 。</paragraph>
             </note>
-            <paragraph>Example of loading an image and displaying it in a <reference internal="True" refuri="../../classes/class_texturerect#class-texturerect"><inline classes="std std-ref">TextureRect</inline></reference> node
-                (which requires conversion to <reference internal="True" refuri="../../classes/class_imagetexture#class-imagetexture"><inline classes="std std-ref">ImageTexture</inline></reference>):</paragraph>
+            <paragraph>加载图像并将其显示在:ref:<title_reference>class_TextureRect</title_reference> 节点中的示例(需要转换为:ref:<title_reference>class_ImageTexture</title_reference>):</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Load an image of any format supported by Godot from the filesystem.
 var image = Image.load_from_file(path)
 # Optionally, generate mipmaps if displaying the texture on a 3D surface
@@ -129,10 +120,7 @@ $TextureRect.texture.get_image().save_png("/path/to/file.png")</literal_block>
         </section>
         <section ids="audio-video-files doc-runtime-file-loading-and-saving-audio-video-files" names="audio/video\ files 音视频文件 doc_runtime_file_loading_and_saving_audio_video_files">
             <title>音视频文件</title>
-            <paragraph>Godot supports loading Ogg Vorbis audio at runtime. Note that not <emphasis>all</emphasis> files
-                with an <literal>.ogg</literal> extension may be Ogg Vorbis files. Some may be Ogg Theora
-                videos, or contain Opus audio within an Ogg container. These files will <strong>not</strong>
-                load correctly as audio files in Godot.</paragraph>
+            <paragraph>Godot支持在运行时加载Ogg Vorbis音频。请注意，并非*all* 扩展名为 <literal>.ogg</literal> 的文件都可以是ogg-Vorbis文件。有些可能是Ogg Theora视频，或者在Ogg容器中包含Opus音频。这些文件在Godot中将 <strong>not</strong> 作为音频文件正确加载。</paragraph>
             <paragraph>通过 <reference internal="True" refuri="../../classes/class_audiostreamplayer#class-audiostreamplayer"><inline classes="std std-ref">AudioStreamPlayer</inline></reference> 节点加载 Ogg Vorbis 音频文件的示例：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">$AudioStreamPlayer.stream = AudioStreamOggVorbis.load_from_file(path)</literal_block>
             <paragraph>通过 <reference internal="True" refuri="../../classes/class_videostreamplayer#class-videostreamplayer"><inline classes="std std-ref">VideoStreamPlayer</inline></reference> 节点加载 Ogg Theora 视频文件的示例：</paragraph>
@@ -146,24 +134,15 @@ $VideoStreamPlayer.stream = video_stream_theora
 # before this property is set, so call `play()` after setting `stream`.
 $VideoStreamPlayer.play()</literal_block>
             <note>
-                <paragraph>Godot doesn't support runtime loading of MP3 or WAV files yet. Until this is
-                    implemented, it's feasible to implement runtime WAV loading using a script
-                    since <reference internal="True" refuri="../../classes/class_audiostreamwav#class-audiostreamwav"><inline classes="std std-ref">AudioStreamWAV</inline></reference>'s <literal>data</literal> property is exposed to
-                    scripting.</paragraph>
-                <paragraph>It's still possible to <emphasis>save</emphasis> WAV files using
-                    <reference internal="True" refuri="../../classes/class_audiostreamwav#class-audiostreamwav-method-save-to-wav"><inline classes="std std-ref">AudioStreamWAV.save_to_wav</inline></reference>, which is useful
-                    for procedurally generated audio or microphone recordings.</paragraph>
+                <paragraph>Godot还不支持MP3或WAV文件的运行时加载。在实现之前，使用脚本实现运行时WAV加载是可行的，因为：ref:<title_reference>class_AudioStreamWAV</title_reference> 的`data`属性风险脚本。</paragraph>
+                <paragraph>仍然可以使用: ref:<title_reference>AudioStreamWAV.save_to_wav &lt;class_AudioStreamWAV_method_save_to_wav&gt;</title_reference> ，这对于按程序生成的音频或麦克风录音非常有用。</paragraph>
             </note>
             <target refid="doc-runtime-file-loading-and-saving-3d-scenes"></target>
         </section>
         <section ids="d-scenes doc-runtime-file-loading-and-saving-3d-scenes" names="3d\ scenes 3d\ 场景 doc_runtime_file_loading_and_saving_3d_scenes">
             <title>3D 场景</title>
-            <paragraph>Godot has first-class support for glTF 2.0, both in the editor and exported
-                projects. Using <reference internal="True" refuri="../../classes/class_gltfdocument#class-gltfdocument"><inline classes="std std-ref">GLTFDocument</inline></reference> and <reference internal="True" refuri="../../classes/class_gltfstate#class-gltfstate"><inline classes="std std-ref">GLTFState</inline></reference> together,
-                Godot can load and save glTF files in exported projects, in both text
-                (<literal>.gltf</literal>) and binary (<literal>.glb</literal>) formats. The binary format should be preferred
-                as it's faster to write and smaller, but the text format is easier to debug.</paragraph>
-            <paragraph>Example of loading a glTF scene and appending its root node to the scene:</paragraph>
+            <paragraph>Godot在编辑器和导出项目中都对glTF 2.0提供了一流的支持。同时使用：ref:<title_reference>class_gltfdocument</title_reference> 和ref:<title_reference>class_gltfstate</title_reference> ，Godot可以以文本 (<literal>.gltf</literal>) 和二进制 (<literal>.glb</literal>)格式加载和保存导出项目中的glTF文件。二进制格式应该是首选，因为它写得更快、更小，但文本格式更容易调试。</paragraph>
+            <paragraph>加载glTF场景并将其根节点附加到场景的示例：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Load an existing glTF scene.
 # GLTFState is used by GLTFDocument to store the loaded scene's state.
 # GLTFDocument is the class that handles actually loading glTF data into a Godot node tree,
@@ -186,28 +165,17 @@ gltf_document_save.append_from_scene(gltf_scene_root_node, gltf_state_save)
 # `GLTFDocument.generate_buffer()` is also available for saving to memory.
 gltf_document_save.write_to_filesystem(gltf_state_save, path)</literal_block>
             <note>
-                <paragraph>When loading a glTF scene, a <emphasis>base path</emphasis> must be set so that external
-                    resources like textures can be loaded correctly. When loading from a file,
-                    the base path is automatically set to the folder containing the file. When
-                    loading from a buffer, this base path must be manually set as there is no
-                    way for Godot to infer this path.</paragraph>
-                <paragraph>To set the base path, set
-                    <reference internal="True" refuri="../../classes/class_gltfstate#class-gltfstate-property-base-path"><inline classes="std std-ref">GLTFState.base_path</inline></reference> on your
-                    GLTFState instance <emphasis>before</emphasis> calling
-                    <reference internal="True" refuri="../../classes/class_gltfdocument#class-gltfdocument-method-append-from-buffer"><inline classes="std std-ref">GLTFDocument.append_from_buffer</inline></reference>
-                    or <reference internal="True" refuri="../../classes/class_gltfdocument#class-gltfdocument-method-append-from-file"><inline classes="std std-ref">GLTFDocument.append_from_file</inline></reference>.</paragraph>
+                <paragraph>加载glTF场景时，必须设置*基本路径*，以便可以正确加载纹理等外部资源。从文件加载时，基本路径会自动设置为包含该文件的文件夹。从缓冲区加载时，必须手动设置此基本路径，因为Godot无法推断此路径。</paragraph>
+                <paragraph>若要设置基本路径，请在你的GLTFState实例上设置:ref:<title_reference>GLTFState.base_path &lt;class_GLTFState_property_base_path&gt;</title_reference> ，然后*调用* :ref:` GLTFDocument.append_from_buffer&lt;class_GLTCDocument_method_append_from _buffer&gt;` 或 <reference internal="True" refuri="../../classes/class_gltfdocument#class-gltfdocument-method-append-from-file"><inline classes="std std-ref">GLTFDocument.append_from_file</inline></reference>。</paragraph>
             </note>
             <target refid="doc-runtime-file-loading-and-saving-fonts"></target>
         </section>
         <section ids="fonts doc-runtime-file-loading-and-saving-fonts" names="fonts 字体 doc_runtime_file_loading_and_saving_fonts">
             <title>字体</title>
             <paragraph><reference internal="True" refuri="../../classes/class_fontfile#class-fontfile-method-load-bitmap-font"><inline classes="std std-ref">FontFile.load_dynamic_font</inline></reference> 支持以下字体文件格式：TTF、OTF、WOFF、WOFF2、PFB、PFM</paragraph>
-            <paragraph>On the other hand, <reference internal="True" refuri="../../classes/class_fontfile#class-fontfile-method-load-bitmap-font"><inline classes="std std-ref">FontFile.load_bitmap_font</inline></reference> supports
-                the <reference name="BMFont" refuri="https://www.angelcode.com/products/bmfont/">BMFont</reference> format (<literal>.fnt</literal> or <literal>.font</literal>).</paragraph>
-            <paragraph>Additionally, it is possible to load any font that is installed on the system using
-                Godot's support for <reference internal="True" refuri="../ui/gui_using_fonts#doc-using-fonts-system-fonts"><inline classes="std std-ref">系统字体</inline></reference>.</paragraph>
-            <paragraph>Example of loading a font file automatically according to its file extension,
-                then adding it as a theme override to a <reference internal="True" refuri="../../classes/class_label#class-label"><inline classes="std std-ref">Label</inline></reference> node:</paragraph>
+            <paragraph>另一方面，<reference internal="True" refuri="../../classes/class_fontfile#class-fontfile-method-load-bitmap-font"><inline classes="std std-ref">FontFile.load_bitmap_font</inline></reference> 支持`BMFont&lt;<reference refuri="https://www.angelcode.com/products/bmfont/">https://www.angelcode.com/products/bmfont/</reference>&gt;`__ format (<literal>.fnt</literal> or <literal>.font</literal>)。</paragraph>
+            <paragraph>此外，可以使用Godot对 <reference internal="True" refuri="../ui/gui_using_fonts#doc-using-fonts-system-fonts"><inline classes="std std-ref">系统字体</inline></reference> 的支持加载系统上安装的任何字体。</paragraph>
+            <paragraph>根据文件扩展名自动加载字体文件，然后将其作为主题覆盖添加到 <reference internal="True" refuri="../../classes/class_label#class-label"><inline classes="std std-ref">Label</inline></reference> 节点的示例：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var path = "/path/to/font.ttf"
 var path_lower = path.to_lower()
 var font_file = FontFile.new()
@@ -231,21 +199,12 @@ if not font_file.data.is_empty():
         </section>
         <section ids="zip-archives" names="zip\ archives zip\ 压缩包">
             <title>ZIP 压缩包</title>
-            <paragraph>Godot supports reading and writing ZIP archives using the <reference internal="True" refuri="../../classes/class_zipreader#class-zipreader"><inline classes="std std-ref">ZIPReader</inline></reference>
-                and <reference internal="True" refuri="../../classes/class_zippacker#class-zippacker"><inline classes="std std-ref">ZIPPacker</inline></reference> classes. This supports any ZIP file, including files
-                generated by Godot's "Export PCK/ZIP" functionality (although these will contain
-                imported Godot resources rather than the original project files).</paragraph>
+            <paragraph>Godot支持使用 <reference internal="True" refuri="../../classes/class_zipreader#class-zipreader"><inline classes="std std-ref">ZIPReader</inline></reference> 和 <reference internal="True" refuri="../../classes/class_zippacker#class-zippacker"><inline classes="std std-ref">ZIPPacker</inline></reference> 类读取和写入ZIP档案。这支持任何ZIP文件，包括Godot的 "Export PCK/ZIP"功能生成的文件（尽管这些文件将包含导入的Godot资源，而不是原始项目文件）。</paragraph>
             <note>
-                <paragraph>Use <reference internal="True" refuri="../../classes/class_projectsettings#class-projectsettings-method-load-resource-pack"><inline classes="std std-ref">ProjectSettings.load_resource_pack</inline></reference>
-                    to load PCK or ZIP files exported by Godot as
-                    <reference internal="True" refuri="../export/exporting_pcks#doc-exporting-pcks"><inline classes="std std-ref">additional data packs</inline></reference>. That approach is preferred
-                    for DLCs, as it makes interacting with additional data packs seamless (virtual filesystem).</paragraph>
+                <paragraph>使用 <reference internal="True" refuri="../../classes/class_projectsettings#class-projectsettings-method-load-resource-pack"><inline classes="std std-ref">ProjectSettings.load_resource_pack</inline></reference> 将Godot导出的PCK或ZIP文件加载为 <reference internal="True" refuri="../export/exporting_pcks#doc-exporting-pcks"><inline classes="std std-ref">additional data packs</inline></reference>。DLC更喜欢这种方法，因为它可以无缝地与其他数据包（虚拟文件系统）交互。</paragraph>
             </note>
-            <paragraph>This ZIP archive support can be combined with runtime image, 3D scene and audio
-                loading to provide a seamless modding experience without requiring users to go
-                through the Godot editor to generate PCK/ZIP files.</paragraph>
-            <paragraph>Example that lists files in a ZIP archive in an <reference internal="True" refuri="../../classes/class_itemlist#class-itemlist"><inline classes="std std-ref">ItemList</inline></reference> node,
-                then writes contents read from it to a new ZIP archive (essentially duplicating the archive):</paragraph>
+            <paragraph>这种ZIP档案支持可以与运行时图像、3D场景和音频加载相结合，提供无缝的改装体验，而无需用户通过Godot编辑器生成PCK/ZIP文件。</paragraph>
+            <paragraph>示例列出 <reference internal="True" refuri="../../classes/class_itemlist#class-itemlist"><inline classes="std std-ref">ItemList</inline></reference> 节点中ZIP存档中的文件，然后将从中读取的内容写入新的ZIP存档（本质上是复制存档）：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Load an existing ZIP archive.
 var zip_reader = ZIPReader.new()
 zip_reader.open(path)

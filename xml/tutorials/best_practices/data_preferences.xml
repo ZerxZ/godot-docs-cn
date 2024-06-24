@@ -131,7 +131,10 @@
                     <block_quote>
                         <bullet_list bullet="-">
                             <list_item>
-                                <paragraph>HashMaps为了减少哈希冲突, 并保持访问速度, 在表中保留了未使用的内存的间隙. 这也是为什么它的大小不断地以2的幂次增加的原因.</paragraph>
+                                <paragraph>HashMaps maintain gaps of unused memory interspersed in the table
+                                    on purpose to reduce hash collisions and maintain the speed of
+                                    accesses. This is why it constantly increases in size exponentially by
+                                    powers of 2.</paragraph>
                             </list_item>
                         </bullet_list>
                     </block_quote>
@@ -200,7 +203,7 @@
             <paragraph>这里重要的细节是对象任务的复杂性. 每次执行这些多源查询时, 它运行 <emphasis>几个</emphasis> 迭代循环和哈希表查找. 此外, 查询是线性时间操作, 依赖于对象的继承层次结构大小. 如果 <literal>Object</literal> 查询的类(当前类)什么都没有找到, 则该请求将一直推迟到下一个基类, 一直到原始 <literal>Object</literal> 类为止. 虽然这些都是单独的快速操作, 但它必须进行如此多的检查, 于是这一事实使得它们比查找数据的两种方法都要慢.</paragraph>
             <note>
                 <paragraph>当开发人员提到脚本API有多慢时, 所引用的正是这一系列查询. 与编译后的, 应用程序知道在哪里可以找到任何东西的,C++代码相比, 不可避免的是, 脚本API操作将花费更长的时间. 他们必须定位任何相关数据的来源, 然后才能尝试访问它.</paragraph>
-                <paragraph>GDScript很慢的原因是, 它执行的每个操作都要经过这个系统.</paragraph>
+                <paragraph>GDScript 很慢的原因是, 它执行的每个操作都要经过这个系统.</paragraph>
                 <paragraph>C#可以通过更优化的字节码, 以更快的速度处理一些内容. 但是, 如果C#脚本调用引擎类的内容, 或者脚本试图访问它的外部内容, 它会通过这个管道.</paragraph>
                 <paragraph>NativeScript C++甚至更进一步, 默认将所有内容都保持在内部. 对外部结构的调用将通过脚本API进行. 在NativeScript C++中, 注册方法以将其公开给脚本API是一项手动任务. 至此, 外部非C++类将使用API来查找它们.</paragraph>
             </note>
@@ -267,11 +270,11 @@ public partial class TreeNode : GodotObject
         </section>
         <section ids="enumerations-int-vs-string" names="enumerations:\ int\ vs.\ string 枚举：整数\ vs\ 字符串">
             <title>枚举：整数 VS 字符串</title>
-            <paragraph>大多数语言都提供了一个枚举类型选项.GDScript也不例外, 但与大多数其他语言不同的是, 它允许人们使用整数或字符串作为枚举值(只有在GDScript中使用 <literal>export</literal> 关键字时才可使用后者). 那么问题就来了,"应该使用哪一种？"</paragraph>
-            <paragraph>简而言之,"你觉得哪个更舒服就选哪个." 这是GDScript特有的特性, 而并非一般的Godot脚本；该语言将可用性置于性能之上.</paragraph>
-            <paragraph>在技术层面上, 整数比较(常量时间)比字符串比较(线性时间)更快. 如果你想保持其他语言的习惯, 那么应该使用整数.</paragraph>
-            <paragraph>当你想要 <emphasis>打印</emphasis> 枚举值时，使用整数的主要问题就出现了。尝试直接打印以 <title_reference>int</title_reference> 型保存的枚举 <literal>MY_ENUM</literal> ，将会打印 <literal>5</literal> 之类的东西，而不是像 <literal>MyEnum</literal> 这样的词。要打印以 <title_reference>int</title_reference> 型保存的枚举。必须编写一个字典来映射每个枚举对应的字符串值。</paragraph>
-            <paragraph>如果使用枚举的主要目的是打印值, 并且希望将它们作为相关概念组合在一起, 那么使用它们作为字符串是有意义的. 这样, 就不需要在打印上执行单独的数据结构.</paragraph>
+            <paragraph>大多数语言都提供了一个枚举类型选项，GDScript也不例外。但与其他大多数语言不同的是，GDScript的枚举允许开发者使用整数或字符串作为枚举值（只有在GDScript中使用 <literal>@export</literal> 注解时才可使用后者）。 那么问题来了：“该用哪一种枚举？”</paragraph>
+            <paragraph>简单回答一下就是：“你觉得哪个更舒服就选哪个。” 这是 GDScript 特有的特性，并非（C++、C#等）一般的 Godot 脚本所特有的特性；该语言将可用性置于性能之上。</paragraph>
+            <paragraph>在技术层面上，整数比较（常量时间）比字符串比较（线性时间）更快，若想保持其他语言中使用枚举的习惯，则应使用整数来表示枚举值。</paragraph>
+            <paragraph>当你想要 <emphasis>打印</emphasis> 枚举值时，使用整数的主要问题就出现了：尝试直接打印以 <title_reference>int</title_reference> 型保存的枚举 <literal>MY_ENUM</literal> 会打印 <literal>5</literal> 之类的东西，而不是像 <literal>MyEnum</literal> 这样的字符。若要打印以 <title_reference>int</title_reference> 型保存的枚举。必须编写一个字典来映射每个枚举所对应的字符串值。</paragraph>
+            <paragraph>如果开发者使用枚举的主要目的是打印值，并希望将它们作为相关概念组合在一起，那么将枚举作为字符串使用是有意义的。这样一来，也就不需要在打印上执行单独的数据结构了。</paragraph>
         </section>
         <section ids="animatedtexture-vs-animatedsprite2d-vs-animationplayer-vs-animationtree" names="animatedtexture\ vs.\ animatedsprite2d\ vs.\ animationplayer\ vs.\ animationtree">
             <title>AnimatedTexture vs. AnimatedSprite2D vs. AnimationPlayer vs. AnimationTree</title>

@@ -8,7 +8,20 @@
         <paragraph>这是C#和GDScript之间API差异的(不完整)列表.</paragraph>
         <section ids="general-differences" names="general\ differences 一般差异">
             <title>一般差异</title>
-            <paragraph>如 <reference internal="True" refuri="c_sharp_basics#doc-c-sharp"><inline classes="std std-ref">C# 基础</inline></reference> 中所述,C#通常使用 <literal>PascalCase</literal> 而不是GDScript和C++中使用的 <literal>snake_case</literal>.</paragraph>
+            <paragraph>As explained in <reference internal="True" refuri="c_sharp_basics#doc-c-sharp-general-differences"><inline classes="std std-ref">C# 和 GDScript 之间的一般差异</inline></reference>, <literal>PascalCase</literal> is used
+                to access Godot APIs in C# instead of the <literal>snake_case</literal> used by GDScript and
+                C++. Where possible, fields and getters/setters have been converted to
+                properties. In general, the C# Godot API strives to be as idiomatic as is
+                reasonably possible. See the <reference internal="True" refuri="c_sharp_style_guide#doc-c-sharp-styleguide"><inline classes="std std-ref">C# 风格指南</inline></reference>, which we encourage
+                you to also use for your own C# code.</paragraph>
+            <paragraph>In GDScript, the setters/getters of a property can be called directly, although
+                this is not encouraged. In C#, only the property is defined. For example, to
+                translate the GDScript code <literal>x.set_name("Friend")</literal> to C#, write
+                <literal>x.Name = "Friend";</literal>.</paragraph>
+            <paragraph>A C# IDE will provide intellisense, which is extremely useful when figuring out
+                renamed C# APIs. The built-in Godot script editor has no support for C#
+                intellisense, and it also doesn't provide many other C# development tools that
+                are considered essential. See <reference internal="True" refuri="c_sharp_basics#doc-c-sharp-setup-external-editor"><inline classes="std std-ref">配置外部编辑器</inline></reference>.</paragraph>
         </section>
         <section ids="global-scope" names="global\ scope 全局作用域">
             <title>全局作用域</title>
@@ -2157,11 +2170,13 @@ string[] bigrams = text.Bigrams(); // ["Ge", "et", "t ", " u", "up", "p!"]</lite
                     </tbody>
                 </tgroup>
             </table>
-            <bullet_list bullet="*">
-                <list_item>
-                    <paragraph>.NET 在 <reference name="System.IO.Path" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.io.path">System.IO.Path</reference> 类下包含许多路径实用方法，用于处理非 Godot 路径（以 <literal>res://</literal> 或 <literal>user://</literal> 开头的路径）</paragraph>
-                </list_item>
-            </bullet_list>
+            <note>
+                <paragraph>.NET provides path utility methods under the
+                    <reference name="System.IO.Path" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.io.path">System.IO.Path</reference>
+                    class. They can only be used with native OS paths, not Godot paths
+                    (paths that start with <literal>res://</literal> or <literal>user://</literal>).
+                    See <reference internal="True" refuri="../../io/data_paths#doc-data-paths"><inline classes="std std-ref">Godot 项目中的文件路径</inline></reference>.</paragraph>
+            </note>
             <target dupnames="$\ string\ interpolation" ids="id1" refuri="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated"></target>
             <target ids="double-tostring" names="double.tostring" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.double.tostring"></target>
             <target ids="double-tryparse" names="double.tryparse" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.double.tryparse"></target>
@@ -2778,7 +2793,8 @@ void SayHello(string name)
         </section>
         <section ids="variant" names="variant">
             <title><literal>Variant</literal></title>
-            <paragraph><literal>Godot.Variant</literal> 用于表示 Godot 的原生 <reference internal="True" refuri="../../../classes/class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> 类型。任何与 Variant 兼容的类型都可以与之相互转换。</paragraph>
+            <paragraph><literal>Godot.Variant</literal> is used to represent Godot's native <reference internal="True" refuri="../../../classes/class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> type.
+                Any <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference> can be converted from/to it.</paragraph>
             <paragraph>另见： <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">C# Variant</inline></reference> 。</paragraph>
         </section>
         <section ids="communicating-with-other-scripting-languages" names="communicating\ with\ other\ scripting\ languages 与其他脚本语言通信">

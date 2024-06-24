@@ -7,15 +7,14 @@
         <title>处理退出请求</title>
         <section ids="quitting" names="quitting 退出">
             <title>退出</title>
-            <paragraph>大多数平台都有要求应用程序退出的选项。在桌面系统中，这通常是通过窗口标题栏上的“x”图标来实现的。在 Android 系统上，当在主屏幕上时，后退按钮被用来退出（否则就返回）。</paragraph>
+            <paragraph>Most platforms have the option to request the application to quit. On
+                desktops, this is usually done with the "x" icon on the window title bar.
+                On mobile devices, the app can quit at any time while it is suspended
+                to the background.</paragraph>
         </section>
         <section ids="handling-the-notification" names="handling\ the\ notification 处理通知">
             <title>处理通知</title>
             <paragraph>在桌面及 Web 平台上, <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference> 会在窗口管理器发出退出请求时接受到 <literal>MainLoop.NOTIFICATION_WM_QUIT_REQUEST</literal> 通知.</paragraph>
-            <paragraph>在Android系统中, 会发送 <literal>MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST</literal> 代替. 如果在项目设置中勾选了 <strong>Application &gt; Config &gt; Quit On Go Back</strong> (默认), 按Back按钮将退出应用程序.</paragraph>
-            <note>
-                <paragraph><literal>MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST</literal> 在iOS上不支持, 因为iOS设备没有实体的Back按钮.</paragraph>
-            </note>
             <paragraph>处理通知的方法如下(在任何节点上):</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -35,7 +34,6 @@
 }</literal_block>
                 </div>
             </container>
-            <paragraph>在开发移动应用程序时, 除非用户在主屏幕上, 否则不需要退出, 因此处理方式有变化.</paragraph>
             <paragraph>It is important to note that by default, Godot apps have the built-in
                 behavior to quit when quit is requested from the window manager. This
                 can be changed, so that the user can take care of the complete quitting
@@ -52,6 +50,19 @@
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">GetTree().AutoAcceptQuit = false;</literal_block>
                 </div>
             </container>
+        </section>
+        <section ids="on-mobile-devices" names="on\ mobile\ devices">
+            <title>On mobile devices</title>
+            <paragraph>There is no direct equivalent to <literal>NOTIFICATION_WM_CLOSE_REQUEST</literal> on mobile
+                platforms. Due to the nature of mobile operating systems, the only place
+                that you can run code prior to quitting is when the app is being suspended to
+                the background. On both Android and iOS, the app can be killed while suspended
+                at any time by either the user or the OS. A way to plan ahead for this
+                possibility is to utilize <literal>NOTIFICATION_APPLICATION_PAUSED</literal> in order to
+                perform any needed actions as the app is being suspended.</paragraph>
+            <paragraph>On Android, pressing the Back button will exit the application if
+                <strong>Application &gt; Config &gt; Quit</strong> On Go Back is checked in the Project Settings
+                (which is the default). This will fire <literal>NOTIFICATION_WM_GO_BACK_REQUEST</literal>.</paragraph>
         </section>
         <section ids="sending-your-own-quit-notification" names="sending\ your\ own\ quit\ notification 发送你自己的退出通知">
             <title>发送你自己的退出通知</title>

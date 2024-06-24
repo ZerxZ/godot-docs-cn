@@ -149,6 +149,28 @@
                 </bullet_list>
             </section>
         </section>
+        <section ids="decal-rendering-order" names="decal\ rendering\ order">
+            <title>Decal rendering order</title>
+            <paragraph>By default, decals are ordered based on the size of their <abbreviation explanation="Axis-Aligned Bounding Box">AABB</abbreviation> and the distance to the camera. AABBs that are
+                closer to the camera are rendered first, which means that decal rendering order
+                can sometimes appear to change depending on camera position if some decals are
+                positioned at the same location.</paragraph>
+            <paragraph>To resolve this, you can adjust the <strong>Sorting Offset</strong> property in the
+                VisualInstance3D section of the Decal node inspector. This offset is not a
+                strict priority order, but a <emphasis>guideline</emphasis> that the renderer will use as the AABB
+                size still affects how decal sorting works. Therefore, higher values will
+                <emphasis>always</emphasis> result in the decal being drawn above other decals with a lower sorting
+                offset.</paragraph>
+            <paragraph>If you want to ensure a decal is always rendered on top of other decals,
+                you need to set its <strong>Sorting Offset</strong> property to a positive value greater than
+                the AABB length of the largest decal that may overlap it. To make this decal
+                drawn behind other decals instead, set the <strong>Sorting Offset</strong> to the same
+                negative value.</paragraph>
+            <figure align="center" ids="id3">
+                <image alt="VisualInstance3D Sorting Offset comparison on Decals" candidates="{'*': 'tutorials/3d/img/decals_sorting_offset.webp'}" uri="tutorials/3d/img/decals_sorting_offset.webp"></image>
+                <caption>VisualInstance3D Sorting Offset comparison on Decals</caption>
+            </figure>
+        </section>
         <section ids="tweaking-performance-and-quality" names="tweaking\ performance\ and\ quality 调整性能和质量">
             <title>调整性能和质量</title>
             <paragraph>贴花渲染性能主要取决于其屏幕覆盖范围及其数量。 一般来说，覆盖大部分屏幕的一些大贴花的渲染消耗，会比散布在各处的许多小贴花的渲染消耗更高。</paragraph>

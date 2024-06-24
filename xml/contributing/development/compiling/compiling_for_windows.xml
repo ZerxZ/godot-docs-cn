@@ -13,7 +13,11 @@
             <paragraph>要在Windows下进行编译, 需要以下内容:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference name="Visual Studio Community" refuri="https://www.visualstudio.com/vs/community/">Visual Studio Community</reference><target ids="visual-studio-community" names="visual\ studio\ community" refuri="https://www.visualstudio.com/vs/community/"></target> ,2017或更高版本. 建议使用VS 2019. <strong>请务必阅读下面的 "安装Visual Studio注意事项", 否则你将不得不再次运行/下载安装程序.</strong></paragraph>
+                    <paragraph><reference name="Visual Studio Community" refuri="https://www.visualstudio.com/vs/community/">Visual Studio Community</reference><target ids="visual-studio-community" names="visual\ studio\ community" refuri="https://www.visualstudio.com/vs/community/"></target>,
+                        version 2019 or later. Visual Studio 2022 is recommended.
+                        <strong>Make sure to enable C++ in the list of workflows to install.</strong>
+                        If you've already installed Visual Studio without C++ support, run the installer
+                        again; it should present you a <strong>Modify</strong> button.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="MinGW-w64" refuri="https://mingw-w64.org/">MinGW-w64</reference><target ids="mingw-w64" names="mingw-w64" refuri="https://mingw-w64.org/"></target> with GCC can be used as an alternative to
@@ -25,7 +29,7 @@
                         <strong>Make sure to enable the option to add Python to the ``PATH`` in the installer.</strong></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="SCons 3.0+" refuri="https://scons.org/pages/download.html">SCons 3.0+</reference><target ids="scons-3-0" names="scons\ 3.0+" refuri="https://scons.org/pages/download.html"></target> build system. Using the
+                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference><target ids="scons-3-1-2" names="scons\ 3.1.2+" refuri="https://scons.org/pages/download.html"></target> build system. Using the
                         latest release is recommended, especially for proper support of recent Visual
                         Studio releases.</paragraph>
                 </list_item>
@@ -55,13 +59,7 @@
             <paragraph>如果 SCons 无法检测到你的 Visual Studio 安装，可能是因为你的 SCons 版本太老了。请使用 <literal>python -m pip install --upgrade scons</literal> 将其更新为最新版本。</paragraph>
             <target refid="doc-compiling-for-windows-install-vs"></target>
         </section>
-        <section ids="installing-visual-studio-caveats doc-compiling-for-windows-install-vs" names="installing\ visual\ studio\ caveats 安装\ visual\ studio\ 注意事项 doc_compiling_for_windows_install_vs">
-            <title>安装 Visual Studio 注意事项</title>
-            <paragraph>如果安装Visual Studio 2017或2019, 请确保启用要安装的工作流程列表中的 <strong>C++</strong> .</paragraph>
-            <paragraph>如果安装Visual Studio 2015, 请确保运行 <strong>自定义</strong> 安装而不是 <strong>典型</strong> 安装, 然后选择 <strong>C++</strong> 作为语言.</paragraph>
-            <paragraph>如果你已经犯了在没有C++支持的情况下安装Visual Studio的错误, 请再次运行安装程序；它将为你提供一个 <strong>修改</strong> 按钮. 从 <emphasis>添加/删除程序</emphasis> 中运行安装程序只会给你提供 <strong>修复</strong> 选项, 而该选项将不允许你安装C++工具.</paragraph>
-        </section>
-        <section ids="downloading-godot-s-source" names="downloading\ godot's\ source 下载\ godot\ 的源代码">
+        <section ids="downloading-godot-s-source doc-compiling-for-windows-install-vs" names="downloading\ godot's\ source 下载\ godot\ 的源代码 doc_compiling_for_windows_install_vs">
             <title>下载 Godot 的源代码</title>
             <paragraph>详细步骤请参考 <reference internal="True" refuri="getting_source#doc-getting-source"><inline classes="std std-ref">获取源代码</inline></reference>。</paragraph>
             <paragraph>从现在开始，本教程将假设你将源代码放在了 <literal>C:\godot</literal>。</paragraph>
@@ -69,7 +67,7 @@
                 <paragraph>为了防止编译过程中由于连续病毒扫描而导致的速度减慢，请将 Godot 源文件夹添加到杀毒软件中的例外列表中。</paragraph>
                 <paragraph>For Windows Defender, hit the <literal classes="kbd">Windows</literal> key, type "Windows Security"
                     then hit <literal classes="kbd">Enter</literal>. Click on <strong>Virus &amp; threat protection</strong> on the left
-                    panel. Under <strong>Virus &amp; threat protection settings</strong> click on <strong>Mange Settings</strong>
+                    panel. Under <strong>Virus &amp; threat protection settings</strong> click on <strong>Manage Settings</strong>
                     and scroll down to <strong>Exclusions</strong>. Click <strong>Add or remove exclusions</strong> then
                     add the Godot source folder.</paragraph>
             </warning>
@@ -79,7 +77,18 @@
             <section ids="selecting-a-compiler" names="selecting\ a\ compiler 选择编译器">
                 <title>选择编译器</title>
                 <paragraph>SCons 将自动查找并使用现有的 Visual Studio 安装。如果你没有安装 Visual Studio，它将尝试使用 MinGW 代替。如果你已经安装了 Visual Studio 并想使用 MinGW，请在 SCons 命令行中传入 <literal>use_mingw=yes</literal>。注意，MSVC 的构建不能从 MSYS2 或 MinGW 的 shell 中进行。使用 <literal>cmd.exe</literal> 或 PowerShell 代替。</paragraph>
-                <paragraph>在开发过程中，通常最好使用 Visual Studio 编译器，因为链接 Godot 二进制文件的速度比 MinGW 更快。但是，MinGW 可以利用链接时优化（见下文）来生成更多优化的二进制文件，从而使其成为生产使用的更好选择。</paragraph>
+                <tip>
+                    <paragraph>During development, using the Visual Studio compiler is usually a better
+                        idea, as it links the Godot binary much faster than MinGW. However, MinGW
+                        can produce more optimized binaries using link-time optimization (see
+                        below), making it a better choice for production use. This is particularly
+                        the case for the GDScript VM which performs much better with MinGW compared
+                        to MSVC. Therefore, it's recommended to use MinGW to produce builds that you
+                        distribute to players.</paragraph>
+                    <paragraph>All official Godot binaries are built in
+                        <reference name="custom containers" refuri="https://github.com/godotengine/build-containers">custom containers</reference>
+                        using MinGW.</paragraph>
+                </tip>
             </section>
             <section ids="running-scons" names="running\ scons 运行\ scons">
                 <title>运行 SCons</title>
@@ -95,19 +104,164 @@
                     your CPU architecture, but this can be overridden using <literal>arch=x86_64</literal> or
                     <literal>arch=x86_32</literal>.</paragraph>
                 <paragraph>该可执行文件包含整个引擎，并且运行时没有任何依赖项。运行它会启动项目管理器。</paragraph>
-                <note>
-                    <paragraph>If you are compiling Godot for production use, then you can
+                <tip>
+                    <paragraph>If you are compiling Godot for production use, you can
                         make the final executable smaller and faster by adding the
-                        SCons option <literal>target=template_release</literal>.</paragraph>
-                    <paragraph>If you are compiling Godot with MinGW, you can make the binary
-                        even smaller and faster by adding the SCons option <literal>lto=full</literal>.
-                        As link-time optimization is a memory-intensive process,
-                        this will require about 7 GB of available RAM while compiling.</paragraph>
-                </note>
+                        SCons option <literal>production=yes</literal>. This enables additional compiler
+                        optimizations and link-time optimization.</paragraph>
+                    <paragraph>LTO takes some time to run and requires about 7 GB of available RAM
+                        while compiling. If you're running out of memory with the above option,
+                        use <literal>production=yes lto=none</literal> or <literal>production=yes lto=thin</literal> for a
+                        lightweight but less effective form of LTO.</paragraph>
+                </tip>
                 <note>
                     <paragraph>如果你想为自己的 Godot 构建和官方发布使用单独的编辑器设置，你可以通过在 <literal>bin/</literal> 文件夹中创建一个名为 <literal>._sc_</literal> 或 <literal>_sc_</literal> 的文件来启用 <reference internal="True" refuri="../../../tutorials/io/data_paths#doc-data-paths-self-contained-mode"><inline classes="std std-ref">自包含模式</inline></reference>。</paragraph>
                 </note>
             </section>
+        </section>
+        <section ids="compiling-with-support-for-direct3d-12" names="compiling\ with\ support\ for\ direct3d\ 12">
+            <title>Compiling with support for Direct3D 12</title>
+            <paragraph>By default, builds of Godot do not contain support for the Direct3D 12 graphics
+                API.</paragraph>
+            <paragraph>To compile Godot with Direct3D 12 support you need at least the following:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph><reference name="The DirectX Shader Compiler" refuri="https://github.com/Microsoft/DirectXShaderCompiler/releases">The DirectX Shader Compiler</reference><target ids="the-directx-shader-compiler" names="the\ directx\ shader\ compiler" refuri="https://github.com/Microsoft/DirectXShaderCompiler/releases"></target>.
+                        The zip folder will be named "dxc_" followed by the date of release. Download
+                        it anywhere, unzip it and remember the path to the unzipped folder, you will
+                        need it below.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><reference name="godot-nir-static library" refuri="https://github.com/godotengine/godot-nir-static/releases/">godot-nir-static library</reference><target ids="godot-nir-static-library" names="godot-nir-static\ library" refuri="https://github.com/godotengine/godot-nir-static/releases/"></target>.
+                        We compile the Mesa libraries you will need into a static library. Download it
+                        anywhere, unzip it and remember the path to the unzipped folder, you will
+                        need it below.</paragraph>
+                </list_item>
+            </bullet_list>
+            <note>
+                <paragraph>You can optionally build the godot-nir-static libraries yourself with
+                    the following steps:</paragraph>
+                <enumerated_list enumtype="arabic" prefix="" suffix=".">
+                    <list_item>
+                        <paragraph>Install the Python package <reference name="mako" refuri="https://www.makotemplates.org">mako</reference><target ids="mako" names="mako" refuri="https://www.makotemplates.org"></target>
+                            which is needed to generate some files.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph>Clone the <reference name="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static">godot-nir-static</reference><target ids="godot-nir-static" names="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static"></target>
+                            directory and navigate to it.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph>Run the following:</paragraph>
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">git submodule update --init
+./update_mesa.sh
+scons</literal_block>
+                        <paragraph>If you are building with MinGW, add <literal>use_mingw=yes</literal> to the <literal>scons</literal>
+                            command, you can also specify build architecture using <literal>arch={architecture}</literal>.</paragraph>
+                        <paragraph>Mesa static library should be built using the same compiler you are
+                            using for building Godot.</paragraph>
+                    </list_item>
+                </enumerated_list>
+            </note>
+            <paragraph>Optionally, you can compile with the following for additional features:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph><reference name="PIX" refuri="https://devblogs.microsoft.com/pix/download">PIX</reference><target ids="pix" names="pix" refuri="https://devblogs.microsoft.com/pix/download"></target> is a performance tuning
+                        and debugging application for Direct3D12 applications. If you compile-in
+                        support for it, you can get much more detailed information through PIX that
+                        will help you optimize your game and troubleshoot graphics bugs. To use it,
+                        download the WinPixEventRuntime package. You will be taken to a NuGet package
+                        page where you can click "Download package" to get it. Once downloaded, change
+                        the file extension to .zip and unzip the file to some path.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><reference name="Agility SDK" refuri="https://devblogs.microsoft.com/directx/directx12agility">Agility SDK</reference><target ids="agility-sdk" names="agility\ sdk" refuri="https://devblogs.microsoft.com/directx/directx12agility"></target> can
+                        be used to provide access to the latest Direct3D 12 features without relying
+                        on driver updates. To use it, download the latest Agility SDK package. You
+                        will be taken to a NuGet package page where you can click "Download package"
+                        to get it. Once downloaded, change the file extension to .zip and unzip the
+                        file to some path.</paragraph>
+                </list_item>
+            </bullet_list>
+            <note>
+                <paragraph>If you use a preview version of the Agility SDK, remember to enable
+                    developer mode in Windows; otherwise it won't be used.</paragraph>
+            </note>
+            <note>
+                <paragraph>If you want to use a PIX with MinGW build, navigate to PIX runtime
+                    directory and use the following commands to generate import library:</paragraph>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve"># For x86-64:
+gendef ./bin/x64/WinPixEventRuntime.dll
+dlltool --machine i386:x86-64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/x64/libWinPixEventRuntime.a
+
+# For ARM64:
+gendef ./bin/ARM64/WinPixEventRuntime.dll
+dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/ARM64/libWinPixEventRuntime.a</literal_block>
+            </note>
+            <paragraph>When building Godot, you will need to tell SCons to use Direct3D 12 and where to
+                look for the additional libraries:</paragraph>
+            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes dxc_path=&lt;...&gt; mesa_libs=&lt;...&gt;</literal_block>
+            <paragraph>Or, with all options enabled:</paragraph>
+            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes dxc_path=&lt;...&gt; mesa_libs=&lt;...&gt; agility_sdk_path=&lt;...&gt; pix_path=&lt;...&gt;</literal_block>
+            <note>
+                <paragraph>The build process will copy <literal>dxil.dll</literal> from the <literal>bin/&lt;arch&gt;/</literal>
+                    directory in the DXC folder to the Godot binary directory and the
+                    appropriate <literal>bin/&lt;arch&gt;</literal> file in the Godot binary directory.
+                    Direct3D 12-enabled Godot packages for distribution to end users must
+                    include the <literal>dxil.dll</literal> (and relevant folders if using multi-arch),
+                    both for the editor and games. At runtime, the renderer will try to
+                    load the DLL from the arch-specific folders, and will fall back to the
+                    same directory as the Godot executable if the appropriate arch isn't
+                    found.</paragraph>
+            </note>
+            <note>
+                <paragraph>For the Agility SDK's DLLs you have to explicitly choose the kind of
+                    workflow. Single-arch is the default (DLLs copied to <literal>bin/</literal>). If you
+                    pass <literal>agility_sdk_multi_arch=yes</literal> to SCons, you'll opt-in for
+                    multi-arch. DLLs will be copied to the appropriate <literal>bin/&lt;arch&gt;/</literal>
+                    subdirectories and at runtime the right one will be loaded.</paragraph>
+            </note>
+        </section>
+        <section ids="compiling-with-angle-support" names="compiling\ with\ angle\ support">
+            <title>Compiling with ANGLE support</title>
+            <paragraph>ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be used
+                to improve support for the Compatibility renderer on some older GPUs with outdated
+                OpenGL drivers and on Windows for ARM.</paragraph>
+            <paragraph>By default, Godot is built with dynamically linked ANGLE, you can use it by placing
+                <literal>libEGL.dll</literal> and <literal>libGLESv2.dll</literal> alongside the executable.</paragraph>
+            <note>
+                <paragraph>You can use dynamically linked ANGLE with export templates as well, rename
+                    aforementioned DLLs to <literal>libEGL.{architecture}.dll</literal> and <literal>libGLESv2.{architecture}.dll</literal>
+                    and place them alongside export template executables, and libraries will
+                    be automatically copied during the export process.</paragraph>
+            </note>
+            <paragraph>To compile Godot with statically linked ANGLE:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>Download pre-built static libraries from <reference name="godot-angle-static library" refuri="https://github.com/godotengine/godot-angle-static/releases">godot-angle-static library</reference><target ids="godot-angle-static-library" names="godot-angle-static\ library" refuri="https://github.com/godotengine/godot-angle-static/releases"></target>, and unzip them.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>When building Godot, add <literal>angle_libs={path}</literal> to tell SCons where to look for the ANGLE libraries:</paragraph>
+                    <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=windows angle_libs=&lt;...&gt;</literal_block>
+                </list_item>
+            </bullet_list>
+            <note>
+                <paragraph>You can optionally build the godot-angle-static libraries yourself with
+                    the following steps:</paragraph>
+                <enumerated_list enumtype="arabic" prefix="" suffix=".">
+                    <list_item>
+                        <paragraph>Clone the <reference name="godot-angle-static" refuri="https://github.com/godotengine/godot-angle-static">godot-angle-static</reference><target ids="godot-angle-static" names="godot-angle-static" refuri="https://github.com/godotengine/godot-angle-static"></target>
+                            directory and navigate to it.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph>Run the following command:</paragraph>
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons</literal_block>
+                        <paragraph>If you are buildng with MinGW, add <literal>use_mingw=yes</literal> to the command,
+                            you can also specify build architecture using <literal>arch={architecture}</literal>.</paragraph>
+                        <paragraph>ANGLE static library should be built using the same compiler you are
+                            using for building Godot.</paragraph>
+                    </list_item>
+                </enumerated_list>
+            </note>
         </section>
         <section ids="development-in-visual-studio" names="development\ in\ visual\ studio 在\ visual\ studio\ 中进行开发">
             <title>在 Visual Studio 中进行开发</title>
@@ -218,13 +372,17 @@ C:\godot&gt; scons platform=windows target=template_debug arch=x86_64
 C:\godot&gt; scons platform=windows target=template_release arch=x86_64</literal_block>
             <paragraph>If you plan on replacing the standard export templates, copy these to the
                 following location, replacing <literal>&lt;version&gt;</literal> with the version identifier
-                (such as <literal>3.1.1.stable</literal> or <literal>3.2.dev</literal>):</paragraph>
-            <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">%USERPROFILE%\AppData\Roaming\Godot\templates\&lt;version&gt;\</literal_block>
+                (such as <literal>4.2.1.stable</literal> or <literal>4.3.dev</literal>):</paragraph>
+            <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">%APPDATA%\Godot\export_templates\&lt;version&gt;\</literal_block>
             <paragraph>使用以下名称：</paragraph>
-            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">windows_32_debug.exe
-windows_32_release.exe
-windows_64_debug.exe
-windows_64_release.exe</literal_block>
+            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">windows_debug_x86_32_console.exe
+windows_debug_x86_32.exe
+windows_debug_x86_64_console.exe
+windows_debug_x86_64.exe
+windows_release_x86_32_console.exe
+windows_release_x86_32.exe
+windows_release_x86_64_console.exe
+windows_release_x86_64.exe</literal_block>
             <paragraph>此外, 如果你使用的是自定义模块或自定义引擎代码, 则可能需要在此处将二进制文件配置为自定义导出模板:</paragraph>
             <image candidates="{'*': 'contributing/development/compiling/img/wintemplates.png'}" uri="contributing/development/compiling/img/wintemplates.png"></image>
             <paragraph>在这种情况下, 你不需要复制它们, 只需引用在Godot源文件夹的 <literal>bin\</literal> 目录中生成的文件, 因此下次构建时, 将自动引用自定义模板.</paragraph>

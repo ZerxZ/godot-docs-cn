@@ -44,10 +44,10 @@
                     <paragraph><reference internal="True" refuri="../../classes/class_segmentshape2d#class-segmentshape2d"><inline classes="std std-ref">SegmentShape2D</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="../../classes/class_separationrayshape2d#class-separationrayshape2d"><inline classes="std std-ref">SeparationRayShape2D</inline></reference> (designed for characters)</paragraph>
+                    <paragraph><reference internal="True" refuri="../../classes/class_separationrayshape2d#class-separationrayshape2d"><inline classes="std std-ref">SeparationRayShape2D</inline></reference> （专为角色设计）</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="../../classes/class_worldboundaryshape2d#class-worldboundaryshape2d"><inline classes="std std-ref">WorldBoundaryShape2D</inline></reference> (infinite plane)</paragraph>
+                    <paragraph><reference internal="True" refuri="../../classes/class_worldboundaryshape2d#class-worldboundaryshape2d"><inline classes="std std-ref">WorldBoundaryShape2D</inline></reference> （无限平面）</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>你可以使用一个或多个原始形状来表示大多数较小物体的碰撞. 然而, 对于更复杂的物体, 如大型船舶或整个水平面, 你可能需要凸形或凹形来代替. 下面会有更多的介绍.</paragraph>
@@ -56,8 +56,7 @@
         <section ids="convex-collision-shapes" names="convex\ collision\ shapes 凸型碰撞形状">
             <title>凸型碰撞形状</title>
             <warning>
-                <paragraph>Godot currently doesn't offer a built-in way to create 2D convex collision
-                    shapes. This section is mainly here for reference purposes.</paragraph>
+                <paragraph>Godot 目前没有提供创建 2D 凸形碰撞形状的内置方法。本节内容主要供参考。</paragraph>
             </warning>
             <paragraph><reference internal="True" refuri="../../classes/class_convexpolygonshape2d#class-convexpolygonshape2d"><inline classes="std std-ref">Convex collision shapes</inline></reference> are a compromise
                 between primitive collision shapes and concave collision shapes. They can
@@ -79,34 +78,24 @@
             </note>
             <paragraph>When not using TileMaps for level design, concave shapes are the best approach
                 for a level's collision.</paragraph>
-            <paragraph>You can configure the CollisionPolygon2D node's <emphasis>build mode</emphasis> in the inspector.
-                If it is set to <strong>Solids</strong> (the default), collisions will include the polygon
-                and its contained area. If it is set to <strong>Segments</strong>, collisions will only
-                include the polygon edges.</paragraph>
+            <paragraph>您可以在检查器中配置 CollisionPolygon2D 节点的 <emphasis>build mode</emphasis>。如果将其设置为 <strong>Solids**（默认），碰撞将包括多边形及其所包含的区域。如果将其设置为 **Segments</strong>，碰撞将仅包括多边形边缘。</paragraph>
             <paragraph>You can generate a concave collision shape from the editor by selecting a Sprite2D
                 and using the <strong>Sprite2D</strong> menu at the top of the 2D viewport. The Sprite2D menu
                 dropdown exposes an option called <strong>Create CollisionPolygon2D Sibling</strong>.
                 Once you click it, it displays a menu with 3 settings:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><strong>Simplification:</strong> Higher values will result in a less detailed shape, which
-                        improves performance at the cost of accuracy.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">**</problematic>简化：<problematic ids="id4" refid="id3">**</problematic>值越高，形状的精细度就越低。提高性能的同时降低了精度。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><strong>Shrink (Pixels):</strong> Higher values will shrink the generated collision polygon
-                        relative to the sprite's edges.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">**</problematic>收缩：<problematic ids="id4" refid="id3">**</problematic>数值越大，生成的碰撞多边形就越会相对于精灵边缘收缩。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><strong>Grow (Pixels):</strong> Higher values will grow the generated collision polygon
-                        relative to the sprite's edges. Note that setting Grow and Shrink to equal
-                        values may yield different results than leaving both of them on 0.</paragraph>
+                    <paragraph><strong>增长（像素）：</strong> 数值越大，生成的碰撞多边形就越会相对于精灵边缘增长。需要注意的是，将 “增长 ”和 “收缩 ”设置为相等的值，可能会与将它们都设置为 0 产生的结果不同。</paragraph>
                 </list_item>
             </bullet_list>
             <note>
-                <paragraph>If you have an image with many small details, it's recommended to create a
-                    simplified version and use it to generate the collision polygon. This
-                    can result in better performance and game feel, since the player won't
-                    be blocked by small, decorative details.</paragraph>
+                <paragraph>如果你的图片包含许多小细节，建议创建一个简化版本并使用它来生成碰撞多边形。这样可以带来更好的性能表现和游戏体验，因为玩家不会被小小的、装饰性的细节阻碍。</paragraph>
                 <paragraph>To use a separate image for collision polygon generation, create another
                     Sprite2D, generate a collision polygon sibling from it then remove the Sprite2D
                     node. This way, you can exclude small details from the generated collision.</paragraph>

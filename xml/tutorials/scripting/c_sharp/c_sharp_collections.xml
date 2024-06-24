@@ -22,7 +22,8 @@
                     <block_quote>
                         <bullet_list bullet="*">
                             <list_item>
-                                <paragraph>如果是，由于 Godot 只支持 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant 兼容</inline></reference> 类型，所以请使用 Godot 集合。</paragraph>
+                                <paragraph>If yes, since Godot only supports <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant 兼容类型</inline></reference>,
+                                    use a Godot collection.</paragraph>
                             </list_item>
                             <list_item>
                                 <paragraph>如果不是，请考虑 <reference name="选择一个合适的 .NET 集合" refuri="https://learn.microsoft.com/zh-cn/dotnet/standard/collections/selecting-a-collection-class">选择一个合适的 .NET 集合</reference><target ids="net" names="选择一个合适的\ .net\ 集合" refuri="https://learn.microsoft.com/zh-cn/dotnet/standard/collections/selecting-a-collection-class"></target> 。</paragraph>
@@ -79,6 +80,14 @@
                         <tbody>
                             <row>
                                 <entry>
+                                    <paragraph><literal>PackedByteArray</literal></paragraph>
+                                </entry>
+                                <entry>
+                                    <paragraph><literal>byte[]</literal></paragraph>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>
                                     <paragraph><literal>PackedInt32Array</literal></paragraph>
                                 </entry>
                                 <entry>
@@ -91,14 +100,6 @@
                                 </entry>
                                 <entry>
                                     <paragraph><literal>long[]</literal></paragraph>
-                                </entry>
-                            </row>
-                            <row>
-                                <entry>
-                                    <paragraph><literal>PackedByteArray</literal></paragraph>
-                                </entry>
-                                <entry>
-                                    <paragraph><literal>byte[]</literal></paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -127,14 +128,6 @@
                             </row>
                             <row>
                                 <entry>
-                                    <paragraph><literal>PackedColorArray</literal></paragraph>
-                                </entry>
-                                <entry>
-                                    <paragraph><literal>Color[]</literal></paragraph>
-                                </entry>
-                            </row>
-                            <row>
-                                <entry>
                                     <paragraph><literal>PackedVector2Array</literal></paragraph>
                                 </entry>
                                 <entry>
@@ -149,16 +142,26 @@
                                     <paragraph><literal>Vector3[]</literal></paragraph>
                                 </entry>
                             </row>
+                            <row>
+                                <entry>
+                                    <paragraph><literal>PackedColorArray</literal></paragraph>
+                                </entry>
+                                <entry>
+                                    <paragraph><literal>Color[]</literal></paragraph>
+                                </entry>
+                            </row>
                         </tbody>
                     </tgroup>
                 </table>
-                <paragraph>其他 C# 数组在 Godot C# API 中不受支持，因为没有等效的紧缩数组。请查看 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant</inline></reference> 以获取所有兼容类型的列表。</paragraph>
+                <paragraph>Other C# arrays are not supported by the Godot C# API since a packed array equivalent
+                    does not exist. See the list of <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant 兼容类型</inline></reference>.</paragraph>
                 <target refid="doc-c-sharp-collections-array"></target>
             </section>
             <section ids="array doc-c-sharp-collections-array" names="array 数组 doc_c_sharp_collections_array">
                 <title>数组</title>
                 <paragraph>Godot 数组被实现为一个包含多个任意类型元素的 <literal>Variant</literal> 数组。在 C# 中，对应的类型是 <literal>Godot.Collections.Array</literal> 。</paragraph>
-                <paragraph>泛型 <literal>Godot.Collections.Array&lt;T&gt;</literal> 类型允许将元素类型限制为 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant 兼容</inline></reference> 类型。</paragraph>
+                <paragraph>The generic <literal>Godot.Collections.Array&lt;T&gt;</literal> type allows restricting the element type to
+                    a <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference>.</paragraph>
                 <paragraph>一个未指定类型的 <literal>Godot.Collections.Array</literal> 可以使用 <literal>Godot.Collections.Array&lt;T&gt;(Godot.Collections.Array)</literal> 构造函数转换为一个指定类型的数组。</paragraph>
                 <note>
                     <paragraph>尽管名字如此，Godot 数组与 C# 集合 <literal>List&lt;T&gt;</literal> 更相似，而不是 <literal>System.Array</literal> 。它们的大小不固定，随着集合中添加/删除元素而增长或缩小。</paragraph>
@@ -631,7 +634,8 @@
             <section ids="dictionary doc-c-sharp-collections-dictionary" names="dictionary 字典 doc_c_sharp_collections_dictionary">
                 <title>字典</title>
                 <paragraph>Godot 字典是用 <literal>Variant</literal> 类型的键和值实现的。在 C# 中，对应的类型是 <literal>Godot.Collections.Dictionary</literal> 。</paragraph>
-                <paragraph>泛型 <literal>Godot.Collections.Dictionary&lt;TKey, TValue&gt;</literal> 类型允许将键和值的类型限制为 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant 兼容</inline></reference> 类型。</paragraph>
+                <paragraph>The generic <literal>Godot.Collections.Dictionary&lt;TKey, TValue&gt;</literal> type allows restricting the key
+                    and value types to a <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference>.</paragraph>
                 <paragraph>一个无类型的 <literal>Godot.Collections.Dictionary</literal> 可以用 <literal>Godot.Collections.Dictionary&lt;TKey, TValue&gt;(Godot.Collections.Dictionary)</literal> 构造函数转换为一个有类型的字典。</paragraph>
                 <tip>
                     <paragraph>如果你需要一个字典，其中键是有类型的，但值没有类型，那么使用 <literal>Variant</literal> 作为有类型字典的 <literal>TValue</literal> 泛型参数。</paragraph>

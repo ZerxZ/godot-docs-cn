@@ -21,7 +21,7 @@
             <paragraph>下载并安装 Android SDK.</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>你可以使用 <reference name="Android Studio 4.1 或更高版本" refuri="https://developer.android.com/studio/">Android Studio 4.1 或更高版本</reference>来安装 Android SDK。</paragraph>
+                    <paragraph>You can install the Android SDK using <reference name="Android Studio Hedgehog (version 2023.1.1) or later" refuri="https://developer.android.com/studio/">Android Studio Hedgehog (version 2023.1.1) or later</reference>.</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph>运行一次，使用这些<reference name="说明" refuri="https://developer.android.com/studio/intro/update#sdk-manager">说明</reference>完成 SDK 设置。</paragraph>
@@ -30,13 +30,13 @@
                             <paragraph>确保安装了<reference name="必要的软件包" refuri="https://developer.android.com/studio/intro/update#recommended">必要的软件包</reference>。</paragraph>
                             <bullet_list bullet="-">
                                 <list_item>
-                                    <paragraph>Android SDK Platform-Tools 30.0.5 或更高版本</paragraph>
+                                    <paragraph>Android SDK Platform-Tools version 34.0.0 or later</paragraph>
                                 </list_item>
                                 <list_item>
-                                    <paragraph>Android SDK Build-Tools 版本 33.0.2</paragraph>
+                                    <paragraph>Android SDK Build-Tools version 34.0.0</paragraph>
                                 </list_item>
                                 <list_item>
-                                    <paragraph>Android SDK Platform 33</paragraph>
+                                    <paragraph>Android SDK Platform 34</paragraph>
                                 </list_item>
                                 <list_item>
                                     <paragraph>Android SDK Command-line Tools（最新）</paragraph>
@@ -63,21 +63,9 @@
                     </bullet_list>
                 </list_item>
             </bullet_list>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">sdkmanager --sdk_root=&lt;android_sdk_path&gt; "platform-tools" "build-tools;33.0.2" "platforms;android-33" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"</literal_block>
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">sdkmanager --sdk_root=&lt;android_sdk_path&gt; "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"</literal_block>
             <note>
                 <paragraph>如果你使用的是 Linux，<strong>请勿使用发行版软件库提供的 Android SDK，因为它通常是过时的</strong>。</paragraph>
-            </note>
-        </section>
-        <section ids="create-a-debug-keystore" names="create\ a\ debug.keystore 创建\ debug.keystore">
-            <title>创建 debug.keystore</title>
-            <paragraph>Android 需要调试密钥库文件，才能安装到设备并分发非发布版本 APK。如果你以前使用过 SDK 并且已经构建了项目，那么 ant 或 eclipse 可能会为你生成一个（在 Linux 和 macOS 上，你可以在 <literal>~/ .android</literal> 目录中找到它）。</paragraph>
-            <paragraph>如果找不到或需要生成一个，则可以使用 JDK 中的 keytool 命令：</paragraph>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12</literal_block>
-            <paragraph>This will create a <literal>debug.keystore</literal> file in your current directory. You should move it to a memorable location such as <literal>%USERPROFILE%\.android\</literal>, because you will need its location in a later step. For more information on <literal>keytool</literal> usage, see <reference name="this Q&amp;A article" refuri="https://ask.godotengine.org/21349/jdk-android-file-missing">this Q&amp;A article</reference>.</paragraph>
-            <note>
-                <paragraph>It is important that the password is the same for the keystore and the key. This is a <reference name="known Android studio issue" refuri="https://developer.android.com/studio/known-issues#ki-key-keystore-warning">known Android
-                        studio issue</reference> that also
-                    affects Godot projects.</paragraph>
             </note>
         </section>
         <section ids="setting-it-up-in-godot" names="setting\ it\ up\ in\ godot 在\ godot\ 中进行设置">
@@ -85,14 +73,15 @@
             <paragraph>进入编辑器设置屏幕。此屏幕包含计算机中用户帐户的编辑器设置（与项目无关）。</paragraph>
             <image candidates="{'*': 'tutorials/export/img/editorsettings.png'}" uri="tutorials/export/img/editorsettings.png"></image>
             <paragraph>向下滚动到 Android 设置所在的部分：</paragraph>
-            <image candidates="{'*': 'tutorials/export/img/androidsdk.png'}" uri="tutorials/export/img/androidsdk.png"></image>
+            <image candidates="{'*': 'tutorials/export/img/android_editor_settings.webp'}" uri="tutorials/export/img/android_editor_settings.webp"></image>
             <paragraph>在该屏幕中，需要设置两个路径：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>Android Sdk Path</literal> 设置为Android SDK的安装位置. 例如,Windows上的 <literal>%LOCALAPPDATA%\Android\Sdk\</literal> , 或macOS上的 <literal>/Users/$USER/Library/Android/sdk/</literal> .</paragraph>
+                    <paragraph><literal>Java SDK Path</literal> should be the location where OpenJDK 17 was installed.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>调试 <literal>.keystore</literal> 文件——可以在之前创建 <literal>debug.keystore</literal> 文件的文件夹中找到。</paragraph>
+                    <paragraph><literal>Android Sdk Path</literal> should be the location where the Android SDK was installed.
+                        - For example <literal>%LOCALAPPDATA%\Android\Sdk\</literal> on Windows or <literal>/Users/$USER/Library/Android/sdk/</literal> on macOS.</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>配置完成后, 导出到Android的一切都准备好了！</paragraph>
@@ -137,7 +126,9 @@
             <title>为 Google Play 商店导出</title>
             <paragraph>将 APK 上传到 Google 的 Play 商店，需要你使用非调试密钥库文件进行签名；这样的文件可以像这样生成：</paragraph>
             <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000</literal_block>
-            <paragraph>这个密钥库和密钥用于验证你的开发人员身份，请记住密码并将其保存在安全的地方！使用 Google 的 Android 开发者指南来了解有关 <reference name="APK 签名" refuri="https://developer.android.com/studio/publish/app-signing">APK 签名</reference>的更多信息。</paragraph>
+            <paragraph>This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
+                It is suggested to use only upper and lowercase letters and numbers. Special characters may cause errors.
+                Use Google's Android Developer guides to learn more about <reference name="APK signing" refuri="https://developer.android.com/studio/publish/app-signing">APK signing</reference>.</paragraph>
             <paragraph>现在，在你的 Android 导出预设中填写以下表格：</paragraph>
             <image candidates="{'*': 'tutorials/export/img/editor-export-presets-android.png'}" uri="tutorials/export/img/editor-export-presets-android.png"></image>
             <bullet_list bullet="-">

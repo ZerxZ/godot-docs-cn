@@ -10,8 +10,7 @@
         </seealso>
         <paragraph>这些是在Xcode中加载Godot项目的步骤. 这允许你构建和部署到iOS设备, 为App Store构建一个发行版本, 并执行你通常可以使用Xcode执行的所有其他操作.</paragraph>
         <attention>
-            <paragraph>Projects written in C# can be exported to iOS as of Godot 4.2, but support
-                is experimental and <reference internal="True" refuri="../scripting/c_sharp/index#doc-c-sharp-platforms"><inline classes="std std-ref">some limitations apply</inline></reference>.</paragraph>
+            <paragraph>从Godot 4.2开始，用C#编写的项目可以导出到iOS，但支持是实验性的，并且：ref:<title_reference>一些限制适用于&lt;doc_C_sharp_platforms&gt;</title_reference>。</paragraph>
         </attention>
         <section ids="requirements" names="requirements 需求">
             <title>需求</title>
@@ -30,11 +29,11 @@
             <paragraph><strong>应用</strong>分类中的 <strong>App Store 团队 ID</strong> 和（捆绑包）<strong>标识符</strong>选项都是必填的。留空时导出器会报错。</paragraph>
             <note>
                 <line_block>
-                    <line>If you encounter an error during export similar to</line>
-                    <line><literal>JSON text did not start with array or object and option to allow fragments not set</literal></line>
-                    <line>then it might be due to a malformated <strong>App Store Team ID</strong>!</line>
-                    <line>The exporter expects a (10 characters long) code like <literal>ABCDE12XYZ</literal> and not, e.g., your name as Xcode likes to display in the <emphasis>Signing &amp; Capabilities</emphasis> tab.</line>
-                    <line>You can find the code over at <reference name="developer.apple.com" refuri="https://developer.apple.com/account/resources/certificates/list">developer.apple.com</reference><target ids="developer-apple-com" names="developer.apple.com" refuri="https://developer.apple.com/account/resources/certificates/list"></target> next to your name in the top right corner.</line>
+                    <line>如果你在导出过程中遇到类似以下错误</line>
+                    <line>“JSON文字未以数组或物件开头，且未设定允许片段的选项”</line>
+                    <line>那么可能是由于**App Store团队ID**格式错误！</line>
+                    <line>导出器需要一个（10个字元长）代码，例如“ABCDE12XYZ”，而不是例如Xcode喜欢在“签章和功能”标签中显示的你的姓名。</line>
+                    <line>你可以在右上角你姓名旁的「developer.apple.com &lt;<reference refuri="https://developer.apple.com/account/resources/certificates/list">https://developer.apple.com/account/resources/certificates/list</reference>&gt;」找到代码。</line>
                 </line_block>
             </note>
             <paragraph>点击<strong>导出项目</strong>后，仍有两个重要选项：</paragraph>
@@ -140,7 +139,7 @@
                         </row>
                         <row>
                             <entry>
-                                <paragraph>Options / Application / Provisioning Profile UUID Debug</paragraph>
+                                <paragraph>选项/应用程序/设定档UUID调试</paragraph>
                             </entry>
                             <entry>
                                 <paragraph><literal>GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG</literal></paragraph>
@@ -148,7 +147,7 @@
                         </row>
                         <row>
                             <entry>
-                                <paragraph>Options / Application / Provisioning Profile UUID Release</paragraph>
+                                <paragraph>选项/应用程序/设定档UUID发布</paragraph>
                             </entry>
                             <entry>
                                 <paragraph><literal>GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE</literal></paragraph>
@@ -160,22 +159,16 @@
         </section>
         <section ids="troubleshooting" names="troubleshooting 故障排除">
             <title>故障排除</title>
-            <section ids="xcode-select-points-at-wrong-sdk-location" names="xcode-select\ points\ at\ wrong\ sdk\ location">
-                <title>xcode-select points at wrong SDK location</title>
-                <paragraph>xcode-select is a tool that comes with Xcode and among other things points at iOS SDKs on your Mac.
-                    If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools,
-                    xcode-select should point at the right location for the iPhone SDK.
-                    If it somehow doesn't, Godot will fail exporting to iOS with an error that may look like this:</paragraph>
+            <section ids="xcode-select-points-at-wrong-sdk-location" names="xcode-select\ points\ at\ wrong\ sdk\ location xcode-select\ 指向错误的sdk位置">
+                <title>xcode-select 指向错误的SDK位置</title>
+                <paragraph>xcode select是xcode附带的一个工具，除其他外，它指向Mac上的iOS SDK。如果你安装了Xcode，打开了它，同意了许可协议，并安装了命令行工具，Xcode select应该指向iPhone SDK的正确位置。如果不这样做，Godot将无法导出到iOS，并出现如下错误：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">MSB3073: The command ""clang" &lt;LOTS OF PATHS AND COMMAND LINE ARGUMENTS HERE&gt;
 "/Library/Developer/CommandLineTools/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk"" exited with code 1.</literal_block>
-                <paragraph>In this case, Godot is trying to find the <literal>Platforms</literal> folder containing the iPhone SDK inside the
-                    <literal>/Library/Developer/CommandLineTools/</literal> folder, but the <literal>Platforms</literal> folder with the iPhone SDK is
-                    actually located under <literal>/Applications/Xcode.app/Contents/Developer</literal>. To verify this, you can open
-                    up Terminal and run the following command to see what xcode-select points at:</paragraph>
+                <paragraph>在这种情况下，Godot试图在`/Library/Developer/CommandLineTools/<problematic ids="id2" refid="id1">``</problematic>文件夹中找到包含iPhone SDK的`Platforms'文件夹，但含有iPhone SDK的` Platforms'<title_reference>文件夹实际上位于</title_reference>/Applications/Xcode.app/Contents/Developer`下。要验证这一点，可以打开“终端”并运行以下命令来查看xcode选择点的位置：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">xcode-select -p</literal_block>
-                <paragraph>To fix xcode-select pointing at a wrong location, enter this command in Terminal:</paragraph>
+                <paragraph>要修复xcode select指向错误的位置，请在终端中输入以下命令：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">sudo xcode-select -switch /Applications/Xcode.app</literal_block>
-                <paragraph>After running this command, Godot should be able to successfully export to iOS.</paragraph>
+                <paragraph>运行此命令后，Godot应该能够成功导出到iOS。</paragraph>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>
         </section>

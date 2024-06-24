@@ -41,8 +41,7 @@ uint hash(uint x) {
             also in the particle shader the next time it is run.</paragraph>
         <paragraph>Next, setup your <literal>start()</literal> function. Particles shaders contain a <literal>start()</literal> function and a
             <literal>process()</literal> function.</paragraph>
-        <paragraph>The code in the <literal>start()</literal> function only runs when the particle system starts.
-            The code in the <literal>process()</literal> function will always run.</paragraph>
+        <paragraph><literal>start()</literal> 函式中的代码仅在粒子系统启动时运作。 <literal>process()</literal> 函式中的代码将始终运作。</paragraph>
         <paragraph>We need to generate 4 random numbers: 3 to create a random position and one for the random
             offset of the swim cycle.</paragraph>
         <paragraph>First, generate 4 seeds inside the <literal>start()</literal> function using the <literal>hash()</literal> function provided above:</paragraph>
@@ -66,8 +65,7 @@ vec3 position = vec3(rand_from_seed(alt_seed2) * 2.0 - 1.0,
         <paragraph>只要设置 <literal>VELOCITY</literal>，你就可以让鱼自由游动。例如，尝试下面的代码。</paragraph>
         <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">VELOCITY.z = cos(TIME + CUSTOM.x * 6.28) * 4.0 + 6.0;</literal_block>
         <paragraph>这将为每条鱼在 <literal>2</literal> 和 <literal>10</literal> 之间设置不同的速度。</paragraph>
-        <paragraph>You can also let each fish change its velocity over time if you set the velocity in the <literal>process()</literal>
-            function.</paragraph>
+        <paragraph>如果你在 <literal>process()</literal> 函式中设定速度，你也可以让每条鱼随着时间的推移改变其速度。</paragraph>
         <paragraph>如果你在上一个教程中使用了 <literal>CUSTOM.y</literal>，你也可以基于 <literal>VELOCITY</literal> 来设置游泳动画的速度。直接用 <literal>CUSTOM.y</literal> 就好了。</paragraph>
         <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">CUSTOM.y = VELOCITY.z * 0.1;</literal_block>
         <paragraph>代码产生的效果如图:</paragraph>

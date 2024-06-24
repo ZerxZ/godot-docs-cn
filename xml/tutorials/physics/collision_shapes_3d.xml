@@ -78,9 +78,7 @@
             </note>
             <paragraph>当不使用网络地图进行关卡设计时, 凹形是关卡碰撞的最佳方法, 也就是说, 如果关卡有一些小细节, 可能希望将这些细节排除碰撞之外, 以保证性能和游戏体验, 要做到这一点, 可以在3D建模中建立一个简化的碰撞网格, 并让Godot为其自动生成一个碰撞形状. 下面会有更多的介绍</paragraph>
             <paragraph>请注意, 与基础形状和凸形状不同, 凹形碰撞形状没有实际的 "体积", 既可以将对象放置在形状的 <emphasis>外侧</emphasis>, 也可以放置在 <emphasis>内侧</emphasis>.</paragraph>
-            <paragraph>You can generate a concave collision shape from the editor by selecting a
-                MeshInstance3D and using the <strong>Mesh</strong> menu at the top of the 3D viewport. The
-                editor exposes two options:</paragraph>
+            <paragraph>选中 MeshInstance3D，然后使用 3D 视口顶部的<strong>网格</strong>菜单就可以在编辑器中生成一个凹形碰撞形状。编辑器提供了两个选项：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph>创建三网格静态体是个方便的选择. 它创建一个包含与网格几何学匹配的凹形的静态体.</paragraph>
@@ -90,8 +88,7 @@
                 </list_item>
             </bullet_list>
             <seealso>
-                <paragraph>See <reference internal="True" refuri="../assets_pipeline/importing_3d_scenes/index#doc-importing-3d-scenes"><inline classes="std std-ref">导入 3D 场景</inline></reference> for information on how to export models
-                    for Godot and automatically generate collision shapes on import.</paragraph>
+                <paragraph>关于如何为 Godot 导出模型，以及如何在导入时自动生成碰撞形状，见 <reference internal="True" refuri="../assets_pipeline/importing_3d_scenes/index#doc-importing-3d-scenes"><inline classes="std std-ref">导入 3D 场景</inline></reference>。</paragraph>
             </seealso>
         </section>
         <section ids="performance-caveats" names="performance\ caveats 性能方面的注意事项">

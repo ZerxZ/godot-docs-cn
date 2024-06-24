@@ -19,7 +19,7 @@
                     <paragraph><reference name="Python 3.6+" refuri="https://www.python.org/">Python 3.6+</reference>.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="SCons 3.0+" refuri="https://scons.org/pages/download.html">SCons 3.0+</reference> build system.</paragraph>
+                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference> build system.</paragraph>
                 </list_item>
             </bullet_list>
             <seealso>
@@ -39,7 +39,10 @@
                 either <literal>template_release</literal> for a release build or <literal>template_debug</literal> for a debug build:</paragraph>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=web target=template_release
 scons platform=web target=template_debug</literal_block>
-            <paragraph>默认情况下，<reference internal="True" refuri="../../../tutorials/export/exporting_for_web#doc-javascript-eval"><inline classes="std std-ref">JavaScript singleton</inline></reference> 将被内置到引擎中，官方导出模板也启用了 JavaScript 单例。由于 <literal>eval()</literal> 调用可能是一个安全问题，<literal>javascript_eval</literal> 选项可以用来构建，而无需单例：</paragraph>
+            <paragraph>By default, the <reference internal="True" refuri="../../../tutorials/platform/web/javascript_bridge#doc-web-javascript-bridge"><inline classes="std std-ref">JavaScriptBridge singleton</inline></reference> will be built
+                into the engine. Official export templates also have the JavaScript singleton
+                enabled. Since <literal>eval()</literal> calls can be a security concern, the
+                <literal>javascript_eval</literal> option can be used to build without the singleton:</paragraph>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=web target=template_release javascript_eval=no
 scons platform=web target=template_debug javascript_eval=no</literal_block>
             <paragraph>The engine will now be compiled to WebAssembly by Emscripten. Once finished,
@@ -84,9 +87,7 @@ mv bin/godot.web.template_debug.wasm32.dlink.zip bin/web_dlink_debug.zip</litera
                 <literal_block force="False" language="shell" linenos="False" xml:space="preserve"># You may need to replace `python` with `python3` on some platforms.
 python platform/web/serve.py</literal_block>
                 <paragraph>这将为 <literal>bin/</literal> 文件夹中的内容运行网页服务，并自动打开默认的浏览器。在打开的页面中访问 <literal>godot.tools.html</literal> ，你可以使用这种方式测试 Web 编辑器。</paragraph>
-                <paragraph>Note that for production use cases, this Python-based web server should not
-                    be used. Instead, you should use an established web server such as Apache or
-                    nginx.</paragraph>
+                <paragraph>请注意，对于生产用例，不应使用此基于Python的Web服务器。相反，你应该使用已建立的Web服务器，例如Apache或nginx。</paragraph>
             </tip>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

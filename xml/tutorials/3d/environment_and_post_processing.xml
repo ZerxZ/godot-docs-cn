@@ -319,7 +319,14 @@
             </section>
             <section ids="glow doc-environment-and-post-processing-glow" names="glow 辉光 doc_environment_and_post_processing_glow">
                 <title>辉光</title>
-                <paragraph><emphasis>此功能仅在使用 Forward+ 和移动后端时可用，在兼容后端中不可用。</emphasis></paragraph>
+                <note>
+                    <paragraph>When using the Compatibility rendering method, glow uses a different
+                        implementation with some properties being unavailable and hidden from the
+                        inspector: <strong>Levels</strong>, <strong>Normalized</strong>, <strong>Strength</strong>, <strong>Blend Mode</strong>,
+                        <strong>Mix</strong>, <strong>Map</strong>, and <strong>Map Strength</strong>.</paragraph>
+                    <paragraph>This implementation is optimized to run on low-end devices and is less
+                        flexible as a result.</paragraph>
+                </note>
                 <paragraph>在摄影和胶片中，当光量超过介质支持的最大值（无论是模拟还是数字）时，它通常会向外渗出到图像的较暗区域。在 Godot 中使用 <strong>辉光</strong> 模拟这种效果。</paragraph>
                 <image candidates="{'*': 'tutorials/3d/img/environment_glow1.webp'}" uri="tutorials/3d/img/environment_glow1.webp"></image>
                 <paragraph>默认情况下，即使启用了效果，它也会变弱或不可见。实际显示它需要发生的两个条件之一：</paragraph>

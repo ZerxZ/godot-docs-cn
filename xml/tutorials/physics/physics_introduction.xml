@@ -355,7 +355,11 @@ public partial class Body : PhysicsBody2D
                     <title><reference internal="True" refuri="../../classes/class_characterbody2d#class-characterbody2d-method-move-and-slide"><inline classes="std std-ref">move_and_slide</inline></reference></title>
                     <paragraph>滑动是一种常见的碰撞响应; 想象一个游戏角色在上帝视角的游戏中沿着墙壁移动, 或者在平台游戏中上下坡. 虽然可在使用 <literal>move_and_collide()</literal> 之后自己编写这个响应, 但 <literal>move_and_slide()</literal> 提供了一种快捷方法来实现滑动且无需编写太多代码.</paragraph>
                     <warning>
-                        <paragraph><literal>move_and_slide()</literal> 在计算中自动包含时间步长, 因此你 <strong>不</strong> 应将速度向量乘以 <literal>delta</literal> .</paragraph>
+                        <paragraph><literal>move_and_slide()</literal> automatically includes the timestep in its
+                            calculation, so you should <strong>not</strong> multiply the velocity vector
+                            by <literal>delta</literal>. This does <strong>not</strong> apply to <literal>gravity</literal> as it is an
+                            acceleration and is time dependent, and needs to be scaled by
+                            <literal>delta</literal>.</paragraph>
                     </warning>
                     <paragraph>例如, 使用以下代码制作一个可以沿着地面(包括斜坡)行走的角色, 并在站在地面时跳跃:</paragraph>
                     <container classes="sphinx-tabs" type="tab-element">

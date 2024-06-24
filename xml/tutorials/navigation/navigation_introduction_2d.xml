@@ -24,7 +24,7 @@
                     <definition_list_item>
                         <term><reference internal="True" refuri="../../classes/class_navigationserver2d#class-navigationserver2d"><inline classes="std std-ref">NavigationServer2D</inline></reference></term>
                         <definition>
-                            <paragraph><literal>NavigationServer2D</literal> 提供了强大的服务器 API，能够在区域中查找两个位置之间的最短路径，区域由导航网格定义。</paragraph>
+                            <paragraph><literal>NavigationServer2D</literal> provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.</paragraph>
                             <paragraph>NavigationServer 最适合的是要求角色能够到达区域中任意位置的 2D 实时游戏，区域由导航网格定义。基于网格的导航能够轻松扩展到大型游戏世界，因为大型区域通常能够使用单一多边形定义，如果换成栅格则会需要定义许许多多的单元格。</paragraph>
                             <paragraph>NavigationServer 中存放了不同的导航地图，每一张地图都由若干区块组成，区块中存放的是导航网格数据。在地图上放置代理就能够进行避障计算。与服务器通信时，使用 RID 来引用内部的地图、区块和代理。</paragraph>
                             <definition_list>
@@ -151,8 +151,7 @@
                     <definition_list_item>
                         <term><reference internal="True" refuri="../../classes/class_navigationobstacle2d#class-navigationobstacle2d"><inline classes="std std-ref">NavigationObstacle2D</inline></reference> 节点</term>
                         <definition>
-                            <paragraph>A Node that can be used to affect and constrain the avoidance velocity of avoidance enabled agents.
-                                This Node does NOT affect the pathfinding of agents. You need to change the navigation meshes for that instead.</paragraph>
+                            <paragraph>可用于影响和约束启用躲避的代理的躲避速度的节点。此节点不影响代理的寻路。你需要为此更改导航网格。</paragraph>
                         </definition>
                     </definition_list_item>
                 </definition_list>

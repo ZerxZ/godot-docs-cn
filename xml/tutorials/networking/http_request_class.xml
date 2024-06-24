@@ -15,17 +15,12 @@
                 be loaded using
                 <reference internal="True" refuri="../io/runtime_file_loading_and_saving#doc-runtime-loading-and-saving"><inline classes="std std-ref">runtime file loading and saving</inline></reference>.</paragraph>
             <paragraph>所以 HTTP 可以用在游戏的登录系统、大厅浏览器，可以从 Web 获取信息，也可以下载游戏资产。</paragraph>
-            <paragraph>This tutorial assumes some familiarity with Godot and the Godot Editor.
-                Refer to the <reference internal="True" refuri="../../getting_started/introduction/index#toc-learn-introduction"><inline classes="std std-ref">Introduction</inline></reference> and the
-                <reference internal="True" refuri="../../getting_started/step_by_step/index#toc-learn-step-by-step"><inline classes="std std-ref">Step by step</inline></reference> tutorial, especially its
-                <reference internal="True" refuri="../../getting_started/step_by_step/nodes_and_scenes#doc-nodes-and-scenes"><inline classes="std std-ref">Nodes and Scenes</inline></reference> and
-                <reference internal="True" refuri="../../getting_started/step_by_step/scripting_first_script#doc-scripting-first-script"><inline classes="std std-ref">Creating your first script</inline></reference> pages if needed.</paragraph>
+            <paragraph>本教学假设你对Godot和Godot编辑器有一定的了解。请参阅 <reference internal="True" refuri="../../getting_started/introduction/index#toc-learn-introduction"><inline classes="std std-ref">Introduction</inline></reference> 和 <reference internal="True" refuri="../../getting_started/step_by_step/index#toc-learn-step-by-step"><inline classes="std std-ref">Step by step</inline></reference> 教学课程，特别是其 <reference internal="True" refuri="../../getting_started/step_by_step/nodes_and_scenes#doc-nodes-and-scenes"><inline classes="std std-ref">Nodes and Scenes</inline></reference> 和 <reference internal="True" refuri="../../getting_started/step_by_step/scripting_first_script#doc-scripting-first-script"><inline classes="std std-ref">Creating your first script</inline></reference> 页面。</paragraph>
         </section>
         <section ids="http-requests-in-godot" names="http\ requests\ in\ godot godot\ 中的\ http\ 请求">
             <title>Godot 中的 HTTP 请求</title>
             <paragraph>在Godot中, 用 <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> 节点发出HTTP请求是最简单的方法. 它继承自更低级别的 <reference internal="True" refuri="../../classes/class_httpclient#class-httpclient"><inline classes="std std-ref">HTTPClient</inline></reference> , 相关的教程见 <reference internal="True" refuri="http_client_class#doc-http-client-class"><inline classes="std std-ref">here</inline></reference>.</paragraph>
-            <paragraph>For this example, we will make an HTTP request to GitHub to retrieve the name
-                of the latest Godot release.</paragraph>
+            <paragraph>对于此示例，我们将向GitHub发出HTTP请求以检索最新Godot版本的名称。</paragraph>
             <warning>
                 <paragraph>When exporting to <strong>Android</strong>, make sure to enable the <strong>Internet</strong>
                     permission in the Android export preset before exporting the project or
@@ -36,15 +31,12 @@
         <section ids="preparing-the-scene" names="preparing\ the\ scene 准备场景">
             <title>准备场景</title>
             <paragraph>Create a new empty scene, add a root <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference> and add a script to it.
-                Then add a <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> node as a child.</paragraph>
+                Then add an <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> node as a child.</paragraph>
             <image candidates="{'*': 'tutorials/networking/img/rest_api_scene.webp'}" uri="tutorials/networking/img/rest_api_scene.webp"></image>
         </section>
         <section ids="scripting-the-request" names="scripting\ the\ request 编写请求脚本">
             <title>编写请求脚本</title>
-            <paragraph>When the project is started (so in <literal>_ready()</literal>), we're going to send an HTTP request
-                to Github using our <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> node,
-                and once the request completes, we're going to parse the returned JSON data,
-                look for the <literal>name</literal> field and print that to console.</paragraph>
+            <paragraph>当项目启动时（所以在 <literal>_ready()</literal> 中），我们将使用 <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> 节点向Github发送HTTP请求，一旦请求完成，我们就将解析传回的JSON数据，搜寻 <literal>name</literal> 字段并将其打印到控制台。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -82,9 +74,7 @@ public partial class MyNode : Node
 }</literal_block>
                 </div>
             </container>
-            <paragraph>Save the script and the scene, and run the project.
-                The name of the most recent Godot release on Github should be printed to the output log.
-                For more information on parsing JSON, see the class references for <reference internal="True" refuri="../../classes/class_json#class-json"><inline classes="std std-ref">JSON</inline></reference>.</paragraph>
+            <paragraph>保存脚本和场景，然后运行项目。Github上最新的Godot版本的名称应该打印到输出日志中。有关解析JSON的更多信息，请参阅类引用 <reference internal="True" refuri="../../classes/class_json#class-json"><inline classes="std std-ref">JSON</inline></reference>。</paragraph>
             <paragraph>请注意, 你可能需要检查 <literal>result</literal> 是否等于 <literal>RESULT_SUCCESS</literal> 以及JSON解析错误是否发生, 要了解更多信息, 请参阅JSON类型参考和 <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> .</paragraph>
             <paragraph>You have to wait for a request to finish before sending another one.
                 Making multiple request at once requires you to have one node per request.

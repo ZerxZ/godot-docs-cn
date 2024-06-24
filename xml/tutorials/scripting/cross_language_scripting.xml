@@ -17,6 +17,8 @@
 
 var my_field: String = "foo"
 
+signal my_signal
+
 func print_node_name(node: Node) -&gt; void:
     print(node.get_name())
 
@@ -26,7 +28,10 @@ func print_array(arr: Array) -&gt; void:
 
 func print_n_times(msg: String, n: int) -&gt; void:
     for i in range(n):
-        print(msg)</literal_block>
+        print(msg)
+
+func my_signal_handler():
+    print("The signal handler was called!")</literal_block>
             </div>
             <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
@@ -34,6 +39,8 @@ func print_n_times(msg: String, n: int) -&gt; void:
 public partial class MyCSharpNode : Node
 {
     public string myField = "bar";
+
+    [Signal] public delegate void MySignalEventHandler();
 
     public void PrintNodeName(Node node)
     {
@@ -54,6 +61,11 @@ public partial class MyCSharpNode : Node
         {
             GD.Print(msg);
         }
+    }
+
+    public void MySignalHandler()
+    {
+        GD.Print("The signal handler was called!");
     }
 }</literal_block>
             </div>
@@ -127,6 +139,22 @@ myGDScriptNode.Call("print_array", new int[] { 1, 2, 3 }); // 1, 2, 3
                 <warning>
                     <paragraph>如你所见，若被调用方法的第一个参数为数组类型，则需要强制转为 <literal>object</literal>类型，否则该数组内的每个元素都将会被当做单个参数传入，导致与被调用的参数不匹配。</paragraph>
                 </warning>
+                <target refid="connecting-to-signals-cross-language"></target>
+            </section>
+        </section>
+        <section ids="connecting-to-signals connecting-to-signals-cross-language" names="connecting\ to\ signals connecting_to_signals_cross_language">
+            <title>Connecting to signals</title>
+            <section ids="connecting-to-c-signals-from-gdscript" names="connecting\ to\ c#\ signals\ from\ gdscript">
+                <title>Connecting to C# signals from GDScript</title>
+                <paragraph>Connecting to a C# signal from GDScript is the same as connecting to a signal
+                    defined in GDScript:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">my_csharp_node.MySignal.connect(my_signal_handler)</literal_block>
+            </section>
+            <section ids="connecting-to-gdscript-signals-from-c" names="connecting\ to\ gdscript\ signals\ from\ c#">
+                <title>Connecting to GDScript signals from C#</title>
+                <paragraph>Connecting to a GDScript signal from C# only works with the <literal>Connect</literal> method
+                    because no C# static types exist for signals defined by GDScript:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">myGDScriptNode.Connect("my_signal", Callable.From(MySignalHandler));</literal_block>
             </section>
         </section>
         <section ids="inheritance" names="inheritance 继承">

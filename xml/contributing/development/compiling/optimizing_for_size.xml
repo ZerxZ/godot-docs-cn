@@ -133,6 +133,10 @@
             <paragraph>对于 2D 游戏，拥有整个 3D 引擎通常没有任何意义。因此，有一个构建标志来禁用它：</paragraph>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons target=template_release disable_3d=yes</literal_block>
             <paragraph>必须禁用工具才能使用此标志, 因为编辑器不能在没有3D支持的情况下运行. 没有它, 二进制大小可以减少大约15％.</paragraph>
+            <note>
+                <paragraph>Disabling 3D support also disables all navigation. This includes 2D navigation,
+                    as it uses the 3D navigation system internally.</paragraph>
+            </note>
         </section>
         <section ids="disabling-advanced-gui-objects" names="disabling\ advanced\ gui\ objects 禁用高级\ gui\ 对象">
             <title>禁用高级 GUI 对象</title>
@@ -322,7 +326,7 @@ module_zip_enabled = "no"</literal_block>
                     even more efficient, as long as the web server is configured to serve those
                     files when they exist. When supported, Brotli should be preferred over gzip as
                     it has a greater potential for file size reduction.</paragraph>
-                <paragraph>See <reference internal="True" refuri="../../../tutorials/export/exporting_for_web#doc-exporting-for-web-serving-the-files"><inline classes="std std-ref">提供文件</inline></reference> for instructions.</paragraph>
+                <paragraph>详细步骤见 <reference internal="True" refuri="../../../tutorials/export/exporting_for_web#doc-exporting-for-web-serving-the-files"><inline classes="std std-ref">提供文件</inline></reference>。</paragraph>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>
         </section>

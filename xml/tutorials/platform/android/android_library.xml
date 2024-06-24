@@ -5,73 +5,60 @@
     <target refid="doc-android-library"></target>
     <section ids="godot-android-library doc-android-library" names="godot\ android\ library godot\ android\ 库 doc_android_library">
         <title>Godot Android 库</title>
-        <paragraph>The Godot Engine for Android platforms is designed to be used as an <reference name="Android library" refuri="https://developer.android.com/studio/projects/android-library">Android library</reference><target ids="android-library" names="android\ library" refuri="https://developer.android.com/studio/projects/android-library"></target>.
-            This architecture enables several key features on Android platforms:</paragraph>
+        <paragraph>适用于 Android 平台的 Godot 引擎旨在作为 <reference name="Android 库" refuri="https://developer.android.com/studio/projects/android-library">Android 库</reference><target ids="android" names="android\ 库" refuri="https://developer.android.com/studio/projects/android-library"></target> 使用。该架构可在 Android 平台上实现多项关键功能：</paragraph>
         <bullet_list bullet="-">
             <list_item>
-                <paragraph>Ability to integrate the Gradle build system within the Godot Editor, which provides the ability to leverage more components from the Android ecosystem such as libraries and tools</paragraph>
+                <paragraph>能够将 Gradle 构建系统整合进 Godot 编辑器，从而提供了利用 Android 生态系统中更多组件的能力，比如库和工具</paragraph>
             </list_item>
             <list_item>
-                <paragraph>Ability to make the engine portable and embeddable:</paragraph>
+                <paragraph>能够使引擎具有便携性和可嵌入性:</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
-                        <paragraph>Key in enabling the port of the Godot Editor to Android and mobile XR devices</paragraph>
+                        <paragraph>在使 Godot 编辑器能够移植到 Android 和移动 XR 设备中发挥关键作用</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Key in allowing the integration and reuse of Godot's capabilities within existing codebase</paragraph>
+                        <paragraph>在现有代码库中集成和重复使用 Godot 功能发挥关键作用</paragraph>
                     </list_item>
                 </bullet_list>
             </list_item>
         </bullet_list>
-        <paragraph>Below we describe some of the use-cases and scenarios this architecture enables.</paragraph>
+        <paragraph>下面我们描述了该架构支持的一些用例和场景。</paragraph>
         <section ids="using-the-godot-android-library" names="using\ the\ godot\ android\ library 使用\ godot\ android\ 库">
             <title>使用 Godot Android 库</title>
-            <paragraph>The Godot Android library is packaged as an AAR archive file and hosted on <reference name="MavenCentral" refuri="https://central.sonatype.com/artifact/org.godotengine/godot">MavenCentral</reference><target ids="mavencentral" names="mavencentral" refuri="https://central.sonatype.com/artifact/org.godotengine/godot"></target> along with <reference name="its documentation" refuri="https://javadoc.io/doc/org.godotengine/godot/latest/index.html">its documentation</reference><target ids="its-documentation" names="its\ documentation" refuri="https://javadoc.io/doc/org.godotengine/godot/latest/index.html"></target>.</paragraph>
-            <paragraph>It provides access to Godot APIs and capabilities on Android platforms for the following non-exhaustive use-cases.</paragraph>
+            <paragraph>Godot Android 库以 AAR 归档文件的形式打包，连同其 <reference name="文档" refuri="https://javadoc.io/doc/org.godotengine/godot/latest/index.html">文档</reference><target ids="id1" names="文档" refuri="https://javadoc.io/doc/org.godotengine/godot/latest/index.html"></target> 寄存在 <reference name="MavenCentral" refuri="https://central.sonatype.com/artifact/org.godotengine/godot">MavenCentral</reference><target ids="mavencentral" names="mavencentral" refuri="https://central.sonatype.com/artifact/org.godotengine/godot"></target> 上。</paragraph>
+            <paragraph>它提供了在 Android 平台上访问 Godot 应用程序接口和功能的途径，适用于以下不完全用例。</paragraph>
         </section>
         <section ids="godot-android-plugins" names="godot\ android\ plugins godot\ android\ 插件">
             <title>Godot Android 插件</title>
-            <paragraph>Android plugins are powerful tools to extend the capabilities of the Godot Engine
-                by tapping into the functionality provided by Android platforms and ecosystem.</paragraph>
-            <paragraph>An Android plugin is an Android library with a dependency on the Godot Android library
-                which the plugin uses to integrate into the engine's lifecycle and to access Godot APIs,
-                granting it powerful capabilities such as GDExtension support which allows to update / mod the engine behavior as needed.</paragraph>
+            <paragraph>Android 插件是一种强大的工具，可利用 Android 平台和生态系统提供的功能来扩展 Godot 引擎的功能。</paragraph>
+            <paragraph>Android 插件是一个依赖于 Godot Android 库的 Android 库，插件使用该库集成到引擎的生命周期中，并访问 Godot API，从而赋予其强大的功能，例如 GDExtension 支持，允许根据需要更新/修改引擎行为。</paragraph>
             <paragraph>详情见 <reference internal="True" refuri="android_plugin#doc-android-plugin"><inline classes="std std-ref">Godot Android 插件</inline></reference>。</paragraph>
         </section>
         <section ids="embedding-godot-in-existing-android-projects" names="embedding\ godot\ in\ existing\ android\ projects 将\ godot\ 嵌入到已有\ android\ 项目中">
             <title>将 Godot 嵌入到已有 Android 项目中</title>
-            <paragraph>The Godot Engine can be embedded within existing Android applications or libraries,
-                allowing developers to leverage mature and battle-tested code and libraries better suited to a specific task.</paragraph>
-            <paragraph>The hosting component is responsible for driving the engine lifecycle via Godot's Android APIs.
-                These APIs can also be used to provide bidirectional communication between the host and the embedded
-                Godot instance allowing for greater control over the desired experience.</paragraph>
-            <paragraph>We showcase how this is done using a sample Android app that embeds the Godot Engine as an Android view,
-                and uses it to render 3D GLTF models.</paragraph>
-            <paragraph>The <reference name="GLTF Viewer" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer">GLTF Viewer</reference><target ids="gltf-viewer" names="gltf\ viewer" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer"></target> sample app uses an <reference name="Android RecyclerView component" refuri="https://developer.android.com/develop/ui/views/layout/recyclerview">Android RecyclerView component</reference><target ids="android-recyclerview-component" names="android\ recyclerview\ component" refuri="https://developer.android.com/develop/ui/views/layout/recyclerview"></target> to create
-                a list of GLTF items, populated from <reference name="Kenney's Food Kit pack" refuri="https://kenney.nl/assets/food-kit">Kenney's Food Kit pack</reference><target ids="kenney-s-food-kit-pack" names="kenney's\ food\ kit\ pack" refuri="https://kenney.nl/assets/food-kit"></target>.
-                When an item on the list is selected, the app's logic interacts with the embedded Godot Engine to render the selected GLTF item as a 3D model.</paragraph>
+            <paragraph>Godot 引擎可以嵌入现有的 Android 应用程序或库中，使开发人员能够利用成熟且经过考验的代码和库，更适合特定任务。</paragraph>
+            <paragraph>托管组件负责通过 Godot 的 Android API 来驱动引擎的生命周期。这些 API 还可用于在主机和嵌入式 Godot 实例之间提供双向通信，从而更好地控制所需的体验。</paragraph>
+            <paragraph>我们展示了如何使用示例 Android 应用程序来完成此操作，该应用程序将 Godot 引擎嵌入为 Android 视图，并使用它来渲染 3D GLTF 模型。</paragraph>
+            <paragraph><reference name="GLTF Viewer" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer">GLTF Viewer</reference><target ids="gltf-viewer" names="gltf\ viewer" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer"></target> 示例应用程序使用 <reference name="Android RecyclerView 组件" refuri="https://developer.android.com/develop/ui/views/layout/recyclerview">Android RecyclerView 组件</reference><target ids="android-recyclerview" names="android\ recyclerview\ 组件" refuri="https://developer.android.com/develop/ui/views/layout/recyclerview"></target> 来创建 GLTF 项目列表，该列表由 <problematic ids="id4" refid="id3">`Kenney's Food Kit pack&lt;https://kenney.nl/assets/food-kit&gt;`_</problematic> 填充 。当选择列表中的项目时，应用程序的逻辑与嵌入式 Godot 引擎交互，将选定的 GLTF 项目渲染为 3D 模型。</paragraph>
             <image candidates="{'*': 'tutorials/platform/android/img/gltf_viewer_sample_app_screenshot.webp'}" uri="tutorials/platform/android/img/gltf_viewer_sample_app_screenshot.webp"></image>
-            <paragraph>The sample app source code can be found <reference name="on GitHub" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer">on GitHub</reference><target ids="on-github" names="on\ github" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer"></target>.
-                Follow the instructions on <reference name="its README" refuri="https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/README.md">its README</reference><target ids="its-readme" names="its\ readme" refuri="https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/README.md"></target> to build and install it.</paragraph>
-            <paragraph>Below we break-down the steps used to create the GLTF Viewer app.</paragraph>
+            <paragraph>示例应用程序源代码可以在 <reference name="GitHub" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer">GitHub</reference><target ids="github" names="github" refuri="https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer"></target> 上找到。按照其 <reference name="README" refuri="https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/README.md">README</reference><target ids="readme" names="readme" refuri="https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/README.md"></target> 上的说明来进行构建和安装。</paragraph>
+            <paragraph>下面我们详细介绍了创建 GLTF 查看器应用程序的步骤。</paragraph>
             <warning>
-                <paragraph>Currently only a single instance of the Godot Engine is supported per process.
-                    You can configure the process the Android Activity runs under using the <reference name="android:process attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#proc">android:process attribute</reference><target ids="android-process-attribute" names="android:process\ attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#proc"></target>.</paragraph>
+                <paragraph>目前，每个进程仅支持单个 Godot 引擎实例。你可以使用 <problematic ids="id6" refid="id5">`android:process 属性&lt;https://developer.android.com/guide/topics/manifest/activity-element#proc&gt;`_</problematic> 来配置 Android Activity 运行的进程。</paragraph>
             </warning>
             <warning>
-                <paragraph>Automatic resizing / orientation configuration events are not supported and may cause a crash.
-                    You can disable those events:</paragraph>
+                <paragraph>不支持自动调整大小/方向配置事件，这些事件可能会导致系统崩溃。你可以禁用这些事件：</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
-                        <paragraph>By locking to a specific orientation using the <reference name="android:screenOrientation attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#screen">android:screenOrientation attribute</reference><target ids="android-screenorientation-attribute" names="android:screenorientation\ attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#screen"></target>.</paragraph>
+                        <paragraph>通过使用 <reference name="android:screenOrientation 属性" refuri="https://developer.android.com/guide/topics/manifest/activity-element#screen">android:screenOrientation 属性</reference><target ids="android-screenorientation" names="android:screenorientation\ 属性" refuri="https://developer.android.com/guide/topics/manifest/activity-element#screen"></target> 来锁定到特定方向。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>By declaring that the Activity will handle these configuration events using the <reference name="android:configChanges attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#config">android:configChanges attribute</reference><target ids="android-configchanges-attribute" names="android:configchanges\ attribute" refuri="https://developer.android.com/guide/topics/manifest/activity-element#config"></target>.</paragraph>
+                        <paragraph>通过声明 Activity 将使用 <reference name="android:configChanges 属性" refuri="https://developer.android.com/guide/topics/manifest/activity-element#config">android:configChanges 属性</reference><target ids="android-configchanges" names="android:configchanges\ 属性" refuri="https://developer.android.com/guide/topics/manifest/activity-element#config"></target> 来处理这些配置事件。</paragraph>
                     </list_item>
                 </bullet_list>
             </warning>
             <section ids="create-the-android-app" names="1.\ create\ the\ android\ app">
-                <title>1. Create the Android app</title>
+                <title>1. 创建 Android 应用</title>
                 <note>
                     <paragraph>The Android sample app was created using <reference name="Android Studio" refuri="https://developer.android.com/studio">Android Studio</reference><target ids="android-studio" names="android\ studio" refuri="https://developer.android.com/studio"></target>
                         and using <reference name="Gradle" refuri="https://developer.android.com/build">Gradle</reference><target ids="gradle" names="gradle" refuri="https://developer.android.com/build"></target> as the build system.</paragraph>

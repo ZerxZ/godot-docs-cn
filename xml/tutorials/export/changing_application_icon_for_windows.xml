@@ -39,18 +39,13 @@
             <paragraph>下载后，你需要告诉 Godot 计算机上 rcedit 可执行文件的路径。请前往<strong>编辑器 → 编辑器设置 → Export → Windows</strong>。点击 <strong>rcedit</strong> 条目的文件夹图标。导航到并选择 rcedit 可执行文件。</paragraph>
             <note>
                 <paragraph>Linux 和 macOS 用户还需要安装 <reference name="WINE" refuri="https://www.winehq.org/">WINE</reference><target ids="wine" names="wine" refuri="https://www.winehq.org/"></target> 才能使用 rcedit。</paragraph>
-                <paragraph>On macOS 10.15 (Catalina) or later, make sure to use a 64-bit version of
-                    both WINE and rcedit since 32-bit applications aren't supported anymore.</paragraph>
+                <paragraph>在macOS 10.15（Catalina）或更高版本上，请确保使用64位版本的WINE和rcedit，因为不再支持32位应用程序。</paragraph>
             </note>
             <image candidates="{'*': 'tutorials/export/img/icon_rcedit.png'}" uri="tutorials/export/img/icon_rcedit.png"></image>
             <paragraph>你现在应该已准备好所有内容来更改文件图标。为此，你需要在导出时指定图标。转到<strong>项目 → 导出</strong>。假设你已经创建了 Windows Desktop 预设，请在 <strong>Application → Icon</strong> 字段中选择 ICO 格式的图标。</paragraph>
             <warning>
-                <paragraph>All the supplied metadata must be valid. Most importantly, the version
-                    identifiers <strong>must</strong> take the form <literal>major.minor.patch.revision</literal> where
-                    every component is required and is a positive integer. For instance,
-                    <literal>1.2.0.0</literal> is valid but <literal>1.2.0</literal> is not.</paragraph>
-                <paragraph>If you provide invalid metadata in the export preset, the application icon
-                    won't change as rcedit will fail to change the executable's metadata.</paragraph>
+                <paragraph>所有提供的元资料必须有效。最重要的是，版本标识符**必须**采用“major.minor.patch.revision”的形式，其中每个组件都是必需的并且是正整数。例如，「1.2.0.0」有效，但「1.2.0」无效。</paragraph>
+                <paragraph>如果你在导出预设中提供无效元资料，应用程序图标将不会更改，因为rcedit将无法更改可执行档案的元资料。</paragraph>
             </warning>
             <image candidates="{'*': 'tutorials/export/img/icon_export_settings.png'}" uri="tutorials/export/img/icon_export_settings.png"></image>
             <note>

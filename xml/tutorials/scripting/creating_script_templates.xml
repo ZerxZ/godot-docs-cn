@@ -53,7 +53,9 @@
                         <paragraph><literal>template_path</literal> is one of the 2 locations discussed in the previous two sections</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>node_type</literal> is the node it will apply to (for example, <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference>, or <reference internal="True" refuri="../../classes/class_characterbody3d#class-characterbody3d"><inline classes="std std-ref">CharacterBody3D</inline></reference>)</paragraph>
+                        <paragraph><literal>node_type</literal> is the node it will apply to (for example, <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference>, or <reference internal="True" refuri="../../classes/class_characterbody3d#class-characterbody3d"><inline classes="std std-ref">CharacterBody3D</inline></reference>),
+                            casing doesn't matter for the folder name, however adding a <literal>_</literal> to a name will not work, for example <literal>Mesh_Instance3D</literal> does not work.
+                            if a script isn't in the proper <literal>node_type</literal> folder it will not be detected.</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><literal>file</literal> is the custom name you can chose for the template (for example: <literal>platformer_movement</literal> or <literal>smooth_camera</literal>)</paragraph>
@@ -146,12 +148,12 @@ extends _BASE_
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -&gt; void:
-     pass # Replace with function body.
+    pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -&gt; void:
-     pass</literal_block>
+    pass</literal_block>
                 </div>
                 <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// meta-description: Base template for Node with default Godot cycle methods

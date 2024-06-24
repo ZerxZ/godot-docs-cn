@@ -11,13 +11,18 @@
             <paragraph>不同的格式各有优点：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>WAV 文件使用原始数据或轻度压缩（IMA-ADPCM）。播放这种格式的 CPU 开销很小（同时播放上千个都没问题）。缺点是会占用大量的磁盘空间。</paragraph>
+                    <paragraph>WAV files use raw data or light compression (IMA-ADPCM or QOA). They are
+                        lightweight to play back on the CPU (hundreds of simultaneous voices in this
+                        format are fine). The downside is that they take up a lot of disk space.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>Ogg Vorbis 文件使用更强的压缩，因此文件更小，但需要更多的处理能力才能播放。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>MP3 文件使用的压缩比使用 IMA-ADPCM 的 WAV 更好，但比 Ogg Vorbis 差。这意味着，一个与 Ogg Vorbis 质量大致相同的 MP3 文件将明显更大。而从好的方面看，与 Ogg Vorbis 相比，MP3 播放所需的 CPU 使用率更少。</paragraph>
+                    <paragraph>MP3 files use better compression than WAV with IMA-ADPCM or QOA, but worse
+                        than Ogg Vorbis. This means that an MP3 file with roughly equal quality to
+                        Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
+                        less CPU usage to play back compared to Ogg Vorbis.</paragraph>
                 </list_item>
             </bullet_list>
             <note>
@@ -57,10 +62,18 @@
                         </row>
                         <row>
                             <entry>
-                                <paragraph>WAV 16-bit,IMA-ADPCM, 单声道</paragraph>
+                                <paragraph>WAV IMA-ADPCM, 44 kHz, mono</paragraph>
                             </entry>
                             <entry>
                                 <paragraph>22 KB</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <paragraph>WAV QOA, 44 kHz, mono</paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>17 KB</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -102,10 +115,11 @@
                 <image alt="在文件系统面板中选择 WAV 文件后，导入面板中的导入选项" candidates="{'*': 'tutorials/assets_pipeline/img/importing_audio_samples_import_options_wav.webp'}" uri="tutorials/assets_pipeline/img/importing_audio_samples_import_options_wav.webp"></image>
                 <caption>在文件系统面板中选择 WAV 文件后，导入面板中的导入选项</caption>
             </figure>
-            <paragraph>选择 Ogg Vorbis 或 MP3 文件后可用的选项集合有所不同：</paragraph>
+            <paragraph>The set of options available after selecting an Ogg Vorbis or MP3 file is different:</paragraph>
             <figure align="center" ids="id3">
-                <image alt="在文件系统面板中选择 MP3 文件后，导入面板中的导入选项" candidates="{'*': 'tutorials/assets_pipeline/img/importing_audio_samples_import_options_mp3.webp'}" uri="tutorials/assets_pipeline/img/importing_audio_samples_import_options_mp3.webp"></image>
-                <caption>在文件系统面板中选择 MP3 文件后，导入面板中的导入选项。 Ogg Vorbis 文件的选项相同。</caption>
+                <image alt="Import options in the Import dock after selecting an MP3 file in the FileSystem dock" candidates="{'*': 'tutorials/assets_pipeline/img/importing_audio_samples_import_options_mp3.webp'}" uri="tutorials/assets_pipeline/img/importing_audio_samples_import_options_mp3.webp"></image>
+                <caption>Import options in the Import dock after selecting an MP3 file in the
+                    FileSystem dock. Options are identical for Ogg Vorbis files.</caption>
             </figure>
             <paragraph>导入声音后，可以使用 AudioStreamPlayer、AudioStreamPlayer2D 或 AudioStreamPlayer3D 节点进行播放。请参阅 <reference internal="True" refuri="../audio/audio_streams#doc-audio-streams"><inline classes="std std-ref">音频流</inline></reference> 了解更多信息。</paragraph>
         </section>
@@ -159,7 +173,12 @@
         </section>
         <section ids="compress-mode" names="compress\ &gt;\ mode 压缩\ &gt;\ 模式">
             <title>压缩 &gt; 模式</title>
-            <paragraph>WAV 文件可以选择两种压缩模式： <strong>Disabled</strong> （默认）或 <strong>RAM (Ima-ADPCM)</strong> 。 <strong>RAM (Ima-ADPCM)</strong> 稍微减少了文件大小和内存使用量，但代价是以可被听觉察觉的方式降低了音频质量。</paragraph>
+            <paragraph>Three compression modes can be chosen from for WAV files: <strong>Disabled</strong> (default),
+                <strong>RAM (Ima-ADPCM)</strong>, or <strong>QOA (Quite OK Audio)</strong>. <strong>RAM (Ima-ADPCM)</strong> reduces
+                file size and memory usage a little, at the cost of decreasing quality in an
+                audible manner. <strong>QOA (Quite OK Audio)</strong> reduces file size a bit more than
+                <strong>RAM (Ima-ADPCM)</strong> and the quality decrease is much less noticeable, at the
+                cost of higher CPU usage (still much lower than MP3).</paragraph>
             <paragraph>Ogg Vorbis 和 MP3 不会降低那么多质量，并且可以更大程度地减小文件大小，但相应代价是播放期间 CPU 使用率更高。这种较高的 CPU 使用率通常不是什么问题（尤其是 MP3），除非在移动端/web 平台上同时播放数十个压缩过的音频。</paragraph>
         </section>
         <section ids="import-options-ogg-vorbis-and-mp3" names="import\ options\ (ogg\ vorbis\ and\ mp3) 导入选项（ogg\ vorbis\ 和\ mp3）">
@@ -198,8 +217,8 @@
             <title>高级导入设置（Ogg Vorbis 和 MP3）</title>
             <paragraph>双击文件系统面板中的 Ogg Vorbis 或 MP3 文件（或者在导入面板中选择<strong>高级...</strong>），就会出现一个对话框：</paragraph>
             <figure align="center" ids="id4">
-                <image alt="双击文件系统面板中的 Ogg Vorbis 或 MP3 文件时的高级对话框" candidates="{'*': 'tutorials/assets_pipeline/img/importing_audio_samples_advanced_import_settings.webp'}" uri="tutorials/assets_pipeline/img/importing_audio_samples_advanced_import_settings.webp"></image>
-                <caption>双击文件系统面板中的 Ogg Vorbis 或 MP3 文件时的高级对话框</caption>
+                <image alt="Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock" candidates="{'*': 'tutorials/assets_pipeline/img/importing_audio_samples_advanced_import_settings.webp'}" uri="tutorials/assets_pipeline/img/importing_audio_samples_advanced_import_settings.webp"></image>
+                <caption>Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock</caption>
             </figure>
             <paragraph>除了 <abbreviation explanation="Beats Per Minute">BPM</abbreviation>、节拍数和小节节拍之外，此对话框还允许你通过实时预览编辑音频的循环点。这 3 个设置目前未启用，但将来将用于交互式音乐的支持（允许在不同音乐曲目之间平滑过渡）。</paragraph>
             <note>

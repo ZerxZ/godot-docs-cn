@@ -29,17 +29,12 @@
         <section ids="localizing-resources" names="localizing\ resources 资源的本地化">
             <title>资源的本地化</title>
             <paragraph>根据当前语言，还可以指示 Godot 使用替代版本的资产（资源）。<strong>重定向</strong>选项卡可用于此。</paragraph>
-            <paragraph>The <strong>Remaps</strong> tab can be used for this:</paragraph>
+            <paragraph><problematic ids="id2" refid="id1">**</problematic>Remaps*分页可用于此目的：</paragraph>
             <image candidates="{'*': 'tutorials/i18n/img/localization_remaps.png'}" uri="tutorials/i18n/img/localization_remaps.png"></image>
             <paragraph>Select the resource to be remapped then add some alternatives for each locale.</paragraph>
             <note>
-                <paragraph>The resource remapping system isn't supported for DynamicFonts. To use
-                    different fonts depending on the language's script, use the DynamicFont
-                    fallback system instead, which lets you define as many fallback fonts as you
-                    want.</paragraph>
-                <paragraph>The upside of the DynamicFont fallback system is that it works regardless of
-                    the current language, making it ideal for things like multiplayer chat where
-                    the text language may not match the client's language.</paragraph>
+                <paragraph>DynamicFonts不支持资源重新对应系统。若要根据语言的脚本使用不同的字形，请改用DynamicFont回退系统，它允许你定义任意数量的回退字形。</paragraph>
+                <paragraph>DynamicFont回退系统的优点是，无论目前语言如何，它都可以工作，这使其非常适合文字语言可能与客户端语言不配对的多人聊天等情况。</paragraph>
             </note>
         </section>
         <section ids="converting-keys-to-text" names="converting\ keys\ to\ text 将键转换为文本">
@@ -51,13 +46,8 @@
 status.text = tr("GAME_STATUS_%d" % status_index)</literal_block>
             <note>
                 <paragraph>如果更改语言后不显示任何文字，请尝试换一个字体。默认项目字体仅支持 Latin-1 字符集的子集，无法用于显示俄语、汉语等文字。</paragraph>
-                <paragraph>A good resource for multilingual fonts is <reference name="Noto Fonts" refuri="https://www.google.com/get/noto/">Noto Fonts</reference>.
-                    Make sure to download the correct variation if you're using a less common
-                    language.</paragraph>
-                <paragraph>Once you've downloaded the font, load the TTF file into a DynamicFont
-                    resource and use it as a custom font of your Control node. For better
-                    reusability, associate a new a Theme resource to your root Control node and
-                    define the DynamicFont as the Default Font in the theme.</paragraph>
+                <paragraph>多语言字形的一个很好的资源是「Noto Fonts &lt;<reference refuri="https://www.google.com/get/noto/">https://www.google.com/get/noto/</reference>&gt;」。如果你使用的是不太常见的语言，请确保下载正确的变体。</paragraph>
+                <paragraph>下载字体后，将TTF档案加载到DynamicFont资源中，并将其用作控制节点的自定义字体。为了获得更好的可重复使用性，请将新的主题资源关联到根控制节点，并将DynamicFont定义为主题中的预设字体。</paragraph>
             </note>
             <section ids="placeholders" names="placeholders">
                 <title>Placeholders</title>
@@ -97,35 +87,21 @@ label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs</lit
         <section ids="making-controls-resizable" names="making\ controls\ resizable 使控件的大小可调">
             <title>使控件的大小可调</title>
             <paragraph>不同语言的相同文本的长度差异很大。为此，请务必阅读教程 <reference internal="True" refuri="../ui/size_and_anchors#doc-size-and-anchors"><inline classes="std std-ref">大小和锚点</inline></reference>，因为动态调整控件大小可能有所帮助。<reference internal="True" refuri="../../classes/class_container#class-container"><inline classes="std std-ref">Container</inline></reference> 可能很有用，<reference internal="True" refuri="../../classes/class_label#class-label"><inline classes="std std-ref">Label</inline></reference> 的文本换行选项应该也能帮上忙。</paragraph>
-            <paragraph>To check whether your UI can accommodate translations with longer strings than
-                the original, you can enable <emphasis>pseudolocalization</emphasis> in the advanced Project
-                Settings. This will replace all your localizable strings with longer versions of
-                themselves, while also replacing some characters in the original strings with
-                accented versions (while still being readable). Placeholders are kept as-is,
-                so that they keep working when pseudolocalization is enabled.</paragraph>
-            <paragraph>For example, the string <literal>Hello world, this is %s!</literal> becomes
-                <literal>[Ĥéłłô ŵôŕłd́, ŧh̀íš íš %s!]</literal> when pseudolocalization is enabled.</paragraph>
+            <paragraph>若要检查你的UI是否可以容纳比原始字串更长的翻译，你可以在进阶项目设定中启用 <emphasis>pseudolocalization</emphasis> (<emphasis>伪本地化</emphasis>)。这将用更长的版本替换所有可本地化的字串，同时用带有重音的版本替换原始字串中的一些字元（同时仍然可读）。占位符保持原样，以便在启用伪本地化时它们继续工作。</paragraph>
+            <paragraph>例如，当启用伪本地化时，字串「Hello world，this is %s！」将变为「[Ĥéłłôŵôŕłd́, ŧh̀íš íš %s！]」。</paragraph>
             <paragraph>虽然第一眼看上去很奇怪，但是伪本地化的好处有很多：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>It lets you spot non-localizable strings quickly, so you can go over them and
-                        make them localizable (if it makes sense to do so).</paragraph>
+                    <paragraph>它可以让你快速发现不可本地化的字串，这样你就可以检查它们并使它们可本地化（如果这样做有意义的话）。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>It lets you check UI elements that can't fit long strings. Many languages will
-                        feature much longer translations than the source text, so it's important to
-                        ensure your UI can accommodate longer-than-usual strings.</paragraph>
+                    <paragraph>它可以让你检查无法容纳长字串的UI元素。许多语言的翻译都会比原始文字长得多，因此确保你的UI能够容纳比平常更长的字串非常重要。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>It lets you check whether your font contains all the characters required to
-                        support various languages. However, since the goal of pseudolocalization is to
-                        keep the original strings readable, it's not an effective test for checking
-                        whether a font can support <abbreviation explanation="Chinese, Japanese, Korean">CJK</abbreviation> or
-                        right-to-left languages.</paragraph>
+                    <paragraph>它可以让你检查你的字形是否包含支持各种语言所需的所有字元。然而，由于伪本地化的目标是保持原始字串的可读性，因此它并不是检查字形是否支持CJK（中文、日文、韩文）或从右到左语言的有效测试。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The project settings allow you to tune pseudolocalization behavior, so that you
-                can disable parts of it if desired.</paragraph>
+            <paragraph>项目设定可让你调整伪本地化行为，以便你可以根据需要停用其部分内容。</paragraph>
         </section>
         <section ids="translationserver" names="translationserver">
             <title>TranslationServer</title>
@@ -134,11 +110,8 @@ label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs</lit
         </section>
         <section ids="bidirectional-text-and-ui-mirroring doc-internationalizing-games-bidi" names="bidirectional\ text\ and\ ui\ mirroring 双向文本和\ ui\ 镜像 doc_internationalizing_games_bidi">
             <title>双向文本和 UI 镜像</title>
-            <paragraph>Arabic and Hebrew are written from right to left (except for the numbers and Latin
-                words mixed in), and the user interface for these languages should be mirrored as well.
-                In some languages the shape of a glyph changes depending on the surrounding characters.</paragraph>
-            <paragraph>Support for bidirectional writing systems and UI mirroring is transparent, you don't
-                usually need to change anything or have any knowledge of the specific writing system.</paragraph>
+            <paragraph>阿拉伯语和希伯来语是从右到左书写的（除了混合的数字和拉丁单字），这些语言的使用者界面也应该是镜像的。在某些语言中，字形的形状会根据周围的字元而变化。</paragraph>
+            <paragraph>对双向书写系统和UI镜像的支持是透明的，你通常不需要更改任何内容或了解特定书写系统。</paragraph>
             <paragraph>对于 RTL（从右至左）语言，Godot 会自动对 UI 进行以下调整：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -157,19 +130,19 @@ label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs</lit
                     <paragraph>坐标系不会镜像，非 UI 节点（精灵等）不受影响。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>It is possible to override text and control layout direction by using the following control properties:</paragraph>
+            <paragraph>可以使用下列控件属性来复写文字和控件布局方向：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>text_direction</literal>, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,</paragraph>
+                    <paragraph><literal>text_direction</literal>，设定基本文字方向。当设定为“auto”时，方向取决于根据Unicode双向算法的文字中的第一个强方向字符，</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>language</literal>, overrides current project locale.</paragraph>
+                    <paragraph>“语言”，覆盖目前项目区域设定。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>structured_text_bidi_override</literal> property and <literal>_structured_text_parser</literal> callback, enables special handling for structured text.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">``</problematic>structured_text_bidi_override``属性和`_structured_text_parser``回调，可以对结构化文本进行特殊处理。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>layout_direction</literal>, overrides control mirroring.</paragraph>
+                    <paragraph>“layout_direction”，覆盖控制镜像。</paragraph>
                 </list_item>
             </bullet_list>
             <image candidates="{'*': 'tutorials/i18n/img/ui_mirror.png'}" uri="tutorials/i18n/img/ui_mirror.png"></image>
@@ -180,37 +153,23 @@ label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs</lit
         </section>
         <section ids="adding-break-iterator-data-to-exported-project" names="adding\ break\ iterator\ data\ to\ exported\ project 在导出后的项目中添加分词迭代器数据">
             <title>在导出后的项目中添加分词迭代器数据</title>
-            <paragraph>Some languages are written without spaces, and word and line breaking requires more than rules over character sequences.
-                Godot includes ICU rule and dictionary based, break iterator data, but this data is not included into exported projects by default.
-                To include it go to <strong>Project → Project Settings → Localization → Text Server Data</strong> and click <strong>Install support data...</strong>. Break iterator data is about 4 MB large.</paragraph>
+            <paragraph>有些语言书写没有空格，单词和换行需要的不仅仅是字符序列的规则。Godot包括ICU规则和基于字典的中断迭代器数据，但默认情况下，导出的项目中不包括这些数据。要将其包括在内，请转到 <strong>Project → Project Settings → Localization → Text Server Data**(**项目→ 项目设置→ 本地化→ 文本服务器数据</strong>)，然后单击**Install support data...**（<strong>安装支持数据…</strong>）。中断迭代器数据大约有4 MB大。</paragraph>
             <image candidates="{'*': 'tutorials/i18n/img/icu_data.png'}" uri="tutorials/i18n/img/icu_data.png"></image>
         </section>
         <section ids="structured-text-bidi-override" names="structured\ text\ bidi\ override 结构化文本\ bidi\ 覆盖">
             <title>结构化文本 BiDi 覆盖</title>
-            <paragraph>Unicode BiDi algorithm is designed to work with natural text and it's incapable of
-                handling text with the higher level order, like file names, URIs, email addresses,
-                regular expressions or source code.</paragraph>
+            <paragraph>Unicode BiDi算法设计用于处理自然文字，它无法处理具有更高层级顺序的文字，例如档案名称、URI、电子邮件地址、正规表示式或原始代码。</paragraph>
             <image candidates="{'*': 'tutorials/i18n/img/bidi_override.png'}" uri="tutorials/i18n/img/bidi_override.png"></image>
-            <paragraph>For example, the path for this shown directory structure will be displayed incorrectly
-                (top "LineEdit" control). "File" type structured text override splits text into segments,
-                then BiDi algorithm is applied to each of them individually to correctly display directory
-                names in any language and preserve correct order of the folders (bottom "LineEdit" control).</paragraph>
-            <paragraph>Custom callbacks provide a way to override BiDi for the other types of structured text.</paragraph>
+            <paragraph>例如，所显示的目录结构的路径将显示不正确（顶部「LineEdit」控件）。「档案」型别结构化文字会复写将文字分割成段，然后将BiDi算法单独套用到每个段，以正确显示任何语言的目录名称并保留文件夹的正确顺序（底部「LineEdit」控件）。</paragraph>
+            <paragraph>自定义回调提供了一种覆盖其他型别结构化文字的BiDi的方法。</paragraph>
         </section>
         <section ids="localizing-numbers" names="localizing\ numbers 数字的本地化">
             <title>数字的本地化</title>
-            <paragraph>Controls specifically designed for number input or output (e.g. ProgressBar, SpinBox)
-                will use localized numbering system automatically, for the other control
-                <reference internal="True" refuri="../../classes/class_textserver#class-textserver-method-format-number"><inline classes="std std-ref">TextServer.format_number(string, language)</inline></reference>
-                can be used to convert Western Arabic numbers (0..9) to the localized numbering system
-                and <reference internal="True" refuri="../../classes/class_textserver#class-textserver-method-parse-number"><inline classes="std std-ref">TextServer.parse_number(string, language)</inline></reference>
-                to convert it back.</paragraph>
+            <paragraph>专为数位输入或输出设计的控件（例如ProgressBar、SpinBox）将自动使用本地化编号系统，对于其他控件 <reference internal="True" refuri="../../classes/class_textserver#class-textserver-method-format-number"><inline classes="std std-ref">TextServer.format_number（string，language）</inline></reference> 可用于转换西阿拉伯数字（0 ..9）到本地化编号系统并:ref:<title_reference>TextServer.parse_number(string，language)&lt;class_TextServer_method_parse_number&gt;</title_reference> 将其转换回来。</paragraph>
         </section>
         <section ids="localizing-icons-and-images" names="localizing\ icons\ and\ images 图标和图像的本地化">
             <title>图标和图像的本地化</title>
-            <paragraph>Icons with left and right pointing arrows which may need to be reversed for Arabic
-                and Hebrew locales, in case they indicate movement or direction (e.g. back/forward
-                buttons). Otherwise, they can remain the same.</paragraph>
+            <paragraph>带有左右指向箭头的图标可能需要在阿拉伯语和希伯来语语言环境中颠倒过来，以防它们指示移动或方向（例如后退/前进按钮）。否则，它们可以保持不变。</paragraph>
         </section>
         <section ids="testing-translations" names="testing\ translations 测试翻译">
             <title>测试翻译</title>
@@ -228,8 +187,15 @@ label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs</lit
         </section>
         <section ids="translating-the-project-name" names="translating\ the\ project\ name 翻译项目名称">
             <title>翻译项目名称</title>
-            <paragraph>导出到不同的操作系统和平台时，项目名称将成为应用程序名称。要以多种语言指定项目名称，请在<strong>项目设置</strong>中创建一个新设置 <literal>application/name</literal>，并将区域标识符附加到其中。例如，对于西班牙语，这将是 <literal>application/name_es</literal>：</paragraph>
-            <image candidates="{'*': 'tutorials/i18n/img/localized_name.png'}" uri="tutorials/i18n/img/localized_name.png"></image>
+            <paragraph>The project name becomes the app name when exporting to different
+                operating systems and platforms. To specify the project name in more
+                than one language go to <strong>Project &gt; Project Settings&gt; Application &gt;
+                    Config</strong>. From here click on the button that says <literal>Localizable String
+(Size 0)</literal>. Now there should be a button below that which says <literal>Add
+Translation</literal>. Click on that and it will take you to a page where you
+                can choose the language (and country if needed) for your project name
+                translation. After doing that you can now type in the localized name.</paragraph>
+            <image candidates="{'*': 'tutorials/i18n/img/localized_name.webp'}" uri="tutorials/i18n/img/localized_name.webp"></image>
             <paragraph>如果你不确定要使用的语言代码，请参阅<reference internal="True" refuri="locales#doc-locales"><inline classes="std std-ref">区域代码列表</inline></reference>。</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

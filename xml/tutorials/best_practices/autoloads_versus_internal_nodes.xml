@@ -56,8 +56,8 @@
         </section>
         <section ids="when-you-should-use-an-autoload" names="when\ you\ should\ use\ an\ autoload 何时应使用自动加载">
             <title>何时应使用自动加载</title>
-            <paragraph>GDScript 支持使用 <literal>static func</literal> 创建 <literal>static</literal> （静态） 函数。 当与 <literal>class_name</literal> 结合使用时，（静态函数）可以创建辅助函数库，而无需创建实例来调用它们。 静态函数也具有限制，它们不能引用成员变量、非静态（non-static）函数或 <literal>self</literal> 。</paragraph>
-            <paragraph>从 Godot 4.1 开始，GDScript 还支持使用 <literal>static var</literal> 的 <literal>static</literal> （静态）变量。 这意味着你现在可以在类的实例之间共享变量，而无需创建单独的自动加载。</paragraph>
+            <paragraph>GDScript 支持使用 <literal>static func</literal> 创建 <literal>static</literal> （静态） 函数，与 <literal>class_name</literal> 结合使用时还可以创建辅助函数库，无需创建实例来调用这些函数。 静态函数也有一些限制：不能引用成员变量、非静态（non-static）函数或 <literal>self</literal> 。</paragraph>
+            <paragraph>从 Godot 4.1 开始，GDScript 还支持使用 <literal>static var</literal> 的 <literal>static</literal> （静态）变量，意味着你现在可以在类的实例之间共享变量，而无需创建单独的自动加载节点或脚本。</paragraph>
             <paragraph>尽管如此，对于那些涵盖范围广泛的系统来说，使用自动加载的节点仍然可以简化你的代码。如果自动加载的节点管理自己的信息并且不侵入其他对象的数据，那么这就是一个创建处理广泛任务的系统（例如，任务或对话系统）的好方法。</paragraph>
             <note>
                 <paragraph>自动加载 <emphasis>不</emphasis> 完全是一个单例。没有什么可以阻止你实例化自动加载的节点的副本。它只是一个使节点作为场景树的根的子节点自动加载的工具，而与游戏的节点结构或运行哪个场景（比如通过按 <literal classes="kbd">F6</literal> 键运行当前场景）无关。</paragraph>

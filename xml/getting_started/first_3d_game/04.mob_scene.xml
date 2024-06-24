@@ -27,7 +27,7 @@
             <paragraph>怪物离开屏幕之后，我们就不再需要它了，所以我们可以把它删除。Godot 有一个可以检测对象离开屏幕的节点， <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> ，我们就要用它来销毁我们的小怪。</paragraph>
             <note>
                 <paragraph>如果要在游戏中不断实例化同一种对象，可以通过一种叫“池化”（pooling）的技术来避免持续地创建和销毁实例。做法是预先创建一个该对象的数组，然后去不断地重用里面的元素。</paragraph>
-                <paragraph>使用 GDScript 时，你不必担心这个问题。用对象池的主要目的是避免 C# 或 Lua 等带垃圾回收的语言带来的停滞。GDScript 管理内存的技术和它们是不同的，用的是引用计数，不会产生那种问题。你可以在这里了解更多相关内容：<reference internal="True" refuri="../../tutorials/scripting/gdscript/gdscript_basics#doc-gdscript-basics-memory-management"><inline classes="std std-ref">内存管理</inline></reference>。</paragraph>
+                <paragraph>使用 GDScript 时，你不必担心这个问题。用对象池的主要目的是避免 C# 或 Lua 等语言在进行垃圾回收（Garbage collection，GC）时所带来的停滞。GDScript 管理内存的技术和这些语言是不同的，用的是引用计数，不会产生那种问题。你可以在此了解更多相关内容：<reference internal="True" refuri="../../tutorials/scripting/gdscript/gdscript_basics#doc-gdscript-basics-memory-management"><inline classes="std std-ref">内存管理</inline></reference>。</paragraph>
             </note>
             <paragraph>选中 <literal>Mob</literal> 节点，并为其添加一个 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 作为子项。这回出现的就是一个粉色的框。这个框完全离开屏幕后，该节点就会发出信号。</paragraph>
             <paragraph><image alt="image5" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/06.visibility_notifier.png'}" uri="getting_started/first_3d_game/img/04.mob_scene/06.visibility_notifier.png"></image></paragraph>
@@ -146,13 +146,14 @@ public void Initialize(Vector3 startPosition, Vector3 playerPosition)
             <section ids="leaving-the-screen" names="leaving\ the\ screen 离开屏幕">
                 <title>离开屏幕</title>
                 <paragraph>我们还需要在小怪离开屏幕后将其销毁。实现方法是将 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 节点的 <literal>screen_exited</literal> 信号连接到 <literal>Mob</literal> 上。</paragraph>
-                <paragraph>单击编辑器顶部的 <emphasis>3D</emphasis> 标签回到 3D 视口。你也可以按 <literal classes="kbd">Ctrl + F2</literal>（macOS 上则是 <literal classes="kbd">Alt + 2</literal>）。</paragraph>
+                <paragraph>Head back to the 3D viewport by clicking on the <emphasis>3D</emphasis> label at the top of the
+                    editor. You can also press <literal classes="kbd">Ctrl + F2</literal> (<literal classes="kbd">Opt + 2</literal> on macOS).</paragraph>
                 <paragraph><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/09.switch_to_3d_workspace.png'}" uri="getting_started/first_3d_game/img/04.mob_scene/09.switch_to_3d_workspace.png"></image></paragraph>
                 <paragraph>选中 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 节点，然后在界面右侧打开<emphasis>节点</emphasis>面板。双击 <literal>screen_exited()</literal> 信号。</paragraph>
                 <paragraph><image alt="image9" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/10.node_dock.webp'}" uri="getting_started/first_3d_game/img/04.mob_scene/10.node_dock.webp"></image></paragraph>
                 <paragraph>将信号连接到 <emphasis>Mob</emphasis></paragraph>
                 <paragraph><image alt="image10" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/11.connect_signal.webp'}" uri="getting_started/first_3d_game/img/04.mob_scene/11.connect_signal.webp"></image></paragraph>
-                <paragraph>This will take you back to the script editor and add a new function for you,
+                <paragraph>This will add a new function for you in your mob script,
                     <literal>_on_visible_on_screen_notifier_3d_screen_exited()</literal>. From it, call the <literal>queue_free()</literal>
                     method. This function destroys the instance it's called on.</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
@@ -165,7 +166,7 @@ public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     queue_free()</literal_block>
                     </div>
                     <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window
+                        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
 private void OnVisibilityNotifierScreenExited()
 {
     QueueFree();
@@ -246,7 +247,7 @@ public partial class Mob : CharacterBody3D
         Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
     }
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();

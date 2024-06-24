@@ -33,7 +33,7 @@
             <paragraph>要公证 App，你<strong>必须</strong>持有有效的 <reference name="Apple 开发者 ID 证书" refuri="https://developer.apple.com/">Apple 开发者 ID 证书</reference>。</paragraph>
             <section ids="if-you-have-an-apple-developer-id-certificate-and-exporting-from-macos" names="if\ you\ have\ an\ apple\ developer\ id\ certificate\ and\ exporting\ from\ macos">
                 <title>If you have an Apple Developer ID Certificate and exporting from macOS</title>
-                <paragraph>Install <reference name="Xcode" refuri="https://developer.apple.com/xcode/">Xcode</reference> command line tools and open Xcode at least once or run the <literal>sudo xcodebuild -license accept</literal> command to accept license agreement.</paragraph>
+                <paragraph>安装`Xcode &lt;<reference refuri="https://developer.apple.com/xcode/">https://developer.apple.com/xcode/</reference>&gt;`__命令行工具并至少打开一次Xcode，或者运行命令``sudo xcodebuild -license accept``以接受许可协议。</paragraph>
                 <section dupnames="to\ sign\ exported\ app" ids="to-sign-exported-app">
                     <title>To sign exported app</title>
                     <bullet_list bullet="-">
@@ -45,8 +45,8 @@
                         </list_item>
                     </bullet_list>
                 </section>
-                <section dupnames="to\ notarize\ exported\ app" ids="to-notarize-exported-app">
-                    <title>To notarize exported app</title>
+                <section dupnames="to\ notarize\ exported\ app" ids="to-notarize-exported-app" names="公证导出的应用程序">
+                    <title>公证导出的应用程序</title>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph>在“Notarization&gt;Notarization”选项中选择“Xcode altool”。</paragraph>
@@ -77,8 +77,8 @@
                         </list_item>
                     </bullet_list>
                 </section>
-                <section dupnames="to\ notarize\ exported\ app" ids="id2">
-                    <title>To notarize exported app</title>
+                <section dupnames="to\ notarize\ exported\ app" ids="id2" names="公证导出的应用程序">
+                    <title>公证导出的应用程序</title>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph>在 <literal>Notarization &gt; Notarization</literal> 选项中选中 <literal>PyOxidizer rcodesign</literal> 。</paragraph>
@@ -104,7 +104,8 @@
                         <paragraph>在“公证[Notarization]&gt;公证[Notarization]”选项中选择“Disabled”。</paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph>In this case Godot will use a ad-hoc signature, which will make running an exported app easier for the end users, see the <reference internal="True" refuri="running_on_macos#doc-running-on-macos"><inline classes="std std-ref">Running Godot apps on macOS</inline></reference> page for more information.</paragraph>
+                <paragraph>In this case Godot will use an ad-hoc signature, which will make running an exported app easier for the end users,
+                    see the <reference internal="True" refuri="running_on_macos#doc-running-on-macos"><inline classes="std std-ref">Running Godot apps on macOS</inline></reference> page for more information.</paragraph>
             </section>
             <section ids="signing-options" names="signing\ options 签名选项">
                 <title>签名选项</title>
@@ -128,7 +129,7 @@
                                     <paragraph>Codesign</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph>Tool to use for code signing.</paragraph>
+                                    <paragraph>代码签名的工具。</paragraph>
                                 </entry>
                             </row>
                             <row>

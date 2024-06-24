@@ -344,7 +344,7 @@
                                 <paragraph>in float <strong>E</strong></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>A <literal>E</literal> constant (<literal>2.718281</literal>). Euler's number and a base of the natural logarithm.</paragraph>
+                                <paragraph>An <literal>E</literal> constant (<literal>2.718281</literal>). Euler's number and a base of the natural logarithm.</paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -362,10 +362,14 @@ render_mode skip_vertex_transform;
 void vertex() {
     VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
     NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-    // same as above for binormal and tangent, if normal mapping is used
+    BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+    TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
 }</literal_block>
             <paragraph>其他的内置函数, 如UV, UV2和COLOR, 如果没有修改, 也会传递给fragment片段函数.</paragraph>
-            <paragraph>用户可以使用内置的 <literal>POSITION</literal> 覆盖模型视图矩阵和投影转换。当使用 <literal>POSITION</literal> 时，将忽略 <literal>VERTEX</literal> 中的值，不会发生投影。然而，传递给片段着色器的值仍然来自于 <literal>VERTEX</literal>。</paragraph>
+            <paragraph>Users can override the modelview and projection transforms using the <literal>POSITION</literal> built-in. If <literal>POSITION</literal> is written
+                to anywhere in the shader, it will always be used, so the user becomes responsible for ensuring that it always has
+                an acceptable value. When <literal>POSITION</literal> is used, the value from <literal>VERTEX</literal> is ignored and projection does not happen.
+                However, the value passed to the fragment shader still comes from <literal>VERTEX</literal>.</paragraph>
             <paragraph>对于实例化，INSTANCE_CUSTOM变量包含实例自定义数据. 使用粒子时, 此信息通常是:</paragraph>
             <bullet_list bullet="*">
                 <list_item>
@@ -420,6 +424,15 @@ void vertex() {
                         </row>
                         <row>
                             <entry>
+                                <paragraph>in mat4 <strong>MAIN_CAM_INV_VIEW_MATRIX</strong></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>View space to world space transform of camera used to
+                                    draw the current viewport.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
                                 <paragraph>in mat4 <strong>INV_PROJECTION_MATRIX</strong></paragraph>
                             </entry>
                             <entry>
@@ -456,6 +469,14 @@ void vertex() {
                             </entry>
                             <entry>
                                 <paragraph>相机在世界空间的方向。</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <paragraph>in uint <strong>CAMERA_VISIBLE_LAYERS</strong></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>Cull layers of the camera rendering the current pass.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -624,7 +645,7 @@ void vertex() {
                         </row>
                         <row>
                             <entry>
-                                <paragraph>inout mat4 <strong>MODEL_MATRIX</strong></paragraph>
+                                <paragraph>in mat4 <strong>MODEL_MATRIX</strong></paragraph>
                             </entry>
                             <entry>
                                 <paragraph>模型空间到世界空间变换.</paragraph>
@@ -632,7 +653,7 @@ void vertex() {
                         </row>
                         <row>
                             <entry>
-                                <paragraph>inout mat3 <strong>MODEL_NORMAL_MATRIX</strong></paragraph>
+                                <paragraph>in mat3 <strong>MODEL_NORMAL_MATRIX</strong></paragraph>
                             </entry>
                             <entry>
                             </entry>
@@ -647,14 +668,14 @@ void vertex() {
                         </row>
                         <row>
                             <entry>
-                                <paragraph>inout uvec4 <strong>BONE_INDICES</strong></paragraph>
+                                <paragraph>in uvec4 <strong>BONE_INDICES</strong></paragraph>
                             </entry>
                             <entry>
                             </entry>
                         </row>
                         <row>
                             <entry>
-                                <paragraph>inout vec4 <strong>BONE_WEIGHTS</strong></paragraph>
+                                <paragraph>in vec4 <strong>BONE_WEIGHTS</strong></paragraph>
                             </entry>
                             <entry>
                             </entry>
@@ -733,7 +754,7 @@ void vertex() {
                                 <paragraph>in bool <strong>FRONT_FACING</strong></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><literal>true</literal> if current face if front face.</paragraph>
+                                <paragraph><literal>true</literal> if current face is front facing.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -867,10 +888,27 @@ void vertex() {
                         </row>
                         <row>
                             <entry>
+                                <paragraph>in uint <strong>CAMERA_VISIBLE_LAYERS</strong></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>Cull layers of the camera rendering the current pass.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
                                 <paragraph>in vec3 <strong>VERTEX</strong></paragraph>
                             </entry>
                             <entry>
                                 <paragraph>来自顶点函数的顶点(默认情况下, 在视图空间中).</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <paragraph>inout vec3 <strong>LIGHT_VERTEX</strong></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>A writable version of <literal>VERTEX</literal> that can be used to alter light and shadows. Writing to this
+                                    will not change the position of the fragment.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -992,7 +1030,7 @@ void vertex() {
                                 <paragraph>out float <strong>ALPHA</strong></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>Alpha (0..1);如果写入, 材质将进入透明管道.</paragraph>
+                                <paragraph>Alpha (0..1); if read from or written to, the material will go to the transparent pipeline.</paragraph>
                             </entry>
                         </row>
                         <row>

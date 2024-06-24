@@ -17,8 +17,8 @@
             </note>
             <target refid="doc-c-sharp-setup"></target>
         </section>
-        <section ids="prerequisites doc-c-sharp-setup" names="prerequisites 先决条件 doc_c_sharp_setup">
-            <title>先决条件</title>
+        <section ids="prerequisites doc-c-sharp-setup" names="prerequisites 前置需求 doc_c_sharp_setup">
+            <title>前置需求</title>
             <paragraph>Godot 捆绑了运行已经编译好的游戏所需的 .NET 部分，但 Godot 不包括构建和编译游戏所需的 MSBuild 和 C# 编译器等工具。这些工具包含在 .NET SDK 中，需要单独安装。</paragraph>
             <paragraph>综上所述，你必须安装了 .NET SDK <strong>和</strong>支持 .NET 的 Godot 版本。</paragraph>
             <paragraph>从 <reference name=".NET 下载页面" refuri="https://dotnet.microsoft.com/download">.NET 下载页面</reference> 下载并安装SDK的最新稳定版本。</paragraph>
@@ -26,8 +26,9 @@
                 <paragraph>如果你使用 64 位版本的 Godot，请务必安装 64 位版本的 SDK。</paragraph>
             </important>
             <paragraph>如果你正在从源代码构建 Godot，请确保按照 <reference internal="True" refuri="../../../contributing/development/compiling/compiling_with_dotnet#doc-compiling-with-dotnet"><inline classes="std std-ref">使用 .NET 编译</inline></reference> 页面中概述的步骤来启用 .NET 支持。</paragraph>
+            <target refid="doc-c-sharp-setup-external-editor"></target>
         </section>
-        <section ids="configuring-an-external-editor" names="configuring\ an\ external\ editor 配置外部编辑器">
+        <section ids="configuring-an-external-editor doc-c-sharp-setup-external-editor" names="configuring\ an\ external\ editor 配置外部编辑器 doc_c_sharp_setup_external_editor">
             <title>配置外部编辑器</title>
             <paragraph>Godot 内置的脚本编辑器对 C# 的支持是最小的。考虑使用外部 IDE 或编辑器，如 <reference name="Visual Studio Code" refuri="https://code.visualstudio.com/">Visual Studio Code</reference> 或 MonoDevelop。这些都为 C# 提供了自动完成、调试和其他有用的功能。要在 Godot 中选择一个外部编辑器，点击 <strong>Editor(编辑器) → Editor Settings(编辑器设置)</strong> ，向下滚动到 <strong>Dotnet(.NET)</strong> 。在 <strong>Dotnet(.NET)</strong> 下，点击 <strong>Editor(编辑器)</strong> ，然后选择你的外部编辑器。Godot 目前支持以下外部编辑器：</paragraph>
             <bullet_list bullet="-">
@@ -50,7 +51,7 @@
             <paragraph>关于如何配置外部编辑器，请参见以下章节：</paragraph>
             <section ids="jetbrains-rider" names="jetbrains\ rider">
                 <title>JetBrains Rider</title>
-                <paragraph>阅读完 "预备知识" 部分，就可以下载安装 <reference name="JetBrains Rider" refuri="https://www.jetbrains.com/rider/download">JetBrains Rider</reference> 。</paragraph>
+                <paragraph>阅读完 "前置需求" 部分，就可以下载安装 <reference name="JetBrains Rider" refuri="https://www.jetbrains.com/rider/download">JetBrains Rider</reference> 。</paragraph>
                 <paragraph>在 Godot 的 <strong>Editor(编辑器) → Editor Settings(编辑器设置)</strong> 菜单中：</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
@@ -69,7 +70,7 @@
             </section>
             <section ids="visual-studio-code" names="visual\ studio\ code">
                 <title>Visual Studio Code</title>
-                <paragraph>看完 "预备知识" 部分，就可以下载安装 <reference name="Visual Studio Code" refuri="https://code.visualstudio.com/download">Visual Studio Code</reference> （又名 VS Code）。</paragraph>
+                <paragraph>看完 "前置需求" 部分，就可以下载安装 <reference name="Visual Studio Code" refuri="https://code.visualstudio.com/download">Visual Studio Code</reference> （又名 VS Code）。</paragraph>
                 <paragraph>在 Godot 的 <strong>Editor(编辑器) → Editor Settings(编辑器设置)</strong> 菜单中：</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
@@ -85,11 +86,47 @@
                 <note>
                     <paragraph>如果你使用的是 Linux，需要安装 <reference name="Mono SDK" refuri="https://www.mono-project.com/download/stable/#download-lin">Mono SDK</reference> 才能使用 C# 工具插件。</paragraph>
                 </note>
-                <paragraph>为了配置一个用于调试的项目，你需要在 <literal>.vscode</literal> 文件夹中拥有一个 <literal>tasks.json</literal> 和 <literal>launch.json</literal> 文件，并进行必要的配置。一个示例配置可以在 <reference name="这里" refuri="https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229">这里</reference> 找到。在 <literal>launch.json</literal> 文件中，请确保相关配置中的 <literal>program</literal> 参数指向你的 Godot 可执行文件，你可以通过将它更改为可执行文件的路径或定义一个指向可执行文件的 <literal>GODOT4</literal> 环境变量来实现。现在，当你在 Visual Studio Code 中启动调试器时，你的 Godot 项目将会运行。</paragraph>
+                <paragraph>To configure a project for debugging, you need a <literal>tasks.json</literal> and <literal>launch.json</literal> file in
+                    the <literal>.vscode</literal> folder with the necessary configuration.</paragraph>
+                <paragraph>Here is an example <literal>launch.json</literal>:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="json" linenos="False" xml:space="preserve">{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Play",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${env:GODOT4}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+        }
+    ]
+}</literal_block>
+                <paragraph>For this launch configuration to work, you need to either setup a GODOT4
+                    environment variable that points to the Godot executable, or replace <literal>program</literal>
+                    parameter with the path to the Godot executable.</paragraph>
+                <paragraph>Here is an example <literal>tasks.json</literal>:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="json" linenos="False" xml:space="preserve">{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}</literal_block>
+                <paragraph>Now, when you start the debugger in Visual Studio Code, your Godot project will run.</paragraph>
             </section>
             <section ids="visual-studio-windows-only" names="visual\ studio\ (windows\ only) visual\ studio（仅限\ windows）">
                 <title>Visual Studio（仅限 Windows）</title>
-                <paragraph>下载并安装最新版本的 <reference name="Visual Studio" refuri="https://visualstudio.microsoft.com/downloads/">Visual Studio</reference> 。如果你选择了正确的工作负载，Visual Studio 将包含所需的 SDK，所以你不需要手动安装 "预先告知" 部分列出的内容。</paragraph>
+                <paragraph>下载并安装最新版本的 <reference name="Visual Studio" refuri="https://visualstudio.microsoft.com/downloads/">Visual Studio</reference> 。如果你选择了正确的工作负载，Visual Studio 将包含所需的 SDK，所以你不需要手动安装 "前置需求" 部分列出的内容。</paragraph>
                 <paragraph>在安装 Visual Studio 时，请选择以下工作负载：</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
@@ -106,6 +143,17 @@
                     <paragraph>如果你看到了类似“Unable to find package Godot.NET.Sdk”的错误，你的 NuGet 配置可能有问题，需要进行修复。</paragraph>
                     <paragraph>修复 NuGet 配置文件的简单方法就是重新生成一个。在文件浏览器窗口中前往 <literal>%AppData%\NuGet</literal>。将 <literal>NuGet.Config</literal> 文件重命名或删除。重新构建 Godot 项目时，就会自动用默认值创建该文件。</paragraph>
                 </note>
+                <paragraph>To debug your C# scripts using Visual Studio, open the .sln file that is generated
+                    after opening the first C# script in the editor. In the <strong>Debug</strong> menu, go to the
+                    <strong>Debug Properties</strong> menu item for your project. Click the <strong>Create a new profile</strong>
+                    button and choose <strong>Executable</strong>. In the <strong>Executable</strong> field, browse to the path
+                    of the C# version of the Godot editor, or type <literal>%GODOT4%</literal> if you have created an
+                    environment variable for the Godot executable path. It must be the path to the main Godot
+                    executable, not the 'console' version. For the <strong>Working Directory</strong>, type a single period,
+                    <literal>.</literal>, meaning the current directory. Also check the <strong>Enable native code debugging</strong>
+                    checkbox. You may now close this window, click downward arrow on the debug profile
+                    dropdown, and select your new launch profile. Hit the green start button, and your
+                    game will begin playing in debug mode.</paragraph>
             </section>
         </section>
         <section ids="creating-a-c-script" names="creating\ a\ c#\ script 创建\ c#\ 脚本">
@@ -147,8 +195,9 @@ public partial class YourCustomClass : Node
                 <paragraph>请记住，你希望附加到节点上的类应与 <literal>.cs</literal> 文件的名称相同。否则，你将会遇到以下错误：</paragraph>
                 <paragraph><emphasis>"Cannot find class XXX for script res://XXX.cs"</emphasis></paragraph>
             </note>
+            <target refid="doc-c-sharp-general-differences"></target>
         </section>
-        <section ids="general-differences-between-c-and-gdscript" names="general\ differences\ between\ c#\ and\ gdscript c#\ 和\ gdscript\ 之间的一般差异">
+        <section ids="general-differences-between-c-and-gdscript doc-c-sharp-general-differences" names="general\ differences\ between\ c#\ and\ gdscript c#\ 和\ gdscript\ 之间的一般差异 doc_c_sharp_general_differences">
             <title>C# 和 GDScript 之间的一般差异</title>
             <paragraph>C# API 使用 <literal>PascalCase</literal> 而不是 GDScript/C++ 中使用的 <literal>snake_case</literal> 。 在可能的情况下，字段和 getters/setters 已转换为属性。一般来说，C# Godot API 一贯力求尽可能合理。</paragraph>
             <paragraph>有关更多信息，请参见 <reference internal="True" refuri="c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference> 页面。</paragraph>

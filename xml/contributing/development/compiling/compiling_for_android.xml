@@ -21,7 +21,7 @@
                     <paragraph><reference name="Python 3.6+" refuri="https://www.python.org/downloads/">Python 3.6+</reference><target ids="python-3-6" names="python\ 3.6+" refuri="https://www.python.org/downloads/"></target>.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="SCons 3.0+" refuri="https://scons.org/pages/download.html">SCons 3.0+</reference><target ids="scons-3-0" names="scons\ 3.0+" refuri="https://scons.org/pages/download.html"></target> 构建系统.</paragraph>
+                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference><target ids="scons-3-1-2" names="scons\ 3.1.2+" refuri="https://scons.org/pages/download.html"></target> build system.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="Android SDK" refuri="https://developer.android.com/studio/#command-tools">Android SDK</reference><target ids="android-sdk" names="android\ sdk" refuri="https://developer.android.com/studio/#command-tools"></target> (命令行工具就足够了).</paragraph>
@@ -31,14 +31,10 @@
                                 <paragraph>所需的 SDK 组件将被自动安装。</paragraph>
                             </list_item>
                             <list_item>
-                                <definition_list>
-                                    <definition_list_item>
-                                        <term>在Linux上，</term>
-                                        <definition>
-                                            <paragraph><strong>do not use an Android SDK provided by your distribution's repositories as it will often be outdated</strong>.</paragraph>
-                                        </definition>
-                                    </definition_list_item>
-                                </definition_list>
+                                <paragraph>On Linux, <strong>do not use an Android SDK provided by your distribution's repositories</strong> as it will often be outdated.</paragraph>
+                            </list_item>
+                            <list_item>
+                                <paragraph>On macOS, <strong>do not use an Android SDK provided by Homebrew</strong> as it will not be installed in a unified location.</paragraph>
                             </list_item>
                         </bullet_list>
                     </block_quote>
@@ -70,6 +66,20 @@
                     <paragraph>Set the environment variable <literal>ANDROID_HOME</literal> to point to the Android
                         SDK. If you downloaded the Android command-line tools, this would be
                         the folder where you extracted the contents of the ZIP archive.</paragraph>
+                    <block_quote>
+                        <bullet_list bullet="-">
+                            <list_item>
+                                <paragraph>Windows: Press <literal classes="kbd">Windows + R</literal>, type "control system",
+                                    then click on <strong>Advanced system settings</strong> in the left pane,
+                                    then click on <strong>Environment variables</strong> on the window that appears.</paragraph>
+                            </list_item>
+                            <list_item>
+                                <paragraph>Linux or macOS: Add the text <literal>export ANDROID_HOME="/path/to/android-sdk"</literal>
+                                    to your <literal>.bashrc</literal> or <literal>.zshrc</literal> where <literal>/path/to/android-sdk</literal> points to
+                                    the root of the SDK directories.</paragraph>
+                            </list_item>
+                        </bullet_list>
+                    </block_quote>
                 </list_item>
                 <list_item>
                     <paragraph>在此文件夹中安装必要的SDK组件:</paragraph>
@@ -85,22 +95,28 @@
                                 <paragraph>运行以下命令完成安装, 其中 <literal>android_sdk_path</literal> 是Android SDK的路径.</paragraph>
                             </list_item>
                         </bullet_list>
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">cmdline-tools/latest/bin/sdkmanager --sdk_root=&lt;android_sdk_path&gt; "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"</literal_block>
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">cmdline-tools/latest/bin/sdkmanager --sdk_root=&lt;android_sdk_path&gt; "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"</literal_block>
                     </block_quote>
                 </list_item>
+                <list_item>
+                    <paragraph>After setting up the SDK and environment variables, be sure to
+                        <strong>restart your terminal</strong> to apply the changes. If you are using
+                        an IDE with an integrated terminal, you need to restart the IDE.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>Run <literal>scons platform=android</literal>. If this fails, go back and check the steps.
+                        If you completed the setup correctly, the NDK will begin downloading.
+                        If you are trying to compile GDExtension, you need to first compile
+                        the engine to download the NDK, then you can compile GDExtension.</paragraph>
+                </list_item>
             </bullet_list>
-            <seealso>
-                <paragraph>要在Windows上设置环境变量, 按 <literal classes="kbd">Windows + R</literal>, 输入 "control system" , 然后在左侧窗格中点击 <strong>Advanced system settings</strong> , 然后在出现的窗口中点击 <strong>Environment</strong> .</paragraph>
-            </seealso>
-            <seealso>
-                <paragraph>To set the environment variable on Linux or macOS, use
-                    <literal>export ANDROID_HOME=/path/to/android-sdk</literal> where <literal>/path/to/android-sdk</literal> points to
-                    the root of the SDK directories.</paragraph>
-            </seealso>
         </section>
         <section ids="building-the-export-templates" names="building\ the\ export\ templates 构建导出模板">
             <title>构建导出模板</title>
-            <paragraph>Godot需要两个Android导出模板: 优化的 "发布" 模板(<literal>android_release.apk</literal>)和调试模板(<literal>android_debug.apk</literal>). 由于Google将要求所有APK从2019年8月开始包含ARMv8(64位)库, 因此以下命令将构建包含ARMv7和ARMv8库的APK.</paragraph>
+            <paragraph>Godot needs two export templates for Android: the optimized "release"
+                template (<literal>android_release.apk</literal>) and the debug template (<literal>android_debug.apk</literal>).
+                As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
+                the commands below build an APK containing both ARMv7 and ARMv8 libraries.</paragraph>
             <paragraph>编译标准导出模板的方法是在Godot根目录下调用SCons, 参数如下:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -108,12 +124,12 @@
                 </list_item>
             </bullet_list>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=android target=template_release arch=arm32
-scons platform=android target=template_release arch=arm64
-cd platform/android/java
-# On Windows
-.\gradlew generateGodotTemplates
-# On Linux and macOS
-./gradlew generateGodotTemplates</literal_block>
+scons platform=android target=template_release arch=arm64 generate_apk=yes</literal_block>
+            <note>
+                <paragraph>If you are changing the list of architectures you're building, remember to add
+                    <literal>generate_apk=yes</literal> to the <emphasis>last</emphasis> architecture you're building, so that an APK
+                    file is generated after the build.</paragraph>
+            </note>
             <paragraph>生成的APK将位于 <literal>bin/android_release.apk</literal>.</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -121,31 +137,21 @@ cd platform/android/java
                 </list_item>
             </bullet_list>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=android target=template_debug arch=arm32
-scons platform=android target=template_debug arch=arm64
-cd platform/android/java
-# On Windows
-.\gradlew generateGodotTemplates
-# On Linux and macOS
-./gradlew generateGodotTemplates</literal_block>
+scons platform=android target=template_debug arch=arm64 generate_apk=yes</literal_block>
             <paragraph>生成的APK将位于 <literal>bin/android_debug.apk</literal>.</paragraph>
             <seealso>
                 <paragraph>如果你想启用 Vulkan 验证层，查看 <reference internal="True" refuri="../debugging/vulkan/vulkan_validation_layers#doc-vulkan-validation-layers-android"><inline classes="std std-ref">Vulkan validation layers on Android</inline></reference>。</paragraph>
             </seealso>
             <section ids="adding-support-for-x86-devices" names="adding\ support\ for\ x86\ devices 添加对\ x86\ 设备的支持">
                 <title>添加对 x86 设备的支持</title>
-                <paragraph>If you also want to include support for x86 and x86-64 devices, run the SCons
+                <paragraph>If you also want to include support for x86 and x86_64 devices, run the SCons
                     command a third and fourth time with the <literal>arch=x86_32</literal>, and
                     <literal>arch=x86_64</literal> arguments before building the APK with Gradle. For
                     example, for the release template:</paragraph>
                 <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=android target=template_release arch=arm32
 scons platform=android target=template_release arch=arm64
 scons platform=android target=template_release arch=x86_32
-scons platform=android target=template_release arch=x86_64
-cd platform/android/java
-# On Windows
-.\gradlew generateGodotTemplates
-# On Linux and macOS
-./gradlew generateGodotTemplates</literal_block>
+scons platform=android target=template_release arch=x86_64 generate_apk=yes</literal_block>
                 <paragraph>这将创建一个适用于所有平台的胖二进制文件. 导出项目的最终APK大小取决于你在导出时选择支持的平台；换句话说, 未使用的平台将从APK中删除.</paragraph>
             </section>
             <section ids="cleaning-the-generated-export-templates" names="cleaning\ the\ generated\ export\ templates 清理生成的导出模板">
@@ -176,7 +182,10 @@ cd platform/android/java
                         <paragraph>macOS: <literal>$HOME/Library/Application Support/Godot/export_templates/&lt;version&gt;/</literal></paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph><literal>&lt;version&gt;</literal> 的格式为 <literal>major.minor[.patch].status</literal> , 使用Godot源代码库中 <literal>version.py</literal> 的值(例如 <literal>3.0.5.stable</literal> 或 <literal>3.1.dev</literal>). 你还需要将此相同的版本字符串写入到导出模板旁边的 <literal>version.txt</literal> 文件中.</paragraph>
+                <paragraph><literal>&lt;version&gt;</literal> is of the form <literal>major.minor[.patch].status</literal> using values from
+                    <literal>version.py</literal> in your Godot source repository (e.g. <literal>4.1.3.stable</literal> or <literal>4.2.dev</literal>).
+                    You also need to write this same version string to a <literal>version.txt</literal> file located
+                    next to your export templates.</paragraph>
                 <comment xml:space="preserve">TODO: Move these paths to a common reference page</comment>
                 <paragraph>但是, 如果要编写自定义模块或自定义C++代码, 则可能需要在此处将APK配置为自定义导出模板:</paragraph>
                 <image candidates="{'*': 'contributing/development/compiling/img/andtemplates.png'}" uri="contributing/development/compiling/img/andtemplates.png"></image>
@@ -190,12 +199,10 @@ cd platform/android/java
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=android arch=arm32 production=yes target=editor
 scons platform=android arch=arm64 production=yes target=editor
 scons platform=android arch=x86_32 production=yes target=editor
-scons platform=android arch=x86_64 production=yes target=editor
-cd platform/android/java
-# On Windows
-.\gradlew generateGodotEditor
-# On Linux and macOS
-./gradlew generateGodotEditor</literal_block>
+scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes</literal_block>
+            <paragraph>You can skip certain architectures depending on your target device to speed up
+                compilation. Remember to add <literal>generate_apk=yes</literal> to the <emphasis>last</emphasis> architecture
+                you're building, so that an APK file is generated after the build.</paragraph>
             <paragraph>The resulting APK will be located at <literal>bin/android_editor_builds/android_editor-release.apk</literal>.</paragraph>
         </section>
         <section ids="removing-the-editor-templates" names="removing\ the\ editor\ templates 移除编辑器模板">

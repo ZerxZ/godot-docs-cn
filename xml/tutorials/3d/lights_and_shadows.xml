@@ -120,7 +120,7 @@
             <image candidates="{'*': 'tutorials/3d/img/light_directional.png'}" uri="tutorials/3d/img/light_directional.png"></image>
             <paragraph>每个表面的正面被光线照射，而其他部分则保持黑暗。与大多数其他类型的光不同，平行光没有特定的参数。</paragraph>
             <paragraph>平行光还提供 <strong>Angular Distance</strong> （角度距离）属性，该属性确定光的角度大小（以度为单位）。 将其增加到 <literal>0.0</literal> 以上将使阴影在距离光源更远的地方变得更柔和，同时也会影响太阳在程序天空材质中的外观。 这称为 <emphasis>接触硬化（ contact-hardening ）</emphasis> 阴影（也称为 PCSS）。</paragraph>
-            <paragraph>作为参考，从地球看太阳的角距离约为 <literal>0.5</literal>。这种阴影的性能开销比较高昂，因此如果在启用阴影的灯光上将此值设置为高于 <literal>0.0</literal>，请查看 <reference internal="True" refid="doc-lights-and-shadows-pcss-recommendations"><inline classes="std std-ref">PCSS 建议</inline></reference> 中的建议。</paragraph>
+            <paragraph>作为参考，从地球看太阳的角距离约为 <literal>0.5</literal>。这种阴影的性能消耗资源较高，因此如果在启用阴影的灯光上将此值设置为高于 <literal>0.0</literal>，请查看 <reference internal="True" refid="doc-lights-and-shadows-pcss-recommendations"><inline classes="std std-ref">PCSS 建议</inline></reference> 中的建议。</paragraph>
             <section ids="directional-shadow-mapping" names="directional\ shadow\ mapping 方向光阴影贴图">
                 <title>方向光阴影贴图</title>
                 <paragraph>为了计算阴影贴图，从覆盖整个场景（或最大距离）的正交角度渲染场景（仅深度）。但是，这种方法存在一个问题，因为靠近相机的物体接收到的低分辨率阴影可能看起来是块状的。</paragraph>

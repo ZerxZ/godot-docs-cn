@@ -397,7 +397,9 @@
             </table>
             <warning>
                 <paragraph>除了纹理压缩特性标签之外，默认的特性标签都是 <strong>不可修改</strong> 的。这意味着它们 <emphasis>不会</emphasis> 根据运行时的情况变化。例如，在移动设备上运行导出为 HTML5 的项目时， <literal>OS.has_feature("mobile")</literal> 返回的是 <literal>false</literal> 。</paragraph>
-                <paragraph>要检查导出为 HTML5 的项目是否是在移动设备上运行，请<reference internal="True" refuri="exporting_for_web#doc-javascript-eval"><inline classes="std std-ref">调用 JavaScript 代码</inline></reference>读取浏览器的用户代理。</paragraph>
+                <paragraph>To check whether a project exported to HTML5 is running on a mobile device,
+                    <reference internal="True" refuri="../platform/web/javascript_bridge#doc-web-javascript-bridge"><inline classes="std std-ref">call JavaScript code</inline></reference> that reads the browser's
+                    user agent.</paragraph>
             </warning>
         </section>
         <section ids="custom-features" names="custom\ features 自定义功能">

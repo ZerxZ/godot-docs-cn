@@ -115,8 +115,20 @@ void fragment(){
                 <paragraph>You can change uniforms from code using the function <literal>set_shader_parameter()</literal>
                     which is called on the node's material resource. With a Sprite2D node, the
                     following code can be used to set the <literal>blue</literal> uniform.</paragraph>
-                <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var blue_value = 1.0
+                <container classes="sphinx-tabs" type="tab-element">
+                    <div aria-label="Tabbed content" role="tablist">
+                        <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                        <button aria-controls="panel-0-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    </div>
+                    <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                        <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var blue_value = 1.0
 material.set_shader_parameter("blue", blue_value)</literal_block>
+                    </div>
+                    <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var blueValue = 1.0;
+((ShaderMaterial)Material).SetShaderParameter("blue", blueValue);</literal_block>
+                    </div>
+                </container>
                 <paragraph>注意,uniform值的名称是一个字符串. 字符串必须与它在着色器中的书写方式完全匹配, 包括拼写和大小写.</paragraph>
             </section>
         </section>

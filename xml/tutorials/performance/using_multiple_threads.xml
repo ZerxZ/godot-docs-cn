@@ -47,9 +47,7 @@ func _exit_tree():
             </container>
             <paragraph>然后, 你的函数将在一个单独的线程中运行, 直到它返回. 即使函数已经返回, 线程也必须收集它, 所以调用 <reference internal="True" refuri="../../classes/class_thread#class-thread-method-wait-to-finish"><inline classes="std std-ref">Thread.wait_to_finish()</inline></reference> , 它将等待线程完成(如果还没有完成), 然后妥善处理它.</paragraph>
             <warning>
-                <paragraph>Creating threads at run-time is slow on Windows and should be avoided to
-                    prevent stuttering. Semaphores, explained later on this page, should be used
-                    instead.</paragraph>
+                <paragraph>在Windows上，在执行时间建立线程速度很慢，应该避免，以防止卡顿出现。应改用信号量（本页稍后将对此进行解释）。</paragraph>
             </warning>
         </section>
         <section ids="mutexes" names="mutexes mutex">

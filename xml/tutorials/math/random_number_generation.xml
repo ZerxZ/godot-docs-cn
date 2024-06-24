@@ -13,25 +13,19 @@
             typical random number generation.</paragraph>
         <note>
             <paragraph>计算机不能产生“真正的”随机数。相反，它们依赖<reference name="伪随机数生成器" refuri="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">伪随机数生成器</reference>（PRNG）。</paragraph>
-            <paragraph>Godot internally uses the <reference name="PCG Family" refuri="https://www.pcg-random.org/">PCG Family</reference>
-                of pseudorandom number generators.</paragraph>
+            <paragraph>Godot内部使用`PCG Family &lt;<reference refuri="https://www.pcg-random.org/">https://www.pcg-random.org/</reference>&gt;`__ of 伪随机数生成器。</paragraph>
         </note>
         <section ids="global-scope-versus-randomnumbergenerator-class" names="global\ scope\ versus\ randomnumbergenerator\ class 全局作用域\ vs\ randomnumbergenerator\ 类">
             <title>全局作用域 vs RandomNumberGenerator 类</title>
             <paragraph>Godot 提供了两种生成随机数的方式：通过<emphasis>全局作用域</emphasis>方法或使用 <reference internal="True" refuri="../../classes/class_randomnumbergenerator#class-randomnumbergenerator"><inline classes="std std-ref">RandomNumberGenerator</inline></reference> 类。</paragraph>
             <paragraph>全局作用域方法更容易设置，但不能提供太多控制。</paragraph>
-            <paragraph>RandomNumberGenerator requires more code to use, but allows creating
-                multiple instances, each with their own seed and state.</paragraph>
+            <paragraph>RandomNumberGenerator需要使用更多代码，但允许建立多个实例，每个实例都有自己的种子和状态。</paragraph>
             <paragraph>本教程使用全局作用域方法, 只存在于RandomNumberGenerator类中的方法除外.</paragraph>
         </section>
         <section ids="the-randomize-method" names="the\ randomize()\ method randomize()\ 方法">
             <title>randomize() 方法</title>
             <note>
-                <paragraph>Since Godot 4.0, the random seed is automatically set to a random value when
-                    the project starts. This means you don't need to call <literal>randomize()</literal> in
-                    <literal>_ready()</literal> anymore to ensure that results are random across project runs.
-                    However, you can still use <literal>randomize()</literal> if you want to use a specific
-                    seed number, or generate it using a different method.</paragraph>
+                <paragraph>自Godot 4.0以来，当项目启动时，随机种子会自动设置为随机值。这意味着你不再需要在 <literal>_ready()</literal> 中调用 <literal>randomize()</literal> 来确保项目运行的结果是随机的。但是，如果你想使用特定的种子编号，或者使用不同的方法生成它，你仍然可以使用 <literal>randomize()</literal> 。</paragraph>
             </note>
             <paragraph>In global scope, you can find a <reference internal="True" refuri="../../classes/class_@globalscope#class-globalscope-method-randomize"><inline classes="std std-ref">randomize()</inline></reference> method. <strong>This method should be called only
                     once when your project starts to initialize the random seed.</strong> Calling it
@@ -467,13 +461,8 @@ public override void _Ready()
             <title>密码安全的伪随机数生成器</title>
             <paragraph>目前为止提到的方法都<strong>无法</strong>实现<emphasis>密码安全</emphasis>的伪随机数生成（CSPRNG）。这对于游戏而言没有问题，但是对于涉及加密、认证、签名的场景就显得捉襟见肘。</paragraph>
             <paragraph>Godot 为此提供了 <reference internal="True" refuri="../../classes/class_crypto#class-crypto"><inline classes="std std-ref">Crypto</inline></reference> 类。这个类可以执行非对称密钥加密、解密、签名和验证，也可以生成密码安全的随机字节块、RSA 密钥、HMAC 摘要、自签名的 <reference internal="True" refuri="../../classes/class_x509certificate#class-x509certificate"><inline classes="std std-ref">X509Certificate</inline></reference>。</paragraph>
-            <paragraph>The downside of <abbreviation explanation="Cryptographically secure pseudorandom number generation">CSPRNG</abbreviation>
-                is that it's much slower than standard pseudorandom number generation. Its API
-                is also less convenient to use. As a result,
-                <abbreviation explanation="Cryptographically secure pseudorandom number generation">CSPRNG</abbreviation>
-                should be avoided for gameplay elements.</paragraph>
-            <paragraph>Example of using the Crypto class to generate 2 random integers between <literal>0</literal>
-                and <literal>2^32 - 1</literal> (inclusive):</paragraph>
+            <paragraph>缩写：“CSPRNG（加密安全伪随机数生成）”的缺点是它比标准伪随机数的生成慢得多。其API的使用也不太方便。因此，游戏机制应避免使用：缩写：“CSPRNG（加密安全伪随机数生成）”。</paragraph>
+            <paragraph>使用Crypto类生成“0”和“2^32-1”（含）之间的2个随机整数的示例：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var crypto := Crypto.new()
 # Request as many bytes as you need, but try to minimize the amount
 # of separate requests to improve performance.
@@ -489,9 +478,7 @@ var random_int_2 := byte_array.decode_u32(4)
 
 prints("Random integers:", random_int_1, random_int_2)</literal_block>
             <seealso>
-                <paragraph>See <reference internal="True" refuri="../../classes/class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference>'s documentation for other methods you can
-                    use to decode the generated bytes into various types of data, such as
-                    integers or floats.</paragraph>
+                <paragraph>请参阅 :ref:<problematic ids="id2" refid="id1">`</problematic>class_PackedByteArray`的文档，了解可用于将生成的字节解码为各种类型的数据（如整数或浮点）的其他方法。</paragraph>
             </seealso>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

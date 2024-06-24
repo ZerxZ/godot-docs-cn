@@ -150,6 +150,15 @@
                     <caption>动画</caption>
                 </figure>
             </section>
+            <section ids="autoplay-on-load" names="autoplay\ on\ load">
+                <title>Autoplay on load</title>
+                <paragraph>You can make it so an animation plays automatically when the AnimationPlayer nodes
+                    scene starts, or joins another scene. To do this click the "Autoplay on load"
+                    button in the animation editor, it's right next to the edit button.</paragraph>
+                <image candidates="{'*': 'tutorials/animation/img/autoplay_on_load.webp'}" uri="tutorials/animation/img/autoplay_on_load.webp"></image>
+                <paragraph>The icon for it will also appear in front of the name of the animation, so you can
+                    easily identify which one is the autoplay animation.</paragraph>
+            </section>
             <section ids="back-and-forth" names="back\ and\ forth 来来回回">
                 <title>来来回回</title>
                 <paragraph>Godot 有一个我们可以在动画中使用的有趣的功能。当设置了动画循环但动画末尾没有指定关键帧时，第一个关键帧也是最后一个关键帧。</paragraph>
@@ -162,7 +171,8 @@
             </section>
             <section ids="track-settings" names="track\ settings 轨道设置">
                 <title>轨道设置</title>
-                <paragraph>每条轨道最后都有一个设置面板，可以在其中设置更新模式、轨道插值和循环模式。</paragraph>
+                <paragraph>Each property track has a settings panel at the end, where you can set its update
+                    mode, track interpolation, and loop mode.</paragraph>
                 <figure ids="id17">
                     <image alt="轨道设置" candidates="{'*': 'tutorials/animation/img/animation_track_settings.webp'}" uri="tutorials/animation/img/animation_track_settings.webp"></image>
                     <caption>轨道设置</caption>
@@ -249,10 +259,22 @@
             <paragraph>对于已存在的轨道，你可以添加一个名为“RESET”（大小写敏感）的动画，然后为每一个你希望重置的属性添加轨道。应该只在时间为 0 处存在一个关键帧，其值为每条轨道所期望的默认值。</paragraph>
             <paragraph>如果 AnimationPlayer 的 <strong>Reset On Save</strong>（保存时重置）属性为 <literal>true</literal>，场景在保存时会应用重置动画的效果（相当于寻道到 <literal>0.0</literal> 时间点的效果）。只有保存的文件会受到影响——编辑器中的属性轨道还是会保持原样。</paragraph>
             <paragraph>如果你想要在编辑器中重置轨道，请选中 AnimationPlayer 节点，打开 <strong>动画</strong> 底部面板，然后选择动画编辑器 <strong>动画</strong> 下拉菜单中的 <strong>应用重置</strong> 。</paragraph>
-            <paragraph>为新建的动画添加轨道时，如果使用的是检查器中属性旁的关键帧图标，编辑器会询问是否自动添加一条 RESET 轨道。这对于使用 3.4 版本之前的 Godot 创建的轨道并不适用，因为动画重置轨道功能是在 3.4 版本中加入的。</paragraph>
+            <paragraph>when using the keyframe icon next to a property in the inspector the editor will
+                ask you to automatically create a RESET track.</paragraph>
             <note>
                 <paragraph>RESET轨道也被用作混合的参考值。另见<reference name="更好的混合" refuri="../animation/animation_tree.html#for-better-blending">更好的混合</reference>。</paragraph>
             </note>
+        </section>
+        <section ids="onion-skinning" names="onion\ skinning">
+            <title>Onion Skinning</title>
+            <paragraph>Godot's animation editor allows you use onion skinning while creating an
+                animation. To turn this feature on click on the onion icon in the top right
+                of the animation editor. Now there will be transparent red copies of what
+                is being animated in its previous positions in the animation.</paragraph>
+            <image candidates="{'*': 'tutorials/animation/img/onion_skin.webp'}" uri="tutorials/animation/img/onion_skin.webp"></image>
+            <paragraph>The three dots button next to the onion skinning button opens a dropdown
+                menu that lets you adjust how it works, including the ability to use
+                onion skinning for future frames.</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

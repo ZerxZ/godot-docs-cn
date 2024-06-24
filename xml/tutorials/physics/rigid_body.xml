@@ -73,12 +73,7 @@ public partial class MyRigidBody3D : RigidBody3D
 }</literal_block>
                 </div>
             </container>
-            <paragraph>This method uses the rigid body's <literal>angular_velocity</literal> property to rotate the body.
-                The axis to rotate around is given by the cross product between the current forward direction and the direction one wants to look in.
-                The <literal>clamp</literal> is a simple method used to prevent the amount of rotation from going past the direction which is wanted to be looked in,
-                as the total amount of rotation needed is given by the arccosine of the dot product.
-                This method can be used with <literal>axis_lock_angular_*</literal> as well. If more precise control is needed, solutions such as ones relying on <reference internal="True" refuri="../../classes/class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference> may be required,
-                as discussed in <reference internal="True" refuri="../3d/using_transforms#doc-using-transforms"><inline classes="std std-ref">使用 3D 变换</inline></reference>.</paragraph>
+            <paragraph>该方法使用刚体的 <literal>angular_velocity</literal> 特性来旋转刚体。要绕其旋转的轴是由当前正向方向和想要观察的方向之间的叉积给出的。 <literal>clamp</literal> 是一种简单的方法，用于防止旋转量超过想要查看的方向，因为所需的旋转总量是由点积的反余弦给出的。此方法也可以与 <literal>axis_lock_angular_*</literal> 一起使用。如果需要更精确的控制，则可能需要依赖于 <reference internal="True" refuri="../../classes/class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference> 的解决方案，如 <reference internal="True" refuri="../3d/using_transforms#doc-using-transforms"><inline classes="std std-ref">使用 3D 变换</inline></reference>。</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

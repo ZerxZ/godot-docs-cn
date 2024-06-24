@@ -6,14 +6,10 @@
     <section ids="exporting-for-dedicated-servers doc-exporting-for-dedicated-servers" names="exporting\ for\ dedicated\ servers 为专用服务器导出 doc_exporting_for_dedicated_servers">
         <title>为专用服务器导出</title>
         <paragraph>如果要在没有 GPU 或没有显示服务器的机器上为项目运行专用服务器，你需要在运行 Godot 的时候使用 <literal>headless</literal> 显示服务器和 <literal>Dummy</literal> <reference internal="True" refuri="../../classes/class_projectsettings#class-projectsettings-property-audio-driver-driver"><inline classes="std std-ref">音频驱动</inline></reference>。</paragraph>
-        <paragraph>Since Godot 4.0, this can be done by running a Godot binary on any platform with
-            the <literal>--headless</literal> command line argument, or running a project exported as
-            dedicated server. You do not need to use a specialized server binary anymore,
-            unlike Godot 3.x.</paragraph>
+        <paragraph>从Godot 4.0开始，这可以透过在任何平台上使用「--headless」命令列参数来执行Godot二进位档案或执行导出为专用服务器的项目来完成。与Godot 3.x不同，你不再需要使用专门的服务器二进位。</paragraph>
         <section ids="editor-versus-export-template" names="editor\ versus\ export\ template 编辑器与导出模板">
             <title>编辑器与导出模板</title>
-            <paragraph>It is possible to use either an editor or export template (debug or release)
-                binary in headless mode. Which one you should use depends on your use case:</paragraph>
+            <paragraph>可以在无头模式下使用编辑器或导出模板（调试或发布）二进位。你应该使用哪一种取决于你的用例：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><strong>Export template:</strong> Use this one for running dedicated servers. It does not
@@ -35,10 +31,7 @@
                         export your project as usual.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Export a PCK file only, preferably for the platform that matches the platform
-                        that will host the server. Place this PCK file in the same folder as an export
-                        template binary, rename the binary to have the same name as the PCK (minus the
-                        file extension), then run the binary.</paragraph>
+                    <paragraph>仅导出PCK档案，最好是与将托管服务器的平台相配对的平台。将此PCK档案放在与导出模板二进位档案相同的文件夹中，将二进位档案重新命名为与PCK相同的名称（减去文件扩展名），然后执行该二进位档案。</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>Both methods should result in identical output. The rest of the page will focus
@@ -48,75 +41,47 @@
         </section>
         <section ids="exporting-a-project-for-a-dedicated-server doc-exporting-for-dedicated-servers-exporting-project" names="exporting\ a\ project\ for\ a\ dedicated\ server 为专用服务器导出项目 doc_exporting_for_dedicated_servers_exporting_project">
             <title>为专用服务器导出项目</title>
-            <paragraph>If you export a project as usual when targeting a server, you will notice that
-                the PCK file is just as large as for the client. This is because it includes all
-                resources, including those the server doesn't need (such as texture data).
-                Additionally, headless mode won't be automatically used; the user will have to
-                specify <literal>--headless</literal> to make sure no window spawns.</paragraph>
-            <paragraph>Many resources such as textures can be stripped from the PCK file to greatly
-                reduce its size. Godot offers a way to do this for textures and materials in a way
-                that preserves references in scene or resource files (built-in or external).</paragraph>
-            <paragraph>To begin doing so, make sure you have a dedicated export preset for your server,
-                then select it, go to its <strong>Resources</strong> tab and change its export mode:</paragraph>
+            <paragraph>如果你在以服务器为目标时照常导出项目，你会注意到PCK档案与客户端一样大。这是因为它包含所有资源，包括服务器不需要的资源（例如纹理数据）。此外，不会自动使用无头模式；使用者必须指定“--headless”以确保没有视窗生成。</paragraph>
+            <paragraph>许多资源（例如纹理）可以从PCK档案中剥离，以大大减少其大小。Godot提供了一种对纹理和材质执行此操作的方法，可保留场景或资源档案（内置或外部）中的参考。</paragraph>
+            <paragraph>首先，请确保你的服务器有专用的导出预设，然后选择它，转到其**Resources**标签并更改其导出模式：</paragraph>
             <figure align="center" ids="id1">
-                <image alt="Choosing the **Export as dedicated server** export mode in the export preset" candidates="{'*': 'tutorials/export/img/exporting_for_dedicated_servers_export_mode.webp'}" uri="tutorials/export/img/exporting_for_dedicated_servers_export_mode.webp"></image>
-                <caption>Choosing the <strong>Export as dedicated server</strong> export mode in the export preset</caption>
+                <image alt="在导出预设中选择**导出为专用服务器**导出模式" candidates="{'*': 'tutorials/export/img/exporting_for_dedicated_servers_export_mode.webp'}" uri="tutorials/export/img/exporting_for_dedicated_servers_export_mode.webp"></image>
+                <caption>在导出预设中选择**导出为专用服务器**导出模式</caption>
             </figure>
-            <paragraph>When this export mode is chosen, the <literal>dedicated_server</literal> feature tag is
-                automatically added to the exported project.</paragraph>
+            <paragraph>选择此导出模式后，「dedicated_server」功能标记将自动新增至导出的项目。</paragraph>
             <note>
-                <paragraph>If you do not wish to use this
-                    export mode but still want the feature tag, you can write the name
-                    <literal>dedicated_server</literal> in the <strong>Features</strong> tab of the export preset.
-                    This will also force <literal>--headless</literal> when running the exported project.</paragraph>
+                <paragraph>如果你不想使用此导出模式但仍需要功能标签，则可以在导出预设的**功能**标签中写入名称``dedicated_server``。当运作导出的项目时，这也会强制“--headless”。</paragraph>
             </note>
-            <paragraph>After selecting this export mode, you will be presented with a list of resources
-                in the project:</paragraph>
+            <paragraph>选择此导出模式后，你将看到项目中的资源列表：</paragraph>
             <figure align="center" ids="id2">
-                <image alt="Choosing resources to keep, keep with stripped visuals or remove" candidates="{'*': 'tutorials/export/img/exporting_for_dedicated_servers_export_resources.webp'}" uri="tutorials/export/img/exporting_for_dedicated_servers_export_resources.webp"></image>
-                <caption>Choosing resources to keep, keep with stripped visuals or remove</caption>
+                <image alt="选择要保留的资源、保留剥离的视觉效果或删除" candidates="{'*': 'tutorials/export/img/exporting_for_dedicated_servers_export_resources.webp'}" uri="tutorials/export/img/exporting_for_dedicated_servers_export_resources.webp"></image>
+                <caption>选择要保留的资源、保留剥离的视觉效果或删除</caption>
             </figure>
-            <paragraph>Ticking a box allows you to override options for the specified file or folder.
-                Checking boxes does <strong>not</strong> affect which files are exported; this is done by the
-                options selected for each checkbox instead.</paragraph>
-            <paragraph>Files within a checked folder will automatically use the parent's option by
-                default, which is indicated by the <strong>(Inherited)</strong> suffix for the option name
-                (and the option name being grayed out). To change the option for a file whose
-                option is currently inherited, you must tick the box next to it first.</paragraph>
+            <paragraph>勾选复选框可让你复写指定档案或文件夹的选项。复选框**不会**影响导出哪些档案；这是透过为每个复选框选择的选项来完成的。</paragraph>
+            <paragraph>预设情况下，提取文件夹中的档案将自动使用父级选项，这由选项名称的**（Inherited）**后缀表示（并且选项名称呈灰色）。若要变更目前继承选项的档案的选项，必须先勾选该档案旁的方块。</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><strong>Strip Visuals:</strong> Export this resource, with visual files (textures and materials)
-                        replaced by placeholder classes. Placeholder classes store the image size
-                        (as it's sometimes used to position elements in a 2D scene), but nothing else.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">**</problematic>Strip Visuals：<problematic ids="id4" refid="id3">**</problematic>导出此资源，并将视觉档案（纹理和材质）替换为占位符类别。占位符类别储存图像大小（因为它有时用于在2D场景中定位元素），但不储存其他内容。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><strong>Keep:</strong> Export this resource as usual, with visual files intact.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">**</problematic>Keep：<problematic ids="id4" refid="id3">**</problematic>照常导出此资源，并保留完整的视觉文件。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><strong>Remove:</strong> The file is not included in the PCK. This is useful to ignore
-                        scenes and resources that only the client needs. If you do so, make sure the
-                        server doesn't reference these client-only scenes and resources in any way.</paragraph>
+                    <paragraph><problematic ids="id2" refid="id1">**</problematic>Remove：<problematic ids="id4" refid="id3">**</problematic>该档案不包含在PCK中。这对于忽略只有客户端需要的场景和资源很有用。如果这样做，请确保服务器不会以任何方式引用这些仅限客户端的场景和资源。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The general recommendation is to use <strong>Strip Visuals</strong> whenever possible, unless
-                the server needs to access image data such as pixels' colors. For example, if
-                your server generates collision data based on an image's contents, you need to
-                use <strong>Keep</strong> for that particular image.</paragraph>
+            <paragraph>一般建议是尽可能使用**Strip Visuals**，除非服务器需要存取图像数据（例如像素颜色）。例如，如果你的服务器根据图象的内容产生碰撞数据，则你需要对该特定图象使用**Keep**。</paragraph>
             <tip>
-                <paragraph>To check the file structure of your exported PCK, use the <strong>Export
-                        PCK/ZIP...</strong> button with a <literal>.zip</literal> file extension, then open the resulting
-                    ZIP file in a file manager.</paragraph>
+                <paragraph>若要检查导出的PCK的档案结构，请使用带有「.zip」文件扩展名的「<strong>Export PCK/ZIP…</strong>」按钮，然后在档案管理器中开启产生的ZIP档案。</paragraph>
             </tip>
             <warning>
-                <paragraph>Be careful when using the <strong>Remove</strong> mode, as scenes/resources that reference
-                    a removed file will no longer be able to load successfully.</paragraph>
+                <paragraph>使用**Remove**模式时要小心，因为引用已删除档案的场景/资源将无法再成功加载。</paragraph>
                 <paragraph>If you wish to remove specific resources but make the scenes still be able
                     to load without them, you'll have to remove the reference in the scene file
                     and load the files to the nodes' properties using <literal>load()</literal> in a script.
                     This approach can be used to strip resources that Godot doesn't support
                     replacing with placeholders yet, such as audio.</paragraph>
-                <paragraph>Removing textures is often what makes the greatest impact on the PCK size,
-                    so it is recommended to stick with <strong>Strip Visuals</strong> at first.</paragraph>
+                <paragraph>删除纹理通常对PCK大小影响最大，因此建议先坚持使用**Strip Visuals**。</paragraph>
             </warning>
             <paragraph>使用上面的选项后，客户端的 PCK（正常导出所有资源）是这样的：</paragraph>
             <literal_block force="False" language="none" linenos="False" xml:space="preserve">.
@@ -166,10 +131,7 @@
         <section ids="starting-the-dedicated-server" names="starting\ the\ dedicated\ server 启动专用服务">
             <title>启动专用服务</title>
             <paragraph>如果你的客户端和服务都是同一个 Godot 项目的一部分，你必须添加一个使用命令行参数直接启动服务的方法。这可以通过在你的主场景（或单例）的 <literal>_ready()</literal> 方法中添加以下代码片段来实现。</paragraph>
-            <paragraph>If you <reference internal="True" refid="doc-exporting-for-dedicated-servers-exporting-project"><inline classes="std std-ref">exported the project</inline></reference>
-                using the <strong>Export as dedicated server</strong> export mode (or have added
-                <literal>dedicated_server</literal> as a custom feature tag), you can use the <literal>dedicated_server</literal>
-                feature tag to detect whether a dedicated server PCK is being used:</paragraph>
+            <paragraph>如果你使用**导出为专用服务器**导出模式导出了项目&lt;doc_exporting_for_dedicated_servers_exporting_project&gt;`（或已新增``dedicated_server``作为自定义功能标记），则可以使用``dedicated_server``用于侦测是否正在使用专用服务器PCK的功能标记：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -249,9 +211,7 @@ if (OS.GetCmdlineUserArgs().Contains("--server"))
 }</literal_block>
                 </div>
             </container>
-            <paragraph>It's a good idea to add at least one of the above command-line arguments to
-                start a server, as it can be used to test server functionality from the command
-                line without having to export the project.</paragraph>
+            <paragraph>最好新增至少一个上述命令列参数来启动服务器，因为它可用于从命令列测试服务器功能，而无需导出项目。</paragraph>
             <paragraph>如果你的客户端和服务器是独立的Godot项目, 服务器通常应该配置成运行主场景时自启服务的方式.</paragraph>
         </section>
         <section ids="next-steps" names="next\ steps 下一步">

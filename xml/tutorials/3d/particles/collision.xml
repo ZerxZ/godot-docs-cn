@@ -19,10 +19,7 @@
                 <caption>常用碰撞属性</caption>
             </figure>
             <paragraph>有一些属性你可以在所有碰撞节点中找到。它们位于检查器的 <literal>GPUParticlesCollision3D</literal> 区域中。</paragraph>
-            <paragraph>The <literal>Cull Mask</literal> property controls which particle systems are affected by a collision node based
-                on each system's <reference internal="True" refuri="../../../classes/class_visualinstance3d#class-visualinstance3d"><inline classes="std std-ref">visibility layers</inline></reference>. A particle system collides with a
-                collision node only if at least one of the system's visibility layers is enabled in the
-                collider's cull mask.</paragraph>
+            <paragraph><literal>Cull Mask</literal> 属性决定哪个粒子系统被基于每个 系统的 :ref:<problematic ids="id2" refid="id1">`</problematic>visibility layers &lt;class_VisualInstance3D&gt;`的碰撞节点影响。当且仅当至少一个 系统的 visibility layers 在碰撞者的 cull mask 中启用时，粒子系统与碰撞节点碰撞。</paragraph>
             <warning>
                 <paragraph>There is a <reference name="known issue" refuri="https://github.com/godotengine/godot/issues/61014">known issue</reference><target ids="known-issue" names="known\ issue" refuri="https://github.com/godotengine/godot/issues/61014"></target> with
                     GPU particle collision that prevent the cull mask from working properly in Godot 4.0. We will

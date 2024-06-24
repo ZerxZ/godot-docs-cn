@@ -18,10 +18,10 @@ Techniques:
     <target refid="doc-scripting-first-script"></target>
     <section ids="creating-your-first-script doc-scripting-first-script" names="creating\ your\ first\ script 创建第一个脚本 doc_scripting_first_script">
         <title>创建第一个脚本</title>
-        <paragraph>在本课中，你将用 GDScript 编写第一个脚本，使 Godot 图标转圈。正如我们<reference internal="True" refuri="../introduction/index#toc-learn-introduction"><inline classes="std std-ref">在介绍中</inline></reference>提到的，我们假设你有编程基础。方便起见，我们在单独的选项卡中包含了等价的 C# 代码。</paragraph>
+        <paragraph>在本课中，你将会用 GDScript 编写第一个脚本，使 Godot 图标转圈。正如我们<reference internal="True" refuri="../introduction/index#toc-learn-introduction"><inline classes="std std-ref">在介绍中</inline></reference>提到的，我们假设你有编程基础，方便起见，我们也在单独的选项卡中包含了等价的 C# 代码。</paragraph>
         <image candidates="{'*': 'getting_started/step_by_step/img/scripting_first_script_rotating_godot.gif'}" uri="getting_started/step_by_step/img/scripting_first_script_rotating_godot.gif"></image>
         <seealso>
-            <paragraph>要了解更多关于GDScript、其关键字和语法的信息，请前往 <reference internal="True" refuri="../../tutorials/scripting/gdscript/gdscript_basics#doc-gdscript"><inline classes="std std-ref">GDScript 参考</inline></reference>。</paragraph>
+            <paragraph>要了解更多关于GDScript、其关键字以及其语法等信息，请前往:ref:<title_reference>GDScript 参考&lt;doc_gdscript&gt;</title_reference>。</paragraph>
         </seealso>
         <seealso>
             <paragraph>要了解更多关于 C# 的信息，请前往 <reference internal="True" refuri="../../tutorials/scripting/c_sharp/c_sharp_basics#doc-c-sharp"><inline classes="std std-ref">C# 基础</inline></reference>页面。</paragraph>
@@ -71,13 +71,13 @@ public partial class MySprite2D : Sprite2D
 }</literal_block>
                 </div>
             </container>
-            <paragraph>每个 GDScript 文件都是一个隐含的类。<literal>extends</literal> 关键字定义了这个脚本所继承或扩展的类。本例中它是 <literal>Sprite2D</literal>，意味着我们的脚本将获得 Sprite2D 节点的所有属性和函数，包括它继承的 <literal>Node2D</literal>、<literal>CanvasItem</literal>、<literal>Node</literal> 等类。</paragraph>
+            <paragraph>每个 GDScript 文件都是一个隐含的类。<literal>extends</literal> 关键字定义了这个脚本所继承或扩展的类。本例中为``Sprite2D``，意味着我们的脚本将获得 Sprite2D 节点的所有属性和方法，包括它继承的 <literal>Node2D</literal>、<literal>CanvasItem</literal>、<literal>Node</literal> 等类。</paragraph>
             <note>
-                <paragraph>在GDScript中，如果你没有写带有 <literal>extends</literal> 关键字的一行，你的类将隐式地扩展自 <reference internal="True" refuri="../../classes/class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference>，Godot使用这个类来管理你的应用程序的内存。</paragraph>
+                <paragraph>在 GDScript 中，如果你略写了带有 <literal>extends</literal> 关键字的一行，那么你的类将隐式扩展自 <reference internal="True" refuri="../../classes/class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference>，Godot 使用这个类来管理你的应用程序的内存。</paragraph>
             </note>
             <paragraph>继承的属性包括你可以在“检查器”面板中看到的属性，例如节点的 <literal>texture</literal>。</paragraph>
             <note>
-                <paragraph>“检查器”默认使用“Title Case”形式展示节点的属性，将单词的首字母大写、用空格分隔。在 GDScript 代码中，这些属性使用的是“snake_case”，全小写、单词之间使用下划线分隔。</paragraph>
+                <paragraph>“检查器”默认使用“Title Case”形式展示节点的属性，将单词的首字母大写、用空格进行分隔。在 GDScript 代码中，这些属性使用的是“snake_case”，全小写、单词之间用下划线分隔开来。</paragraph>
                 <paragraph>你可以在检查器中悬停任何属性的名称来查看它的描述和在代码中的标识符。</paragraph>
             </note>
         </section>
@@ -103,7 +103,7 @@ public partial class MySprite2D : Sprite2D
             </container>
             <paragraph>让我们把它分解一下。 <literal>func</literal> 关键字定义了一个名为 <literal>_init</literal> 的新函数。这是类构造函数的一个特殊名称。如果你定义了这个函数，引擎会在内存中创建每个对象或节点时调用 <literal>_init()</literal> 。</paragraph>
             <note>
-                <paragraph>GDScript 是基于缩进的语言。行首的制表符是 <literal>print()</literal> 代码正常工作的必要条件。如果你省略了它或者没有正确缩进一行，编辑器将以红色高亮显示，并显示以下错误信息：“Indented block expected”（应有缩进块）。</paragraph>
+                <paragraph>GDScript 是基于缩进的语言。行首的制表符是 <literal>print()</literal> 代码正常工作的必要条件。如果你省略了这个制表符，或者没有正确缩进一行，编辑器则将以红色标注高亮显示以下错误信息：“Indented block expected”（应有缩进块）。</paragraph>
             </note>
             <paragraph>如果你还没有保存场景为 <literal>sprite_2d.tscn</literal>，请保存，然后按 <literal classes="kbd">F6</literal>（macOS 上为 <literal classes="kbd">Cmd + R</literal>）来运行它。看一下底部展开的<strong>输出</strong>面板。它应该显示“Hello, world!”。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/scripting_first_script_print_hello_world.webp'}" uri="getting_started/step_by_step/img/scripting_first_script_print_hello_world.webp"></image>
@@ -158,7 +158,9 @@ private float _angularSpeed = Mathf.Pi;</literal_block>
             </note>
             <paragraph>函数内部的那一行 <literal>rotation += angular_speed * delta</literal> 每一帧都会增加我们的精灵的旋转量。这里 <literal>rotation</literal> 是从 <literal>Sprite2D</literal> 所扩展的 <literal>Node2D</literal> 类继承的属性。它可以控制我们节点的旋转，以弧度为单位。</paragraph>
             <tip>
-                <paragraph>在代码编辑器中，你可以按住 ctrl 单击任何内置的属性或函数，如 <literal>position</literal>、<literal>rotation</literal>、<literal>_process</literal> 以在新标签页中打开相应的文档。</paragraph>
+                <paragraph>In the code editor, you can Ctrl-click (Cmd-click on MacOS) on any built-in property or
+                    function like <literal>position</literal>, <literal>rotation</literal>, or <literal>_process</literal> to open the
+                    corresponding documentation in a new tab.</paragraph>
             </tip>
             <paragraph>运行该场景，可以看到 Godot 的图标在原地转动。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/scripting_first_script_godot_turning_in_place.gif'}" uri="getting_started/step_by_step/img/scripting_first_script_godot_turning_in_place.gif"></image>

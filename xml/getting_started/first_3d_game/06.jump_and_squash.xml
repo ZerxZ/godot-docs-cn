@@ -196,8 +196,8 @@ public int BounceImpulse { get; set; } = 16;</literal_block>
     }
 }</literal_block>
                     </div>
-                    <paragraph>新函数很多。下面我们来进一步介绍一下。</paragraph>
                 </container>
+                <paragraph>新函数很多。下面我们来进一步介绍一下。</paragraph>
                 <paragraph>函数 <literal>get_slide_collision_count()</literal> 和 <literal>get_slide_collision()</literal> 都来自于 <reference internal="True" refuri="../../classes/class_characterbody3d#class-characterbody3d"><inline classes="std std-ref">CharacterBody3D</inline></reference> 类，他们与 <literal>move_and_slide()</literal> 有关。</paragraph>
                 <paragraph><literal>get_slide_collision()</literal> 返回的是 <reference internal="True" refuri="../../classes/class_kinematiccollision3d#class-kinematiccollision3d"><inline classes="std std-ref">KinematicCollision3D</inline></reference> 对象，包含碰撞在哪里发生、如何发生等信息。例如，我们对它的 <literal>get_collider</literal> 属性调用 <literal>is_in_group()</literal> 来检查我们是否是和“mob”发生了碰撞：<literal>collision.collider.is_in_group("mob")</literal>。</paragraph>
                 <note>

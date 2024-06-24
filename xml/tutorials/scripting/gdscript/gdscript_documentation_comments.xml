@@ -50,8 +50,8 @@
                                 </entry>
                                 <entry>
                                     <line_block>
-                                        <line><literal>@tutorial:</literal></line>
-                                        <line><literal>@tutorial(标题写在此处):</literal></line>
+                                        <line><literal>@tutorial: https://example.com</literal></line>
+                                        <line><literal>@tutorial(The Title Here): https://example.com</literal></line>
                                     </line_block>
                                 </entry>
                             </row>
@@ -60,7 +60,10 @@
                                     <paragraph>已弃用</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><literal>@deprecated</literal></paragraph>
+                                    <line_block>
+                                        <line><literal>@deprecated</literal></line>
+                                        <line><literal>@deprecated: Use [AnotherClass] instead.</literal></line>
+                                    </line_block>
                                 </entry>
                             </row>
                             <row>
@@ -68,7 +71,10 @@
                                     <paragraph>实验性</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><literal>@experimental</literal></paragraph>
+                                    <line_block>
+                                        <line><literal>@experimental</literal></line>
+                                        <line><literal>@experimental: This class is unstable.</literal></line>
+                                    </line_block>
                                 </entry>
                             </row>
                         </tbody>
@@ -81,8 +87,8 @@
 ## The description of the script, what it can do,
 ## and any further detail.
 ##
-## @tutorial:            https://the/tutorial1/url.com
-## @tutorial(Tutorial2): https://the/tutorial2/url.com
+## @tutorial:             https://example.com/tutorial_1
+## @tutorial(Tutorial 2): https://example.com/tutorial_2
 ## @experimental</literal_block>
                 <warning>
                     <paragraph>若标记名和冒号中间存在空格，如 <literal>@tutorial  :</literal>，则不会将该标记视为有效标记，该无效标记将会被引擎忽略。</paragraph>
@@ -124,7 +130,7 @@
                 <table>
                     <tgroup cols="2">
                         <colspec colwidth="14"></colspec>
-                        <colspec colwidth="19"></colspec>
+                        <colspec colwidth="50"></colspec>
                         <tbody>
                             <row>
                                 <entry>
@@ -139,7 +145,10 @@
                                     <paragraph>已弃用</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><literal>@deprecated</literal></paragraph>
+                                    <line_block>
+                                        <line><literal>@deprecated</literal></line>
+                                        <line><literal>@deprecated: Use [member another] instead.</literal></line>
+                                    </line_block>
                                 </entry>
                             </row>
                             <row>
@@ -147,7 +156,10 @@
                                     <paragraph>实验性</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><literal>@experimental</literal></paragraph>
+                                    <line_block>
+                                        <line><literal>@experimental</literal></line>
+                                        <line><literal>@experimental: This method is incomplete.</literal></line>
+                                    </line_block>
                                 </entry>
                             </row>
                         </tbody>
@@ -155,7 +167,7 @@
                 </table>
                 <paragraph>例如：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">## The description of the variable.
-## @deprecated
+## @deprecated: Use [member other_var] instead.
 var my_var</literal_block>
                 <paragraph>或者你也可以手动调用 sphinx-build 程序来构建文档：:</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">enum MyEnum { ## My enum.
@@ -185,8 +197,8 @@ class MyClass: ## My class.
 ## The description of the script, what it can do,
 ## and any further detail.
 ##
-## @tutorial:            https://the/tutorial1/url.com
-## @tutorial(Tutorial2): https://the/tutorial2/url.com
+## @tutorial:             https://example.com/tutorial_1
+## @tutorial(Tutorial 2): https://example.com/tutorial_2
 ## @experimental
 
 ## The description of a constant.
@@ -237,7 +249,7 @@ func _internal() -&gt; void:
 ## The same rules apply here. The documentation must
 ## immediately precede the class definition.
 ##
-## @tutorial: https://the/tutorial/url.com
+## @tutorial: https://example.com/tutorial
 ## @experimental
 class Inner:
 
@@ -250,8 +262,11 @@ class Inner:
         </section>
         <section ids="deprecated-and-experimental-tags" names="@deprecated\ and\ @experimental\ tags 文档注释标记\ @deprecated\ 和\ @experimental">
             <title>文档注释标记 <literal>@deprecated</literal> 和 <literal>@experimental</literal></title>
-            <paragraph>你可以将一个类或其成员标记为已废弃成员或者实验性成员，标记后，引擎就会在文档查看器里自动添加上对应提示符号，对插件和代码库的作者而言无疑是一大福音。</paragraph>
-            <image candidates="{'*': 'tutorials/scripting/gdscript/img/deprecated_and_experimental_marks.webp'}" uri="tutorials/scripting/gdscript/img/deprecated_and_experimental_marks.webp"></image>
+            <paragraph>You can mark a class or any of its members as deprecated or experimental.
+                This will add the corresponding indicator in the built-in documentation viewer.
+                Optionally, you can provide a short message explaining why the API is not recommended.
+                This can be especially useful for plugin and library creators.</paragraph>
+            <image candidates="{'*': 'tutorials/scripting/gdscript/img/deprecated_and_experimental_tags.webp'}" uri="tutorials/scripting/gdscript/img/deprecated_and_experimental_tags.webp"></image>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><strong>已废弃</strong> 标记不推荐的 API，该 API 可能会在未来的主要版本中移除或进行不兼容的更改。保留 API 通常是为了向后兼容。</paragraph>
@@ -266,15 +281,16 @@ class Inner:
         </section>
         <section ids="bbcode-and-class-reference" names="bbcode\ and\ class\ reference bbcode\ 与类参考">
             <title>BBCode 与类参考</title>
-            <paragraph>编辑器帮助窗口的文档界面支持 <reference internal="True" refuri="../../ui/bbcode_in_richtextlabel#doc-bbcode-in-richtextlabel"><inline classes="std std-ref">bbcode</inline></reference>，这样一来，就能够使用 BBCode 对你的文档进行对齐与排版操作。文本颜色、图片、字体、表格、URL 链接和动画等元素可通过 <reference internal="True" refuri="../../ui/bbcode_in_richtextlabel#doc-bbcode-in-richtextlabel"><inline classes="std std-ref">bbcode</inline></reference> 来加入到文档当中。</paragraph>
-            <paragraph>Godot 的类参考支持类似 BBCode 的标签。这些标签用在文档中时可以让文本格式更加美观。另见<reference internal="True" refuri="../../../contributing/documentation/class_reference_primer#doc-class-reference-bbcode"><inline classes="std std-ref">类参考 BBCode</inline></reference>。</paragraph>
+            <paragraph>Godot's class reference supports BBCode-like tags. They add nice formatting to the text which could also
+                be used in the documentation. See also <reference internal="True" refuri="../../../contributing/documentation/class_reference_primer#doc-class-reference-bbcode"><inline classes="std std-ref">class reference bbcode</inline></reference>.
+                Note that this is slightly different from the <literal>RichTextLabel</literal> <reference internal="True" refuri="../../ui/bbcode_in_richtextlabel#doc-bbcode-in-richtextlabel"><inline classes="std std-ref">BBCode</inline></reference>.</paragraph>
             <paragraph>每从其他类里链接一个成员，你都要在成员名前面加上该类的类名。而链接类内成员时，类名可省略。</paragraph>
             <paragraph>可用的标记如下：</paragraph>
             <table>
                 <tgroup cols="3">
-                    <colspec colwidth="38"></colspec>
-                    <colspec colwidth="41"></colspec>
-                    <colspec colwidth="70"></colspec>
+                    <colspec colwidth="32"></colspec>
+                    <colspec colwidth="46"></colspec>
+                    <colspec colwidth="62"></colspec>
                     <thead>
                         <row>
                             <entry>
@@ -311,10 +327,10 @@ class Inner:
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>见 [annotation @GDScript.@export].</literal></paragraph>
+                                <paragraph><literal>See [annotation @GDScript.@rpc].</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>见 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-export"><inline classes="std std-ref">@GDScript.@export</inline></reference>。</paragraph>
+                                <paragraph>See <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-rpc"><inline classes="std std-ref">@GDScript.@rpc</inline></reference>.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -325,10 +341,10 @@ class Inner:
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>见 [constant @GlobalScope.KEY_F1]。</literal></paragraph>
+                                <paragraph><literal>See [constant Color.RED].</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>见 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-constant-key-f1"><inline classes="std std-ref">@GlobalScope.KEY_F1</inline></reference>。</paragraph>
+                                <paragraph>See <reference internal="True" refuri="../../../classes/class_color#class-color-constant-red"><inline classes="std std-ref">Color.RED</inline></reference>.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -348,6 +364,20 @@ class Inner:
                         <row>
                             <entry>
                                 <line_block>
+                                    <line><literal>[member Class.name]</literal></line>
+                                    <line>Link to member (property)</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>获取 [member Node2D.scale]。</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>获取 <reference internal="True" refuri="../../../classes/class_node2d#class-node2d-property-scale"><inline classes="std std-ref">Node2D.scale</inline></reference>.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
                                     <line><literal>[method Class.name]</literal></line>
                                     <line>链接到方法</line>
                                 </line_block>
@@ -362,15 +392,29 @@ class Inner:
                         <row>
                             <entry>
                                 <line_block>
-                                    <line><literal>[member Class.name]</literal></line>
-                                    <line>链接到成员</line>
+                                    <line><literal>[constructor Class.name]</literal></line>
+                                    <line>Link to built-in constructor</line>
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>获取 [member Node2D.scale]。</literal></paragraph>
+                                <paragraph><literal>Use [constructor Color.Color].</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>获取 <reference internal="True" refuri="../../../classes/class_node2d#class-node2d-property-scale"><inline classes="std std-ref">Node2D.scale</inline></reference>.</paragraph>
+                                <paragraph>Use  <reference internal="True" refuri="../../../classes/class_color#class-color-constructor-color"><inline classes="std std-ref">Color.Color</inline></reference>.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[operator Class.name]</literal></line>
+                                    <line>Link to built-in operator</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>Use [operator Color.operator *].</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>Use  <reference internal="True" refuri="../../../classes/class_color#class-color-operator-mul-int"><inline classes="std std-ref">Color.operator *</inline></reference>.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -405,7 +449,7 @@ class Inner:
                             <entry>
                                 <line_block>
                                     <line><literal>[param name]</literal></line>
-                                    <line>格式化参数名称（作为代码）</line>
+                                    <line>Parameter name (as code)</line>
                                 </line_block>
                             </entry>
                             <entry>
@@ -438,15 +482,29 @@ class Inner:
                         <row>
                             <entry>
                                 <line_block>
+                                    <line><literal>[lb]</literal> <literal>[rb]</literal></line>
+                                    <line><literal>[</literal> and <literal>]</literal> respectively</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[lb]b[rb]text[lb]/b[rb]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>[b]text[/b]</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
                                     <line><literal>[b]</literal> <literal>[/b]</literal></line>
                                     <line>粗体</line>
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>一些[b]粗体[/b]文本。</literal></paragraph>
+                                <paragraph><literal>Do [b]not[/b] call this method.</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>一些<strong>粗体</strong>文本。</paragraph>
+                                <paragraph>Do <strong>not</strong> call this method.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -457,10 +515,114 @@ class Inner:
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>一些[i]斜体[/i]文本。</literal></paragraph>
+                                <paragraph><literal>Returns the [i]global[/i] position.</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>一些<emphasis>斜体</emphasis>文本。</paragraph>
+                                <paragraph>Returns the <emphasis>global</emphasis> position.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[u]</literal> <literal>[/u]</literal></line>
+                                    <line>Underline</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[u]Always[/u] use this method.</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <raw format="html" xml:space="preserve">&lt;u&gt;Always&lt;/u&gt; use this method.</raw>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[s]</literal> <literal>[/s]</literal></line>
+                                    <line>Strikethrough</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[s]Outdated information.[/s]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <raw format="html" xml:space="preserve">&lt;s&gt;Outdated information.&lt;/s&gt;</raw>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[color]</literal> <literal>[/color]</literal></line>
+                                    <line>Color</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[color=red]Error![/color]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <raw format="html" xml:space="preserve">&lt;span style="color:red;"&gt;Error!&lt;/span&gt;</raw>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[font]</literal> <literal>[/font]</literal></line>
+                                    <line>Font</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[font=res://mono.ttf]LICENSE[/font]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <raw format="html" xml:space="preserve">&lt;span style="font-family:monospace;"&gt;LICENSE&lt;/span&gt;</raw>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[img]</literal> <literal>[/img]</literal></line>
+                                    <line>Image</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[img width=32]res://icon.svg[/img]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <image candidates="{'*': 'tutorials/scripting/gdscript/img/icon.svg'}" uri="tutorials/scripting/gdscript/img/icon.svg" width="32px"></image>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[url]</literal> <literal>[/url]</literal></line>
+                                    <line>Hyperlink</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[url]https://example.com[/url]</literal></line>
+                                    <line><literal>[url=https://example.com]Website[/url]</literal></line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <line_block>
+                                    <line><reference refuri="https://example.com">https://example.com</reference></line>
+                                    <line><reference name="Website" refuri="https://example.com">Website</reference><target ids="website" names="website" refuri="https://example.com"></target></line>
+                                </line_block>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
+                                    <line><literal>[center]</literal> <literal>[/center]</literal></line>
+                                    <line>Horizontal centering</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[center]2 + 2 = 4[/center]</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <raw format="html" xml:space="preserve">&lt;center&gt;2 + 2 = 4&lt;/center&gt;</raw>
                             </entry>
                         </row>
                         <row>
@@ -471,31 +633,32 @@ class Inner:
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>一些 [kbd]Ctrl + C[/kbd] 按键。</literal></paragraph>
+                                <paragraph><literal>Press [kbd]Ctrl + C[/kbd].</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>一些 <literal classes="kbd">Ctrl + C</literal> 按键。</paragraph>
+                                <paragraph>Press <literal classes="kbd">Ctrl + C</literal>.</paragraph>
                             </entry>
                         </row>
                         <row>
                             <entry>
                                 <line_block>
                                     <line><literal>[code]</literal> <literal>[/code]</literal></line>
-                                    <line>等宽字体</line>
+                                    <line>Inline code fragment</line>
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>一些[code]等宽[/code]文本。</literal></paragraph>
+                                <paragraph><literal>Returns [code]true[/code].</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>一些<literal>等宽</literal>文本。</paragraph>
+                                <paragraph>Returns <literal>true</literal>.</paragraph>
                             </entry>
                         </row>
                         <row>
                             <entry>
                                 <line_block>
-                                    <line><literal>[codeblock]</literal> <literal>[/codeblock]</literal></line>
-                                    <line>多行预格式化块</line>
+                                    <line><literal>[codeblock]</literal></line>
+                                    <line><literal>[/codeblock]</literal></line>
+                                    <line>Multiline code block</line>
                                 </line_block>
                             </entry>
                             <entry>
@@ -512,6 +675,9 @@ class Inner:
                 <enumerated_list enumtype="arabic" prefix="" suffix=".">
                     <list_item>
                         <paragraph>目前只有 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript"><inline classes="std std-ref">@GDScript</inline></reference> 有注解。</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><literal>[kbd]</literal> disables BBCode until the parser encounters <literal>[/kbd]</literal>.</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><literal>[code]</literal> 与 <literal>[/code]</literal> 之间的 BBCode 代码均无效。</paragraph>
@@ -536,6 +702,19 @@ class Inner:
 ## [/codeblock]
 func do_something():
     pass</literal_block>
+            <paragraph>By default, <literal>[codeblock]</literal> highlights GDScript syntax. You can change it using
+                the <literal>lang</literal> attribute. Currently supported options are:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph><literal>[codeblock lang=text]</literal> disables syntax highlighting;</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><literal>[codeblock lang=gdscript]</literal> highlights GDScript syntax;</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><literal>[codeblock lang=csharp]</literal> highlights C# syntax (only in .NET version).</paragraph>
+                </list_item>
+            </bullet_list>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

@@ -279,6 +279,34 @@
                     </tbody>
                 </tgroup>
             </table>
+            <section ids="comments" names="comments 注释">
+                <title>注释</title>
+                <paragraph>The shading language supports the same comment syntax as used in C# and C++:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">// Single-line comment.
+int a = 2;  // Another single-line comment.
+
+/*
+Multi-line comment.
+The comment ends when the ending delimiter is found
+(here, it's on the line below).
+*/
+int b = 3;</literal_block>
+                <paragraph>Additionally, you can use documentation comments that are displayed in the
+                    inspector when hovering a shader parameter. Documentation comments are currently
+                    only supported when placed immediately above a <literal>uniform</literal> declaration. These
+                    documentation comments only support the <strong>multiline</strong> comment syntax and must use
+                    <strong>two</strong> leading asterisks (<literal>/**</literal>) instead of just one (<literal>/*</literal>):</paragraph>
+                <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">/**
+ * This is a documentation comment.
+ * These lines will appear in the inspector when hovering the shader parameter
+ * named "Something".
+ * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+ */
+uniform int something = 1;</literal_block>
+                <paragraph>The asterisks on the follow-up lines are not required, but are recommended as
+                    per the <reference internal="True" refuri="../shaders_style_guide#doc-shaders-style-guide"><inline classes="std std-ref">着色器风格指南</inline></reference>. These asterisks are automatically
+                    stripped by the inspector, so they won't appear in the tooltip.</paragraph>
+            </section>
             <section ids="casting" names="casting 类型转换">
                 <title>类型转换</title>
                 <paragraph>就像GLSL ES 3.0一样, 不允许在标量和相同大小但不同类型的向量之间进行隐式转换. 也不允许铸造不同大小的类型. 转换必须通过构造函数明确完成.</paragraph>
@@ -1280,8 +1308,7 @@ uniform sampler2D image : source_color;</literal_block>
                         </row>
                         <row>
                             <entry>
-                                <paragraph><strong>mat4</strong>
-                                    <strong>mat4</strong></paragraph>
+                                <paragraph><strong>mat4</strong></paragraph>
                             </entry>
                             <entry>
                                 <paragraph><strong>Projection</strong>,
@@ -1468,6 +1495,9 @@ RenderingServer.global_shader_parameter_remove("my_color")</literal_block>
                 <note>
                     <paragraph>只有 <literal>spatial</literal>（3D）着色器中才可以使用单实例 uniform。</paragraph>
                 </note>
+                <note>
+                    <paragraph>Per-instance uniforms are not supported when using the Compatibility renderer.</paragraph>
+                </note>
                 <paragraph>Sometimes, you want to modify a parameter on each node using the material. As an
                     example, in a forest full of trees, when you want each tree to have a slightly
                     different color that is editable by hand. Without per-instance uniforms, this
@@ -1558,7 +1588,7 @@ void fragment() {
                                 <paragraph>函数</paragraph>
                             </entry>
                             <entry>
-                                <paragraph>Description / Return value</paragraph>
+                                <paragraph>描述/返回值</paragraph>
                             </entry>
                         </row>
                     </thead>

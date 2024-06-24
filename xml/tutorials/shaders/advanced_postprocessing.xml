@@ -34,12 +34,24 @@
                 bypass the coordinate transforms that translate the vertex positions through the
                 difference coordinate spaces and treat the vertices as if they were already in
                 clip space.</paragraph>
-            <paragraph>顶点着色器希望在裁剪空间中输出坐标，即从屏幕左侧和底部的 <literal>-1</literal> 到屏幕顶部和右侧的 <literal>1</literal> 的坐标。这就是为什么 QuadMesh 的高度和宽度需要是 <literal>2</literal>。Godot 会在幕后处理从模型到视图空间再到剪辑空间的转换，所以我们需要使 Godot 的转换效果无效。我们通过设置内置 <literal>POSITION</literal> 到我们想要的坐标来做到这一点。<literal>POSITION</literal> 会绕过内置变换，直接设置顶点坐标。</paragraph>
+            <paragraph>The vertex shader expects coordinates to be output in clip space, which are coordinates
+                ranging from <literal>-1</literal> at the left and bottom of the screen to <literal>1</literal> at the top and right
+                of the screen. This is why the QuadMesh needs to have height and width of <literal>2</literal>.
+                Godot handles the transform from model to view space to clip space behind the scenes,
+                so we need to nullify the effects of Godot's transformations. We do this by setting the
+                <literal>POSITION</literal> built-in to our desired position. <literal>POSITION</literal> bypasses the built-in transformations
+                and sets the vertex position in clip space directly.</paragraph>
             <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">shader_type spatial;
 
 void vertex() {
-  POSITION = vec4(VERTEX, 1.0);
+  POSITION = vec4(VERTEX.xy, 1.0, 1.0);
 }</literal_block>
+            <note>
+                <paragraph>In versions of Godot earlier than 4.3, this code recommended using <literal>POSITION = vec4(VERTEX, 1.0);</literal>
+                    which implicitly assumed the clip-space near plane was at <literal>0.0</literal>.
+                    That code is now incorrect and will not work in versions 4.3+ as we
+                    use a "reversed-z" depth buffer now where the near plane is at <literal>1.0</literal>.</paragraph>
+            </note>
             <paragraph>即使有了这样的顶点着色器，这个四边形仍会消失。这是因为视锥剔除的缘故，是在 CPU 上完成的。视锥剔除使用摄像机矩阵和 Mesh 的 AABB 来确定 Mesh 是否可见，然后再传递给 GPU。CPU 不知道我们对顶点做了什么，所以它认为指定的坐标指的是世界坐标，而不是裁剪空间的坐标，这就导致了 Godot 在我们旋转、离开场景中心时对四边形进行剔除。为了防止四边形被剔除，有这么几个选项：</paragraph>
             <enumerated_list enumtype="arabic" prefix="" suffix=".">
                 <list_item>

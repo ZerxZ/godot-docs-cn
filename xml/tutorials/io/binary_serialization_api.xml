@@ -1810,8 +1810,7 @@ flags = val &gt;&gt; 16;</literal_block>
             </section>
             <section ids="object" names="17:\ object">
                 <title>17: <reference internal="True" refuri="../../classes/class_object#class-object"><inline classes="std std-ref">Object</inline></reference></title>
-                <paragraph>An Object could be serialized in three different ways: as a null value, with
-                    <literal>full_objects = false</literal>, or with <literal>full_objects = true</literal>.</paragraph>
+                <paragraph>物件可以透过三种不同的方式串行化：作为空值，使用“full_objects = false”，或使用“full_objects = true”。</paragraph>
                 <section ids="a-null-value" names="a\ null\ value 空值">
                     <title>空值</title>
                     <table>
@@ -2038,14 +2037,7 @@ flags = val &gt;&gt; 16;</literal_block>
                         </tgroup>
                     </table>
                     <note>
-                        <paragraph>Not all properties are included. Only properties that are configured with the
-                            <reference internal="True" refuri="../../classes/class_@globalscope#class-globalscope-constant-property-usage-storage"><inline classes="std std-ref">PROPERTY_USAGE_STORAGE</inline></reference>
-                            flag set will be serialized. You can add a new usage flag to a property by overriding the
-                            <reference internal="True" refuri="../../classes/class_object#class-object-private-method-get-property-list"><inline classes="std std-ref">_get_property_list</inline></reference>
-                            method in your class. You can also check how property usage is configured by
-                            calling <literal>Object._get_property_list</literal> See
-                            <reference internal="True" refuri="../../classes/class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> for the
-                            possible usage flags.</paragraph>
+                        <paragraph>并非所有属性都包含在内。仅使用 <reference internal="True" refuri="../../classes/class_@globalscope#class-globalscope-constant-property-usage-storage"><inline classes="std std-ref">PROPERTY_USAGE_STORAGE</inline></reference> 标志集将被序列化。通过重写类中的 <reference internal="True" refuri="../../classes/class_object#class-object-private-method-get-property-list"><inline classes="std std-ref">_get_property_list</inline></reference> 方法，可以向属性添加新的用法标志。你还可以通过调用``Object._get_property_list``详情参见 <reference internal="True" refuri="../../classes/class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> 以获取可能的使用位标记。</paragraph>
                     </note>
                 </section>
             </section>

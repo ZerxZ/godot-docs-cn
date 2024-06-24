@@ -58,28 +58,13 @@ private void Die()
     QueueFree();
 }
 
-// We also specified this function name in PascalCase in the editor's connection window
+// We also specified this function name in PascalCase in the editor's connection window.
 private void OnMobDetectorBodyEntered(Node3D body)
 {
     Die();
 }</literal_block>
                 </div>
             </container>
-            <paragraph>按 <literal classes="kbd">F5</literal> 再试一下游戏。如果一切设置正确，角色在被敌人碰到时应该会死亡</paragraph>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
-                </div>
-                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var player_position = $Player.position</literal_block>
-                </div>
-                <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">Vector3 playerPosition = GetNode&lt;Player&gt;("Player").Position;</literal_block>
-                </div>
-            </container>
-            <paragraph>由于此处没有 $Player 导致的报错！</paragraph>
-            <paragraph>另外请注意，敌人与玩家碰撞并死亡取决于 <literal>Player</literal> 和 <literal>Mob</literal> 的碰撞形状的大小和位置。你可能需要移动它们，调整它们的大小，以达到紧凑的游戏感觉。</paragraph>
         </section>
         <section ids="ending-the-game" names="ending\ the\ game 结束游戏">
             <title>结束游戏</title>
@@ -89,15 +74,15 @@ private void OnMobDetectorBodyEntered(Node3D body)
             <paragraph>在 <literal>_on_player_hit()</literal> 函数中获取并停止计时器。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func _on_player_hit():
     $MobTimer.stop()</literal_block>
                 </div>
-                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window
+                <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
 private void OnPlayerHit()
 {
     GetNode&lt;Timer&gt;("MobTimer").Stop();
@@ -105,6 +90,9 @@ private void OnPlayerHit()
                 </div>
             </container>
             <paragraph>如果你现在试玩游戏，你死亡后就会停止刷怪，现有的怪物会离开屏幕。</paragraph>
+            <paragraph>Notice also that the game no longer crashes or displays an error when the player dies. Because
+                we are stopping the MobTimer, it no longer triggers the <literal>_on_mob_timer_timeout()</literal> function.</paragraph>
+            <paragraph>另外请注意，敌人与玩家碰撞并死亡取决于 <literal>Player</literal> 和 <literal>Mob</literal> 的碰撞形状的大小和位置。你可能需要移动它们，调整它们的大小，以达到紧凑的游戏感觉。</paragraph>
             <paragraph>你可以鼓励鼓励自己了：你做出了完整 3D 游戏的原型，虽说还有点粗糙。</paragraph>
             <paragraph>在此基础上，我们将会添加计分、重启游戏的选项，你还会看到如何使用简单的动画让游戏变得更加活灵活现。</paragraph>
         </section>
@@ -114,10 +102,10 @@ private void OnPlayerHit()
             <paragraph>首先是 <literal>main.gd</literal>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node
 
 @export var mob_scene: PackedScene
@@ -142,7 +130,7 @@ func _on_mob_timer_timeout():
 func _on_player_hit():
     $MobTimer.stop()</literal_block>
                 </div>
-                <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 public partial class Main : Node
@@ -178,10 +166,10 @@ public partial class Main : Node
             <paragraph>然后是 <literal>Mob.gd</literal>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-4-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-4-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends CharacterBody3D
 
 # Minimum speed of the mob in meters per second.
@@ -219,7 +207,7 @@ func squash():
     squashed.emit()
     queue_free() # Destroy this node</literal_block>
                 </div>
-                <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 public partial class Mob : CharacterBody3D
@@ -275,10 +263,10 @@ public partial class Mob : CharacterBody3D
             <paragraph>最后是最长的脚本 <literal>Player.gd</literal>：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-5-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-5-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-5-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-5-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-4-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-5-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-5-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-4-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends CharacterBody3D
 
 signal hit
@@ -362,7 +350,7 @@ func die():
 func _on_mob_detector_body_entered(body):
     die()</literal_block>
                 </div>
-                <div aria-labelledby="tab-5-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-5-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 public partial class Player : CharacterBody3D

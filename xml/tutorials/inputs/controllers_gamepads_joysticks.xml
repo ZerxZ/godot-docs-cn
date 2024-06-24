@@ -160,13 +160,8 @@ bool jumping = Input.IsActionPressed("jump");</literal_block>
             <section ids="window-focus" names="window\ focus 窗口焦点">
                 <title>窗口焦点</title>
                 <paragraph>与键盘输入不同，控制器的输入可以被操作系统中的<strong>所有</strong>窗口看到，包括未持有焦点的窗口。</paragraph>
-                <paragraph>While this is useful for
-                    <reference name="third-party split screen functionality" refuri="https://nucleus-coop.github.io/">third-party split screen functionality</reference>,
-                    it can also have adverse effects. Players may accidentally send controller inputs
-                    to the running project while interacting with another window.</paragraph>
-                <paragraph>If you wish to ignore events when the project window isn't focused, you will
-                    need to create an <reference internal="True" refuri="../scripting/singletons_autoload#doc-singletons-autoload"><inline classes="std std-ref">autoload</inline></reference> called <literal>Focus</literal>
-                    with the following script and use it to check all your inputs:</paragraph>
+                <paragraph>虽然这对于「第三方分割画面功能&lt;<reference refuri="https://nucleus-coop.github.io/">https://nucleus-coop.github.io/</reference>&gt;`__很有用，但它也可能产生不利影响。玩家在与另一个视窗互动时可能会意外地将控制器输入传送到正在执行的项目。</paragraph>
+                <paragraph>如果你希望在项目窗口未聚焦时忽略事件，则需要使用以下脚本创建一个 <reference internal="True" refuri="../scripting/singletons_autoload#doc-singletons-autoload"><inline classes="std std-ref">autoload</inline></reference> 调用``Focus``，并使用它检查所有输入：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Focus.gd
 extends Node
 
@@ -192,24 +187,13 @@ func event_is_action_pressed(event: InputEvent, action: StringName) -&gt; bool:
         return event.is_action_pressed(action)
 
     return false</literal_block>
-                <paragraph>Then, instead of using <literal>Input.is_action_pressed(action)</literal>, use
-                    <literal>Focus.input_is_action_pressed(action)</literal> where <literal>action</literal> is the name of
-                    the input action. Also, instead of using <literal>event.is_action_pressed(action)</literal>,
-                    use <literal>Focus.event_is_action_pressed(event, action)</literal> where <literal>event</literal> is an
-                    InputEvent reference and <literal>action</literal> is the name of the input action.</paragraph>
+                <paragraph>然后，不要使用“Input.is_action_pressed（action）”，而是使用“Focus.input_is_action_pressed（action）”，其中“action”是输入操作的名称。另外，不要使用“event.is_action_pressed（action）”，而是使用“Focus.event_is_action_pressed（event，action）”，其中“event”是InputEvent引用，“action”是事件的名称。输入动作。</paragraph>
             </section>
             <section ids="power-saving-prevention" names="power\ saving\ prevention 防止省电模式">
                 <title>防止省电模式</title>
-                <paragraph>Unlike keyboard and mouse input, controller inputs do <strong>not</strong> inhibit sleep and
-                    power saving measures (such as turning off the screen after a certain amount of
-                    time has passed).</paragraph>
-                <paragraph>To combat this, Godot enables power saving prevention by default when a project
-                    is running. If you notice the system is turning off its display when playing
-                    with a gamepad, check the value of <strong>Display &gt; Window &gt; Energy Saving &gt; Keep Screen On</strong>
-                    in the Project Settings.</paragraph>
-                <paragraph>On Linux, power saving prevention requires the engine to be able to use D-Bus.
-                    Check whether D-Bus is installed and reachable if running the project within a
-                    Flatpak, as sandboxing restrictions may make this impossible by default.</paragraph>
+                <paragraph>与键盘和鼠标输入不同，控制器输入**不会**抑制睡眠和省电措施（例如在经过一定时间后关闭屏幕）。</paragraph>
+                <paragraph>为了解决这个问题，Godot在项目运作时预设启用节能预防。如果你注意到系统在玩游戏手把时关闭了显示屏，请检查项目设定中的**显示&gt;视窗&gt;节能&gt;保持屏幕开启**的值。</paragraph>
+                <paragraph>在Linux上，节能预防要求引擎能够使用D-Bus。如果在Flatpak中运作项目，请检查D-Bus是否已安装且可存取，因为沙盒限制可能会导致预设无法实作此操作。</paragraph>
             </section>
         </section>
         <section ids="troubleshooting" names="troubleshooting 故障排除">
@@ -220,20 +204,11 @@ func event_is_action_pressed(event: InputEvent, action: StringName) -&gt; bool:
             <section ids="my-controller-isn-t-recognized-by-godot" names="my\ controller\ isn't\ recognized\ by\ godot. godot\ 无法识别我的控制器。">
                 <title>Godot 无法识别我的控制器。</title>
                 <paragraph>首先，检查你的控制器是否被其他应用程序识别。你可以使用 <reference name="Gamepad Tester" refuri="https://gamepad-tester.com/">Gamepad Tester</reference> 网站来确认你的控制器被识别。</paragraph>
-                <paragraph>On Windows Godot only supports up to 4 controllers at a time. This is
-                    because Godot uses the XInput API, which is limited to supporting 4 controllers
-                    at once. Additional controllers above this limit are ignored by Godot.</paragraph>
+                <paragraph>在Windows上，Godot一次最多只支持4个控制器。这是因为Godot使用XInput API，该API仅限于同时支持4个控制器。超过此限制的其他控制器将被Godot忽略。</paragraph>
             </section>
             <section ids="my-controller-has-incorrectly-mapped-buttons-or-axes" names="my\ controller\ has\ incorrectly\ mapped\ buttons\ or\ axes. 我的控制器的按钮或轴映射不正确。">
                 <title>我的控制器的按钮或轴映射不正确。</title>
-                <paragraph>First, if your controller provides some kind of firmware update utility,
-                    make sure to run it to get the latest fixes from the manufacturer. For instance,
-                    Xbox One and Xbox Series controllers can have their firmware updated using the
-                    <reference name="Xbox Accessories app" refuri="https://www.microsoft.com/en-us/p/xbox-accessories/9nblggh30xj3">Xbox Accessories app</reference>.
-                    (This application only runs on Windows, so you have to use a Windows machine
-                    or a Windows virtual machine with USB support to update the controller's firmware.)
-                    After updating the controller's firmware, unpair the controller and pair it again
-                    with your PC if you are using the controller in wireless mode.</paragraph>
+                <paragraph>首先，如果你的控制器提供某种固件更新实用程序，请确保运作它以从制造商处获取最新修复程序。例如，Xbox One和Xbox Series控制器可以使用「Xbox Accessories应用程序&lt;<reference refuri="https://www.microsoft.com/en-us/p/xbox-accessories/9nblggh30xj3">https://www.microsoft.com/en-us/p/xbox-accessories/9nblggh30xj3</reference>&gt;」更新其固件。（此应用程序仅在Windows上执行，因此你必须使用Windows电脑或支持USB的Windows虚拟机器来更新控制器的固件。）更新控制器的固件后，请取消控制器配对，然后再次将其与PC配对（如果你是这样）在无线模式下使用控制器。</paragraph>
                 <paragraph>如果按钮存在映射错误，可能是由于来自 <reference name="SDL 游戏控制器数据库" refuri="https://github.com/gabomdq/SDL_GameControllerDB">SDL 游戏控制器数据库</reference>的错误的映射。你可以在链接的仓库中提交拉取请求，为下一个 Godot 版本提供映射更新。</paragraph>
                 <paragraph>There are many ways to create mappings. One option is to use the mapping wizard
                     in the <reference name="official Joypads demo" refuri="https://godotengine.org/asset-library/asset/2785">official Joypads demo</reference>.
@@ -264,14 +239,8 @@ path\to\godot.exe</literal_block>
                 <title>我的控制器在特定的平台上工作，但在另一个平台上却不能。</title>
                 <section ids="linux" names="linux">
                     <title>Linux</title>
-                    <paragraph>If you're using a self-compiled engine binary, make sure it was compiled with
-                        udev support. This is enabled by default, but it is possible to disable udev
-                        support by specifying <literal>udev=no</literal> on the SCons command line. If you're using an
-                        engine binary supplied by a Linux distribution, double-check whether it was
-                        compiled with udev support.</paragraph>
-                    <paragraph>Controllers can still work without udev support, but it is less reliable as
-                        regular polling must be used to check for controllers being connected or
-                        disconnected during gameplay (hotplugging).</paragraph>
+                    <paragraph>如果你使用自编译引擎二进位档案，请确保它是使用udev支持进行编译的。预设启用此功能，但可以透过在SCons命令列上指定「udev=no」来停用udev支持。如果你使用的是Linux发行版提供的引擎二进位档案，请仔细检查它是否是使用udev支持进行编译的。</paragraph>
+                    <paragraph>控制器在没有udev支持的情况下仍然可以工作，但可靠性较低，因为必须使用定期轮询来检查游戏期间控制器的连接或断开连接（热插拔）。</paragraph>
                 </section>
                 <section ids="html5" names="html5">
                     <title>HTML5</title>

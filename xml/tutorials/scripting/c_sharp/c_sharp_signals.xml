@@ -6,7 +6,16 @@
     <section ids="c-signals doc-c-sharp-signals" names="c#\ signals c#\ 信号 doc_c_sharp_signals">
         <title>C# 信号</title>
         <paragraph>有关信号的详细解释，请参阅逐步教程中的 <reference internal="True" refuri="../../../getting_started/step_by_step/signals#doc-signals"><inline classes="std std-ref">使用信号</inline></reference> 部分。</paragraph>
-        <paragraph>虽然仍然可以通过 <literal>Connect</literal>/<literal>Disconnect</literal> API 使用信号，但 C# 为我们提供了一种更符合习惯的方式来实现 <reference internal="True" refuri="../../../getting_started/introduction/key_concepts_overview#doc-key-concepts-signals"><inline classes="std std-ref">观察者模式</inline></reference> 。</paragraph>
+        <paragraph>Signals are implemented using C# events, the idiomatic way to represent
+            <reference internal="True" refuri="../../../getting_started/introduction/key_concepts_overview#doc-key-concepts-signals"><inline classes="std std-ref">the observer pattern</inline></reference> in C#. This is the
+            recommended way to use signals in C# and the focus of this page.</paragraph>
+        <paragraph>In some cases it's necessary to use the older
+            <reference internal="True" refuri="../../../classes/class_object#class-object-method-connect"><inline classes="std std-ref">Connect()</inline></reference> and
+            <reference internal="True" refuri="../../../classes/class_object#class-object-method-disconnect"><inline classes="std std-ref">Disconnect()</inline></reference> APIs.
+            See <reference internal="True" refid="using-connect-and-disconnect"><inline classes="std std-ref">Using Connect and Disconnect</inline></reference> for more details.</paragraph>
+        <paragraph>If you encounter a <literal>System.ObjectDisposedException</literal> while handling a signal,
+            you might be missing a signal disconnection. See
+            <reference internal="True" refid="disconnecting-automatically-when-the-receiver-is-freed"><inline classes="std std-ref">Disconnecting automatically when the receiver is freed</inline></reference> for more details.</paragraph>
         <section ids="signals-as-c-events" names="signals\ as\ c#\ events 信号作为\ c#\ 事件">
             <title>信号作为 C# 事件</title>
             <paragraph>为了提供更多的类型安全，Godot 信号也都可以通过 <reference name="事件" refuri="https://learn.microsoft.com/zh-cn/dotnet/csharp/events-overview">事件</reference><target ids="id1" names="事件" refuri="https://learn.microsoft.com/zh-cn/dotnet/csharp/events-overview"></target> 获取。你可以用 <literal>+=</literal> 和 <literal>-=</literal> 运算符来处理这些事件，就像其他任何事件一样。</paragraph>
@@ -14,9 +23,6 @@
 myTimer.Timeout += () =&gt; GD.Print("Timeout!");</literal_block>
             <paragraph>此外，你可以通过节点类型的嵌套 <literal>SignalName</literal> 类来访问与之相关的信号名称。这在你想要等待一个信号时很有用，例如（参见 <reference internal="True" refuri="c_sharp_differences#doc-c-sharp-differences-await"><inline classes="std std-ref">await 关键字</inline></reference> ）。</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);</literal_block>
-            <warning>
-                <paragraph>所有作为事件连接的引擎信号，在节点释放时会自动断开连接，但自定义信号不会。这意味着：你需要手动断开（使用 <literal>-=</literal> ）所有你连接为 C# 事件的自定义信号（使用 <literal>+=</literal> ）。</paragraph>
-            </warning>
         </section>
         <section ids="custom-signals-as-c-events" names="custom\ signals\ as\ c#\ events 自定义信号作为\ c#\ 事件">
             <title>自定义信号作为 C# 事件</title>
@@ -51,7 +57,7 @@ private void SayHelloTo(string name)
     EmitSignal(SignalName.MySignalWithArgument, "World");
 }</literal_block>
             <paragraph>与其他 C# 事件不同，你不能使用 <literal>Invoke</literal> 来触发与 Godot 信号绑定的事件。</paragraph>
-            <paragraph>信号支持任何 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant 兼容</inline></reference> 类型的参数。</paragraph>
+            <paragraph>Signals support arguments of any <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference>.</paragraph>
             <paragraph>因此，任何 <literal>Node</literal> 或 <literal>RefCounted</literal> 都会自动兼容，但自定义数据对象需要继承自 <literal>GodotObject</literal> 或其子类之一。</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
@@ -64,7 +70,9 @@ public partial class DataObject : GodotObject
         <section ids="bound-values" names="bound\ values 绑定值">
             <title>绑定值</title>
             <paragraph>有时你会想在连接建立时将值绑定到信号，而不是（或者除了）在信号发出时。要做到这一点，你可以使用一个匿名函数，如下面的例子所示。</paragraph>
-            <paragraph>在这里， <reference internal="True" refuri="../../../classes/class_basebutton#class-basebutton-signal-pressed"><inline classes="std std-ref">Button.Pressed</inline></reference> 信号不需要任何参数。但我们想要对“加”和“减”按钮使用相同的 <literal>ModifyValue</literal> 。所以我们在连接信号的时候绑定了修饰值。</paragraph>
+            <paragraph>Here, the <reference internal="True" refuri="../../../classes/class_basebutton#class-basebutton-signal-pressed"><inline classes="std std-ref">Button.Pressed</inline></reference> signal does not take any argument. But we
+                want to use the same <literal>ModifyValue</literal> for both the "plus" and "minus" buttons. So we bind the
+                modifier value at the time we're connecting the signals.</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public int Value { get; private set; } = 1;
 
 public override void _Ready()
@@ -89,7 +97,165 @@ private void ModifyValue(int modifier)
     AddUserSignal("MyCustomSignal");
     EmitSignal("MyCustomSignal");
 }</literal_block>
-            <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
+            <target refid="using-connect-and-disconnect"></target>
+        </section>
+        <section ids="using-connect-and-disconnect id1" names="using\ connect\ and\ disconnect using_connect_and_disconnect">
+            <title>Using Connect and Disconnect</title>
+            <paragraph>In general, it isn't recommended to use
+                <reference internal="True" refuri="../../../classes/class_object#class-object-method-connect"><inline classes="std std-ref">Connect()</inline></reference> and
+                <reference internal="True" refuri="../../../classes/class_object#class-object-method-disconnect"><inline classes="std std-ref">Disconnect()</inline></reference>. These APIs don't provide as
+                much type safety as the events. However, they're necessary for
+                <reference internal="True" refuri="../cross_language_scripting#connecting-to-signals-cross-language"><inline classes="std std-ref">connecting to signals defined by GDScript</inline></reference>
+                and passing <reference internal="True" refuri="../../../classes/class_object#enum-object-connectflags"><inline classes="std std-ref">ConnectFlags</inline></reference>.</paragraph>
+            <paragraph>In the following example, pressing the button for the first time prints
+                <literal>Greetings!</literal>. <literal>OneShot</literal> disconnects the signal, so pressing the button again
+                does nothing.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public override void _Ready()
+{
+    Button button = GetNode&lt;Button&gt;("GreetButton");
+    button.Connect(Button.SignalName.Pressed, Callable.From(OnButtonPressed), (uint)GodotObject.ConnectFlags.OneShot);
+}
+
+public void OnButtonPressed()
+{
+    GD.Print("Greetings!");
+}</literal_block>
+            <target refid="disconnecting-automatically-when-the-receiver-is-freed"></target>
+        </section>
+        <section ids="disconnecting-automatically-when-the-receiver-is-freed id2" names="disconnecting\ automatically\ when\ the\ receiver\ is\ freed disconnecting_automatically_when_the_receiver_is_freed">
+            <title>Disconnecting automatically when the receiver is freed</title>
+            <paragraph>Normally, when any <literal>GodotObject</literal> is freed (such as any <literal>Node</literal>), Godot
+                automatically disconnects all connections associated with that object. This
+                happens for both signal emitters and signal receivers.</paragraph>
+            <paragraph>For example, a node with this code will print "Hello!" when the button is
+                pressed, then free itself. Freeing the node disconnects the signal, so pressing
+                the button again doesn't do anything:</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public override void _Ready()
+{
+    Button myButton = GetNode&lt;Button&gt;("../MyButton");
+    myButton.Pressed += SayHello;
+}
+
+private void SayHello()
+{
+    GD.Print("Hello!");
+    Free();
+}</literal_block>
+            <paragraph>When a signal receiver is freed while the signal emitter is still alive, in some
+                cases automatic disconnection won't happen:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>The signal is connected to a lambda expression that captures a variable.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>The signal is a custom signal.</paragraph>
+                </list_item>
+            </bullet_list>
+            <paragraph>The following sections explain these cases in more detail and include
+                suggestions for how to disconnect manually.</paragraph>
+            <note>
+                <paragraph>Automatic disconnection is totally reliable if a signal emitter is freed
+                    before any of its receivers are freed. With a project style that prefers
+                    this pattern, the above limits may not be a concern.</paragraph>
+            </note>
+            <section ids="no-automatic-disconnection-a-lambda-expression-that-captures-a-variable" names="no\ automatic\ disconnection:\ a\ lambda\ expression\ that\ captures\ a\ variable">
+                <title>No automatic disconnection: a lambda expression that captures a variable</title>
+                <paragraph>If you connect to a lambda expression that captures variables, Godot can't tell
+                    that the lambda is associated with the instance that created it. This causes
+                    this example to have potentially unexpected behavior:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">Timer myTimer = GetNode&lt;Timer&gt;("../Timer");
+int x = 0;
+myTimer.Timeout += () =&gt;
+{
+    x++; // This lambda expression captures x.
+    GD.Print($"Tick {x} my name is {Name}");
+    if (x == 3)
+    {
+        GD.Print("Time's up!");
+        Free();
+    }
+};</literal_block>
+                <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">Tick 1, my name is ExampleNode
+Tick 2, my name is ExampleNode
+Tick 3, my name is ExampleNode
+Time's up!
+[...] System.ObjectDisposedException: Cannot access a disposed object.</literal_block>
+                <paragraph>On tick 4, the lambda expression tries to access the <literal>Name</literal> property of the
+                    node, but the node has already been freed. This causes the exception.</paragraph>
+                <paragraph>To disconnect, keep a reference to the delegate created by the lambda expression
+                    and pass that to <literal>-=</literal>. For example, this node connects and disconnects using
+                    the <literal>_EnterTree</literal> and <literal>_ExitTree</literal> lifecycle methods:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public Timer MyTimer { get; set; }
+
+private Action _tick;
+
+public override void _EnterTree()
+{
+    int x = 0;
+    _tick = () =&gt;
+    {
+        x++;
+        GD.Print($"Tick {x} my name is {Name}");
+        if (x == 3)
+        {
+            GD.Print("Time's up!");
+            Free();
+        }
+    };
+    MyTimer.Timeout += _tick;
+}
+
+public override void _ExitTree()
+{
+    MyTimer.Timeout -= _tick;
+}</literal_block>
+                <paragraph>In this example, <literal>Free</literal> causes the node to leave the tree, which calls
+                    <literal>_ExitTree</literal>. <literal>_ExitTree</literal> disconnects the signal, so <literal>_tick</literal> is never
+                    called again.</paragraph>
+                <paragraph>The lifecycle methods to use depend on what the node does. Another option is to
+                    connect to signals in <literal>_Ready</literal> and disconnect in <literal>Dispose</literal>.</paragraph>
+                <note>
+                    <paragraph>Godot uses <reference name="Delegate.Target" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.delegate.target">Delegate.Target</reference><target ids="delegate-target" names="delegate.target" refuri="https://learn.microsoft.com/en-us/dotnet/api/system.delegate.target"></target>
+                        to determine what instance a delegate is associated with. When a lambda
+                        expression doesn't capture a variable, the generated delegate's <literal>Target</literal>
+                        is the instance that created the delegate. When a variable is captured, the
+                        <literal>Target</literal> instead points at a generated type that stores the captured
+                        variable. This is what breaks the association. If you want to see if a
+                        delegate will be automatically cleaned up, try checking its <literal>Target</literal>.</paragraph>
+                    <paragraph><literal>Callable.From</literal> doesn't affect the <literal>Delegate.Target</literal>, so connecting a
+                        lambda that captures variables using <literal>Connect</literal> doesn't work any better
+                        than <literal>+=</literal>.</paragraph>
+                </note>
+            </section>
+            <section ids="no-automatic-disconnection-a-custom-signal" names="no\ automatic\ disconnection:\ a\ custom\ signal">
+                <title>No automatic disconnection: a custom signal</title>
+                <paragraph>Connecting to a custom signal using <literal>+=</literal> doesn't disconnect automatically when
+                    the receiving node is freed.</paragraph>
+                <paragraph>To disconnect, use <literal>-=</literal> at an appropriate time. For example:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public MyClass Target { get; set; }
+
+public override void _EnterTree()
+{
+    Target.MySignal += OnMySignal;
+}
+
+public override void _ExitTree()
+{
+    Target.MySignal -= OnMySignal;
+}</literal_block>
+                <paragraph>Another solution is to use <literal>Connect</literal>, which does disconnect automatically with
+                    custom signals:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public MyClass Target { get; set; }
+
+public override void _EnterTree()
+{
+    Target.Connect(MyClass.SignalName.MySignal, Callable.From(OnMySignal));
+}</literal_block>
+                <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
+            </section>
         </section>
     </section>
 </document>

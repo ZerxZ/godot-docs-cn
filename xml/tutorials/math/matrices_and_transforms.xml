@@ -138,11 +138,12 @@ Transform = t; // Change the node's transform to what we calculated.</literal_bl
                 <paragraph>If we want to move the object to a position of (1, 2), we need
                     to set its <literal>origin</literal> vector to (1, 2):</paragraph>
                 <image candidates="{'*': 'tutorials/math/img/matrices_and_transforms/translate.png'}" uri="tutorials/math/img/matrices_and_transforms/translate.png"></image>
-                <paragraph>There is also a <literal>translated()</literal> method, which performs a different
-                    operation to adding or changing <literal>origin</literal> directly. The <literal>translated()</literal>
+                <paragraph>There is also a <literal>translated_local()</literal> method, which performs a different
+                    operation to adding or changing <literal>origin</literal> directly. The <literal>translated_local()</literal>
                     method will translate the object <emphasis>relative to its own rotation</emphasis>.
                     For example, an object rotated 90 degrees clockwise will move to
-                    the right when <literal>translated()</literal> with <literal>Vector2.UP</literal>.</paragraph>
+                    the right when <literal>translated_local()</literal> with <literal>Vector2.UP</literal>. To translate
+                    <emphasis>relative to the global/parent frame</emphasis> use <literal>translated()</literal> instead.</paragraph>
                 <note>
                     <paragraph>Godot 的 2D 使用基于像素的坐标，所以在实际项目中，你会想要转换成数百个单位。</paragraph>
                 </note>
@@ -194,7 +195,7 @@ Transform = t; // Change the node's transform to what we calculated.</literal_bl
                 <title>剪切变换矩阵（高级）</title>
                 <note>
                     <paragraph>如果你只想了解如何<emphasis>使用</emphasis>变换矩阵，请随意跳过本教程的这一节。本节探讨变换矩阵的一个不常用的方面，目的是为了你建立对它们的理解。</paragraph>
-                    <paragraph>Node2D provides a shearing property out of the box.</paragraph>
+                    <paragraph>Node2D提供了开箱即用的剪切属性。</paragraph>
                 </note>
                 <paragraph>你可能已经注意到，变换的自由度比上述操作的组合要多。2D 变换矩阵的基在两个 <reference internal="True" refuri="../../classes/class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> 值中总共有四个数，而旋转值和缩放的 Vector2 只有三个数字。缺失自由度的高级概念称为<emphasis>剪切</emphasis>（Shearing）。</paragraph>
                 <paragraph>通常，你将始终拥有彼此垂直的基向量。但是，剪切在某些情况下可能很有用，了解剪切可以帮助你理解变换的工作原理。</paragraph>

@@ -141,6 +141,21 @@ void fragment() {
                     <paragraph>在着色器编辑器中, 要使选定的代码成为注释或取消注释, 按 <literal classes="kbd">Ctrl + K</literal> . 该功能在所选行的开头添加或删除 <literal>//</literal> .</paragraph>
                 </note>
             </section>
+            <section ids="documentation-comments" names="documentation\ comments">
+                <title>Documentation comments</title>
+                <paragraph>Use the following format for documentation comments above uniforms, with <strong>two</strong>
+                    leading asterisks (<literal>/**</literal>) and follow-up asterisks on every line:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="glsl" linenos="False" xml:space="preserve">/**
+ * This is a documentation comment.
+ * These lines will appear in the inspector when hovering the shader parameter
+ * named "Something".
+ * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+ */
+uniform int something = 1;</literal_block>
+                <paragraph>These comments will appear when hovering a property in the inspector. If you
+                    don't wish the comment to be visible in the inspector, use the standard comment
+                    syntax instead (<literal>// ...</literal> or <literal>/* ... */</literal> with only one leading asterisk).</paragraph>
+            </section>
             <section ids="whitespace" names="whitespace 空格">
                 <title>空格</title>
                 <paragraph>在运算符周围和逗号后面总是使用一个空格. 另外, 避免在函数调用中使用多余的空格.</paragraph>

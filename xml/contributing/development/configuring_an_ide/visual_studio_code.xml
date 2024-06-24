@@ -131,6 +131,10 @@
       "description": "Enable pretty-printing for gdb",
       "text": "-enable-pretty-printing",
       "ignoreFailures": true
+    },
+    {
+        "description": "Load custom pretty-printers for Godot types.",
+        "text": "source ${workspaceRoot}/misc/scripts/godot_gdb_pretty_print.py"
     }
   ],
   "preLaunchTask": "build"
@@ -166,6 +170,69 @@
             <paragraph>The name under <literal>program</literal> depends on your build configuration,
                 e.g. <literal>godot.linuxbsd.editor.dev.x86_64</literal> for 64-bit LinuxBSD platform with
                 <literal>target=editor</literal> and <literal>dev_build=yes</literal>.</paragraph>
+        </section>
+        <section ids="configuring-intellisense" names="configuring\ intellisense">
+            <title>Configuring Intellisense</title>
+            <paragraph>For the C/C++ extension:</paragraph>
+            <paragraph>To fix include errors you may be having, you need to configure some settings in the <literal>c_cpp_properties.json</literal> file.</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>First, make sure to build the project since some files need to be generated.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>Edit the C/C++ Configuration file either with the UI or with text:</paragraph>
+                </list_item>
+            </bullet_list>
+            <figure align="center">
+                <image candidates="{'*': 'contributing/development/configuring_an_ide/img/vscode_edit_configurations.webp'}" uri="contributing/development/configuring_an_ide/img/vscode_edit_configurations.webp"></image>
+            </figure>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>Add an include path for your platform, for example, <literal>${workspaceFolder}/platform/windows</literal>.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>Add defines for the editor <literal>TOOLS_ENABLED</literal>, debug builds <literal>DEBUG_ENABLED</literal>, and tests <literal>TESTS_ENABLED</literal>.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>Make sure the compiler path is configured correctly to the compiler you are using. See <reference internal="True" refuri="../compiling/introduction_to_the_buildsystem#doc-introduction-to-the-buildsystem"><inline classes="std std-ref">构建系统介绍</inline></reference> for further information on your platform.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>The <literal>c_cpp_properties.json</literal> file should look similar to this for Windows:</paragraph>
+                    <literal_block force="False" highlight_args="{}" language="js" linenos="False" xml:space="preserve">{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/platform/windows"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE",
+        "TOOLS_ENABLED",
+        "DEBUG_ENABLED",
+        "TESTS_ENABLED"
+      ],
+      "windowsSdkVersion": "10.0.22621.0",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/Hostx64/x64/cl.exe",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  ],
+  "version": 4
+}</literal_block>
+                </list_item>
+                <list_item>
+                    <paragraph>Alternatively, you can use the scons argument <literal>compiledb=yes</literal> and set the compile commands setting <literal>compileCommands</literal> to <literal>compile_commands.json</literal>, found in the advanced section of the C/C++ Configuration UI.</paragraph>
+                    <bullet_list bullet="-">
+                        <list_item>
+                            <paragraph>This argument can be added to your build task in <literal>tasks.json</literal> since it will need to be run whenever files are added or moved.</paragraph>
+                        </list_item>
+                    </bullet_list>
+                </list_item>
+            </bullet_list>
             <paragraph>如果遇到问题, 也可在 <reference name="Godot 社区论坛" refuri="https://godotengine.org/community">Godot 社区论坛</reference> 中寻求帮助.</paragraph>
             <tip>
                 <paragraph>To get linting on class reference XML files, install the

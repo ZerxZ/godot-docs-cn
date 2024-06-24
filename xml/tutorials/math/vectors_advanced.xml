@@ -119,9 +119,7 @@ D = -D;</literal_block>
             <section ids="constructing-a-plane-in-2d" names="constructing\ a\ plane\ in\ 2d 在二维空间中构造平面">
                 <title>在二维空间中构造平面</title>
                 <paragraph>平面不会凭空出现，必须先进行构造。在 2D 空间中构造平面很简单：只需要法线（单位向量）和某一个点，或者空间中任意两点都可以完成。</paragraph>
-                <paragraph>In the case of a normal and a point, most of the work is done, as the
-                    normal is already computed, so calculate D from the dot product of
-                    the normal and the point.</paragraph>
+                <paragraph>在法线和点的情况下，由于法线已经被计算出来，大部分计算工作都已完成。因此，只需根据法线和点的点积计算 D 即可。</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-6-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -136,7 +134,7 @@ var D = normal.dot(point)</literal_block>
 var D = normal.Dot(point);</literal_block>
                     </div>
                 </container>
-                <paragraph>对于空间中的两个点, 实际上会有两个平面同时经过它们, 它们共享相同的空间, 但是法线方向相反. 为了从这两个点计算面的法线, 必须首先获得方向向量, 然后将向任何一边旋转90°:</paragraph>
+                <paragraph>而在空间中任意两点的情况下，空间内会有两个平面同时经过两点：这两个平面共享同一个空间，但其法线方向相反。因此，为计算这两点的法线，必须先获得方向向量，然后将其向两侧旋转 90° ：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-7-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -159,8 +157,7 @@ var normal = new Vector2(dvec.Y, -dvec.X);
 // var normal = new Vector2(-dvec.Y, dvec.X);</literal_block>
                     </div>
                 </container>
-                <paragraph>The rest is the same as the previous example. Either point_a or
-                    point_b will work, as they are in the same plane:</paragraph>
+                <paragraph>剩余步骤与前例相同。point_a 和 point_b 都可以用于计算，毕竟两者位于同一个平面内：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-8-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-8-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -179,19 +176,15 @@ var D = normal.Dot(pointA);
 // var D = normal.Dot(pointB);</literal_block>
                     </div>
                 </container>
-                <paragraph>Doing the same in 3D is a little more complex and is explained
-                    further down.</paragraph>
+                <paragraph>在 3D 空间中构造平面更加复杂，下文会进一步解释。</paragraph>
             </section>
             <section ids="some-examples-of-planes" names="some\ examples\ of\ planes 平面的一些示例">
                 <title>平面的一些示例</title>
-                <paragraph>Here is an example of what planes are useful for. Imagine you have
-                    a <reference name="convex" refuri="https://www.mathsisfun.com/definitions/convex.html">convex</reference>
-                    polygon. For example, a rectangle, a trapezoid, a triangle, or just any
-                    polygon where no faces bend inwards.</paragraph>
-                <paragraph>对多边形的每个部分, 我们计算出经过该部分的平面. 一旦我们有了平面的列表, 我们就可以做些分类的事情, 例如检查一个点是否在多边形内部.</paragraph>
-                <paragraph>我们遍历所有平面, 如果我们能找到使得点到平面的距离为正的平面, 那么点在多边形之外. 如果我们不能, 那么这一点就在多边形内部.</paragraph>
+                <paragraph>该示例将介绍平面的用途。假设有一个 <reference name="凸" refuri="https://www.mathsisfun.com/definitions/convex.html">凸</reference> 多边形。比如矩形、梯形、三角形或任何没有面向内弯曲的多边形。</paragraph>
+                <paragraph>对多边形的每一段，我们通过计算获取经过该段的平面。重复以上操作，直到获得多边形的平面列表后，我们就可以基于该列表，做些简单的事情，例如检查某点是否处于多边形内部。</paragraph>
+                <paragraph>我们遍历所有平面，如果能找到一个到点的距离为正的平面，那么该点就在多边形外；反之，该点就在多边形内。</paragraph>
                 <image candidates="{'*': 'tutorials/math/img/tutovec13.png'}" uri="tutorials/math/img/tutovec13.png"></image>
-                <paragraph>代码应该是这样的:</paragraph>
+                <paragraph>上述思路的代码实现如下：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-9-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-9-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -218,10 +211,10 @@ foreach (var p in planes)
 }</literal_block>
                     </div>
                 </container>
-                <paragraph>很酷, 是吧？但这可以变得更好！稍加努力, 类似的逻辑将让我们知道两个凸多边形是否重叠. 这叫做分离轴定理(或SAT), 大多数物理引擎都用这个来检测碰撞.</paragraph>
-                <paragraph>对于一个点, 仅仅检查一个平面是否返回正距离就足以判断该点是否在外面. 对于一个多边形, 我们必须找到一个平面, 使得另一个多边形上的所有点到它的距离为正. 这种可以用A平面对B点进行检查, 然后用B平面对A点进行检查:</paragraph>
+                <paragraph>很酷吧？不过它还能做到更多！只要再花点心思，类似的逻辑也能让我们知道两个凸多边形是否重叠。这就是所谓的分离轴定理 ( Separating Axis Theorem, SAT )，多数物理引擎基于该定理检测碰撞。</paragraph>
+                <paragraph>对于点的检测，只需检查平面是否返回正距离，就足以判断该点是否在外部。而对于多边形之间的检测，我们必须找到一个平面，使得另一个多边形上的所有点到该平面的距离都为正。在代码实现方面，可以先用多边形 A 的平面对多边形 B 的点进行检查，再用多边形 B 的平面对多边形 A 的点进行检查：</paragraph>
                 <image candidates="{'*': 'tutorials/math/img/tutovec14.png'}" uri="tutorials/math/img/tutovec14.png"></image>
-                <paragraph>代码应该是这样的:</paragraph>
+                <paragraph>上述思路的代码实现如下：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-10-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-10-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -314,20 +307,27 @@ if (overlapping)
 }</literal_block>
                     </div>
                 </container>
-                <paragraph>正如你所看到的, 平面是非常有用的, 然而这只是冰山一角. 你可能想知道非凸多边形会发生什么. 这通常只是通过将凹多边形分割成较小的凸多边形来处理, 或者使用诸如BSP(现在使用得不多)之类的技术.</paragraph>
+                <paragraph>As you can see, planes are quite useful, and this is the tip of the
+                    iceberg. You might be wondering what happens with non convex polygons.
+                    This is usually just handled by splitting the concave polygon into
+                    smaller convex polygons, or using a technique such as BSP (which is not
+                    used much nowadays).</paragraph>
             </section>
         </section>
-        <section ids="collision-detection-in-3d" names="collision\ detection\ in\ 3d 三维碰撞检测">
-            <title>三维碰撞检测</title>
-            <paragraph>这是另一个奖励, 是对耐心并跟上这个漫长的教程的奖励. 这是另一条锦囊妙计. 这可能不能直接拿来使用(Godot已经可以进行了相当棒的碰撞检测了), 但是几乎所有的物理引擎和碰撞检测库都使用它的原理:)</paragraph>
-            <paragraph>还记得把2D中的凸形转换成2D平面阵列对碰撞检测有用吗？你可以检测一个点是否在任何凸形状内, 或者两个2D凸形状是否重叠.</paragraph>
-            <paragraph>嗯, 这在3D中也适用, 如果两个3D多面体形状碰撞, 你将无法找到分离平面. 如果发现一个分离平面, 那么形状肯定不会发生碰撞.</paragraph>
-            <paragraph>要得到分离平面意味着多边形A的所有顶点都在平面的一侧, 而多边形B的所有顶点都在另一侧. 该平面始终是多边形A或多边形B的面向平面之一.</paragraph>
-            <paragraph>然而在3D中, 这种方法存在一个问题, 因为在某些情况下可能找不到分离平面. 下面就是这种情况的一个示例:</paragraph>
+        <section ids="collision-detection-in-3d" names="collision\ detection\ in\ 3d 三维环境下的碰撞检测">
+            <title>三维环境下的碰撞检测</title>
+            <paragraph>这是本章的另一个奖励内容，是对你耐心看完这本长篇教程的奖励：以下内容是又一个前人的智慧结晶，虽然它不算是个直接能拿来用的实例（ Godot 的碰撞检测功能已经足够好了），但是接下来的内容是几乎所有物理引擎和碰撞检测库都在使用的一个原理 : )</paragraph>
+            <paragraph>还记得把 2D 中的凸形转换成 2D 平面阵列可用于碰撞检测吗？你可以检测一个点是否在任何凸面形内，或两个 2D 凸面形是否重叠。</paragraph>
+            <paragraph>其实，这在 3D 中也同样适用：如果两个 3D 多面体相撞，你将无法找到这两个多面体的分离平面。反之，如果能找到分离平面，那么这两个图形肯定不会发生碰撞。</paragraph>
+            <paragraph>To refresh a bit a separating plane means that all vertices of polygon A
+                are in one side of the plane, and all vertices of polygon B are in the
+                other side. This plane is always one of the face-planes of either
+                polygon A or polygon B.</paragraph>
+            <paragraph>不过，在 3D 空间中，这种思路存在一个问题：某些情况下可能找不到分离平面。下文就是这种情况的一个示例：</paragraph>
             <image candidates="{'*': 'tutorials/math/img/tutovec22.png'}" uri="tutorials/math/img/tutovec22.png"></image>
             <paragraph>为了避免这种情况，一些额外的平面需要作为分隔器被测试，这些平面是多边形 A 的边和多边形 B 的边的叉积</paragraph>
             <image candidates="{'*': 'tutorials/math/img/tutovec23.png'}" uri="tutorials/math/img/tutovec23.png"></image>
-            <paragraph>所以最后的算法是这样的:</paragraph>
+            <paragraph>所以，最后的算法代码差不多像这样：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-11-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-11-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -512,7 +512,7 @@ if (overlapping)
         </section>
         <section ids="more-information" names="more\ information 更多信息">
             <title>更多信息</title>
-            <paragraph>关于在Godot中使用向量数学的更多信息, 请参见以下文章:</paragraph>
+            <paragraph>有关在 Godot 中使用向量数学的更多信息，请参阅以下文章：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><reference internal="True" refuri="matrices_and_transforms#doc-matrices-and-transforms"><inline classes="std std-ref">矩阵与变换</inline></reference></paragraph>

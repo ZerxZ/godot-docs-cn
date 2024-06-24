@@ -131,7 +131,8 @@
                 </tbody>
             </tgroup>
         </table>
-        <paragraph>在大多数情况下，创建网格时，我们通过顶点位置来定义网格。因此，顶点数组（位于索引 0 处）通常是必需的，而索引数组（位于索引 12 处）是可选的，只有在它被包含时才会使用。也可以只创建索引数组而不创建顶点数组，但这超出了本教程的范围。事实上，我们根本不会使用索引数组。</paragraph>
+        <paragraph>In most cases when creating a mesh, we define it by its vertex positions. So usually, the array of vertices (at index 0) is required, while the index array (at index 12) is optional and
+            will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial.</paragraph>
         <paragraph>其他所有数组包含的都是关于顶点的信息。它们也是可选的，只有在包含时才会用到。有些数组（例如 <title_reference>ARRAY_COLOR`</title_reference>）用每个顶点一个元素的形式来提供额外的顶点信息。它们的大小必须与顶点数组一致。另一些数组（例如 <literal>ARRAY_TANGENT</literal>）用四个元素来描述一个顶点。它们必须正好是顶点数组的四倍。</paragraph>
         <paragraph>正常的使用场景下，<reference internal="True" refuri="../../../classes/class_arraymesh#class-arraymesh-method-add-surface-from-arrays"><inline classes="std std-ref">add_surface_from_arrays()</inline></reference> 的最后三个参数通常都是留空的。</paragraph>
         <section ids="setting-up-the-arraymesh" names="setting\ up\ the\ arraymesh 设置\ arraymesh">

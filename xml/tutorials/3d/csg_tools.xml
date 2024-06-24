@@ -8,14 +8,18 @@
         <paragraph>CSG 是 <strong>Constructive Solid Geometry</strong>（构造实体几何）的缩写，是一种将基本形状或自定义网格组合起来以创建更复杂形状的工具。在三维建模软件中，CSG 多被称为“布尔运算符”。</paragraph>
         <paragraph>关卡原型是 Godot 中 CSG 的主要用途之一。该技术允许用户通过组合图元来创建最常见形状的简单版本。可以使用反转图元创建内部环境。</paragraph>
         <note>
-            <paragraph>Godot 中的 CSG 节点主要用于原型设计。没有内置的对 UV 贴图或编辑 3D 多边形的支持（尽管拉伸 2D 多边形可以与 CSGPolygon3D 节点一起使用）。</paragraph>
+            <paragraph>The CSG nodes in Godot are mainly intended for prototyping. There is
+                no built-in support for UV mapping or editing 3D polygons (though
+                extruded 2D polygons can be used with the CSGPolygon3D node). In
+                addition CSG can't reliably create meshes made up of multiple nodes
+                without holes.</paragraph>
             <paragraph>If you're looking for an easy to use level design tool for a project,
-                you may want to use <reference name="Qodot" refuri="https://github.com/QodotPlugin/Qodot">Qodot</reference>
-                instead. It lets you design levels using
-                <reference name="TrenchBroom" refuri="https://kristianduske.com/trenchbroom/">TrenchBroom</reference> and import
-                them in Godot.</paragraph>
+                you may want to use <reference name="FuncGodot" refuri="https://github.com/func-godot/func_godot_plugin">FuncGodot</reference>
+                or <reference name="Cyclops Level Builder" refuri="https://github.com/blackears/cyclopsLevelBuilder">Cyclops Level Builder</reference>
+                instead.</paragraph>
         </note>
-        <image candidates="{'*': 'tutorials/3d/img/csg.gif'}" uri="tutorials/3d/img/csg.gif"></image>
+        <video_node alt="CSG being used to subtract a torus shape from a box" autoplay="True" controls="True" height="" klass="" loop="True" muted="True" poster="" preload="auto" sources="['tutorials/3d/video/csg_tools.webm',\ 'video/webm',\ False]" width="">
+        </video_node>
         <seealso>
             <paragraph>你可以通过 <reference name="CSG 演示项目" refuri="https://github.com/godotengine/godot-demo-projects/tree/master/3d/csg">CSG 演示项目</reference> 来学习如何使用 CSG 节点构建各种形状（例如楼梯或道路）。</paragraph>
         </seealso>

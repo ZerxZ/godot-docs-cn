@@ -96,7 +96,7 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 .. warning::
 
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool. Any GDScript without ``@tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``@tool`` used by the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.
@@ -214,7 +214,7 @@ don't have one, you can grab the default one from the engine and save it in your
 .. tip::
 
     SVG images that are used as custom node icons should have the
-    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    **Editor > Scale With Editor Scale** and **Editor > Convert Colors With Editor Theme**
     :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
     icons to follow the editor's scale and theming settings if the icons are designed with
     the same color palette as Godot's own icons.

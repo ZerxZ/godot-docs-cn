@@ -54,7 +54,10 @@ func _ready():
     mesh.surface_end()</literal_block>
             </div>
         </container>
-        <paragraph>ImmediateMesh 也可以在帧之间使用。每次调用 <literal>surface_begin()</literal> 和 <literal>surface_end()</literal> 时，你都会向 ImmediateMesh 添加一个新表面。如果你想在每一帧从头开始重新创建网格，请在调用 <literal>surface_begin()</literal> 之前先调用 <literal>surface_clear()</literal> 。</paragraph>
+        <paragraph>The ImmediateMesh can also be used across frames. Each time you call
+            <literal>surface_begin()</literal> and <literal>surface_end()</literal>, you are adding a new surface to the
+            ImmediateMesh. If you want to recreate the mesh from scratch each frame, call
+            <literal>clear_surfaces()</literal> before calling <literal>surface_begin()</literal>.</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
             <div aria-label="Tabbed content" role="tablist">
                 <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>

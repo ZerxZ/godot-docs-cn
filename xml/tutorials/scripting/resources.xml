@@ -194,6 +194,9 @@ private void OnShoot()
             <paragraph>现在，检查器将显示 Resource 脚本的自定义属性。如果编辑这些值并保存资源，则检查器也会序列化自定义属性！要从检查器中保存资源，请点击检查器的工具菜单（右上角），然后选择“保存”或“另存为...”。</paragraph>
             <paragraph>如果脚本的语言支持<reference internal="True" refuri="gdscript/gdscript_basics#doc-gdscript-basics-class-name"><inline classes="std std-ref">脚本类</inline></reference>，则可以简化该过程。仅为脚本定义名称会将其添加到“检查器”的创建对话框。这会将脚本自动添加到你创建的 Resource 对象中。</paragraph>
             <paragraph>让我们来看一个例子。创建一个 <reference internal="True" refuri="../../classes/class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference> 然后把它命名为 <literal>bot_stats</literal>。此时文件面板中会显示全名 <literal>bot_stats.tres</literal>。不带脚本的话这个文件没什么意义，那我们就来添加一些数据和逻辑吧！给它附加一个名叫 <literal>bot_stats.gd</literal> 的脚本（或者新建一个脚本之后把它拖上来）。</paragraph>
+            <note>
+                <paragraph>If you're using C#, you need to annotate your Resource class with the <literal>[GlobalClass]</literal> attribute for it to show up in the create resource GUI.</paragraph>
+            </note>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -220,6 +223,7 @@ using Godot;
 
 namespace ExampleProject
 {
+    [GlobalClass]
     public partial class BotStats : Resource
     {
         [Export]
@@ -314,9 +318,10 @@ func _init():
                     <div aria-labelledby="tab-5-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-5-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
+[GlobalClass]
 public partial class BotStatsTable : Resource
 {
-    private Godot.Dictionary&lt;string, BotStats&gt; _stats = new Godot.Dictionary&lt;string, BotStats&gt;();
+    private Godot.Collections.Dictionary&lt;string, BotStats&gt; _stats = new Godot.Collections.Dictionary&lt;string, BotStats&gt;();
 
     public BotStatsTable()
     {
@@ -364,6 +369,7 @@ func _ready():
 
 public partial class MyNode : Node
 {
+    [GlobalClass]
     public partial class MyResource : Resource
     {
         [Export]

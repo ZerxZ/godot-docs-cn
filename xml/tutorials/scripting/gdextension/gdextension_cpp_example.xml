@@ -7,100 +7,85 @@
         <title>GDExtension C++ 示例</title>
         <section ids="introduction" names="introduction 前言">
             <title>前言</title>
-            <paragraph>The C++ bindings for GDExtension are built on top of the C GDExtension API
-                and provide a nicer way to "extend" nodes and other built-in classes in Godot using C++.
-                This new system allows the extension of Godot to nearly the same
-                level as statically linked C++ modules.</paragraph>
-            <paragraph>You can download the included example in the test folder of the godot-cpp
-                repository <reference name="on GitHub" refuri="https://github.com/godotengine/godot-cpp">on GitHub</reference>.</paragraph>
+            <paragraph>GDExtension 的 C++ 绑定是在 C GDExtension API 基础之上构建的，为扩展 Godot 中的节点和其他内置类提供了一种更为简洁的方法。这一新系统使得通过 GDExtension 对 Godot 进行扩展的能力几乎可以与静态链接的 C++ 模块相媲美。</paragraph>
+            <paragraph>你可以在`Github上的 godot-cpp 仓库 &lt;<reference refuri="https://github.com/godotengine/godot-cpp">https://github.com/godotengine/godot-cpp</reference>&gt;`__中下载 "test" 文件夹内的内置范例。</paragraph>
         </section>
         <section ids="setting-up-the-project" names="setting\ up\ the\ project 设置项目">
             <title>设置项目</title>
-            <paragraph>你需要一些先决条件：</paragraph>
+            <paragraph>这里有一些前置需求是你需要的：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>Godot 4 可执行文件，</paragraph>
+                    <paragraph>一份 Godot 4 可执行文件，</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>C++ 编译器，</paragraph>
+                    <paragraph>一个 C++ 编译器，</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>SCons 作为构建工具，</paragraph>
+                    <paragraph>作为构建工具的 SCons ，</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="godot-cpp 仓库" refuri="https://github.com/godotengine/godot-cpp">godot-cpp 仓库</reference>的副本。</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>另请参阅<reference internal="True" refuri="../../../contributing/development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">《编译》</inline></reference>，因为构建工具与从源代码编译 Godot 所需的构建工具相同。</paragraph>
-            <paragraph>You can download the <reference name="godot-cpp repository" refuri="https://github.com/godotengine/godot-cpp">godot-cpp repository</reference> from GitHub or let Git do the work for you.
-                Note that this repository has different branches for different versions
-                of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.</paragraph>
+            <paragraph>你可以从 GitHub 下载 <problematic ids="id2" refid="id1">`godot-cpp 仓库&lt;https://github.com/godotengine/godot-cpp&gt;`__</problematic>，或者让 Git 为你完成这项工作。请注意，这个仓库为不同版本的 Godot 提供了不同的分支。GDExtensions 仅支持 Godot 的新版本（Godot 4 及更高版本），反之亦然，因此请确保你下载的是正确的分支。</paragraph>
             <note>
                 <paragraph>To use <reference name="GDExtension" refuri="https://godotengine.org/article/introducing-gd-extensions">GDExtension</reference>
                     you need to use the godot-cpp branch that matches the version of Godot that you are
-                    targeting. For example, if you're targeting Godot 4.1, use the <literal>4.1</literal> branch,
-                    which is what is shown through out this tutorial.</paragraph>
-                <paragraph>The <literal>master</literal> branch is the development branch which is updated regularly
-                    to work with Godot's <literal>master</literal> branch.</paragraph>
+                    targeting. For example, if you're targeting Godot 4.1, use the <literal>4.1</literal> branch. Throughout
+                    this tutorial we use <literal>4.x</literal>, which will need to be replaced with the version of Godot you
+                    are targeting.</paragraph>
+                <paragraph><literal>master</literal> 分支是开发分支，它会定期更新以与 Godot 的 <literal>master</literal> 分支保持兼容。</paragraph>
             </note>
             <warning>
-                <paragraph>我们的长期目标是，面向早先版本的 GDExtension 在后续的小版本中依然能够运作，但反之则不然。例如，一个面向 Godot 4.2 的 GDExtension 应当在 Godot 4.3 中正常运作，但面向 Godot 4.3 的则不能在 Godot 4.2 中运作。</paragraph>
+                <paragraph>Our long-term goal is that GDExtensions targeting an earlier version of Godot will work
+                    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.1
+                    should work just fine in Godot 4.2, but one targeting Godot 4.2 won't work in Godot 4.1.</paragraph>
                 <paragraph>不过，GDExtension 目前仍是 <emphasis>实验性的</emphasis>，这就意味着我们为了修复严重的 bug 或引入重大的特性，可能会牺牲兼容性。例如，为 Godot 4.0 创建的 GDExtension 与 Godot 4.1 并不兼容（参见 <reference internal="True" refuri="../../migrating/upgrading_to_godot_4.1#updating-your-gdextension-for-godot-4-1"><inline classes="std std-ref">将 GDExtension 更新到 4.1</inline></reference> ）。</paragraph>
             </warning>
-            <paragraph>If you are versioning your project using Git, it is recommended to add it as
-                a Git submodule:</paragraph>
+            <paragraph>如果您使用 Git 对项目进行版本控制，最好将项目添加为 Git 子模块：</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">mkdir gdextension_cpp_example
 cd gdextension_cpp_example
 git init
-git submodule add -b 4.2 https://github.com/godotengine/godot-cpp
+git submodule add -b 4.x https://github.com/godotengine/godot-cpp
 cd godot-cpp
 git submodule update --init</literal_block>
-            <paragraph>Alternatively, you can also clone it to the project folder:</paragraph>
+            <paragraph>也可以直接将该项目克隆到项目文件夹内：</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">mkdir gdextension_cpp_example
 cd gdextension_cpp_example
-git clone -b 4.2 https://github.com/godotengine/godot-cpp</literal_block>
+git clone -b 4.x https://github.com/godotengine/godot-cpp</literal_block>
             <note>
-                <paragraph>If you decide to download the repository or clone it into your folder,
-                    make sure to keep the folder layout the same as we've setup here. Much of
-                    the code we'll be showcasing here assumes the project has this layout.</paragraph>
+                <paragraph>如果您决定下载仓库或将其克隆到您的文件夹中，请确保与我们这里所设置的文件夹结构相同，我们假定将在此展示的许多代码都基于这种项目结构。</paragraph>
             </note>
             <paragraph>如果从介绍中指定的链接克隆示例, 子模块不会自动初始化. 你需要执行以下命令:</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">cd gdextension_cpp_example
 git submodule update --init</literal_block>
-            <paragraph>This will initialize the repository in your project folder.</paragraph>
+            <paragraph>这会将该仓库克隆到您的项目文件夹中。</paragraph>
         </section>
         <section ids="building-the-c-bindings" names="building\ the\ c++\ bindings 构建\ c++\ 绑定">
             <title>构建 C++ 绑定</title>
-            <paragraph>现在我们已经下载了我们的先决条件, 现在是构建C++绑定的时候了.</paragraph>
+            <paragraph>现在我们已经下载了我们的前置需求, 现在是构建C++绑定的时候了.</paragraph>
             <paragraph>仓库包含当前 Godot 版本的元数据副本，但如果你需要为较新版本的 Godot 构建这些绑定，只需调用 Godot 可执行文件：</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">godot --dump-extension-api</literal_block>
-            <paragraph>The resulting <literal>extension_api.json</literal> file will be created in the executable's
-                directory. Copy it to the project folder and add <literal>custom_api_file=&lt;PATH_TO_FILE&gt;</literal>
-                to the scons command below.</paragraph>
-            <paragraph>To generate and compile the bindings, use this command (replacing <literal>&lt;platform&gt;</literal>
-                with <literal>windows</literal>, <literal>linux</literal> or <literal>macos</literal> depending on your OS):</paragraph>
-            <paragraph>The build process automatically detects the number of CPU threads to use for
-                parallel builds. To specify a number of CPU threads to use, add <literal>-jN</literal> at the
-                end of the SCons command line where <literal>N</literal> is the number of CPU threads to use.</paragraph>
+            <paragraph>生成的 <literal>extension_api.json</literal> 文件将会出现在可执行文件的目录中，将其复制到项目文件夹中，并在下面的 scons 命令中添加 <literal>custom_api_file=&lt;PATH_TO_FILE&gt;</literal> 参数。</paragraph>
+            <paragraph>用该命令来生成、编译绑定（取决于你的操作系统，用 <literal>windows</literal> , <literal>linux</literal> 或 <literal>macos</literal> 代替 <literal>&lt;platform&gt;</literal> ）：</paragraph>
+            <paragraph>构建过程会自动检测可用于并行构建的 CPU 线程数量。要指定使用的 CPU 线程数，请在 SCons 命令行的末尾添加 <literal>-jN</literal>，其中 <literal>N</literal> 是您希望使用的 CPU 线程数量。</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">cd godot-cpp
 scons platform=&lt;platform&gt; custom_api_file=&lt;PATH_TO_FILE&gt;
 cd ..</literal_block>
-            <paragraph>这一步将需要一段时间. 完成后, 你应该有一个静态库, 可以编译到你的项目中, 存储在 <literal>godot-cpp / bin /</literal> 中.</paragraph>
+            <paragraph>这一步将需要一段时间。完成后，你应该有一个静态库，可以编译到你的项目中，存储在 <literal>godot-cpp / bin /</literal> 内。</paragraph>
             <note>
                 <paragraph>你可能需要在 Windows 或 Linux 的命令行中添加 <literal>bits=64</literal>。</paragraph>
             </note>
         </section>
         <section ids="creating-a-simple-plugin" names="creating\ a\ simple\ plugin 创建一个简单的插件">
             <title>创建一个简单的插件</title>
-            <paragraph>现在是构建实际插件的时候了. 我们首先创建一个空的Godot项目, 我们将在其中放置一些文件.</paragraph>
-            <paragraph>Open Godot and create a new project. For this example, we will place it in a
-                folder called <literal>demo</literal> inside our GDExtension's folder structure.</paragraph>
-            <paragraph>在我们的演示项目中, 我们将创建一个包含名为 "Main" 的节点的场景, 我们将其保存为 <literal>main.tscn</literal> . 我们稍后再回过头来看看.</paragraph>
-            <paragraph>Back in the top-level GDExtension module folder, we're also going to create a
-                subfolder called <literal>src</literal> in which we'll place our source files.</paragraph>
-            <paragraph>You should now have <literal>demo</literal>, <literal>godot-cpp</literal>, and <literal>src</literal>
-                directories in your GDExtension module.</paragraph>
-            <paragraph>Your folder structure should now look like this:</paragraph>
+            <paragraph>现在是构建实际插件的时候了。我们首先创建一个空的 Godot 项目，我们将在其中放置一些文件。</paragraph>
+            <paragraph>打开 Godot 并创建一个新项目。对于该示例，我们将其放在我们的 GDExtension 的文件夹结构中名为 <literal>demo</literal> 的文件夹中。</paragraph>
+            <paragraph>在我们的演示项目中，我们将创建一个包含名为 "Main" 的节点的场景，我们将其保存为 <literal>main.tscn</literal> ，稍后再回过头来看看。</paragraph>
+            <paragraph>回到顶层 GDExtension 模块文件夹，我们还要创建一个名为 <literal>src</literal> 的子文件夹，将在其中放置源文件。</paragraph>
+            <paragraph>在你的 GDExtension 模块中，你现在应该有 <literal>demo</literal> 、 <literal>godot-cpp</literal> 和 <literal>src</literal> 这三个目录。</paragraph>
+            <paragraph>你的文件结构应如下所示：</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">gdextension_cpp_example/
 |
 +--demo/                  # game example/demo to test the extension
@@ -108,8 +93,7 @@ cd ..</literal_block>
 +--godot-cpp/             # C++ bindings
 |
 +--src/                   # source code of the extension we are building</literal_block>
-            <paragraph>In the <literal>src</literal> folder, we'll start with creating our header file for the
-                GDExtension node we'll be creating. We will name it <literal>gdexample.h</literal>:</paragraph>
+            <paragraph>在 <literal>src</literal> 文件夹中，我们将首先为我们将要创建的 GDExtension 节点创建头文件，将其命名为 <literal>gdexample.h</literal> ：</paragraph>
             <literal_block force="False" highlight_args="{}" language="cpp" linenos="False" xml:space="preserve">#ifndef GDEXAMPLE_H
 #define GDEXAMPLE_H
 
@@ -201,7 +185,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
         return;
     }
 
-    ClassDB::register_class&lt;GDExample&gt;();
+    GDREGISTER_CLASS(GDExample);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
@@ -251,7 +235,7 @@ void uninitialize_example_module(ModuleInitializationLevel p_level);
             <note>
                 <paragraph>This <literal>SConstruct</literal> file was written to be used with the latest <literal>godot-cpp</literal>
                     master, you may need to make small changes using it with older versions or
-                    refer to the <literal>SConstruct</literal> file in the Godot 4.0 documentation.</paragraph>
+                    refer to the <literal>SConstruct</literal> file in the Godot 4.x documentation.</paragraph>
             </note>
             <paragraph>Once you've downloaded the <literal>SConstruct</literal> file, place it in your GDExtension folder
                 structure alongside <literal>godot-cpp</literal>, <literal>src</literal> and <literal>demo</literal>, then run:</paragraph>
@@ -272,7 +256,7 @@ void uninitialize_example_module(ModuleInitializationLevel p_level);
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">[configuration]
 
 entry_symbol = "example_library_init"
-compatibility_minimum = "4.2"
+compatibility_minimum = "4.1"
 
 [libraries]
 
@@ -367,7 +351,7 @@ public:
             <literal_block force="False" highlight_args="{}" language="cpp" linenos="False" xml:space="preserve">void GDExample::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_amplitude"), &amp;GDExample::get_amplitude);
     ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &amp;GDExample::set_amplitude);
-    ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
+    ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
 }
 
 GDExample::GDExample() {
@@ -409,7 +393,7 @@ double GDExample::get_amplitude() const {
     ...
     ClassDB::bind_method(D_METHOD("get_speed"), &amp;GDExample::get_speed);
     ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &amp;GDExample::set_speed);
-    ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+    ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
 }
 
 GDExample::GDExample() {
@@ -479,7 +463,7 @@ double GDExample::get_speed() const {
                 as follows:</paragraph>
             <literal_block force="False" highlight_args="{}" language="cpp" linenos="False" xml:space="preserve">void GDExample::_bind_methods() {
     ...
-    ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+    ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
 
     ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
 }</literal_block>

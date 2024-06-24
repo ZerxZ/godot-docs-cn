@@ -245,17 +245,17 @@ d.mother = "Caroline" # This would work too to create a new key.</literal_block>
 [..]
 
 for (int i = 0; i &lt; 50; i++) {
-            printf("Value: %c Index: %d\n", strings[i], i);
-    }
+    printf("Value: %c Index: %d\n", strings[i], i);
+}
 
 // Even in STL:
 std::list&lt;std::string&gt; strings;
 
 [..]
 
-    for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
-            std::cout &lt;&lt; *it &lt;&lt; std::endl;
-    }</literal_block>
+for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
+    std::cout &lt;&lt; *it &lt;&lt; std::endl;
+}</literal_block>
             <paragraph>因此，GDScript 做出了大胆的决定——在可迭代项上使用 for 循环，配合 in 关键字来指定迭代范围：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">for s in strings:
     print(s)</literal_block>

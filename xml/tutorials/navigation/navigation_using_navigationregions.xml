@@ -20,45 +20,50 @@
         <section ids="creating-new-navigation-regions" names="creating\ new\ navigation\ regions 新建导航区块">
             <title>新建导航区块</title>
             <paragraph>新的导航区块节点会在2D/3D 尺寸的默认世界导航地图上自动注册。</paragraph>
-            <paragraph>然后就可以通过获取区块RID功能 <literal>get_region_rid()</literal> 从导航区块节点获取区域 RID。</paragraph>
+            <paragraph>The region RID can then be obtained from NavigationRegion Nodes with <literal>get_rid()</literal>.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-0-MkQgR0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tab" tabindex="0">2D GDScript</button>
+                    <button aria-controls="panel-0-M0QgR0RTY3JpcHQ=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tab" tabindex="-1">3D GDScript</button>
                 </div>
-                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-0-MkQgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends NavigationRegion2D
+
+var navigationserver_region_rid: RID = get_rid()</literal_block>
+                </div>
+                <div aria-labelledby="tab-0-M0QgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends NavigationRegion3D
 
-var navigationserver_region_rid: RID = get_region_rid()</literal_block>
+var navigationserver_region_rid: RID = get_rid()</literal_block>
                 </div>
             </container>
             <paragraph>还可以使用导航服务器接口创建新区块，并将其添加到任何现有地图中。</paragraph>
             <paragraph>如果直接使用导航服务器接口创建区块，则需要手动为其分配导航地图。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-1-MkQgR0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tab" tabindex="0">2D GDScript</button>
+                    <button aria-controls="panel-1-M0QgR0RTY3JpcHQ=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tab" tabindex="-1">3D GDScript</button>
                 </div>
-                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-1-MkQgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node2D
 
-var new_2d_region_rid: RID = NavigationServer2D.region_create()
-var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)</literal_block>
+func _ready() -&gt; void:
+    var new_region_rid: RID = NavigationServer2D.region_create()
+    var default_map_rid: RID = get_world_2d().get_navigation_map()
+    NavigationServer2D.region_set_map(new_region_rid, default_map_rid)</literal_block>
                 </div>
-            </container>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                </div>
-                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-1-M0QgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node3D
 
-var new_3d_region_rid: RID = NavigationServer3D.region_create()
-var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)</literal_block>
+func _ready() -&gt; void:
+    var new_region_rid: RID = NavigationServer3D.region_create()
+    var default_map_rid: RID = get_world_3d().get_navigation_map()
+    NavigationServer3D.region_set_map(new_region_rid, default_map_rid)</literal_block>
                 </div>
             </container>
             <note>
-                <paragraph>导航区块只能分配给一个导航地图。如果将现有区块分配到新地图，它就不属于旧地图了。</paragraph>
+                <paragraph>Navigation regions can only be assigned to a single navigation map.
+                    If an existing region is assigned to a new navigation map it will leave the old map.</paragraph>
             </note>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

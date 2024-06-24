@@ -21,7 +21,7 @@
             This node is moved by processing traditional controller, mouse or keyboard input.
             A camera is attached to this node at a location roughly where the player's head will be.</paragraph>
         <paragraph>Applying this model to the XR setup, we add an <reference internal="True" refuri="../../classes/class_xrorigin3d#class-xrorigin3d"><inline classes="std std-ref">XROrigin3D</inline></reference> node as a child of the character body,
-            and add a <reference internal="True" refuri="../../classes/class_xrcamera3d#class-xrcamera3d"><inline classes="std std-ref">XRCamera3D</inline></reference> as a child of the origin node. At face value this seems to work.
+            and add an <reference internal="True" refuri="../../classes/class_xrcamera3d#class-xrcamera3d"><inline classes="std std-ref">XRCamera3D</inline></reference> as a child of the origin node. At face value this seems to work.
             However, upon closer examination this model does not take into account that there are two forms of movement in XR.
             The movement through controller input, and the physical movement of the player in the real world.</paragraph>
         <paragraph>As a result, the origin node does not represent the position of the player.

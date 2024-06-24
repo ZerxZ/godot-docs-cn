@@ -165,7 +165,7 @@
                                 <paragraph>in float <strong>E</strong></paragraph>
                             </entry>
                             <entry>
-                                <paragraph>A <literal>E</literal> constant (<literal>2.718281</literal>).
+                                <paragraph>An <literal>E</literal> constant (<literal>2.718281</literal>).
                                     Euler's number and a base of the natural logarithm.</paragraph>
                             </entry>
                         </row>
@@ -318,6 +318,20 @@ void vertex() {
                                 <paragraph>点绘图的点大小.</paragraph>
                             </entry>
                         </row>
+                        <row>
+                            <entry>
+                                <paragraph>in vec4 <strong>CUSTOM0</strong></paragraph>
+                            </entry>
+                            <entry>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <paragraph>in vec4 <strong>CUSTOM1</strong></paragraph>
+                            </entry>
+                            <entry>
+                            </entry>
+                        </row>
                     </tbody>
                 </tgroup>
             </table>
@@ -356,7 +370,7 @@ void vertex() {
                             </entry>
                             <entry>
                                 <paragraph>Coordinate of pixel center. In screen space. <literal>xy</literal> specifies
-                                    position in window. Origin is lower-left.</paragraph>
+                                    position in window. Origin is upper-left.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -730,7 +744,7 @@ void vertex() {
                                 <paragraph>vec2 <strong>sdf_to_screen_uv</strong> (vec2 sdf_pos)</paragraph>
                             </entry>
                             <entry>
-                                <paragraph>Converts a SDF to screen UV.</paragraph>
+                                <paragraph>Converts an SDF to screen UV.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -738,7 +752,7 @@ void vertex() {
                                 <paragraph>vec2 <strong>screen_uv_to_sdf</strong> (vec2 uv)</paragraph>
                             </entry>
                             <entry>
-                                <paragraph>将缩进转为制表符。</paragraph>
+                                <paragraph>Converts screen UV to an SDF.</paragraph>
                             </entry>
                         </row>
                     </tbody>

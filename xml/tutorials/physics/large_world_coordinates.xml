@@ -310,28 +310,11 @@
         <section ids="how-large-world-coordinates-work" names="how\ large\ world\ coordinates\ work 大世界坐标的工作原理">
             <title>大世界坐标的工作原理</title>
             <paragraph>大世界坐标（也叫<strong>双精度物理</strong>）能够增加引擎中所有浮点数计算的精度级别。</paragraph>
-            <paragraph>By default, <reference internal="True" refuri="../../classes/class_float#class-float"><inline classes="std std-ref">float</inline></reference> is 64-bit in GDScript, but <reference internal="True" refuri="../../classes/class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>,
-                <reference internal="True" refuri="../../classes/class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> and <reference internal="True" refuri="../../classes/class_vector4#class-vector4"><inline classes="std std-ref">Vector4</inline></reference> are 32-bit. This means that the
-                precision of vector types is much more limited. To resolve this, we can increase
-                the number of bits used to represent a floating-point number in a Vector type.
-                This results in an <emphasis>exponential</emphasis> increase in precision, which means the final
-                value is not just twice as precise, but potentially thousands of times more
-                precise at high values. The maximum value that can be represented is also
-                greatly increased by going from a single-precision float to a double-precision
-                float.</paragraph>
-            <paragraph>To avoid model snapping issues when far away from the world origin, Godot's 3D
-                rendering engine will increase its precision for rendering operations when large
-                world coordinates are enabled. The shaders do not use double-precision floats
-                for performance reasons, but an <reference name="alternative solution" refuri="https://github.com/godotengine/godot/pull/66178">alternative solution</reference>
-                is used to emulate double precision for rendering using single-precision floats.</paragraph>
+            <paragraph>在 GDScript 中， <reference internal="True" refuri="../../classes/class_float#class-float"><inline classes="std std-ref">float</inline></reference> 默认为 64 位，但 <reference internal="True" refuri="../../classes/class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>, <reference internal="True" refuri="../../classes/class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> 和 <reference internal="True" refuri="../../classes/class_vector4#class-vector4"><inline classes="std std-ref">Vector4</inline></reference> 为 32 位。这意味着向量类型的精度受到很大限制。为了解决这个问题，我们可以增加向量类型中用于表示浮点数的位数。这样一来，精度就会呈*指数*增长，这意味着最终值的精度不仅提高了一倍，而且在数值较高时，精度可能会提高数千倍。从单精度浮点数到双精度浮点数，可表示的最大值也大大增加。</paragraph>
+            <paragraph>为了避免远离世界原点时出现模型吸附（model snapping）问题，Godot 的 3D 渲染引擎将在启用大世界坐标时提高渲染的精度。出于性能原因，着色器不使用双精度浮点数，但会使用 <reference name="替代解决方案" refuri="https://github.com/godotengine/godot/pull/66178">替代解决方案</reference> 来模拟双精度，以便使用单精度浮点数进行渲染。</paragraph>
             <note>
-                <paragraph>Enabling large world coordinates comes with a performance and memory usage
-                    penalty, especially on 32-bit CPUs. Only enable large world coordinates if
-                    you actually need them.</paragraph>
-                <paragraph>This feature is tailored towards mid-range/high-end desktop platforms. Large
-                    world coordinates may not perform well on low-end mobile devices, unless you
-                    take steps to reduce CPU usage with other means (such as decreasing the
-                    number of physics ticks per second).</paragraph>
+                <paragraph>只有确实需要大世界坐标时才启用它，因为启用大世界坐标会对性能和内存占用带来负面影响，这种负面影响在32位CPU上更加明显。</paragraph>
+                <paragraph>此功能专为中端/高端桌面平台量身定制。大世界坐标在低端移动设备上可能表现不佳，除非你采取措施通过其他方式来减少 CPU 使用率（例如减少每秒的物理循环 physics tick）。</paragraph>
                 <paragraph>On low-end platforms, an <emphasis>origin shifting</emphasis> approach can be used instead to
                     allow for large worlds without using double-precision physics and rendering.
                     Origin shifting works with single-precision floats, but it introduces more
@@ -341,100 +324,58 @@
         </section>
         <section ids="who-are-large-world-coordinates-for" names="who\ are\ large\ world\ coordinates\ for? 大世界坐标的目标群体是谁？">
             <title>大世界坐标的目标群体是谁？</title>
-            <paragraph>Large world coordinates are typically required for 3D space or planetary-scale
-                simulation games. This extends to games that require supporting <emphasis>very</emphasis> fast
-                movement speeds, but also very slow <emphasis>and</emphasis> precise movements at times.</paragraph>
-            <paragraph>On the other hand, it's important to only use large world coordinates when
-                actually required (for performance reasons). Large world coordinates are usually
-                <strong>not</strong> required for:</paragraph>
+            <paragraph>大世界坐标的典型使用场景是3D太空类型或者星球规模的模拟游戏。延伸来讲，如果一些游戏需要在支持*非常*快速的运动的同时还要支持非常慢并且精确的运动，那可能需要使用大世界坐标。</paragraph>
+            <paragraph>从另一方面来看，只有在确实需要大世界坐标才启用它是至关重要的（从性能方面考虑）。以下情况通常**不**适合使用大世界坐标：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>2D games, as precision issues are usually less noticeable.</paragraph>
+                    <paragraph>2D 游戏，因为 2D 游戏中的精度问题通常不太明显。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Games with small-scale or medium-scale worlds.</paragraph>
+                    <paragraph>那些世界尺寸是小型或者中型的游戏。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Games with large worlds, but split into different levels with loading
-                        sequences in between. You can center each level portion around the world
-                        origin to avoid precision issues without a performance penalty.</paragraph>
+                    <paragraph>游戏的世界很大，但分为不同的级别，通过加载序列来实现场景的切换和加载。你可以将每个级别的内容存放在其世界原点的周围，这样就可以在不产生性能损耗的情况下避免精度问题。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Open world games with a <emphasis>playable on-foot area</emphasis> not exceeding 8192×8192 meters
-                        (centered around the world origin). As shown in the above table, the level of
-                        precision remains acceptable within that range, even for a first-person game.</paragraph>
+                    <paragraph><emphasis>可步行区域</emphasis> 不超过8192×8192米（以世界原点为中心）的开放世界游戏。如上表所示，即使是第一人称游戏，精度水平在该范围内也可以接受。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><strong>If in doubt</strong>, you probably don't need to use large world coordinates in your
-                project. For reference, most modern AAA open world titles don't use a large
-                world coordinates system and still rely on single-precision floats for both
-                rendering and physics.</paragraph>
+            <paragraph><strong>如果对是否使用大世界坐标存在疑虑</strong> ，那你可能并不需要在你的项目中使用大世界坐标。实际上，大多数现代的3A开放世界主题的游戏并没有使用大世界坐标系统，这些游戏仍然依靠单精度浮点类型来处理游戏中的渲染和物理。</paragraph>
         </section>
         <section ids="enabling-large-world-coordinates" names="enabling\ large\ world\ coordinates 启用大世界坐标">
             <title>启用大世界坐标</title>
-            <paragraph>This process requires recompiling the editor and all export template binaries
-                you intend to use. If you only intend to export your project in release mode,
-                you can skip the compilation of debug export templates. In any case, you'll need
-                to compile an editor build so you can test your large precision world without
-                having to export the project every time.</paragraph>
-            <paragraph>See the <reference internal="True" refuri="../../contributing/development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">Compiling</inline></reference> section for compiling
-                instructions for each target platform. You will need to add the <literal>precision=double</literal>
-                SCons option when compiling the editor and export templates.</paragraph>
-            <paragraph>The resulting binaries will be named with a <literal>.double</literal> suffix to distinguish
-                them from single-precision binaries (which lack any precision suffix). You can
-                then specify the binaries as custom export templates in your project's export
-                presets in the Export dialog.</paragraph>
+            <paragraph>此过程需要重新编译编辑器以及你打算使用的所有导出模板的二进制文件。如果只打算在发布模式下导出项目，则可以跳过调试导出模板的编译。无论如何，你都需要编译一个编辑器构建版，这样就可以可以测试你的精确大世界，而不必每次都导出项目。</paragraph>
+            <paragraph>请参阅 <reference internal="True" refuri="../../contributing/development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">编译</inline></reference> 部分来了解每个目标平台的编译指令。编译编辑器和导出模板时，需要添加 <literal>precision=double</literal> SCons 选项。</paragraph>
+            <paragraph>生成的二进制文件将以 <literal>.double</literal> 后缀命名，以将其与单精度二进制文件（缺少任何精度后缀）区分开来。你可以随后在“导出”对话框的项目导出预设中将二进制文件指定为自定义导出模板。</paragraph>
         </section>
         <section ids="compatibility-between-single-precision-and-double-precision-builds" names="compatibility\ between\ single-precision\ and\ double-precision\ builds 单双精度构建之间的的兼容性">
             <title>单双精度构建之间的的兼容性</title>
-            <paragraph>When saving a <emphasis>binary</emphasis> resource using the <reference internal="True" refuri="../../classes/class_resourcesaver#class-resourcesaver"><inline classes="std std-ref">ResourceSaver</inline></reference> singleton,
-                a special flag is stored in the file if the resource was saved using a build
-                that uses double-precision numbers. As a result, all binary resources will
-                change on disk when you switch to a double-precision build and save over them.</paragraph>
-            <paragraph>Both single-precision and double-precision builds support using the
-                <reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader"><inline classes="std std-ref">ResourceLoader</inline></reference> singleton on resources that use this special flag.
-                This means single-precision builds can load resources saved using
-                double-precision builds and vice versa. Text-based resources don't store a
-                double-precision flag, as they don't require such a flag for correct reading.</paragraph>
+            <paragraph>当使用 <reference internal="True" refuri="../../classes/class_resourcesaver#class-resourcesaver"><inline classes="std std-ref">ResourceSaver</inline></reference> 单例保存 <emphasis>可执行文件</emphasis> 资源时，如果该资源是使用双精度数字的构建方式保存的，则会在文件中存储一个特殊标志。因此，当你切换到双精度构建并保存资源时，磁盘上的所有可执行文件资源都将发生变化。</paragraph>
+            <paragraph>单精度和双精度构建都支持在使用此特殊标志的资源上使用 <reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader"><inline classes="std std-ref">ResourceLoader</inline></reference> 单例。这意味着单精度构建可以加载使用双精度构建的资源，反之亦然。基于文本的资源不存储双精度标志，因为它们不需要这种标志来正确读取。</paragraph>
             <section ids="known-incompatibilities" names="known\ incompatibilities 已知的不兼容">
                 <title>已知的不兼容</title>
                 <bullet_list bullet="-">
                     <list_item>
-                        <paragraph>In a networked multiplayer game, the server and all clients should be using
-                            the same build type to ensure precision remains consistent across clients.
-                            Using different build types <emphasis>may</emphasis> work, but various issues can occur.</paragraph>
+                        <paragraph>在网络多人游戏中，服务器和所有客户端都应使用相同的构建类型，以确保客户端之间的精度保持一致。使用不同的构建类型 <emphasis>可能</emphasis> 也有效，但也可能会出现各种问题。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>The GDExtension API changes in an incompatible way in double-precision builds.
-                            This means extensions <strong>must</strong> be rebuilt to work with double-precision
-                            builds. On the extension developer's end, the <literal>REAL_T_IS_DOUBLE</literal> define is
-                            enabled when building a GDExtension with <literal>precision=double</literal>.
-                            <literal>real_t</literal> can be used as an alias for <literal>float</literal> in single-precision builds,
-                            and <literal>double</literal> in double-precision builds.</paragraph>
+                        <paragraph>在双精度版本中，GDExtension API 以不兼容的方式发生变化。这意味着扩展 <strong>必须</strong> 重新构建，才能使用双精度版本。在扩展开发者端，当使用 <literal>precision=double</literal> 构建 GDExtension 时，会启用 <literal>REAL_T_IS_DOUBLE</literal> 定义。在单精度构建中， <literal>real_t</literal> 可用作 <literal>float</literal> 的别名，在双精度构建中，可用作 <literal>double</literal> 的别名。</paragraph>
                     </list_item>
                 </bullet_list>
             </section>
         </section>
         <section ids="limitations" names="limitations 限制">
             <title>限制</title>
-            <paragraph>Since 3D rendering shaders don't actually use double-precision floats, there are
-                some limitations when it comes to 3D rendering precision:</paragraph>
+            <paragraph>由于 3D 渲染着色器实际上并不使用双精度浮点，因此在 3D 渲染精度方面存在一些限制：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>Shaders using the <literal>skip_vertex_transform</literal> or <literal>world_vertex_coords</literal> don't
-                        benefit from increased precision.</paragraph>
+                    <paragraph>使用 <literal>skip_vertex_transform</literal> 或 <literal>world_vertex_coords</literal> 的着色器不会从精度提高中受益。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="../3d/standard_material_3d#doc-standard-material-3d-triplanar-mapping"><inline classes="std std-ref">Triplanar mapping</inline></reference> doesn't
-                        benefit from increased precision. Materials using triplanar mapping will exhibit
-                        visible jittering when far away from the world origin.</paragraph>
+                    <paragraph><reference internal="True" refuri="../3d/standard_material_3d#doc-standard-material-3d-triplanar-mapping"><inline classes="std std-ref">三平面映射</inline></reference> 不会从精度提高中受益。当远离世界原点时，使用三平面映射的材质将表现出可见的抖动。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>2D rendering currently doesn't benefit from increased precision when large world
-                coordinates are enabled. This can cause visible model snapping to occur when
-                far away from the world origin (starting from a few million pixels at typical
-                zoom levels). 2D physics calculations will still benefit from increased
-                precision though.</paragraph>
+            <paragraph>当启用大世界坐标时，目前 2D 渲染还无法从提高精度中受益。这可能会导致在远离世界原点（从典型缩放级别的几百万像素开始）时发生可见的模型吸附（model snapping）。不过，二维物理计算仍将从提高精度中受益。</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

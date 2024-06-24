@@ -15,7 +15,9 @@
                 <paragraph>A built-in method call like <literal>deg_to_rad(90)</literal>.</paragraph>
             </list_item>
             <list_item>
-                <paragraph>调用 <reference internal="True" refuri="../../classes/class_expression#class-expression-method-execute"><inline classes="std std-ref">Expression.execute()</inline></reference> 时如果 <literal>base_instance</literal> 非 <literal>null</literal>，那么调用用户提供脚本的方法，比如 <literal>update_health()</literal>。</paragraph>
+                <paragraph>A method call on a user-provided script like <literal>update_health()</literal>,
+                    if <literal>base_instance</literal> is set to a value other than <literal>null</literal> when calling
+                    <reference internal="True" refuri="../../classes/class_expression#class-expression-method-execute"><inline classes="std std-ref">Expression.execute()</inline></reference>.</paragraph>
             </list_item>
         </bullet_list>
         <note>

@@ -84,24 +84,58 @@
         <section ids="compiling-a-pull-request-branch-from-source doc-testing-pull-requests-compile" names="compiling\ a\ pull\ request\ branch\ from\ source 从源编译拉取请求分支 doc_testing_pull_requests_compile">
             <title>从源编译拉取请求分支</title>
             <paragraph>对于最后一次更新超过90天的拉取请求，或者在Godot的GitHub Actions设置不支持的平台和配置上进行测试，可能需要采用这种方法。</paragraph>
-            <bullet_list bullet="-">
-                <list_item>
-                    <paragraph>打开拉取请求页面。点击页面顶部附近的 <emphasis>fork</emphasis> 分支名称:</paragraph>
-                </list_item>
-            </bullet_list>
-            <image candidates="{'*': 'contributing/workflow/img/testing_pull_requests_access_fork.png'}" uri="contributing/workflow/img/testing_pull_requests_access_fork.png"></image>
-            <bullet_list bullet="-">
-                <list_item>
-                    <paragraph>现在你在fork的分支页面上，点击页面右侧的绿色 <strong>Code</strong> 按钮，然后在下拉菜单中选择 <strong>下载ZIP</strong> :</paragraph>
-                </list_item>
-            </bullet_list>
-            <image candidates="{'*': 'contributing/workflow/img/testing_pull_requests_fork_zip.png'}" uri="contributing/workflow/img/testing_pull_requests_fork_zip.png"></image>
-            <bullet_list bullet="-">
-                <list_item>
-                    <paragraph>提取 ZIP 压缩包，按照你的操作系统的<reference internal="True" refuri="../development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">编译</inline></reference>说明操作。</paragraph>
-                </list_item>
-            </bullet_list>
-            <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
+            <section ids="downloading-a-zipped-pull-request-branch" names="downloading\ a\ zipped\ pull\ request\ branch">
+                <title>Downloading a zipped pull request branch</title>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>打开拉取请求页面。点击页面顶部附近的 <emphasis>fork</emphasis> 分支名称:</paragraph>
+                    </list_item>
+                </bullet_list>
+                <image candidates="{'*': 'contributing/workflow/img/testing_pull_requests_access_fork.png'}" uri="contributing/workflow/img/testing_pull_requests_access_fork.png"></image>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>现在你在fork的分支页面上，点击页面右侧的绿色 <strong>Code</strong> 按钮，然后在下拉菜单中选择 <strong>下载ZIP</strong> :</paragraph>
+                    </list_item>
+                </bullet_list>
+                <image candidates="{'*': 'contributing/workflow/img/testing_pull_requests_fork_zip.png'}" uri="contributing/workflow/img/testing_pull_requests_fork_zip.png"></image>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>提取 ZIP 压缩包，按照你的操作系统的<reference internal="True" refuri="../development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">编译</inline></reference>说明操作。</paragraph>
+                    </list_item>
+                </bullet_list>
+            </section>
+            <section ids="checking-out-a-pull-request-branch-with-git" names="checking\ out\ a\ pull\ request\ branch\ with\ git">
+                <title>Checking out a pull request branch with git</title>
+                <paragraph>Alternatively, you can checkout the pull request directly with git:</paragraph>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>Open the pull request page. Note the pull request <emphasis>number</emphasis> (<literal>PR_NUMBER</literal>), and the <emphasis>branch name</emphasis>
+                            (<literal>BRANCH_NAME</literal>), but without the user name.</paragraph>
+                    </list_item>
+                </bullet_list>
+                <image candidates="{'*': 'contributing/workflow/img/testing_pull_requests_command_line_checkout.webp'}" uri="contributing/workflow/img/testing_pull_requests_command_line_checkout.webp"></image>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>Construct the command using this pattern:</paragraph>
+                    </list_item>
+                </bullet_list>
+                <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">$ git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME</literal_block>
+                <paragraph>So for the pull request above, the actual command will be:</paragraph>
+                <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Fetch PR branch locally
+$ git fetch upstream pull/48734/head:editor_file_dialog_filter_sort</literal_block>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>Once the pull request finishes downloading, checkout its branch:</paragraph>
+                    </list_item>
+                </bullet_list>
+                <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">$ git checkout editor_file_dialog_filter_sort</literal_block>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph>And follow the <reference internal="True" refuri="../development/compiling/index#toc-devel-compiling"><inline classes="std std-ref">compiling</inline></reference> instructions for your operating system.</paragraph>
+                    </list_item>
+                </bullet_list>
+                <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
+            </section>
         </section>
     </section>
 </document>

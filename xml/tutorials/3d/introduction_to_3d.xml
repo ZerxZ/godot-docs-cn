@@ -10,12 +10,14 @@
         <section ids="node3d-node" names="node3d\ node node3d\ 节点">
             <title>Node3D 节点</title>
             <paragraph><reference internal="True" refuri="../../classes/class_node2d#class-node2d"><inline classes="std std-ref">Node2D</inline></reference> 是 2D 的基础节点。<reference internal="True" refuri="../../classes/class_control#class-control"><inline classes="std std-ref">Control</inline></reference> 是所有 GUI 的基础节点。同理，3D 引擎中的所有 3D 物体都使用 <reference internal="True" refuri="../../classes/class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> 节点。</paragraph>
-            <note>
-                <paragraph>请注意，从 Godot 4 开始，“Spatial”节点现在称为“Node3D”。任何 Godot 3.x 中提到的“Spatial”节点都是指 Godot 4 中的“Node3D”。</paragraph>
-            </note>
-            <image candidates="{'*': 'tutorials/3d/img/tuto_3d1.png'}" uri="tutorials/3d/img/tuto_3d1.png"></image>
-            <paragraph>Node3D 有一个局部变换，它是相对于父节点而言的（只要父节点也是 <strong>或继承自</strong> Node3D 类型）。这个变换可以作为 4×3 的 <reference internal="True" refuri="../../classes/class_transform3d#class-transform3d"><inline classes="std std-ref">Transform3D</inline></reference> 形式访问，也可以以 3 个 <reference internal="True" refuri="../../classes/class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> 成员的形式访问，分别代表位置、欧拉旋转（X、Y、Z 角度）和缩放。</paragraph>
-            <image candidates="{'*': 'tutorials/3d/img/tuto_3d2.png'}" uri="tutorials/3d/img/tuto_3d2.png"></image>
+            <image candidates="{'*': 'tutorials/3d/img/tuto_3d1.webp'}" uri="tutorials/3d/img/tuto_3d1.webp"></image>
+            <paragraph>Node3Ds have a local transform, which is relative to the parent
+                node (as long as the parent node is also of <strong>or inherits from</strong> the type
+                Node3D). This transform can be accessed as a 3×4
+                <reference internal="True" refuri="../../classes/class_transform3d#class-transform3d"><inline classes="std std-ref">Transform3D</inline></reference>, or as 3 <reference internal="True" refuri="../../classes/class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>
+                members representing location, Euler rotation (X, Y and Z angles) and
+                scale.</paragraph>
+            <image candidates="{'*': 'tutorials/3d/img/tuto_3d2.webp'}" uri="tutorials/3d/img/tuto_3d2.webp"></image>
         </section>
         <section ids="d-content" names="3d\ content 3d\ 内容">
             <title>3D 内容</title>
@@ -49,9 +51,9 @@
         <section ids="d-viewport" names="3d\ viewport 3d\ 视口">
             <title>3D 视口</title>
             <paragraph>编辑 3D 场景可以在 3D 选项卡中完成。该选项卡可以手动选择，但在选择 Node3D 节点时将自动启用。</paragraph>
-            <image candidates="{'*': 'tutorials/3d/img/tuto_3d3.png'}" uri="tutorials/3d/img/tuto_3d3.png"></image>
+            <image candidates="{'*': 'tutorials/3d/img/tuto_3d3.webp'}" uri="tutorials/3d/img/tuto_3d3.webp"></image>
             <paragraph>默认的3D场景导航控制类似于Blender(旨在在自由软件工作流程中具有某种一致性), 但在编辑器设置中也包含了自定义鼠标按钮和行为使其看上去像其他工具的选项:</paragraph>
-            <image candidates="{'*': 'tutorials/3d/img/tuto_3d4.png'}" uri="tutorials/3d/img/tuto_3d4.png"></image>
+            <image candidates="{'*': 'tutorials/3d/img/tuto_3d4.webp'}" uri="tutorials/3d/img/tuto_3d4.webp"></image>
             <section ids="coordinate-system" names="coordinate\ system 坐标系">
                 <title>坐标系</title>
                 <paragraph>Godot 在 3D 中使用的都是<reference name="公制" refuri="https://zh.wikipedia.org/zh-cn/%E7%B1%B3%E5%88%B6">公制</reference>，1 个单位等于 1 米。物理和其他区域都为此而调整过。因此，试图使用不同的比例通常是一个坏主意（除非你知道你在做什么）。</paragraph>
@@ -77,7 +79,7 @@
             <section ids="space-and-manipulation-gizmos" names="space\ and\ manipulation\ gizmos 空间与操纵小工具">
                 <title>空间与操纵小工具</title>
                 <paragraph>在 3D 视图中移动物体是通过操纵器小工具完成的。每个轴用一种颜色表示：红、绿、蓝分别代表 X、Y、Z。这种惯例也适用于网格和其他小工具（也适用于着色器语言、Vector3、Color 等组件的顺序）。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d5.png'}" uri="tutorials/3d/img/tuto_3d5.png"></image>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d5.webp'}" uri="tutorials/3d/img/tuto_3d5.webp"></image>
                 <paragraph>一些有用的键盘绑定:</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
@@ -124,22 +126,33 @@
             <section ids="view-menu" names="view\ menu 视图菜单">
                 <title>视图菜单</title>
                 <paragraph>视图选项由视口工具栏中的“视图”菜单控制。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6.png'}" uri="tutorials/3d/img/tuto_3d6.png"></image>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6.webp'}" uri="tutorials/3d/img/tuto_3d6.webp"></image>
                 <paragraph>你可以通过这个菜单在编辑器的 3D 视图中隐藏小工具：</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6_1.png'}" uri="tutorials/3d/img/tuto_3d6_1.png"></image>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6_1.webp'}" uri="tutorials/3d/img/tuto_3d6_1.webp"></image>
                 <paragraph>要隐藏特定类型的小工具，你可以在“视图”菜单中把它们切换掉。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6_2.png'}" uri="tutorials/3d/img/tuto_3d6_2.png"></image>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d6_2.webp'}" uri="tutorials/3d/img/tuto_3d6_2.webp"></image>
             </section>
-            <section ids="default-environment" names="default\ environment 默认环境">
-                <title>默认环境</title>
-                <paragraph>从项目管理器中创建时,3D环境具有默认的天空.</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d8.png'}" uri="tutorials/3d/img/tuto_3d8.png"></image>
-                <paragraph>鉴于基于物理的渲染工作方式，建议总是尝试使用默认环境，以便为对象提供间接和反射光。</paragraph>
+            <section ids="preview-environment-and-light" names="preview\ environment\ and\ light">
+                <title>preview environment and light</title>
+                <paragraph>By default, any 3D scene that doesn't have a <reference internal="True" refuri="../../classes/class_worldenvironment#class-worldenvironment"><inline classes="std std-ref">WorldEnvironment</inline></reference>
+                    node, or a <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference>, will have
+                    a preview turned on for what it's missing to light the scene.</paragraph>
+                <paragraph>The preview light and environment will only be visible in the scene while
+                    in the editor. If you run the scene or export the project they will not
+                    affect the scene.</paragraph>
+                <paragraph>The preview light and environment can be turned on or off from the top menu
+                    by clicking on their respective icon, and the 3 dots dropdown menu next to
+                    those icons can be used to adjust the properties of the preview environment
+                    and light.</paragraph>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d8.webp'}" uri="tutorials/3d/img/tuto_3d8.webp"></image>
+                <paragraph>The same preview sun and environment is used for every scene in the same project,
+                    So only make adjustments that would apply to all of the scenes you will need a preview
+                    light and environment for.</paragraph>
             </section>
             <section ids="cameras" names="cameras 相机">
                 <title>相机</title>
                 <paragraph>无论在 3D 空间中放置多少物体，除非在场景中添加了 <reference internal="True" refuri="../../classes/class_camera3d#class-camera3d"><inline classes="std std-ref">Camera3D</inline></reference>，否则不会显示任何内容。相机可以在正交或透视投影中工作：</paragraph>
-                <image candidates="{'*': 'tutorials/3d/img/tuto_3d10.png'}" uri="tutorials/3d/img/tuto_3d10.png"></image>
+                <image candidates="{'*': 'tutorials/3d/img/tuto_3d10.webp'}" uri="tutorials/3d/img/tuto_3d10.webp"></image>
                 <paragraph>摄像机与父视口或其祖先视口相关联, 且仅显示到他们上面. 由于场景树的根是一个视口, 默认情况下会在其上显示摄像机, 但如果需要子视口(作为渲染目标或画中画), 则需要自己的子摄像头才能显示.</paragraph>
                 <image candidates="{'*': 'tutorials/3d/img/tuto_3d11.png'}" uri="tutorials/3d/img/tuto_3d11.png"></image>
                 <paragraph>处理多台摄像机时, 每个视口都遵循以下规则:</paragraph>

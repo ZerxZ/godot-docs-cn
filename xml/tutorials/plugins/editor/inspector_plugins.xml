@@ -20,7 +20,8 @@
             <paragraph>让我们假设你的插件文件夹叫做 <literal>my_inspector_plugin</literal>。那么此时你新建的 <literal>addons/my_inspector_plugin</literal> 文件夹中就有两个文件：<literal>plugin.cfg</literal> 和 <literal>plugin.gd</literal>。</paragraph>
             <paragraph>和之前一样，<literal>plugin.gd</literal> 是一个扩展了 <reference internal="True" refuri="../../../classes/class_editorplugin#class-editorplugin"><inline classes="std std-ref">EditorPlugin</inline></reference> 的脚本，你需要在 <literal>_enter_tree</literal> 和 <literal>_exit_tree</literal> 方法中加入新的代码。要创建自己的检查器插件，你必须加载对应的脚本，然后创建并调用 <literal>add_inspector_plugin()</literal> 来添加实例。禁用插件时，你应该调用 <literal>remove_inspector_plugin()</literal> 将该实例移除。</paragraph>
             <note>
-                <paragraph>因为你在这里读取的是脚本而不是场景包，所以应该使用 <literal>new()</literal> 而不是 <literal>instance()</literal>。</paragraph>
+                <paragraph>Here, you are loading a script and not a packed scene. Therefore you
+                    should use <literal>new()</literal> instead of <literal>instantiate()</literal>.</paragraph>
             </note>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -165,7 +166,7 @@ public partial class MyInspectorPlugin : EditorInspectorPlugin
                 </list_item>
             </enumerated_list>
             <paragraph>显示自定义小工具的方法有两种。可以只用默认的 <literal>add_child()</literal> 方法可以把它显示到属性名称的右边，在 <literal>add_child()</literal> 之后再调用 <literal>set_bottom_editor()</literal> 就可以把它显示到名称的下边。</paragraph>
-            <comment xml:space="preserve">FIXME: The second tab has the C# lexer for hightlighting disabled for now, as the provided code causes errors.</comment>
+            <comment xml:space="preserve">FIXME: The second tab has the C# lexer for highlighting disabled for now, as the provided code causes errors.</comment>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>

@@ -13,19 +13,13 @@
             <paragraph>要在Linux或其他类Unix系统下进行编译, 需要满足以下条件:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>GCC 7+ 或 Clang 6+.</paragraph>
+                    <paragraph>GCC 9+ or Clang 6+.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="Python 3.6+" refuri="https://www.python.org/downloads/">Python 3.6+</reference><target ids="python-3-6" names="python\ 3.6+" refuri="https://www.python.org/downloads/"></target>.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="SCons 3.0+" refuri="https://scons.org/pages/download.html">SCons 3.0+</reference><target ids="scons-3-0" names="scons\ 3.0+" refuri="https://scons.org/pages/download.html"></target> 构建系统.</paragraph>
-                    <note>
-                        <paragraph>If your distribution uses Python 2 by default, or you are using a version of SCons prior to 3.1.2,
-                            you will need to change the version of Python that SCons uses by changing the shebang
-                            (the first line) of the SCons script file to <literal>#! /usr/bin/python3</literal>.
-                            Use the command <literal>which scons</literal> to find the location of the SCons script file.</paragraph>
-                    </note>
+                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference><target ids="scons-3-1-2" names="scons\ 3.1.2+" refuri="https://scons.org/pages/download.html"></target> build system.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>pkg-config（用于检测下面这些开发库）。</paragraph>
@@ -37,7 +31,10 @@
                             <paragraph>X11、Xcursor、Xinerama、Xi、XRandR。</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph>MesaGL.</paragraph>
+                            <paragraph>Wayland and wayland-scanner.</paragraph>
+                        </list_item>
+                        <list_item>
+                            <paragraph>Mesa.</paragraph>
                         </list_item>
                         <list_item>
                             <paragraph>ALSA.</paragraph>
@@ -67,9 +64,9 @@
                         <button aria-controls="panel-0-0-4" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-4" name="0-4" role="tab" tabindex="-1">FreeBSD</button>
                         <button aria-controls="panel-0-0-5" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-5" name="0-5" role="tab" tabindex="-1">Gentoo</button>
                         <button aria-controls="panel-0-0-6" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-6" name="0-6" role="tab" tabindex="-1">Mageia</button>
-                        <button aria-controls="panel-0-0-7" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-7" name="0-7" role="tab" tabindex="-1">OpenBSD</button>
-                        <button aria-controls="panel-0-0-8" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-8" name="0-8" role="tab" tabindex="-1">openSUSE</button>
-                        <button aria-controls="panel-0-0-9" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-9" name="0-9" role="tab" tabindex="-1">NetBSD</button>
+                        <button aria-controls="panel-0-0-7" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-7" name="0-7" role="tab" tabindex="-1">NetBSD</button>
+                        <button aria-controls="panel-0-0-8" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-8" name="0-8" role="tab" tabindex="-1">OpenBSD</button>
+                        <button aria-controls="panel-0-0-9" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-9" name="0-9" role="tab" tabindex="-1">openSUSE</button>
                         <button aria-controls="panel-0-0-10" aria-selected="false" classes="sphinx-tabs-tab" ids="tab-0-0-10" name="0-10" role="tab" tabindex="-1">Solus</button>
                     </div>
                     <div aria-labelledby="tab-0-0-0" classes="sphinx-tabs-panel" ids="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0">
@@ -84,13 +81,12 @@
   libxi-dev \
   libxrandr-dev \
   mesa-dev \
-  libexecinfo-dev \
   eudev-dev \
   alsa-lib-dev \
   pulseaudio-dev</literal_block>
                     </div>
                     <div aria-labelledby="tab-0-0-1" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pacman -S --needed \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pacman -Sy --noconfirm --needed \
   scons \
   pkgconf \
   gcc \
@@ -98,6 +94,7 @@
   libxinerama \
   libxi \
   libxrandr \
+  wayland-utils \
   mesa \
   glu \
   libglvnd \
@@ -105,7 +102,8 @@
   pulseaudio</literal_block>
                     </div>
                     <div aria-labelledby="tab-0-0-2" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">apt-get install \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">sudo apt-get update
+sudo apt-get install -y \
   build-essential \
   scons \
   pkg-config \
@@ -113,15 +111,16 @@
   libxcursor-dev \
   libxinerama-dev \
   libgl1-mesa-dev \
-  libglu-dev \
+  libglu1-mesa-dev \
   libasound2-dev \
   libpulse-dev \
   libudev-dev \
   libxi-dev \
-  libxrandr-dev</literal_block>
+  libxrandr-dev \
+  libwayland-dev</literal_block>
                     </div>
                     <div aria-labelledby="tab-0-0-3" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">dnf install \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">sudo dnf install -y \
   scons \
   pkgconfig \
   libX11-devel \
@@ -129,6 +128,7 @@
   libXrandr-devel \
   libXinerama-devel \
   libXi-devel \
+  wayland-devel \
   mesa-libGL-devel \
   mesa-libGLU-devel \
   alsa-lib-devel \
@@ -146,27 +146,30 @@
   libXcursor \
   libXrandr \
   libXi \
-  xorgproto libGLU \
+  xorgproto \
+  libGLU \
   alsa-lib \
   pulseaudio</literal_block>
                     </div>
                     <div aria-labelledby="tab-0-0-5" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-5" name="0-5" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">emerge -an \
-  dev-util/scons \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">emerge --sync
+emerge -an \
+  dev-build/scons \
   x11-libs/libX11 \
   x11-libs/libXcursor \
   x11-libs/libXinerama \
   x11-libs/libXi \
+  dev-util/wayland-scanner \
   media-libs/mesa \
   media-libs/glu \
   media-libs/alsa-lib \
   media-sound/pulseaudio</literal_block>
                     </div>
                     <div aria-labelledby="tab-0-0-6" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-6" name="0-6" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">urpmi \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">sudo urpmi --auto \
   scons \
   task-c++-devel \
-  pkgconfig \
+  wayland-devel \
   "pkgconfig(alsa)" \
   "pkgconfig(glu)" \
   "pkgconfig(libpulse)" \
@@ -179,12 +182,20 @@
                     </div>
                     <div aria-labelledby="tab-0-0-7" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-7" name="0-7" role="tabpanel" tabindex="0">
                         <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pkg_add \
+  pkg-config \
+  py37-scons</literal_block>
+                        <hint>
+                            <paragraph>对于音频支持，你可以选择安装 <literal>pulseaudio</literal>。</paragraph>
+                        </hint>
+                    </div>
+                    <div aria-labelledby="tab-0-0-8" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-8" name="0-8" role="tabpanel" tabindex="0">
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pkg_add \
   python \
   scons \
   llvm</literal_block>
                     </div>
-                    <div aria-labelledby="tab-0-0-8" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-8" name="0-8" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">zypper install \
+                    <div aria-labelledby="tab-0-0-9" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-9" name="0-9" role="tabpanel" tabindex="0">
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">sudo zypper install -y \
   scons \
   pkgconfig \
   libX11-devel \
@@ -192,6 +203,7 @@
   libXrandr-devel \
   libXinerama-devel \
   libXi-devel \
+  wayland-devel \
   Mesa-libGL-devel \
   alsa-devel \
   libpulse-devel \
@@ -199,22 +211,15 @@
   gcc-c++ \
   libGLU1</literal_block>
                     </div>
-                    <div aria-labelledby="tab-0-0-9" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-9" name="0-9" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">pkg_add \
-  pkg-config \
-  py37-scons</literal_block>
-                        <hint>
-                            <paragraph>对于音频支持，你可以选择安装 <literal>pulseaudio</literal>。</paragraph>
-                        </hint>
-                    </div>
                     <div aria-labelledby="tab-0-0-10" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-10" name="0-10" role="tabpanel" tabindex="0">
-                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">eopkg install -c \
-  system.devel \
+                        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">eopkg install -y \
+  -c system.devel \
   scons \
   libxcursor-devel \
   libxinerama-devel \
   libxi-devel \
   libxrandr-devel \
+  wayland-devel \
   mesalib-devel \
   libglu \
   alsa-lib-devel \
@@ -237,17 +242,20 @@
             <note>
                 <paragraph>如果你希望使用 Clang 而不是 GCC 编译器, 可以使用这个命令:</paragraph>
                 <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=linuxbsd use_llvm=yes</literal_block>
-                <paragraph>使用Clang似乎是OpenBSD的要求, 否则字体将无法生成.</paragraph>
+                <paragraph>Using Clang appears to be a requirement for OpenBSD, otherwise fonts
+                    would not build.
+                    For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.</paragraph>
             </note>
-            <note>
-                <paragraph>If you are compiling Godot for production use, then you can
+            <tip>
+                <paragraph>If you are compiling Godot for production use, you can
                     make the final executable smaller and faster by adding the
-                    SCons options <literal>target=template_release production=yes</literal>.</paragraph>
-                <paragraph>If you are compiling Godot with GCC, you can make the binary
-                    even smaller and faster by adding the SCons option <literal>lto=full</literal>.
-                    As link-time optimization is a memory-intensive process,
-                    this will require about 7 GB of available RAM while compiling.</paragraph>
-            </note>
+                    SCons option <literal>production=yes</literal>. This enables additional compiler
+                    optimizations and link-time optimization.</paragraph>
+                <paragraph>LTO takes some time to run and requires about 7 GB of available RAM
+                    while compiling. If you're running out of memory with the above option,
+                    use <literal>production=yes lto=none</literal> or <literal>production=yes lto=thin</literal> for a
+                    lightweight but less effective form of LTO.</paragraph>
+            </tip>
             <note>
                 <paragraph>如果你想为自己的 Godot 构建和官方发布使用单独的编辑器设置，你可以通过在 <literal>bin/</literal> 文件夹中创建一个名为 <literal>._sc_</literal> 或 <literal>_sc_</literal> 的文件来启用 <reference internal="True" refuri="../../../tutorials/io/data_paths#doc-data-paths-self-contained-mode"><inline classes="std std-ref">自包含模式</inline></reference>。</paragraph>
             </note>
@@ -290,10 +298,14 @@ scons platform=linuxbsd target=template_debug arch=x86_64</literal_block>
                 must be copied to:</paragraph>
             <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$HOME/.local/share/godot/export_templates/&lt;version&gt;/</literal_block>
             <paragraph>and named like this (even for *BSD which is seen as "Linux/X11" by Godot):</paragraph>
-            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">linux_x11_32_debug
-linux_x11_32_release
-linux_x11_64_debug
-linux_x11_64_release</literal_block>
+            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">linux_debug.arm32
+linux_debug.arm64
+linux_debug.x86_32
+linux_debug.x86_64
+linux_release.arm32
+linux_release.arm64
+linux_release.x86_32
+linux_release.x86_64</literal_block>
             <paragraph>此外, 如果要编写自定义模块或自定义C ++代码, 则可能需要在此处将二进制文件配置为自定义导出模板:</paragraph>
             <image candidates="{'*': 'contributing/development/compiling/img/lintemplates.png'}" uri="contributing/development/compiling/img/lintemplates.png"></image>
             <paragraph>你甚至不需要复制它们, 只需引用在Godot源文件夹的 <literal>bin/</literal> 目录中生成的文件, 因此下次构建时, 将自动引用自定义模板.</paragraph>
@@ -324,7 +336,7 @@ linux_x11_64_release</literal_block>
                     <paragraph>Follow <reference name="these instructions" refuri="https://github.com/ivmai/libatomic_ops#installation-and-usage">these instructions</reference> to configure, build, and
                         install <literal>libatomic_ops</literal>. Then, copy <literal>/usr/lib/libatomic_ops.a</literal> to <literal>/usr/lib/libatomic.a</literal>, or create a soft link
                         to <literal>libatomic_ops</literal> by command <literal>ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a</literal>. The soft link can ensure the
-                        latest <literal>libatomic_ops</literal> will be used without the need to copy it everytime when it is updated.</paragraph>
+                        latest <literal>libatomic_ops</literal> will be used without the need to copy it every time when it is updated.</paragraph>
                 </list_item>
             </bullet_list>
         </section>
@@ -339,7 +351,7 @@ linux_x11_64_release</literal_block>
                     <paragraph>从<reference name="发布页面" refuri="https://github.com/rui314/mold/releases/latest">发布页面</reference>下载 mold 二进制文件。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>解压 <literal>.tar.gz</literal> 文件，然后将得到的文件夹移动到类似于 <literal>.local/share/mold</literal> 的位置。</paragraph>
+                    <paragraph>Extract the <literal>.tar.gz</literal> file, then move the extracted folder to a location such as <literal>.local/share/mold</literal>.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>将 <literal>$HOME/.local/share/mold/bin</literal> 添加到用户的 <literal>PATH</literal> 环境变量中。例如可以在 <literal>$HOME/.bash_profile</literal> 文件的末尾加上以下内容：</paragraph>

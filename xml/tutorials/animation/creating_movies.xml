@@ -71,7 +71,10 @@
                 <title>命令行用法</title>
                 <paragraph>Movie Maker 也可以通过<reference internal="True" refuri="../editor/command_line_tutorial#doc-command-line-tutorial"><inline classes="std std-ref">命令行</inline></reference>启用：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">godot --path /path/to/your_project --write-movie output.avi</literal_block>
-                <paragraph>如果输出路径是相对路径，那么它是 <strong>相对于项目文件夹</strong> ，而不是当前工作目录。在上面的示例中，文件将被写入 <literal>/path/to/your_project/output.avi</literal> 。此行为类似于 <literal>--export</literal> 命令行参数。</paragraph>
+                <paragraph>If the output path is relative, then it is <strong>relative to the project folder</strong>,
+                    not the current working directory. In the above example, the file will be
+                    written to <literal>/path/to/your_project/output.avi</literal>. This behavior is similar to the
+                    <literal>--export-release</literal> command line argument.</paragraph>
                 <paragraph>由于 Movie Maker 的输出分辨率是由视口大小设置的，因此如果项目使用 <literal>disabled</literal> 或 <literal>canvas_items</literal> <reference internal="True" refuri="../rendering/multiple_resolutions#doc-multiple-resolutions"><inline classes="std std-ref">拉伸模式</inline></reference>，你可以在启动时调整窗口大小以覆盖它：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">godot --path /path/to/your_project --write-movie output.avi --resolution 1280x720</literal_block>
                 <paragraph>请注意，窗口大小受显示器分辨率的限制。如果你需要以比屏幕分辨率更高的分辨率录制视频，请参阅 <reference internal="True" refid="doc-creating-movies-recording-at-higher-resolution"><inline classes="std std-ref">以比屏幕分辨率更高的分辨率进行渲染</inline></reference>。</paragraph>
@@ -174,7 +177,10 @@ func _ready():
             <section ids="converting-avi-video-to-mp4 doc-creating-movies-converting-avi" names="converting\ avi\ video\ to\ mp4 将\ avi\ 视频转换为\ mp4 doc_creating_movies_converting_avi">
                 <title>将 AVI 视频转换为 MP4</title>
                 <paragraph>尽管 YouTube 等一些平台支持直接上传 AVI 文件，但许多其他平台则需要事先进行格式转换。<reference name="HandBrake" refuri="https://handbrake.fr/">HandBrake</reference>（GUI）和 <reference name="FFmpeg" refuri="https://ffmpeg.org/">FFmpeg</reference>（CLI）都是这方面非常流行的开源工具。FFmpeg 的学习曲线相对陡峭，但功能也更强大。</paragraph>
-                <paragraph>下面的命令将 AVI 视频转换为恒定速率因子 (Constant Rate Factor ，CRF) 为 15 的 MP4 (H.264) 视频。这会产生相对较大的文件，但非常适合各种平台（例如大多数视频共享网站），因为平台会重新编码视频将其压缩到它们设置的大小：</paragraph>
+                <paragraph>The command below converts an AVI video to an MP4 (H.264) video with a Constant
+                    Rate Factor (CRF) of 15. This results in a relatively large file, but is
+                    well-suited for platforms that will re-encode your videos to reduce their size
+                    (such as most video sharing websites):</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">ffmpeg -i input.avi -crf 15 output.mp4</literal_block>
                 <paragraph>要以牺牲质量为代价获得较小的文件，请 <emphasis>增加</emphasis> 上述命令中的 CRF 值。</paragraph>
                 <paragraph>要获得具有更好的大小/质量比的文件（以较慢的编码时间为代价），请在上述命令中的 <literal>-crf 15</literal> 之前添加 <literal>-preset veryslow</literal> 。相反地， <literal>-preset veryfast</literal> 可用于实现更快的编码，但代价是尺寸/质量比更差。</paragraph>

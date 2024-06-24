@@ -8,8 +8,7 @@
         <section ids="high-level-vs-low-level-api" names="high-level\ vs\ low-level\ api 高层与底层\ api">
             <title>高层与底层 API</title>
             <paragraph>下面解释了 Godot 高阶、低阶网络的区别以及一些基本原理。如果你想一头扎进去，直接为你的最初的节点添加网络功能，请跳到下面的<reference name="初始化网络" refid="initializing-the-network">初始化网络</reference>。但是请确保稍后阅读其余部分！</paragraph>
-            <paragraph>Godot always supported standard low-level networking via <abbreviation explanation="User Datagram Protocol">UDP</abbreviation>, <abbreviation explanation="Transmission Control Protocol">TCP</abbreviation> and some higher-level protocols such as <abbreviation explanation="Hypertext Transfer Protocol">HTTP</abbreviation> and <abbreviation explanation="Secure Sockets Layer">SSL</abbreviation>.
-                These protocols are flexible and can be used for almost anything. However, using them to synchronize game state manually can be a large amount of work. Sometimes that work can't be avoided or is worth it, for example when working with a custom server implementation on the backend. But in most cases, it's worthwhile to consider Godot's high-level networking API, which sacrifices some of the fine-grained control of low-level networking for greater ease of use.</paragraph>
+            <paragraph>Godot 始终支持通过 <abbreviation explanation="用户数据报协议">UDP</abbreviation>、 <abbreviation explanation="传输控制协议">TCP</abbreviation> 和一些更高级别的协议【如 <abbreviation explanation="安全套接层">SSL</abbreviation> 和 <abbreviation explanation="超文本传输协议">HTTP</abbreviation> 】进行标准的低级网络连接。这些协议非常灵活，几乎可以用于任何用途。然而，使用这些协议来手动同步游戏状态可能需要做大量的工作。这项工作有时是无法避免的，有时候是值得去做的，比如在后台使用自定义服务器实现这种情况下。而在大多数情况下，考虑使用 Godot 的高级网络 API 是值得的，它牺牲了对低级网络的一些细度控制，换来了更强的易用性。</paragraph>
             <paragraph>这是底层协议的固有限制所造成的：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -29,10 +28,7 @@
                 <paragraph>Gaffer On Games有很多关于游戏中网络的有用文章( <reference name="这里" refuri="https://gafferongames.com/categories/game-networking/">这里</reference> ), 包括全面的 <reference name="游戏中的网络模型介绍" refuri="https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/">游戏中的网络模型介绍</reference> .</paragraph>
             </note>
             <warning>
-                <paragraph>Adding networking to your game comes with some responsibility.
-                    It can make your application vulnerable if done wrong and may lead to cheats or exploits.
-                    It may even allow an attacker to compromise the machines your application runs on
-                    and use your servers to send spam, attack others or steal your users' data if they play your game.</paragraph>
+                <paragraph>在你的游戏中加入社交网络需要承担一定的责任. 如果做错了, 它会使你的应用程序很容易受到攻击, 并可能导致欺骗或利用. 它甚至可能允许攻击者破坏你的应用程序运行在的机器, 并使用你的服务器发送垃圾邮件, 攻击其他人或窃取你的用户数据, 如果他们玩你的游戏.</paragraph>
                 <paragraph>当涉及到网络而与Godot无关时, 情况总是如此. 当然, 你可以进行试验, 但是在发布网络应用程序时, 请始终注意任何可能的安全问题.</paragraph>
             </warning>
         </section>
@@ -55,18 +51,17 @@
             <paragraph>托管服务器时， <abbreviation>LAN（局域网）</abbreviation> 上的客户端可以使用内部 IP 地址进行连接，该地址通常是 <literal>192.168.*.*</literal> 格式的。 非 LAN/Internet 客户端 <strong>无法</strong> 访问此内部 IP 地址。</paragraph>
             <paragraph>在 Windows 中， 你可以在命令提示符中输入 <literal>ipconfig</literal> ， 在 macOS 中，你可以在终端中输入 <literal>ifconfig</literal> ，在 Linux 中，你可以在终端中输入 <literal>ip addr</literal> ，从而找到你的内部 IP 地址。</paragraph>
             <paragraph>如果你在自己的机器上托管了服务器，并且想让非内网客户端连接，你可能需要 <emphasis>转发</emphasis> 服务器端口到你的路由。这是使你的服务器能通过互联网访问所必须的，因为大多数家用网络都使用 <title_reference>NAT &lt;https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2&gt;</title_reference> 技术。Godot 的高等级多人 API 只能使用 UDP ，所以你的端口转发必须是 UDP， 不能只转发 TCP。</paragraph>
-            <paragraph>在转发了一个 UDP 端口后，确保你的服务器使用这个端口，你可以在 <title_reference>这里 &lt;https://icanhazip.com/&gt;</title_reference> 找到你的公网 IP 地址。然后把这个公网 IP 地址发送给想联机到你服务器的互联网客户端即可。</paragraph>
+            <paragraph>After forwarding a UDP port and making sure your server uses that port, you can
+                use <reference name="this website" refuri="https://icanhazip.com/">this website</reference> to find your public IP address.
+                Then give this public IP address to any Internet clients that wish to connect to
+                your server.</paragraph>
             <paragraph>Godot 的高等级多人联机 API 使用一个修改过的 ENet 版本，包含全 IPv6 支持。</paragraph>
         </section>
         <section ids="initializing-the-network" names="initializing\ the\ network 初始化网络">
             <title>初始化网络</title>
             <paragraph>High level networking in Godot is managed by the <reference internal="True" refuri="../../classes/class_scenetree#class-scenetree"><inline classes="std std-ref">SceneTree</inline></reference>.</paragraph>
-            <paragraph>Each node has a <literal>multiplayer</literal> property, which is a reference to the <literal>MultiplayerAPI</literal> instance configured for it
-                by the scene tree. Initially, every node is configured with the same default <literal>MultiplayerAPI</literal> object.</paragraph>
-            <paragraph>It is possible to create a new <literal>MultiplayerAPI</literal> object and assign it to a <literal>NodePath</literal> in the the scene tree,
-                which will override <literal>multiplayer</literal> for the node at that path and all of its descendants.
-                This allows sibling nodes to be configured with different peers, which makes it possible to run a server
-                and a client simultaneously in one instance of Godot.</paragraph>
+            <paragraph>每个节点都有一个 <literal>multiplayer</literal> 属性，它是对场景树为其配置的 <literal>MultiplayerAPI</literal> 实例的参考。最初，每个节点都配置相同的预设 <literal>MultiplayerAPI</literal> 物件。</paragraph>
+            <paragraph>可以建立一个新的 <literal>MultiplayerAPI</literal> 物件并将其分配给场景树中的 <literal>NodePath</literal> ，这将覆盖该路径及其所有后代节点的 <literal>multiplayer</literal> 。这允许兄弟节点配置不同的对等点，从而可以在一个Godot实例中同时执行服务器和客户端。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># By default, these expressions are interchangeable.
 multiplayer # Get the MultiplayerAPI object configured for this node.
 get_tree().get_multiplayer() # Get the default MultiplayerAPI object.</literal_block>
@@ -89,13 +84,13 @@ multiplayer.multiplayer_peer = peer</literal_block>
         <section ids="managing-connections" names="managing\ connections 管理连接">
             <title>管理连接</title>
             <paragraph>每个 peer 都会被分配一个唯一 ID。服务器的 ID 永远是 1，客户端会被分配一个随机的正整数。</paragraph>
-            <paragraph>Responding to connections or disconnections is possible by connecting to <literal>MultiplayerAPI</literal>'s signals:</paragraph>
+            <paragraph>可以通过连接到 <literal>MultiplayerAPI</literal> 的信号来响应连接或断开连接：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>peer_connected(id: int)</literal> This signal is emitted with the newly connected peer's ID on each other peer, and on the new peer multiple times, once with each other peer's ID.</paragraph>
+                    <paragraph><literal>peer_connected(id: int)</literal> 此信号在每个其他对等点上与新连接的对等点ID一起发出，并在新对等点上多次发出，其中一次与每个其他对等点ID一起发出。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>peer_disconnected(id: int)</literal> This signal is emitted on every remaining peer when one disconnects.</paragraph>
+                    <paragraph><literal>peer_disconnected（id:int）</literal> 当一个对等体断开连接时，剩余的每个对等体都会发出此信号。</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>The rest are only emitted on clients:</paragraph>
@@ -110,16 +105,14 @@ multiplayer.multiplayer_peer = peer</literal_block>
                     <paragraph><literal>server_disconnected()</literal></paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>To get the unique ID of the associated peer:</paragraph>
+            <paragraph>若要取得关联对等点的唯一ID：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">multiplayer.get_unique_id()</literal_block>
             <paragraph>To check whether the peer is server or client:</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">multiplayer.is_server()</literal_block>
         </section>
         <section ids="remote-procedure-calls" names="remote\ procedure\ calls 远程过程调用">
             <title>远程过程调用</title>
-            <paragraph>Remote procedure calls, or RPCs, are functions that can be called on other peers. To create one, use the <literal>@rpc</literal> annotation
-                before a function definition. To call an RPC, use <literal>Callable</literal>'s method <literal>rpc()</literal> to call in every peer, or <literal>rpc_id()</literal> to
-                call in a specific peer.</paragraph>
+            <paragraph>远程过程调用（RPC）是可以在其他对等方上调用的函数。要创建一个，请在函数定义之前使用 <literal>@rpc</literal> 注释。若要调用RPC，请使用 <literal>Callable</literal> 的方法 <literal>rpc()</literal> 在每个对等方中调用，或使用 <literal>rpc_id()</literal> 在特定对等方中进行调用。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _ready():
     if multiplayer.is_server():
         print_once_per_client.rpc()
@@ -127,36 +120,24 @@ multiplayer.multiplayer_peer = peer</literal_block>
 @rpc
 func print_once_per_client():
     print("I will be printed to the console once per each connected client.")</literal_block>
-            <paragraph>RPCs will not serialize objects or callables.</paragraph>
-            <paragraph>For a remote call to be successful, the sending and receiving node need to have the same <literal>NodePath</literal>, which means they
-                must have the same name. When using <literal>add_child()</literal> for nodes which are expected to use RPCs, set the argument
-                <literal>force_readable_name</literal> to <literal>true</literal>.</paragraph>
+            <paragraph>RPC不会序列化对象或可调用程序。</paragraph>
+            <paragraph>要使远程调用成功，发送节点和接收节点需要具有相同的 <literal>NodePath</literal> ，这意味着它们必须具有相同的名称。对预期使用RPC的节点使用 <literal>add_child()</literal> 时，请将参数 <literal>force_readable_name</literal> 设置为 <literal>true</literal> 。</paragraph>
             <warning>
-                <paragraph>If a function is annotated with <literal>@rpc</literal> on the client script (resp. server script),
-                    then this function must also be declared on the server script (resp. client script).
-                    Both RPCs must have the same signature which is evaluated with a checksum of <strong>all RPCs</strong>.
-                    All RPCs in a script are checked at once, and all RPCs must be declared on both the client
-                    scripts and the server scripts, <strong>even functions that are currently not in use</strong>.</paragraph>
-                <paragraph>The signature of the RPC includes the <literal>@rpc()</literal> declaration, the function, return type,
-                    AND the nodepath. If an RPC resides in a script attached to <literal>/root/Main/Node1</literal>, then it
-                    must reside in precisely the same path and node on both the client script and the server
-                    script. Function arguments (example: <literal>func sendstuff():</literal> and <literal>func sendstuff(arg1, arg2):</literal>
-                    <strong>will pass</strong> signature matching).</paragraph>
-                <paragraph>If these conditions are not met (if all RPCs do not pass signature matching), the script may print an
-                    error or cause unwanted behavior. The error message may be unrelated to the RPC function you are
-                    currently building and testing.</paragraph>
-                <paragraph>See further explanation and troubleshooting on <reference name="this post" refuri="https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138">this post</reference>.</paragraph>
+                <paragraph>如果一个函数在客户端脚本（resp.server脚本）上用 <literal>@rpc</literal> 注释，那么这个函数也必须在服务器脚本（resp.client脚本）上声明。两个RPC必须具有相同的签名，该签名使用 <strong>all RPCs</strong> 的校验和进行评估。同时检查脚本中的所有RPC，并且必须在客户端脚本和服务器脚本上声明所有RPC，<strong>even functions that are currently not in use</strong>。</paragraph>
+                <paragraph>RPC 的签名包括 <literal>@rpc()</literal> 声明、函数、返回类型和节点路径。如果 RPC 驻留在附加到 <literal>/root/Main/Node1</literal> 的脚本中，则它必须驻留在客户端脚本和服务器脚本上完全相同的路径和节点中。函数参数（例如 <literal>func sendstuff():</literal> 和 <literal>func sendstuff(arg1, arg2):</literal> <strong>能够成功匹配</strong>签名）。</paragraph>
+                <paragraph>如果不满足这些条件（如果所有RPC都没有通过签名匹配），脚本可能会打印错误或导致不必要的行为。错误消息可能与你当前正在构建和测试的RPC函数无关。</paragraph>
+                <paragraph>请参阅本帖的进一步解释和故障排除&lt;<reference refuri="https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138">https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138</reference>&gt;`__.</paragraph>
             </warning>
-            <paragraph>The annotation can take a number of arguments, which have default values. <literal>@rpc</literal> is equivalent to:</paragraph>
+            <paragraph>注释可以采用多个参数，这些参数具有预设值。 <literal>@rpc</literal> 相当于：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@rpc("authority", "call_remote", "unreliable", 0)</literal_block>
             <paragraph>The parameters and their functions are as follows:</paragraph>
             <paragraph><literal>mode</literal>：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>"authority"</literal>: Only the multiplayer authority (the server) can call remotely.</paragraph>
+                    <paragraph><literal>"authority"</literal> ：只有多人权限（服务器）才能远程调用。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>"any_peer"</literal>: Clients are allowed to call remotely. Useful for transferring user input.</paragraph>
+                    <paragraph><literal>“any_peer”</literal> ：允许客户端进行远程呼叫。用于传输用户输入。</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph><literal>remotesync</literal> ：</paragraph>
@@ -165,24 +146,24 @@ func print_once_per_client():
                     <paragraph><literal>"call_remote"</literal>: The function will not be called on the local peer.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>"call_local"</literal>: The function can be called on the local peer. Useful when the server is also a player.</paragraph>
+                    <paragraph><literal>“call_local”</literal> ：该函数可以在本地对等机上调用。当服务器也是玩家时很有用。</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph><literal>transform</literal> ：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>"unreliable"</literal> Packets are not acknowledged, can be lost, and can arrive at any order.</paragraph>
+                    <paragraph><literal>"unreliable"</literal> 数据包不被确认，可能丢失，并且可以按任何顺序到达。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>"unreliable_ordered"</literal> Packets are received in the order they were sent in. This is achieved by ignoring packets that arrive later if another that was sent after them has already been received. Can cause packet loss if used incorrectly.</paragraph>
+                    <paragraph><literal>"unreliable_ordered"</literal> 封包按照发送的顺序接收。这是透过忽略稍后到达的封包（如果已经收到在它们之后发送的另一个封包）来实作的。如果使用不当可能会导致丢包。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>"reliable"</literal> Resend attempts are sent until packets are acknowledged, and their order is preserved. Has a significant performance penalty.</paragraph>
+                    <paragraph><literal>"reliable"</literal> 发送重新传送尝试，直到封包被确认为止，并且它们的顺序被保留。具有显著的性能损失。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><literal>transfer_channel</literal> is the channel index.</paragraph>
-            <paragraph>The first 3 can be passed in any order, but <literal>transfer_channel</literal> must always be last.</paragraph>
-            <paragraph>The function <literal>multiplayer.get_remote_sender_id()</literal> can be used to get the unique id of an rpc sender, when used within the function called by rpc.</paragraph>
+            <paragraph><literal>transfer_channel</literal> 是频道索引。</paragraph>
+            <paragraph>前3个可以按任何顺序传递，但 <literal>transfer_channel</literal> 必须始终是最后一个。</paragraph>
+            <paragraph>当在rpc呼叫的函式中使用时，函式 <literal>multiplayer.get_remote_sender_id()</literal> 可用于取得rpc发送者的唯一ID。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _on_some_input(): # Connected to some input.
     transfer_some_input.rpc_id(1) # Send the input only to the server.
 
@@ -196,19 +177,14 @@ func transfer_some_input():
         </section>
         <section ids="channels" names="channels 通道">
             <title>通道</title>
-            <paragraph>Modern networking protocols support channels, which are separate connections within the connection. This allows for multiple
-                streams of packets that do not interfere with each other.</paragraph>
-            <paragraph>For example, game chat related messages and some of the core gameplay messages should all be sent reliably, but a gameplay
-                message should not wait for a chat message to be acknowledged. This can be achieved by using different channels.</paragraph>
-            <paragraph>Channels are also useful when used with the unreliable ordered transfer mode. Sending packets of variable size with this transfer mode can
-                cause packet loss, since packets which are slower to arrive are ignored. Separating them into multiple streams of homogeneous packets
-                by using channels allows ordered transfer with little packet loss, and without the latency penalty caused by reliable mode.</paragraph>
-            <paragraph>The default channel with index 0 is actually three different channels - one for each transfer mode.</paragraph>
+            <paragraph>现代网络协定支持信道，信道是连接内的单独连接。这允许多个封包流互不干扰。</paragraph>
+            <paragraph>例如，游戏聊天相关讯息和一些核心游戏信息都应该可靠地发送，但游戏信息不应等待聊天信息被确认。这可以透过使用不同的管道来实作。</paragraph>
+            <paragraph>当与不可靠的有序传输模式一起使用时，信道也很有用。使用此传输模式发送可变大小的封包可能会导致封包遗失，因为到达较慢的封包将被忽略。透过使用信道将它们分成多个同质封包流，可以实作有序传输，且封包遗失很少，并且不会因可靠模式而导致延迟损失。</paragraph>
+            <paragraph>索引为0的默认通道实际上是三个不同的通道——每个传输模式一个。</paragraph>
         </section>
         <section ids="example-lobby-implementation" names="example\ lobby\ implementation 大厅的示例实现">
             <title>大厅的示例实现</title>
-            <paragraph>This is an example lobby that can handle peers joining and leaving, notify UI scenes through signals, and start the game after all clients
-                have loaded the game scene.</paragraph>
+            <paragraph>这是一个示例大厅，可以处理同伴的加入和离开，透过信号通知UI场景，并在所有客户端加载游戏场景后启动游戏。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">extends Node
 
 # Autoload named Lobby
@@ -318,7 +294,7 @@ func _on_server_disconnected():
     multiplayer.multiplayer_peer = null
     players.clear()
     server_disconnected.emit()</literal_block>
-            <paragraph>The game scene's root node should be named Game. In the script attached to it:</paragraph>
+            <paragraph>游戏场景的根节点应命名为Game。在附加的脚本中：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">extends Node3D # Or Node2D.
 
 

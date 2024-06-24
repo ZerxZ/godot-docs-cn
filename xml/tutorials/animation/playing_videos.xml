@@ -128,7 +128,9 @@
             </bullet_list>
             <paragraph>在这种情况下，你可以<strong>将视频使用高质量格式渲染作为中介</strong>（例如高比特率 H.264 视频），然后再重新编码成 Ogg Theora。理想情况下，你应该使用无损或者未压缩格式作为中介格式，最大化输出 Ogg Theora 视频的质量，不过这样做会需要大量的磁盘空间。</paragraph>
             <paragraph><reference name="HandBrake" refuri="https://handbrake.fr/">HandBrake</reference>（GUI）和 <reference name="FFmpeg" refuri="https://ffmpeg.org/">FFmpeg</reference>（CLI）都是这方面非常流行的开源工具。FFmpeg 的学习曲线相对陡峭，但功能也更强大。</paragraph>
-            <paragraph>这是将 MP4 视频转换为 Ogg Theora 的 FFmpeg 命令示例。因为 FFmpeg 支持很多输入格式，几乎任何输入视频格式（AVI、MOV、WebM……）应该都可以使用下面的命令。</paragraph>
+            <paragraph>Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
+                FFmpeg supports a lot of input formats, you should be able to use the commands
+                below with almost any input video format (AVI, MOV, WebM, …).</paragraph>
             <note>
                 <paragraph>请确保你的 FFmpeg 副本是启用 libtheora 和 libvorbis 编译的。检查方法是不带任何参数执行 <literal>ffmpeg</literal>，然后查看命令输出中的 <literal>configuration:</literal> 一行。</paragraph>
             </note>

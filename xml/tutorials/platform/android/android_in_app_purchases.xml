@@ -72,7 +72,7 @@ enum ConnectionState {
             <section ids="query-available-items" names="query\ available\ items">
                 <title>Query available items</title>
                 <paragraph>Once the API has connected, query SKUs using <literal>querySkuDetails()</literal>. You must successfully complete
-                    a SKU query before calling the <literal>purchase()</literal> or <literal>queryPurchases()</literal> functions,
+                    an SKU query before calling the <literal>purchase()</literal> or <literal>queryPurchases()</literal> functions,
                     or they will return an error. <literal>querySkuDetails()</literal> takes two parameters: an array
                     of SKU name strings, and a string specifying the type of SKU being queried.
                     The SKU type string should be <literal>"inapp"</literal> for normal in-app purchases or <literal>"subs"</literal> for subscriptions.
@@ -287,7 +287,7 @@ func _handle_purchase_token(purchase_token, purchase_successful):
                 <paragraph>Default behavior is <literal>IMMEDIATE_WITH_TIME_PRORATION</literal>.</paragraph>
                 <paragraph>Example use of <literal>updateSubscription</literal>:</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">payment.updateSubscription(_active_subscription_purchase.purchase_token, \
-                                            "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)</literal_block>
+                    "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)</literal_block>
                 <paragraph>The <literal>confirmPriceChange()</literal> function can be used to launch price change confirmation flow
                     for a subscription. Pass the product id of the subscription SKU subject to the price change.
                     The result will be sent by the <literal>price_change_acknowledged</literal> signal.</paragraph>

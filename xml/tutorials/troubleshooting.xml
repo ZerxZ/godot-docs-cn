@@ -67,6 +67,14 @@
             <paragraph>要在 Windows 上禁用此覆盖，请在 NVIDIA 控制面板中将图形驱动程序设置恢复为默认值。</paragraph>
             <paragraph>要在 Linux 上禁用此覆盖，请打开 <literal>nvidia-settings</literal>，转到 <strong>X Screen 0 &gt; OpenGL Settings</strong>，然后取消选中 <strong>Enable Graphics API Visual Indicator</strong>。</paragraph>
         </section>
+        <section ids="a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window" names='a\ microphone\ or\ "refresh"\ icon\ appears\ in\ the\ bottom-right\ corner\ of\ the\ project\ manager\ and\ editor\ window'>
+            <title>A microphone or "refresh" icon appears in the bottom-right corner of the Project Manager and editor window</title>
+            <paragraph>This is caused by the NVIDIA graphics driver injecting an overlay to display
+                instant replay information on ShadowPlay recording. This overlay can only be
+                seen on Windows, as Linux does not have support for ShadowPlay.</paragraph>
+            <paragraph>To disable this overlay, press <literal classes="kbd">Alt + Z</literal> (default shortcut for the NVIDIA overlay)
+                and disable <strong>Settings &gt; HUD Layout &gt; Status Indicator</strong> in the NVIDIA overlay.</paragraph>
+        </section>
         <section ids="the-editor-or-project-appears-overly-sharp-or-blurry" names="the\ editor\ or\ project\ appears\ overly\ sharp\ or\ blurry 编辑器或项目显示得过于锐利或模糊">
             <title>编辑器或项目显示得过于锐利或模糊</title>
             <figure align="center" ids="id1">

@@ -75,19 +75,19 @@
         </section>
         <section ids="which-programming-languages-are-supported-in-godot" names="which\ programming\ languages\ are\ supported\ in\ godot? godot\ 支持哪些编程语言？">
             <title>Godot 支持哪些编程语言？</title>
-            <paragraph>Godot 官方支持的语言是 GDScript、C# 和 C++。请参阅<reference internal="True" refuri="../tutorials/scripting/index#toc-learn-scripting"><inline classes="std std-ref">脚本</inline></reference>章节中的各个语言的相关段落。</paragraph>
-            <paragraph>如果你刚开始接触 Godot 或一般的游戏开发，推荐学习并使用 GDScript 语言，因为它是 Godot 的原生语言。虽然从长远来看，脚本语言的性能往往不如低级语言，但对于原型设计、开发最小可行产品（MVP）和关注上市时间（TTM）来说，GDScript 将提供一种快速、友好、有能力的游戏开发方式。</paragraph>
+            <paragraph>Godot 官方支持的语言是 GDScript、C# 和 C++，详细请参阅<reference internal="True" refuri="../tutorials/scripting/index#toc-learn-scripting"><inline classes="std std-ref">脚本</inline></reference>章节中各个语言的相关段落。</paragraph>
+            <paragraph>如果你刚开始接触 Godot 或一般的游戏开发，推荐学习并使用 GDScript 语言，它是 Godot 的原生语言。虽从长远来看，脚本语言的性能往往不如低级语言，但对于原型设计、开发最小可行产品（MVP）以及关注上市时间（TTM）而言，GDScript 可提供一种快速、友好、能力强的游戏开发方式。</paragraph>
             <paragraph>请注意，加入 C# 支持的时间相对较短，因此你可能会遇到一些问题。Web 平台目前也缺少 C# 支持。我们友好而勤奋的开发社区随时准备在出现新问题时解决这些问题，但由于这是一个开源项目，我们建议你先自己进行一些评估。通过搜索关于<reference name="未解决问题" refuri="https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%3Adotnet">未解决问题</reference>的讨论来排除问题。</paragraph>
             <paragraph>对于新语言，可以通过第三方使用 GDExtension 获得支持（请参阅下面关于插件的问题）。目前工作正在进行，例如，Godot 与 <reference name="Python" refuri="https://github.com/touilleMan/godot-python">Python</reference><target ids="python" names="python" refuri="https://github.com/touilleMan/godot-python"></target> 和 <reference name="Nim" refuri="https://github.com/pragmagic/godot-nim">Nim</reference><target ids="nim" names="nim" refuri="https://github.com/pragmagic/godot-nim"></target> 的非官方绑定。</paragraph>
             <target refid="doc-faq-what-is-gdscript"></target>
         </section>
-        <section ids="what-is-gdscript-and-why-should-i-use-it doc-faq-what-is-gdscript" names="what\ is\ gdscript\ and\ why\ should\ i\ use\ it? gdscript\ 是什么？为什么要用它？ doc_faq_what_is_gdscript">
-            <title>GDScript 是什么？为什么要用它？</title>
-            <paragraph>GDScript 是 Godot 所集成的脚本语言。它是从头开始构建的，目标是用最少的代码让 Godot 的潜力最大化，使新手和专业开发人员都能尽可能快地利用 Godot 的优势。如果你曾经用类似 Python 这样的语言写过任何东西，那么你会感到得心应手。如果你想了解关于 GDScript 的示例以及完整的功能介绍，请查看 <reference internal="True" refuri="../tutorials/scripting/gdscript/gdscript_basics#doc-gdscript"><inline classes="std std-ref">GDScript 脚本指南</inline></reference>。</paragraph>
-            <paragraph>使用 GDScript 有不少原因，尤其是你在进行原型设计时、在项目的 alpha/beta 阶段、或者项目不是 3A 大作时。但最突出的优势就是整体<strong>复杂度降低</strong>。</paragraph>
+        <section ids="what-is-gdscript-and-why-should-i-use-it doc-faq-what-is-gdscript" names="what\ is\ gdscript\ and\ why\ should\ i\ use\ it? gdscript\ 是什么？为什么要使用这门语言？ doc_faq_what_is_gdscript">
+            <title>GDScript 是什么？为什么要使用这门语言？</title>
+            <paragraph>GDScript 是 Godot 所集成的一门是从零开始构建的脚本语言，其目的就是用最少的代码将 Godot 的潜力最大化地发挥出来，让新手和专业开发人员都能尽可能快地利用 Godot 的优势进行开发。如果你曾经用类似 Python 这样的语言写过任何东西，那么你就会对 GDScript 感到得心应手。想了解关于 GDScript 的示例以及完整的功能介绍，请参阅 <reference internal="True" refuri="../tutorials/scripting/gdscript/gdscript_basics#doc-gdscript"><inline classes="std std-ref">GDScript 脚本指南</inline></reference>。</paragraph>
+            <paragraph>使用 GDScript 有不少原因，特别是你在进行原型设计时、在项目的 alpha/beta 阶段、或者项目不是 3A 大作时会用到它，但 GDScript 最突出的优势就是整体<strong>复杂度得到降低</strong>。</paragraph>
             <paragraph>为 Godot 创建一个紧密集成的自定义脚本语言的初衷有两点：首先，它减少了启动和运行Godot 所需的时间，使开发人员沉浸于引擎并专注生产力；其次，它减少了维护的总体负担，降低了问题的维度，让引擎开发者专注于排除错误并改进与引擎核心相关的功能，而不是花费大量时间试图在一大堆语言中获得一小部分增量功能。</paragraph>
-            <paragraph>由于 Godot 是开源项目，因此从一开始就必须优先考虑更加集成和无缝的体验，而不是通过支持大多人熟悉的编程语言来吸引更多用户——特别是在支持那些大多人熟悉的语言会导致更糟糕的体验时。我们理解你更想在 Godot 中使用其他语言（请参阅上面支持的选项列表）。话虽如此，如果你还没试过 GDScript，先试<strong>三天</strong>。就像 Godot 一样，一旦你看到它有多强大并且开发多迅速，我们认为你将对 GDScript 刮目相看。</paragraph>
-            <paragraph>有关熟悉 GDScript 或动态类型语言的更多信息，请参阅 <reference internal="True" refuri="../tutorials/scripting/gdscript/gdscript_advanced#doc-gdscript-more-efficiently"><inline classes="std std-ref">GDScript：动态语言入门</inline></reference> 教程。</paragraph>
+            <paragraph>由于 Godot 是开源项目，因此 GDScript 的开发从一开始就必须优先考虑更加集成、无缝的体验，而不是通过支持大多人熟悉的编程语言来吸引更多用户——特别是在支持那些大多人熟悉的语言会导致更糟糕的开发体验时。我们理解你更想在 Godot 中使用其他语言（请参阅前面支持的语言列表）。话虽如此，如果你还没试过 GDScript，那就先试它个<strong>三天</strong>。就像 Godot 一样，一旦你看到它的强大之处与开发之迅速，我们相信，你定将会对 GDScript 刮目相看。</paragraph>
+            <paragraph>有关熟习 GDScript 或动态类型语言的更多信息，请参阅 <reference internal="True" refuri="../tutorials/scripting/gdscript/gdscript_advanced#doc-gdscript-more-efficiently"><inline classes="std std-ref">GDScript：动态语言入门</inline></reference> 教程。</paragraph>
         </section>
         <section ids="what-were-the-motivations-behind-creating-gdscript" names="what\ were\ the\ motivations\ behind\ creating\ gdscript? 创建\ gdscript\ 背后的动机是什么？">
             <title>创建 GDScript 背后的动机是什么？</title>
@@ -113,7 +113,7 @@
                     <paragraph>难以与代码编辑器集成从而提供代码补全、实时编辑等功能（其他语言都这样）。</paragraph>
                 </list_item>
             </enumerated_list>
-            <paragraph>GDScript 是为了减少上述问题以及防止更多问题而设计的。</paragraph>
+            <paragraph>GDScript 正是为了减少上述问题，同时防止其他更多问题而设计的。</paragraph>
         </section>
         <section ids="what-3d-model-formats-does-godot-support" names="what\ 3d\ model\ formats\ does\ godot\ support? godot\ 支持哪些\ 3d\ 模型格式？">
             <title>Godot 支持哪些 3D 模型格式？</title>
@@ -135,7 +135,7 @@
                     <paragraph><reference name="GDNative 的继任者，GDExtension 来了！" refuri="https://godotengine.org/article/introducing-gd-extensions">GDNative 的继任者，GDExtension 来了！</reference><target ids="gdnative-gdextension" names="gdnative\ 的继任者，gdextension\ 来了！" refuri="https://godotengine.org/article/introducing-gd-extensions"></target></paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>你还可以查看 GDScript 的实现，Godot 模块以及 Godot 的<reference name="Jolt 物理引擎集成" refuri="https://github.com/godot-jolt/godot-jolt">Jolt 物理引擎集成</reference>。这个将是你了解如何将第三方库整合到 Godot 中的一个很好的起点。</paragraph>
+            <paragraph>你还可以查看 GDScript 的实现，Godot 模块以及 Godot 的<reference name="Jolt 物理引擎集成" refuri="https://github.com/godot-jolt/godot-jolt">Jolt 物理引擎集成</reference>。如果想要了解如何将第三方库整合到 Godot 里面去，那么这些将是你在此领域的一个良好的起点。</paragraph>
         </section>
         <section ids="how-do-i-install-the-godot-editor-on-my-system-for-desktop-integration" names="how\ do\ i\ install\ the\ godot\ editor\ on\ my\ system\ (for\ desktop\ integration)? 如何在我的系统上安装\ godot\ 编辑器（进行桌面集成）？">
             <title>如何在我的系统上安装 Godot 编辑器（进行桌面集成）？</title>
@@ -183,13 +183,17 @@
             <title>Godot 编辑器是绿色应用吗？</title>
             <paragraph>默认配置下，Godot 是<emphasis>半绿色</emphasis>的。从任何位置运行都可以运行它的可执行文件（包括无法写入的位置），无须管理员权限。</paragraph>
             <paragraph>不过，配置文件会写入到针对用户的配置或数据目录。通常来说，这是不错的做法，但也意味着将包含 Godot 可执行文件的文件夹复制到另一台机器上是无法带走配置文件的。更多信息请参阅 <reference internal="True" refuri="../tutorials/io/data_paths#doc-data-paths"><inline classes="std std-ref">Godot 项目中的文件路径</inline></reference>。</paragraph>
-            <paragraph>如果你需要<emphasis>真·绿色</emphasis>的操作（例如放到 U 盘上使用），请按照 <reference internal="True" refuri="../tutorials/io/data_paths#doc-data-paths-self-contained-mode"><inline classes="std std-ref">自包含模式</inline></reference> 中的步骤操作。</paragraph>
+            <paragraph>If <emphasis>true</emphasis> portable operation is desired (e.g. for use on a USB stick),
+                follow the steps in <reference internal="True" refuri="../tutorials/io/data_paths#doc-data-paths-self-contained-mode"><inline classes="std std-ref">自包含模式</inline></reference>.</paragraph>
         </section>
-        <section ids="why-does-godot-use-vulkan-or-opengl-instead-of-direct3d" names="why\ does\ godot\ use\ vulkan\ or\ opengl\ instead\ of\ direct3d? 为什么\ godot\ 使用\ vulkan/opengl\ 而不是\ direct3d？">
-            <title>为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D？</title>
+        <section ids="why-does-godot-prioritize-vulkan-and-opengl-over-direct3d" names="why\ does\ godot\ prioritize\ vulkan\ and\ opengl\ over\ direct3d?">
+            <title>Why does Godot prioritize Vulkan and OpenGL over Direct3D?</title>
             <paragraph>Godot 致力于实现跨平台兼容性和开放式标准。OpenGL 和 Vulkan 是几乎在所有平台上都开放且可用的技术。得益于这一设计，在 Windows 上使用 Godot 开发的项目也能在 Linux、macOS 等平台上开箱即用。</paragraph>
-            <paragraph>由于 Godot 只有少数人在处理其渲染器，因此我们希望维护较少的渲染后端。最重要的是，在所有平台上使用单个 API 可以提高一致性，减少特定于平台的问题。</paragraph>
-            <paragraph>从长远来看，我们可能会为 Godot 开发 Direct3D 12 渲染器（主要用于 Xbox ），但 Vulkan 和 OpenGL 仍将是所有平台（包括 Windows）上的默认渲染后端。</paragraph>
+            <paragraph>While Vulkan and OpenGL remain our primary focus for their open standard and
+                cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
+                This addition aims to enhance performance and compatibility on platforms where
+                Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
+                will continue as the default rendering backends on all platforms, including Windows.</paragraph>
         </section>
         <section ids="why-does-godot-aim-to-keep-its-core-feature-set-small" names="why\ does\ godot\ aim\ to\ keep\ its\ core\ feature\ set\ small? 为什么\ godot\ 旨在保持其核心功能集较小？">
             <title>为什么 Godot 旨在保持其核心功能集较小？</title>
@@ -338,7 +342,7 @@
             <paragraph>尽管 Godot 的内部实现中尽可能的使用了缓存一致性，但我们认为不应该强迫用户使用 DOD。</paragraph>
             <paragraph>DOD 主要是缓存一致性优化，只有在每帧需要处理数以万计的对象，并且做出的修改较少时，才能够提供显著的性能提升。假如你每帧要移动的精灵或敌人只有几百个，那么 DOD 并不会带来有意义的性能提升。在这种情况下，你应该考虑别的优化手段。</paragraph>
             <paragraph>绝大多数游戏都不需要这个, 并且Godot提供了方便的辅助工具来完成大多数情况下的工作.</paragraph>
-            <paragraph>如果一个游戏的确需要处理较多数量游戏对象，那么我们建议使用 C++ 和 GDExtensions 处理需要高性能的部分，使用 GDScript（或 C#）负责游戏的其它部分。</paragraph>
+            <paragraph>如果一个游戏的确需要处理数量较多的游戏对象，那么建议使用 C++ 和 GDExtensions 处理那些需要高性能的部分，使用 GDScript（或 C#）来负责游戏的其它部分。</paragraph>
         </section>
         <section ids="how-can-i-support-godot-development-or-contribute" names="how\ can\ i\ support\ godot\ development\ or\ contribute? 如何支持或参与\ godot\ 的发展？">
             <title>如何支持或参与 Godot 的发展？</title>

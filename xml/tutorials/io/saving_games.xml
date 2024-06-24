@@ -126,7 +126,7 @@ foreach (Node saveNode in saveNodes)
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
 func save_game():
-    var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+    var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
     var save_nodes = get_tree().get_nodes_in_group("Persist")
     for node in save_nodes:
         # Check the node is an instanced scene so it can be instanced again during load.
@@ -146,7 +146,7 @@ func save_game():
         var json_string = JSON.stringify(node_data)
 
         # Store the save dictionary as a new line in the save file.
-        save_game.store_line(json_string)</literal_block>
+        save_file.store_line(json_string)</literal_block>
                 </div>
                 <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Note: This can be called from anywhere inside the tree. This function is
@@ -155,7 +155,7 @@ func save_game():
 // dict of relevant variables.
 public void SaveGame()
 {
-    using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
+    using var saveFile = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
 
     var saveNodes = GetTree().GetNodesInGroup("Persist");
     foreach (Node saveNode in saveNodes)
@@ -181,7 +181,7 @@ public void SaveGame()
         var jsonString = Json.Stringify(nodeData);
 
         // Store the save dictionary as a new line in the save file.
-        saveGame.StoreLine(jsonString);
+        saveFile.StoreLine(jsonString);
     }
 }</literal_block>
                 </div>
@@ -214,9 +214,9 @@ func load_game():
 
     # Load the file line by line and process that dictionary to restore
     # the object it represents.
-    var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
-    while save_game.get_position() &lt; save_game.get_length():
-        var json_string = save_game.get_line()
+    var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+    while save_file.get_position() &lt; save_file.get_length():
+        var json_string = save_file.get_line()
 
         # Creates the helper class to interact with JSON
         var json = JSON.new()
@@ -263,11 +263,11 @@ public void LoadGame()
 
     // Load the file line by line and process that dictionary to restore the object
     // it represents.
-    using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
+    using var saveFile = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
 
-    while (saveGame.GetPosition() &lt; saveGame.GetLength())
+    while (saveFile.GetPosition() &lt; saveFile.GetLength())
     {
-        var jsonString = saveGame.GetLine();
+        var jsonString = saveFile.GetLine();
 
         // Creates the helper class to interact with JSON
         var json = new Json();
@@ -340,14 +340,7 @@ public void LoadGame()
                         <paragraph>二进制序列化在编解码自定义类时需要更少的自定义逻辑。</paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph>Note that not all properties are included. Only properties that are configured
-                    with the <reference internal="True" refuri="../../classes/class_@globalscope#class-globalscope-constant-property-usage-storage"><inline classes="std std-ref">PROPERTY_USAGE_STORAGE</inline></reference>
-                    flag set will be serialized. You can add a new usage flag to a property by overriding the
-                    <reference internal="True" refuri="../../classes/class_object#class-object-private-method-get-property-list"><inline classes="std std-ref">_get_property_list</inline></reference>
-                    method in your class. You can also check how property usage is configured by
-                    calling <literal>Object._get_property_list</literal>.
-                    See <reference internal="True" refuri="../../classes/class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> for the
-                    possible usage flags.</paragraph>
+                <paragraph>请注意，并非所有属性都包含在内。仅使用：ref:<title_reference>PROPERTY_USAGE_STORAGE&lt;class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE&gt;</title_reference> 标志集将被序列化。通过重写类中的：ref:<title_reference>_get_property_list&lt;class_Object_private_method__get_property-list&gt;</title_reference> 方法，可以向属性添加新的用法标志。你还可以通过调用``Object_get_property_list``来检查如何配置属性使用。请参阅：ref:<title_reference>PropertyUsageFlags&lt;enum_@GlobalScope_PropertyUsageFlags&gt;</title_reference> 以获取可能的使用标志。</paragraph>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>
         </section>

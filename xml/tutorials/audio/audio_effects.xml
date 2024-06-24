@@ -6,7 +6,7 @@
     <section ids="audio-effects doc-audio-effects" names="audio\ effects 音频特效 doc_audio_effects">
         <title>音频特效</title>
         <paragraph>Godot 包含多种音频效果，可以将它们添加到音频总线以更改通过该总线的每个音频文件。</paragraph>
-        <image candidates="{'*': 'tutorials/audio/img/audio_buses4.png'}" uri="tutorials/audio/img/audio_buses4.png"></image>
+        <image candidates="{'*': 'tutorials/audio/img/audio_buses4.webp'}" uri="tutorials/audio/img/audio_buses4.webp"></image>
         <paragraph>全部试一试，感受声音的改变。下面是对以上效果的简短描述:</paragraph>
         <section ids="amplify" names="amplify 增幅(amplify)">
             <title>增幅(Amplify)</title>
@@ -85,6 +85,12 @@
             <title>过滤器</title>
             <paragraph>滤波器是所有其他处理器继承自的效果，不能直接使用。</paragraph>
         </section>
+        <section ids="hardlimiter" names="hardlimiter">
+            <title>HardLimiter</title>
+            <paragraph>A limiter is similar to a compressor, but it's less flexible and designed to
+                prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to the final point of
+                the Master bus is good practice, as it offers an easy safeguard against clipping.</paragraph>
+        </section>
         <section ids="highpassfilter" names="highpassfilter 高通滤波器(\ highpassfilter)">
             <title>高通滤波器( HighPassFilter)</title>
             <paragraph>这些滤波器削减低于特定 <emphasis>截断</emphasis> 频率的频率. 高通滤波器用于降低信号的低音含量。</paragraph>
@@ -96,9 +102,13 @@
         </section>
         <section ids="limiter doc-audio-buses-limiter" names="limiter 限幅器(limiter) doc_audio_buses_limiter">
             <title>限幅器(Limiter)</title>
-            <paragraph>A limiter is similar to a compressor, but it's less flexible and designed to
-                prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to the final point of
-                the Master bus is good practice, as it offers an easy safeguard against clipping.</paragraph>
+            <paragraph>This is the old limiter effect, and it is recommended to use the new HardLimiter
+                effect instead.</paragraph>
+            <paragraph>Here is an example of how this effect works, if the ceiling is set to -12 dB, and the
+                threshold is 0 dB, all samples going through get reduced by 12dB. This changes the
+                waveform of the sound and introduces distortion.</paragraph>
+            <paragraph>This effect is being kept to preserve compatibility, however it should be considered
+                deprecated.</paragraph>
         </section>
         <section ids="lowpassfilter" names="lowpassfilter 低通滤波器(lowpassfilter)">
             <title>低通滤波器(LowPassFilter)</title>

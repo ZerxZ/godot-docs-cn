@@ -30,10 +30,116 @@
             <note>
                 <paragraph>为了安全起见，在编辑器中预览动画时，方法调用轨道上的事件不会被执行。</paragraph>
             </note>
-            <paragraph>要创建这样的轨道，请单击“添加轨道 -&gt; 方法调用轨道”。然后，一个窗口会打开，让你选择要与轨道关联的节点。要调用节点的方法，请右键单击时间轴，然后选择“插入关键帧”。一个窗口会打开，显示可用的方法列表。双击其中一个方法以完成创建关键帧。</paragraph>
+            <paragraph>To create such a track in the editor, click "Add Track -&gt; Call Method Track." Then, a window
+                opens and lets you select the node to associate with the track. To call one of
+                the node's methods, right-click the timeline and select "Insert Key". A window
+                opens with a list of available methods. Double-click one to finish creating the
+                keyframe.</paragraph>
             <image candidates="{'*': 'tutorials/animation/img/node_methods.webp'}" uri="tutorials/animation/img/node_methods.webp"></image>
             <paragraph>要更改方法调用或其参数，请单击关键帧并转到检查器面板。在那里，你可以更改要调用的方法。如果展开“Args”部分，你将看到一个可编辑的参数列表。</paragraph>
             <image candidates="{'*': 'tutorials/animation/img/node_method_args.webp'}" uri="tutorials/animation/img/node_method_args.webp"></image>
+            <paragraph>To create such a track through code, pass a dictionary that contains the target method's name
+                and parameters as the Variant for <literal>key</literal> in <literal>Animation.track_insert_key()</literal>. The keys and
+                their expected values are as follows:</paragraph>
+            <table>
+                <tgroup cols="2">
+                    <colspec colwidth="39"></colspec>
+                    <colspec colwidth="77"></colspec>
+                    <thead>
+                        <row>
+                            <entry>
+                                <paragraph><strong>Key</strong></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph><strong>Value</strong></paragraph>
+                            </entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>
+                                <paragraph><literal>"method"</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>The name of the method as a <literal>String</literal></paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <paragraph><literal>"args"</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph>The arguments to pass to the function as an <literal>Array</literal></paragraph>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-0-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Create a call method track.
+func create_method_animation_track():
+    # Get or create the animation the target method will be called from.
+    var animation = $AnimationPlayer.get_animation("idle")
+    # Get or create the target method's animation track.
+    var track_index = animation.add_track(Animation.TYPE_METHOD)
+    # Make the arguments for the target method jump().
+    var jump_velocity = -400.0
+    var multiplier = randf_range(.8, 1.2)
+    # Get or create a dictionary with the target method's name and arguments.
+    var method_dictionary = {
+        "method": "jump",
+        "args": [jump_velocity, multiplier],
+    }
+
+    # Set scene-tree path to node with target method.
+    animation.track_set_path(track_index, ".")
+    # Add the dictionary as the animation method track's key.
+    animation.track_insert_key(track_index, 0.6, method_dictionary, 0)
+
+
+# The target method that will be called from the animation.
+func jump(jump_velocity, multiplier):
+    velocity.y = jump_velocity * multiplier</literal_block>
+                </div>
+                <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Create a call method track.
+public void CreateAnimationTrack()
+{
+    // Get reference to the AnimationPlayer.
+    var animationPlayer = GetNode&lt;AnimationPlayer&gt;("AnimationPlayer");
+    // Get or create the animation the target method will be called from.
+    var animation = animationPlayer.GetAnimation("idle");
+    // Get or create the target method's animation track.
+    var trackIndex = animation.AddTrack(Animation.TrackType.Method);
+    // Make the arguments for the target method Jump().
+    var jumpVelocity = -400.0;
+    var multiplier = GD.RandRange(.8, 1.2);
+    // Get or create a dictionary with the target method's name and arguments.
+    var methodDictionary = new Godot.Collections.Dictionary
+    {
+        { "method", MethodName.Jump },
+        { "args", new Godot.Collections.Array { jumpVelocity, multiplier } }
+    };
+
+    // Set scene-tree path to node with target method.
+    animation.TrackSetPath(trackIndex, ".");
+    // Add the dictionary as the animation method track's key.
+    animation.TrackInsertKey(trackIndex, 0.6, methodDictionary, 0);
+}
+
+
+// The target method that will be called from the animation.
+private void Jump(float jumpVelocity, float multiplier)
+{
+    Velocity = new Vector2(Velocity.X, jumpVelocity * multiplier);
+}</literal_block>
+                </div>
+            </container>
         </section>
         <section ids="bezier-curve-track" names="bezier\ curve\ track 贝塞尔曲线轨道">
             <title>贝塞尔曲线轨道</title>
@@ -44,6 +150,12 @@
             <paragraph>要创建一个贝塞尔曲线轨道，请单击“添加轨道 -&gt; 贝塞尔曲线轨道”。与属性轨道一样，你需要选择要设置动画的节点和属性。请单击动画轨道右侧的曲线图标以打开贝塞尔曲线编辑器。</paragraph>
             <image candidates="{'*': 'tutorials/animation/img/bezier_curve_icon.webp'}" uri="tutorials/animation/img/bezier_curve_icon.webp"></image>
             <paragraph>在编辑器中，帧由实心菱形表示，空心菱形通过线控制曲线的形状连接到它们。</paragraph>
+            <tip>
+                <paragraph>For better precision while manually working with curves, you might want to alter
+                    the zoom levels of the editor. The slider on the bottom right of the editor can be used to
+                    zoom in and out on the time axis, you can also do that with <literal classes="kbd">Ctrl + Shift + Mouse wheel</literal>.
+                    Using <literal classes="kbd">Ctrl + Alt + Mouse wheel</literal> will zoom in and out on the Y axis</paragraph>
+            </tip>
             <image candidates="{'*': 'tutorials/animation/img/bezier_curves.webp'}" uri="tutorials/animation/img/bezier_curves.webp"></image>
             <paragraph>在编辑器右键面板中，可以选择控柄模式：</paragraph>
             <bullet_list bullet="-">

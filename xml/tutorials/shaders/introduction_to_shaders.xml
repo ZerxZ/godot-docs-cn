@@ -87,7 +87,8 @@ render_mode unshaded, cull_disabled;</literal_block>
             <paragraph>每种着色器类型都有不同的渲染模式。每种着色器类型的完整渲染模式列表请参阅参考手册。</paragraph>
             <section ids="vertex-processor" names="vertex\ processor 顶点处理器">
                 <title>顶点处理器</title>
-                <paragraph>在 <literal>spatial</literal> 和 <literal>canvas_item</literal> 着色器中，会为每一个顶点调用 <literal>vertex()</literal> 处理函数。在 <literal>particles</literal> 着色器中则会为每一个粒子调用一次。</paragraph>
+                <paragraph>The <literal>vertex()</literal> processing function is called once for every vertex in
+                    <literal>spatial</literal> and <literal>canvas_item</literal> shaders.</paragraph>
                 <paragraph>你的世界中的几何体上，每一个顶点都有位置、颜色等属性。该函数会修改这些值，并将其传入片段函数。你也可以借助 varying 向片段着色器传递额外的数据。</paragraph>
                 <paragraph>默认情况下，Godot 会为你对顶点信息进行变换，这是将几何体投影到屏幕上所必须的。你可以使用渲染模式来自行变换数据；示例见 <reference internal="True" refuri="shader_reference/spatial_shader#doc-spatial-shader"><inline classes="std std-ref">Spatial 着色器文档</inline></reference>。</paragraph>
             </section>

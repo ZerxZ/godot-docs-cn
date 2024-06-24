@@ -20,7 +20,6 @@ extends Node
 ## Initializes states and delegates engine callbacks ([method Node._physics_process],
 ## [method Node._unhandled_input]) to the state.
 
-
 signal state_changed(previous, new)
 
 @export var initial_state: Node
@@ -173,24 +172,22 @@ enum Tiles {
                 <title>行尾逗号</title>
                 <paragraph>请在数组、字典和枚举的最后一行使用逗号，这样，在添加新元素时就不需要修改最后一行了，既能让版本控制中的重构更容易，也会让 Diff 也更美观。</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
-                <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Tiles {
-    TILE_BRICK,
-    TILE_FLOOR,
-    TILE_SPIKE,
-    TILE_TELEPORT,
-}</literal_block>
+                <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">var array = [
+    1,
+    2,
+    3,
+]</literal_block>
                 <paragraph><strong>不规范示例</strong> :</paragraph>
-                <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Tiles {
-    TILE_BRICK,
-    TILE_FLOOR,
-    TILE_SPIKE,
-    TILE_TELEPORT
-}</literal_block>
+                <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">var array = [
+    1,
+    2,
+    3
+]</literal_block>
                 <paragraph>单行列表中不需要行尾逗号，故在此情况下不要添加逗号。</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
-                <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}</literal_block>
+                <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">var array = [1, 2, 3]</literal_block>
                 <paragraph><strong>不规范示例</strong> :</paragraph>
-                <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT,}</literal_block>
+                <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">var array = [1, 2, 3,]</literal_block>
             </section>
             <section ids="blank-lines" names="blank\ lines 空白行">
                 <title>空白行</title>
@@ -217,7 +214,8 @@ func take_damage(amount, effect=null):
             </section>
             <section ids="one-statement-per-line" names="one\ statement\ per\ line 一条语句一行">
                 <title>一条语句一行</title>
-                <paragraph>不要在同一行上合并多个语句。不要像 C 语言那样使用单行条件语句。</paragraph>
+                <paragraph>Avoid combining multiple statements on a single line, including conditional
+                    statements, to adhere to the GDScript style guidelines for readability.</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">if position.x &gt; width:
     position.x = 0
@@ -310,18 +308,25 @@ if position.x &gt; 200 and position.x &lt; 400 and position.y &gt; 300 and posit
             </section>
             <section ids="whitespace" names="whitespace 空格">
                 <title>空格</title>
-                <paragraph>时刻记得在运算符前后和逗号后使用一个空格。同时，请避免在字典引用和函数调用中使用多余的空格。</paragraph>
+                <paragraph>Always use one space around operators and after commas. Also, avoid extra spaces
+                    in dictionary references and function calls. One exception to this is for
+                    single-line dictionary declarations, where a space should be added after the
+                    opening brace and before the closing brace. This makes the dictionary easier to
+                    visually distinguish from an array, as the <literal>[]</literal> characters look close to
+                    <literal>{}</literal> with most fonts.</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">position.x = 5
 position.y = target_position.y + 10
 dict["key"] = 5
 my_array = [4, 5, 6]
+my_dictionary = { key = "value" }
 print("foo")</literal_block>
                 <paragraph><strong>不规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">position.x=5
 position.y = mpos.y+10
 dict ["key"] = 5
 myarray = [4,5,6]
+my_dictionary = {key = "value"}
 print ("foo")</literal_block>
                 <paragraph>不要用空格去垂直对齐表达式：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">x        = 100
@@ -420,6 +425,17 @@ signal score_changed</literal_block>
     AIR,
     FIRE,
 }</literal_block>
+                <paragraph>Write enums with each item on its own line. This allows adding documentation comments abve each item
+                    more easily, and also makes for cleaner diffs in version control when items are added or removed.</paragraph>
+                <paragraph><strong>规范示例</strong> :</paragraph>
+                <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Element {
+    EARTH,
+    WATER,
+    AIR,
+    FIRE,
+}</literal_block>
+                <paragraph><strong>不规范示例</strong> :</paragraph>
+                <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Element { EARTH, WATER, AIR, FIRE }</literal_block>
             </section>
         </section>
         <section ids="code-order" names="code\ order 代码顺序">
@@ -482,7 +498,13 @@ extends Node
                 <paragraph>然后，按该顺序依次写入常量、导出变量、公共变量、私有变量和就绪加载（onready）变量。</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">signal player_spawned(position)
 
-enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
+enum Jobs {
+    KNIGHT,
+    WIZARD,
+    ROGUE,
+    HEALER,
+    SHAMAN,
+}
 
 const MAX_LIVES = 3
 

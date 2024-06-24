@@ -576,10 +576,20 @@
                         </row>
                         <row>
                             <entry>
+                                <paragraph><literal>--import</literal></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> Starts the editor, waits for any resources to be imported, and then quits. Implies <literal>--editor</literal> and <literal>--quit</literal>.</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
                                 <paragraph><literal>--export-release &lt;preset&gt; &lt;path&gt;</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> 使用给定的预设和匹配的发布模板导出项目。预设名称应与 export_presets.cfg 中定义的名称一致。 <literal>&lt;路径&gt;</literal> 应为项目目录的绝对或相对路径，并包含二进制文件的文件名（例如 “builds/game.exe”）。并且目标目录应该存在。</paragraph>
+                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> Export the project using the given preset and matching release template. The preset name should match one defined in export_presets.cfg.
+                                    <literal>&lt;path&gt;</literal> should be absolute or relative to the project directory, and include the filename for the binary (e.g. 'builds/game.exe'). The target
+                                    directory should exist. Implies <literal>--import</literal>.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -587,7 +597,7 @@
                                 <paragraph><literal>--export-debug &lt;preset&gt; &lt;path&gt;</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> 与 <literal>--export-release</literal> 类似，但使用调试模板。</paragraph>
+                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> Like <literal>--export-release</literal>, but use debug template. Implies <literal>--import</literal>.</paragraph>
                             </entry>
                         </row>
                         <row>
@@ -595,7 +605,8 @@
                                 <paragraph><literal>--export-pack &lt;预设&gt; &lt;路径&gt;</literal></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> 与 <literal>--export-release</literal> 类似，但只会以预设参数导出游戏包。<literal>&lt;path&gt;</literal> 的扩展名决定它是 PCK 还是 ZIP 格式。</paragraph>
+                                <paragraph><image alt="editor" candidates="{'*': 'tutorials/editor/img/editor.svg'}" uri="tutorials/editor/img/editor.svg"></image> Like <literal>--export-release</literal>, but only export the game pack for the given preset. The <literal>&lt;path&gt;</literal> extension determines whether it will be in PCK
+                                    or ZIP format. Implies <literal>--import</literal>.</paragraph>
                             </entry>
                         </row>
                         <row>

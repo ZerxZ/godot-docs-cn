@@ -92,8 +92,11 @@
         </section>
         <section ids="exporting-from-the-command-line" names="exporting\ from\ the\ command\ line 从命令行导出">
             <title>从命令行导出</title>
-            <paragraph>在生产中, 自动化构建很有用,Godot使用 <literal>--export</literal> 和 <literal>--export-debug</literal> 命令行参数来支持它. 从命令行导出仍需要导出预设来定义导出参数. 该命令的基本调用将是:</paragraph>
-            <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">godot --export "Windows Desktop" some_name.exe</literal_block>
+            <paragraph>In production, it is useful to automate builds, and Godot supports this
+                with the <literal>--export-release</literal> and <literal>--export-debug</literal> command line parameters.
+                Exporting from the command line still requires an export preset to define
+                the export parameters. A basic invocation of the command would be:</paragraph>
+            <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">godot --export-release "Windows Desktop" some_name.exe</literal_block>
             <paragraph>假设有一个名为“Windows Desktop”的预设，并且可以找到模板，它将导出为 <literal>some_name.exe</literal>（如果导出预设的名字中存在空格或特殊字符，就必须放在引号里）。输出路径是<emphasis>相对于项目的路径</emphasis>或者<emphasis>绝对路径</emphasis>；<strong>它使用的不是命令被调用时的目录</strong>。</paragraph>
             <paragraph>输出的文件扩展名应该与 Godot 导出过程所使用的相匹配：</paragraph>
             <bullet_list bullet="-">
@@ -118,8 +121,10 @@
             </bullet_list>
             <paragraph>你还可以将其配置为<emphasis>仅</emphasis>导出 PCK 或 ZIP 文件，能够让多个 Godot 可执行文件执行同一个导出的主包文件。这样做时，仍然必须在命令行中指明导出预设的名称：</paragraph>
             <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">godot --export-pack "Windows Desktop" some_name.pck</literal_block>
-            <paragraph>将 <literal>--export</literal> 标志与 <literal>--path</literal> 标志组合起来通常很有用，这样你就不必在运行命令之前 <literal>cd</literal> 到项目文件夹中了：</paragraph>
-            <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">godot --path /path/to/project --export "Windows Desktop" some_name.exe</literal_block>
+            <paragraph>It is often useful to combine the <literal>--export-release</literal> flag with the <literal>--path</literal>
+                flag, so that you do not need to <literal>cd</literal> to the project folder before running
+                the command:</paragraph>
+            <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">godot --path /path/to/project --export-release "Windows Desktop" some_name.exe</literal_block>
             <seealso>
                 <paragraph>关于从命令行使用 Godot 的更多信息，请参阅 <reference internal="True" refuri="../editor/command_line_tutorial#doc-command-line-tutorial"><inline classes="std std-ref">命令行教程</inline></reference>。</paragraph>
             </seealso>

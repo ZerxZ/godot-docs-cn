@@ -186,30 +186,19 @@
             <title>着色</title>
             <section ids="shading-mode" names="shading\ mode 着色模式">
                 <title>着色模式</title>
-                <paragraph>Godot has a more or less uniform cost per pixel thanks to the depth pre-pass.
-                    All lighting calculations are made by running the lighting shader on every
-                    pixel.</paragraph>
-                <paragraph>As these calculations are costly, performance can be brought down considerably
-                    in some corner cases such as drawing several layers of transparency (which is
-                    common in particle systems). Switching to the <strong>Unshaded</strong> shading mode may help improve
-                    performance in these cases, especially when the camera is close to particles.</paragraph>
-                <paragraph>Additionally, on low-end or mobile devices, switching to unshaded rendering
-                    can considerably increase rendering performance.</paragraph>
+                <paragraph>得益于深度贴图让引擎能够预先跳过不需要渲染的像素，Godot 渲染一个像素的成本或多或少是一致的。所有照明计算都是通过在每个像素上运行照明着色器来完成的。</paragraph>
+                <paragraph>由于这些计算成本很高，因此在某些极端情况下可以大大降低性能，例如绘制几层透明度（这在粒子系统中很常见）。在这些情况下，切换到 <strong>无光照（Unshaded）</strong> 着色模式可能会改善这些情况下的性能表现，尤其是当相机贴近粒子的时候。</paragraph>
+                <paragraph>此外，在低端或移动设备上，切换到无光照渲染可以显著提高渲染性能。</paragraph>
                 <image candidates="{'*': 'tutorials/3d/img/spatial_material26.png'}" uri="tutorials/3d/img/spatial_material26.png"></image>
-                <paragraph>Keep in mind that when unshaded rendering is enabled, lights will not affect the
-                    material at all.</paragraph>
+                <paragraph>请注意，启用unshaded rendering (无着色渲染)后，光照将不会影响材质。</paragraph>
                 <note>
-                    <paragraph><strong>Per-Vertex</strong> shading is listed as an option in the shading mode property.
-                        However, per-vertex shading is currently unimplemented and will act
-                        identical to per-pixel shading.</paragraph>
-                    <paragraph>Support for per-vertex shading is planned to be reimplemented in a future
-                        Godot release.</paragraph>
+                    <paragraph><strong>Per-Vertex</strong> （逐顶点）着色在着色模式属性中作为一个选项列出。然而，per-vertex 着色目前尚未实现，其作用与 per-pixel （逐像素）着色相同。</paragraph>
+                    <paragraph>计划在未来的 Godot 版本中重新实现对 pre-vertex 着色的支持。</paragraph>
                 </note>
             </section>
             <section ids="diffuse-mode" names="diffuse\ mode diffuse\ mode(漫反射模式)">
                 <title>Diffuse Mode(漫反射模式)</title>
-                <paragraph>Specifies the algorithm used by diffuse scattering of light when hitting
-                    the object. The default is <strong>Burley</strong>. Other modes are also available:</paragraph>
+                <paragraph>指定光线照射到物体时发生漫散射所使用的算法。默认为 <strong>Burley</strong> 。也可选择其他模式：</paragraph>
                 <bullet_list bullet="*">
                     <list_item>
                         <paragraph><strong>Burley：</strong>默认模式，原始的 Disney Principled PBS 漫反射算法。</paragraph>
@@ -341,6 +330,11 @@
             <title>Refraction(折射)</title>
             <paragraph>当启用折射时，Godot 会尝试从正在渲染的对象后面获取信息。这允许以类似于现实生活中折射的方式扭曲透明度。</paragraph>
             <paragraph>记住使用透明的反照率纹理（或减少反照率颜色的 alpha 通道）使折射可见，因为折射依赖于透明度才能产生可见效果。</paragraph>
+            <paragraph>Refraction also takes the material roughness into account. Higher roughness
+                values will make the objects behind the refraction look blurrier, which
+                simulates real life behavior. If you can't see behind the object when refraction
+                is enabled and albedo transparency is reduced, decrease the material's
+                <strong>Roughness</strong> value.</paragraph>
             <paragraph>可以选择在 <strong>Refraction Texture</strong> 属性中指定法线贴图，以便在每个像素的基础上扭曲折射方向。</paragraph>
             <image candidates="{'*': 'tutorials/3d/img/spatial_material23.png'}" uri="tutorials/3d/img/spatial_material23.png"></image>
             <note>
@@ -457,8 +451,8 @@
             <paragraph>这通常用于创建廉价的轮廓. 添加第二个material pass, 使其变为黑色, 无阴影(unshaded), 反向剔除(Cull Front), 并添加一些增长:</paragraph>
             <image candidates="{'*': 'tutorials/3d/img/spatial_material11.png'}" uri="tutorials/3d/img/spatial_material11.png"></image>
         </section>
-        <section ids="transform" names="transform 变换">
-            <title>变换</title>
+        <section ids="transform" names="transform">
+            <title>Transform</title>
             <section ids="fixed-size" names="fixed\ size fixed\ size(固定大小)">
                 <title>Fixed Size(固定大小)</title>
                 <paragraph>这使得无论距离如何, 对象都以相同的大小呈现. 这主要用于指示物(无深度测试和高渲染优先级)和某些类型的广告牌.</paragraph>
@@ -482,7 +476,25 @@
             <paragraph>Godot允许材质通过彼此接近以及取决于与观察者的距离而隐去。邻近淡入淡出（Proximity Fade）对于诸如软粒子或大量水平滑地过渡到海岸很有效。</paragraph>
             <image candidates="{'*': 'tutorials/3d/img/spatial_material_proxfade.gif'}" uri="tutorials/3d/img/spatial_material_proxfade.gif"></image>
             <paragraph>距离渐变适用于在一定距离后才出现的光轴或指示器。</paragraph>
-            <paragraph>请注意，使用 <strong>Pixel Alpha</strong> 模式启用近距离渐变或远距离渐变时，会启用 Alpha 混合。Alpha 混合对 GPU 的要求较高，可能会导致透明度排序问题。Alpha 混合也会禁用许多材质功能，例如投射阴影的功能。如果要在角色离摄像机太近时隐藏他们，可以考虑使用 <strong>Pixel Dither</strong> 或更好的 <strong>Object Dither</strong>（它比 <strong>Pixel Dither</strong> 更快）。</paragraph>
+            <paragraph>Keep in mind enabling proximity fade or distance fade with <strong>Pixel Alpha</strong> mode
+                enables alpha blending. Alpha blending is more GPU-intensive and can cause
+                transparency sorting issues. Alpha blending also disables many material
+                features such as the ability to cast shadows.</paragraph>
+            <note>
+                <paragraph>To hide a character when they get too close to the camera, consider using
+                    <strong>Pixel Dither</strong> or better, <strong>Object Dither</strong> (which is even faster than
+                    <strong>Pixel Dither</strong>).</paragraph>
+            </note>
+            <paragraph><strong>Pixel Alpha</strong> mode: The actual transparency of a pixel of the object changes
+                with distance to the camera. This is the most effect, but forces the material
+                into the transparency pipeline (which leads, for example, to no shadows).</paragraph>
+            <image candidates="{'*': 'tutorials/3d/img/standart_material_distance_fade_pixel_alpha_mode.webp'}" uri="tutorials/3d/img/standart_material_distance_fade_pixel_alpha_mode.webp"></image>
+            <paragraph><strong>Pixel Dither</strong> mode: What this does is sort of approximate the transparency
+                by only having a fraction of the pixels rendered.</paragraph>
+            <image candidates="{'*': 'tutorials/3d/img/standart_material_distance_fade_pixel_dither_mode.webp'}" uri="tutorials/3d/img/standart_material_distance_fade_pixel_dither_mode.webp"></image>
+            <paragraph><strong>Object Dither</strong> mode: Like the previous mode, but the calculated transparency
+                is the same across the entire object's surface.</paragraph>
+            <image candidates="{'*': 'tutorials/3d/img/standart_material_distance_fade_object_dither_mode.webp'}" uri="tutorials/3d/img/standart_material_distance_fade_object_dither_mode.webp"></image>
         </section>
         <section ids="material-settings" names="material\ settings 材质设置">
             <title>材质设置</title>

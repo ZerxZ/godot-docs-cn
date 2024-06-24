@@ -70,8 +70,12 @@
             <paragraph>在这种情况下, 我们不需要旋转骨头, 巧合的是, 精灵中的下巴指向右边, 但万一需要, 可以随意旋转. 同样, 这只是对尖端骨骼的真正需要, 因为带有子节点通常不需要长度或特定的旋转.</paragraph>
             <paragraph>继续构建整个骨架：</paragraph>
             <image candidates="{'*': 'tutorials/animation/img/skel2d13.png'}" uri="tutorials/animation/img/skel2d13.png"></image>
-            <paragraph>你会注意到，所有骨骼节点旁都有一个烦人的警告，提示你缺少放松姿势。这意味着是时候设置一个了。转到<emphasis>骨架</emphasis>节点并创建一个放松姿势。这个姿势是默认的，你可以随时回来修改（对于制作动画来说非常方便）：</paragraph>
-            <image candidates="{'*': 'tutorials/animation/img/skel2d14.png'}" uri="tutorials/animation/img/skel2d14.png"></image>
+            <paragraph>You will notice that all bones raise a warning about a missing rest pose. A rest
+                pose is the default pose for a skeleton, you can come back to it anytime you want
+                (which is very handy for animating). To set one click on the <emphasis>skeleton</emphasis> node in
+                the scene tree, then click on the <literal>Skeleton2D</literal> button in the toolbar, and select
+                <literal>Overwrite Rest Pose</literal> from the dropdown menu.</paragraph>
+            <image candidates="{'*': 'tutorials/animation/img/skel2d14.webp'}" uri="tutorials/animation/img/skel2d14.webp"></image>
             <paragraph>警告消失了。如果你修改骨架（添加/移除骨骼）你需要重新设置放松姿势。</paragraph>
         </section>
         <section ids="deforming-the-polygons" names="deforming\ the\ polygons 多边形的变形">

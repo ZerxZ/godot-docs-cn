@@ -11,49 +11,77 @@
 public partial class ExportExample : Node3D
 {
     [Export]
-    private int Number = 5;
+    public int Number { get; set; } = 5;
 }</literal_block>
         <paragraph>在这个例子中，数值 <literal>5</literal> 将被保存，在构建当前项目后，它将在属性编辑器中可见。</paragraph>
         <paragraph>导出成员变量的基本好处之一，便是让这些变量在编辑器中可见可改，这样一来，美术师和游戏设计师就可以修改这些会影响程序运行方式的值。为此，Godot 提供了一种特殊的导出语法。</paragraph>
-        <paragraph>导出只适用于<reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">与 Variant 兼容</inline></reference>的类型。</paragraph>
+        <paragraph>Exporting can only be done with <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant 兼容类型</inline></reference>.</paragraph>
         <note>
             <paragraph>GDScript 中也能够导出属性，相关信息见 <reference internal="True" refuri="../gdscript/gdscript_exports#doc-gdscript-exports"><inline classes="std std-ref">GDScript 导出属性</inline></reference>。</paragraph>
         </note>
         <section ids="basic-use" names="basic\ use 基本用法">
             <title>基本用法</title>
-            <paragraph>导出包、补丁、Mod。</paragraph>
+            <paragraph>Exporting works with fields and properties. They can have any access modifier.</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 private int _number;
 
 [Export]
 public int Number { get; set; }</literal_block>
             <paragraph>导出的成员可以指定默认值；否则，将使用类型的 <reference name="默认值" refuri="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/default-values">默认值</reference><target ids="id1" names="默认值" refuri="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/default-values"></target> 。</paragraph>
+            <paragraph>An <literal>int</literal> like <literal>Number</literal> defaults to <literal>0</literal>. <literal>Text</literal> defaults to null because
+                <literal>string</literal> is a reference type.</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-private int _number; // Defaults to '0'
+public int Number { get; set; }
 
 [Export]
-private string _text; // Defaults to 'null' because it's a reference type
+public string Text { get; set; }</literal_block>
+            <paragraph>Default values can be specified for fields and properties.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+private string _greeting = "Hello World";
 
 [Export]
-private string _greeting = "Hello World"; // Exported field specifies a default value
+public string Greeting { get; set; } = "Hello World";</literal_block>
+            <paragraph>Properties with a backing field use the default value of the backing field.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private int _number = 2;
 
 [Export]
-public string Greeting { get; set; } = "Hello World"; // Exported property specifies a default value
-
-// This property uses `_greeting` as its backing field, so the default value
-// will be the default value of the `_greeting` field.
-[Export]
-public string GreetingWithBackingField
+public int NumberWithBackingField
 {
-    get =&gt; _greeting;
-    set =&gt; _greeting = value;
+    get =&gt; _number;
+    set =&gt; _number = value;
 }</literal_block>
-            <paragraph>可以导出资源和节点。</paragraph>
+            <note>
+                <paragraph>A property's <literal>get</literal> is not actually executed to determine the default
+                    value. Instead, Godot analyzes the C# source code. This works fine for most
+                    cases, such as the examples on this page. However, some properties are too
+                    complex for the analyzer to understand.</paragraph>
+                <paragraph>For example, the following property attempts to use math to display the
+                    default value as <literal>5</literal> in the property editor, but it doesn't work:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public int NumberWithBackingField
+{
+    get =&gt; _number + 3;
+    set =&gt; _number = value - 3;
+}
+
+private int _number = 2;</literal_block>
+                <paragraph>The analyzer doesn't understand this code and falls back to the default
+                    value for <literal>int</literal>, <literal>0</literal>. However, when running the scene or inspecting a
+                    node with an attached tool script, <literal>_number</literal> will be <literal>2</literal>, and
+                    <literal>NumberWithBackingField</literal> will return <literal>5</literal>. This difference may cause
+                    confusing behavior. To avoid this, don't use complex properties. Alternatively,
+                    if the default value can be explicitly specified, it can be overridden with the
+                    <reference internal="True" refuri="../../../classes/class_object#class-object-private-method-property-can-revert"><inline classes="std std-ref">_PropertyCanRevert()</inline></reference> and
+                    <reference internal="True" refuri="../../../classes/class_object#class-object-private-method-property-get-revert"><inline classes="std std-ref">_PropertyGetRevert()</inline></reference> methods.</paragraph>
+            </note>
+            <paragraph>Any type of <literal>Resource</literal> or <literal>Node</literal> can be exported. The property editor shows
+                a user-friendly assignment dialog for these types. This can be used instead of
+                <literal>GD.Load</literal> and <literal>GetNode</literal>. See <reference internal="True" refid="doc-c-sharp-exports-nodes"><inline classes="std std-ref">Nodes and Resources</inline></reference>.</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-public Resource Resource { get; set; }
+public PackedScene PackedScene { get; set; }
 
 [Export]
-public Node Node { get; set; }</literal_block>
+public RigidBody2D RigidBody2D { get; set; }</literal_block>
         </section>
         <section ids="grouping-exports" names="grouping\ exports 导出分组">
             <title>导出分组</title>
@@ -77,7 +105,7 @@ public string Text { get; set; } = "";
 
 [ExportCategory("Extra Category")]
 [Export]
-private bool Flag { get; set; } = false;</literal_block>
+public bool Flag { get; set; } = false;</literal_block>
             <note>
                 <paragraph>属性列表是根据类继承来组织的，而新的分类会打破这种预期。使用它们时要小心，尤其是在创建公共项目时。</paragraph>
             </note>
@@ -131,42 +159,51 @@ public float TransitionSpeed { get; set; }</literal_block>
             <title>颜色</title>
             <paragraph>使用红、绿、蓝、Alpha 值指定普通颜色。</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-private Color Color { get; set; }</literal_block>
+public Color Color { get; set; }</literal_block>
             <paragraph>使用红、绿、蓝值指定颜色（此时Alpha 始终为 1）。</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export(PropertyHint.ColorNoAlpha)]
-private Color Color { get; set; }</literal_block>
+public Color Color { get; set; }</literal_block>
+            <target refid="doc-c-sharp-exports-nodes"></target>
         </section>
-        <section ids="nodes" names="nodes 节点">
+        <section ids="nodes doc-c-sharp-exports-nodes" names="nodes 节点 doc_c_sharp_exports_nodes">
             <title>节点</title>
             <paragraph>从 Godot 4.0 开始，节点可以直接导出，而不需要使用节点路径(NodePath)。</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Node Node { get; set; }</literal_block>
-            <paragraph>也可以使用自定义节点类，参见 <reference internal="True" refuri="c_sharp_global_classes#doc-c-sharp-global-classes"><inline classes="std std-ref">C# 全局类</inline></reference> 。</paragraph>
+            <paragraph>A specific type of node can also be directly exported. The list of nodes shown
+                after pressing "Assign" in the inspector is filtered to the specified type, and
+                only a correct node can be assigned.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
+public Sprite2D Sprite2D { get; set; }</literal_block>
+            <paragraph>Custom node classes can also be exported directly. The filtering behavior
+                depends on whether the custom class is a
+                <reference internal="True" refuri="c_sharp_global_classes#doc-c-sharp-global-classes"><inline classes="std std-ref">global class</inline></reference>.</paragraph>
             <paragraph>如有需要，仍可以像 Godot 3.x 中那样导出 NodePath：</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-private NodePath _nodePath;
+public NodePath NodePath { get; set; }
 
 public override void _Ready()
 {
-    var node = GetNode(_nodePath);
+    var node = GetNode(NodePath);
 }</literal_block>
         </section>
         <section ids="resources" names="resources 资源">
             <title>资源</title>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-private Resource Resource;</literal_block>
+public Resource Resource { get; set; }</literal_block>
             <paragraph>在检查器里，可以将资源文件从文件系统面板中拖放到导出变量所对应的槽位中。</paragraph>
             <paragraph>展开检查器下拉菜单可能导致一个极长的可能创建的类别列表。因此，如果你指定从 Resource 派生的类型的话：</paragraph>
             <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
-private AnimationNode Resource;</literal_block>
+public AnimationNode AnimationNode { get; set; }</literal_block>
             <paragraph>那么下拉菜单将只限于 AnimationNode 及其所有继承的类。也可以使用自定义的资源类，参见 <reference internal="True" refuri="c_sharp_global_classes#doc-c-sharp-global-classes"><inline classes="std std-ref">C# 全局类</inline></reference> 。</paragraph>
             <paragraph>必须注意：即使在在编辑器模式中未运行脚本，导出的属性仍可编辑。这一点可以与 <reference internal="True" refuri="../gdscript/gdscript_basics#doc-gdscript-tool-mode"><inline classes="std std-ref">使用工具模式的脚本</inline></reference> 配合使用。</paragraph>
         </section>
         <section ids="exporting-bit-flags" names="exporting\ bit\ flags 导出位标记">
             <title>导出位标记</title>
             <paragraph>具有 <literal>[Flags]</literal> 特性的枚举类型的成员可以被导出，它们的值被限制为枚举类型的成员。编辑器将在检查器中创建一个小部件，允许选择枚举成员中的零个、一个或多个。该值将被存储为整数。</paragraph>
-            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Use power of 2 values for the values of the enum members.
-[Flags]
+            <paragraph>A flags enum uses powers of 2 for the values of the enum members. Members that
+                combine multiple flags using logical OR (<literal>|</literal>) are also possible.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Flags]
 public enum MyEnum
 {
     Fire = 1 &lt;&lt; 1,
@@ -174,15 +211,15 @@ public enum MyEnum
     Earth = 1 &lt;&lt; 3,
     Wind = 1 &lt;&lt; 4,
 
-    // A combination of flags is also possible.
     FireAndWater = Fire | Water,
 }
 
 [Export]
 public SpellElements MySpellElements { get; set; }</literal_block>
-            <paragraph>用作位标志的整数可以在一个属性中存储多个 <literal>true</literal>/ <literal>false</literal>（布尔）值。通过使用导出提示 <literal>int, FLAGS, ...</literal>，可以在编辑器中设置它们。</paragraph>
-            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Set any of the given flags from the editor.
-[Export(PropertyHint.Flags, "Fire,Water,Earth,Wind")]
+            <paragraph>Integers used as bit flags can store multiple <literal>true</literal>/<literal>false</literal> (boolean)
+                values in one property. By using the <literal>Flags</literal> property hint, any of the given
+                flags can be set from the editor.</paragraph>
+            <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export(PropertyHint.Flags, "Fire,Water,Earth,Wind")]
 public int SpellElements { get; set; } = 0;</literal_block>
             <paragraph>你必须为每个标志提供一个字符串描述。在这个例子中， <literal>Fire</literal> 的值是 1， <literal>Water</literal> 的值是 2， <literal>Earth</literal> 的值是 4， <literal>Wind</literal> 对应的值是 8。通常，应相应地定义常量（例如 <literal>private const int ElementWind = 8</literal> 等等）。</paragraph>
             <paragraph>你可以使用冒号添加显式的值：</paragraph>
@@ -234,10 +271,12 @@ public string CharacterName { get; set; } = "Rebecca";</literal_block>
                 <title>导出 Godot 数组</title>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Array Array { get; set; }</literal_block>
-                <paragraph>使用泛型 <literal>Godot.Collections.Array&lt;T&gt;</literal> 可以指定数组元素的类型，这将作为编辑器的提示。检查器会限制元素为指定的类型。</paragraph>
+                <paragraph>Using the generic <literal>Godot.Collections.Array&lt;T&gt;</literal> allows specifying the type of the
+                    array elements, which will be used as a hint for the editor. The Inspector will
+                    restrict the elements to the specified type.</paragraph>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Array&lt;string&gt; Array { get; set; }</literal_block>
-                <paragraph>Godot 数组的默认值是 null，可以指定不同的默认值：</paragraph>
+                <paragraph>The default value of Godot arrays is null. A different default can be specified:</paragraph>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Array&lt;string&gt; CharacterNames { get; set; } = new Godot.Collections.Array&lt;string&gt;
 {
@@ -256,13 +295,14 @@ public Godot.Collections.Array&lt;PackedScene&gt; Scenes { get; set; }</literal_
                 <title>导出 Godot 字典</title>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Dictionary Dictionary { get; set; }</literal_block>
-                <paragraph>使用泛型 <literal>Godot.Collections.Dictionary&lt;TKey, TValue&gt;</literal> 允许指定字典的键和值的元素的类型。</paragraph>
+                <paragraph>Using the generic <literal>Godot.Collections.Dictionary&lt;TKey, TValue&gt;</literal> allows specifying
+                    the types of the key and value elements of the dictionary.</paragraph>
                 <note>
                     <paragraph>目前在 Godot 编辑器中不支持类型化字典，因此检查器将不会限制可以分配的类型，可能导致运行时异常。</paragraph>
                 </note>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Dictionary&lt;string, int&gt; Dictionary { get; set; }</literal_block>
-                <paragraph>Godot 字典的默认值是 null，可以指定不同的默认值：</paragraph>
+                <paragraph>The default value of Godot dictionaries is null. A different default can be specified:</paragraph>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Godot.Collections.Dictionary&lt;string, int&gt; CharacterLives { get; set; } = new Godot.Collections.Dictionary&lt;string, int&gt;
 {
@@ -273,13 +313,13 @@ public Godot.Collections.Dictionary&lt;string, int&gt; CharacterLives { get; set
             </section>
             <section ids="exporting-c-arrays" names="exporting\ c#\ arrays 导出\ c#\ 数组">
                 <title>导出 C# 数组</title>
-                <paragraph>C# 数组的元素类型是 <reference internal="True" refuri="c_sharp_variant#doc-c-sharp-variant"><inline classes="std std-ref">Variant 兼容</inline></reference> 类型，就可以导出。</paragraph>
+                <paragraph>C# arrays can exported as long as the element type is a <reference internal="True" refuri="c_sharp_variant#c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference>.</paragraph>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Vector3[] Vectors { get; set; }
 
 [Export]
 public NodePath[] NodePaths { get; set; }</literal_block>
-                <paragraph>C# 数组的默认值是 null，可以指定不同的默认值：</paragraph>
+                <paragraph>The default value of C# arrays is null. A different default can be specified:</paragraph>
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">[Export]
 public Vector3[] Vectors { get; set; } = new Vector3[]
 {

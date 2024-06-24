@@ -27,7 +27,12 @@
                 <paragraph>针对移动平台设计，但是也能够在桌面平台运行。这种渲染方法针对移动 GPU 进行了优化。移动 GPU 的架构与桌面 GPU 有很大的区别，因为需要考虑电池使用、散热、读写数据时的总体带宽限制等约束。对计算着色器的支持也非常有限，甚至完全不支持。因此，移动渲染器单纯使用基于光栅的着色器（片段/顶点）。</paragraph>
                 <paragraph>与桌面 GPU 不同，移动 GPU 执行的是<emphasis>基于图块的渲染</emphasis>。整个图像不是作为整体渲染的，而是会细分为较小的图块，适合放置到移动 GPU 更快的内部存储中。图块单独渲染后就会写入到目标纹理上。图形驱动会自动进行这一步操作。</paragraph>
                 <paragraph>问题在于，这种做法会在我们的传统方法中造成瓶颈。对于桌面渲染，我们会先渲染所有不透明的几何体，然后处理背景，再处理透明的几何体，最后进行后期处理。每个步骤都需要将当前的结果读进图块内存，执行对应的运算后再写出。我们需要等待所有图块都完成后才能继续下一个阶段。</paragraph>
-                <paragraph>移动渲染器的第一个重要更改就是不使用桌面渲染器所使用的 RGBA16F 纹理格式，改用 R10G10B10A2 UNORM 纹理格式。这样就把所需的带宽减半，并且由于移动硬件通常针对 32 位格式做了优化，所以还会带来进一步的提升。这样做的代价是移动渲染器的 HDR 能力有限，因为颜色数据降低了精度和最大值。</paragraph>
+                <paragraph>The first important change in the mobile renderer is that the mobile renderer
+                    does not use the RGBA16F texture formats that the desktop renderer does.
+                    Instead, it is using an R10G10B10A2 UNORM texture format. This halves the bandwidth
+                    required and has further improvements as mobile hardware often further optimizes
+                    for 32-bit formats. The tradeoff is that the mobile renderer has limited HDR
+                    capabilities due to the reduced precision and maximum values in the color data.</paragraph>
                 <paragraph>第二个重要更改就是尽可能使用子阶段（sub-pass）。子阶段能够按照图块来执行渲染步骤，节省每个渲染阶段之间读写图块带来的开销。使用子阶段带来的限制是无法读取相邻像素，因为我们只能针对单一图块进行处理。</paragraph>
                 <paragraph>子阶段的这一限制导致我们无法高效实现辉光、景深等特性。类似地，如果需要读取屏幕纹理或者深度纹理，我们就必须将渲染结果完全写出，限制对子阶段的使用。启用这种特性时，会混用子阶段和正常阶段，因此会带来明显的性能损失。</paragraph>
                 <paragraph>在桌面平台，使用子阶段对性能不会有任何影响。但对于简单的场景而言，这种渲染方法仍然比集群 Forward 要高效，因为复杂度和带宽占用都相对较低。这种情况在低端 GPU、集成显卡、VR 应用中尤为明显。</paragraph>
@@ -77,10 +82,10 @@
                 <paragraph>与 Vulkan 类似，Direct3D 12 驱动仅支持现代平台，是针对 Windows 和 Xbox 设计的（鉴于 Xbox 上无法直接使用 Vulkan）。</paragraph>
                 <paragraph>使用 Direct3D 12 时支持 Forward+ 和移动 <reference internal="True" refid="doc-internal-rendering-architecture-methods"><inline classes="std std-ref">渲染方法</inline></reference>。</paragraph>
                 <paragraph><reference internal="True" refid="doc-internal-rendering-architecture-core-shaders"><inline classes="std std-ref">核心着色器</inline></reference> are shared with the
-                    Vulkan renderer. Shaders are transpiled from GLSL to HLSL using
-                    Mesa NIR (<reference name="more information" refuri="https://godotengine.org/article/d3d12-adventures-in-shaderland/">more information</reference>).
-                    This means you don't need to know HLSL to work on the Direct3D 12 renderer,
-                    although knowing the language's basics is recommended to ease debugging.</paragraph>
+                    Vulkan renderer. Shaders are transpiled from
+                    <abbreviation explanation="Standard Portable Intermediate Representation">SPIR-V</abbreviation> to
+                    <abbreviation explanation="DirectX Intermediate Language">DXIL</abbreviation> using
+                    Mesa NIR (<reference name="more information" refuri="https://godotengine.org/article/d3d12-adventures-in-shaderland/">more information</reference>).</paragraph>
                 <paragraph><strong>This driver is still experimental and only available in Godot 4.3 and later.</strong>
                     While Direct3D 12 allows supporting Direct3D-exclusive features on Windows 11 such
                     as windowed optimizations and Auto HDR, Vulkan is still recommended for most projects.
@@ -103,9 +108,14 @@
             <section ids="opengl" names="opengl">
                 <title>OpenGL</title>
                 <paragraph>这个驱动使用 OpenGL ES 3.0，针对的是不支持 Vulkan 的旧有设备以及低端设备。桌面平台运行该驱动时使用的是 OpenGL 3.3 Core Profile，因为桌面平台的大部分图形驱动不支持 OpenGL ES。Web 导出使用的是 WebGL 2.0。</paragraph>
+                <paragraph>It is possible to use the use of OpenGL ES 3.0 directly on desktop platforms
+                    using the <literal>--rendering-driver opengl3_es</literal> command line argument, although this
+                    will only work on graphics drivers that feature native OpenGL ES support (such
+                    as Mesa).</paragraph>
                 <paragraph>使用 OpenGL 驱动是只能使用 <reference internal="True" refid="doc-internal-rendering-architecture-compatibility"><inline classes="std std-ref">兼容</inline></reference> 渲染方法。</paragraph>
                 <paragraph><reference internal="True" refid="doc-internal-rendering-architecture-core-shaders"><inline classes="std std-ref">核心着色器</inline></reference> 与 Vulkan 渲染器完全不同。</paragraph>
-                <paragraph><strong>截止到 2023 年五月，该驱动仍然处于开发状态。</strong>许多特性仍未实现，尤其是 3D 特性。</paragraph>
+                <paragraph>Many advanced features are not supported with this driver, as it targets low-end
+                    devices first and foremost.</paragraph>
             </section>
             <section ids="summary-of-rendering-drivers-methods" names="summary\ of\ rendering\ drivers/methods 渲染驱动/方法总结">
                 <title>渲染驱动/方法总结</title>
@@ -153,7 +163,7 @@
             <paragraph><strong>Vulkan RenderingDevice 实现：</strong></paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference name="drivers/vulkan/rendering_device_vulkan.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/rendering_device_vulkan.cpp">drivers/vulkan/rendering_device_vulkan.cpp</reference></paragraph>
+                    <paragraph><reference name="drivers/vulkan/rendering_device_driver_vulkan.cpp" refuri="https://github.com/godotengine/godot/blob/master/drivers/vulkan/rendering_device_driver_vulkan.cpp">drivers/vulkan/rendering_device_driver_vulkan.cpp</reference></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph><strong>Direct3D 12 RenderingDevice implementation:</strong></paragraph>
@@ -302,7 +312,7 @@
                 <literal>draw_*()</literal> methods provide their own way of antialiasing based on triangle
                 strips and vertex colors, which don't require MSAA to work.</paragraph>
             <paragraph>A 2D signed distance field representing LightOccluder2D nodes in the viewport is
-                automatically generated if an user shader requests it. This can be used for
+                automatically generated if a user shader requests it. This can be used for
                 various effects in custom shaders, such as 2D global illumination. It is also
                 used to calculate particle collisions in 2D.</paragraph>
             <paragraph><strong>2D SDF 生成 GLSL 着色器：</strong></paragraph>
@@ -663,8 +673,7 @@
             <section ids="occlusion-culling" names="occlusion\ culling 遮挡剔除">
                 <title>遮挡剔除</title>
                 <paragraph>While modern GPUs can handle drawing a lot of triangles, the number of draw
-                    calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D
-                    12).</paragraph>
+                    calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D 12).</paragraph>
                 <paragraph>Godot 4 supports occlusion culling to reduce overdraw (when the depth prepass
                     is disabled) and reduce vertex throughput.
                     This is done by rasterizing a low-resolution buffer on the CPU using

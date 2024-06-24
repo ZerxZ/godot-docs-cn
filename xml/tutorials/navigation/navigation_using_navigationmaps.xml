@@ -19,22 +19,20 @@
             <paragraph>默认的 3D 导航地图 RID 可以从继承自 <reference internal="True" refuri="../../classes/class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> 的任何 Node 的 <literal>get_world_3d().get_navigation_map()</literal> 获取。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-0-MkQgR0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tab" tabindex="0">2D GDScript</button>
+                    <button aria-controls="panel-0-M0QgR0RTY3JpcHQ=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tab" tabindex="-1">3D GDScript</button>
                 </div>
-                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-0-MkQgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node2D
 
-var default_2d_navigation_map_rid: RID = get_world_2d().get_navigation_map()</literal_block>
+func _ready() -&gt; void:
+    var default_navigation_map_rid: RID = get_world_2d().get_navigation_map()</literal_block>
                 </div>
-            </container>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                </div>
-                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-0-M0QgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node3D
 
-var default_3d_navigation_map_rid: RID = get_world_3d().get_navigation_map()</literal_block>
+func _ready() -&gt; void:
+    var default_navigation_map_rid: RID = get_world_3d().get_navigation_map()</literal_block>
                 </div>
             </container>
         </section>
@@ -48,24 +46,22 @@ var default_3d_navigation_map_rid: RID = get_world_3d().get_navigation_map()</li
             </note>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-1-MkQgR0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tab" tabindex="0">2D GDScript</button>
+                    <button aria-controls="panel-1-M0QgR0RTY3JpcHQ=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tab" tabindex="-1">3D GDScript</button>
                 </div>
-                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-1-MkQgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-MkQgR0RTY3JpcHQ=" name="MkQgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node2D
 
-var new_navigation_map: RID = NavigationServer2D.map_create()
-NavigationServer2D.map_set_active(true)</literal_block>
+func _ready() -&gt; void:
+    var new_navigation_map: RID = NavigationServer2D.map_create()
+    NavigationServer2D.map_set_active(new_navigation_map, true)</literal_block>
                 </div>
-            </container>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                </div>
-                <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-1-M0QgR0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-M0QgR0RTY3JpcHQ=" name="M0QgR0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node3D
 
-var new_navigation_map: RID = NavigationServer3D.map_create()
-NavigationServer3D.map_set_active(true)</literal_block>
+func _ready() -&gt; void:
+    var new_navigation_map: RID = NavigationServer3D.map_create()
+    NavigationServer3D.map_set_active(new_navigation_map, true)</literal_block>
                 </div>
             </container>
             <note>

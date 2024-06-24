@@ -24,7 +24,9 @@
                     <paragraph>在文件系统面板中双击 3D 场景，或者在带入面板中点击**高级**按钮，就可以打开**高级导入设置**对话框。在这里你可以直接在 Godot 中对每个物体进行定制。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refid="doc-importing-3d-scenes-import-hints"><inline classes="std std-ref">导入提示</inline></reference>是添加到 3D 建模软件中的对象名称的特殊后缀，它可以允许你在 3D 建模软件中自定义每个对象的选项。</paragraph>
+                    <paragraph><reference internal="True" refuri="node_type_customization#doc-importing-3d-scenes-node-type-customization"><inline classes="std std-ref">Import hints</inline></reference>, which are special
+                        suffixes added to object names in the 3D modeling software. This allows you to
+                        customize per-object options in the 3D modeling software.</paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>对于基本自定义，使用导入面板的配置就足够了。但是对于更复杂的操作（例如基于每种材质定义材质覆盖），你需要使用“高级导入设置”对话框或导入提示，亦或者同时使用两者。</paragraph>
@@ -150,7 +152,12 @@
                         <paragraph><strong>拆分 &gt; 精度：</strong> 仅当 <strong>物理 &gt; 形状类型</strong> 为 <strong>Decompose Convex</strong> 时可见。控制用于凸面分解的精度。数值越高，碰撞的细节越多，但生成速度会变慢，物理模拟时的 CPU 占用率也会增加，为提高性能，建议在使用时尽可能降低该值。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>遮挡器 &gt; 化简距离：</strong> 仅当 <strong>生成 &gt; 遮挡器</strong> 设置为 <strong>Mesh + Occluder</strong> 或 <strong>Occluder Only</strong> 时可见。数值越大，遮挡网格的顶点越少（从而降低 CPU 利用率），但代价是会出现更多遮挡剔除问题（如误报或漏报）。如果你发现当摄像机靠近某个网格时，物体在不该消失的时候消失了，请尝试减小该值。</paragraph>
+                        <paragraph><strong>Occluder &gt; Simplification Distance:</strong> Only visible if <strong>Generate &gt;
+                                Occluder</strong> is set to <strong>Mesh + Occluder</strong> or <strong>Occluder Only</strong>. Higher values
+                            result in an occluder mesh with fewer vertices (resulting in decreased CPU
+                            utilization), at the cost of more occlusion culling issues (such as false
+                            positives or false negatives). If you run into objects disappearing when they
+                            shouldn't when the camera is near a certain mesh, try decreasing this value.</paragraph>
                     </list_item>
                 </bullet_list>
                 <paragraph><strong>配置网格和材质导入选项</strong></paragraph>
@@ -252,6 +259,7 @@ func iterate(node):
         for child in node.get_children():
             iterate(child)</literal_block>
                 <paragraph><literal>_post_import(scene: Node)</literal> 函数以导入的场景为参数（参数实际上是场景的根节点），必须返回最终使用的场景，可以是完全不同的另一个场景。</paragraph>
+                <paragraph>To use your script, locate the script in the import tab's "Path" option under the "Import Script" category.</paragraph>
             </section>
             <section ids="using-animation-libraries" names="using\ animation\ libraries 使用动画库">
                 <title>使用动画库</title>
@@ -313,7 +321,6 @@ func iterate(node):
                 </list_item>
             </bullet_list>
             <paragraph>除此之外，一切都是允许的。</paragraph>
-            <target ids="doc-importing-3d-scenes-import-hints" names="doc_importing_3d_scenes_import_hints"></target>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

@@ -74,7 +74,12 @@
                     <paragraph>如果事件到目前为止还没有被消耗，并且覆盖了 <reference internal="True" refuri="../../classes/class_node#class-node-private-method-shortcut-input"><inline classes="std std-ref">Node._shortcut_input()</inline></reference> 函数（并且没有通过 <reference internal="True" refuri="../../classes/class_node#class-node-method-set-process-shortcut-input"><inline classes="std std-ref">Node.set_process_shortcut_input()</inline></reference> 禁用），那么就会调用这个回调。只有 <reference internal="True" refuri="../../classes/class_inputeventkey#class-inputeventkey"><inline classes="std std-ref">InputEventKey</inline></reference>、<reference internal="True" refuri="../../classes/class_inputeventshortcut#class-inputeventshortcut"><inline classes="std std-ref">InputEventShortcut</inline></reference> 和 <reference internal="True" refuri="../../classes/class_inputeventjoypadbutton#class-inputeventjoypadbutton"><inline classes="std std-ref">InputEventJoypadButton</inline></reference> 才有这一步。如果某个函数消耗了该事件，就可以调用 <reference internal="True" refuri="../../classes/class_viewport#class-viewport-method-set-input-as-handled"><inline classes="std std-ref">Viewport.set_input_as_handled()</inline></reference>，事件就不会再继续传播。快捷键输入回调主要用于处理快捷键相关的事件。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>如果事件到目前为止还没有被消耗，并且覆盖了 <reference internal="True" refuri="../../classes/class_node#class-node-private-method-unhandled-key-input"><inline classes="std std-ref">Node._unhandled_key_input()</inline></reference> 函数（并且没有通过 <reference internal="True" refuri="../../classes/class_node#class-node-method-set-process-unhandled-key-input"><inline classes="std std-ref">Node.set_process_unhandled_key_input()</inline></reference> 禁用），那么就会调用这个回调。只有 <reference internal="True" refuri="../../classes/class_inputeventkey#class-inputeventkey"><inline classes="std std-ref">InputEventKey</inline></reference> 才有这一步。如果某个函数消耗了该事件，就可以调用 <reference internal="True" refuri="../../classes/class_viewport#class-viewport-method-set-input-as-handled"><inline classes="std std-ref">Viewport.set_input_as_handled()</inline></reference>，事件就不会再继续传播。未处理按键输入回调主要用于处理按键相关的事件。</paragraph>
+                    <paragraph>If so far no one consumed the event, the <reference internal="True" refuri="../../classes/class_node#class-node-private-method-unhandled-key-input"><inline classes="std std-ref">Node._unhandled_key_input()</inline></reference> callback
+                        will be called if overridden (and not disabled with
+                        <reference internal="True" refuri="../../classes/class_node#class-node-method-set-process-unhandled-key-input"><inline classes="std std-ref">Node.set_process_unhandled_key_input()</inline></reference>).
+                        This happens only if the event is an <reference internal="True" refuri="../../classes/class_inputeventkey#class-inputeventkey"><inline classes="std std-ref">InputEventKey</inline></reference>.
+                        If any function consumes the event, it can call <reference internal="True" refuri="../../classes/class_viewport#class-viewport-method-set-input-as-handled"><inline classes="std std-ref">Viewport.set_input_as_handled()</inline></reference>, and the
+                        event will not spread any more. The unhandled key input callback is ideal for key events.</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>如果事件到目前为止还没有被消耗，并且覆盖了 <reference internal="True" refuri="../../classes/class_node#class-node-private-method-unhandled-input"><inline classes="std std-ref">Node._unhandled_input()</inline></reference> 函数（并且没有通过 <reference internal="True" refuri="../../classes/class_node#class-node-method-set-process-unhandled-input"><inline classes="std std-ref">Node.set_process_unhandled_input()</inline></reference> 禁用），那么就会调用这个回调。如果某个函数消耗了该事件，就可以调用 <reference internal="True" refuri="../../classes/class_viewport#class-viewport-method-set-input-as-handled"><inline classes="std std-ref">Viewport.set_input_as_handled()</inline></reference>，事件就不会再继续传播。未处理输入回调主要用于处理全屏游戏事件，GUI 处于活动状态时不会收到。</paragraph>
@@ -237,10 +242,7 @@
         </section>
         <section ids="actions" names="actions 动作">
             <title>动作</title>
-            <paragraph>Actions are a grouping of zero or more InputEvents into a commonly
-                understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
-                InputEvent but are useful because they abstract various inputs when
-                programming the game logic.</paragraph>
+            <paragraph>动作是将零个或多个输入事件群组为通常理解的标题（例如，预设的「ui_left」动作将手柄左输入和键盘左箭头键群组）。它们不需要表示输入事件，但很有用，因为它们在编写游戏逻辑时抽象化了各种输入。</paragraph>
             <paragraph>This allows for:</paragraph>
             <bullet_list bullet="-">
                 <list_item>

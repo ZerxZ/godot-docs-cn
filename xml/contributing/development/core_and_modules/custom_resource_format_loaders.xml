@@ -87,7 +87,7 @@ public:
 RES ResourceFormatLoaderJson::load(const String &amp;p_path, const String &amp;p_original_path, Error *r_error) {
 Ref&lt;JsonResource&gt; json = memnew(JsonResource);
     if (r_error) {
-            *r_error = OK;
+        *r_error = OK;
     }
     Error err = json-&gt;load_file(p_path);
     return json;
@@ -95,7 +95,7 @@ Ref&lt;JsonResource&gt; json = memnew(JsonResource);
 
 void ResourceFormatLoaderJson::get_recognized_extensions(List&lt;String&gt; *r_extensions) const {
     if (!r_extensions-&gt;find("json")) {
-            r_extensions-&gt;push_back("json");
+        r_extensions-&gt;push_back("json");
     }
 }
 
@@ -144,7 +144,7 @@ bool ResourceFormatSaverJson::recognize(const RES &amp;p_resource) const {
 
 void ResourceFormatSaverJson::get_recognized_extensions(const RES &amp;p_resource, List&lt;String&gt; *r_extensions) const {
     if (Object::cast_to&lt;JsonResource&gt;(*p_resource)) {
-            r_extensions-&gt;push_back("json");
+        r_extensions-&gt;push_back("json");
     }
 }</literal_block>
         </section>
@@ -165,10 +165,10 @@ class JsonResource : public Resource {
 
 protected:
     static void _bind_methods() {
-            ClassDB::bind_method(D_METHOD("set_dict", "dict"), &amp;JsonResource::set_dict);
-            ClassDB::bind_method(D_METHOD("get_dict"), &amp;JsonResource::get_dict);
+        ClassDB::bind_method(D_METHOD("set_dict", "dict"), &amp;JsonResource::set_dict);
+        ClassDB::bind_method(D_METHOD("get_dict"), &amp;JsonResource::get_dict);
 
-            ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content"), "set_dict", "get_dict");
+        ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content"), "set_dict", "get_dict");
     }
 
 private:
@@ -190,15 +190,15 @@ Error JsonResource::load_file(const String &amp;p_path) {
     Error error;
     FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &amp;error);
     if (error != OK) {
-            if (file) {
-                    file-&gt;close();
-            }
-            return error;
+        if (file) {
+            file-&gt;close();
+        }
+        return error;
     }
 
     String json_string = String("");
     while (!file-&gt;eof_reached()) {
-            json_string += file-&gt;get_line();
+        json_string += file-&gt;get_line();
     }
     file-&gt;close();
 
@@ -208,8 +208,8 @@ Error JsonResource::load_file(const String &amp;p_path) {
     Variant result;
     error = json.parse(json_string, result, error_string, error_line);
     if (error != OK) {
-            file-&gt;close();
-            return error;
+        file-&gt;close();
+        return error;
     }
 
     content = Dictionary(result);
@@ -220,10 +220,10 @@ Error JsonResource::save_file(const String &amp;p_path, const RES &amp;p_resourc
     Error error;
     FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &amp;error);
     if (error != OK) {
-            if (file) {
-                    file-&gt;close();
-            }
-            return error;
+        if (file) {
+            file-&gt;close();
+        }
+        return error;
     }
 
     Ref&lt;JsonResource&gt; json_ref = p_resource.get_ref_ptr();
@@ -254,20 +254,20 @@ class GodotFileInStreamBuf : public std::streambuf {
 
 public:
     GodotFileInStreamBuf(FileAccess *fa) {
-            _file = fa;
+        _file = fa;
     }
     int underflow() {
-            if (_file-&gt;eof_reached()) {
-                    return EOF;
-            } else {
-                    size_t pos = _file-&gt;get_position();
-                    uint8_t ret = _file-&gt;get_8();
-                    _file-&gt;seek(pos); // Required since get_8() advances the read head.
-                    return ret;
-            }
+        if (_file-&gt;eof_reached()) {
+            return EOF;
+        } else {
+            size_t pos = _file-&gt;get_position();
+            uint8_t ret = _file-&gt;get_8();
+            _file-&gt;seek(pos); // Required since get_8() advances the read head.
+            return ret;
+        }
     }
     int uflow() {
-            return _file-&gt;eof_reached() ? EOF : _file-&gt;get_8();
+        return _file-&gt;eof_reached() ? EOF : _file-&gt;get_8();
     }
 
 private:

@@ -57,21 +57,40 @@ Rotation += _angularSpeed * direction * (float)delta;</literal_block>
             <paragraph>打开“项目 -&gt; 项目设置”并点击“输入映射”选项卡，就可以查看并编辑项目中的输入动作。</paragraph>
         </note>
         <paragraph>最后，当我们更新节点的 <literal>rotation</literal> 时，我们使用 <literal>direction</literal> 作为乘数：<literal>rotation += angular_speed * direction * delta</literal>。</paragraph>
+        <paragraph>Comment out the lines <literal>var velocity = Vector2.UP.rotated(rotation) * speed</literal> and <literal>position += velocity * delta</literal> like this:</paragraph>
+        <container classes="sphinx-tabs" type="tab-element">
+            <div aria-label="Tabbed content" role="tablist">
+                <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+            </div>
+            <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">#var velocity = Vector2.UP.rotated(rotation) * speed
+
+#position += velocity * delta</literal_block>
+            </div>
+            <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">//var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+
+//Position += velocity * (float)delta;</literal_block>
+            </div>
+        </container>
+        <paragraph>This will ignore the code that moved the icon's position in a circle without user input from the previous exercise.</paragraph>
         <paragraph>如果你用这段代码运行场景，当你按下 <literal classes="kbd">Left</literal>（左方向键）和 <literal classes="kbd">Right</literal>（右方向键） 时，图标应该会旋转。</paragraph>
         <section ids="moving-when-pressing-up" names='moving\ when\ pressing\ "up" 按“上”时移动'>
             <title>按“上”时移动</title>
-            <paragraph>为了只在按下一个键时移动，我们需要修改计算速度的代码。用下面的代码替换以 <literal>var velocity</literal> 开始的一行。</paragraph>
+            <paragraph>To only move when pressing a key, we need to modify the code that calculates the
+                velocity. Uncomment the code and replace the line starting with <literal>var velocity</literal> with the code below.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var velocity = Vector2.ZERO
 if Input.is_action_pressed("ui_up"):
     velocity = Vector2.UP.rotated(rotation) * speed</literal_block>
                 </div>
-                <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var velocity = Vector2.Zero;
 if (Input.IsActionPressed("ui_up"))
 {
@@ -87,10 +106,10 @@ if (Input.IsActionPressed("ui_up"))
             <paragraph>这是完整的 <literal>sprite_2d.gd</literal> 文件，仅供参考。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                    <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
-                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Sprite2D
 
 var speed = 400
@@ -112,7 +131,7 @@ func _process(delta):
 
     position += velocity * delta</literal_block>
                 </div>
-                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 public partial class MySprite2D : Sprite2D

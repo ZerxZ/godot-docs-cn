@@ -6,14 +6,69 @@
     <section ids="c-variant doc-c-sharp-variant" names="c#\ variant doc_c_sharp_variant">
         <title>C# Variant</title>
         <paragraph>对于 Variant 的详细解释，请参阅 <reference internal="True" refuri="../../../classes/class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> 文档页面。</paragraph>
-        <paragraph><literal>Godot.Variant</literal> 用于表示 Godot 的原生 <reference internal="True" refuri="../../../classes/class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> 类型。任何与 Variant 兼容的类型都可以和它进行转换。我们建议仅在与无类型的引擎 API 交互时使用 <literal>Godot.Variant</literal> 。尽可能利用 C# 的类型安全性。</paragraph>
-        <paragraph>任何 <literal>Variant.As{TYPE}</literal> 方法或通用的 <literal>Variant.As&lt;T&gt;</literal> 方法都可以用来将 <literal>Godot.Variant</literal> 转换为 C# 类型。由于 <literal>Godot.Variant</literal> 类型包含了所有支持类型的隐式转换，直接调用这些方法通常是不必要的。</paragraph>
-        <paragraph>使用 <literal>CreateFrom</literal> 方法的重载或通用的 <literal>Variant.From&lt;T&gt;</literal> 方法将 C# 类型转换为 <literal>Godot.Variant</literal> 。</paragraph>
+        <paragraph><literal>Godot.Variant</literal> is used to represent Godot's native <reference internal="True" refuri="../../../classes/class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> type. Any
+            <reference internal="True" refid="c-sharp-variant-compatible-types"><inline classes="std std-ref">Variant-compatible type</inline></reference> can be converted from/to it.
+            We recommend avoiding <literal>Godot.Variant</literal> unless it is necessary to interact with untyped engine APIs.
+            Take advantage of C#'s type safety when possible.</paragraph>
+        <paragraph>Converting from a Variant-compatible C# type to <literal>Godot.Variant</literal> can be done using implicit
+            conversions. There are also <literal>CreateFrom</literal> method overloads and the generic <literal>Variant.From&lt;T&gt;</literal>
+            methods. Only the syntax is different: the behavior is the same.</paragraph>
+        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">int x = 42;
+Variant numberVariant = x;
+Variant helloVariant = "Hello, World!";
+
+Variant numberVariant2 = Variant.CreateFrom(x);
+Variant numberVariant3 = Variant.From(x);</literal_block>
+        <paragraph>Implicit conversions to <literal>Godot.Variant</literal> make passing variants as method arguments very convenient.
+            For example, the third argument of <reference internal="True" refuri="../../../classes/class_tween#class-tween-method-tween-property"><inline classes="std std-ref">tween_property</inline></reference>
+            specifying the final color of the tween is a <literal>Godot.Variant</literal>.</paragraph>
+        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">Tween tween = CreateTween();
+tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);</literal_block>
+        <paragraph>Converting from <literal>Godot.Variant</literal> to a C# type can be done using explicit conversions. There are
+            also <literal>Variant.As{TYPE}</literal> methods and the generic <literal>Variant.As&lt;T&gt;</literal> method. All of these behave the
+            same.</paragraph>
+        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">int number = (int)numberVariant;
+string hello = (string)helloVariant;
+
+int number2 = numberVariant.As&lt;int&gt;();
+int number3 = numberVariant.AsInt32();</literal_block>
         <note>
-            <paragraph>由于 C# 中的 Variant 类型是一个结构体，它不能为空。要创建一个 “null” Variant，使用 <literal>default</literal> 关键字或无参数构造函数。</paragraph>
+            <paragraph>The <literal>Variant.As{TYPE}</literal> methods are typically named after C# types (<literal>Int32</literal>), not C# keywords
+                (<literal>int</literal>).</paragraph>
         </note>
-        <section ids="variant-compatible-types" names="variant-compatible\ types variant\ 兼容类型">
+        <paragraph>If the Variant type doesn't match the conversion target type, the consequences vary depending on the
+            source and target values.</paragraph>
+        <bullet_list bullet="-">
+            <list_item>
+                <paragraph>The conversion may examine the value and return a similar but potentially unexpected value of the
+                    target type. For example, the string <literal>"42a"</literal> may be converted to the integer <literal>42</literal>.</paragraph>
+            </list_item>
+            <list_item>
+                <paragraph>The default value of the target type may be returned.</paragraph>
+            </list_item>
+            <list_item>
+                <paragraph>An empty array may be returned.</paragraph>
+            </list_item>
+            <list_item>
+                <paragraph>An exception may be thrown.</paragraph>
+            </list_item>
+        </bullet_list>
+        <paragraph>Converting to the correct type avoids complicated behavior and should be preferred.</paragraph>
+        <paragraph>The <literal>Variant.Obj</literal> property returns a C# <literal>object</literal> with the correct value for any variant. This
+            may be useful when the type of Variant is completely unknown. However, when possible, prefer more
+            specific conversions. <literal>Variant.Obj</literal> evaluates a <literal>switch</literal> on <literal>Variant.VariantType</literal> and it may
+            not be necessary. Also, if the result is a value type, it is boxed.</paragraph>
+        <paragraph>For example, if the potential for <literal>Variant.As&lt;MyNode&gt;()</literal> to throw an invalid cast exception isn't
+            acceptable, consider using a <literal>Variant.As&lt;GodotObject&gt;() is MyNode n</literal> type pattern instead.</paragraph>
+        <note>
+            <paragraph>Since the Variant type in C# is a struct, it can't be null. To create a "null"
+                Variant, use the <literal>default</literal> keyword or the <literal>Godot.Variant</literal> parameterless constructor.</paragraph>
+        </note>
+        <target refid="c-sharp-variant-compatible-types"></target>
+        <section ids="variant-compatible-types c-sharp-variant-compatible-types" names="variant-compatible\ types variant\ 兼容类型 c_sharp_variant_compatible_types">
             <title>Variant 兼容类型</title>
+            <paragraph>A Variant-compatible type can be converted to and from a <literal>Godot.Variant</literal>.
+                These C# types are Variant-compatible:</paragraph>
             <bullet_list bullet="*">
                 <list_item>
                     <paragraph>除了 <literal>decimal</literal> 、 <literal>nint</literal> 和 <literal>nuint</literal> 之外，所有的 <reference name="内置值类型" refuri="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/built-in-types-table">内置值类型</reference><target ids="id1" names="内置值类型" refuri="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/built-in-types-table"></target> 。</paragraph>
@@ -352,7 +407,10 @@
                 </tgroup>
             </table>
             <warning>
-                <paragraph>Godot 在 Variant 中使用 64 位的整数和浮点数。较小的整数和浮点数类型，如 <literal>int</literal> ， <literal>short</literal> 和 <literal>float</literal> ，也是支持的，因为它们可以放入更大的类型中。请注意，这里会进行隐式转换，所以使用错误的类型可能会导致精度损失。</paragraph>
+                <paragraph>Godot uses 64-bit integers and floats in Variant. Smaller integer and float types
+                    such as <literal>int</literal>, <literal>short</literal> and <literal>float</literal> are supported since they can fit in the
+                    bigger type. Be aware that when a conversion is performed, using the wrong
+                    type will result in potential precision loss.</paragraph>
             </warning>
             <warning>
                 <paragraph>枚举类型由于其底层类型是整数类型，因此都与 <literal>Godot.Variant</literal> 兼容。但是，隐式转换不存在，枚举类型必须在转换为/从 <literal>Godot.Variant</literal> 之前手动转换为其底层的整数类型，或者使用通用的 <literal>Variant.As&lt;T&gt;</literal> 和 <literal>Variant.From&lt;T&gt;</literal> 方法来转换它们。</paragraph>

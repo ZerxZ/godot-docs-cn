@@ -18,10 +18,7 @@
                         prepass</emphasis> and is enabled by default in Godot when using the Forward+ or
                     Compatibility rendering methods. However, unneeded objects are still reducing
                     performance.</paragraph>
-                <paragraph>One way we can potentially reduce the amount to be rendered is to <strong>take advantage
-                        of occlusion</strong>. Godot 4.0 and later offers a new approach to occlusion culling
-                    using occluder nodes. See <reference internal="True" refuri="../3d/occlusion_culling#doc-occlusion-culling"><inline classes="std std-ref">遮挡剔除</inline></reference> for instructions on
-                    setting up occlusion culling in your scene.</paragraph>
+                <paragraph>我们可以减少算绘量的一种方法是 <strong>take advantage of occlusion</strong>。Godot 4.0及更高版本提供了一种使用遮挡器节点进行遮蔽剔除的新方法。有关在场景中设定遮蔽剔除的说明，请参阅 <reference internal="True" refuri="../3d/occlusion_culling#doc-occlusion-culling"><inline classes="std std-ref">遮挡剔除</inline></reference> 。</paragraph>
                 <note>
                     <paragraph>In some cases, you may have to adapt your level design to add more occlusion
                         opportunities. For example, you may have to add more walls to prevent the player
@@ -44,21 +41,14 @@
                     <paragraph>使用 <reference internal="True" refuri="../3d/mesh_lod#doc-mesh-lod"><inline classes="std std-ref">网格的细节级别（LOD）</inline></reference> 进行网格导入的自动方法。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>A manual approach configured in the 3D node using <reference internal="True" refuri="../3d/visibility_ranges#doc-visibility-ranges"><inline classes="std std-ref">可见范围（HLOD）</inline></reference>.</paragraph>
+                    <paragraph>在3D节点中使用 :ref:<problematic ids="id2" refid="id1">`</problematic>doc_visibility_ranges`配置的手动方法。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="../3d/using_decals#doc-using-decals"><inline classes="std std-ref">Decals</inline></reference> and <reference internal="True" refuri="../3d/lights_and_shadows#doc-lights-and-shadows"><inline classes="std std-ref">lights</inline></reference>
-                        can also benefit from level of detail using their respective
-                        <strong>Distance Fade</strong> properties.</paragraph>
+                    <paragraph>ref:<title_reference>Decals &lt;doc_using_decals&gt;</title_reference> 和 <reference internal="True" refuri="../3d/lights_and_shadows#doc-lights-and-shadows"><inline classes="std std-ref">lights</inline></reference> 也可以使用它们各自的 <strong>Distance Fade</strong> 属性从细节级别中获益。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>While they can be used independently, these approaches are most effective when
-                used together. For example, you can set up visibility ranges to hide particle
-                effects that are too far away from the player to notice. At the same time, you
-                can rely on mesh LOD to make the particle effect's meshes rendered with less
-                detail at a distance.</paragraph>
-            <paragraph>Visibility ranges are also a good way to set up <emphasis>impostors</emphasis> for distant geometry
-                (see below).</paragraph>
+            <paragraph>虽然它们可以单独使用，但一起使用时这些方法最有效。例如，你可以设定可见范围来隐藏距离玩家太远而无法注意到的粒子效果。同时，你可以依靠网格LOD来使粒子效果的网格在远处算绘时细节较少。</paragraph>
+            <paragraph>可见范围也是为远处几何体设定「冒充者」的好方法（见下文）。</paragraph>
             <section ids="billboards-and-imposters" names="billboards\ and\ imposters billboard\ 和\ imposter">
                 <title>Billboard 和 imposter</title>
                 <paragraph>The simplest version of using transparency to deal with LOD is billboards. For
@@ -84,15 +74,8 @@
             <paragraph><strong>Consider using baked lighting</strong>, especially for mobile. This can look fantastic,
                 but has the downside that it will not be dynamic. Sometimes, this is a tradeoff
                 worth making.</paragraph>
-            <paragraph>See <reference internal="True" refuri="../3d/global_illumination/using_lightmap_gi#doc-using-lightmap-gi"><inline classes="std std-ref">使用光照贴图全局照明</inline></reference> for instructions on using baked lightmaps. For
-                best performance, you should set lights' bake mode to <strong>Static</strong> as opposed to
-                the default <strong>Dynamic</strong>, as this will skip real-time lighting on meshes that
-                have baked lighting.</paragraph>
-            <paragraph>The downside of lights with the <strong>Static</strong> bake mode is that they can't cast
-                shadows onto meshes with baked lighting. This can make scenes with outdoor
-                environments and dynamic objects look flat. A good balance between performance
-                and quality is to keep <strong>Dynamic</strong> for the <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference> node,
-                and use <strong>Static</strong> for most (if not all) omni and spot lights.</paragraph>
+            <paragraph>有关使用烘焙光照贴图的说明，请参阅doc_using_lightmap_gi。为了获得最佳性能，你应该将灯光的烘焙模式设定为 <strong>Static</strong> ，而不是预设的 <strong>Dynamic</strong>，因为这将跳过具有烘焙光照的网格体上的即时光照。</paragraph>
+            <paragraph>使用 <strong>Static</strong> 烘焙模式的灯光的缺点是，它们无法将阴影投射到具有烘焙照明的网格上。这可以使具有室外环境和动态对象的场景看起来平坦。性能和质量之间的良好平衡是 <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference> 节点保持 <strong>Dynamic</strong>，并对大多数（如果不是全部）泛光灯和聚光灯使用 <strong>Static</strong> 。</paragraph>
         </section>
         <section ids="animation-and-skinning" names="animation\ and\ skinning 动画和皮肤">
             <title>动画和皮肤</title>
@@ -102,8 +85,7 @@
                 You can also reduce the animation rate for distant or occluded meshes, or pause
                 the animation entirely if the player is unlikely to notice the animation being
                 stopped.</paragraph>
-            <paragraph>The <reference internal="True" refuri="../../classes/class_visibleonscreenenabler3d#class-visibleonscreenenabler3d"><inline classes="std std-ref">VisibleOnScreenEnabler3D</inline></reference> and <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference>
-                nodes can be useful for this purpose.</paragraph>
+            <paragraph><reference internal="True" refuri="../../classes/class_visibleonscreenenabler3d#class-visibleonscreenenabler3d"><inline classes="std std-ref">VisibleOnScreenEnabler3D</inline></reference> 和 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 节点可用于此目的。</paragraph>
         </section>
         <section ids="large-worlds" names="large\ worlds 庞大的世界">
             <title>庞大的世界</title>
@@ -111,7 +93,7 @@
             <paragraph>大型的世界可能需要用碎片建立, 可以在你在世界中移动时按需加载, 这可以防止内存使用失控, 也可以将所需的处理限制在局部区域.</paragraph>
             <paragraph>There may also be rendering and physics glitches due to floating point error in
                 large worlds. This can be resolved using <reference internal="True" refuri="../physics/large_world_coordinates#doc-large-world-coordinates"><inline classes="std std-ref">大世界坐标</inline></reference>.
-                If using large world coordinates is an option, you may be able to use techniques
+                If using large world coordinates is not an option, you may be able to use techniques
                 such as orienting the world around the player (rather than the other way
                 around), or shifting the origin periodically to keep things centred around
                 <literal>Vector3(0, 0, 0)</literal>.</paragraph>

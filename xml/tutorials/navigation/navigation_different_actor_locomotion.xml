@@ -7,12 +7,9 @@
         <title>支持不同角色运动</title>
         <image candidates="{'*': 'tutorials/navigation/img/nav_actor_locomotion.png'}" uri="tutorials/navigation/img/nav_actor_locomotion.png"></image>
         <paragraph>要支持不同的角色运动，比如下蹲和爬行，需要和支持 <reference internal="True" refuri="navigation_different_actor_types#doc-navigation-different-actor-types"><inline classes="std std-ref">支持不同角色类型</inline></reference> 一样的地图设置。</paragraph>
-        <paragraph>Bake different navigation meshes with an appropriate height for crouched
-            or crawling actors so they can find paths through those narrow sections in your game world.</paragraph>
-        <paragraph>When an actor changes locomotion state, e.g. stands up, starts
-            crouching or crawling, query the appropriate map for a path.</paragraph>
-        <paragraph>If the avoidance behavior should also change with the locomotion e.g. only avoid while standing or only avoid
-            other agents in the same locomotion state, switch the actor's avoidance agent to another avoidance map with each locomotion change.</paragraph>
+        <paragraph>为蹲伏或爬行的演员烘焙具有适当高度的不同导览网格，以便他们可以找到穿过游戏世界中这些狭窄部分的路径。</paragraph>
+        <paragraph>当 actor 改变运动状态时，例如站起来、开始蹲下或爬行，查询适当的地图以获取路径。</paragraph>
+        <paragraph>如果回避行为也应该随着运动而改变，例如仅在站立时回避或仅避开处于相同运动状态的其他代理，则随着每次运动的改变，将参与者的回避代理切换到另一个回避图。</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
             <div aria-label="Tabbed content" role="tablist">
                 <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -38,7 +35,7 @@ func change_agent_avoidance_state():
             </div>
         </container>
         <note>
-            <paragraph>While a path query can be execute immediately for multiple maps, the avoidance agent map switch will only take effect after the next server synchronization.</paragraph>
+            <paragraph>虽然可以对多个地图立即执行路径查询，但回避代理地图切换只有在下一次服务器同步后才会生效。</paragraph>
         </note>
         <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
     </section>

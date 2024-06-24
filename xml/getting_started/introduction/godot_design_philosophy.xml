@@ -28,7 +28,7 @@
             <paragraph><image alt="image2" candidates="{'*': 'getting_started/introduction/img/engine_design_03.png'}" uri="getting_started/introduction/img/engine_design_03.png"></image></paragraph>
             <paragraph>我们的目标是提供一个完整的软件包来创建游戏以及持续的用户体验。只要有对应的导入插件，你就仍然可以使用外部程序进行编辑。或者你可以自己创建一个导入插件，比如 <reference name="Tiled Map 导入器" refuri="https://github.com/vnen/godot-tiled-importer">Tiled Map 导入器</reference>。</paragraph>
             <paragraph>这也是为什么 Godot 会提供自己的编程语言 GDScript 和 C# 的部分原因。GDScript 是为满足游戏开发人员和游戏设计师的需求而设计的，并且被紧密集成在引擎和编辑器中。</paragraph>
-            <paragraph>GDScript 使你可以使用基于缩进的语法编写代码，但是它可以检测类型，提供质量接近静态语言的自动补全。它还针对使用 Vector、Color 等内置类型的游戏代码进行了优化。</paragraph>
+            <paragraph>GDScript 让你能够使用基于缩进的语法编写代码，还可以检测类型，提供质量接近静态语言的自动补全。它还针对使用 Vector、Color 等内置类型的游戏代码进行了优化。</paragraph>
             <paragraph>请注意，使用 GDExtension，你可以编写出使用类似 C、C++、Rust、D、Haxe、Swift 这类的编译语言编写的高性能代码，并且无需重新编译引擎。</paragraph>
             <paragraph>请注意，3D 工作区不像 2D 工作区那样有那么多工具。你将需要使用外部的程序或插件来编辑地形，给复杂的角色模型制作动画等。Godot 提供了完整的 API，可以直接使用编写游戏的代码来扩展编辑器的功能。参见下面的 <reference name="Godot 编辑器是一个 Godot 游戏" refid="the-godot-editor-is-a-godot-game">Godot 编辑器是一个 Godot 游戏</reference>。</paragraph>
             <paragraph><image alt="image4" candidates="{'*': 'getting_started/introduction/img/engine_design_fsm_plugin.png'}" uri="getting_started/introduction/img/engine_design_fsm_plugin.png"></image></paragraph>
@@ -46,7 +46,11 @@
         <section ids="community-driven" names="community-driven 社区驱动">
             <title>社区驱动</title>
             <paragraph><strong>Godot开发自社区, 为其社区内外所有游戏开发者创造的.</strong> 由用户需求及公开讨论驱动核心更新. 核心开发人员的新功能通常将重点放在首先让大多数用户受益的方面.</paragraph>
-            <paragraph>就是说, 尽管只有少数全职的核心开发者, 但在撰写本文时, 该项目已有超过600位贡献者. 仁慈的程序员致力于完善他们可能需要的功能, 因此在每个主要版本中都能看到引擎各个方面的改进.</paragraph>
+            <paragraph>That said, although a handful of core developers work on it full-time,
+                the project has thousands of contributors at the time of writing. Benevolent
+                programmers work on features they may need themselves, so you'll see
+                improvements in all corners of the engine at the same time in every
+                major release.</paragraph>
         </section>
         <section ids="the-godot-editor-is-a-godot-game" names="the\ godot\ editor\ is\ a\ godot\ game godot\ 编辑器是\ godot\ 游戏">
             <title>Godot 编辑器是 Godot 游戏</title>
@@ -54,7 +58,7 @@
             <paragraph>这带来了非常稳定且灵活的 UI 系统，并且编辑器本身就是由它自身驱动的。使用 <literal>@tool</literal> 注解，你就可以在编辑器中运行任何游戏代码。</paragraph>
             <paragraph><image alt="image5" candidates="{'*': 'getting_started/introduction/img/engine_design_rpg_in_a_box.png'}" uri="getting_started/introduction/img/engine_design_rpg_in_a_box.png"></image></paragraph>
             <paragraph><emphasis>RPG in a Box 是一个用 Godot 2 制作的 RPG 体素编辑器。它使用 Godot 的 UI 工具制作了其基于节点的编程系统和界面的其余部分。</emphasis></paragraph>
-            <paragraph>将 <literal>@tool</literal> 注解放在任何 GDScript 文件的顶部，文件将在编辑器中运行。这使你可以导入和导出插件，创建自定义级别编辑器之类的插件，或使用与项目中使用的相同的节点和 API 来创建脚本.</paragraph>
+            <paragraph>将 <literal>@tool</literal> 注解放在任何 GDScript 文件的顶部，文件将在编辑器中运行。这样，你就可以导入、导出插件，创建自定义级别编辑器之类的插件，或使用与项目中所使用的相同的节点和 API 来创建脚本。</paragraph>
             <note>
                 <paragraph>编辑器完全使用 C++ 编写并且静态地编译为二进制文件。这意味着你不能像导入一个拥有 <literal>project.godot</literal> 文件的普通项目一样导入它。</paragraph>
             </note>

@@ -266,6 +266,14 @@ func _init():
                             </row>
                             <row>
                                 <entry>
+                                    <paragraph>super</paragraph>
+                                </entry>
+                                <entry>
+                                    <paragraph>Resolves the scope of the parent method. See <reference name="Inheritance" refid="inheritance">Inheritance</reference>.</paragraph>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry>
                                     <paragraph>signal</paragraph>
                                 </entry>
                                 <entry>
@@ -333,7 +341,7 @@ func _init():
                                     <paragraph>await</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph>等待信号或协程完成，参见<reference name="等待信号和协程" refid="awaiting-for-signals-or-coroutines">等待信号和协程</reference>。</paragraph>
+                                    <paragraph>Waits for a signal or a coroutine to finish. See <reference name="Awaiting signals or coroutines" refid="awaiting-signals-or-coroutines">Awaiting signals or coroutines</reference>.</paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -398,7 +406,9 @@ func _init():
             </section>
             <section ids="operators" names="operators 运算符">
                 <title>运算符</title>
-                <paragraph>下表为引擎所支持的运算符列表，各个运算符的优先级也在下表中可见（越靠近列表顶部，该运算优先级越高）。</paragraph>
+                <paragraph>The following is the list of supported operators and their precedence. All binary operators are <reference name="left-associative" refuri="https://en.wikipedia.org/wiki/Operator_associativity">left-associative</reference><target ids="left-associative" names="left-associative" refuri="https://en.wikipedia.org/wiki/Operator_associativity"></target>,
+                    including the <literal>**</literal> operator. This means that <literal>2 ** 2 ** 3</literal> is equal to <literal>(2 ** 2) ** 3</literal>. Use parentheses to explicitly specify precedence you need, for
+                    example <literal>2 ** (2 ** 3)</literal>. The ternary <literal>if/else</literal> operator is right-associative.</paragraph>
                 <table>
                     <tgroup cols="2">
                         <colspec colwidth="39"></colspec>
@@ -452,12 +462,15 @@ func _init():
                                     <paragraph><literal>await x</literal></paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><reference name="等待信号和协程" refid="awaiting-for-signals-or-coroutines">等待信号和协程</reference></paragraph>
+                                    <paragraph><reference name="Awaiting signals or coroutines" refid="awaiting-signals-or-coroutines">Awaiting signals or coroutines</reference></paragraph>
                                 </entry>
                             </row>
                             <row>
                                 <entry>
-                                    <paragraph><literal>x is Node</literal></paragraph>
+                                    <line_block>
+                                        <line><literal>x is Node</literal></line>
+                                        <line><literal>x is not Node</literal></line>
+                                    </line_block>
                                 </entry>
                                 <entry>
                                     <paragraph>类型检查</paragraph>
@@ -471,7 +484,6 @@ func _init():
                                 <entry>
                                     <paragraph>幂（乘方）</paragraph>
                                     <paragraph>将 <literal>x</literal> 与其自身相乘 <literal>y</literal> 次，类似于调用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-pow"><inline classes="std std-ref">pow()</inline></reference> 函数。</paragraph>
-                                    <paragraph><strong>注意：</strong>在 GDScript 中，<literal>**</literal> 运算符是<reference name="左结合" refuri="https://en.wikipedia.org/wiki/Operator_associativity">左结合</reference><target ids="id1" names="左结合" refuri="https://en.wikipedia.org/wiki/Operator_associativity"></target>的，详情见表后。</paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -666,9 +678,6 @@ func _init():
                         </list_item>
                         <list_item>
                             <paragraph>对于负值，<literal>%</literal> 运算符和 <literal>fmod()</literal> 函数会使用 <reference name="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation">截断算法</reference><target ids="id1" names="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation"></target> 进行运算，而非向负无穷大舍入，此时余数会带有符号（即余数可能为负）。如果你需要数学意义上的余数，请改用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-posmod"><inline classes="std std-ref">posmod()</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-fposmod"><inline classes="std std-ref">fposmod()</inline></reference> 函数。</paragraph>
-                        </list_item>
-                        <list_item>
-                            <paragraph>运算符 <literal>**</literal> 是 <reference name="左结合运算符" refuri="https://en.wikipedia.org/wiki/Operator_associativity">左结合运算符</reference><target ids="id1" names="左结合运算符" refuri="https://en.wikipedia.org/wiki/Operator_associativity"></target> ，即 <literal>2 ** 2 ** 3</literal> 这个运算等价于 <literal>(2 ** 2) ** 3</literal> 。为避免运算歧义，请使用括号来处理该运算的优先级，如 <literal>2 ** (2 ** 3)</literal> 。</paragraph>
                         </list_item>
                         <list_item>
                             <paragraph><literal>==</literal> 和 <literal>!=</literal> 运算符在有些情况下允许比较不同类型的值（例如，<literal>1 == 1.0</literal> 的结果为真），但在其他情况下可能会发生运行时错误。若你不能确定操作数的类型，可使用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-same"><inline classes="std std-ref">is_same()</inline></reference> 函数来进行安全比较（但请注意，该函数对类型和引用更加严格）。要比较浮点数，请改用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx()</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-zero-approx"><inline classes="std std-ref">is_zero_approx()</inline></reference> 函数。</paragraph>
@@ -952,15 +961,28 @@ func _init():
                 </bullet_list>
                 <paragraph>此外，在字符串中使用 <literal>\</literal> 后换行可以让斜杠后的文字自动换行，而无需在字符串中插入换行符。</paragraph>
                 <paragraph>使用某一种引号（如 <literal>"</literal>）构成的字符串，无需转义即可包含另一种引号（如 <literal>'</literal>），而三引号字符串在与其他字符串边缘不相邻的情况下，最多可避免连续两个同种引号的转义。</paragraph>
-                <paragraph><strong>原始字符串字面量</strong> 始终按照源代码中出现的方式对字符串进行编码，特别适用于正则表达式当中。原始字符串虽不处理转义序列，但可以“转义”引号或反斜杠（此时引号和反斜杠会替换自身）。</paragraph>
+                <paragraph><strong>Raw string literals</strong> always encode the string as it appears in the source code.
+                    This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
+                    however it does recognize <literal>\\</literal> and <literal>\"</literal> (<literal>\'</literal>) and replaces them with themselves.
+                    Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
 print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.</literal_block>
+                <note>
+                    <paragraph>Some strings cannot be represented using raw string literals: you cannot have an odd number
+                        of backslashes at the end of a string or have an unescaped opening quote inside the string.
+                        However, in practice this doesn't matter since you can use a different quote type
+                        or use concatenation with a regular string literal.</paragraph>
+                </note>
                 <paragraph>GDScript 也支持 <reference internal="True" refuri="gdscript_format_string#doc-gdscript-printf"><inline classes="std std-ref">GDScript 格式字符串</inline></reference>。</paragraph>
             </section>
             <section ids="annotations" names="annotations 注解">
                 <title>注解</title>
-                <paragraph>GDScript中有一些特殊标记，起着类似于关键字的作用，而这些标记本身却并非关键字。这些标记就是 <emphasis>注解</emphasis> ，每个注解均以 <literal>@</literal> 符号开头，加以注解名称而构成。有关注解的详细说明及其使用范例，请参考 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript"><inline classes="std std-ref">GDScript class reference</inline></reference> 。</paragraph>
-                <paragraph>注解会影响外部工具处理脚本的方式，通常不会更改该脚本的行为。</paragraph>
+                <paragraph>Annotations are special tokens in GDScript that act as modifiers to a script or
+                    its code and may affect how the script is treated by the Godot engine or
+                    editor.</paragraph>
+                <paragraph>Every annotation starts with the <literal>@</literal> character and is specified by a name. A
+                    detailed description and example for each annotation can be found inside the
+                    <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript"><inline classes="std std-ref">GDScript class reference</inline></reference>.</paragraph>
                 <paragraph>比如，可以将变量导出到编辑器中：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_range(1, 100, 1, "or_greater")
 var ranged_var: int = 50</literal_block>
@@ -1223,9 +1245,9 @@ b.assign(a)</literal_block>
                         <paragraph><literal>Array</literal> （ <literal>Array[Variant]</literal> ）则是例外，这样做可以保证用户使用的便捷性与与旧版本代码的兼容性。不过，非类型化的数组是不安全的。</paragraph>
                     </note>
                 </section>
-                <section ids="packed-arrays" names="packed\ arrays 密存数组">
-                    <title>密存数组</title>
-                    <paragraph>GDScript 数组在内存中通过线性分配以提高速度，但使用大型数组（包含数万个元素）时却可能会导致内存碎片。如果在意这个问题，可以使用特定类型的密存数组，这些数组只接受单个数据类型，避免了内存碎片的同时使用的内存也更少。然而这些特定类型的数组是原子数组，运行起来通常要比通用数组慢，因此建议将这些数组仅用于大型数据集当中：</paragraph>
+                <section ids="packed-arrays" names="packed\ arrays 压缩数组">
+                    <title>压缩数组</title>
+                    <paragraph>GDScript 数组在内存中通过线性分配以提高运行速度，但在使用大型数组（包含数万个元素）时可能会导致内存碎片。如果在意这个问题，可以使用特定类型的压缩数组，这些数组只接受单个数据类型，避免了内存碎片的同时使用的内存也更少。然而这些压缩数组是原子数组，运行起来通常要比通用数组慢，因此建议仅将压缩数组用于大型数据集当中：</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph><reference internal="True" refuri="../../../classes/class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference>：字节（从 0 到 255 的整数）数组。</paragraph>
@@ -1291,7 +1313,7 @@ print(d[test])</literal_block>
                 </section>
                 <section ids="signal" names="signal">
                     <title><reference internal="True" refuri="../../../classes/class_signal#class-signal"><inline classes="std std-ref">Signal</inline></reference></title>
-                    <paragraph>信号由对象发出，并由对象所监听。 Signal 类型可以用于将信号广播者作为参数进行传递。</paragraph>
+                    <paragraph>信号由对象发出，并由对象所监听。 <title_reference>Signal</title_reference> 类型可以用于将信号广播者作为参数进行传递。</paragraph>
                     <paragraph>信号可以直接从对象实例中进行引用，如 <literal>$Button.button_up</literal> 。</paragraph>
                 </section>
                 <section ids="callable" names="callable">
@@ -1387,12 +1409,12 @@ func _init() -&gt; void:
                         <paragraph>解决这个问题只需将 <literal>_data</literal> 变量的定义移动到 <literal>a</literal> 的定义之前，或者移除空字典的赋值（<literal>={}</literal>）。</paragraph>
                     </warning>
                 </section>
-                <section ids="static-variables" names="static\ variables 静态成员变量">
-                    <title>静态成员变量</title>
+                <section ids="static-variables" names="static\ variables 静态变量">
+                    <title>静态变量</title>
                     <paragraph>成员变量可以声明为静态成员变量：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">static var a</literal_block>
-                    <paragraph>静态成员变量直属于类而非类的实例，即静态成员变量可以在多个类实例之间共享数据，这一点与一般的成员变量有所区别。</paragraph>
-                    <paragraph>在类内，可以在任何函数中访问静态成员变量和非静态变量；而在类外，则可以通过引用类名或类的实例来访问静态成员变量（不推荐“类外”情况下的第二种使用方法，会导致可读性有所下降）。</paragraph>
+                    <paragraph>静态变量直属于类而非类的实例，即静态变量可以在多个类实例之间共享数据，这一点与一般的成员变量有所区别。</paragraph>
+                    <paragraph>在类内，静态函数和非静态函数都可以访问静态变量。在类外，可以通过使用类名或类的实例来访问静态变量（后者并不推荐，因为可读性较低）。</paragraph>
                     <note>
                         <paragraph><literal>@export</literal> 注解和 <literal>@onready</literal> 注解不能修饰静态成员变量。局部变量不能声明为静态局部变量。</paragraph>
                     </note>
@@ -1423,7 +1445,7 @@ func _ready():
     print(Person.max_id)  # 2
     print(person1.max_id) # 2
     print(person2.max_id) # 2</literal_block>
-                    <paragraph>静态成员变量可以指定类型，设置 setter 函数和 getter 函数：</paragraph>
+                    <paragraph>静态变量可以指定类型、设置 setter 函数和 getter 函数：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">static var balance: int = 0
 
 static var debt: int:
@@ -1448,7 +1470,7 @@ func _ready():
             </section>
             <section ids="static-unload-annotation" names="@static_unload\ annotation @static_unload\ 注解">
                 <title><literal>@static_unload</literal> 注解</title>
-                <paragraph>GDScript的类均为资源，静态成员变量会阻止脚本卸载，即便该脚本所对应的类的实例及对其引用并不存在，静态成员变量依旧会阻止脚本卸载。在静态成员变量存储海量数据，还含有对其他对象的引用（比如场景）的情况下，更需要引起格外重视。你可以手动清理掉这些数据，亦或是使用 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference> 注解，让静态成员变量在不存储重要数据时得到重置。</paragraph>
+                <paragraph>GDScript 的类均为资源，而静态变量会阻止脚本资源卸载，即便该脚本所对应的类的实例以及对该实例引用并不存在，静态变量依旧会阻止该脚本资源卸载。在静态变量存储大量数据，同时还含有对其他对象的引用（比如场景）的情况下，更需要引起格外重视。你需要手动清理掉这些数据，亦或是使用 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference> 注解，让静态变量在不存储重要数据时得到重置。</paragraph>
                 <warning>
                     <paragraph>目前由于某个漏洞导致含静态成员变量的脚本实例即使使用了 <literal>@static_unload</literal> 注解也无法被清除的问题。</paragraph>
                 </warning>
@@ -1470,7 +1492,7 @@ my_node2D = $Button as Node2D # Results in 'null' since a Button is not a subtyp
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var my_int: int
 my_int = "123" as int # The string can be converted to int.
 my_int = Vector2() as int # A Vector2 can't be converted to int, this will cause an error.</literal_block>
-                    <paragraph>与场景树进行交互时，强制转型对于获取节点也更加类型安全，十分有用：</paragraph>
+                    <paragraph>与场景树进行交互时，在获取节点这方面，强制转型也更加类型安全，十分有用：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Will infer the variable to be of type Sprite2D.
 var my_sprite := $Character as Sprite2D
 
@@ -1495,12 +1517,9 @@ const H = A + 20 # Constant expression: 25 (`A` is a constant).</literal_block>
 const B: Vector2 = Vector2()</literal_block>
                 <paragraph>赋予与指定的类型不相容的值将触发报错。</paragraph>
                 <paragraph>也可以在函数内使用常量来声明一些局部魔法值。</paragraph>
-                <note>
-                    <paragraph>由于数组和字典是通过引用进行传递的，因此常量数组、字典是“浅引用”。也就是说，如果你声明了一个常量数组或常量字典，那么你依然可以增删该数组或该字典内部元素，但你不能给该常量重新赋予新的数组或字典。</paragraph>
-                </note>
                 <section ids="enums" names="enums 枚举">
                     <title>枚举</title>
-                    <paragraph>枚举实质上是简写的一组常量，适用于为某些常量连续赋整数值。</paragraph>
+                    <paragraph>枚举实质上是常量的简写，适用于为某些常量连续赋整数值。</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">enum {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
 
 # Is the same as:
@@ -1532,19 +1551,19 @@ func _ready():
             </section>
             <section ids="functions" names="functions 函数">
                 <title>函数</title>
-                <paragraph>函数始终属于 <reference name="类" refid="classes">类</reference><target names="类" refname="classes"></target> 。查找变量时，函数作用域的查找顺序是：局部 → 类成员 → 全局。引擎始终允许用 <literal>self</literal> 作为访问本类及本类成员的关键字，但该关键字在一般情况下并无添加的必要（与 Python 不同, <emphasis>不</emphasis> 应将 <literal>self</literal> 作为类方法的首个参数传入类方法当中）。</paragraph>
+                <paragraph>函数始终属于<reference name="类" refid="classes">类</reference><target names="类" refname="classes"></target>。查找变量时，函数作用域的查找顺序是：局部 → 类成员 → 全局。引擎始终允许用 <literal>self</literal> 作为访问本类及本类成员的关键字，但该关键字在一般情况下并无添加的必要（与 Python 不同，在 GDScript 中<emphasis>不应该</emphasis>将 <literal>self</literal> 作为函数的第一个参数传递）。</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func my_function(a, b):
     print(a)
     print(b)
     return a + b  # Return is optional; without it 'null' is returned.</literal_block>
-                <paragraph>函数可以在任何时候用 <literal>return</literal> 返回值，默认的返回值为 <literal>null</literal> 。</paragraph>
+                <paragraph>函数可以在任何时候用 <literal>return</literal> 返回，默认的返回值为 <literal>null</literal>。</paragraph>
                 <paragraph>若函数体只含一行语句，则可以将函数及其函数体缩在同一行语句内编写：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func square(a): return a * a
 
 func hello_world(): print("Hello World")
 
 func empty_function(): pass</literal_block>
-                <paragraph>函数也可带有参数，也可声明返回值的类型。可以使用与声明变量类似的方式添加参数的类型：</paragraph>
+                <paragraph>也可对函数参数及函数返回值进行类型指定。可使用与声明变量类似的方式添加参数的类型：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func my_function(a: int, b: String):
     pass</literal_block>
                 <paragraph>如果函数参数具有默认值，则可以对该参数的类型进行推断：</paragraph>
@@ -1553,11 +1572,11 @@ func empty_function(): pass</literal_block>
                 <paragraph>可以在参数列表之后使用箭头标记（<literal>-&gt;</literal>）来指定函数的返回值类型：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func my_int_function() -&gt; int:
     return 0</literal_block>
-                <paragraph>有返回类型的函数 <strong>必须</strong> 返回与返回值类型相匹配的值。若将返回值类型设置为 <literal>void</literal> ，则该函数不返回任何内容。无返回值函数可以使用 <literal>return</literal> 关键字提前返回，但不能返回任何值。</paragraph>
+                <paragraph>有返回类型的函数<strong>必须</strong>返回与返回值类型相匹配的值。将返回值类型设置为 <literal>void</literal> 表示该函数不返回任何东西。这种函数称为 void 函数，可以使用 <literal>return</literal> 关键字提前返回，但不能返回任何值。</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func void_function() -&gt; void:
     return # Can't return a value.</literal_block>
                 <note>
-                    <paragraph>非 void 函数 <strong>必须</strong> 返回一个值，如果你的代码具有分支语句（例如 <literal>if</literal>/<literal>else</literal> 构造），则所有可能的路径都必须有返回值。例如，如果在 <literal>if</literal> 块内有一个 <literal>return</literal>，但在其后没有，则编辑器将抛出一个错误，因为如果该块未执行，则该函数将没有有效的值返回。</paragraph>
+                    <paragraph>非 void 函数 <strong>必须</strong> 返回一个值，如果你的代码具有分支语句（例如 <literal>if</literal>/<literal>else</literal> 构造），则所有可能的路径都必须有返回值。例如，如果在 <literal>if</literal> 块内有一个 <literal>return</literal>，但在其后没有，则编辑器将抛出一个错误，因为如果该代码块未执行，那么该函数将没有值进行有效返回。</paragraph>
                 </note>
                 <section ids="referencing-functions" names="referencing\ functions 引用函数">
                     <title>引用函数</title>
@@ -1576,28 +1595,28 @@ func _ready() -&gt; void:
     var plus_one = map(my_array, add1)
     print(plus_one) # Prints [2, 3, 4].</literal_block>
                     <note>
-                        <paragraph>可调用体 <strong>必须</strong> 使用 <literal>call</literal> 方法进行调用，不能直接使用 <literal>()</literal> 运算符，以避免直接调用可调用体所指向的函数而造成的性能问题。</paragraph>
+                        <paragraph>可调用体<strong>必须</strong>使用 <literal>call</literal> 方法进行调用，不能直接使用 <literal>()</literal> 运算符。实现这种行为是为了避免影响直接函数调用的性能。</paragraph>
                     </note>
                 </section>
-                <section ids="lambda-functions" names="lambda\ functions lambda\ 函数（匿名函数）">
-                    <title>Lambda 函数（匿名函数）</title>
-                    <paragraph>Lambda 函数允许声明不属于类的函数，直接创建 <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> 对象并将其赋值给变量。该操作对于创建可传递的可调用体而不污染该类的作用范围非常有用。</paragraph>
+                <section ids="lambda-functions" names="lambda\ functions lambda\ 函数">
+                    <title>Lambda 函数</title>
+                    <paragraph>Lambda 函数允许声明不属于类的函数，直接创建 <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> 对象并将其赋值给变量，可以创建可传递的可调用体，同时又不会污染该类的作用范围，非常有用。</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func(x): print(x)
 lambda.call(42) # Prints "42"</literal_block>
-                    <paragraph>Lambda 函数可用于代码调试：</paragraph>
+                    <paragraph>Lambda 函数还可用于代码调试：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func my_lambda(x):
     print(x)</literal_block>
-                    <paragraph>注意：若想要在 Lambda 函数中返回值，必须显式使用 <literal>return</literal> 关键字进行返回（即无法省略 <literal>return</literal> ）:</paragraph>
+                    <paragraph>注意，若想要在 Lambda 函数中返回值，必须显式使用 <literal>return</literal> 关键字进行返回（即无法省略 <literal>return</literal>）</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func(x): return x ** 2
 print(lambda.call(2)) # Prints `4`.</literal_block>
-                    <paragraph>Lambda 函数的函数体会自动捕获局部函数所在的函数体作用域，而局部变量是按值传递的，因此，这些局部变量即便在其所在的函数体作用域内发生更改，也不会影响其在 Lambda 函数中的效果：</paragraph>
+                    <paragraph>局部变量是按值传递的，而Lambda 函数又会自动捕获其所在的函数体作用域。因此，这些局部变量即便在其所在的函数体作用域内发生更改，也不会影响其在 Lambda 函数中的效果：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var x = 42
 var my_lambda = func(): print(x)
 my_lambda.call() # Prints "42"
 x = "Hello"
 my_lambda.call() # Prints "42"</literal_block>
                     <note>
-                        <paragraph>作用在 Lambda 函数体之外的变量值对该 Lambda 函数而言就像常量一样，因此，如果你给变量声明了一个数组类型或字典类型的值，则在 Lambda 函数的声明后仍可修改这些值。</paragraph>
+                        <paragraph>作用在 Lambda 函数体之外的变量值对该 Lambda 函数而言就像常量一样，如果你给变量声明了一个数组类型或字典类型的值，那么在 Lambda 函数的声明后面仍可修改这些值。</paragraph>
                     </note>
                 </section>
                 <section ids="static-functions" names="static\ functions 静态函数">
@@ -1606,15 +1625,15 @@ my_lambda.call() # Prints "42"</literal_block>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">static func sum2(a, b):
     return a + b</literal_block>
                     <paragraph>Lambda 函数不可声明为静态函数。</paragraph>
-                    <paragraph>见 <reference name="静态成员变量" refid="static-variables">静态成员变量</reference> 和 <reference name="静态构造函数" refid="static-constructor">静态构造函数</reference> 。</paragraph>
+                    <paragraph>见<reference name="静态变量" refid="static-variables">静态变量</reference>和<reference name="静态构造函数" refid="static-constructor">静态构造函数</reference>。</paragraph>
                 </section>
             </section>
             <section ids="statements-and-control-flow" names="statements\ and\ control\ flow 语句与流程控制">
                 <title>语句与流程控制</title>
-                <paragraph>标准语句可以是赋值、函数调用以及流程控制结构等（见下方）。 <literal>;</literal> 为语句分隔符，在使用时完全可选。</paragraph>
+                <paragraph>标准的语句可以是赋值、函数调用以及流程控制结构等（见下方）。 <literal>;</literal> 为语句分隔符，在使用时可写可略。</paragraph>
                 <section ids="expressions" names="expressions 表达式">
                     <title>表达式</title>
-                    <paragraph>表达式是运算符和操作数的有序排列，尽管只有调用时才可以用作语句使用，只要其他表达式没有副作用，其自身也可作为一条语句使用。</paragraph>
+                    <paragraph>表达式是运算符和操作数的有序排列，尽管表达式本身可以构成一个语句，但仅函数调用才适合作为语句使用，因为其他类型的表达式通常不会产生副作用。</paragraph>
                     <paragraph>表达式返回的数值可赋值给有效目标，而某些运算符的操作数也可以变成一条表达式。赋值语句因无返回值而不能作为表达式使用。</paragraph>
                     <paragraph>以下是一些表达式的示例:</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">2 + 2 # Binary operation.
@@ -1714,7 +1733,7 @@ for i in 2.2:
     statement # Similar to range(ceil(2.2)).</literal_block>
                     <paragraph>若需要在数组迭代时对数组进行赋值操作，则推荐使用 <literal>for i in array.size()</literal> 来进行该操作。</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">for i in array.size():
-        array[i] = "Hello World"</literal_block>
+    array[i] = "Hello World"</literal_block>
                     <paragraph>循环变量只属于该循环，为其赋值并不会更改数组的值。如果循环变量是通过引用传递的对象（如节点），则仍可通过调用其方法来操作所指向的对象。</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">for string in string_array:
     string = "Hello World" # This has no effect
@@ -1898,7 +1917,7 @@ for node in node_array:
                     </section>
                     <section ids="pattern-guards" names="pattern\ guards 模式保护">
                         <title>模式保护</title>
-                        <paragraph>对含相同分支条件的多个分支而言，每个 <literal>match</literal> 结构只能执行其中一条分支，一旦有分支通过匹配，那么剩下的相同条件的分支都将不再执行。如果需要执行多条含相同条件的分支，而避免只执行其中一条的话，可以使用模式保护语句，用 <literal>when</literal> 关键字引导：</paragraph>
+                        <paragraph>在 <literal>match</literal> 结构中，每次只能执行其中一条分支，一旦有分支通过匹配，那么剩下的所有分支都将不再进行匹配。如果需要在多个分支中使用相同的匹配模式，或者想要避免由于模式过于宽泛而选择了其中一条错误的分支的话，那么可以使用模式保护语句，用 <literal>when</literal> 关键字引导：</paragraph>
                         <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">match point:
     [0, 0]:
         print("Origin")
@@ -1914,16 +1933,16 @@ for node in node_array:
         print("Point (%s, %s)" % [x, y])</literal_block>
                         <bullet_list bullet="-">
                             <list_item>
-                                <paragraph>若在当前同条件多分支句中找不到匹配的模式，则模式保护语法不会对该同条件多分支句起效，而是转到下一个（同条件多）分支句进行模式匹配。</paragraph>
+                                <paragraph>若当前分支没有匹配的模式，则保护表达式将不会执行，程序将自动转向下一条分支的模式进行匹配检查。</paragraph>
                             </list_item>
                             <list_item>
-                                <paragraph>若当前同条件多分支句的模式与给定值匹配，则执行多分支句里的模式保护语句。</paragraph>
+                                <paragraph>一旦识别到匹配的模式，相应的保护表达式便会执行，以决定是否执行该分支下的代码。</paragraph>
                                 <bullet_list bullet="-">
                                     <list_item>
-                                        <paragraph>若保护条件结果为真，则执行该分支下的语句并跳出 <literal>match</literal> 结构。</paragraph>
+                                        <paragraph>若保护表达式结果为真，则执行该分支下的语句并跳出 <literal>match</literal> 结构。</paragraph>
                                     </list_item>
                                     <list_item>
-                                        <paragraph>若保护条件为假，则对下一个同条件分支句的模式进行检测。</paragraph>
+                                        <paragraph>若保护表达式结果为假，则程序将跳过当前分支，继续检查下一条分支的模式。</paragraph>
                                     </list_item>
                                 </bullet_list>
                             </list_item>
@@ -2030,15 +2049,15 @@ if entity is Enemy:
 func dont_override():
     return super.overriding() # This calls the method as defined in the base class.</literal_block>
                     <warning>
-                        <paragraph>目前普遍有人想试图覆盖引擎内置的 <emphasis>非虚</emphasis> 方法，如 <literal>get_class()</literal> 、 <literal>queue_free()</literal> 等。出于技术性原因，暂不支持这种操作，理由如下。</paragraph>
-                        <paragraph>Godot 3 里的 GDScript 允许你 <emphasis>隐藏</emphasis> 引擎方法，而这些被隐藏后重新定义的方法却可以被其他 GDScript 脚本所调用，倘若该方法在引擎内部执行，那么引擎并不会执行你所重新定义的方法。</paragraph>
-                        <paragraph>Godot 4 对 GDScript 内置方法调用机制进行了优化，隐藏方法再重新定义一个同名方法这个招数就再也不管用了。鉴于此，我们增添了 <literal>NATIVE_METHOD_OVERRIDE</literal> 警告选项，默认设置为一种抛错。我们强烈建议保持该选项开启，不要作为警告而忽略之。</paragraph>
-                        <paragraph>不过需要注意：对于虚方法，比如 <literal>_ready()</literal>, <literal>_process()</literal> 以及其他虚方法（在文档中被标为 <literal>virtual</literal> 且以下划线开头的内置方法），则会进行覆盖操作。虚方法是专门用于自定义引擎行为的方法，可被 GDScript 所覆盖。信号、通知也可用于自定义引擎行为。</paragraph>
+                        <paragraph>开发者通常会误以为可以覆写引擎内的 <emphasis>非虚</emphasis> 方法，如 <literal>get_class()</literal> 、 <literal>queue_free()</literal> 等。出于技术性原因，暂不支持这种操作。</paragraph>
+                        <paragraph>Godot 3 里的 GDScript 允许开发者 <emphasis>隐藏</emphasis> 引擎方法，而这些被隐藏后重新定义的方法却可以被其他 GDScript 脚本所调用，倘若该方法在引擎内部执行，那么引擎并不会执行你所“重新定义”的方法。</paragraph>
+                        <paragraph>Godot 4 对 GDScript 内置方法调用机制进行了优化，隐藏方法再重新定义一个同名方法这招彻底行不通了。鉴于此，我们增添了 <literal>NATIVE_METHOD_OVERRIDE</literal> 警告选项，默认设置为一种抛错。我们强烈建议保持该选项开启，不要作为警告而忽略之。</paragraph>
+                        <paragraph>不过需要注意：对于虚方法，比如 <literal>_ready()</literal>, <literal>_process()</literal> 以及其他虚方法（在文档中被标为 <literal>virtual</literal> 且以下划线开头的内置方法），则会进行覆写操作。虚方法是专门用于自定义引擎行为的方法，可被 GDScript 所覆写。信号、通知也可用于自定义引擎行为。</paragraph>
                     </warning>
                 </section>
                 <section ids="class-constructor" names="class\ constructor 类的构造函数">
                     <title>类的构造函数</title>
-                    <paragraph>类的构造函数在类进行初始化时调用，在 GDScript 中构造函数为虚函数 <literal>_init</literal> 。若想要在构造函数中调用父类构造函数，同样可以使用 <literal>super</literal> 语法。需要注意：每个类都有一个隐式构造函数，总是由引擎调用，用于定义类变量的默认值，而 <literal>super</literal> 则用于调用显式构造函数：</paragraph>
+                    <paragraph>类的构造函数在类进行初始化时调用，在 GDScript 中构造函数为虚函数 <literal>_init</literal> 。若想要在构造函数中调用父类构造函数，同样可以使用 <literal>super</literal> 语法。需要注意：每个类都有一个隐式构造函数，始终由引擎调用，用于定义类变量的默认值，而 <literal>super</literal> 则用于显式调用构造函数：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _init(arg):
    super("some_default", arg) # Call the custom base constructor.</literal_block>
                     <paragraph>通过示例可以更好地说明这一点。考虑一下这种情况：</paragraph>
@@ -2075,7 +2094,7 @@ func _init(e=null, m=null):
                             <paragraph>在上面的示例中，传递给 <literal>State.gd</literal> 构造函数的 <literal>e</literal> 与传递给 <literal>Idle.gd</literal> 的 <literal>e</literal> 是相同的。</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph>如果 <literal>Idle.gd</literal> 的 <literal>_init</literal> 构造函数不接受任何参数，该构造函数即便什么也不做，也仍然需要将一些值传递给 <literal>State.gd</literal> 父类。当然，我们除了可以给基类构造函数传变量之外，也可以传表达式，例如：</paragraph>
+                            <paragraph>如果 <literal>Idle.gd</literal> 的 <literal>_init</literal> 构造函数不接受任何参数，即便该构造函数即便什么也不做，也仍然需要将一些值传递给 <literal>State.gd</literal> 父类。当然，我们除了可以给基类构造函数传变量之外，也可以传表达式，例如：</paragraph>
                             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># idle.gd
 
 func _init():
@@ -2085,7 +2104,7 @@ func _init():
                 </section>
                 <section ids="static-constructor" names="static\ constructor 静态构造函数">
                     <title>静态构造函数</title>
-                    <paragraph>静态构造函数用虚函数 <literal>_static_init</literal> 表示，该函数会在类被载入时，静态类成员变量初始化后自动调用：</paragraph>
+                    <paragraph>静态构造函数用虚函数 <literal>_static_init</literal> 表示，该函数会在类被载入、静态变量初始化后自动调用：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">static var my_static_var = 1
 
 static func _static_init():
@@ -2115,7 +2134,10 @@ func _init():
                 </section>
                 <section ids="classes-as-resources doc-gdscript-classes-as-resources" names="classes\ as\ resources 类作为资源 doc_gdscript_classes_as_resources">
                     <title>类作为资源</title>
-                    <paragraph>存储为文件的类将会视为 <reference internal="True" refuri="../../../classes/class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference>，必须从磁盘加载这些文件之后才能在其他类中访问它们，可以通过调用 <literal>load</literal> 或 <literal>preload</literal> 函数来完成（后述）。一个加载的类资源通过调用类对象上的 <literal>new</literal> 函数来完成实例化：</paragraph>
+                    <paragraph>Classes stored as files are treated as <reference internal="True" refuri="../../../classes/class_gdscript#class-gdscript"><inline classes="std std-ref">GDScripts</inline></reference>. They
+                        must be loaded from disk to access them in other classes. This is done using
+                        either the <literal>load</literal> or <literal>preload</literal> functions (see below). Instancing of a loaded
+                        class resource is done by calling the <literal>new</literal> function on the class object:</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Load the class resource when calling load().
 var MyClass = load("myclass.gd")
 
@@ -2307,7 +2329,7 @@ func _ready():
     var character_node = get_node('Character')
     var battle_log_node = get_node('UserInterface/BattleLog')
 
-    character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])</literal_block>
+    character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))</literal_block>
                 <paragraph>我们的 <literal>BattleLog</literal> 节点接收信号时，将绑定参数这个数组中的每个元素作为额外的参数传入被连接的函数当中：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># battle_log.gd
 
@@ -2318,8 +2340,8 @@ func _on_Character_health_changed(old_value, new_value, character_name):
     var damage = old_value - new_value
     label.text += character_name + " took " + str(damage) + " damage."</literal_block>
             </section>
-            <section ids="awaiting-for-signals-or-coroutines" names="awaiting\ for\ signals\ or\ coroutines 等待信号或协程函数">
-                <title>等待信号或协程函数</title>
+            <section ids="awaiting-signals-or-coroutines" names="awaiting\ signals\ or\ coroutines">
+                <title>Awaiting signals or coroutines</title>
                 <paragraph><literal>await</literal> 关键字可以用来创建<reference name="协程" refuri="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B">协程</reference><target ids="id1" names="协程" refuri="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B"></target>，会等待某个信号发出之后再继续执行下面的代码。对信号或者对同为协程的函数调用使用 <literal>await</literal> 关键字会立即将控制权返回给调用方。发出信号时（或者调用的协程函数完成时），就会从停止的地方继续往下执行代码。</paragraph>
                 <paragraph>例如，要暂停代码执行，直到到用户按下某个按钮后才能继续往下执行剩余代码，你就可以这样写：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func wait_confirmation():
@@ -2327,7 +2349,7 @@ func _on_Character_health_changed(old_value, new_value, character_name):
     await $Button.button_up # Waits for the button_up signal from Button node.
     print("User confirmed")
     return true</literal_block>
-                <paragraph>此时 <literal>wait_confirmation</literal> 就会变成协程函数，调用方也需要对它进行等待操作：</paragraph>
+                <paragraph>In this case, the <literal>wait_confirmation</literal> becomes a coroutine, which means that the caller also needs to await it:</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func request_confirmation():
     print("Will ask the user")
     var confirmed = await wait_confirmation()
@@ -2349,7 +2371,7 @@ func _on_Character_health_changed(old_value, new_value, character_name):
 
 func get_five():
     return 5</literal_block>
-                <paragraph>也就是说，如果从非协程函数中返回信号，那么调用方就会等待那个信号：</paragraph>
+                <paragraph>This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal:</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func get_signal():
     return $Button.button_up
 

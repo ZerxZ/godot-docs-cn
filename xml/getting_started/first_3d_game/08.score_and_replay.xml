@@ -7,7 +7,8 @@
         <title>分数与重玩</title>
         <paragraph>在这一部分中，我们会添加计分、播放音乐、重启游戏的能力。</paragraph>
         <paragraph>我们要用一个变量来记录当前的分数，使用最简的界面在屏幕上显示。我们会用文本标签来实现。</paragraph>
-        <paragraph>在主场景中，添加一个新的 <reference internal="True" refuri="../../classes/class_control#class-control"><inline classes="std std-ref">Control</inline></reference> 节点作为 <literal>Main</literal> 的子项，命名为 <literal>UserInterface</literal>。你会被自动切换到 2D 屏幕，可以在这里编辑你的用户界面 User Interface（UI）。</paragraph>
+        <paragraph>In the main scene, add a new child node <reference internal="True" refuri="../../classes/class_control#class-control"><inline classes="std std-ref">Control</inline></reference> to <literal>Main</literal> and name it
+            <literal>UserInterface</literal>. Ensure you are on the 2D screen, where you can edit your User Interface (UI).</paragraph>
         <paragraph>名为分数标签 <literal>ScoreLabel</literal> 的 <reference internal="True" refuri="../../classes/class_label#class-label"><inline classes="std std-ref">Label</inline></reference></paragraph>
         <paragraph><image alt="image1" candidates="{'*': 'getting_started/first_3d_game/img/08.score_and_replay/01_label_node.webp'}" uri="getting_started/first_3d_game/img/08.score_and_replay/01_label_node.webp"></image></paragraph>
         <paragraph>在<emphasis>检查器</emphasis>中将该 <emphasis>Label</emphasis> 的 <emphasis>Text</emphasis> 设为类似“Score: 0”的占位内容。</paragraph>
@@ -24,11 +25,13 @@
             <paragraph><image alt="image5" candidates="{'*': 'getting_started/first_3d_game/img/08.score_and_replay/05_creating_theme.webp'}" uri="getting_started/first_3d_game/img/08.score_and_replay/05_creating_theme.webp"></image></paragraph>
             <paragraph>单击这个资源就会在底部面板中打开主题编辑器。会展示使用你的主题资源时内置 UI 控件的外观。</paragraph>
             <paragraph><image alt="image6" candidates="{'*': 'getting_started/first_3d_game/img/08.score_and_replay/06_theme_preview.webp'}" uri="getting_started/first_3d_game/img/08.score_and_replay/06_theme_preview.webp"></image></paragraph>
-            <paragraph>默认情况下，主题只有一个属性，<emphasis>Default Font</emphasis>（默认字体）。</paragraph>
+            <paragraph>By default, a theme only has a few properties: <emphasis>Default Base Scale</emphasis>, <emphasis>Default Font</emphasis>
+                and <emphasis>Default Font Size</emphasis>.</paragraph>
             <seealso>
                 <paragraph>你可以为主题资源添加更多属性，从而设计更复杂的用户界面，不过这就超出本系列的范畴了。要学习主题的创建和编辑，请参阅 <reference internal="True" refuri="../../tutorials/ui/gui_skinning#doc-gui-skinning"><inline classes="std std-ref">GUI 皮肤简介</inline></reference>。</paragraph>
             </seealso>
-            <paragraph>这里需要的是一个字体文件，就是你电脑上用的那种。常见的字体文件格式有两种：TrueType 字体（TTF）和 OpenType 字体（OTF）。</paragraph>
+            <paragraph>The <emphasis>Default Font</emphasis> expects a font file like the ones you have on your computer.
+                Two common font file formats are TrueType Font (TTF) and OpenType Font (OTF).</paragraph>
             <paragraph>在<emphasis>文件系统</emphasis>面板中，展开 <literal>fonts</literal> 目录，单击我们包含在项目里的 <literal>Montserrat-Medium.ttf</literal> 文件并将其拖放到<emphasis>Default Font</emphasis>（默认字体）上。文本就又会出现在主题预览中了。</paragraph>
             <paragraph>文本有一点小。将<emphasis>Default Font Size</emphasis>（默认字体大小）设置为 <literal>22</literal> 像素即可增大文本的大小。</paragraph>
             <paragraph><image alt="image7" candidates="{'*': 'getting_started/first_3d_game/img/08.score_and_replay/07_font_size.webp'}" uri="getting_started/first_3d_game/img/08.score_and_replay/07_font_size.webp"></image></paragraph>

@@ -58,10 +58,7 @@
             <title>创建 PO 模板</title>
             <section ids="automatic-generation-using-the-editor" names="automatic\ generation\ using\ the\ editor 使用编辑器自动生成">
                 <title>使用编辑器自动生成</title>
-                <paragraph>Since Godot 4.0, the editor can generate a PO template automatically from
-                    specified scene and GDScript files. This POT generation also supports translation
-                    contexts and pluralization if used in a script, with the optional second
-                    argument of <literal>tr()</literal> and the <literal>tr_n()</literal> method.</paragraph>
+                <paragraph>自Godot 4.0以来，编辑器可以从指定的场景和GDScript文件中自动生成PO模板。如果在脚本中使用，此POT生成还支持翻译上下文和复数形式，可选的第二个实参为``tr()`` 和 <problematic ids="id2" refid="id1">``</problematic>tr_n()``方法。</paragraph>
                 <paragraph>打开项目设置的<strong>本地化 &gt; POT 生成</strong>选项卡，然后使用<strong>添加...</strong> 按钮指定项目中包含可本地化字符串的场景和脚本的路径：</paragraph>
                 <figure align="center" ids="id1">
                     <image alt="在项目设置的“本地化 &gt; POT 生成”选项卡中创建 PO 模板" candidates="{'*': 'tutorials/i18n/img/localization_using_gettext_pot_generation.webp'}" uri="tutorials/i18n/img/localization_using_gettext_pot_generation.webp"></image>
@@ -71,13 +68,9 @@
                     top-right corner, then specify the path to the output file. This file can be
                     placed anywhere in the project directory, but it's recommended to keep it in a
                     subdirectory such as <literal>locale</literal>, as each locale will be defined in its own file.</paragraph>
-                <paragraph>You can then move over to
-                    <reference internal="True" refid="doc-localization-using-gettext-messages-file"><inline classes="std std-ref">creating a messages file from a PO template</inline></reference>.</paragraph>
+                <paragraph>然后，你可以继续从 <reference internal="True" refid="doc-localization-using-gettext-messages-file"><inline classes="std std-ref">creating a messages file from a PO template</inline></reference>.</paragraph>
                 <note>
-                    <paragraph>Remember to regenerate the PO template after making any changes to
-                        localizable strings, or after adding new scenes or scripts. Otherwise, newly
-                        added strings will not be localizable and translators won't be able to
-                        update translations for outdated strings.</paragraph>
+                    <paragraph>请记住在对可本地化字串进行任何更改或新增新场景或脚本后重新生成PO模板。否则，新新增的字串将无法在地化，且翻译人员将无法更新过时字串的翻译。</paragraph>
                 </note>
             </section>
             <section ids="manual-creation" names="manual\ creation 手动创建">
@@ -147,11 +140,13 @@ msgmerge --update --backup=none fr.po messages.pot</literal_block>
         <section ids="using-binary-mo-files-useful-for-large-projects-only" names="using\ binary\ mo\ files\ (useful\ for\ large\ projects\ only) 使用二进制\ mo\ 文件（仅适用于大型项目）">
             <title>使用二进制 MO 文件（仅适用于大型项目）</title>
             <paragraph>大型项目会有成千上万的字符串要翻译，相比于基于文本的 PO 文件，使用（编译为）二进制的 MO 消息文件可能更加划算。二进制 MO 文件比对应的 PO 文件更小、读起来更快。</paragraph>
-            <paragraph>你可以使用下面的命令生成 MO 文件：</paragraph>
+            <paragraph>You can generate an MO file with the command below:</paragraph>
             <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">msgfmt fr.po --no-hash -o fr.mo</literal_block>
             <paragraph>If the PO file is valid, this command will create a <literal>fr.mo</literal> file besides
                 the PO file. This MO file can then be loaded in Godot as described above.</paragraph>
-            <paragraph>应该在版本控制中保留原始 PO 文件，这样以后就可以更新翻译。如果你丢失了原始的 PO 文件，希望将 MO 文件反编译为基于文本的 PO 文件，你可以这样做：</paragraph>
+            <paragraph>The original PO file should be kept in version control so you can update
+                your translation in the future. In case you lose the original PO file and
+                wish to decompile an MO file into a text-based PO file, you can do so with:</paragraph>
             <literal_block force="False" highlight_args="{}" language="shell" linenos="False" xml:space="preserve">msgunfmt fr.mo &gt; fr.po</literal_block>
             <paragraph>反编译出的文件不包含注释和模糊字符串，因为它们一开始就没有编译进 MO 文件里。</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>

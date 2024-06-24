@@ -9,13 +9,13 @@
             We love SCons for how maintainable and easy to set up it makes our buildsystem. And thanks to
             that compiling Godot from source can be as simple as running:</paragraph>
         <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons</literal_block>
-        <paragraph>This produces an <emphasis>export template</emphasis> for your current platform, operating system, and architecture.
-            An export template is a build of the engine that is used for running exported projects. To build
-            the <emphasis>editor</emphasis> instead you can run the following command:</paragraph>
-        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons target=editor</literal_block>
-        <paragraph>If you plan to debug or develop the engine, then you might want to add another option to the command:</paragraph>
-        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons dev_build=yes
-scons target=editor dev_build=yes</literal_block>
+        <paragraph>This produces an editor build for your current platform, operating system, and architecture.
+            You can change what gets built by specifying a target, a platform, and/or an architecture.
+            For example, to build an export template used for running exported games, you can run:</paragraph>
+        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons target=template_release</literal_block>
+        <paragraph>If you plan to debug or develop the engine, then you might want to enable the <literal>dev_build</literal>
+            option to enable dev-only debugging code:</paragraph>
+        <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons dev_build=yes</literal_block>
         <paragraph>Following sections in the article will explain these and other universal options in more detail. But
             before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
             documentation to learn more:</paragraph>
@@ -210,7 +210,7 @@ production=yes debug_symbols=yes</literal> to create production-optimized binari
                 <list_item>
                     <paragraph><literal>optimize=custom</literal> <emphasis>(advanced users only)</emphasis>: Do not pass optimization
                         arguments to the C/C++ compilers. You will have to pass arguments manually
-                        using the <literal>CFLAGS</literal>, <literal>CCFLAGS</literal> and <literal>CXXFLAGS</literal> SCons options.</paragraph>
+                        using the <literal>cflags</literal>, <literal>ccflags</literal> and <literal>cxxflags</literal> SCons options.</paragraph>
                 </list_item>
             </bullet_list>
         </section>
@@ -312,7 +312,7 @@ elif version.major == 4:
                     <paragraph>For the folders accelerated by this option, multiple <literal>.cpp</literal> files are
                         compiled in each translation unit, so headers can be shared between multiple
                         files, which can dramatically decrease build times.</paragraph>
-                    <paragraph>To make a SCU build, use the <literal>scu_build=yes</literal> SCons option.</paragraph>
+                    <paragraph>To perform an SCU build, use the <literal>scu_build=yes</literal> SCons option.</paragraph>
                     <note>
                         <paragraph>When developing a Pull Request using SCU builds, be sure to make a
                             regular build prior to submitting the PR. This is because SCU builds
@@ -330,20 +330,34 @@ elif version.major == 4:
             <paragraph>如果下载官方导出模板程序包并解压缩, 你会注意到大多数文件都是针对每个平台的优化二进制文件或程序包:</paragraph>
             <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">android_debug.apk
 android_release.apk
-web_debug.zip
-web_release.zip
-linux_server_32
-linux_server_64
-linux_x11_32_debug
-linux_x11_32_release
-linux_x11_64_debug
-linux_x11_64_release
+android_source.zip
+ios.zip
+linux_debug.arm32
+linux_debug.arm64
+linux_debug.x86_32
+linux_debug.x86_64
+linux_release.arm32
+linux_release.arm64
+linux_release.x86_32
+linux_release.x86_64
 macos.zip
 version.txt
-windows_32_debug.exe
-windows_32_release.exe
-windows_64_debug.exe
-windows_64_release.exe</literal_block>
+web_debug.zip
+web_dlink_debug.zip
+web_dlink_nothreads_debug.zip
+web_dlink_nothreads_release.zip
+web_dlink_release.zip
+web_nothreads_debug.zip
+web_nothreads_release.zip
+web_release.zip
+windows_debug_x86_32_console.exe
+windows_debug_x86_32.exe
+windows_debug_x86_64_console.exe
+windows_debug_x86_64.exe
+windows_release_x86_32_console.exe
+windows_release_x86_32.exe
+windows_release_x86_64_console.exe
+windows_release_x86_64.exe</literal_block>
             <paragraph>要自己创建它们, 请按照该教程中针对每个平台的详细说明的部分进行操作. 每个平台都说明了如何创建自己的模板.</paragraph>
             <paragraph><literal>version.txt</literal> 文件应包含相应的 Godot 版本标识符。该文件用于在特定于版本的目录中安装导出模板，以避免冲突。例如，如果你要为 Godot 3.1.1 构建导出模板，则 <literal>version.txt</literal> 文件的第一行应包含 <literal>3.1.1.stable</literal>（没有其他内容）。该版本标识符<reference name="在 Godot Git 仓库库中的 version.py 文件" refuri="https://github.com/godotengine/godot/blob/master/version.py">在 Godot Git 仓库库中的 version.py 文件</reference>的 <literal>major</literal>、<literal>minor</literal>、<literal>patch</literal>（如果存在）和 <literal>status</literal> 行。</paragraph>
             <paragraph>If you are developing for multiple platforms, macOS is definitely the most

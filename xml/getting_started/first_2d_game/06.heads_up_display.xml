@@ -200,7 +200,8 @@ public partial class HUD : CanvasLayer
 }</literal_block>
                 </div>
             </container>
-            <paragraph>连接 <literal>StartButton</literal> 的 <literal>pressed()</literal> 信号与 <literal>MessageTimer</literal> 的 <literal>timeout()</literal> 信号，然后在新函数中添加以下代码：</paragraph>
+            <paragraph>Connect the <literal>pressed()</literal> signal of <literal>StartButton</literal> and the <literal>timeout()</literal>
+                signal of <literal>MessageTimer</literal> to the <literal>HUD</literal> node, and add the following code to the new functions:</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -215,12 +216,14 @@ func _on_message_timer_timeout():
     $Message.hide()</literal_block>
                 </div>
                 <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void OnStartButtonPressed()
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
+private void OnStartButtonPressed()
 {
     GetNode&lt;Button&gt;("StartButton").Hide();
     EmitSignal(SignalName.StartGame);
 }
 
+// We also specified this function name in PascalCase in the editor's connection window.
 private void OnMessageTimerTimeout()
 {
     GetNode&lt;Label&gt;("Message").Hide();

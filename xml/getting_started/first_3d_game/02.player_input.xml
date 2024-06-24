@@ -32,10 +32,13 @@
         <image candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/add_capsuleshape3d.webp'}" uri="getting_started/first_3d_game/img/02.player_input/add_capsuleshape3d.webp"></image>
         <paragraph>球体的线框出现在角色的下面。</paragraph>
         <paragraph><image alt="image3" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/04.sphere_shape.png'}" uri="getting_started/first_3d_game/img/02.player_input/04.sphere_shape.png"></image></paragraph>
-        <paragraph>它将是物理引擎用来与环境碰撞的形状，因此我们希望它更适合 3D 模型。通过拖动视口中的橙色点将其缩小一点。我的球体半径约为 <literal>0.8</literal> 米。</paragraph>
-        <paragraph>然后，向上移动形状，使其底部与网格平面大致对齐。</paragraph>
+        <paragraph>It will be the shape the physics engine uses to collide with the environment, so
+            we want it to better fit the 3D model. Make it a bit larger by dragging the orange
+            dot in the viewport. My sphere has a radius of about <literal>0.8</literal> meters.</paragraph>
+        <paragraph>Then, move the collision shape up so its bottom roughly aligns with the grid's plane.</paragraph>
         <paragraph><image alt="image4" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/05.moving_the_sphere_up.png'}" uri="getting_started/first_3d_game/img/02.player_input/05.moving_the_sphere_up.png"></image></paragraph>
-        <paragraph>你可以通过单击 <literal>Character</literal> 或 <literal>Pivot</literal> 节点旁边的眼睛图标来切换模型的可见性。</paragraph>
+        <paragraph>To make moving the shape easier, you can toggle the model's visibility by clicking
+            the eye icon next to the <literal>Character</literal> or the <literal>Pivot</literal> nodes.</paragraph>
         <paragraph><image alt="image5" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/06.toggling_visibility.webp'}" uri="getting_started/first_3d_game/img/02.player_input/06.toggling_visibility.webp"></image></paragraph>
         <paragraph>将场景保存为 <literal>player.tscn</literal></paragraph>
         <paragraph>节点准备就绪后，我们开始编写程序。但首先，我们需要定义一些输入动作。</paragraph>
@@ -46,10 +49,13 @@
             <paragraph><image alt="image6" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.project_settings.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.project_settings.png"></image></paragraph>
             <paragraph>顶部有许多标签。点击<emphasis>按键映射</emphasis>。你可以在这个窗口顶部添加新的动作；即标签。下半部分可以为这些动作绑定按键。</paragraph>
             <paragraph><image alt="image7" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.input_map_tab.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.input_map_tab.png"></image></paragraph>
-            <paragraph>Godot 项目针对用户界面设计提供了一些预定义的动作，我们这里可以直接使用。不过为了支持手柄，我们还是自己来定义。</paragraph>
+            <paragraph>Godot projects come with some predefined actions designed for user interface
+                design (see above screenshot). These will become visible if you enable the
+                <emphasis>Show Built-in Actions</emphasis> toggle. We could use these here, but instead we're
+                defining our own to support gamepads. Leave <emphasis>Show Built-in Actions</emphasis> disabled.</paragraph>
             <paragraph>我们要把这些动作命名为 <literal>move_left</literal>、<literal>move_right</literal>、<literal>move_forward</literal>、<literal>move_back</literal>、<literal>jump</literal>（向左移动、向右移动、向前移动、向后移动、跳跃）。</paragraph>
             <paragraph>要添加动作，可以在顶部的框中输入名称然后按回车键。</paragraph>
-            <paragraph><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.adding_action.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.adding_action.png"></image></paragraph>
+            <paragraph><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.adding_action.webp'}" uri="getting_started/first_3d_game/img/02.player_input/07.adding_action.webp"></image></paragraph>
             <paragraph>创建以下五个动作：</paragraph>
             <paragraph><image alt="image9" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/08.actions_list_empty.png'}" uri="getting_started/first_3d_game/img/02.player_input/08.actions_list_empty.png"></image></paragraph>
             <paragraph>要为动作绑定按键或按钮，请点击右侧的“+”按钮。对 <literal>move_left</literal> 执行此操作，按下左方向键，然后单击<emphasis>确定</emphasis>。</paragraph>
@@ -80,7 +86,7 @@
             <substitution_definition names="image5"><image alt="image5" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/06.toggling_visibility.webp'}" uri="getting_started/first_3d_game/img/02.player_input/06.toggling_visibility.webp"></image></substitution_definition>
             <substitution_definition names="image6"><image alt="image6" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.project_settings.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.project_settings.png"></image></substitution_definition>
             <substitution_definition names="image7"><image alt="image7" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.input_map_tab.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.input_map_tab.png"></image></substitution_definition>
-            <substitution_definition names="image8"><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.adding_action.png'}" uri="getting_started/first_3d_game/img/02.player_input/07.adding_action.png"></image></substitution_definition>
+            <substitution_definition names="image8"><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/07.adding_action.webp'}" uri="getting_started/first_3d_game/img/02.player_input/07.adding_action.webp"></image></substitution_definition>
             <substitution_definition names="image9"><image alt="image9" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/08.actions_list_empty.png'}" uri="getting_started/first_3d_game/img/02.player_input/08.actions_list_empty.png"></image></substitution_definition>
             <substitution_definition names="image11"><image alt="image11" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/09.keyboard_key_popup.png'}" uri="getting_started/first_3d_game/img/02.player_input/09.keyboard_key_popup.png"></image></substitution_definition>
             <substitution_definition names="image12"><image alt="image12" candidates="{'*': 'getting_started/first_3d_game/img/02.player_input/09.keyboard_keys.png'}" uri="getting_started/first_3d_game/img/02.player_input/09.keyboard_keys.png"></image></substitution_definition>

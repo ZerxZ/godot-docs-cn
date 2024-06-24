@@ -13,8 +13,7 @@
             <reference name="SharedArrayBuffer" refuri="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">SharedArrayBuffer</reference><target ids="sharedarraybuffer" names="sharedarraybuffer" refuri="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer"></target>
             in the user's browser.</paragraph>
         <attention>
-            <paragraph>Projects written in C# using Godot 4 currently cannot be exported to the
-                web. To use C# on web platforms, use Godot 3 instead.</paragraph>
+            <paragraph>使用Godot 4以C#编写的项目目前无法导出到Web。若要在Web平台上使用C#，请改用Godot 3。</paragraph>
         </attention>
         <tip>
             <paragraph>Use the browser-integrated developer console, usually opened
@@ -22,27 +21,19 @@
                 <strong>debug information</strong> like JavaScript, engine, and WebGL errors.</paragraph>
         </tip>
         <attention>
-            <paragraph>Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
-                with SharedArrayBuffer and WebGL 2.0. We recommend using
-                <reference internal="True" refuri="exporting_for_macos#doc-exporting-for-macos"><inline classes="std std-ref">macOS</inline></reference> and <reference internal="True" refuri="exporting_for_ios#doc-exporting-for-ios"><inline classes="std std-ref">iOS</inline></reference>
-                native export functionality instead, as it will also result in better performance.</paragraph>
-            <paragraph>Godot 3's HTML5 exports are more compatible with various browsers in
-                general, especially when using the GLES2 rendering backend (which only
-                requires WebGL 1.0).</paragraph>
+            <paragraph>由于SharedArrayBuffer和WebGL 2.0的上游错误，Godot 4的HTML5导出目前无法在macOS和iOS上运作。我们建议改用macOS &lt;doc_exporting_for_macos&gt;`和iOS &lt;doc_exporting_for_ios&gt;`本机导出功能，因为它也会带来更好的性能。</paragraph>
+            <paragraph>一般来说，Godot 3的HTML5导出与各种浏览器更兼容，特别是在使用GLES2算绘后端（只需要WebGL 1.0）时。</paragraph>
         </attention>
         <section ids="webgl-version" names="webgl\ version webgl\ 版本">
             <title>WebGL 版本</title>
-            <paragraph>Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
-                method). There is no stable way to run Vulkan applications on the web yet.</paragraph>
-            <paragraph>See <reference name="Can I use WebGL 2.0" refuri="https://caniuse.com/webgl2">Can I use WebGL 2.0</reference> for a list of browser
-                versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
-                2.0 support that other browsers don't have, so we recommend using a
-                Chromium-based browser or Firefox if possible.</paragraph>
+            <paragraph>Godot 4.0及更高版本只能针对WebGL 2.0（使用兼容性算绘方法）。目前还没有稳定的方法在网路上运作Vulkan应用程序。</paragraph>
+            <paragraph>有关支持WebGL 2.0的浏览器版本列表，请参阅「我可以使用WebGL 2.0 &lt;<reference refuri="https://caniuse.com/webgl2">https://caniuse.com/webgl2</reference>&gt;」。请注意，Safari在WebGL 2.0支持方面存在一些其他浏览器不具备的问题，因此我们建议尽可能使用基于Chromium的浏览器或Firefox。</paragraph>
             <target refid="doc-javascript-export-options"></target>
         </section>
         <section ids="export-options doc-javascript-export-options" names="export\ options 导出选项 doc_javascript_export_options">
             <title>导出选项</title>
             <paragraph>如果可以使用可运行的Web导出模板, 则编辑器中的 <emphasis>停止场景</emphasis> 和 <emphasis>播放编辑的场景</emphasis> 按钮之间会出现一个按钮, 可以在默认浏览器中快速打开游戏进行测试.</paragraph>
+            <paragraph>If your project uses GDExtension <strong>Extension Support</strong> needs to be enabled.</paragraph>
             <paragraph>If you plan to use <reference internal="True" refuri="../assets_pipeline/importing_images#doc-importing-images"><inline classes="std std-ref">VRAM compression</inline></reference> make sure that
                 <strong>Vram Texture Compression</strong> is enabled for the targeted platforms (enabling
                 both <strong>For Desktop</strong> and <strong>For Mobile</strong> will result in a bigger, but more
@@ -77,11 +68,10 @@
             </section>
             <section ids="audio" names="audio 音频">
                 <title>音频</title>
-                <paragraph>Some browsers restrict autoplay for audio on websites. The easiest way around this limitation is to request the
-                    player to click, tap or press a key/button to enable audio, for instance when displaying a splash screen at the start of your game.</paragraph>
+                <paragraph>一些浏览器限制网站上的音频自动播放。绕过这一限制的最简单方法是请求玩家点击、点击或按下一个键/按钮以启用音频，例如在游戏开始时显示启动屏幕时。</paragraph>
                 <seealso>
                     <paragraph>Google提供了有关其 <reference name="网络音频自动播放政策" refuri="https://sites.google.com/a/chromium.org/dev/audio-video/autoplay">网络音频自动播放政策</reference> 的其他信息.</paragraph>
-                    <paragraph>Apple's Safari team also posted additional information about their <reference name="Auto-Play Policy Changes for macOS" refuri="https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/">Auto-Play Policy Changes for macOS</reference>.</paragraph>
+                    <paragraph>苹果Safari团队还发布了关于“macOS自动播放政策更改”的更多信息&lt;<reference refuri="https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/">https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/</reference>&gt;`__.</paragraph>
                 </seealso>
                 <warning>
                     <paragraph>访问麦克风需要<reference internal="True" refid="doc-javascript-secure-contexts"><inline classes="std std-ref">安全上下文</inline></reference>。</paragraph>
@@ -139,11 +129,7 @@
             <title>提供文件</title>
             <paragraph>导出为Web生成多个要从Web服务器提供的文件, 包括用于演示的默认HTML页面. 可以使用自定义HTML文件, 请参阅 <reference internal="True" refuri="../platform/web/customizing_html5_shell#doc-customizing-html5-shell"><inline classes="std std-ref">导出自定义 HTML 页面</inline></reference> .</paragraph>
             <warning>
-                <paragraph>To ensure low audio latency and the ability to use <reference internal="True" refuri="../../classes/class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> in web exports,
-                    Godot 4 web exports always use
-                    <reference name="SharedArrayBuffer" refuri="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">SharedArrayBuffer</reference>.
-                    This requires a <reference internal="True" refid="doc-javascript-secure-contexts"><inline classes="std std-ref">secure context</inline></reference>,
-                    while also requiring the following CORS headers to be set when serving the files:</paragraph>
+                <paragraph>为了确保低音频延迟和在web导出中使用：ref:<problematic ids="id3" refid="id2">`class_Thread`的能力，Godot 4 web导出始终使用`SharedArray Buffer&lt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer&gt;`__</problematic>. 这需要一个：ref:<title_reference>secure context&lt;doc_javascript_secure_contexts&gt;</title_reference>，同时还需要在提供文件时设置以下CORS头：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp</literal_block>
                 <paragraph>如果 Web 服务器不是你的，或者你无法添加响应报头，请使用 <reference name="coi-serviceworker" refuri="https://github.com/gzuidhof/coi-serviceworker">coi-serviceworker</reference> 作为变通方案。</paragraph>
@@ -166,135 +152,14 @@ Cross-Origin-Embedder-Policy: require-corp</literal_block>
                 <paragraph>将链接中的文件保存为 <literal>serve.py</literal> 文件，将这个文件移动到包含导出后项目的 <literal>index.html</literal> 的文件夹中，然后在该文件夹中打开命令提示符，执行以下命令：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># You may need to replace `python` with `python3` on some platforms.
 python serve.py --root .</literal_block>
-                <paragraph>On Windows, you can open a command prompt in the current folder by holding
-                    <literal classes="kbd">Shift</literal> and right-clicking on empty space in Windows Explorer, then
-                    choosing <strong>Open PowerShell window here</strong>.</paragraph>
-                <paragraph>This will serve the contents of the current folder and open the default web
-                    browser automatically.</paragraph>
-                <paragraph>Note that for production use cases, this Python-based web server should not
-                    be used. Instead, you should use an established web server such as Apache or
-                    nginx.</paragraph>
+                <paragraph>在Windows上，你可以按住Shift并右键单击Windows资源管理器中的空白区域，然后选择**在此处开启PowerShell视窗**，在目前文件夹中开启命令提示字元。</paragraph>
+                <paragraph>这将提供目前文件夹的内容并自动开启预设的Web浏览器。</paragraph>
+                <paragraph>请注意，对于生产用例，不应使用此基于Python的Web服务器。相反，你应该使用已建立的Web服务器，例如Apache或nginx。</paragraph>
             </tip>
-            <target refid="doc-javascript-eval"></target>
         </section>
-        <section ids="calling-javascript-from-script doc-javascript-eval" names="calling\ javascript\ from\ script 从脚本调用\ javascript doc_javascript_eval">
-            <title>从脚本调用 JavaScript</title>
-            <paragraph>In web builds, the <literal>JavaScriptBridge</literal> singleton is implemented. It offers a single
-                method called <literal>eval</literal> that works similarly to the JavaScript function of the
-                same name. It takes a string as an argument and executes it as JavaScript code.
-                This allows interacting with the browser in ways not possible with script
-                languages integrated into Godot.</paragraph>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-0-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
-                </div>
-                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func my_func():
-    JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")</literal_block>
-                </div>
-                <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void MyFunc()
-{
-    JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
-}</literal_block>
-                </div>
-            </container>
-            <paragraph>最后一个JavaScript语句的值转换为GDScript值，并在某些情况下由 <literal>eval()</literal> 返回:</paragraph>
-            <block_quote>
-                <bullet_list bullet="*">
-                    <list_item>
-                        <paragraph>JavaScript <literal>number</literal> 会以 <reference internal="True" refuri="../../classes/class_float#class-float"><inline classes="std std-ref">float</inline></reference> 返回</paragraph>
-                    </list_item>
-                    <list_item>
-                        <paragraph>JavaScript <literal>boolean</literal> 会以 <reference internal="True" refuri="../../classes/class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> 返回</paragraph>
-                    </list_item>
-                    <list_item>
-                        <paragraph>JavaScript <literal>string</literal> 会以 <reference internal="True" refuri="../../classes/class_string#class-string"><inline classes="std std-ref">String</inline></reference> 返回</paragraph>
-                    </list_item>
-                    <list_item>
-                        <paragraph>JavaScript <literal>RellBuffer</literal> ， <literal>TypedArray</literal> 和 <literal>DataView</literal> 会以 <inline classes="xref std std-ref">class_PoolByteArray</inline> 返回</paragraph>
-                    </list_item>
-                </bullet_list>
-            </block_quote>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
-                </div>
-                <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func my_func2():
-    var js_return = JavaScriptBridge.eval("var myNumber = 1; myNumber + 2;")
-    print(js_return) # prints '3.0'</literal_block>
-                </div>
-                <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void MyFunc2()
-{
-    var jsReturn = JavaScriptBridge.Eval("var myNumber = 1; myNumber + 2;");
-    GD.Print(jsReturn); // prints '3.0'
-}</literal_block>
-                </div>
-            </container>
-            <paragraph>任何其他JavaScript值都返回为 <literal>null</literal> .</paragraph>
-            <paragraph>HTML5 export templates may be <reference internal="True" refuri="../../contributing/development/compiling/compiling_for_web#doc-compiling-for-web"><inline classes="std std-ref">built</inline></reference> without
-                support for the singleton to improve security. With such templates, and on
-                platforms other than HTML5, calling <literal>JavaScriptBridge.eval</literal> will also return
-                <literal>null</literal>. The availability of the singleton can be checked with the
-                <literal>web</literal> <reference internal="True" refuri="feature_tags#doc-feature-tags"><inline classes="std std-ref">feature tag</inline></reference>:</paragraph>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
-                </div>
-                <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func my_func3():
-    if OS.has_feature('web'):
-        JavaScriptBridge.eval("""
-            console.log('The JavaScriptBridge singleton is available')
-        """)
-    else:
-        print("The JavaScriptBridge singleton is NOT available")</literal_block>
-                </div>
-                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void MyFunc3()
-{
-    if (OS.HasFeature("web"))
-    {
-        JavaScriptBridge.Eval("console.log('The JavaScriptBridge singleton is available')");
-    }
-    else
-    {
-        GD.Print("The JavaScriptBridge singleton is NOT available");
-    }
-}</literal_block>
-                </div>
-            </container>
-            <tip>
-                <paragraph>GDScript中的多行字符串由3双引号 <literal>"""</literal> 包围, 如同上文中的 <literal>my_func3()</literal> 那样, 有助于保证JavaScript代码的可读性.</paragraph>
-            </tip>
-            <paragraph>The <literal>eval</literal> method also accepts a second, optional Boolean argument, which
-                specifies whether to execute the code in the global execution context,
-                defaulting to <literal>false</literal> to prevent polluting the global namespace:</paragraph>
-            <container classes="sphinx-tabs" type="tab-element">
-                <div aria-label="Tabbed content" role="tablist">
-                    <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                    <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
-                </div>
-                <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func my_func4():
-    # execute in global execution context,
-    # thus adding a new JavaScript global variable `SomeGlobal`
-    JavaScriptBridge.eval("var SomeGlobal = {};", true)</literal_block>
-                </div>
-                <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void MyFunc4()
-{
-    // execute in global execution context,
-    // thus adding a new JavaScript global variable `SomeGlobal`
-    JavaScriptBridge.Eval("var SomeGlobal = {};", true);
-}</literal_block>
-                </div>
-            </container>
+        <section ids="interacting-with-the-browser-and-javascript" names="interacting\ with\ the\ browser\ and\ javascript">
+            <title>Interacting with the browser and JavaScript</title>
+            <paragraph>See the <reference internal="True" refuri="../platform/web/javascript_bridge#doc-web-javascript-bridge"><inline classes="std std-ref">dedicated page</inline></reference> on how to interact with JavaScript and access some unique Web browser features.</paragraph>
         </section>
         <section ids="environment-variables" names="environment\ variables 环境变量">
             <title>环境变量</title>

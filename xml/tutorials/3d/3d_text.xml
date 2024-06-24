@@ -25,7 +25,10 @@
                         <paragraph>Label3D 的生成速度比 TextMesh 快。虽然两者都使用缓存机制，只渲染一次新字形，但 Label3D 的（重新）生成速度仍然更快，尤其是对于长文本。这可以避免在低端 CPU 或移动设备上玩游戏时出现卡顿。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Label3D 可以使用位图字体和动态字体（带或不带 <abbreviation explanation="Multi-channel Signed Distance Font">MSDF</abbreviation> 或 mipmap）。这使得它在这方面比 TextMesh 更灵活，尤其是在渲染具有自交轮廓的字体时。</paragraph>
+                        <paragraph>Label3D can use bitmap fonts and dynamic fonts (with and without
+                            <abbreviation explanation="Multi-channel Signed Distance Font">MSDF</abbreviation> or mipmaps). This makes it
+                            more flexible on that aspect compared to TextMesh, especially for rendering
+                            fonts with self-intersecting outlines or colored fonts (emoji).</paragraph>
                     </list_item>
                 </bullet_list>
                 <seealso>
@@ -37,6 +40,9 @@
                 <paragraph>默认情况下，Label3D 与 3D 环境的交互有限。 <emphasis>着色</emphasis> 标志启用时能够接受光照、被光源着色。但是，即使在 Label3D 的 GeometryInstance3D 属性中将 <strong>阴影投射</strong> 设置为 <strong>开启</strong> ，它也不会投射阴影。这是因为该节点内部生成具有透明纹理的四边形网格（每个四边形一个字形），并且具有与 Sprite3D 相同的限制。当多个 Label3D 重叠，尤其是当它们具有轮廓时，透明度排序问题也会变得明显。</paragraph>
                 <paragraph>这可以将 Label3D 的透明度模式设置为 <strong>Alpha Cut</strong> 来缓解 ，但代价是文字渲染不够流畅。<strong>Opaque Pre-Pass</strong> 透明度模式可以保持文本的流畅性，同时允许 Label3D 投射阴影，但仍会存在一些透明度排序问题。</paragraph>
                 <paragraph>有关详细信息，请参阅 3D 渲染限制页面中的 <reference internal="True" refuri="3d_rendering_limitations#doc-3d-rendering-limitations-transparency-sorting"><inline classes="std std-ref">Transparency sorting</inline></reference> 部分。</paragraph>
+                <paragraph>Text rendering quality can also suffer when the Label3D is viewed at a distance. To improve
+                    text rendering quality, <reference internal="True" refuri="../ui/gui_using_fonts#doc-using-fonts-mipmaps"><inline classes="std std-ref">enable mipmaps on the font</inline></reference> or
+                    <reference internal="True" refuri="../ui/gui_using_fonts#doc-using-fonts-msdf"><inline classes="std std-ref">switch the font to use MSDF rendering</inline></reference>.</paragraph>
             </section>
         </section>
         <section ids="textmesh" names="textmesh">
@@ -73,6 +79,12 @@
                     </list_item>
                     <list_item>
                         <paragraph>无法正确渲染轮廓自相交的字体。如果使用从 Google Fonts 等处下载到的字体时出现渲染问题，请尝试改为从作者的官方网站下载。</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph>Antialiasing the text rendering requires a full-scene antialiasing method to
+                            be enabled such as MSAA, FXAA and temporal antialiasing (TAA). If no
+                            antialiasing method is enabled, text will appear grainy, especially at a
+                            distance. See <reference internal="True" refuri="3d_antialiasing#doc-3d-antialiasing"><inline classes="std std-ref">3D 抗锯齿</inline></reference> for more information.</paragraph>
                     </list_item>
                 </bullet_list>
             </section>

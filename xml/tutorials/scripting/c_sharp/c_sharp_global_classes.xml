@@ -5,7 +5,19 @@
     <target refid="doc-c-sharp-global-classes"></target>
     <section ids="c-global-classes doc-c-sharp-global-classes" names="c#\ global\ classes c#\ 全局类 doc_c_sharp_global_classes">
         <title>C# 全局类</title>
-        <paragraph>全局类（也称为命名脚本）是在 Godot 编辑器中注册的类型，可以更方便地使用。这些类会出现在 <emphasis>添加节点</emphasis> 和 <emphasis>创建资源</emphasis> 对话框中，而 <reference internal="True" refuri="c_sharp_exports#doc-c-sharp-exports"><inline classes="std std-ref">导出属性</inline></reference> 只能用于全局类或其派生类的实例。全局类使用 <literal>[GlobalClass]</literal> 特性注册。</paragraph>
+        <paragraph>Global classes (also known as named scripts) are types registered in Godot's editor so they can be used
+            more conveniently.</paragraph>
+        <bullet_list bullet="-">
+            <list_item>
+                <paragraph>Global classes show up in the <emphasis>Add Node</emphasis> and <emphasis>Create Resource</emphasis> dialogs.</paragraph>
+            </list_item>
+            <list_item>
+                <paragraph>If an <reference internal="True" refuri="c_sharp_exports#doc-c-sharp-exports"><inline classes="std std-ref">exported property</inline></reference> is a global class, the
+                    inspector restricts assignment, allowing only instances of that global class
+                    or any derived classes.</paragraph>
+            </list_item>
+        </bullet_list>
+        <paragraph>Global classes are registered with the <literal>[GlobalClass]</literal> attribute.</paragraph>
         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 [GlobalClass]
@@ -14,7 +26,24 @@ public partial class MyNode : Node
 }</literal_block>
         <paragraph><literal>MyNode</literal> 类型将被注册为一个全局类，其名称与类型的名称相同。</paragraph>
         <image candidates="{'*': 'tutorials/scripting/c_sharp/img/globalclasses_addnode.webp'}" uri="tutorials/scripting/c_sharp/img/globalclasses_addnode.webp"></image>
-        <paragraph><literal>[Icon]</literal> 特性还允许提供图标的路径，以便在编辑器中作为类的图标使用。</paragraph>
+        <paragraph>The <emphasis>Select a Node</emphasis> window for the <literal>MyNode</literal> exported property filters the list
+            of nodes in the scene to match the assignment restriction.</paragraph>
+        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public partial class Main : Node
+{
+    [Export]
+    public MyNode MyNode { get; set; }
+}</literal_block>
+        <image candidates="{'*': 'tutorials/scripting/c_sharp/img/globalclasses_exportednode.webp'}" uri="tutorials/scripting/c_sharp/img/globalclasses_exportednode.webp"></image>
+        <paragraph>If a custom type isn't registered as a global class, the assignment is
+            restricted to the Godot type the custom type is based on. For example, inspector
+            assignments to an export of the type <literal>MySimpleSprite2D</literal> are restricted to
+            <literal>Sprite2D</literal> and derived types.</paragraph>
+        <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public partial class MySimpleSprite2D : Sprite2D
+{
+}</literal_block>
+        <paragraph>When combined with the <literal>[GlobalClass]</literal> attribute, the <literal>[Icon]</literal> attribute
+            allows providing a path to an icon to show when the class is displayed in the
+            editor.</paragraph>
         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 [GlobalClass, Icon("res://Stats/StatsIcon.svg")]

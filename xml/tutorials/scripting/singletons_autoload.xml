@@ -65,6 +65,37 @@
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">PlayerVariables.health -= 10</literal_block>
                 </div>
             </container>
+            <paragraph>The <strong>Enable</strong> column has no effect in C# code. However, if the singleton is a
+                C# script, a similar effect can be achieved by including a static property
+                called <literal>Instance</literal> and assigning it in <literal>_Ready()</literal>:</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-1-QyM=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="0">C#</button>
+                </div>
+                <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public partial class PlayerVariables : Node
+{
+    public static PlayerVariables Instance { get; private set; }
+
+    public int Health { get; set; }
+
+    public override void _Ready()
+    {
+        Instance = this;
+    }
+}</literal_block>
+                </div>
+            </container>
+            <paragraph>This allows the singleton to be accessed from C# code without <literal>GetNode()</literal> and
+                without a typecast:</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-2-QyM=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="0">C#</button>
+                </div>
+                <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">PlayerVariables.Instance.Health -= 10;</literal_block>
+                </div>
+            </container>
             <paragraph>请注意，访问自动加载对象（脚本、场景）的方式和访问场景树中的任何其他节点是一样的。实际上，如果你查看正在运行的场景树，就会看到自动加载的节点出现：</paragraph>
             <image candidates="{'*': 'tutorials/scripting/img/autoload_runtime.webp'}" uri="tutorials/scripting/img/autoload_runtime.webp"></image>
             <warning>
@@ -102,10 +133,10 @@
                     means that the last child of root is always the loaded scene.</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
-                        <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                        <button aria-controls="panel-1-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                        <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                        <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                     </div>
-                    <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">extends Node
 
 var current_scene = null
@@ -114,7 +145,7 @@ func _ready():
     var root = get_tree().root
     current_scene = root.get_child(root.get_child_count() - 1)</literal_block>
                     </div>
-                    <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
 
 public partial class Global : Node
@@ -132,10 +163,10 @@ public partial class Global : Node
                 <paragraph>现在我们需要一个用于更改场景的函数。这个函数需要释放当前场景，并将其替换为请求的场景。</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
-                        <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                        <button aria-controls="panel-2-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                        <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                        <button aria-controls="panel-4-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                     </div>
-                    <div aria-labelledby="tab-2-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-4-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">func goto_scene(path):
     # This function will usually be called from a signal callback,
     # or some other function in the current scene.
@@ -165,7 +196,7 @@ func _deferred_goto_scene(path):
     # Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
     get_tree().current_scene = current_scene</literal_block>
                     </div>
-                    <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">public void GotoScene(string path)
 {
     // This function will usually be called from a signal callback,
@@ -203,16 +234,16 @@ public void DeferredGotoScene(string path)
                 <paragraph>最后，我们需要在两个场景中填充空的回调函数：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
-                        <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                        <button aria-controls="panel-3-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                        <button aria-controls="panel-5-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-5-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                        <button aria-controls="panel-5-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-5-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                     </div>
-                    <div aria-labelledby="tab-3-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-5-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-5-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Add to 'scene_1.gd'.
 
 func _on_button_pressed():
     Global.goto_scene("res://scene_2.tscn")</literal_block>
                     </div>
-                    <div aria-labelledby="tab-3-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-3-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-5-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-5-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Add to 'Scene1.cs'.
 
 private void OnButtonPressed()
@@ -225,16 +256,16 @@ private void OnButtonPressed()
                 <paragraph>以及</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
-                        <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
-                        <button aria-controls="panel-4-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                        <button aria-controls="panel-6-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                        <button aria-controls="panel-6-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-6-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                     </div>
-                    <div aria-labelledby="tab-4-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-6-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-6-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Add to 'scene_2.gd'.
 
 func _on_button_pressed():
     Global.goto_scene("res://scene_1.tscn")</literal_block>
                     </div>
-                    <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <div aria-labelledby="tab-6-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-6-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                         <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Add to 'Scene2.cs'.
 
 private void OnButtonPressed()

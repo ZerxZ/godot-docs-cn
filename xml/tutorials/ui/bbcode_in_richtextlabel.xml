@@ -255,6 +255,17 @@ func _ready():
                         <row>
                             <entry>
                                 <line_block>
+                                    <line><strong>char</strong></line>
+                                    <line>Adds Unicode character with hexadecimal UTF-32 <literal>{codepoint}</literal>.</line>
+                                </line_block>
+                            </entry>
+                            <entry>
+                                <paragraph><literal>[char={codepoint}]</literal></paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
+                                <line_block>
                                     <line><strong>p</strong></line>
                                     <line>Adds new paragraph with <literal>{text}</literal>. Supports configuration options,
                                         see <reference internal="True" refid="doc-bbcode-in-richtextlabel-paragraph-options"><inline classes="std std-ref">段落选项</inline></reference>.</line>
@@ -366,8 +377,9 @@ func _ready():
                                         the aspect ratio.</line>
                                     <line>If both <literal>{width}</literal> and <literal>{height}</literal> are provided, the image will be scaled
                                         to that size.</line>
+                                    <line>Add <literal>%</literal> to the end of <literal>{width}</literal> or <literal>{height}</literal> value to specify it as percentages of the control width instead of pixels.</line>
                                     <line>If <literal>{valign}</literal> configuration is provided, the image will try to align to the
-                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-alignment"><inline classes="std std-ref">图像的垂直对齐</inline></reference>.</line>
+                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">Image and table vertical alignment</inline></reference>.</line>
                                     <line>Supports configuration options, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-options"><inline classes="std std-ref">图像选项</inline></reference>.</line>
                                 </line_block>
                             </entry>
@@ -421,7 +433,7 @@ func _ready():
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>[dropcap font_size={size} color={color} margins={left},{top},{right},{bottom}]{text}[/dropcap]</literal></paragraph>
+                                <paragraph><literal>[dropcap font={font} font_size={size} color={color} outline_size={size} outline_color={color} margins={left},{top},{right},{bottom}]{text}[/dropcap]</literal></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -522,10 +534,17 @@ func _ready():
                                 <line_block>
                                     <line><strong>table</strong></line>
                                     <line>创建列数为 <literal>{number}</literal> 的表格。定义表格中的单元格请使用 <literal>cell</literal> 标签。</line>
+                                    <line>If <literal>{valign}</literal> configuration is provided, the table will try to align to the
+                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">Image and table vertical alignment</inline></reference>.</line>
+                                    <line>If baseline alignment is used, the table is aligned to the baseline of the row with index <literal>{alignment_row}</literal> (zero-based).</line>
                                 </line_block>
                             </entry>
                             <entry>
-                                <paragraph><literal>[table={number}]{cells}[/table]</literal></paragraph>
+                                <line_block>
+                                    <line><literal>[table={number}]{cells}[/table]</literal></line>
+                                    <line><literal>[table={number},{valign}]{cells}[/table]</literal></line>
+                                    <line><literal>[table={number},{valign},{alignment_row}]{cells}[/table]</literal></line>
+                                </line_block>
                             </entry>
                         </row>
                         <row>
@@ -628,14 +647,14 @@ func _ready():
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
-                                <colspec colwidth="44"></colspec>
+                                <colspec colwidth="88"></colspec>
                                 <tbody>
                                     <row>
                                         <entry>
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph><literal>left</literal>、<literal>center</literal>、<literal>right</literal>、<literal>fill</literal></paragraph>
+                                            <paragraph><literal>left</literal> (or <literal>l</literal>), <literal>center</literal> (or <literal>c</literal>), <literal>right</literal> (or <literal>r</literal>), <literal>fill</literal> (or <literal>f</literal>)</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -656,14 +675,15 @@ func _ready():
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
-                                <colspec colwidth="75"></colspec>
+                                <colspec colwidth="110"></colspec>
                                 <tbody>
                                     <row>
                                         <entry>
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph><literal>default</literal>、<literal>uri</literal>、<literal>file</literal>、<literal>email</literal>、<literal>list</literal>、<literal>none</literal>、<literal>custom</literal></paragraph>
+                                            <paragraph><literal>default</literal> (of <literal>d</literal>), <literal>uri</literal> (or <literal>u</literal>), <literal>file</literal> (or <literal>f</literal>), <literal>email</literal> (or <literal>e</literal>), <literal>list</literal> (or <literal>l</literal>),
+                                                <literal>none</literal> (or <literal>n</literal>), <literal>custom</literal> (or <literal>c</literal>)</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -680,18 +700,48 @@ func _ready():
                         <paragraph>Structured text override.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>direction</strong>、<strong>dir</strong></paragraph>
+                        <paragraph><strong>justification_flags</strong>, <strong>jst</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
-                                <colspec colwidth="44"></colspec>
+                                <colspec colwidth="104"></colspec>
                                 <tbody>
                                     <row>
                                         <entry>
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph><literal>ltr</literal>、<literal>rtl</literal>、<literal>auto</literal></paragraph>
+                                            <paragraph>Comma-separated list of the following values:
+                                                <literal>kashida</literal> (or <literal>k</literal>), <literal>word</literal> (or <literal>w</literal>), <literal>trim</literal> (or <literal>tr</literal>), <literal>after_last_tab</literal> (or <literal>lt</literal>),
+                                                <literal>skip_last</literal> (or <literal>sl</literal>), <literal>skip_last_with_chars</literal> (or <literal>sv</literal>),  <literal>do_not_skip_single</literal> (or <literal>ns</literal>).</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>word,kashida,skip_last,do_not_skip_single</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Justification (fill alignment) option. See <reference internal="True" refuri="../../classes/class_textserver#class-textserver"><inline classes="std std-ref">TextServer</inline></reference> for more details.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>direction</strong>、<strong>dir</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="65"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>ltr</literal> (or <literal>l</literal>), <literal>rtl</literal> (or <literal>r</literal>), <literal>auto</literal> (or <literal>a</literal>)</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -829,7 +879,7 @@ func _richtextlabel_on_meta_clicked(meta):
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>数字，单位为像素</paragraph>
+                                            <paragraph>整数</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -843,7 +893,7 @@ func _richtextlabel_on_meta_clicked(meta):
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>图像的目标高度。</paragraph>
+                        <paragraph>Target height of the image in pixels, add <literal>%</literal> to the end of value to specify it as percentages of the control width instead of pixels.</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><strong>width</strong></paragraph>
@@ -857,7 +907,7 @@ func _richtextlabel_on_meta_clicked(meta):
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>数字，单位为像素</paragraph>
+                                            <paragraph>整数</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -871,7 +921,7 @@ func _richtextlabel_on_meta_clicked(meta):
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>图像的目标宽度。</paragraph>
+                        <paragraph>Target width of the image, add <literal>%</literal> to the end of value to specify it as percentages of the control width instead of pixels.</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><strong>region</strong></paragraph>
@@ -901,20 +951,80 @@ func _richtextlabel_on_meta_clicked(meta):
                         </table>
                         <paragraph>图像的区域框。可用于显示精灵表中的单个图像。</paragraph>
                     </list_item>
+                    <list_item>
+                        <paragraph><strong>pad</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>false</literal>, <literal>true</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>false</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>If set to <literal>true</literal>, and the image is smaller than the size specified by <literal>width</literal> and <literal>height</literal>, the image padding is added to match the size instead of upscaling.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>tootip</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>字符串</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Image tooltip.</paragraph>
+                    </list_item>
                 </bullet_list>
-                <target refid="doc-bbcode-in-richtextlabel-image-alignment"></target>
+                <target refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"></target>
             </section>
-            <section ids="image-vertical-alignment doc-bbcode-in-richtextlabel-image-alignment" names="image\ vertical\ alignment 图像的垂直对齐 doc_bbcode_in_richtextlabel_image_alignment">
-                <title>图像的垂直对齐</title>
-                <paragraph>When a vertical alignment value is provided with the <literal>[img]</literal> tag the image
-                    will try to align itself against the surrounding text. Alignment is performed
-                    using a vertical point of the image and a vertical point of the text. There are
-                    3 possible points on the image (<literal>top</literal>, <literal>center</literal>, and <literal>bottom</literal>) and 4
-                    possible points on the text (<literal>top</literal>, <literal>center</literal>, <literal>baseline</literal>, and <literal>bottom</literal>),
+            <section ids="image-and-table-vertical-alignment doc-bbcode-in-richtextlabel-image-and-table-alignment" names="image\ and\ table\ vertical\ alignment doc_bbcode_in_richtextlabel_image_and_table_alignment">
+                <title>Image and table vertical alignment</title>
+                <paragraph>When a vertical alignment value is provided with the <literal>[img]</literal> or <literal>[table]`</literal> tag
+                    the image/table will try to align itself against the surrounding text. Alignment is
+                    performed using a vertical point of the image and a vertical point of the text.
+                    There are 3 possible points on the image (<literal>top</literal>, <literal>center</literal>, and <literal>bottom</literal>) and 4
+                    possible points on the text and table (<literal>top</literal>, <literal>center</literal>, <literal>baseline</literal>, and <literal>bottom</literal>),
                     which can be used in any combination.</paragraph>
-                <paragraph>To specify both points, use their full or short names as a value of the image tag:</paragraph>
-                <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">[img=top,bottom]
-[img=center,center]</literal_block>
+                <paragraph>To specify both points, use their full or short names as a value of the image/table tag:</paragraph>
+                <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">text [img=top,bottom]...[/img] text
+text [img=center,center]...[/img] text</literal_block>
+                <image candidates="{'*': 'tutorials/ui/img/bbcode_in_richtextlabel_image_align.webp'}" uri="tutorials/ui/img/bbcode_in_richtextlabel_image_align.webp"></image>
+                <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">text [table=3,center]...[/table] text  # Center to center.
+text [table=3,top,bottom]...[/table] text # Top of the table to the bottom of text.
+text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row (rows use zero-based indexing) to the baseline of text.</literal_block>
+                <image candidates="{'*': 'tutorials/ui/img/bbcode_in_richtextlabel_table_align.webp'}" uri="tutorials/ui/img/bbcode_in_richtextlabel_table_align.webp"></image>
                 <paragraph>You can also specify just one value (<literal>top</literal>, <literal>center</literal>, or <literal>bottom</literal>) to make
                     use of a corresponding preset (<literal>top-top</literal>, <literal>center-center</literal>, and <literal>bottom-bottom</literal>
                     respectively).</paragraph>
@@ -981,7 +1091,263 @@ func _richtextlabel_on_meta_clicked(meta):
                         </table>
                         <paragraph>自定义字体大小。</paragraph>
                     </list_item>
+                    <list_item>
+                        <paragraph><strong>glyph_spacing</strong>, <strong>gl</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>数字，单位为像素。</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>继承</paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Extra spacing for each glyph.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>glyph_spacing</strong>, <strong>sp</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>数字，单位为像素。</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>继承</paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Extra spacing for the space character.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>top_spacing</strong>, <strong>top</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>数字，单位为像素。</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>继承</paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Extra spacing at the top of the line.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>bottom_spacing</strong>, <strong>bt</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>数字，单位为像素。</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>继承</paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Extra spacing at the bottom of the line.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>embolden</strong>, <strong>emb</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>Floating-point number.</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>0.0</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Font embolden strength, if it is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>face_index</strong>, <strong>fi</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>Integer number.</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>0</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>An active face index in the TrueType / OpenType collection.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>slant</strong>, <strong>sln</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>Floating-point number.</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph><literal>0.0</literal></paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Font slant strength, positive values slant glyphs to the right. Negative values to the left.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>opentype_variation</strong>, <strong>otv</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="54"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>Comma-separated list of the OpenType variation tags.</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Font OpenType variation coordinates. See <reference name="OpenType variation tags" refuri="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg">OpenType variation tags</reference>.</paragraph>
+                        <paragraph>Note: The value should be enclosed in <literal>"</literal> to allow using <literal>=</literal> inside it:</paragraph>
+                    </list_item>
                 </bullet_list>
+                <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">[font otv="wght=200,wdth=400"] # Sets variable font weight and width.</literal_block>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph><strong>opentype_features</strong>, <strong>otf</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="52"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>Comma-separated list of the OpenType feature tags.</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Font OpenType features. See <reference name="OpenType features tags" refuri="https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags">OpenType features tags</reference>.</paragraph>
+                        <paragraph>Note: The value should be enclosed in <literal>"</literal> to allow using <literal>=</literal> inside it:</paragraph>
+                    </list_item>
+                </bullet_list>
+                <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">[font otf="calt=0,zero=1"] # Disable contextual alternates, enable slashed zero.</literal_block>
                 <target refid="doc-bbcode-in-richtextlabel-named-colors"></target>
             </section>
             <section ids="named-colors doc-bbcode-in-richtextlabel-named-colors" names="named\ colors 具名颜色 doc_bbcode_in_richtextlabel_named_colors">
@@ -1091,6 +1457,34 @@ func _richtextlabel_on_meta_clicked(meta):
                         </table>
                         <paragraph>Cell background color. For alternating odd/even row backgrounds,
                             you can use <literal>bg=odd_color,even_color</literal>.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>padding</strong></paragraph>
+                        <table>
+                            <tgroup cols="2">
+                                <colspec colwidth="11"></colspec>
+                                <colspec colwidth="44"></colspec>
+                                <tbody>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>值</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>4 comma-separated floating-point numbers</paragraph>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry>
+                                            <paragraph><title_reference>默认</title_reference></paragraph>
+                                        </entry>
+                                        <entry>
+                                            <paragraph>0, 0, 0, 0</paragraph>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <paragraph>Left, top, right, and bottom cell padding.</paragraph>
                     </list_item>
                 </bullet_list>
                 <target refid="doc-bbcode-in-richtextlabel-unordered-list-bullet"></target>

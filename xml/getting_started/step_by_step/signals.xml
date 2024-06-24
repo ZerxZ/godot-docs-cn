@@ -18,12 +18,21 @@ really short.</comment>
             <paragraph>正如引言中提到的，信号是 Godot 版本的观察者模式。你可以在此处了解有关它的更多信息：<reference refuri="https://gameprogrammingpatterns.com/observer.html">https://gameprogrammingpatterns.com/observer.html</reference></paragraph>
         </note>
         <paragraph>现在，我们将使用信号来使上一节课（<reference internal="True" refuri="scripting_player_input#doc-scripting-player-input"><inline classes="std std-ref">监听玩家的输入</inline></reference>）中的 Godot 图标移动，并通过按下按钮来停止。</paragraph>
+        <note>
+            <paragraph>对于此项目，我们将遵循 Godot 的命名约定。</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph><strong>GDScript</strong>：类（节点）使用 PascalCase（大驼峰命名法），变量和函数使用 snake_case（蛇形命名法），常量使用 ALL_CAPS（全大写）（请参阅 <reference internal="True" refuri="../../tutorials/scripting/gdscript/gdscript_styleguide#doc-gdscript-styleguide"><inline classes="std std-ref">GDScript 编写风格指南</inline></reference>）。</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><strong>C#</strong>：类、导出变量和方法使用 PascalCase（大驼峰命名法），私有字段使用 _camelCase（前缀下划线的小驼峰命名法），局部变量和参数使用 camelCase（小驼峰命名法）（请参阅 <reference internal="True" refuri="../../tutorials/scripting/c_sharp/c_sharp_style_guide#doc-c-sharp-styleguide"><inline classes="std std-ref">C# 风格指南</inline></reference>）。连接信号时，请务必准确键入方法名称。</paragraph>
+                </list_item>
+            </bullet_list>
+        </note>
         <comment xml:space="preserve">Example</comment>
         <section ids="scene-setup" names="scene\ setup 场景设置">
             <title>场景设置</title>
-            <paragraph>To add a button to our game, we will create a new scene which will include
-                both a <reference internal="True" refuri="../../classes/class_button#class-button"><inline classes="std std-ref">Button</inline></reference> and the <literal>sprite_2d.tscn</literal> scene we created in
-                the <reference internal="True" refuri="scripting_first_script#doc-scripting-first-script"><inline classes="std std-ref">创建第一个脚本</inline></reference> lesson.</paragraph>
+            <paragraph>要为我们的游戏添加按钮，我们需要新建一个场景，包含一个<reference internal="True" refuri="../../classes/class_button#class-button"><inline classes="std std-ref">按钮</inline></reference>以及之前课程 <reference internal="True" refuri="scripting_first_script#doc-scripting-first-script"><inline classes="std std-ref">创建第一个脚本</inline></reference> 编写的 <literal>sprite_2d.tscn</literal> 场景。</paragraph>
             <paragraph>通过转到菜单“场景 -&gt; 新建场景”来创建新场景。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/signals_01_new_scene.webp'}" uri="getting_started/step_by_step/img/signals_01_new_scene.webp"></image>
             <paragraph>在场景面板中，单击“2D 场景”按钮。这样就会添加一个 <reference internal="True" refuri="../../classes/class_node2d#class-node2d"><inline classes="std std-ref">Node2D</inline></reference> 作为我们的根节点。</paragraph>
@@ -60,6 +69,11 @@ really short.</comment>
                 <image candidates="{'*': 'getting_started/step_by_step/img/signals_advanced_connection_window.png'}" uri="getting_started/step_by_step/img/signals_advanced_connection_window.png"></image>
                 <paragraph>你可以在高级视图中连接到任何节点和任何内置函数、向回调添加参数、设置选项。你可以单击窗口右下角的“高级”按钮来切换模式。</paragraph>
             </note>
+            <note>
+                <paragraph>If you are using an external editor (such as VS Code) this
+                    automatic code generation might not work. In this case you need to to connect
+                    the signal via code as explained in the next section.</paragraph>
+            </note>
             <paragraph>单击“连接”按钮以完成信号连接并跳转到脚本工作区。你应该会看到新方法，并在左边距中带有连接图标。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/signals_13_signals_connection_icon.webp'}" uri="getting_started/step_by_step/img/signals_13_signals_connection_icon.webp"></image>
             <paragraph>如果单击该图标，将弹出一个窗口并显示有关连接的信息。此功能仅在编辑器中连接节点时可用。</paragraph>
@@ -76,7 +90,8 @@ really short.</comment>
     set_process(not is_processing())</literal_block>
                 </div>
                 <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">private void OnButtonPressed()
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// We also specified this function name in PascalCase in the editor's connection window.
+private void OnButtonPressed()
 {
     SetProcess(!IsProcessing());
 }</literal_block>
@@ -141,6 +156,7 @@ public partial class MySprite2D : Sprite2D
         Position += velocity * (float)delta;
     }
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnButtonPressed()
     {
         SetProcess(!IsProcessing());
@@ -233,7 +249,8 @@ public partial class MySprite2D : Sprite2D
                 </div>
             </container>
             <paragraph><literal>visible</literal> 属性是一个布尔值，用于控制节点的可见性。<literal>visible = not visible</literal> 行切换该值。如果 <literal>visible</literal> 是 <literal>true</literal>，它就会变成 <literal>false</literal>，反之亦然。</paragraph>
-            <paragraph>如果你现在运行场景，就会看到精灵在闪啊闪的，间隔为一秒。</paragraph>
+            <paragraph>If you run the Node2D scene now, you will see that the sprite blinks on and off, at one
+                second intervals.</paragraph>
         </section>
         <section ids="complete-script" names="complete\ script 完整脚本">
             <title>完整脚本</title>
@@ -289,6 +306,7 @@ public partial class MySprite2D : Sprite2D
         Position += velocity * (float)delta;
     }
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnButtonPressed()
     {
         SetProcess(!IsProcessing());

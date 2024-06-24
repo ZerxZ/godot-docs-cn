@@ -70,7 +70,7 @@ Activate now: No</literal_block>
                     editor, and it must inherit from <reference internal="True" refuri="../../../classes/class_editorplugin#class-editorplugin"><inline classes="std std-ref">EditorPlugin</inline></reference>.</paragraph>
                 <warning>
                     <paragraph>In addition to the EditorPlugin script, any other GDScript that your plugin uses
-                        must <emphasis>also</emphasis> be a tool. Any GDScript without <literal>@tool</literal> imported into the editor
+                        must <emphasis>also</emphasis> be a tool. Any GDScript without <literal>@tool</literal> used by the editor
                         will act like an empty file!</paragraph>
                 </warning>
                 <paragraph>It's important to deal with initialization and clean-up of resources.
@@ -180,7 +180,7 @@ public partial class MyButton : Button
                 (<title_reference>preload("res://icon.svg")</title_reference>).</paragraph>
             <tip>
                 <paragraph>SVG images that are used as custom node icons should have the
-                    <strong>Editor &gt; Scale With Editor Scale</strong> and <strong>Editor &gt; Convert Icons With Editor Theme</strong>
+                    <strong>Editor &gt; Scale With Editor Scale</strong> and <strong>Editor &gt; Convert Colors With Editor Theme</strong>
                     <reference internal="True" refuri="../../assets_pipeline/importing_images#doc-importing-images-editor-import-options"><inline classes="std std-ref">import options</inline></reference> enabled. This allows
                     icons to follow the editor's scale and theming settings if the icons are designed with
                     the same color palette as Godot's own icons.</paragraph>

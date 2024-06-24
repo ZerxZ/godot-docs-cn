@@ -110,18 +110,19 @@ void uninitialize_summator_module(ModuleInitializationLevel p_level);
 
 void initialize_summator_module(ModuleInitializationLevel p_level) {
     if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
-            return;
+        return;
     }
     ClassDB::register_class&lt;Summator&gt;();
 }
 
 void uninitialize_summator_module(ModuleInitializationLevel p_level) {
     if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
-            return;
+        return;
     }
    // Nothing to do here in this example.
 }</literal_block>
-            <paragraph>接下来, 我们需要创建一个 <literal>SCsub</literal> 文件, 以便构建系统编译此模块:</paragraph>
+            <paragraph>Next, we need to create an <literal>SCsub</literal> file so the build system compiles
+                this module:</paragraph>
             <literal_block force="False" highlight_args="{}" language="python" linenos="False" xml:space="preserve"># SCsub
 
 Import('env')

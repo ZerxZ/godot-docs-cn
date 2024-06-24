@@ -30,29 +30,141 @@
                     </block_quote>
                 </list_item>
                 <list_item>
-                    <paragraph><strong>HTML5:</strong> 将启动本地网页服务器，并打开默认网页浏览器运行导出的项目。</paragraph>
-                </list_item>
-            </bullet_list>
-            <paragraph>针对包含iOS在内的更多平台的支持在计划之中。</paragraph>
-        </section>
-        <section ids="using-one-click-deploy" names="using\ one-click\ deploy 使用一键部署">
-            <title>使用一键部署</title>
-            <bullet_list bullet="-">
-                <list_item>
-                    <paragraph>如果是部署到Android，请在你的移动设备上打开开发者模式，然后在设备设置中启用USB调试。</paragraph>
-                </list_item>
-                <list_item>
-                    <paragraph>打开USB调试后，将设备通过USB线连接到PC。</paragraph>
+                    <paragraph><strong>iOS:</strong> Exports the project with debugging enabled and runs it on the
+                        connected device or simulator.</paragraph>
                     <block_quote>
                         <bullet_list bullet="-">
                             <list_item>
-                                <paragraph>如果你是高级用户，也可以使用无线ADB。</paragraph>
+                                <paragraph>Make sure to follow the steps described in <reference internal="True" refuri="exporting_for_ios#doc-exporting-for-ios"><inline classes="std std-ref">为 iOS 导出</inline></reference>.
+                                    Otherwise, the one-click deploy button won't appear.</paragraph>
+                            </list_item>
+                            <list_item>
+                                <paragraph>For each new bundle identifier, export the project, open it in the
+                                    Xcode, and build at least once to create new provisioning profile or
+                                    create a provisioning profile in the Apple Developer account dashboard.</paragraph>
+                            </list_item>
+                            <list_item>
+                                <paragraph>如果你连接的设备超过一台，Godot会询问你想导出项目到哪台设备。</paragraph>
                             </list_item>
                         </bullet_list>
                     </block_quote>
                 </list_item>
                 <list_item>
-                    <paragraph>确认目标平台（Android 或者 HTML5）有一个被标记为 <strong>可执行</strong> 的导出预设项。</paragraph>
+                    <paragraph><strong>Desktop platforms:</strong> Exports the project with debugging enabled and runs it
+                        on the remote computer via SSH.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph><strong>Web:</strong> Starts a local web server and runs the exported project by opening
+                        the default web browser. This is only accessible on <literal>localhost</literal> by default.
+                        See <reference internal="True" refid="doc-one-click-deploy-troubleshooting-web"><inline classes="std std-ref">Troubleshooting</inline></reference>
+                        for making the exported project accessible on remote devices.</paragraph>
+                </list_item>
+            </bullet_list>
+        </section>
+        <section ids="using-one-click-deploy" names="using\ one-click\ deploy 使用一键部署">
+            <title>使用一键部署</title>
+            <bullet_list bullet="-">
+                <list_item>
+                    <definition_list>
+                        <definition_list_item>
+                            <term><strong>Android:</strong></term>
+                            <definition>
+                                <bullet_list bullet="-">
+                                    <list_item>
+                                        <paragraph>Enable developer mode on your mobile device
+                                            then enable USB debugging in the device's settings.</paragraph>
+                                    </list_item>
+                                    <list_item>
+                                        <paragraph>After enabling USB debugging, connect the device to your PC using a USB
+                                            cable.</paragraph>
+                                    </list_item>
+                                    <list_item>
+                                        <paragraph>如果你是高级用户，也可以使用无线ADB。</paragraph>
+                                    </list_item>
+                                </bullet_list>
+                            </definition>
+                        </definition_list_item>
+                    </definition_list>
+                </list_item>
+                <list_item>
+                    <definition_list>
+                        <definition_list_item>
+                            <term><strong>iOS:</strong></term>
+                            <definition>
+                                <bullet_list bullet="-">
+                                    <list_item>
+                                        <paragraph>Install Xcode, accept Xcode license and login with your Apple Developer
+                                            account.</paragraph>
+                                    </list_item>
+                                    <list_item>
+                                        <paragraph>If you are using Xcode 14 or earlier, install <reference name="ios-deploy" refuri="https://github.com/ios-control/ios-deploy">ios-deploy</reference>
+                                            and set path to <title_reference>ios-deploy</title_reference> in the Editor Settings (see <title_reference>Export ⇾ iOS ⇾ iOS Deploy</title_reference>).</paragraph>
+                                    </list_item>
+                                    <list_item>
+                                        <definition_list>
+                                            <definition_list_item>
+                                                <term>For running on device:</term>
+                                                <definition>
+                                                    <bullet_list bullet="-">
+                                                        <list_item>
+                                                            <paragraph>Pair your mobile device with a Mac.</paragraph>
+                                                        </list_item>
+                                                        <list_item>
+                                                            <paragraph>Enable developer mode on your device.</paragraph>
+                                                        </list_item>
+                                                        <list_item>
+                                                            <paragraph>Device can be connected via USB or local network.</paragraph>
+                                                        </list_item>
+                                                        <list_item>
+                                                            <paragraph>Make sure the device is on the same local network and a correct network
+                                                                interface is selected in the editor settings (see <title_reference>Network ⇾ Debug ⇾ Remote Host</title_reference>).
+                                                                By default, the editor is listening for <title_reference>localhost</title_reference> connections only.</paragraph>
+                                                        </list_item>
+                                                    </bullet_list>
+                                                </definition>
+                                            </definition_list_item>
+                                        </definition_list>
+                                    </list_item>
+                                    <list_item>
+                                        <definition_list>
+                                            <definition_list_item>
+                                                <term>For running in simulator:</term>
+                                                <definition>
+                                                    <bullet_list bullet="-">
+                                                        <list_item>
+                                                            <paragraph>Install and start simulator from the Xcode.</paragraph>
+                                                        </list_item>
+                                                    </bullet_list>
+                                                </definition>
+                                            </definition_list_item>
+                                        </definition_list>
+                                    </list_item>
+                                    <list_item>
+                                        <paragraph>Device screen should be unlocked.</paragraph>
+                                    </list_item>
+                                </bullet_list>
+                            </definition>
+                        </definition_list_item>
+                    </definition_list>
+                </list_item>
+                <list_item>
+                    <definition_list>
+                        <definition_list_item>
+                            <term><strong>Desktop platforms:</strong></term>
+                            <definition>
+                                <bullet_list bullet="-">
+                                    <list_item>
+                                        <paragraph>Enable <title_reference>SSH Remote Deploy</title_reference> and configure connection settings in the project
+                                            export setting.</paragraph>
+                                    </list_item>
+                                </bullet_list>
+                            </definition>
+                        </definition_list_item>
+                    </definition_list>
+                </list_item>
+                <list_item>
+                    <paragraph>Make sure there is an export preset marked as <strong>Runnable</strong> for the target
+                        platform (Android, iOS or Web).</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>如果这些都配置正确并且没有报错，编辑器右上角会出现平台对应的图标。</paragraph>
@@ -83,6 +195,40 @@
                         <paragraph>在 Linux 上，你可能缺少所需的 <reference name="udev 规则" refuri="https://github.com/M0Rf30/android-udev-rules">udev 规则</reference>，导致你的设备无法被识别。</paragraph>
                     </list_item>
                 </bullet_list>
+                <target refid="doc-one-click-deploy-troubleshooting-web"></target>
+            </section>
+            <section ids="web doc-one-click-deploy-troubleshooting-web" names="web doc_one-click_deploy_troubleshooting_web">
+                <title>Web</title>
+                <paragraph>By default, the web server started by the editor is only accessible from
+                    <literal>localhost</literal>. This means the web server can't be reached by other devices on
+                    the local network or the Internet (if port forwarding is set up on the router).
+                    This is done for security reasons, as you may not want other devices to be able
+                    to access the exported project while you're testing it. Binding to <literal>localhost</literal>
+                    also prevents a firewall popup from appearing when you use one-click deploy for
+                    the web platform.</paragraph>
+                <paragraph>To make the local web server accessible over the local network, you'll need to
+                    change the <strong>Export &gt; Web &gt; HTTP Host</strong> editor setting to <literal>0.0.0.0</literal>. You will
+                    also need to enable <strong>Export &gt; Web &gt; Use TLS</strong> as SharedArrayBuffer requires the
+                    use of a secure connection to work, <emphasis>unless</emphasis> connecting to <literal>localhost</literal>.
+                    However, since other clients will be connecting to a remote device, the use of
+                    TLS is absolutely required here.</paragraph>
+                <paragraph>To make the local web server accessible over the Internet, you'll also need to
+                    forward the <strong>Export &gt; Web &gt; HTTP Port</strong> port specified in the Editor Settings
+                    (<literal>8060</literal> by default) in TCP on your router. This is usually done by accessing
+                    your router's web interface then adding a NAT rule for the port in question. For
+                    IPv6 connections, you should allow the port in the router's IPv6 firewall
+                    instead. Like for local network devices, you will also need to enable <strong>Export &gt;
+                        Web &gt; Use TLS</strong>.</paragraph>
+                <note>
+                    <paragraph>When <strong>Use TLS</strong> is enabled, you will get a warning from your web browser as
+                        Godot will use a temporary self-signed certificate. You can safely ignore it
+                        and bypass the warning by clicking <strong>Advanced</strong> and then <strong>Proceed to
+                            (address)</strong>.</paragraph>
+                    <paragraph>If you have an SSL/TLS certificate that is trusted by browsers, you can specify
+                        the paths to the key and certificate files in the <strong>Export &gt; Web &gt; TLS Key</strong>
+                        and <strong>Export &gt; Web &gt; TLS Certificate</strong>. This will only work if the project
+                        is accessed through a domain name that is part of the TLS certificate.</paragraph>
+                </note>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>
         </section>

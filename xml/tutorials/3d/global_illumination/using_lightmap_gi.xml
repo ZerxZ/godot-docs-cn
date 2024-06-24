@@ -36,7 +36,10 @@
         </section>
         <section ids="setting-up" names="setting\ up 设置">
             <title>设置</title>
-            <paragraph>首先，在光照贴图器可以执行任何操作之前，要烘焙的对象需要 UV2 图层和纹理大小。UV2 图层是一组辅助纹理坐标，可确保对象中的任何面在 UV 贴图中都有自己的位置。面与面之间不得共享纹理中的像素。</paragraph>
+            <paragraph>First of all, before the lightmapper can do anything, the objects to be baked need
+                a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
+                that ensures any face in the object has its own place in the UV map. Faces must
+                not share pixels in the texture.</paragraph>
             <paragraph>这里有几种方法可以确保你的对象具有唯一的 UV2 层和纹理大小：</paragraph>
             <section ids="unwrap-on-scene-import-recommended" names="unwrap\ on\ scene\ import\ (recommended) 场景导入时展开（推荐）">
                 <title>场景导入时展开（推荐）</title>
@@ -58,16 +61,16 @@
                     <paragraph>如果在导入的 3D 场景上使用此 Mesh 菜单操作，则重新加载场景时生成的 UV2 将丢失。</paragraph>
                 </warning>
                 <paragraph>Godot 可以选择展开网格并可视化 UV 通道。 选择 MeshInstance3D 节点后，可以在 3D 编辑器视口顶部的 <strong>Mesh</strong> 菜单中找到它：</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_mesh_menu.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_mesh_menu.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_mesh_menu.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_mesh_menu.webp"></image>
                 <paragraph>这将生成第二组 UV2 坐标, 可用于烘焙, 并且还将自动设置纹理大小.</paragraph>
             </section>
             <section ids="unwrap-from-your-3d-modeling-software" names="unwrap\ from\ your\ 3d\ modeling\ software 使用你自己的\ 3d\ 建模软件展开">
                 <title>使用你自己的 3D 建模软件展开</title>
                 <paragraph>最后一种方法是在你喜欢的 3D 应用程序中进行操作。通常不推荐这种做法，但为了让你知道它的存在，这里还是解释一下。这种做法的主要优势在于，针对可能要经常重新导入的复杂对象，在 Godot 中进行纹理生成的代价可能相当高，所以在导入前展开可以提高速度。</paragraph>
                 <paragraph>只需在第二个UV2层上进行展开即可。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_blender.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_blender.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_blender.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_blender.webp"></image>
                 <paragraph>然后正常导入 3D 场景。记得在导入后为网格设置纹理大小。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_lmsize.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_lmsize.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_lmsize.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_lmsize.webp"></image>
                 <paragraph>如果在导入时使用外部网格，则将保留大小。请注意，3D 建模软件中的大多数解包器都不是以质量为导向的，因为它们的目的是快速工作。你通常需要使用接缝或其他技术来创建更好的展开效果。</paragraph>
             </section>
             <section ids="generating-uv2-for-primitive-meshes" names="generating\ uv2\ for\ primitive\ meshes 为图元网格生成\ uv2">
@@ -82,25 +85,25 @@
             <section ids="checking-uv2" names="checking\ uv2 检查\ uv2">
                 <title>检查 UV2</title>
                 <paragraph>在前面提到的<strong>网格</strong>菜单中， 可以显示 UV2 纹理坐标。如果出现问题，请仔细检查网格是否具有以下 UV2 坐标：</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_uvchannel.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_uvchannel.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_uvchannel.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_uvchannel.webp"></image>
             </section>
         </section>
         <section ids="setting-up-the-scene" names="setting\ up\ the\ scene 设置场景">
             <title>设置场景</title>
             <paragraph>首先需要在场景中添加一个 <strong>LightmapGI</strong> 节点。这将在该场景中的所有节点（和子节点）上启用光照烘焙，甚至在实例化场景中也是如此。</paragraph>
-            <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_scene.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_scene.png"></image>
+            <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_scene.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_scene.webp"></image>
             <paragraph>烘焙器支持同一子场景存在多个实例，它们会有各自独立的光照贴图（前提是你得遵守之前提过的关于缩放的规则）。</paragraph>
             <section ids="setting-up-meshes" names="setting\ up\ meshes 设置网格">
                 <title>设置网格</title>
                 <paragraph>对于要参与烘焙过程的 <strong>MeshInstance3D</strong> 节点，需要将其光照烘焙模式设置为 <strong>Static</strong> 。光照烘焙模式设置为 <strong>Disabled</strong> 或 <strong>Dynamic</strong> 的网格体将被光照贴图器忽略。</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_use.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_use.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_use.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_use.webp"></image>
                 <paragraph>在场景导入时自动生成光照贴图时, 会自动启用此功能.</paragraph>
             </section>
             <section ids="setting-up-lights" names="setting\ up\ lights 设置灯光">
                 <title>设置灯光</title>
                 <paragraph>默认情况下，灯光采用间接灯光烘焙。这意味着阴影贴图和光照仍然是动态的并影响移动的物体，但从该光反射的光将被烘焙。</paragraph>
                 <paragraph>灯可以禁用(不烘焙)或完全烘焙(直接和间接). 这可以通过灯光中的 <strong>烘焙模式</strong> 菜单进行控制:</paragraph>
-                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_bake_mode.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_bake_mode.png"></image>
+                <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_bake_mode.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_bake_mode.webp"></image>
                 <paragraph>模式有：</paragraph>
             </section>
             <section ids="disabled" names="disabled disabled（禁用）">
@@ -127,7 +130,7 @@
         <section ids="baking" names="baking 烘焙">
             <title>烘焙</title>
             <paragraph>要开始烘焙过程，请在选择 LightmapGI 节点时，单击 3D 编辑器视口顶部的 <strong>烘焙光照贴图</strong> 按钮：</paragraph>
-            <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_bake.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_bake.png"></image>
+            <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_bake.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_bake.webp"></image>
             <paragraph>根据场景大小、所选烘焙方法以及质量的不同，其过程可能花费几秒钟到几分钟不等（也可能是几小时）。</paragraph>
             <warning>
                 <paragraph>烘焙光照贴图是一个可能需要大量视频内存（即显存）的过程，尤其是当生成的纹理很大时。 由于内部限制，如果生成的纹理尺寸太大（即使在具有大量视频内存的系统上），引擎也可能崩溃。</paragraph>
@@ -191,7 +194,10 @@
                 <image alt="禁用降噪和启用降噪之间的比较" candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_denoiser_comparison.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_denoiser_comparison.webp"></image>
                 <caption>禁用降噪和启用降噪之间的比较（使用默认的 JNLM 降噪器）。</caption>
             </figure>
-            <paragraph>为了消除噪点而不过多增加烘焙时间，可以使用降噪器。降噪器是一种在最终烘焙光照贴图上运行的算法，检测噪声模式并软化它们，同时尝试最好地保留细节。 Godot 提供了两种降噪算法：</paragraph>
+            <paragraph>To combat noise without increasing bake times too much, a denoiser can be used.
+                A denoiser is an algorithm that runs on the final baked lightmap, detects patterns of
+                noise and softens them while attempting to best preserve detail.
+                Godot offers two denoising algorithms:</paragraph>
             <section ids="jnlm-non-local-means-with-joint-filtering" names="jnlm\ (non-local\ means\ with\ joint\ filtering) jnlm（non-local\ means\ with\ joint\ filtering，联合过滤的非局部均值）">
                 <title>JNLM（Non-Local Means with Joint Filtering，联合过滤的非局部均值）</title>
                 <paragraph>JNLM 是 Godot 自带的默认的降噪方法。它使用一种简单但有效的降噪算法，称为 <emphasis>非局部均值</emphasis> （non-local means）。 JNLM 使用计算着色器在 GPU 上运行，并且与任何可以运行 Godot 4 的基于 Vulkan 的渲染方法的 GPU 相兼容。该方法无需额外设置。</paragraph>
