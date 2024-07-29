@@ -24,9 +24,8 @@
                     <definition_list_item>
                         <term><reference internal="True" refuri="../../classes/class_navigationserver3d#class-navigationserver3d"><inline classes="std std-ref">NavigationServer3D</inline></reference></term>
                         <definition>
-                            <paragraph><literal>NavigationServer3D</literal> provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.</paragraph>
-                            <paragraph>The NavigationServer is best suited for 3D realtime gameplay that does require actors to reach any possible position within a navigation mesh defined area.
-                                Mesh-based navigation scales well with large game worlds as a large area can often be defined with a single polygon when it would require many, many grid cells.</paragraph>
+                            <paragraph><literal>NavigationServer3D</literal> 提供了强大的服务器 API，能够在区域中查找两个位置之间的最短路径，区域使用导航网格定义。</paragraph>
+                            <paragraph>NavigationServer 最适合的是要求角色能够到达区域中任意位置的 3D 实时游戏，区域由导航网格定义。基于网格的导航能够轻松扩展到大型游戏世界，因为大型区域通常能够使用单一多边形定义，如果换成栅格则会需要定义许许多多的单元格。</paragraph>
                             <paragraph>NavigationServer 中存放了不同的导航地图，每一张地图都由若干区块组成，区块中存放的是导航网格数据。在地图上放置代理就能够进行避障计算。与服务器通信时，使用 RID 来引用内部的地图、区块和代理。</paragraph>
                             <definition_list>
                                 <definition_list_item>
@@ -68,8 +67,7 @@
                                                     <definition_list_item>
                                                         <term>导航代理 RID</term>
                                                         <definition>
-                                                            <paragraph>Reference to a specific avoidance agent.
-                                                                The avoidance is defined by a radius value.</paragraph>
+                                                            <paragraph>引用指定的避障代理，避障时使用的是半径值。</paragraph>
                                                         </definition>
                                                     </definition_list_item>
                                                 </definition_list>
@@ -93,7 +91,7 @@
                 </definition_list>
             </list_item>
         </bullet_list>
-        <paragraph>The following scene tree nodes are available as helpers to work with the NavigationServer3D API.</paragraph>
+        <paragraph>下列场景树节点可以辅助对 NavigationServer3D API 的使用。</paragraph>
         <bullet_list bullet="-">
             <list_item>
                 <definition_list>
@@ -109,7 +107,7 @@
                                     <paragraph>通过 <literal>navigation_layers</literal> 掩码，可以对其在寻路中的使用做进一步的限制。</paragraph>
                                 </list_item>
                                 <list_item>
-                                    <paragraph>The NavigationServer3D will join the navigation meshes of regions by proximity for a combined navigation mesh.</paragraph>
+                                    <paragraph>NavigationServer3D 会根据距离将不同的导航网格合并成一个导航网格。</paragraph>
                                 </list_item>
                             </bullet_list>
                         </definition>
@@ -143,8 +141,7 @@
                     <definition_list_item>
                         <term><reference internal="True" refuri="../../classes/class_navigationagent3d#class-navigationagent3d"><inline classes="std std-ref">NavigationAgent3D</inline></reference> 节点</term>
                         <definition>
-                            <paragraph>A helper Node used to facilitate common NavigationServer3D API calls for pathfinding and avoidance.
-                                Use this Node with a Node3D inheriting parent Node.</paragraph>
+                            <paragraph>方便调用寻路和避障所需的常规 NavigationServer3D API 的辅助节点。该节点的父节点应该继承自 Node3D。</paragraph>
                         </definition>
                     </definition_list_item>
                 </definition_list>
@@ -167,8 +164,7 @@
                     <definition_list_item>
                         <term><reference internal="True" refuri="../../classes/class_navigationmesh#class-navigationmesh"><inline classes="std std-ref">NavigationMesh</inline></reference> 资源</term>
                         <definition>
-                            <paragraph>A resource that holds 3D navigation mesh data.
-                                It provides 3D geometry baking options to define navigation areas inside the Editor as well as at runtime.</paragraph>
+                            <paragraph>存放 3D 导航网格数据的资源，提供了 3D 几何体的烘焙选项，既能够在编辑器中定义导航区域，也能够在运行时定义。</paragraph>
                             <bullet_list bullet="-">
                                 <list_item>
                                     <paragraph>NavigationRegion3D 节点使用该资源定义其导航区域。</paragraph>
@@ -177,7 +173,7 @@
                                     <paragraph>NavigationServer3D 使用该资源更新各个区块的导航网格。</paragraph>
                                 </list_item>
                                 <list_item>
-                                    <paragraph>The GridMap Editor uses this resource when specific navigation meshes are defined for each grid cell.</paragraph>
+                                    <paragraph>GridMap 编辑器会在栅格单元格中存在对导航网格的定义时使用该资源。</paragraph>
                                 </list_item>
                             </bullet_list>
                         </definition>
@@ -190,8 +186,7 @@
         </seealso>
         <section ids="setup-for-3d-scene" names="setup\ for\ 3d\ scene 3d\ 场景的设置">
             <title>3D 场景的设置</title>
-            <paragraph>The following steps show a basic setup for minimal viable navigation in 3D.
-                It uses the NavigationServer3D and a NavigationAgent3D for path movement.</paragraph>
+            <paragraph>下列步骤演示的是最小可行的 3D 导航的基础设置，使用 NavigationServer3D 和 NavigationAgent3D 进行路径移动。</paragraph>
             <enumerated_list enumtype="arabic" prefix="" suffix=".">
                 <list_item>
                     <paragraph>在场景中添加一个 NavigationRegion3D 节点。</paragraph>
@@ -211,7 +206,7 @@
                     <image candidates="{'*': 'tutorials/navigation/img/nav_3d_min_setup_step2.png'}" uri="tutorials/navigation/img/nav_3d_min_setup_step2.png"></image>
                 </list_item>
                 <list_item>
-                    <paragraph>Now a transparent navigation mesh appears that hovers some distance on top of the PlaneMesh.</paragraph>
+                    <paragraph>现在就会显示出透明的导航网格，悬浮在 PlaneMesh 上方。</paragraph>
                     <image candidates="{'*': 'tutorials/navigation/img/nav_3d_min_setup_step3.png'}" uri="tutorials/navigation/img/nav_3d_min_setup_step3.png"></image>
                 </list_item>
                 <list_item>

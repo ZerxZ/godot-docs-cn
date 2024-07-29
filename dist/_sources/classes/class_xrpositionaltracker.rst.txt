@@ -21,11 +21,11 @@ XRPositionalTracker
 描述
 ----
 
-An instance of this object represents a device that is tracked, such as a controller or anchor point. HMDs aren't represented here as they are handled internally.
+此对象的一个实例，表示一个被追踪的设备，例如一个控制器或锚点。HMD 没有在此处表示，因为它们是在内部处理的。
 
-As controllers are turned on and the :ref:`XRInterface<class_XRInterface>` detects them, instances of this object are automatically added to this list of active tracking objects accessible through the :ref:`XRServer<class_XRServer>`.
+当控制器被打开，并且 :ref:`XRInterface<class_XRInterface>` 检测到它们时，该对象的实例会自动被添加到可通过 :ref:`XRServer<class_XRServer>` 访问的活动追踪对象列表中。
 
-The :ref:`XRNode3D<class_XRNode3D>` and :ref:`XRAnchor3D<class_XRAnchor3D>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDExtension-based interfaces can interact with them.
+\ :ref:`XRNode3D<class_XRNode3D>` 和 :ref:`XRAnchor3D<class_XRAnchor3D>` 都使用这种类型的对象，并且应该在你的项目中使用。位置追踪器只是使这一切正常工作的底层对象。这些大部分都是公开的，以便基于 GDExtension 的接口，可以与它们交互。
 
 .. rst-class:: classref-introduction-group
 
@@ -327,10 +327,10 @@ enum **TrackerHand**: :ref:`🔗<enum_XRPositionalTracker_TrackerHand>`
 设置给定姿势的变换、线速度、角速度和追踪置信度。此方法由一个 :ref:`XRInterface<class_XRInterface>` 实现调用，不应直接使用。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

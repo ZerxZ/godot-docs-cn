@@ -25,6 +25,13 @@ Parallax2D
 
 \ **注意：**\ 如果 :ref:`ignore_camera_scroll<class_Parallax2D_property_ignore_camera_scroll>` 为 ``false`` 或者修改了 :ref:`screen_offset<class_Parallax2D_property_screen_offset>`\ ，那么该节点进入场景树后发生的任何位移都会被覆盖。
 
+.. rst-class:: classref-introduction-group
+
+教程
+----
+
+- :doc:`2D Parallax <../tutorials/2d/2d_parallax>`
+
 .. rst-class:: classref-reftable-group
 
 属性
@@ -232,15 +239,15 @@ Parallax2D
 - |void| **set_scroll_scale**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_scroll_scale**\ (\ )
 
-Multiplier to the final **Parallax2D**'s offset. Can be used to simulate distance from the camera.
+**Parallax2D** 最终偏移量的乘数。可用于模拟相对于相机的距离。
 
-For example, a value of ``1`` scrolls at the same speed as the camera. A value greater than ``1`` scrolls faster, making objects appear closer. Less than ``1`` scrolls slower, making objects appear further, and a value of ``0`` stops the objects completely.
+例如，\ ``1`` 的值表示滚动速度与相机相同。大于 ``1`` 的值表示滚动速度更快，使物体看起来更近。小于 ``1`` 的值表示滚动速度更慢，使物体看起来更远，而 ``0`` 的值表示物体完全停止。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

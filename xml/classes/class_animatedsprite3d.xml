@@ -112,7 +112,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-animatedsprite3d-method-get-playing-speed"><inline classes="std std-ref">get_playing_speed</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-animatedsprite3d-method-get-playing-speed"><inline classes="std std-ref">get_playing_speed</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -120,7 +120,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-animatedsprite3d-method-is-playing"><inline classes="std std-ref">is_playing</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-animatedsprite3d-method-is-playing"><inline classes="std std-ref">is_playing</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -271,12 +271,12 @@
         <section classes="classref-descriptions-group" ids="id7" names="方法说明">
             <title>方法说明</title>
             <target refid="class-animatedsprite3d-method-get-playing-speed"></target>
-            <paragraph classes="classref-method" ids="class-animatedsprite3d-method-get-playing-speed" names="class_animatedsprite3d_method_get_playing_speed"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_playing_speed</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-animatedsprite3d-method-get-playing-speed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-animatedsprite3d-method-get-playing-speed" names="class_animatedsprite3d_method_get_playing_speed"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_playing_speed</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-animatedsprite3d-method-get-playing-speed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前动画的实际播放速度，未播放时则为 <literal>0</literal>。这个速度是 <reference internal="True" refid="class-animatedsprite3d-property-speed-scale"><inline classes="std std-ref">speed_scale</inline></reference> 属性乘以调用 <reference internal="True" refid="class-animatedsprite3d-method-play"><inline classes="std std-ref">play</inline></reference> 时指定的 <literal>custom_speed</literal> 参数。</paragraph>
             <paragraph>如果当前动画是倒放的，则返回负值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-animatedsprite3d-method-is-playing"></target>
-            <paragraph classes="classref-method" ids="class-animatedsprite3d-method-is-playing" names="class_animatedsprite3d_method_is_playing"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_playing</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-animatedsprite3d-method-is-playing"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-animatedsprite3d-method-is-playing" names="class_animatedsprite3d_method_is_playing"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_playing</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-animatedsprite3d-method-is-playing"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果动画目前正在播放，则返回 <literal>true</literal>（即便 <reference internal="True" refid="class-animatedsprite3d-property-speed-scale"><inline classes="std std-ref">speed_scale</inline></reference> 和/或 <literal>custom_speed</literal> 为 <literal>0</literal>）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-animatedsprite3d-method-pause"></target>
@@ -316,12 +316,12 @@ animated_sprite.set_frame_and_progress(current_frame, current_progress)</literal
             <paragraph classes="classref-method" ids="class-animatedsprite3d-method-stop" names="class_animatedsprite3d_method_stop"><abbreviation explanation="无返回值。">void</abbreviation> <strong>stop</strong>() <reference internal="True" refid="class-animatedsprite3d-method-stop"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>停止当前正在播放的动画。会将动画的位置重置为 <literal>0</literal>，并将 <literal>custom_speed</literal> 重置为 <literal>1.0</literal>。另见 <reference internal="True" refid="class-animatedsprite3d-method-pause"><inline classes="std std-ref">pause</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

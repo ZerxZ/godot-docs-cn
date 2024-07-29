@@ -12,10 +12,12 @@
         <paragraph>代表 2D 变换的 2×3 矩阵。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>用于 2D 线性变换的 2×3 矩阵（2 行 3 列），可以表示平移、旋转、缩放等变换，由三个 <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> 值组成：<reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>、<reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>、<reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>。</paragraph>
-            <paragraph>通用介绍见教程<reference internal="True" refuri="../tutorials/math/matrices_and_transforms"><inline classes="doc">《矩阵与变换》</inline></reference>。</paragraph>
+            <paragraph>The <strong>Transform2D</strong> built-in <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> type is a 2×3 <reference name="matrix" refuri="https://en.wikipedia.org/wiki/Matrix_(mathematics)">matrix</reference> representing a transformation in 2D space. It contains three <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> values: <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>, <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>, and <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>. Together, they can represent translation, rotation, scale, and skew.</paragraph>
+            <paragraph>The <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference> and <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference> axes form a 2×2 matrix, known as the transform's <strong>basis</strong>. The length of each axis (<reference internal="True" refuri="class_vector2#class-vector2-method-length"><inline classes="std std-ref">Vector2.length</inline></reference>) influences the transform's scale, while the direction of all axes influence the rotation. Usually, both axes are perpendicular to one another. However, when you rotate one axis individually, the transform becomes skewed. Applying a skewed transform to a 2D sprite will make the sprite appear distorted.</paragraph>
+            <paragraph>For a general introduction, see the <reference internal="True" refuri="../tutorials/math/matrices_and_transforms"><inline classes="doc">Matrices and transforms</inline></reference> tutorial.</paragraph>
+            <paragraph><strong>Note:</strong> Unlike <reference internal="True" refuri="class_transform3d#class-transform3d"><inline classes="std std-ref">Transform3D</inline></reference>, there is no 2D equivalent to the <reference internal="True" refuri="class_basis#class-basis"><inline classes="std std-ref">Basis</inline></reference> type. All mentions of "basis" refer to the <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference> and <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference> components of <strong>Transform2D</strong>.</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -143,7 +145,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -151,7 +153,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-basis-xform"><inline classes="std std-ref">basis_xform</inline></reference>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-basis-xform"><inline classes="std std-ref">basis_xform</inline></reference>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -159,7 +161,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-basis-xform-inv"><inline classes="std std-ref">basis_xform_inv</inline></reference>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-basis-xform-inv"><inline classes="std std-ref">basis_xform_inv</inline></reference>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -167,7 +169,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">determinant</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">determinant</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -175,7 +177,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-get-origin"><inline classes="std std-ref">get_origin</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-get-origin"><inline classes="std std-ref">get_origin</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -183,7 +185,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-get-rotation"><inline classes="std std-ref">get_rotation</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-get-rotation"><inline classes="std std-ref">get_rotation</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -191,7 +193,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -199,7 +201,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-get-skew"><inline classes="std std-ref">get_skew</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-get-skew"><inline classes="std std-ref">get_skew</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -207,7 +209,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-interpolate-with"><inline classes="std std-ref">interpolate_with</inline></reference>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-interpolate-with"><inline classes="std std-ref">interpolate_with</inline></reference>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -215,7 +217,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -223,7 +225,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-is-conformal"><inline classes="std std-ref">is_conformal</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-is-conformal"><inline classes="std std-ref">is_conformal</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -231,7 +233,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -239,7 +241,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -247,7 +249,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-looking-at"><inline classes="std std-ref">looking_at</inline></reference>(target: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> = Vector2(0, 0)) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-looking-at"><inline classes="std std-ref">looking_at</inline></reference>(target: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> = Vector2(0, 0)) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -255,7 +257,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -263,7 +265,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-rotated"><inline classes="std std-ref">rotated</inline></reference>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-rotated"><inline classes="std std-ref">rotated</inline></reference>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -271,7 +273,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-rotated-local"><inline classes="std std-ref">rotated_local</inline></reference>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-rotated-local"><inline classes="std std-ref">rotated_local</inline></reference>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -279,7 +281,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-scaled"><inline classes="std std-ref">scaled</inline></reference>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-scaled"><inline classes="std std-ref">scaled</inline></reference>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -287,7 +289,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-scaled-local"><inline classes="std std-ref">scaled_local</inline></reference>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-scaled-local"><inline classes="std std-ref">scaled_local</inline></reference>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -295,7 +297,7 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-translated"><inline classes="std std-ref">translated</inline></reference>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-translated"><inline classes="std std-ref">translated</inline></reference>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -303,15 +305,15 @@
                                 <paragraph><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-transform2d-method-translated-local"><inline classes="std std-ref">translated_local</inline></reference>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-transform2d-method-translated-local"><inline classes="std std-ref">translated_local</inline></reference>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id6" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id6" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="53"></colspec>
@@ -414,208 +416,279 @@
             <title>常量</title>
             <target refid="class-transform2d-constant-identity"></target>
             <paragraph classes="classref-constant" ids="class-transform2d-constant-identity" names="class_transform2d_constant_identity"><strong>IDENTITY</strong> = <literal>Transform2D(1, 0, 0, 1, 0, 0)</literal> <reference internal="True" refid="class-transform2d-constant-identity"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>没有应用平移、旋转、缩放的恒等 <strong>Transform2D</strong>。当应用于其他数据结构时，<reference internal="True" refid="class-transform2d-constant-identity"><inline classes="std std-ref">IDENTITY</inline></reference> 不执行变换。</paragraph>
+            <paragraph>The identity <strong>Transform2D</strong>. A transform with no translation, no rotation, and its scale being <literal>1</literal>. When multiplied by another <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> such as <reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> or another <strong>Transform2D</strong>, no transformation occurs. This means that:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>The <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference> points right (<reference internal="True" refuri="class_vector2#class-vector2-constant-right"><inline classes="std std-ref">Vector2.RIGHT</inline></reference>);</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>The <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference> points up (<reference internal="True" refuri="class_vector2#class-vector2-constant-up"><inline classes="std std-ref">Vector2.UP</inline></reference>).</paragraph>
+                </list_item>
+            </bullet_list>
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var transform = Transform2D.IDENTITY
+print("| X | Y | Origin")
+print("| %s | %s | %s" % [transform.x.x, transform.y.x, transform.origin.x])
+print("| %s | %s | %s" % [transform.x.y, transform.y.y, transform.origin.y])
+# Prints:
+# | X | Y | Origin
+# | 1 | 0 | 0
+# | 0 | 1 | 0</literal_block>
+            <paragraph>This is identical to creating <reference internal="True" refid="class-transform2d-constructor-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> without any parameters. This constant can be used to make your code clearer, and for consistency with C#.</paragraph>
             <target refid="class-transform2d-constant-flip-x"></target>
             <paragraph classes="classref-constant" ids="class-transform2d-constant-flip-x" names="class_transform2d_constant_flip_x"><strong>FLIP_X</strong> = <literal>Transform2D(-1, 0, 0, 1, 0, 0)</literal> <reference internal="True" refid="class-transform2d-constant-flip-x"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>将沿 X 轴翻转的 <strong>Transform2D</strong>。</paragraph>
+            <paragraph>When any transform is multiplied by <reference internal="True" refid="class-transform2d-constant-flip-x"><inline classes="std std-ref">FLIP_X</inline></reference>, it negates all components of the <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference> axis (the X column).</paragraph>
+            <paragraph>When <reference internal="True" refid="class-transform2d-constant-flip-x"><inline classes="std std-ref">FLIP_X</inline></reference> is multiplied by any basis, it negates the <reference internal="True" refuri="class_vector2#class-vector2-property-x"><inline classes="std std-ref">Vector2.x</inline></reference> component of all axes (the X row).</paragraph>
             <target refid="class-transform2d-constant-flip-y"></target>
             <paragraph classes="classref-constant" ids="class-transform2d-constant-flip-y" names="class_transform2d_constant_flip_y"><strong>FLIP_Y</strong> = <literal>Transform2D(1, 0, 0, -1, 0, 0)</literal> <reference internal="True" refid="class-transform2d-constant-flip-y"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>将沿 Y 轴翻转的 <strong>Transform2D</strong>。</paragraph>
+            <paragraph>When any transform is multiplied by <reference internal="True" refid="class-transform2d-constant-flip-y"><inline classes="std std-ref">FLIP_Y</inline></reference>, it negates all components of the <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference> axis (the Y column).</paragraph>
+            <paragraph>When <reference internal="True" refid="class-transform2d-constant-flip-y"><inline classes="std std-ref">FLIP_Y</inline></reference> is multiplied by any basis, it negates the <reference internal="True" refuri="class_vector2#class-vector2-property-y"><inline classes="std std-ref">Vector2.y</inline></reference> component of all axes (the Y row).</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id8" names="属性说明">
             <title>属性说明</title>
             <target refid="class-transform2d-property-origin"></target>
             <paragraph classes="classref-property" ids="class-transform2d-property-origin" names="class_transform2d_property_origin"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>origin</strong> = <literal>Vector2(0, 0)</literal> <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>原点向量（2 号列，即第 3 列）。相当于使用 <literal>2</literal> 进行数组索引。原点向量代表平移。</paragraph>
+            <paragraph>The translation offset of this transform, and the column <literal>2</literal> of the matrix. In 2D space, this can be seen as the position.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-property-x"></target>
             <paragraph classes="classref-property" ids="class-transform2d-property-x" names="class_transform2d_property_x"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>x</strong> = <literal>Vector2(1, 0)</literal> <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>基矩阵的 X 向量（第 0 列）。相当于数组索引 <literal>0</literal>。</paragraph>
+            <paragraph>The transform basis's X axis, and the column <literal>0</literal> of the matrix. Combined with <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>, this represents the transform's rotation, scale, and skew.</paragraph>
+            <paragraph>On the identity transform, this vector points right (<reference internal="True" refuri="class_vector2#class-vector2-constant-right"><inline classes="std std-ref">Vector2.RIGHT</inline></reference>).</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-property-y"></target>
             <paragraph classes="classref-property" ids="class-transform2d-property-y" names="class_transform2d_property_y"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>y</strong> = <literal>Vector2(0, 1)</literal> <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>基矩阵的 Y 向量（第 1 列）。相当于数组索引 <literal>1</literal>。</paragraph>
+            <paragraph>The transform basis's Y axis, and the column <literal>1</literal> of the matrix. Combined with <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>, this represents the transform's rotation, scale, and skew.</paragraph>
+            <paragraph>On the identity transform, this vector points up (<reference internal="True" refuri="class_vector2#class-vector2-constant-up"><inline classes="std std-ref">Vector2.UP</inline></reference>).</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id9" names="构造函数说明">
             <title>构造函数说明</title>
             <target refid="class-transform2d-constructor-transform2d"></target>
             <paragraph classes="classref-constructor" ids="class-transform2d-constructor-transform2d" names="class_transform2d_constructor_transform2d"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>Transform2D</strong>() <reference internal="True" refid="class-transform2d-constructor-transform2d"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>构造默认初始化为 <reference internal="True" refid="class-transform2d-constant-identity"><inline classes="std std-ref">IDENTITY</inline></reference> 的 <strong>Transform2D</strong>。</paragraph>
+            <paragraph>Constructs a <strong>Transform2D</strong> identical to <reference internal="True" refid="class-transform2d-constant-identity"><inline classes="std std-ref">IDENTITY</inline></reference>.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <paragraph classes="classref-constructor"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>Transform2D</strong>(from: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>)</paragraph>
             <paragraph>构造给定 <strong>Transform2D</strong> 的副本。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <paragraph classes="classref-constructor"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>Transform2D</strong>(rotation: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, position: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>)</paragraph>
-            <paragraph>从给定的角度（单位为弧度）和位置构造变换。</paragraph>
+            <paragraph>Constructs a <strong>Transform2D</strong> from a given angle (in radians) and position.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <paragraph classes="classref-constructor"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>Transform2D</strong>(rotation: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>, skew: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, position: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>)</paragraph>
-            <paragraph>从给定的角度（单位为弧度）、缩放、偏斜（单位为弧度）和位置构造变换。</paragraph>
+            <paragraph>Constructs a <strong>Transform2D</strong> from a given angle (in radians), scale, skew (in radians), and position.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <paragraph classes="classref-constructor"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>Transform2D</strong>(x_axis: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>, y_axis: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>, origin: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>)</paragraph>
-            <paragraph>从表示 <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>、<reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>、<reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 的 3 个 <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>（三个列向量）构建变换。</paragraph>
+            <paragraph>Constructs a <strong>Transform2D</strong> from 3 <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> values representing <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>, <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>, and the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> (the three matrix columns).</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id10" names="方法说明">
             <title>方法说明</title>
             <target refid="class-transform2d-method-affine-inverse"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-affine-inverse" names="class_transform2d_method_affine_inverse"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>affine_inverse</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>假设该基可逆（必须具有非零行列式），返回该变换的逆。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-affine-inverse" names="class_transform2d_method_affine_inverse"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>affine_inverse</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the inverted version of this transform. Unlike <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>, this method works with almost any basis, including non-uniform ones, but is slower. See also <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>.</paragraph>
+            <paragraph><strong>Note:</strong> For this method to return correctly, the transform's basis needs to have a determinant that is not exactly <literal>0</literal> (see <reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">determinant</inline></reference>).</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-basis-xform"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-basis-xform" names="class_transform2d_method_basis_xform"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>basis_xform</strong>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-basis-xform"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回经过基矩阵变换（相乘）的向量。</paragraph>
-            <paragraph>该方法不考虑平移（<reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-basis-xform" names="class_transform2d_method_basis_xform"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>basis_xform</strong>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-basis-xform"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns a copy of the <literal>v</literal> vector, transformed (multiplied) by the transform basis's matrix. Unlike the multiplication operator (<literal>*</literal>), this method ignores the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-basis-xform-inv"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-basis-xform-inv" names="class_transform2d_method_basis_xform_inv"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>basis_xform_inv</strong>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-basis-xform-inv"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回一个由逆基矩阵变换（乘以）的向量，假设该基是正交的（即旋转/反射可以，缩放/倾斜不行）。</paragraph>
-            <paragraph>该方法不考虑翻译（<reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量）。</paragraph>
-            <paragraph><literal>transform.basis_xform_inv(vector)</literal> 性当于 <literal>transform.inverse().basis_xform(vector)</literal>。请参阅 <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>。</paragraph>
-            <paragraph>对于非正交变换（例如缩放），可以使用 <literal>transform.affine_inverse().basis_xform(vector)</literal> 代替。请参阅 <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference>。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-basis-xform-inv" names="class_transform2d_method_basis_xform_inv"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>basis_xform_inv</strong>(v: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-basis-xform-inv"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns a copy of the <literal>v</literal> vector, transformed (multiplied) by the inverse transform basis's matrix (see <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>). This method ignores the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>.</paragraph>
+            <paragraph><strong>Note:</strong> This method assumes that this transform's basis is <emphasis>orthonormal</emphasis> (see <reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>). If the basis is not orthonormal, <literal>transform.affine_inverse().basis_xform(vector)</literal> should be used instead (see <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference>).</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-determinant"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-determinant" names="class_transform2d_method_determinant"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>determinant</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回基矩阵的行列式。如果基是均匀缩放的，则它的行列式是缩放系数的平方。</paragraph>
-            <paragraph>行列式为负意味着基发生了翻转，因此缩放中有一个分量是负的。行列式为零意味着基不可逆，通常认为是无效的基。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-determinant" names="class_transform2d_method_determinant"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>determinant</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the <reference name="determinant" refuri="https://en.wikipedia.org/wiki/Determinant">determinant</reference> of this transform basis's matrix. For advanced math, this number can be used to determine a few attributes:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>If the determinant is exactly <literal>0</literal>, the basis is not invertible (see <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">inverse</inline></reference>).</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>If the determinant is a negative number, the basis represents a negative scale.</paragraph>
+                </list_item>
+            </bullet_list>
+            <paragraph><strong>Note:</strong> If the basis's scale is the same for every axis, its determinant is always that scale by the power of 2.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-get-origin"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-get-origin" names="class_transform2d_method_get_origin"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_origin</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-origin"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回该变换的原点（平移）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-get-origin" names="class_transform2d_method_get_origin"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_origin</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-origin"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns this transform's translation. Equivalent to <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-get-rotation"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-get-rotation" names="class_transform2d_method_get_rotation"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_rotation</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-rotation"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回该变换的旋转（单位为弧度）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-get-rotation" names="class_transform2d_method_get_rotation"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_rotation</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-rotation"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns this transform's rotation (in radians). This is equivalent to <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>'s angle (see <reference internal="True" refuri="class_vector2#class-vector2-method-angle"><inline classes="std std-ref">Vector2.angle</inline></reference>).</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-get-scale"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-get-scale" names="class_transform2d_method_get_scale"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_scale</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-scale"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回缩放。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-get-scale" names="class_transform2d_method_get_scale"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_scale</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-scale"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the length of both <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference> and <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>, as a <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>. If this transform's basis is not skewed, this value is the scaling factor. It is not affected by rotation.</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-0-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var my_transform = Transform2D(
+    Vector2(2, 0),
+    Vector2(0, 4),
+    Vector2(0, 0)
+)
+# Rotating the Transform2D in any way preserves its scale.
+my_transform = my_transform.rotated(TAU / 2)
+
+print(my_transform.get_scale()) # Prints (2, 4).</literal_block>
+                </div>
+                <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var myTransform = new Transform2D(
+    Vector3(2.0f, 0.0f),
+    Vector3(0.0f, 4.0f),
+    Vector3(0.0f, 0.0f)
+);
+// Rotating the Transform2D in any way preserves its scale.
+myTransform = myTransform.Rotated(Mathf.Tau / 2.0f);
+
+GD.Print(myTransform.GetScale()); // Prints (2, 4, 8).</literal_block>
+                </div>
+            </container>
+            <paragraph><strong>Note:</strong> If the value returned by <reference internal="True" refid="class-transform2d-method-determinant"><inline classes="std std-ref">determinant</inline></reference> is negative, the scale is also negative.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-get-skew"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-get-skew" names="class_transform2d_method_get_skew"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_skew</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-skew"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回该变换的偏斜（单位为弧度）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-get-skew" names="class_transform2d_method_get_skew"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_skew</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-get-skew"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns this transform's skew (in radians).</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-interpolate-with"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-interpolate-with" names="class_transform2d_method_interpolate_with"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>interpolate_with</strong>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-interpolate-with"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回将该变换与其他变换使用给定权重 <literal>weight</literal> 进行插值的结果（权重范围为 0.0 到 1.0）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-interpolate-with" names="class_transform2d_method_interpolate_with"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>interpolate_with</strong>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-interpolate-with"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>返回将该变换和 <literal>xform</literal> 按照给定的权重 <literal>weight</literal> 进行线性插值结果。</paragraph>
+            <paragraph><literal>weight</literal> 应该在 <literal>0.0</literal> 到 <literal>1.0</literal>（闭区间）的范围内。允许使用超出这个范围的值，表示进行<emphasis>外插</emphasis>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-inverse"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-inverse" names="class_transform2d_method_inverse"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>inverse</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回变换的逆，假设该变换的基是正交的（即旋转/反射可以，缩放/倾斜不行）。使用 <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference> 进行非正交变换（例如缩放）。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-inverse" names="class_transform2d_method_inverse"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>inverse</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the <reference name="inverted version of this transform" refuri="https://en.wikipedia.org/wiki/Invertible_matrix">inverted version of this transform</reference>.</paragraph>
+            <paragraph><strong>Note:</strong> For this method to return correctly, the transform's basis needs to be <emphasis>orthonormal</emphasis> (see <reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>). That means, the basis should only represent a rotation. If it does not, use <reference internal="True" refid="class-transform2d-method-affine-inverse"><inline classes="std std-ref">affine_inverse</inline></reference> instead.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-is-conformal"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-is-conformal" names="class_transform2d_method_is_conformal"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_conformal</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-conformal"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>如果该变换的基是共形的，则返回 <literal>true</literal>，这意味着它保留角度和距离比率，并且只能由旋转和均一缩放组成。如果该变换的基具有不均一的缩放或剪切/倾斜，则返回 <literal>false</literal>。这可被用于验证该变换是否失真，这对于物理和其他用例很重要。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-is-conformal" names="class_transform2d_method_is_conformal"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_conformal</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-conformal"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns <literal>true</literal> if this transform's basis is conformal. A conformal basis is both <emphasis>orthogonal</emphasis> (the axes are perpendicular to each other) and <emphasis>uniform</emphasis> (the axes share the same length). This method can be especially useful during physics calculations.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-is-equal-approx"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-is-equal-approx" names="class_transform2d_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-is-equal-approx" names="class_transform2d_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(xform: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果通过在每个分量上运行 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-equal-approx"><inline classes="std std-ref">@GlobalScope.is_equal_approx</inline></reference>，该变换和 <literal>xform</literal> 近似相等，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-is-finite"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-is-finite" names="class_transform2d_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-is-finite" names="class_transform2d_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该变换是有限的，则返回 <literal>true</literal>，判断方法是在每个分量上调用 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-finite"><inline classes="std std-ref">@GlobalScope.is_finite</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-looking-at"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-looking-at" names="class_transform2d_method_looking_at"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>looking_at</strong>(target: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> = Vector2(0, 0)) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-looking-at"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回一个旋转后的变换副本，使旋转后的 X 轴指向 <literal>target</literal> 位置。</paragraph>
-            <paragraph>操作发生在全局空间中。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-looking-at" names="class_transform2d_method_looking_at"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>looking_at</strong>(target: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> = Vector2(0, 0)) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-looking-at"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns a copy of the transform rotated such that the rotated X-axis points towards the <literal>target</literal> position, in global space.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-orthonormalized"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-orthonormalized" names="class_transform2d_method_orthonormalized"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>orthonormalized</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回使用正交基（90 度）以及归一化的轴向量（缩放为 1 或 -1）的变换。</paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-orthonormalized" names="class_transform2d_method_orthonormalized"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>orthonormalized</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-orthonormalized"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns a copy of this transform with its basis orthonormalized. An orthonormal basis is both <emphasis>orthogonal</emphasis> (the axes are perpendicular to each other) and <emphasis>normalized</emphasis> (the axes have a length of <literal>1</literal>), which also means it can only represent rotation.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-rotated"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-rotated" names="class_transform2d_method_rotated"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>rotated</strong>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-rotated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-rotated" names="class_transform2d_method_rotated"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>rotated</strong>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-rotated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了夹角为 <literal>angle</literal> 的旋转操作（单位为弧度）。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的旋转变换 <literal>R</literal> 从左侧相乘一致，即 <literal>R * X</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在全局/父级坐标系中的变换。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-rotated-local"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-rotated-local" names="class_transform2d_method_rotated_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>rotated_local</strong>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-rotated-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-rotated-local" names="class_transform2d_method_rotated_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>rotated_local</strong>(angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-rotated-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了夹角为 <literal>angle</literal> 的旋转操作（单位为弧度）。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的旋转变换 <literal>R</literal> 从右侧相乘一致，即 <literal>X * R</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在局部坐标系中的变换。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-scaled"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-scaled" names="class_transform2d_method_scaled"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>scaled</strong>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-scaled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-scaled" names="class_transform2d_method_scaled"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>scaled</strong>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-scaled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了系数为 <literal>scale</literal> 的缩放操作。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的缩放变换 <literal>S</literal> 从左侧相乘一致，即 <literal>S * X</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在全局/父级坐标系中的变换。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-scaled-local"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-scaled-local" names="class_transform2d_method_scaled_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>scaled_local</strong>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-scaled-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-scaled-local" names="class_transform2d_method_scaled_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>scaled_local</strong>(scale: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-scaled-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了系数为 <literal>scale</literal> 的缩放操作。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的缩放变换 <literal>S</literal> 从右侧相乘一致，即 <literal>X * S</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在局部坐标系中的变换。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-translated"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-translated" names="class_transform2d_method_translated"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>translated</strong>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-translated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-translated" names="class_transform2d_method_translated"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>translated</strong>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-translated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了偏移量为 <literal>offset</literal> 的平移操作。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的平移变换 <literal>T</literal> 从左侧相乘一致，即 <literal>T * X</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在全局/父级坐标系中的变换。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-method-translated-local"></target>
-            <paragraph classes="classref-method" ids="class-transform2d-method-translated-local" names="class_transform2d_method_translated_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>translated_local</strong>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-translated-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-transform2d-method-translated-local" names="class_transform2d_method_translated_local"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>translated_local</strong>(offset: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-transform2d-method-translated-local"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该变换的副本，该副本进行了偏移量为 <literal>offset</literal> 的平移操作。</paragraph>
             <paragraph>这个方法的结果和让 <literal>X</literal> 变换与相应的平移变换 <literal>T</literal> 从右侧相乘一致，即 <literal>X * T</literal>，但进行了优化。</paragraph>
             <paragraph>可以视作在局部坐标系中的变换。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id11" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id11" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-transform2d-operator-neq-transform2d"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-neq-transform2d" names="class_transform2d_operator_neq_transform2d"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <reference internal="True" refid="class-transform2d-operator-neq-transform2d"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>如果变换不相等，则返回 <literal>true</literal>。</paragraph>
-            <paragraph><strong>注意：</strong>由于浮点数精度误差，请考虑改用 <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>，会更可靠。</paragraph>
+            <paragraph>如果两个变换的分量不相等，则返回 <literal>true</literal>。</paragraph>
+            <paragraph><strong>注意：</strong>由于浮点精度误差，请考虑改用 <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>，这样更可靠。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-packedvector2array"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-packedvector2array" names="class_transform2d_operator_mul_packedvector2array"><reference internal="True" refuri="class_packedvector2array#class-packedvector2array"><inline classes="std std-ref">PackedVector2Array</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_packedvector2array#class-packedvector2array"><inline classes="std std-ref">PackedVector2Array</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-packedvector2array"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>使用给定的 <strong>Transform2D</strong> 矩阵将该 <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> 数组中的每个元素进行变换（相乘）。</paragraph>
+            <paragraph>Transforms (multiplies) every <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> element of the given <reference internal="True" refuri="class_packedvector2array#class-packedvector2array"><inline classes="std std-ref">PackedVector2Array</inline></reference> by this transformation matrix.</paragraph>
+            <paragraph>On larger arrays, this operation is much faster than transforming each <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> individually.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-rect2"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-rect2" names="class_transform2d_operator_mul_rect2"><reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-rect2"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>使用给定的 <strong>Transform2D</strong> 矩阵将该 <reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> 进行变换（相乘）。</paragraph>
+            <paragraph>Transforms (multiplies) the <reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> by this transformation matrix.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-transform2d"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-transform2d" names="class_transform2d_operator_mul_transform2d"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-transform2d"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>通过将这两个变换矩阵相乘来组合它们。这具有通过第一个变换（父项）来变换第二个变换（子项）的效果。</paragraph>
+            <paragraph>Transforms (multiplies) this transform by the <literal>right</literal> transform.</paragraph>
+            <paragraph>This is the operation performed between parent and child <reference internal="True" refuri="class_canvasitem#class-canvasitem"><inline classes="std std-ref">CanvasItem</inline></reference> nodes.</paragraph>
+            <paragraph><strong>Note:</strong> If you need to only modify one attribute of this transform, consider using one of the following methods, instead:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>For translation, see <reference internal="True" refid="class-transform2d-method-translated"><inline classes="std std-ref">translated</inline></reference> or <reference internal="True" refid="class-transform2d-method-translated-local"><inline classes="std std-ref">translated_local</inline></reference>.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>For rotation, see <reference internal="True" refid="class-transform2d-method-rotated"><inline classes="std std-ref">rotated</inline></reference> or <reference internal="True" refid="class-transform2d-method-rotated-local"><inline classes="std std-ref">rotated_local</inline></reference>.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>For scale, see <reference internal="True" refid="class-transform2d-method-scaled"><inline classes="std std-ref">scaled</inline></reference> or <reference internal="True" refid="class-transform2d-method-scaled-local"><inline classes="std std-ref">scaled_local</inline></reference>.</paragraph>
+                </list_item>
+            </bullet_list>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-vector2"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-vector2" names="class_transform2d_operator_mul_vector2"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-vector2"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>使用给定的 <strong>Transform2D</strong> 矩阵将该 <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> 进行变换（相乘）。</paragraph>
+            <paragraph>Transforms (multiplies) the <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> by this transformation matrix.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-float"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-float" names="class_transform2d_operator_mul_float"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-float"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>该运算符将 <strong>Transform2D</strong> 的所有分量相乘，包括 <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量，从而对其进行统一缩放。</paragraph>
+            <paragraph>Multiplies all components of the <strong>Transform2D</strong> by the given <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, including the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>. This affects the transform's scale uniformly.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-mul-int"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-mul-int" names="class_transform2d_operator_mul_int"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-transform2d-operator-mul-int"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>该运算符将 <strong>Transform2D</strong> 的所有分量相乘，包括 <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量，从而对其进行统一缩放。</paragraph>
+            <paragraph>Multiplies all components of the <strong>Transform2D</strong> by the given <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, including the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>. This affects the transform's scale uniformly.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-div-float"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-div-float" names="class_transform2d_operator_div_float"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>operator /</strong>(right: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-transform2d-operator-div-float"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>该运算符除以 <strong>Transform2D</strong> 的所有分量，包括 <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量，这会对其进行均匀反向缩放。</paragraph>
+            <paragraph>Divides all components of the <strong>Transform2D</strong> by the given <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, including the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>. This affects the transform's scale uniformly.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-div-int"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-div-int" names="class_transform2d_operator_div_int"><reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference> <strong>operator /</strong>(right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-transform2d-operator-div-int"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>该运算符除以 <strong>Transform2D</strong> 的所有分量，包括 <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference> 向量，这会对其进行均匀反向缩放。</paragraph>
+            <paragraph>Divides all components of the <strong>Transform2D</strong> by the given <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, including the <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>. This affects the transform's scale uniformly.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-eq-transform2d"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-eq-transform2d" names="class_transform2d_operator_eq_transform2d"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator ==</strong>(right: <reference internal="True" refid="class-transform2d"><inline classes="std std-ref">Transform2D</inline></reference>) <reference internal="True" refid="class-transform2d-operator-eq-transform2d"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>如果变换完全相等，则返回 <literal>true</literal>。</paragraph>
-            <paragraph><strong>注意：</strong>由于浮点数精度误差，请考虑改用 <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>，会更可靠。</paragraph>
+            <paragraph>如果两个变换的分量完全相等，则返回 <literal>true</literal>。</paragraph>
+            <paragraph><strong>注意：</strong>由于浮点精度误差，请考虑改用 <reference internal="True" refid="class-transform2d-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>，这样更可靠。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-transform2d-operator-idx-int"></target>
             <paragraph classes="classref-operator" ids="class-transform2d-operator-idx-int" names="class_transform2d_operator_idx_int"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>operator []</strong>(index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-transform2d-operator-idx-int"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>使用变换分量的索引访问变换的分量。<literal>t[0]</literal> 相当于 <literal>t.x</literal>，<literal>t[1]</literal> 相当于 <literal>t.y</literal>，<literal>t[2]</literal> 相当于 <literal>t.origin</literal>。</paragraph>
+            <paragraph>Accesses each axis (column) of this transform by their index. Index <literal>0</literal> is the same as <reference internal="True" refid="class-transform2d-property-x"><inline classes="std std-ref">x</inline></reference>, index <literal>1</literal> is the same as <reference internal="True" refid="class-transform2d-property-y"><inline classes="std std-ref">y</inline></reference>, and index <literal>2</literal> is the same as <reference internal="True" refid="class-transform2d-property-origin"><inline classes="std std-ref">origin</inline></reference>.</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -238,7 +238,7 @@ if interface and interface.initialize():
                     <paragraph><reference internal="True" refuri="class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> <strong>get_offset_rect</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Set the offset rect relative to the area being rendered. A length of 1 represents the whole rendering area on that axis.</paragraph>
+            <paragraph>设置相对于正在渲染的区域的偏移矩形。1 的长度表示该轴上的整个渲染区域。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-mobilevrinterface-property-oversample"></target>
             <paragraph classes="classref-property" ids="class-mobilevrinterface-property-oversample" names="class_mobilevrinterface_property_oversample"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>oversample</strong> = <literal>1.5</literal> <reference internal="True" refid="class-mobilevrinterface-property-oversample"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -262,8 +262,8 @@ if interface and interface.initialize():
                     <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_vrs_min_radius</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The minimum radius around the focal point where full quality is guaranteed if VRS is used as a percentage of screen size.</paragraph>
-            <paragraph><strong>Note:</strong> Mobile and Forward+ renderers only. Requires <reference internal="True" refuri="class_viewport#class-viewport-property-vrs-mode"><inline classes="std std-ref">Viewport.vrs_mode</inline></reference> to be set to <reference internal="True" refuri="class_viewport#class-viewport-constant-vrs-xr"><inline classes="std std-ref">Viewport.VRS_XR</inline></reference>.</paragraph>
+            <paragraph>如果 VRS 用作屏幕大小的百分比，则焦点周围可保证完全质量的最小半径。</paragraph>
+            <paragraph><strong>注意：</strong>仅限 Mobile 和 Forward+ 渲染器。需要将 <reference internal="True" refuri="class_viewport#class-viewport-property-vrs-mode"><inline classes="std std-ref">Viewport.vrs_mode</inline></reference> 设置为 <reference internal="True" refuri="class_viewport#class-viewport-constant-vrs-xr"><inline classes="std std-ref">Viewport.VRS_XR</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-mobilevrinterface-property-vrs-strength"></target>
             <paragraph classes="classref-property" ids="class-mobilevrinterface-property-vrs-strength" names="class_mobilevrinterface_property_vrs_strength"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>vrs_strength</strong> = <literal>1.0</literal> <reference internal="True" refid="class-mobilevrinterface-property-vrs-strength"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -275,15 +275,15 @@ if interface and interface.initialize():
                     <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_vrs_strength</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The strength used to calculate the VRS density map. The greater this value, the more noticeable VRS is. This improves performance at the cost of quality.</paragraph>
-            <paragraph><strong>Note:</strong> Mobile and Forward+ renderers only. Requires <reference internal="True" refuri="class_viewport#class-viewport-property-vrs-mode"><inline classes="std std-ref">Viewport.vrs_mode</inline></reference> to be set to <reference internal="True" refuri="class_viewport#class-viewport-constant-vrs-xr"><inline classes="std std-ref">Viewport.VRS_XR</inline></reference>.</paragraph>
+            <paragraph>用于计算 VRS 密度图的强度。该值越大，VRS 越明显。这会以牺牲质量为代价来提高性能。</paragraph>
+            <paragraph><strong>注意：</strong>仅限 Mobile 和 Forward+ 渲染器。需要将 <reference internal="True" refuri="class_viewport#class-viewport-property-vrs-mode"><inline classes="std std-ref">Viewport.vrs_mode</inline></reference> 设置为 <reference internal="True" refuri="class_viewport#class-viewport-constant-vrs-xr"><inline classes="std std-ref">Viewport.VRS_XR</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

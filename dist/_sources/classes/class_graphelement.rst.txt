@@ -144,7 +144,7 @@ GraphElement
 
 **resize_end**\ (\ new_size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphElement_signal_resize_end>`
 
-Emitted when releasing the mouse button after dragging the resizer handle (see :ref:`resizable<class_GraphElement_property_resizable>`).
+拖动调整大小手柄后释放鼠标按钮时发出（见 :ref:`resizable<class_GraphElement_property_resizable>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -212,9 +212,9 @@ GraphElement 的偏移量，相对于 :ref:`GraphEdit<class_GraphEdit>` 的滚�
 - |void| **set_resizable**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_resizable**\ (\ )
 
-If ``true``, the user can resize the GraphElement.
+如果为 ``true``\ ，则用户可以调整 GraphElement 的大小。
 
-\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphElement_signal_resize_request>` and :ref:`resize_end<class_GraphElement_signal_resize_end>` signals, the GraphElement needs to be resized manually.
+\ **注意：**\ 拖动手柄只会发出 :ref:`resize_request<class_GraphElement_signal_resize_request>` 和 :ref:`resize_end<class_GraphElement_signal_resize_end>` 信号，GraphElement 需要手动调整大小。
 
 .. rst-class:: classref-item-separator
 
@@ -268,10 +268,10 @@ If ``true``, the user can resize the GraphElement.
 用于调整大小的图标，在 :ref:`resizable<class_GraphElement_property_resizable>` 被启用时可见。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

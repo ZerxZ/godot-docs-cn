@@ -31,7 +31,7 @@ StringName
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -263,7 +263,7 @@ StringName
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -457,11 +457,11 @@ StringName
 
 :ref:`int<class_int>` **casecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_casecmp_to>`
 
-Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" and "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
+与另一个字符串进行比较，区分大小写。小于时返回 ``-1``\ 、大于时返回 ``1``\ 、等于时返回 ``0``\ 。“小于”和“大于”比较的是字符串中的 `Unicode 码位 <https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8>`__\ ，大致与字母表顺序一致。
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+如果字符串长度不同，这个字符串比 ``to`` 字符串长时返回 ``1``\ ，短时返回 ``-1``\ 。请注意空字符串的长度\ *始终*\ 为 ``0``\ 。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`, :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, and :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`.
+要从字符串比较中获得 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`\ 、\ :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>` 和 :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -473,25 +473,25 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`bool<class_bool>` **contains**\ (\ what\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_contains>`
 
-Returns ``true`` if the string contains ``what``. In GDScript, this corresponds to the ``in`` operator.
+如果该字符串包含 ``what``\ ，则返回 ``true``\ 。在 GDScript 中对应 ``in`` 运算符。
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("Node".contains("de")) # Prints true
-    print("team".contains("I"))  # Prints false
-    print("I" in "team")         # Prints false
+    print("Node".contains("de")) # 输出 true
+    print("team".contains("I"))  # 输出 false
+    print("I" in "team")         # 输出 false
 
  .. code-tab:: csharp
 
-    GD.Print("Node".Contains("de")); // Prints true
-    GD.Print("team".Contains("I"));  // Prints false
+    GD.Print("Node".Contains("de")); // 输出 true
+    GD.Print("team".Contains("I"));  // 输出 false
 
 
 
-If you need to know where ``what`` is within the string, use :ref:`find<class_StringName_method_find>`. See also :ref:`containsn<class_StringName_method_containsn>`.
+如果想要知道 ``what`` 在该字符串中的位置，请使用 :ref:`find<class_StringName_method_find>`\ 。另见 :ref:`containsn<class_StringName_method_containsn>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -503,9 +503,9 @@ If you need to know where ``what`` is within the string, use :ref:`find<class_St
 
 :ref:`bool<class_bool>` **containsn**\ (\ what\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_containsn>`
 
-Returns ``true`` if the string contains ``what``, **ignoring case**.
+如果\ **忽略大小写**\ ，字符串包含 ``what``\ ，则返回 ``true``\ 。
 
-If you need to know where ``what`` is within the string, use :ref:`findn<class_StringName_method_findn>`. See also :ref:`contains<class_StringName_method_contains>`.
+如果你需要知道 ``what`` 在字符串中的位置，请使用 :ref:`findn<class_StringName_method_findn>`\ 。另请参阅 :ref:`contains<class_StringName_method_contains>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -577,9 +577,9 @@ If you need to know where ``what`` is within the string, use :ref:`findn<class_S
 
 :ref:`int<class_int>` **filecasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_filecasecmp_to>`
 
-Like :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>` but prioritizes strings that begin with periods (``.``) and underscores (``_``) before any other character. Useful when sorting folders or file names.
+与 :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>` 类似，但优先考虑以句点（\ ``.``\ ）和下划线（\ ``_``\ ）开头的字符串，然后再考虑其他字符。在对文件夹或文件名进行排序时很有用。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
+要从字符串比较中获取 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`\ 、\ :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>` 和 :ref:`casecmp_to<class_StringName_method_casecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -591,9 +591,9 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`int<class_int>` **filenocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_filenocasecmp_to>`
 
-Like :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>` but prioritizes strings that begin with periods (``.``) and underscores (``_``) before any other character. Useful when sorting folders or file names.
+与 :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>` 类似，但优先考虑以句点（\ ``.``\ ）和下划线（\ ``_``\ ）开头的字符串，然后再考虑其他字符。在对文件夹或文件名进行排序时很有用。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`, and :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`.
+要从字符串比较中获取 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`\ 、\ :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>` 和 :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1237,13 +1237,13 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`int<class_int>` **naturalcasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_naturalcasecmp_to>`
 
-Performs a **case-sensitive**, *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
+与另一个字符串进行\ **不区分大小写**\ 的\ *自然顺序*\ 比较。小于时返回 ``-1``\ 、大于时返回 ``1``\ 、等于时返回 ``0``\ 。“小于”和“大于”比较的是字符串中的 `Unicode 码位 <https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8>`__\ ，大致与字母表顺序一致。内部实现时，会将小写字符转换为大写后进行比较。
 
-When used for sorting, natural order comparison orders sequences of numbers by the combined value of each digit as is often expected, instead of the single digit's value. A sorted sequence of numbered strings will be ``["1", "2", "3", ...]``, not ``["1", "10", "2", "3", ...]``.
+使用自然顺序进行排序时，会和常见预期一样将连续的数字进行组合，而不是一个个数字进行比较。排序后的数列为 ``["1", "2", "3", ...]`` 而不是 ``["1", "10", "2", "3", ...]``\ 。
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+如果字符串长度不同，这个字符串比 ``to`` 字符串长时返回 ``1``\ ，短时返回 ``-1``\ 。请注意空字符串的长度\ *始终*\ 为 ``0``\ 。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`, :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>`, and :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`.
+要从字符串比较中获得 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`\ 、\ :ref:`filecasecmp_to<class_StringName_method_filecasecmp_to>` 和 :ref:`nocasecmp_to<class_StringName_method_nocasecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1255,13 +1255,13 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`int<class_int>` **naturalnocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_naturalnocasecmp_to>`
 
-Performs a **case-insensitive**, *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
+与另一个字符串进行\ **不区分大小写**\ 的\ *自然顺序*\ 比较。小于时返回 ``-1``\ 、大于时返回 ``1``\ 、等于时返回 ``0``\ 。“小于”和“大于”比较的是字符串中的 `Unicode 码位 <https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8>`__\ ，大致与字母表顺序一致。内部实现时，会将小写字符转换为大写后进行比较。
 
-When used for sorting, natural order comparison orders sequences of numbers by the combined value of each digit as is often expected, instead of the single digit's value. A sorted sequence of numbered strings will be ``["1", "2", "3", ...]``, not ``["1", "10", "2", "3", ...]``.
+使用自然顺序进行排序时，会和常见预期一样将连续的数字进行组合，而不是一个个数字进行比较。排序后的数列为 ``["1", "2", "3", ...]`` 而不是 ``["1", "10", "2", "3", ...]``\ 。
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+如果字符串长度不同，这个字符串比 ``to`` 字符串长时返回 ``1``\ ，短时返回 ``-1``\ 。请注意空字符串的长度\ *始终*\ 为 ``0``\ 。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`, :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, and :ref:`casecmp_to<class_StringName_method_casecmp_to>`.
+要从字符串比较中获得 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`naturalcasecmp_to<class_StringName_method_naturalcasecmp_to>`\ 、\ :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>` 和 :ref:`casecmp_to<class_StringName_method_casecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1273,11 +1273,11 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`int<class_int>` **nocasecmp_to**\ (\ to\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_nocasecmp_to>`
 
-Performs a **case-insensitive** comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
+与另一个字符串进行\ **不区分大小写**\ 的比较。小于时返回 ``-1``\ 、大于时返回 ``1``\ 、等于时返回 ``0``\ 。“小于”和“大于”比较的是字符串中的 `Unicode 码位 <https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8>`__\ ，大致与字母表顺序一致。内部实现时，会将小写字符转换为大写后进行比较。
 
-With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
+如果字符串长度不同，这个字符串比 ``to`` 字符串长时返回 ``1``\ ，短时返回 ``-1``\ 。请注意空字符串的长度\ *始终*\ 为 ``0``\ 。
 
-To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_StringName_method_casecmp_to>`, :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>`, and :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`.
+要从字符串比较中获得 :ref:`bool<class_bool>` 结果，请改用 ``==`` 运算符。另请参阅 :ref:`casecmp_to<class_StringName_method_casecmp_to>`\ 、\ :ref:`filenocasecmp_to<class_StringName_method_filenocasecmp_to>` 和 :ref:`naturalnocasecmp_to<class_StringName_method_naturalnocasecmp_to>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1363,7 +1363,7 @@ To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==``
 
 :ref:`String<class_String>` **reverse**\ (\ ) |const| :ref:`🔗<class_StringName_method_reverse>`
 
-Returns the copy of this string in reverse order. This operation works on unicode codepoints, rather than sequences of codepoints, and may break things like compound letters or emojis.
+返回该字符串的逆序的副本。该操作适用于 Unicode 代码点，而不是代码点序列，并且可能会破坏复合字母或表情符号等内容。
 
 .. rst-class:: classref-item-separator
 
@@ -1979,7 +1979,7 @@ Returns the copy of this string in reverse order. This operation works on unicod
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_StringName_operator_neq_String:
@@ -2115,10 +2115,10 @@ Returns the copy of this string in reverse order. This operation works on unicod
 如果左侧的 **StringName** 的指针比 ``right`` 靠后或相同，则返回 ``true``\ 。注意，这与 `Unicode 顺序 <https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8>`__\ 是不同的。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

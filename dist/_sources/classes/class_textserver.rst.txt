@@ -21,11 +21,11 @@ TextServer
 描述
 ----
 
-**TextServer** is the API backend for managing fonts and rendering text.
+**TextServer** 即文本服务器，是管理字体、渲染文本的 API 后端。
 
-\ **Note:** This is a low-level API, consider using :ref:`TextLine<class_TextLine>`, :ref:`TextParagraph<class_TextParagraph>`, and :ref:`Font<class_Font>` classes instead.
+\ **注意：**\ 这是底层 API，请考虑改用 :ref:`TextLine<class_TextLine>`\ 、\ :ref:`TextParagraph<class_TextParagraph>`\ 、\ :ref:`Font<class_Font>` 等类。
 
-This is an abstract class, so to get the currently active **TextServer** instance, use the following code:
+这是抽象类，获取当前活动的 **TextServer** 实例请使用如下代码：
 
 
 .. tabs::
@@ -835,7 +835,7 @@ flags **LineBreakFlag**: :ref:`🔗<enum_TextServer_LineBreakFlag>`
 
 :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_INDENT** = ``32``
 
-Subtract first line indentation width from all lines after the first one.
+从第一行之后的所有行中减去第一行的缩进宽度。
 
 .. rst-class:: classref-item-separator
 
@@ -1604,11 +1604,11 @@ enum **FixedSizeScaleMode**: :ref:`🔗<enum_TextServer_FixedSizeScaleMode>`
 
 :ref:`RID<class_RID>` **create_shaped_text**\ (\ direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) :ref:`🔗<class_TextServer_method_create_shaped_text>`
 
-Creates a new buffer for complex text layout, with the given ``direction`` and ``orientation``. To free the resulting buffer, use :ref:`free_rid<class_TextServer_method_free_rid>` method.
+使用给定的方向 ``direction`` 和朝向 ``orientation`` 新建缓冲区，用于复杂排版。要释放生成的缓冲区，请使用 :ref:`free_rid<class_TextServer_method_free_rid>`\ 方法。
 
-\ **Note:** Direction is ignored if server does not support :ref:`FEATURE_BIDI_LAYOUT<class_TextServer_constant_FEATURE_BIDI_LAYOUT>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
+\ **注意：**\ 如果服务器不支持 :ref:`FEATURE_BIDI_LAYOUT<class_TextServer_constant_FEATURE_BIDI_LAYOUT>` 特性，则会忽略方向（\ :ref:`TextServerAdvanced<class_TextServerAdvanced>` 支持）。
 
-\ **Note:** Orientation is ignored if server does not support :ref:`FEATURE_VERTICAL_LAYOUT<class_TextServer_constant_FEATURE_VERTICAL_LAYOUT>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
+\ **注意：**\ 如果服务器不支持 :ref:`FEATURE_VERTICAL_LAYOUT<class_TextServer_constant_FEATURE_VERTICAL_LAYOUT>` 特性，则会忽略朝向（\ :ref:`TextServerAdvanced<class_TextServerAdvanced>` 支持）。
 
 .. rst-class:: classref-item-separator
 
@@ -2978,9 +2978,9 @@ Creates a new buffer for complex text layout, with the given ``direction`` and `
 
 |void| **font_set_transform**\ (\ font_rid\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_TextServer_method_font_set_transform>`
 
-Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.
+设置应用于字体轮廓的 2D 变换，可用于倾斜、翻转和旋转字形。
 
-For example, to simulate italic typeface by slanting, apply the following transform ``Transform2D(1.0, slant, 0.0, 1.0, 0.0, 0.0)``.
+例如，要通过倾斜来模拟斜体字体，请应用以下变换 ``Transform2D(1.0, slant, 0.0, 1.0, 0.0, 0.0)``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4157,15 +4157,16 @@ BiDi 算法覆盖函数的默认实现。有关详细信息，请参阅 :ref:`St
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **string_get_word_breaks**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = "", chars_per_line\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextServer_method_string_get_word_breaks>`
 
-返回分词边界的数组。返回数组中的元素是单词的起点和终点偏移量。因此，该数组的长度始终为偶数。
+Returns an array of the word break boundaries. Elements in the returned array are the offsets of the start and end of words. Therefore the length of the array is always even.
 
-\ ``chars_per_line`` 大于零时，返回的是分行边界。
+When ``chars_per_line`` is greater than zero, line break boundaries are returned instead.
 
 ::
 
     var ts = TextServerManager.get_primary_interface()
-    print(ts.string_get_word_breaks("Godot Engine")) # 输出 [0, 5, 6, 12]
-    print(ts.string_get_word_breaks("Godot Engine", "en", 5)) # 输出 [0, 5, 6, 11, 11, 12]
+    print(ts.string_get_word_breaks("The Godot Engine, 4")) # Prints [0, 3, 4, 9, 10, 16, 18, 19], which corresponds to the following substrings: "The", "Godot", "Engine", "4"
+    print(ts.string_get_word_breaks("The Godot Engine, 4", "en", 5)) # Prints [0, 3, 4, 9, 10, 15, 15, 19], which corresponds to the following substrings: "The", "Godot", "Engin", "e, 4"
+    print(ts.string_get_word_breaks("The Godot Engine, 4", "en", 10)) # Prints [0, 9, 10, 19], which corresponds to the following substrings: "The Godot", "Engine, 4"
 
 .. rst-class:: classref-item-separator
 
@@ -4193,11 +4194,11 @@ BiDi 算法覆盖函数的默认实现。有关详细信息，请参阅 :ref:`St
 
 :ref:`String<class_String>` **string_to_title**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>` = ""\ ) |const| :ref:`🔗<class_TextServer_method_string_to_title>`
 
-Returns the string converted to title case.
+返回转换为标题大小写的字符串。
 
-\ **Note:** Casing is locale dependent and context sensitive if server support :ref:`FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION<class_TextServer_constant_FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
+\ **注意：**\ 如果服务器支持 :ref:`FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION<class_TextServer_constant_FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION>` 特性（受 :ref:`TextServerAdvanced<class_TextServerAdvanced>` 支持），则大小写取决于区域设置，并且对上下文敏感。
 
-\ **Note:** The result may be longer or shorter than the original.
+\ **注意：**\ 结果可能比原始结果更长或更短。
 
 .. rst-class:: classref-item-separator
 
@@ -4242,10 +4243,10 @@ Returns the string converted to title case.
 将 OpenType 标签转换为可读的特性、变体、文字、语言名称。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

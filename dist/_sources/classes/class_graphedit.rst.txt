@@ -21,11 +21,13 @@ GraphEdit
 描述
 ----
 
-**GraphEdit** 提供了用于对各种图进行创建、操作、显示的工具。它在引擎中的主要目的是驱动可视化编程系统，例如可视化着色器，但也可以在用户项目中使用。
+**GraphEdit** provides tools for creation, manipulation, and display of various graphs. Its main purpose in the engine is to power the visual programming systems, such as visual shaders, but it is also available for use in user projects.
 
-\ **GraphEdit** 本身只是一个空容器，表示一个可以放置 :ref:`GraphNode<class_GraphNode>` 的无限栅格。每个 :ref:`GraphNode<class_GraphNode>` 代表图中的一个节点，是连接方案中的单个数据单元。而 **GraphEdit** 则有助于控制节点和节点之间的各种交互。当用户尝试连接、断开或删除一个 :ref:`GraphNode<class_GraphNode>` 时，\ **GraphEdit** 中会发出对应的信号，但默认情况下不执行任何动作。使用此控件的程序员负责实现必要的逻辑，来确定应如何处理每个请求。
+\ **GraphEdit** by itself is only an empty container, representing an infinite grid where :ref:`GraphNode<class_GraphNode>`\ s can be placed. Each :ref:`GraphNode<class_GraphNode>` represents a node in the graph, a single unit of data in the connected scheme. **GraphEdit**, in turn, helps to control various interactions with nodes and between nodes. When the user attempts to connect, disconnect, or delete a :ref:`GraphNode<class_GraphNode>`, a signal is emitted in the **GraphEdit**, but no action is taken by default. It is the responsibility of the programmer utilizing this control to implement the necessary logic to determine how each request should be handled.
 
-\ **性能：**\ 强烈建议在使用 GraphEdit 时启用低处理器使用模式（见 :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`\ ）。
+\ **Performance:** It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
+
+\ **Note:** Keep in mind that :ref:`Node.get_children<class_Node_method_get_children>` will also return the connection layer node named ``_connection_layer`` due to technical limitations. This behavior may change in future releases.
 
 .. rst-class:: classref-reftable-group
 
@@ -350,7 +352,7 @@ GraphEdit
 
 **frame_rect_changed**\ (\ frame\: :ref:`GraphFrame<class_GraphFrame>`, new_rect\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphEdit_signal_frame_rect_changed>`
 
-Emitted when the :ref:`GraphFrame<class_GraphFrame>` ``frame`` is resized to ``new_rect``.
+当 :ref:`GraphFrame<class_GraphFrame>` ``frame`` 大小调整为 ``new_rect`` 时发出。
 
 .. rst-class:: classref-item-separator
 
@@ -362,9 +364,9 @@ Emitted when the :ref:`GraphFrame<class_GraphFrame>` ``frame`` is resized to ``n
 
 **graph_elements_linked_to_frame_request**\ (\ elements\: :ref:`Array<class_Array>`, frame\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GraphEdit_signal_graph_elements_linked_to_frame_request>`
 
-Emitted when one or more :ref:`GraphElement<class_GraphElement>`\ s are dropped onto the :ref:`GraphFrame<class_GraphFrame>` named ``frame``, when they were not previously attached to any other one.
+当一个或多个 :ref:`GraphElement<class_GraphElement>` 被放到名为 ``frame`` 的 :ref:`GraphFrame<class_GraphFrame>` 上，且它们之前未被附加到任何其他框中时发出。
 
-\ ``elements`` is an array of :ref:`GraphElement<class_GraphElement>`\ s to be attached.
+\ ``elements`` 是要附加的 :ref:`GraphElement<class_GraphElement>` 数组。
 
 .. rst-class:: classref-item-separator
 
@@ -412,7 +414,7 @@ Emitted when one or more :ref:`GraphElement<class_GraphElement>`\ s are dropped 
 
 **popup_request**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_GraphEdit_signal_popup_request>`
 
-Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``at_position`` is the position of the mouse pointer when the signal is sent.
+当请求弹出窗口时发出。在 GraphEdit 中右键点击时发生。\ ``at_position``\ 为该信号被发出时鼠标指针的位置。
 
 .. rst-class:: classref-item-separator
 
@@ -1037,7 +1039,7 @@ enum **GridPattern**: :ref:`🔗<enum_GraphEdit_GridPattern>`
 
 |void| **attach_graph_element_to_frame**\ (\ element\: :ref:`StringName<class_StringName>`, frame\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GraphEdit_method_attach_graph_element_to_frame>`
 
-Attaches the ``element`` :ref:`GraphElement<class_GraphElement>` to the ``frame`` :ref:`GraphFrame<class_GraphFrame>`.
+将 ``element`` :ref:`GraphElement<class_GraphElement>` 附加到 ``frame`` :ref:`GraphFrame<class_GraphFrame>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1073,7 +1075,7 @@ Attaches the ``element`` :ref:`GraphElement<class_GraphElement>` to the ``frame`
 
 |void| **detach_graph_element_from_frame**\ (\ element\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GraphEdit_method_detach_graph_element_from_frame>`
 
-Detaches the ``element`` :ref:`GraphElement<class_GraphElement>` from the :ref:`GraphFrame<class_GraphFrame>` it is currently attached to.
+将 ``element`` :ref:`GraphElement<class_GraphElement>` 从其当前附加的 :ref:`GraphFrame<class_GraphFrame>` 中分离出来。
 
 .. rst-class:: classref-item-separator
 
@@ -1113,7 +1115,7 @@ Detaches the ``element`` :ref:`GraphElement<class_GraphElement>` from the :ref:`
 
 :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_attached_nodes_of_frame**\ (\ frame\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GraphEdit_method_get_attached_nodes_of_frame>`
 
-Returns an array of node names that are attached to the :ref:`GraphFrame<class_GraphFrame>` with the given name.
+返回附加到给定名称的 :ref:`GraphFrame<class_GraphFrame>` 的节点名称数组。
 
 .. rst-class:: classref-item-separator
 
@@ -1186,7 +1188,7 @@ Returns an array of node names that are attached to the :ref:`GraphFrame<class_G
 
 :ref:`GraphFrame<class_GraphFrame>` **get_element_frame**\ (\ element\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GraphEdit_method_get_element_frame>`
 
-Returns the :ref:`GraphFrame<class_GraphFrame>` that contains the :ref:`GraphElement<class_GraphElement>` with the given name.
+返回包含给定名称的 :ref:`GraphElement<class_GraphElement>` 的 :ref:`GraphFrame<class_GraphFrame>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1511,7 +1513,7 @@ Returns the :ref:`GraphFrame<class_GraphFrame>` that contains the :ref:`GraphEle
 
 .. container:: contribute
 
-	目前没有这个主题属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该主题属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -1526,10 +1528,10 @@ Returns the :ref:`GraphFrame<class_GraphFrame>` that contains the :ref:`GraphEle
 绘制在栅格下方的背景。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

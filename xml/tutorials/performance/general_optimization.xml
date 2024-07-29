@@ -171,14 +171,14 @@
             <title>附录</title>
             <section ids="bottleneck-math" names="bottleneck\ math 瓶颈数学">
                 <title>瓶颈数学</title>
-                <paragraph>谚语 <emphasis>"一条链子的强度取决于其最薄弱的环节 "</emphasis> 直接适用于性能优化. 如果你的项目90%的时间都花在功能 <literal>A</literal> 上, 那么优化 <literal>A</literal> 就会对性能产生巨大影响.</paragraph>
+                <paragraph>有一句谚语很适合描述性能优化：<emphasis>“链条的强度取决于最弱的一环”</emphasis>。如果你的项目在函数 <literal>A</literal> 上花费了 90% 的时间，那么针对 <literal>A</literal> 进行优化就能够大幅影响性能。</paragraph>
                 <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">A: 9 ms
 Everything else: 1 ms
 Total frame time: 10 ms</literal_block>
                 <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">A: 1 ms
 Everything else: 1ms
 Total frame time: 2 ms</literal_block>
-                <paragraph>在这个例子中, 将这个瓶颈 <literal>A</literal> 改进9倍, 总体帧时间减少5倍, 同时每秒帧数增加5倍.</paragraph>
+                <paragraph>在这个例子中，将瓶颈 <literal>A</literal> 提升 9 倍可以将整体的帧耗时降低至 20%，将每秒帧数增加 5 倍。</paragraph>
                 <paragraph>但是, 如果其他东西运行缓慢, 也给你的项目带来了瓶颈, 那么同样的改进只会带来不那么显著的收益:</paragraph>
                 <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">A: 9 ms
 Everything else: 50 ms

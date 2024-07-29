@@ -590,8 +590,8 @@
                 <target refid="doc-importing-images-svg-text"></target>
             </section>
         </section>
-        <section ids="importing-svg-images-with-text doc-importing-images-svg-text" names="importing\ svg\ images\ with\ text doc_importing_images_svg_text">
-            <title>Importing SVG images with text</title>
+        <section ids="importing-svg-images-with-text doc-importing-images-svg-text" names="importing\ svg\ images\ with\ text 导入包含文本的\ svg\ 图像 doc_importing_images_svg_text">
+            <title>导入包含文本的 SVG 图像</title>
             <paragraph>由于 Godot 中使用的 SVG 库不支持对 SVG 图像中的文本进行光栅化，因此必须首先将文本转换为路径。否则，文本将不会出现在光栅化图像中。</paragraph>
             <paragraph>有两种方法可以无损地实现这一点，因此你可以在之后继续编辑原始文本：</paragraph>
             <bullet_list bullet="-">
@@ -601,8 +601,7 @@
                         object afterwards using the <strong>Layers and Objects</strong> dock.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Use the Inkscape command line to export an SVG from another SVG file with text
-                        converted to paths:</paragraph>
+                    <paragraph>使用 Inkscape 命令行从另一个 SVG 文件导出 SVG，并将文本转换为路径：</paragraph>
                 </list_item>
             </bullet_list>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">inkscape --export-text-to-path --export-filename svg_with_text_converted_to_path.svg svg_with_text.svg</literal_block>

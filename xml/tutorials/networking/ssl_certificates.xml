@@ -24,8 +24,7 @@
             <paragraph>When set, this file <emphasis>overrides</emphasis> the Mozilla certificate bundle Godot uses
                 by default. This file should contain any number of public certificates in
                 <reference name="PEM format" refuri="https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail">PEM format</reference>.</paragraph>
-            <paragraph>Remember to add <literal>*.crt</literal> as the non-resource export filter to your export
-                preset, so that the exporter recognizes this when exporting your project:</paragraph>
+            <paragraph>请记得在导出预设中将 <literal>*.crt</literal> 添加为非资源导出过滤器，这样导出器就会在导出项目时进行识别：</paragraph>
             <figure align="center" ids="id2">
                 <image alt="Adding ``*.crt`` to non-resource export filter in the export preset" candidates="{'*': 'tutorials/networking/img/tls_certificates_export_filter.webp'}" uri="tutorials/networking/img/tls_certificates_export_filter.webp"></image>
                 <caption>Adding <literal>*.crt</literal> to non-resource export filter in the export preset</caption>

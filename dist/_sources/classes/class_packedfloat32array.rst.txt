@@ -17,15 +17,15 @@ PackedFloat32Array
 描述
 ----
 
-An array specifically designed to hold 32-bit floating-point values (float). Packs data tightly, so it saves memory for large array sizes.
+专门设计用于保存 32 位浮点值（float）的数组。紧密打包数据，因此可为大型数组节省内存。
 
-If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
+如果需要紧密打包 64 位浮点数，请参阅 :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ 。
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedFloat32Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **注意：**\ 紧缩数组始终通过引用传递。要获取可以独立于原始数组进行修改的数组副本，请使用 :ref:`duplicate<class_PackedFloat32Array_method_duplicate>`\ 。内置属性和方法并\ *非*\ 如此。这些返回的紧缩数组是副本，更改它\ *不*\ 会影响原始值。要更新内置属性，需要修改返回的数组，然后再次将其分配给该属性。
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -97,7 +97,7 @@ If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_Pa
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -433,7 +433,7 @@ If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_Pa
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_PackedFloat32Array_operator_neq_PackedFloat32Array:
@@ -483,10 +483,10 @@ If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_Pa
 请注意，\ :ref:`float<class_float>` 类型是 64 位的，这与存储在数组中的值不同。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

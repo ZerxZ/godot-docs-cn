@@ -206,6 +206,8 @@ PhysicsServer3D 是负责所有 3D 物理的服务器。它可以直接创建和
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`body_set_state<class_PhysicsServer3D_method_body_set_state>`\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer3D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                             |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`body_set_state_sync_callback<class_PhysicsServer3D_method_body_set_state_sync_callback>`\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ )                                                                                                                      |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`body_test_motion<class_PhysicsServer3D_method_body_test_motion>`\ (\ body\: :ref:`RID<class_RID>`, parameters\: :ref:`PhysicsTestMotionParameters3D<class_PhysicsTestMotionParameters3D>`, result\: :ref:`PhysicsTestMotionResult3D<class_PhysicsTestMotionResult3D>` = null\ )               |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`box_shape_create<class_PhysicsServer3D_method_box_shape_create>`\ (\ )                                                                                                                                                                                                                        |
@@ -534,7 +536,7 @@ enum **HingeJointParam**: :ref:`🔗<enum_PhysicsServer3D_HingeJointParam>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -916,7 +918,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -928,7 +930,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -940,7 +942,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1024,7 +1026,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1036,7 +1038,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1048,7 +1050,7 @@ enum **G6DOFJointAxisParam**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisPara
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1094,7 +1096,7 @@ enum **G6DOFJointAxisFlag**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisFlag>
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1106,7 +1108,7 @@ enum **G6DOFJointAxisFlag**: :ref:`🔗<enum_PhysicsServer3D_G6DOFJointAxisFlag>
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1774,7 +1776,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1786,7 +1788,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1798,7 +1800,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1810,7 +1812,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1822,7 +1824,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1834,7 +1836,7 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1889,9 +1891,9 @@ enum **BodyAxis**: :ref:`🔗<enum_PhysicsServer3D_BodyAxis>`
 
 :ref:`RID<class_RID>` **area_create**\ (\ ) :ref:`🔗<class_PhysicsServer3D_method_area_create>`
 
-Creates a 3D area object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and ``monitorable`` set to ``false``.
+在物理服务器中创建一个 3D 区域对象，并返回标识该区域的 :ref:`RID<class_RID>`\ 。所创建区域的默认设置包括设置为 ``1`` 的碰撞层和遮罩，以及设置为 ``false`` 的 ``monitorable``\ 。
 
-Use :ref:`area_add_shape<class_PhysicsServer3D_method_area_add_shape>` to add shapes to it, use :ref:`area_set_transform<class_PhysicsServer3D_method_area_set_transform>` to set its transform, and use :ref:`area_set_space<class_PhysicsServer3D_method_area_set_space>` to add the area to a space. If you want the area to be detectable use :ref:`area_set_monitorable<class_PhysicsServer3D_method_area_set_monitorable>`.
+使用 :ref:`area_add_shape<class_PhysicsServer3D_method_area_add_shape>` 向其添加形状，使用 :ref:`area_set_transform<class_PhysicsServer3D_method_area_set_transform>` 设置其变换，使用 :ref:`area_set_space<class_PhysicsServer3D_method_area_set_space>` 将区域添加到一个空间。如果希望该区域可被检测，请使用 :ref:`area_set_monitorable<class_PhysicsServer3D_method_area_set_monitorable>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2097,7 +2099,7 @@ Use :ref:`area_add_shape<class_PhysicsServer3D_method_area_add_shape>` to add sh
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2147,7 +2149,7 @@ Use :ref:`area_add_shape<class_PhysicsServer3D_method_area_add_shape>` to add sh
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2369,9 +2371,9 @@ Use :ref:`area_add_shape<class_PhysicsServer3D_method_area_add_shape>` to add sh
 
 :ref:`RID<class_RID>` **body_create**\ (\ ) :ref:`🔗<class_PhysicsServer3D_method_body_create>`
 
-Creates a 3D body object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and body mode set to :ref:`BODY_MODE_RIGID<class_PhysicsServer3D_constant_BODY_MODE_RIGID>`.
+在物理服务器中创建一个 3D 物体对象，并返回标识它的 :ref:`RID<class_RID>`\ 。所创建区域的默认设置包括设置为 ``1`` 的碰撞层和遮罩，以及设置为 :ref:`BODY_MODE_RIGID<class_PhysicsServer3D_constant_BODY_MODE_RIGID>` 的物体模式。
 
-Use :ref:`body_add_shape<class_PhysicsServer3D_method_body_add_shape>` to add shapes to it, use :ref:`body_set_state<class_PhysicsServer3D_method_body_set_state>` to set its transform, and use :ref:`body_set_space<class_PhysicsServer3D_method_body_set_space>` to add the body to a space.
+使用 :ref:`body_add_shape<class_PhysicsServer3D_method_body_add_shape>` 为其添加形状，使用 :ref:`body_set_state<class_PhysicsServer3D_method_body_set_state>` 设置其变换，使用 :ref:`body_set_space<class_PhysicsServer3D_method_body_set_space>` 将该物体添加到一个空间。
 
 .. rst-class:: classref-item-separator
 
@@ -2569,7 +2571,7 @@ Use :ref:`body_add_shape<class_PhysicsServer3D_method_body_add_shape>` to add sh
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2593,7 +2595,7 @@ Use :ref:`body_add_shape<class_PhysicsServer3D_method_body_add_shape>` to add sh
 
 :ref:`bool<class_bool>` **body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer3D_method_body_is_omitting_force_integration>`
 
-Returns ``true`` if the body is omitting the standard force integration. See :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`.
+如果物体省略了标准力积分，则返回 ``true``\ 。参见 :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2645,7 +2647,7 @@ Returns ``true`` if the body is omitting the standard force integration. See :re
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2747,17 +2749,17 @@ Returns ``true`` if the body is omitting the standard force integration. See :re
 
 |void| **body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_PhysicsServer3D_method_body_set_force_integration_callback>`
 
-Sets the body's custom force integration callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback.
+将物体的自定义力积分回调函数设置为 ``callable``\ 。使用空的 :ref:`Callable<class_Callable>`\ （\ ``Callable()``\ ）清除自定义回调。
 
-The function ``callable`` will be called every physics tick, before the standard force integration (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`). It can be used for example to update the body's linear and angular velocity based on contact with other bodies.
+函数 ``callable`` 将在标准力积分之前的每个物理刻度被调用（参见 :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`\ ）。例如，它可用于根据与其他物体的接触更新物体的线速度和角速度。
 
-If ``userdata`` is not ``null``, the function ``callable`` must take the following two parameters:
+如果 ``userdata`` 不为 ``null``\ ，则函数 ``callable`` 必须接受以下两个参数：
 
-1. ``state``: a :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, used to retrieve and modify the body's state,
+1. ``state``\ ：一个 :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`\ ，用于检索和修改物体的状态，
 
-2. ``userdata``: a :ref:`Variant<class_Variant>`; its value will be the ``userdata`` passed into this method.
+2. ``userdata``\ ：一个 :ref:`Variant<class_Variant>`\ ；其值将是传递到该方法的 ``userdata``\ 。
 
-If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` parameter.
+如果 ``userdata`` 为 ``null``\ ，则 ``callable`` 必须仅接受 ``state`` 参数。
 
 .. rst-class:: classref-item-separator
 
@@ -2845,7 +2847,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2887,6 +2889,24 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 ----
 
+.. _class_PhysicsServer3D_method_body_set_state_sync_callback:
+
+.. rst-class:: classref-method
+
+|void| **body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PhysicsServer3D_method_body_set_state_sync_callback>`
+
+Sets the body's state synchronization callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the callback.
+
+The function ``callable`` will be called every physics frame, assuming that the body was active during the previous physics tick, and can be used to fetch the latest state from the physics server.
+
+The function ``callable`` must take the following parameters:
+
+1. ``state``: a :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, used to retrieve the body's state.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer3D_method_body_test_motion:
 
 .. rst-class:: classref-method
@@ -2907,7 +2927,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2921,7 +2941,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2935,7 +2955,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2973,7 +2993,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2987,7 +3007,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3001,7 +3021,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3087,7 +3107,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3149,7 +3169,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3163,7 +3183,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3225,7 +3245,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3251,7 +3271,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3265,7 +3285,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3279,7 +3299,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3377,7 +3397,7 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3413,9 +3433,9 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 :ref:`float<class_float>` **shape_get_margin**\ (\ shape\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer3D_method_shape_get_margin>`
 
-Returns the collision margin for the shape.
+返回形状的碰撞边距。
 
-\ **Note:** This is not used in Godot Physics, so will always return ``0``.
+\ **注意：**\ Godot Physics 中并未使用，所以始终返回 ``0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3451,9 +3471,9 @@ Returns the collision margin for the shape.
 
 |void| **shape_set_margin**\ (\ shape\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PhysicsServer3D_method_shape_set_margin>`
 
-Sets the collision margin for the shape.
+设置形状的碰撞边距。
 
-\ **Note:** This is not used in Godot Physics.
+\ **注意：**\ 这在 Godot 物理中未被使用。
 
 .. rst-class:: classref-item-separator
 
@@ -3967,7 +3987,7 @@ Sets the collision margin for the shape.
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -3981,13 +4001,13 @@ Sets the collision margin for the shape.
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

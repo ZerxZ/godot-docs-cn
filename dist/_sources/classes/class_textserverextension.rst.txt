@@ -508,9 +508,9 @@ TextServerExtension
 
 :ref:`RID<class_RID>` **_create_font_linked_variation**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__create_font_linked_variation>`
 
-Optional, implement if font supports extra spacing or baseline offset.
+可选，如果字体支持额外间距或基线偏移，则实现该方法。
 
-Creates a new variation existing font which is reusing the same glyph cache and font data.
+创建一个新的已有字体变体，该字体重复使用相同的字形缓存和字体数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1906,9 +1906,9 @@ Creates a new variation existing font which is reusing the same glyph cache and 
 
 |void| **_font_set_multichannel_signed_distance_field**\ (\ font_rid\: :ref:`RID<class_RID>`, msdf\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_multichannel_signed_distance_field>`
 
-**Optional.**\ 
+**可选。**\ 
 
-If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field generated from the dynamic font vector data. MSDF rendering allows displaying the font at any scaling factor without blurriness, and without incurring a CPU cost when the font size changes (since the font no longer needs to be rasterized on the CPU). As a downside, font hinting is not available with MSDF. The lack of font hinting may result in less crisp and less readable fonts at small sizes.
+如果设置为 ``true``\ ，则所有大小的字形都使用从动态字体向量数据生成的单个多通道带符号距离场进行渲染。MSDF 渲染能够使用任意缩放系数显示字体，字体不会变得模糊，字体大小的改变也不会消耗 CPU 的性能（因为字体不再需要在 CPU 上进行光栅化）。缺点是MSDF 无法使用字体微调。缺少字体微调时，锐度可能降低，较小的字体可能不易阅读。
 
 .. rst-class:: classref-item-separator
 
@@ -2356,7 +2356,7 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -2396,9 +2396,9 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 :ref:`String<class_String>` **_parse_number**\ (\ number\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__parse_number>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Converts ``number`` from the numeral systems used in ``language`` to Western Arabic (0..9).
+将数字 ``number`` 从 ``language`` 的记数系统转换为阿拉伯数字（0..9）。
 
 .. rst-class:: classref-item-separator
 
@@ -2410,9 +2410,9 @@ Converts ``number`` from the numeral systems used in ``language`` to Western Ara
 
 :ref:`Array<class_Array>`\[:ref:`Vector3i<class_Vector3i>`\] **_parse_structured_text**\ (\ parser_type\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`, args\: :ref:`Array<class_Array>`, text\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__parse_structured_text>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Default implementation of the BiDi algorithm override function. See :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` for more info.
+BiDi 算法覆盖函数的默认实现。有关详细信息，请参阅 :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2452,9 +2452,9 @@ Default implementation of the BiDi algorithm override function. See :ref:`Struct
 
 :ref:`int<class_int>` **_shaped_get_span_count**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__shaped_get_span_count>`
 
-**Required.**\ 
+**必需。**\ 
 
-Returns number of text spans added using :ref:`_shaped_text_add_string<class_TextServerExtension_private_method__shaped_text_add_string>` or :ref:`_shaped_text_add_object<class_TextServerExtension_private_method__shaped_text_add_object>`.
+返回使用 :ref:`_shaped_text_add_string<class_TextServerExtension_private_method__shaped_text_add_string>` 或 :ref:`_shaped_text_add_object<class_TextServerExtension_private_method__shaped_text_add_object>` 添加的文本跨度数。
 
 .. rst-class:: classref-item-separator
 
@@ -2494,9 +2494,9 @@ Returns number of text spans added using :ref:`_shaped_text_add_string<class_Tex
 
 :ref:`bool<class_bool>` **_shaped_text_add_object**\ (\ shaped\: :ref:`RID<class_RID>`, key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>`, length\: :ref:`int<class_int>`, baseline\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__shaped_text_add_object>`
 
-**Required.**\ 
+**必需。**\ 
 
-Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
+将内联对象添加到文本缓冲区，\ ``key`` 必须是唯一的。在文本中，对象表示为 ``length`` 个对象替换字符。
 
 .. rst-class:: classref-item-separator
 
@@ -2928,9 +2928,9 @@ Adds inline object to the text buffer, ``key`` must be unique. In the text, obje
 
 :ref:`bool<class_bool>` **_shaped_text_get_preserve_invalid**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__shaped_text_get_preserve_invalid>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Returns ``true`` if text buffer is configured to display hexadecimal codes in place of invalid characters.
+如果文本缓冲区被配置为显示十六进制代码来代替无效字符，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2942,9 +2942,9 @@ Returns ``true`` if text buffer is configured to display hexadecimal codes in pl
 
 :ref:`Vector2i<class_Vector2i>` **_shaped_text_get_range**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__shaped_text_get_range>`
 
-**Required.**\ 
+**必需。**\ 
 
-Returns substring buffer character range in the parent buffer.
+返回父缓冲区中子字符串缓冲区的字符范围。
 
 .. rst-class:: classref-item-separator
 
@@ -2956,9 +2956,9 @@ Returns substring buffer character range in the parent buffer.
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **_shaped_text_get_selection**\ (\ shaped\: :ref:`RID<class_RID>`, start\: :ref:`int<class_int>`, end\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__shaped_text_get_selection>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Returns selection rectangles for the specified character range.
+返回用于指定字符范围的选区矩形。
 
 .. rst-class:: classref-item-separator
 
@@ -3376,9 +3376,9 @@ Returns selection rectangles for the specified character range.
 
 :ref:`bool<class_bool>` **_shaped_text_update_justification_ops**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__shaped_text_update_justification_ops>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Updates justification points in the shaped text. This method is called by default implementation of text justification functions.
+更新塑形文本中的对齐点。该方法由文本对齐函数的默认实现调用。
 
 .. rst-class:: classref-item-separator
 
@@ -3390,9 +3390,9 @@ Updates justification points in the shaped text. This method is called by defaul
 
 :ref:`bool<class_bool>` **_spoof_check**\ (\ string\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__spoof_check>`
 
-**Optional.**\ 
+**可选。**\ 
 
-Returns ``true`` if ``string`` is likely to be an attempt at confusing the reader.
+如果 ``string`` 可能试图混淆读者，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3493,10 +3493,10 @@ Returns ``true`` if ``string`` is likely to be an attempt at confusing the reade
 将 OpenType 标签转换为可读的特性、变体、文字或语言的名称。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

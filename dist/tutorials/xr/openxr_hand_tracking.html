@@ -2,14 +2,14 @@
 <html class="writer-html5" lang="zh-CN" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="OpenXR 手势跟踪" />
+<meta property="og:title" content="OpenXR hand tracking" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="tutorials/xr/openxr_hand_tracking.html" />
 <meta property="og:site_name" content="Godot Engine documentation" />
-<meta property="og:description" content="Hand tracking is the process by which the position and orientation of the players hands are tracked, including the orientation of the players fingers. We can identify 3 categories of this: One, han..." />
-<meta name="description" content="Hand tracking is the process by which the position and orientation of the players hands are tracked, including the orientation of the players fingers. We can identify 3 categories of this: One, han..." />
+<meta property="og:description" content="前言: When discussing hand tracking it is important to know that there are differences of opinion as to where lines are drawn. The practical result of this is that there are differences in implementa..." />
+<meta name="description" content="前言: When discussing hand tracking it is important to know that there are differences of opinion as to where lines are drawn. The practical result of this is that there are differences in implementa..." />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) OpenXR 手势跟踪 &mdash; Godot Engine (latest) 简体中文文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) OpenXR hand tracking &mdash; Godot Engine (latest) 简体中文文档</title>
 
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
@@ -52,7 +52,7 @@
   
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="XR 工具简介" href="introducing_xr_tools.html" />
+    <link rel="next" title="OpenXR body tracking" href="openxr_body_tracking.html" />
     <link rel="prev" title="OpenXR composition layers" href="openxr_composition_layers.html" />
 <meta name="doc_version" content="latest" />
 <meta name="doc_is_latest" content="True" />
@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -297,8 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -574,7 +574,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -587,7 +587,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../editor/inspector_dock.html">检查器</a><ul>
@@ -801,6 +801,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,7 +1159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1308,7 +1318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1549,8 +1559,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1957,20 +1967,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1995,17 +2005,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2033,14 +2043,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2541,6 +2551,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2864,10 +2875,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2887,7 +2898,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2989,44 +3000,44 @@
 <li class="toctree-l4"><a class="reference internal" href="deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#advanced-topics">高级专题</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="xr_action_map.html">XR 动作映射</a><ul>
@@ -3053,17 +3064,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#some-final-words">最后的话</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3090,18 +3106,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../contributing/ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../contributing/ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../contributing/ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing/ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing/workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../contributing/workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../contributing/workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3196,7 +3215,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../contributing/development/code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../contributing/development/code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../contributing/development/code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../contributing/development/code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../contributing/development/code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3393,7 +3412,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3483,7 +3502,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_animationtree.html">AnimationTree</a><ul>
@@ -3516,7 +3535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4712,8 +4731,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6389,7 +6409,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8268,9 +8289,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_audiosample.html">AudioSample</a><ul>
@@ -10452,21 +10475,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_basis.html">Basis</a><ul>
@@ -10475,30 +10498,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_color.html">Color</a><ul>
@@ -10507,12 +10530,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_dictionary.html">Dictionary</a><ul>
@@ -10520,27 +10543,27 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_nodepath.html">NodePath</a><ul>
@@ -10548,10 +10571,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_object.html">Object</a><ul>
@@ -10568,60 +10591,60 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10629,10 +10652,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10640,30 +10663,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_plane.html">Plane</a><ul>
@@ -10672,12 +10695,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_projection.html">Projection</a><ul>
@@ -10685,12 +10708,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_quaternion.html">Quaternion</a><ul>
@@ -10699,12 +10722,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_rect2.html">Rect2</a><ul>
@@ -10713,11 +10736,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_rect2i.html">Rect2i</a><ul>
@@ -10726,21 +10749,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_signal.html">Signal</a><ul>
@@ -10748,10 +10771,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_string.html">String</a><ul>
@@ -10759,20 +10782,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_transform2d.html">Transform2D</a><ul>
@@ -10781,12 +10804,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_transform3d.html">Transform3D</a><ul>
@@ -10795,12 +10818,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector2.html">Vector2</a><ul>
@@ -10809,12 +10832,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector2i.html">Vector2i</a><ul>
@@ -10823,12 +10846,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector3.html">Vector3</a><ul>
@@ -10837,12 +10860,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector3i.html">Vector3i</a><ul>
@@ -10851,12 +10874,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector4.html">Vector4</a><ul>
@@ -10864,12 +10887,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/class_vector4i.html">Vector4i</a><ul>
@@ -10877,12 +10900,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../classes/class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -10910,7 +10933,7 @@
 		
       <li><a href="../../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">XR</a></li>
-      <li class="breadcrumb-item active">OpenXR 手势跟踪</li>
+      <li class="breadcrumb-item active">OpenXR hand tracking</li>
 	</ul>
 </li>
 
@@ -10969,225 +10992,321 @@
   
 
   
-  <section id="the-openxr-hand-tracking">
-<span id="doc-openxr-hand-tracking"></span><h1>OpenXR 手势跟踪<a class="headerlink" href="#the-openxr-hand-tracking" title="永久链接至标题">¶</a></h1>
-<p>Hand tracking is the process by which the position and orientation of the players hands are tracked,
-including the orientation of the players fingers.
-We can identify 3 categories of this:</p>
-<p>One, hand tracking through external sensors such as cameras.
-This is what Hololens, Quest, UltraLeap and similar devices do.
-This often results in very accurate tracking of all fingers of the players hands.</p>
-<p>Two, hand tracking through VR gloves.
-This method is still mostly experimental but is likely to gain popularity soon.
-Gloves often have good finger tracking capabilities but their real selling point is the ability to restrict movement.
-This allows the sensation of touch.
-Gloves are often also recognised as controllers and often will have additional controls such as buttons embedded.</p>
-<p>Three, inferred hand tracking.
-This has been the de facto approach since the early days of VR.
-As we know the player is holding a controller and we know the position of this controller,
-we can infer where to render the players hand.
-Fingers can be positioned based on the controls the player is interacting with.
-Many modern VR controllers have additional sensors to help determine finger positions on the controller.</p>
+  <section id="openxr-hand-tracking">
+<span id="doc-openxr-hand-tracking"></span><h1>OpenXR hand tracking<a class="headerlink" href="#openxr-hand-tracking" title="永久链接至标题">¶</a></h1>
+<section id="introduction">
+<h2>前言<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>Traditionally inferred hand tracking has been the responsibility of the game.
-However the principles behind the action map have somewhat limited the viable options here.
-Valve is currently the only XR Runtime that has implemented inferred hand tracking as part of the hand tracking extension.
-There is an expectation that other XR Runtimes will follow this example in the near future.</p>
-<p>Until then we recommend that if your game depends on inferred hand tracking,
-to use the hand assets that are part of Godot XR Tools.</p>
+<p>This page focuses specifically on the feature set exposed through OpenXR.
+Parts of the functionality presented here also applies to WebXR and can by provided
+by other XR interfaces.</p>
 </div>
-<section id="tracking-through-interaction-profiles">
-<h2>Tracking through interaction profiles<a class="headerlink" href="#tracking-through-interaction-profiles" title="永久链接至标题">¶</a></h2>
-<p>Tracking the location and state of controllers are performed through interaction profiles.
-Bindings can be set within the <a class="reference internal" href="xr_action_map.html#doc-xr-action-map"><span class="std std-ref">action map</span></a>.</p>
-<p>However it is important to realise that in OpenXR controllers are bound to paths indicating the usage of these controllers.
-I.e. the controller held in the players left hand is bound to <code class="docutils literal notranslate"><span class="pre">/user/hand/left</span></code>
-while the controller in the players right hand is bound to <code class="docutils literal notranslate"><span class="pre">/user/hand/right</span></code>.
-And while not yet supported outside of the HTC tracker extension,
-it is likely OpenXR will be extended with paths such as <code class="docutils literal notranslate"><span class="pre">/user/foot/left</span></code> and <code class="docutils literal notranslate"><span class="pre">/user/foot/right</span></code> at some point.</p>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>This paradigm therefore begs the question what happens to a controller that is not being held by a user.
-There is no answer to this question yet, this is still being debated and the specification may change in the near future.
-The behavior is thus undefined and can be different for different platforms.</p>
-<p>The most common is that the controller will remain bound regardless of whether the player is actually holding the controller.</p>
-<p>However there are runtimes, such as the Quest, that can unbind a controller when it is not being held by the user.</p>
-<p>This may become the norm in the future and the expectation is that the action map system will be enhanced accordingly.</p>
-</div>
+<p>When discussing hand tracking it is important to know that there are differences of opinion as to where lines are drawn.
+The practical result of this is that there are differences in implementation between the different OpenXR runtimes.
+You may find yourself in a place where chosen hardware doesn't support a piece of the puzzle or does things differently
+enough from the other platforms that you need to do extra work.</p>
+<p>That said, recent improvements to the OpenXR specification are closing these gaps and as platforms implement
+these improvements we are getting closer to a future where we have either full portability between platforms
+or at least a clear way to detect the capabilities of a platform.</p>
+<p>When we look at the early days of VR the focus of the major platforms was on tracked controller based input.
+Here we are tracking a physical device that also has buttons for further input.
+From the tracking data we can infer the location of the player's hands but no further information is known,
+traditionally it was left up to the game to implement a mechanism to display the player's hand and animate
+the fingers based on further input from the controller, be it due to buttons being pressed or through proximity
+sensors.
+Often fingers are also placed based on context, what the user is holding, and what action a user is performing.</p>
+<p>More recently optical hand tracking has become a popular solution, where cameras track the user's hands
+and full tracking data for the hand and finger positions becomes available.
+Many vendors saw this as completely separate from controller tracking and introduced independent APIs to
+access hand and finger positions and orientation data.
+When handling input, it was up to the game developer to implement a gesture detection mechanism.</p>
+<p>This split also exists in OpenXR, where controller tracking is handled primarily by the action map system,
+while optical hand tracking is primarily handled by the hand tracking API extension.</p>
+<p>However, the world is not that black and white and we're seeing a number of scenarios
+where we cross the line:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Devices that fit in both categories, such as tracked gloves
+and controllers such as the Index controller that also perform finger tracking.</p></li>
+<li><p>XR Runtimes that implement inferred hand tracking from controller data as a means
+to solve proper finger placement for multiple controllers.</p></li>
+<li><p>XR applications that wish to seamlessly switch between controller and hand tracking
+offering the same user experience regardless of approach used.</p></li>
+</ul>
+</div></blockquote>
+<p>OpenXR is answering this call by introducing further extensions that lets us query the capabilities of
+the XR runtime/hardware or that add further functionality across this divide.
+The problem that currently does remain is that there are gaps in adopting these extensions,
+with some platforms thus not reporting capabilities to their full extent.
+As such you may need to test for the features available on specific hardware
+and adjust your approach accordingly.</p>
 </section>
-<section id="the-hand-tracking-extension">
-<h2>The hand tracking extension<a class="headerlink" href="#the-hand-tracking-extension" title="永久链接至标题">¶</a></h2>
-<p>OpenXR has an extension that exposes hand tracking functionality.
-This extension allows a game to request the hand skeleton with all bone positions for each hand.</p>
-<figure class="align-center" id="id1">
-<img alt="../../_images/openxr_hand_skeleton.webp" src="../../_images/openxr_hand_skeleton.webp" />
-<figcaption>
-<p><span class="caption-text">Copyright (c) 2017-2022, The Khronos Group Inc. SPDX-License-Identifier: CC-BY-4.0</span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
-</figcaption>
-</figure>
-<p>The above image shows the joints that have to be provided by each XR runtime that implements this extension.</p>
-<p>Currently Godot exposes this functionality through the <a class="reference internal" href="../../classes/class_openxrhand.html#class-openxrhand"><span class="std std-ref">OpenXRHand</span></a> node.
-This is a helper node that will retrieve the hand tracking data from OpenXR and apply it to a skeleton in Godot.
-You select either the left or right hand through the <code class="docutils literal notranslate"><span class="pre">hand</span></code> property on this node.</p>
-<p>The hand asset itself has to be provided by the developer and is thus separate from the OpenXRHand node.
-You set the <code class="docutils literal notranslate"><span class="pre">hand_skeleton</span></code> on the OpenXRHand node to the skeleton it needs to apply the tracking data to.</p>
-<p>If supported by the XR runtime you can also set the <code class="docutils literal notranslate"><span class="pre">motion_range</span></code> property to limit how far the hand can close.</p>
-<p>The skeleton for this asset has to have the following bones:</p>
-<table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">OpenXR hand skeleton</span><a class="headerlink" href="#id2" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>左手</p></th>
-<th class="head"><p>Right hand</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Palm_L</p></td>
-<td><p>Palm_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Wrist_L</p></td>
-<td><p>Wrist_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Thumb_Metacarpal_L</p></td>
-<td><p>Thumb_Metacarpal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Thumb_Proximal_L</p></td>
-<td><p>Thumb_Proximal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Thumb_Distal_L</p></td>
-<td><p>Thumb_Distal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Thumb_Tip_L</p></td>
-<td><p>Thumb_Tip_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Index_Metacarpal_L</p></td>
-<td><p>Index_Metacarpal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Index_Proximal_L</p></td>
-<td><p>Index_Proximal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Index_Intermediate_L</p></td>
-<td><p>Index_Intermediate_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Index_Distal_L</p></td>
-<td><p>Index_Distal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Index_Tip_L</p></td>
-<td><p>Index_Tip_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Middle_Metacarpal_L</p></td>
-<td><p>Middle_Metacarpal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Middle_Proximal_L</p></td>
-<td><p>Middle_Proximal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Middle_Intermediate_L</p></td>
-<td><p>Middle_Intermediate_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Middle_Distal_L</p></td>
-<td><p>Middle_Distal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Middle_Tip_L</p></td>
-<td><p>Middle_Tip_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Ring_Metacarpal_L</p></td>
-<td><p>Ring_Metacarpal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ring_Proximal_L</p></td>
-<td><p>Ring_Proximal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Ring_Intermediate_L</p></td>
-<td><p>Ring_Intermediate_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ring_Distal_L</p></td>
-<td><p>Ring_Distal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Ring_Tip_L</p></td>
-<td><p>Ring_Tip_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Little_Metacarpal_L</p></td>
-<td><p>Little_Metacarpal_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Little_Proximal_L</p></td>
-<td><p>Little_Proximal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Little_Intermediate_L</p></td>
-<td><p>Little_Intermediate_R</p></td>
-</tr>
-<tr class="row-even"><td><p>Little_Distal_L</p></td>
-<td><p>Little_Distal_R</p></td>
-</tr>
-<tr class="row-odd"><td><p>Little_Tip_L</p></td>
-<td><p>Little_Tip_R</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>The skeleton data returned from different XR runtimes are often not compatible which poses a problem for cross platform development.</p>
-<p>For instance both Microsoft and Meta runtimes base the skeleton on the actual hands of the player.
-These skeletons will thus conform to the size of the players hand.</p>
-<p>Contrast that to Valve where a fixed skeleton is used if inferred hand tracking is applied.</p>
-<p>We are still gathering experience on how best to deal with these differences in the platforms.</p>
-</div>
-<p>When exporting to Meta Quest you need to enable the following setting:</p>
+<section id="demo-project">
+<h2>Demo project<a class="headerlink" href="#demo-project" title="永久链接至标题">¶</a></h2>
+<p>The information presented on this page was used to create a demo project that can be found
+<a class="reference external" href="https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo">here</a>.</p>
+</section>
+<section id="the-hand-tracking-api">
+<h2>The Hand Tracking API<a class="headerlink" href="#the-hand-tracking-api" title="永久链接至标题">¶</a></h2>
+<p>As mentioned in our introduction, the hand tracking API is primarily used with optical hand tracking
+and on many platforms only works when the user is not holding a controller.
+Some platforms support controller inferred hand tracking meaning that you will get hand tracking data
+even if the user is holding a controller.
+This includes SteamVR, Meta Quest (currently native only but Meta link support is likely coming),
+and hopefully soon others as well.</p>
+<p>The hand tracking implementation in Godot has been standardized around the Godot Humanoid Skeleton
+and works both in OpenXR and WebXR. The instructions below will thus work in both environments.</p>
+<p>In order to use the hand tracking API with OpenXR you first need to enable it.
+This can be done in the project settings:</p>
 <img alt="../../_images/xr_enable_handtracking.webp" src="../../_images/xr_enable_handtracking.webp" />
+<p>For some standalone XR devices you also need to configure the hand tracking extension in export settings,
+for instance for Meta Quest:</p>
+<img alt="../../_images/openxr_enable_hand_tracking_meta.webp" src="../../_images/openxr_enable_hand_tracking_meta.webp" />
+<p>Now you need to add 3 components into your scene for each hand:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A tracked node to position the hand.</p></li>
+<li><p>A properly skinned hand mesh with skeleton.</p></li>
+<li><p>A skeleton modifier that applies finger tracking data to the skeleton.</p></li>
+</ul>
+</div></blockquote>
+<img alt="../../_images/openxr_hand_tracking_nodes.webp" src="../../_images/openxr_hand_tracking_nodes.webp" />
+<section id="hand-tracking-node">
+<h3>Hand tracking node<a class="headerlink" href="#hand-tracking-node" title="永久链接至标题">¶</a></h3>
+<p>The hand tracking system uses separate hand trackers to track the position of the player's hands
+within our tracking space.</p>
+<p>This information has been separated out for the following use cases:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Tracking happens in the local space of the <a class="reference internal" href="../../classes/class_xrorigin3d.html#class-xrorigin3d"><span class="std std-ref">XROrigin3D</span></a> node.
+This node must be a child of the <cite>XROrigin3D</cite> node in order to be correctly placed.</p></li>
+<li><p>This node can be used as an IK target when an upper body mesh with arms is used instead
+of separate hand meshes.</p></li>
+<li><p>Actual placement of the hands may be loosely bound to the tracking in scenarios such as
+avatar creation UIs, fake mirrors, or similar situations
+resulting in the hand mesh and finger tracking being localized elsewhere.</p></li>
+</ul>
+</div></blockquote>
+<p>We'll concentrate on the first use case only.</p>
+<p>For this you need to add an <a class="reference internal" href="../../classes/class_xrnode3d.html#class-xrnode3d"><span class="std std-ref">XRNode3D</span></a> node to your <code class="docutils literal notranslate"><span class="pre">XROrigin3D</span></code> node.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>On this node the <code class="docutils literal notranslate"><span class="pre">tracker</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/left</span></code> or <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/right</span></code>
+for the left or right hand respectively.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pose</span></code> should remain set to <code class="docutils literal notranslate"><span class="pre">default</span></code>, no other option will work here.</p></li>
+<li><p>The checkbox <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">When</span> <span class="pre">Tracked</span></code> will automatically hide this node if no tracking data is available,
+or make this node visible if tracking data is available.</p></li>
+</ul>
+</div></blockquote>
 </section>
-<section id="body-tracking">
-<h2>Body tracking<a class="headerlink" href="#body-tracking" title="永久链接至标题">¶</a></h2>
-<p>At the time of writing, OpenXR does not support body tracking as part of the core spec.
-We are expecting this to change in the near future as more and more body tracking solutions are hitting the market.</p>
-<p>For now the only option available here is through HTC trackers.
-There is an extension that becomes available if HTC trackers are supported by the XR runtime.
-These are fully exposed through the action map system.</p>
-<p>Godot has full support for these and you can setup the trackers in the action map.
-Each tracker is assigned a usage within the SteamVR interface.</p>
-<p>These are exposed through the following trackers:</p>
-<table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">HTC 追踪器</span><a class="headerlink" href="#id3" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/handheld_object</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/left_foot</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/right_foot</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/left_shoulder</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/right_shoulder</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/left_elbow</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/right_elbow</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/left_knee</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/right_knee</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/waist</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/chest</p></td>
-</tr>
-<tr class="row-even"><td><p>/user/vive_tracker_htcx/role/camera</p></td>
-</tr>
-<tr class="row-odd"><td><p>/user/vive_tracker_htcx/role/keyboard</p></td>
-</tr>
-</tbody>
-</table>
+<section id="rigged-hand-mesh">
+<h3>Rigged hand mesh<a class="headerlink" href="#rigged-hand-mesh" title="永久链接至标题">¶</a></h3>
+<p>In order to display our hand we need a hand mesh that is properly rigged and skinned.
+For this Godot uses the hand bone structure as defined for the <a class="reference internal" href="../../classes/class_skeletonprofilehumanoid.html#class-skeletonprofilehumanoid"><span class="std std-ref">Godot Humanoid</span></a>
+but optionally supporting an extra tip bone for each finger.</p>
+<p>The <a class="reference external" href="https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo">OpenXR hand tracking demo</a>
+contains example GLTF files of properly rigged hands.</p>
+<p>We will be using those here and add them as a child to our <code class="docutils literal notranslate"><span class="pre">XRNode3D</span></code> node.
+We also need to enable editable children to gain access to our <a class="reference internal" href="../../classes/class_skeleton3d.html#class-skeleton3d"><span class="std std-ref">Skeleton3D</span></a> node.</p>
 </section>
-<section id="some-final-words">
-<h2>最后的话<a class="headerlink" href="#some-final-words" title="永久链接至标题">¶</a></h2>
-<p>Hand tracking is an area that is still under active development and we are expecting improvements in the near future.</p>
-<p>The underlying principle that we're hoping will eventuate is that the action map will be used to handle interactions,
-while the hand tracking extension will primarily be a means for visualising the players hand.
-The hope here is that improvements to the OpenXR specification will ensure better portability between platforms.</p>
+<section id="the-hand-skeleton-modifier">
+<h3>The hand skeleton modifier<a class="headerlink" href="#the-hand-skeleton-modifier" title="永久链接至标题">¶</a></h3>
+<p>Finally we need to add a <a class="reference internal" href="../../classes/class_xrhandmodifier3d.html#class-xrhandmodifier3d"><span class="std std-ref">XRHandModifier3D</span></a> node as a child to our <code class="docutils literal notranslate"><span class="pre">Skeleton3D</span></code> node.
+This node will obtain the finger tracking data from OpenXR and apply it the hand model.</p>
+<p>You need to set the <code class="docutils literal notranslate"><span class="pre">Hand</span> <span class="pre">Tracker</span></code> property to either <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/left</span></code> or <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/right</span></code>
+depending on whether we are apply the tracking data of respectively the left or right hand.</p>
+<p>You can also set the <code class="docutils literal notranslate"><span class="pre">Bone</span> <span class="pre">Update</span></code> mode on this node.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Full</span></code> applies the hand tracking data fully.
+This does mean that the skeleton positioning will potentially reflect the size of the actual hand of the user.
+This can lead to scrunching effect if meshes aren't weighted properly to account for this.
+Make sure you test your game with players of all sizes when optical hand tracking is used!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rotation</span> <span class="pre">Only</span></code> will only apply rotation to the bones of the hands and keep the bone length as is.
+In this mode the size of the hand mesh doesn't change.</p></li>
+</ul>
+</div></blockquote>
+<p>With this added, when we run the project we should see the hand correctly displayed if hand tracking is supported.</p>
+</section>
+</section>
+<section id="the-hand-tracking-data-source">
+<h2>The hand tracking data source<a class="headerlink" href="#the-hand-tracking-data-source" title="永久链接至标题">¶</a></h2>
+<p>This is an OpenXR extension that provides information about the source of the hand tracking data.
+At this moment only a few runtimes implement it but if it is available, Godot will activate it.</p>
+<p>If this extension is not supported and thus unknown is returned, you can make the following assumptions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you are using SteamVR (including Steam link), only controller based hand tracking is supported.</p></li>
+<li><p>For any other runtime, if hand tracking is supported, only optical hand tracking is supported
+(Note, Meta Link currently fall into this category).</p></li>
+<li><p>In all other cases, no hand tracking is supported at all.</p></li>
+</ul>
+</div></blockquote>
+<p>You can access this information through code:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">hand_tracker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">XRHandTracker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">XRServer</span><span class="o">.</span><span class="n">get_tracker</span><span class="p">(</span><span class="s1">&#39;/user/hand_tracker/left&#39;</span><span class="p">)</span>
+<span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">hand_tracker</span><span class="p">:</span>
+<span class="w">    </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">hand_tracker</span><span class="o">.</span><span class="n">has_tracking_data</span><span class="p">:</span>
+<span class="w">        </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">hand_tracker</span><span class="o">.</span><span class="n">hand_tracking_source</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">XRHandTracker</span><span class="o">.</span><span class="n">HAND_TRACKING_SOURCE_UNKNOWN</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hand tracking source unknown&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="k k-ControlFlow">elif</span><span class="w"> </span><span class="n">hand_tracker</span><span class="o">.</span><span class="n">hand_tracking_source</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">XRHandTracker</span><span class="o">.</span><span class="n">HAND_TRACKING_SOURCE_UNOBSTRUCTED</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hand tracking source is optical hand tracking&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="k k-ControlFlow">elif</span><span class="w"> </span><span class="n">hand_tracker</span><span class="o">.</span><span class="n">hand_tracking_source</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">XRHandTracker</span><span class="o">.</span><span class="n">HAND_TRACKING_SOURCE_CONTROLLER</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hand tracking data is inferred from controller data&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="k k-ControlFlow">else</span><span class="p">:</span>
+<span class="w">            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unknown hand tracking source &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hand_tracker</span><span class="o">.</span><span class="n">hand_tracking_source</span><span class="p">)</span>
+<span class="w">    </span><span class="k k-ControlFlow">else</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hand is currently not being tracked&quot;</span><span class="p">)</span>
+<span class="k k-ControlFlow">else</span><span class="p">:</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No hand tracker registered&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example simply logs the state for the left hand.</p>
+<p>If in this example no hand tracker is returned by <code class="docutils literal notranslate"><span class="pre">get_tracker</span></code>,
+this means the hand tracking API is not supported on the XR runtime at all.</p>
+<p>If there is a tracker but <cite>has_tracking_data</cite> is false, the user's hand is currently not being tracked.
+This is likely caused by one of the following reasons:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The player's hand is not visible by any of the tracking cameras on the headset</p></li>
+<li><p>The player is currently using a controller and the headset only supports optical hand tracking</p></li>
+<li><p>The controller is turned off and only controller hand tracking is supported.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="handling-user-input">
+<h2>Handling user input<a class="headerlink" href="#handling-user-input" title="永久链接至标题">¶</a></h2>
+<p>Reacting to actions performed by the user is handled through <a class="reference internal" href="xr_action_map.html#doc-xr-action-map"><span class="std std-ref">XR 动作映射</span></a>
+if controllers are used.
+In the action map you can map various inputs like the trigger or joystick on the controller
+to an action. This can then drive logic in your game.</p>
+<p>When hand tracking is used we originally had no such inputs,
+inputs are driven by gestures made by the user such as making a fist to grab
+or pinching the thumb and index finger together to select something.
+It was up to the game developer to implement this.</p>
+<p>Recognizing that there is an increasing demand for applications that can switch seamlessly
+between controller and hand tracking and the need some form of basic input capability,
+a number of extensions were added to the specification that provide some basic gesture recognition
+and can be used with the action map.</p>
+<section id="the-hand-interaction-profile">
+<h3>The hand interaction profile<a class="headerlink" href="#the-hand-interaction-profile" title="永久链接至标题">¶</a></h3>
+<p>The <a class="reference external" href="https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_EXT_hand_interaction">hand interaction profile extension</a>
+is a new core extension which supports pinch, grasp, and poke gestures and related poses.
+There is still limited support for this extension but it should become available in more
+runtimes in the near future.</p>
+<img alt="../../_images/openxr_hand_interaction_profile.webp" src="../../_images/openxr_hand_interaction_profile.webp" />
+<p>The pinch gesture is triggered by pinching your thumb and index finger together.
+This is often used as a select gesture for menu systems, similar to using your controller
+to point at an object and press the trigger to select and is thus often mapped as such.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pinch</span> <span class="pre">pose</span></code> is a pose positioned in the middle between the tip of the thumb and
+the tip of the index finger and oriented such that a ray cast can be used to identify a target.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pinch</span></code> float input is a value between 0.0 (the tip of the thumb and index finger are apart)
+and 1.0 (the tip of the thumb and index finger are touching).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pinch</span> <span class="pre">ready</span></code> input is true when the tips of the fingers are (close to) touching.</p></li>
+</ul>
+</div></blockquote>
+<p>The grasp gesture is triggered by making a fist and is often used to pick items up,
+similar to engaging the squeeze input on controllers.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">grasp</span></code> float input is a value between 0.0 (open hand) and 1.0 (fist).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">grasp</span> <span class="pre">ready</span></code> input is true when the user made a fist.</p></li>
+</ul>
+</div></blockquote>
+<p>The poke gesture is triggered by extending your index finger, this one is a bit
+of an exception as the pose at the tip of your index finger is often used to poke
+an interactable object. The <code class="docutils literal notranslate"><span class="pre">poke</span> <span class="pre">pose</span></code> is a pose positioned on the tip of the index finger.</p>
+<p>Finally the <code class="docutils literal notranslate"><span class="pre">aim</span> <span class="pre">activate</span> <span class="pre">(ready)</span></code> input is defined as an input that is 1.0/true
+when the index finger is extended and pointing at a target that can be activated.
+How runtimes interpret this, is not clear.</p>
+<p>With this setup the normal <code class="docutils literal notranslate"><span class="pre">left_hand</span></code> and <code class="docutils literal notranslate"><span class="pre">right_hand</span></code> trackers are used and you can
+thus seamlessly switch between controller and hand tracking input.</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>You need to enable the hand interaction profile extension in the OpenXR project settings.</p>
+</div>
+</section>
+<section id="microsoft-hand-interaction-profile">
+<h3>Microsoft hand interaction profile<a class="headerlink" href="#microsoft-hand-interaction-profile" title="永久链接至标题">¶</a></h3>
+<p>The <a class="reference external" href="https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_MSFT_hand_interaction">Microsoft hand interaction profile extension</a>
+was introduced by Microsoft and loosely mimics the simple controller profile.
+Meta has also added support for this extension but only on their native OpenXR client,
+it is currently not available over Meta Link.</p>
+<img alt="../../_images/openxr_msft_hand_interaction_profile.webp" src="../../_images/openxr_msft_hand_interaction_profile.webp" />
+<p>Pinch support is exposed through the <code class="docutils literal notranslate"><span class="pre">select</span></code> input, the value of which
+is 0.0 when the tip of the thumb and index finger are apart
+and 1.0 when they are together.</p>
+<p>Note that in this profile the <code class="docutils literal notranslate"><span class="pre">aim</span> <span class="pre">pose</span></code> is redefined as a pose between thumb
+and index finger, oriented so a ray cast can be used to identify a target.</p>
+<p>Grasp support is exposed through the <code class="docutils literal notranslate"><span class="pre">squeeze</span></code> input, the value of which
+is 0.0 when the hand is open, and 1.0 when a fist is made.</p>
+<p>With this setup the normal <code class="docutils literal notranslate"><span class="pre">left_hand</span></code> and <code class="docutils literal notranslate"><span class="pre">right_hand</span></code> trackers are used and you can
+thus seamlessly switch between controller and hand tracking input.</p>
+</section>
+<section id="htc-hand-interaction-profile">
+<h3>HTC hand interaction profile<a class="headerlink" href="#htc-hand-interaction-profile" title="永久链接至标题">¶</a></h3>
+<p>The <a class="reference external" href="https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_HTC_hand_interaction">HTC hand interaction profile extension</a>
+was introduced by HTC and is defined similarly to the Microsoft extension.
+It is only supported by HTC for the Focus 3 and Elite XR headsets.</p>
+<img alt="../../_images/openxr_htc_hand_interaction_profile.webp" src="../../_images/openxr_htc_hand_interaction_profile.webp" />
+<p>See the Microsoft hand interaction profile for the gesture support.</p>
+<p>The defining difference is that this extension introduces two new trackers,
+<code class="docutils literal notranslate"><span class="pre">/user/hand_htc/left</span></code> and <code class="docutils literal notranslate"><span class="pre">/user/hand_htc/right</span></code>.
+This means that extra logic needs to be implemented to switch between the default trackers
+and the HTC specific trackers when the user puts down, or picks up, their controller.</p>
+</section>
+<section id="simple-controller-profile">
+<h3>Simple controller profile<a class="headerlink" href="#simple-controller-profile" title="永久链接至标题">¶</a></h3>
+<p>The simple controller profile is a standard core profile defined as a fallback profile
+when a controller is used for which no profile exists.</p>
+<p>There are a number of OpenXR runtimes that will mimic controllers through
+the simple controller profile when hand tracking is used.</p>
+<p>Unfortunately there is no sound way to determine whether an unknown controller is used
+or whether hand tracking is emulating a controller through this profile.</p>
+<img alt="../../_images/openxr_simple_controller_hand.webp" src="../../_images/openxr_simple_controller_hand.webp" />
+<p>XR runtimes are free to define how the simple controller profile operates,
+so there is also no certainty to how this profile is mapped to gestures.</p>
+<p>The most common mapping seems to be that <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">click</span></code> is true
+when the tip of the thumb and index fingers are touching while the
+user's palm is facing away from the user.
+<code class="docutils literal notranslate"><span class="pre">menu</span> <span class="pre">click</span></code> will be true when tip of the thumb and index fingers
+are touching while the user's palm is facing towards the user.</p>
+<p>With this setup the normal <code class="docutils literal notranslate"><span class="pre">left_hand</span></code> and <code class="docutils literal notranslate"><span class="pre">right_hand</span></code> trackers are used and you can
+thus seamlessly switch between controller and hand tracking input.</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>As some of these interaction profiles have overlap it is important to know
+that you can add each profile to your action map and the XR runtime will choose
+the best fitting profile.</p>
+<p>For instance, a Meta Quest supports both the Microsoft hand interaction profile
+and simple controller profile.
+If both are specified the Microsoft hand interaction profile will take precedence
+and will be used.</p>
+<p>The expectation is that once Meta supports the core hand interaction profile
+extension, that profile will take precedence over both Microsoft
+and simple controller profiles.</p>
+</div>
+</section>
+<section id="gesture-based-input">
+<h3>Gesture based input<a class="headerlink" href="#gesture-based-input" title="永久链接至标题">¶</a></h3>
+<p>If the platform doesn't support any interaction profiles when hand tracking is used,
+or if you're building an application where you need more complicated gesture support
+you're going to need to build your own gesture recognition system.</p>
+<p>You can obtain the full hand tracking data through the <a class="reference internal" href="../../classes/class_xrhandtracker.html#class-xrhandtracker"><span class="std std-ref">XRHandTracker</span></a>
+resource for each hand. You can obtain the hand tracker by calling <code class="docutils literal notranslate"><span class="pre">XRServer.get_tracker</span></code>
+and using either <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/left</span></code> or <code class="docutils literal notranslate"><span class="pre">/user/hand_tracker/left</span></code> as the tracker.
+This resource provides access to all the joint information for the given hand.</p>
+<p>Detailing out a full gesture recognition algorithm goes beyond the scope of this manual
+however there are a number of community projects you can look at:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Godot-Dojo/Godot-XR-AH">Julian Todd's Auto hands library</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Malcolmnixon/GodotXRHandPoseDetector">Malcolm Nixons Hand Pose Detector</a></p></li>
+</ul>
+</div></blockquote>
+</section>
 </section>
 </section>
 
@@ -11197,7 +11316,7 @@ The hope here is that improvements to the OpenXR specification will ensure bette
 </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="openxr_composition_layers.html" class="btn btn-neutral float-left" title="OpenXR composition layers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="introducing_xr_tools.html" class="btn btn-neutral float-right" title="XR 工具简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="openxr_body_tracking.html" class="btn btn-neutral float-right" title="OpenXR body tracking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

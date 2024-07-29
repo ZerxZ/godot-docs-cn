@@ -54,7 +54,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-thread-method-get-id"><inline classes="std std-ref">get_id</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-thread-method-get-id"><inline classes="std std-ref">get_id</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -62,7 +62,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">is_alive</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">is_alive</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -70,7 +70,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-thread-method-is-started"><inline classes="std std-ref">is_started</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-thread-method-is-started"><inline classes="std std-ref">is_started</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -120,16 +120,16 @@
         <section classes="classref-descriptions-group" ids="id5" names="方法说明">
             <title>方法说明</title>
             <target refid="class-thread-method-get-id"></target>
-            <paragraph classes="classref-method" ids="class-thread-method-get-id" names="class_thread_method_get_id"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_id</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-get-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-thread-method-get-id" names="class_thread_method_get_id"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_id</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-get-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前 <strong>Thread</strong> 的 ID，能够在所有线程中唯一标识该线程。如果该 <strong>Thread</strong> 尚未运行，或者已经调用过 <reference internal="True" refid="class-thread-method-wait-to-finish"><inline classes="std std-ref">wait_to_finish</inline></reference>，则返回空字符串。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-thread-method-is-alive"></target>
-            <paragraph classes="classref-method" ids="class-thread-method-is-alive" names="class_thread_method_is_alive"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_alive</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-thread-method-is-alive" names="class_thread_method_is_alive"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_alive</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果这个 <strong>Thread</strong> 当前正在运行，则返回 <literal>true</literal>。可用于确定调用 <reference internal="True" refid="class-thread-method-wait-to-finish"><inline classes="std std-ref">wait_to_finish</inline></reference> 是否可以不阻塞调用的线程。</paragraph>
             <paragraph>要检查 <strong>Thread</strong> 是否可被并入，请使用 <reference internal="True" refid="class-thread-method-is-started"><inline classes="std std-ref">is_started</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-thread-method-is-started"></target>
-            <paragraph classes="classref-method" ids="class-thread-method-is-started" names="class_thread_method_is_started"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_started</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-is-started"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-thread-method-is-started" names="class_thread_method_is_started"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_started</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-thread-method-is-started"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果此 <strong>Thread</strong> 已启动，则返回 <literal>true</literal>。一旦开始，这将返回 <literal>true</literal> ，直到它使用 <reference internal="True" refid="class-thread-method-wait-to-finish"><inline classes="std std-ref">wait_to_finish</inline></reference> 加入。要检查 <strong>Thread</strong> 是否仍在执行其任务，请使用 <reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">is_alive</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-thread-method-set-thread-safety-checks-enabled"></target>
@@ -155,12 +155,12 @@
             <paragraph>应该在你想要获取该 <strong>Thread</strong> 所调用的方法的返回值时使用，或者在释放包含该 <strong>Thread</strong> 的实例前使用。</paragraph>
             <paragraph>要确定调用时是否不会阻塞调用线程，请检查 <reference internal="True" refid="class-thread-method-is-alive"><inline classes="std std-ref">is_alive</inline></reference> 是否为 <literal>false</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -17,13 +17,13 @@ PackedVector4Array
 描述
 ----
 
-An array specifically designed to hold :ref:`Vector4<class_Vector4>`. Packs data tightly, so it saves memory for large array sizes.
+专门设计用于保存 :ref:`Vector4<class_Vector4>` 的数组。紧密打包数据，因此可为大型数组节省内存。
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedVector4Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **注意：**\ 紧缩数组始终通过引用传递。要获取可以独立于原始数组进行修改的数组副本，请使用 :ref:`duplicate<class_PackedVector4Array_method_duplicate>`\ 。内置属性和方法并\ *非*\ 如此。这些返回的紧缩数组是副本，更改它\ *不*\ 会影响原始值。要更新内置属性，需要修改返回的数组，然后再次将其分配给该属性。
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -95,7 +95,7 @@ An array specifically designed to hold :ref:`Vector4<class_Vector4>`. Packs data
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -397,11 +397,11 @@ An array specifically designed to hold :ref:`Vector4<class_Vector4>`. Packs data
 
 :ref:`PackedVector4Array<class_PackedVector4Array>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_PackedVector4Array_method_slice>`
 
-Returns the slice of the **PackedVector4Array**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedVector4Array**.
+返回该 **PackedVector4Array** 的切片，是从 ``begin``\ （含）到 ``end``\ （不含）的全新 **PackedVector4Array**\ 。
 
-The absolute value of ``begin`` and ``end`` will be clamped to the array size, so the default value for ``end`` makes it slice to the size of the array by default (i.e. ``arr.slice(1)`` is a shorthand for ``arr.slice(1, arr.size())``).
+\ ``begin`` 和 ``end`` 的绝对值会按数组大小进行限制，所以 ``end`` 的默认值会切到数组大小为止（即 ``arr.slice(1)`` 是 ``arr.slice(1, arr.size())`` 的简写）。
 
-If either ``begin`` or ``end`` are negative, they will be relative to the end of the array (i.e. ``arr.slice(0, -2)`` is a shorthand for ``arr.slice(0, arr.size() - 2)``).
+如果 ``begin`` 或 ``end`` 为负，则表示相对于数组的末尾（即 ``arr.slice(0, -2)`` 是 ``arr.slice(0, arr.size() - 2)`` 的简写）。
 
 .. rst-class:: classref-item-separator
 
@@ -435,7 +435,7 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_PackedVector4Array_operator_neq_PackedVector4Array:
@@ -483,10 +483,10 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 返回索引为 ``index`` 的 :ref:`Vector4<class_Vector4>`\ 。负数索引能从末尾开始访问元素。使用数组范围外的索引会导致出错。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

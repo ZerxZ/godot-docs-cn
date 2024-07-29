@@ -14,7 +14,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个类的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该类目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-introduction-group
 
@@ -91,7 +91,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -110,7 +110,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -129,7 +129,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -148,7 +148,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -186,7 +186,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +205,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-section-separator
 
@@ -224,7 +224,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -238,7 +238,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -252,7 +252,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -266,7 +266,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -280,7 +280,7 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -294,13 +294,13 @@ GLTFSkin
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

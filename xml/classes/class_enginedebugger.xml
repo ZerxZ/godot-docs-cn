@@ -43,7 +43,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-enginedebugger-method-get-depth"><inline classes="std std-ref">get_depth</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-enginedebugger-method-get-depth"><inline classes="std std-ref">get_depth</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -51,7 +51,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-enginedebugger-method-get-lines-left"><inline classes="std std-ref">get_lines_left</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-enginedebugger-method-get-lines-left"><inline classes="std std-ref">get_lines_left</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -91,7 +91,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-enginedebugger-method-is-breakpoint"><inline classes="std std-ref">is_breakpoint</inline></reference>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-enginedebugger-method-is-breakpoint"><inline classes="std std-ref">is_breakpoint</inline></reference>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -107,7 +107,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-enginedebugger-method-is-skipping-breakpoints"><inline classes="std std-ref">is_skipping_breakpoints</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-enginedebugger-method-is-skipping-breakpoints"><inline classes="std std-ref">is_skipping_breakpoints</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -215,21 +215,21 @@
             <title>方法说明</title>
             <target refid="class-enginedebugger-method-clear-breakpoints"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-clear-breakpoints" names="class_enginedebugger_method_clear_breakpoints"><abbreviation explanation="无返回值。">void</abbreviation> <strong>clear_breakpoints</strong>() <reference internal="True" refid="class-enginedebugger-method-clear-breakpoints"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Clears all breakpoints.</paragraph>
+            <paragraph>清除所有断点。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-debug"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-debug" names="class_enginedebugger_method_debug"><abbreviation explanation="无返回值。">void</abbreviation> <strong>debug</strong>(can_continue: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true, is_error_breakpoint: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <reference internal="True" refid="class-enginedebugger-method-debug"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Starts a debug break in script execution, optionally specifying whether the program can continue based on <literal>can_continue</literal> and whether the break was due to a breakpoint.</paragraph>
+            <paragraph>在运行脚本时触发调试中断，可以使用 <literal>can_continue</literal> 指定程序是否能够继续运行，还可以指定该中断是否是由断点导致的。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-get-depth"></target>
-            <paragraph classes="classref-method" ids="class-enginedebugger-method-get-depth" names="class_enginedebugger_method_get_depth"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_depth</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-get-depth"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph><strong>实验性：</strong> 未来版本中可能修改或移除该方法。</paragraph>
-            <paragraph>Returns the current debug depth.</paragraph>
+            <paragraph classes="classref-method" ids="class-enginedebugger-method-get-depth" names="class_enginedebugger_method_get_depth"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_depth</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-get-depth"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph><strong>实验性：</strong> 未来版本中可能会修改或移除该方法。</paragraph>
+            <paragraph>返回当前调试深度。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-get-lines-left"></target>
-            <paragraph classes="classref-method" ids="class-enginedebugger-method-get-lines-left" names="class_enginedebugger_method_get_lines_left"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_lines_left</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-get-lines-left"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph><strong>实验性：</strong> 未来版本中可能修改或移除该方法。</paragraph>
-            <paragraph>Returns the number of lines that remain.</paragraph>
+            <paragraph classes="classref-method" ids="class-enginedebugger-method-get-lines-left" names="class_enginedebugger_method_get_lines_left"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_lines_left</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-get-lines-left"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph><strong>实验性：</strong> 未来版本中可能会修改或移除该方法。</paragraph>
+            <paragraph>返回剩余的行数。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-has-capture"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-has-capture" names="class_enginedebugger_method_has_capture"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_capture</strong>(name: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-has-capture"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -241,27 +241,27 @@
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-insert-breakpoint"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-insert-breakpoint" names="class_enginedebugger_method_insert_breakpoint"><abbreviation explanation="无返回值。">void</abbreviation> <strong>insert_breakpoint</strong>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-insert-breakpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Inserts a new breakpoint with the given <literal>source</literal> and <literal>line</literal>.</paragraph>
+            <paragraph>使用给定的 <literal>source</literal> 和 <literal>line</literal> 插入一个新断点。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-is-active"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-is-active" names="class_enginedebugger_method_is_active"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_active</strong>() <reference internal="True" refid="class-enginedebugger-method-is-active"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果调试器处于活动状态，则返回 <literal>true</literal>，否则返回 <literal>false</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-is-breakpoint"></target>
-            <paragraph classes="classref-method" ids="class-enginedebugger-method-is-breakpoint" names="class_enginedebugger_method_is_breakpoint"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_breakpoint</strong>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-is-breakpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns <literal>true</literal> if the given <literal>source</literal> and <literal>line</literal> represent an existing breakpoint.</paragraph>
+            <paragraph classes="classref-method" ids="class-enginedebugger-method-is-breakpoint" names="class_enginedebugger_method_is_breakpoint"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_breakpoint</strong>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-is-breakpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>如果给定的 <literal>source</literal> 和 <literal>line</literal> 代表一个已存在的断点，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-is-profiling"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-is-profiling" names="class_enginedebugger_method_is_profiling"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_profiling</strong>(name: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-is-profiling"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果存在具有给定名称的分析器，并且该分析器处于活动状态，则返回 <literal>true</literal>，否则返回 <literal>false</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-is-skipping-breakpoints"></target>
-            <paragraph classes="classref-method" ids="class-enginedebugger-method-is-skipping-breakpoints" names="class_enginedebugger_method_is_skipping_breakpoints"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_skipping_breakpoints</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-is-skipping-breakpoints"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns <literal>true</literal> if the debugger is skipping breakpoints otherwise <literal>false</literal>.</paragraph>
+            <paragraph classes="classref-method" ids="class-enginedebugger-method-is-skipping-breakpoints" names="class_enginedebugger_method_is_skipping_breakpoints"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_skipping_breakpoints</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-enginedebugger-method-is-skipping-breakpoints"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>如果调试器跳过断点，则返回 <literal>true</literal>，否则返回 <literal>false</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-line-poll"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-line-poll" names="class_enginedebugger_method_line_poll"><abbreviation explanation="无返回值。">void</abbreviation> <strong>line_poll</strong>() <reference internal="True" refid="class-enginedebugger-method-line-poll"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Forces a processing loop of debugger events. The purpose of this method is just processing events every now and then when the script might get too busy, so that bugs like infinite loops can be caught</paragraph>
+            <paragraph>强制调试器事件的一个处理循环。该方法的目的是当脚本可能过于繁忙时不时地处理事件，以便可以捕获无限循环之类的错误</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-profiler-add-frame-data"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-profiler-add-frame-data" names="class_enginedebugger_method_profiler_add_frame_data"><abbreviation explanation="无返回值。">void</abbreviation> <strong>profiler_add_frame_data</strong>(name: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>, data: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-profiler-add-frame-data"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -282,11 +282,11 @@
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-remove-breakpoint"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-remove-breakpoint" names="class_enginedebugger_method_remove_breakpoint"><abbreviation explanation="无返回值。">void</abbreviation> <strong>remove_breakpoint</strong>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, source: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-remove-breakpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Removes a breakpoint with the given <literal>source</literal> and <literal>line</literal>.</paragraph>
+            <paragraph>使用给定的 <literal>source</literal> 和 <literal>line</literal> 移除一个断点。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-script-debug"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-script-debug" names="class_enginedebugger_method_script_debug"><abbreviation explanation="无返回值。">void</abbreviation> <strong>script_debug</strong>(language: <reference internal="True" refuri="class_scriptlanguage#class-scriptlanguage"><inline classes="std std-ref">ScriptLanguage</inline></reference>, can_continue: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true, is_error_breakpoint: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <reference internal="True" refid="class-enginedebugger-method-script-debug"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Starts a debug break in script execution, optionally specifying whether the program can continue based on <literal>can_continue</literal> and whether the break was due to a breakpoint.</paragraph>
+            <paragraph>在运行脚本时触发调试中断，可以使用 <literal>can_continue</literal> 指定程序是否能够继续运行，还可以指定该中断是否是由断点导致的。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-send-message"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-send-message" names="class_enginedebugger_method_send_message"><abbreviation explanation="无返回值。">void</abbreviation> <strong>send_message</strong>(message: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, data: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-send-message"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -294,13 +294,13 @@
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-set-depth"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-set-depth" names="class_enginedebugger_method_set_depth"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_depth</strong>(depth: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-set-depth"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph><strong>实验性：</strong> 未来版本中可能修改或移除该方法。</paragraph>
-            <paragraph>Sets the current debugging depth.</paragraph>
+            <paragraph><strong>实验性：</strong> 未来版本中可能会修改或移除该方法。</paragraph>
+            <paragraph>设置当前调试深度。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-set-lines-left"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-set-lines-left" names="class_enginedebugger_method_set_lines_left"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_lines_left</strong>(lines: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-set-lines-left"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph><strong>实验性：</strong> 未来版本中可能修改或移除该方法。</paragraph>
-            <paragraph>Sets the current debugging lines that remain.</paragraph>
+            <paragraph><strong>实验性：</strong> 未来版本中可能会修改或移除该方法。</paragraph>
+            <paragraph>设置当前剩余的调试行。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-enginedebugger-method-unregister-message-capture"></target>
             <paragraph classes="classref-method" ids="class-enginedebugger-method-unregister-message-capture" names="class_enginedebugger_method_unregister_message_capture"><abbreviation explanation="无返回值。">void</abbreviation> <strong>unregister_message_capture</strong>(name: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-unregister-message-capture"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -310,12 +310,12 @@
             <paragraph classes="classref-method" ids="class-enginedebugger-method-unregister-profiler" names="class_enginedebugger_method_unregister_profiler"><abbreviation explanation="无返回值。">void</abbreviation> <strong>unregister_profiler</strong>(name: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-enginedebugger-method-unregister-profiler"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将具有给定名称 <literal>name</literal> 的分析器解除注册。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

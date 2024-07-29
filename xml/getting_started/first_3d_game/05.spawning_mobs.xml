@@ -11,7 +11,7 @@
         <paragraph>在绘制路径之前，我们要修改游戏的分辨率。我们的游戏默认的窗口大小是 <literal>1152x648</literal>。我们要把它设成 <literal>720x540</literal>，一个小巧的方块。</paragraph>
         <paragraph>前往<emphasis>项目 -&gt; 项目设置</emphasis>。</paragraph>
         <paragraph><image alt="image1" candidates="{'*': 'getting_started/first_3d_game/img/05.spawning_mobs/02.project_settings.png'}" uri="getting_started/first_3d_game/img/05.spawning_mobs/02.project_settings.png"></image></paragraph>
-        <paragraph>If you still have <emphasis>Input Map</emphasis> open, switch to the <emphasis>General</emphasis> tab.</paragraph>
+        <paragraph>如果你仍然打开着*输入映射*，请切换到*通用*页签。</paragraph>
         <paragraph>在左侧菜单中，找到 <emphasis>Display -&gt; Window</emphasis>（显示 -&gt; 窗口）。在右侧将 <emphasis>Width</emphasis>（宽度）设为 <literal>720</literal>、<emphasis>Height</emphasis>（高度）设为 <literal>540</literal>。</paragraph>
         <paragraph><image alt="image2" candidates="{'*': 'getting_started/first_3d_game/img/05.spawning_mobs/03.window_settings.webp'}" uri="getting_started/first_3d_game/img/05.spawning_mobs/03.window_settings.webp"></image></paragraph>
         <section ids="creating-the-spawn-path" names="creating\ the\ spawn\ path 创建生成路径">
@@ -168,7 +168,7 @@ private void OnMobTimerTimeout()
                 </div>
             </container>
             <paragraph>正如上面所示， <literal>randf ()</literal> 会生成一个介于 <literal>0</literal> 和 <literal>1</literal> 之间的随机值，这个数值是 <emphasis>PathFollow</emphasis> 节点的 <literal>progress_ratio</literal> 属性所期望的：0 代表路径的开始点，1 代表路径的终点。 我们之前设置的路径是围绕着相机视口的，因此任何 0 到 1 之间的随机值都代表着沿着视口边缘的随机位置！</paragraph>
-            <paragraph>Note that if you remove the <literal>Player</literal> from the main scene, the following line</paragraph>
+            <paragraph>注意：如果你从主场景中移除了 <literal>Player</literal>，那接下来的几行会</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -181,7 +181,7 @@ private void OnMobTimerTimeout()
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">Vector3 playerPosition = GetNode&lt;Player&gt;("Player").Position;</literal_block>
                 </div>
             </container>
-            <paragraph>gives an error because there is no $Player!</paragraph>
+            <paragraph>由于此处没有 $Player 导致报错！</paragraph>
             <paragraph>这是目前完整的 <literal>main.gd</literal> 脚本，仅供参考。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">

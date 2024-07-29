@@ -50,6 +50,8 @@ iOS 导出器。
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/export_project_only<class_EditorExportPlatformIOS_property_application/export_project_only>`                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/generate_simulator_library_if_missing<class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                                                               |
@@ -440,7 +442,7 @@ iOS 导出器。
 
 :ref:`String<class_String>` **application/additional_plist_content** :ref:`🔗<class_EditorExportPlatformIOS_property_application/additional_plist_content>`
 
-Additional data added to the root ``<dict>`` section of the `Info.plist <https://developer.apple.com/documentation/bundleresources/information_property_list>`__ file. The value should be an XML section with pairs of key-value elements, e.g.:
+添加到 `Info.plist <https://developer.apple.com/documentation/bundleresources/information_property_list>`__ 文件的根 ``<dict>`` 部分的其他数据。该值应该是带有键值元素对的 XML 部分，例如：
 
 .. code:: text
 
@@ -505,7 +507,7 @@ Apple 团队 ID，唯一的 10 字符的字符串。要找到你的团队 ID，�
 
 :ref:`bool<class_bool>` **application/delete_old_export_files_unconditionally** :ref:`🔗<class_EditorExportPlatformIOS_property_application/delete_old_export_files_unconditionally>`
 
-If ``true``, existing "project name" and "project name.xcodeproj" in the export destination directory will be unconditionally deleted during export.
+如果为 ``true``\ ，则导出时将无条件删除导出目标目录中已有的“项目名称”和“项目名称.xcodeproj”。
 
 .. rst-class:: classref-item-separator
 
@@ -542,6 +544,18 @@ If ``true``, existing "project name" and "project name.xcodeproj" in the export 
 :ref:`bool<class_bool>` **application/export_project_only** :ref:`🔗<class_EditorExportPlatformIOS_property_application/export_project_only>`
 
 如果为 ``true``\ ，则导出 iOS 项目文件而不构建一份 XCArchive 或 ``.ipa`` 文件。如果为 ``false``\ ，则导出 iOS 项目文件并同时构建一份 XCArchive 和 ``.ipa`` 文件。将 Godot 与 Fastlane 或其他构建管道结合使用时，你可能需要将其设置为 ``true``\ 。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/generate_simulator_library_if_missing** :ref:`🔗<class_EditorExportPlatformIOS_property_application/generate_simulator_library_if_missing>`
+
+If ``true``, and ARM64 simulator library is missing from the export template, it is automatically generated from ARM64 device library.
 
 .. rst-class:: classref-item-separator
 
@@ -885,7 +899,7 @@ iPad 和 iPhone 上的“聚焦”图标文件（2x DPI）。如果留空，则�
 
 :ref:`int<class_int>` **privacy/active_keyboard_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/active_keyboard_access_reasons>`
 
-The reasons your app use active keyboard API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+你的应用使用活动键盘 API 的原因。请参阅 `描述所需原因 API 的使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -921,7 +935,7 @@ The reasons your app use active keyboard API. See `Describing use of required re
 
 :ref:`bool<class_bool>` **privacy/collected_data/advertising_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collected>`
 
-Indicates whether your app collects advertising data.
+表示你的应用是否会收集广告数据。
 
 .. rst-class:: classref-item-separator
 
@@ -933,7 +947,7 @@ Indicates whether your app collects advertising data.
 
 :ref:`int<class_int>` **privacy/collected_data/advertising_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collection_purposes>`
 
-The reasons your app collects advertising data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集广告数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -945,7 +959,7 @@ The reasons your app collects advertising data. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/advertising_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/linked_to_user>`
 
-Indicates whether your app links advertising data to the user's identity.
+表示你的应用是否会将广告数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -957,7 +971,7 @@ Indicates whether your app links advertising data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/advertising_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/used_for_tracking>`
 
-Indicates whether your app uses advertising data for tracking.
+表示你的应用是否会将广告数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -969,7 +983,7 @@ Indicates whether your app uses advertising data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/audio_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collected>`
 
-Indicates whether your app collects audio data data.
+表示你的应用是否会收集音频数据。
 
 .. rst-class:: classref-item-separator
 
@@ -981,7 +995,7 @@ Indicates whether your app collects audio data data.
 
 :ref:`int<class_int>` **privacy/collected_data/audio_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collection_purposes>`
 
-The reasons your app collects audio data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集音频数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -993,7 +1007,7 @@ The reasons your app collects audio data. See `Describing data use in privacy ma
 
 :ref:`bool<class_bool>` **privacy/collected_data/audio_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/linked_to_user>`
 
-Indicates whether your app links audio data data to the user's identity.
+表示你的应用是否会将音频数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1005,7 +1019,7 @@ Indicates whether your app links audio data data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/audio_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/used_for_tracking>`
 
-Indicates whether your app uses audio data data for tracking.
+表示你的应用是否会将音频数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1017,7 +1031,7 @@ Indicates whether your app uses audio data data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/browsing_history/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collected>`
 
-Indicates whether your app collects browsing history.
+表示你的应用是否会收集浏览历史。
 
 .. rst-class:: classref-item-separator
 
@@ -1029,7 +1043,7 @@ Indicates whether your app collects browsing history.
 
 :ref:`int<class_int>` **privacy/collected_data/browsing_history/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collection_purposes>`
 
-The reasons your app collects browsing history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集浏览历史记录的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1041,7 +1055,7 @@ The reasons your app collects browsing history. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/browsing_history/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/linked_to_user>`
 
-Indicates whether your app links browsing history to the user's identity.
+表示你的应用是否会将浏览历史链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1053,7 +1067,7 @@ Indicates whether your app links browsing history to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/browsing_history/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/used_for_tracking>`
 
-Indicates whether your app uses browsing history for tracking.
+表示你的应用是否会将浏览历史用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1065,7 +1079,7 @@ Indicates whether your app uses browsing history for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/coarse_location/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collected>`
 
-Indicates whether your app collects coarse location data.
+表示你的应用是否会收集粗略位置数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1077,7 +1091,7 @@ Indicates whether your app collects coarse location data.
 
 :ref:`int<class_int>` **privacy/collected_data/coarse_location/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collection_purposes>`
 
-The reasons your app collects coarse location data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集粗略位置数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1089,7 +1103,7 @@ The reasons your app collects coarse location data. See `Describing data use in 
 
 :ref:`bool<class_bool>` **privacy/collected_data/coarse_location/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/linked_to_user>`
 
-Indicates whether your app links coarse location data to the user's identity.
+表示你的应用是否会将粗略位置数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1101,7 +1115,7 @@ Indicates whether your app links coarse location data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/coarse_location/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/used_for_tracking>`
 
-Indicates whether your app uses coarse location data for tracking.
+表示你的应用是否会将粗略位置数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1113,7 +1127,7 @@ Indicates whether your app uses coarse location data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/contacts/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collected>`
 
-Indicates whether your app collects contacts.
+表示你的应用程序是否收集联系人。
 
 .. rst-class:: classref-item-separator
 
@@ -1125,7 +1139,7 @@ Indicates whether your app collects contacts.
 
 :ref:`int<class_int>` **privacy/collected_data/contacts/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collection_purposes>`
 
-The reasons your app collects contacts. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集联系人的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1137,7 +1151,7 @@ The reasons your app collects contacts. See `Describing data use in privacy mani
 
 :ref:`bool<class_bool>` **privacy/collected_data/contacts/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/linked_to_user>`
 
-Indicates whether your app links contacts to the user's identity.
+表示你的应用是否会将通讯录链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1149,7 +1163,7 @@ Indicates whether your app links contacts to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/contacts/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/used_for_tracking>`
 
-Indicates whether your app uses contacts for tracking.
+表示你的应用是否会将通讯录用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1161,7 +1175,7 @@ Indicates whether your app uses contacts for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/crash_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collected>`
 
-Indicates whether your app collects crash data.
+表示你的应用是否会收集崩溃数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1173,7 +1187,7 @@ Indicates whether your app collects crash data.
 
 :ref:`int<class_int>` **privacy/collected_data/crash_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collection_purposes>`
 
-The reasons your app collects crash data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集崩溃数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1185,7 +1199,7 @@ The reasons your app collects crash data. See `Describing data use in privacy ma
 
 :ref:`bool<class_bool>` **privacy/collected_data/crash_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/linked_to_user>`
 
-Indicates whether your app links crash data to the user's identity.
+表示你的应用是否会将崩溃数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1197,7 +1211,7 @@ Indicates whether your app links crash data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/crash_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/used_for_tracking>`
 
-Indicates whether your app uses crash data for tracking.
+表示你的应用是否会将崩溃数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1209,7 +1223,7 @@ Indicates whether your app uses crash data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/credit_info/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collected>`
 
-Indicates whether your app collects credit information.
+表示你的应用程序是否收集信用信息。
 
 .. rst-class:: classref-item-separator
 
@@ -1221,7 +1235,7 @@ Indicates whether your app collects credit information.
 
 :ref:`int<class_int>` **privacy/collected_data/credit_info/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collection_purposes>`
 
-The reasons your app collects credit information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集信用信息的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1233,7 +1247,7 @@ The reasons your app collects credit information. See `Describing data use in pr
 
 :ref:`bool<class_bool>` **privacy/collected_data/credit_info/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/linked_to_user>`
 
-Indicates whether your app links credit information to the user's identity.
+表示你的应用是否会将信用信息链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1245,7 +1259,7 @@ Indicates whether your app links credit information to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/credit_info/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/used_for_tracking>`
 
-Indicates whether your app uses credit information for tracking.
+表示你的应用是否会将信用信息用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1257,7 +1271,7 @@ Indicates whether your app uses credit information for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/customer_support/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collected>`
 
-Indicates whether your app collects customer support data.
+表示你的应用是否会收集客户支持数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1269,7 +1283,7 @@ Indicates whether your app collects customer support data.
 
 :ref:`int<class_int>` **privacy/collected_data/customer_support/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collection_purposes>`
 
-The reasons your app collects customer support data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集客户支持数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1281,7 +1295,7 @@ The reasons your app collects customer support data. See `Describing data use in
 
 :ref:`bool<class_bool>` **privacy/collected_data/customer_support/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/linked_to_user>`
 
-Indicates whether your app links customer support data to the user's identity.
+表示你的应用程序是否将客户支持数据链接到用户身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1293,7 +1307,7 @@ Indicates whether your app links customer support data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/customer_support/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/used_for_tracking>`
 
-Indicates whether your app uses customer support data for tracking.
+表示你的应用是否使用客户支持数据进行跟踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1305,7 +1319,7 @@ Indicates whether your app uses customer support data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/device_id/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collected>`
 
-Indicates whether your app collects device IDs.
+表示你的应用是否会收集设备 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -1317,7 +1331,7 @@ Indicates whether your app collects device IDs.
 
 :ref:`int<class_int>` **privacy/collected_data/device_id/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collection_purposes>`
 
-The reasons your app collects device IDs. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集设备 ID 的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1329,7 +1343,7 @@ The reasons your app collects device IDs. See `Describing data use in privacy ma
 
 :ref:`bool<class_bool>` **privacy/collected_data/device_id/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/linked_to_user>`
 
-Indicates whether your app links device IDs to the user's identity.
+表示你的应用是否会将设备 ID 链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1341,7 +1355,7 @@ Indicates whether your app links device IDs to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/device_id/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/used_for_tracking>`
 
-Indicates whether your app uses device IDs for tracking.
+表示你的应用是否会将设备 ID 链接用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1353,7 +1367,7 @@ Indicates whether your app uses device IDs for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/email_address/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collected>`
 
-Indicates whether your app collects email address.
+表示你的应用是否会收集电子邮件地址。
 
 .. rst-class:: classref-item-separator
 
@@ -1365,7 +1379,7 @@ Indicates whether your app collects email address.
 
 :ref:`int<class_int>` **privacy/collected_data/email_address/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collection_purposes>`
 
-The reasons your app collects email address. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集电子邮件地址的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1377,7 +1391,7 @@ The reasons your app collects email address. See `Describing data use in privacy
 
 :ref:`bool<class_bool>` **privacy/collected_data/email_address/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/linked_to_user>`
 
-Indicates whether your app links email address to the user's identity.
+表示你的应用是否会将电子邮件地址链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1389,7 +1403,7 @@ Indicates whether your app links email address to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/email_address/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/used_for_tracking>`
 
-Indicates whether your app uses email address for tracking.
+表示你的应用是否会将电子邮件地址用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1401,7 +1415,7 @@ Indicates whether your app uses email address for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collected>`
 
-Indicates whether your app collects emails or text messages.
+表示你的应用是否会收集电子邮件或短信。
 
 .. rst-class:: classref-item-separator
 
@@ -1413,7 +1427,7 @@ Indicates whether your app collects emails or text messages.
 
 :ref:`int<class_int>` **privacy/collected_data/emails_or_text_messages/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collection_purposes>`
 
-The reasons your app collects emails or text messages. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集电子邮件或短信的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1425,7 +1439,7 @@ The reasons your app collects emails or text messages. See `Describing data use 
 
 :ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/linked_to_user>`
 
-Indicates whether your app links emails or text messages to the user's identity.
+表示你的应用是否会将电子邮件或短信链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1437,7 +1451,7 @@ Indicates whether your app links emails or text messages to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/used_for_tracking>`
 
-Indicates whether your app uses emails or text messages for tracking.
+表示你的应用是否会将电子邮件或短信用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1449,7 +1463,7 @@ Indicates whether your app uses emails or text messages for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collected>`
 
-Indicates whether your app collects environment scanning data.
+表示你的应用是否会收集环境扫描数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1461,7 +1475,7 @@ Indicates whether your app collects environment scanning data.
 
 :ref:`int<class_int>` **privacy/collected_data/environment_scanning/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collection_purposes>`
 
-The reasons your app collects environment scanning data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集环境扫描数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1473,7 +1487,7 @@ The reasons your app collects environment scanning data. See `Describing data us
 
 :ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/linked_to_user>`
 
-Indicates whether your app links environment scanning data to the user's identity.
+表示你的应用是否会将环境扫描数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1485,7 +1499,7 @@ Indicates whether your app links environment scanning data to the user's identit
 
 :ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/used_for_tracking>`
 
-Indicates whether your app uses environment scanning data for tracking.
+表示你的应用是否会将环境扫描数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1497,7 +1511,7 @@ Indicates whether your app uses environment scanning data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/fitness/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collected>`
 
-Indicates whether your app collects fitness and exercise data.
+表示你的应用是否会收集健身和锻炼数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1509,7 +1523,7 @@ Indicates whether your app collects fitness and exercise data.
 
 :ref:`int<class_int>` **privacy/collected_data/fitness/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collection_purposes>`
 
-The reasons your app collects fitness and exercise data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集健身和锻炼数据的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1521,7 +1535,7 @@ The reasons your app collects fitness and exercise data. See `Describing data us
 
 :ref:`bool<class_bool>` **privacy/collected_data/fitness/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/linked_to_user>`
 
-Indicates whether your app links fitness and exercise data to the user's identity.
+表示你的应用是否会将健身和锻炼数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1533,7 +1547,7 @@ Indicates whether your app links fitness and exercise data to the user's identit
 
 :ref:`bool<class_bool>` **privacy/collected_data/fitness/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/used_for_tracking>`
 
-Indicates whether your app uses fitness and exercise data for tracking.
+表示你的应用是否会将健身和锻炼数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1545,7 +1559,7 @@ Indicates whether your app uses fitness and exercise data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collected>`
 
-Indicates whether your app collects gameplay content.
+表示你的应用是否会收集游戏内容。
 
 .. rst-class:: classref-item-separator
 
@@ -1557,7 +1571,7 @@ Indicates whether your app collects gameplay content.
 
 :ref:`int<class_int>` **privacy/collected_data/gameplay_content/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collection_purposes>`
 
-The reasons your app collects gameplay content. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集游戏内容的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1569,7 +1583,7 @@ The reasons your app collects gameplay content. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/linked_to_user>`
 
-Indicates whether your app links gameplay content to the user's identity.
+表示你的应用是否会将游戏内容链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1581,7 +1595,7 @@ Indicates whether your app links gameplay content to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/used_for_tracking>`
 
-Indicates whether your app uses gameplay content for tracking.
+表示你的应用是否会将游戏内容用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1593,7 +1607,7 @@ Indicates whether your app uses gameplay content for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/hands/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collected>`
 
-Indicates whether your app collects user's hand structure and hand movements.
+表示你的应用是否会收集用户的手部结构和手部移动。
 
 .. rst-class:: classref-item-separator
 
@@ -1605,7 +1619,7 @@ Indicates whether your app collects user's hand structure and hand movements.
 
 :ref:`int<class_int>` **privacy/collected_data/hands/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collection_purposes>`
 
-The reasons your app collects user's hand structure and hand movements. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集用户的手部结构和手部移动的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1617,7 +1631,7 @@ The reasons your app collects user's hand structure and hand movements. See `Des
 
 :ref:`bool<class_bool>` **privacy/collected_data/hands/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/linked_to_user>`
 
-Indicates whether your app links user's hand structure and hand movements to the user's identity.
+表示你的应用是否会将用户的手部结构和手部移动链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1629,7 +1643,7 @@ Indicates whether your app links user's hand structure and hand movements to the
 
 :ref:`bool<class_bool>` **privacy/collected_data/hands/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/used_for_tracking>`
 
-Indicates whether your app uses user's hand structure and hand movements for tracking.
+表示你的应用是否会将用户的手部结构和手部移动用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1641,7 +1655,7 @@ Indicates whether your app uses user's hand structure and hand movements for tra
 
 :ref:`bool<class_bool>` **privacy/collected_data/head/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/head/collected>`
 
-Indicates whether your app collects user's head movement.
+表示你的应用是否会收集用户的头部移动。
 
 .. rst-class:: classref-item-separator
 
@@ -1653,7 +1667,7 @@ Indicates whether your app collects user's head movement.
 
 :ref:`int<class_int>` **privacy/collected_data/head/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/head/collection_purposes>`
 
-The reasons your app collects user's head movement. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集用户头部运动的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1665,7 +1679,7 @@ The reasons your app collects user's head movement. See `Describing data use in 
 
 :ref:`bool<class_bool>` **privacy/collected_data/head/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/head/linked_to_user>`
 
-Indicates whether your app links user's head movement to the user's identity.
+表示你的应用是否会将用户的头部移动链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1677,7 +1691,7 @@ Indicates whether your app links user's head movement to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/head/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/head/used_for_tracking>`
 
-Indicates whether your app uses user's head movement for tracking.
+表示你的应用是否会将用户的头部移动用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1689,7 +1703,7 @@ Indicates whether your app uses user's head movement for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/health/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/health/collected>`
 
-Indicates whether your app collects health and medical data.
+表示你的应用是否会收集健康和医学数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1701,7 +1715,7 @@ Indicates whether your app collects health and medical data.
 
 :ref:`int<class_int>` **privacy/collected_data/health/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/health/collection_purposes>`
 
-The reasons your app collects health and medical data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集健康和医学数据的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1713,7 +1727,7 @@ The reasons your app collects health and medical data. See `Describing data use 
 
 :ref:`bool<class_bool>` **privacy/collected_data/health/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/health/linked_to_user>`
 
-Indicates whether your app links health and medical data to the user's identity.
+表示你的应用是否会将健康和医学数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1725,7 +1739,7 @@ Indicates whether your app links health and medical data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/health/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/health/used_for_tracking>`
 
-Indicates whether your app uses health and medical data for tracking.
+表示你的应用是否会将健康和医学数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1737,7 +1751,7 @@ Indicates whether your app uses health and medical data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/name/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/name/collected>`
 
-Indicates whether your app collects user's name.
+表示你的应用是否会收集用户的姓名。
 
 .. rst-class:: classref-item-separator
 
@@ -1749,7 +1763,7 @@ Indicates whether your app collects user's name.
 
 :ref:`int<class_int>` **privacy/collected_data/name/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/name/collection_purposes>`
 
-The reasons your app collects user's name. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集用户姓名的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1761,7 +1775,7 @@ The reasons your app collects user's name. See `Describing data use in privacy m
 
 :ref:`bool<class_bool>` **privacy/collected_data/name/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/name/linked_to_user>`
 
-Indicates whether your app links user's name to the user's identity.
+表示你的应用是否会将用户的姓名链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1773,7 +1787,7 @@ Indicates whether your app links user's name to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/name/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/name/used_for_tracking>`
 
-Indicates whether your app uses user's name for tracking.
+表示你的应用是否会将用户的姓名用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1785,7 +1799,7 @@ Indicates whether your app uses user's name for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collected>`
 
-Indicates whether your app collects any other contact information.
+表示你的应用程序是否收集任何其他联系信息。
 
 .. rst-class:: classref-item-separator
 
@@ -1797,7 +1811,7 @@ Indicates whether your app collects any other contact information.
 
 :ref:`int<class_int>` **privacy/collected_data/other_contact_info/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collection_purposes>`
 
-The reasons your app collects any other contact information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收程序集任何其他联系信息的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1809,7 +1823,7 @@ The reasons your app collects any other contact information. See `Describing dat
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/linked_to_user>`
 
-Indicates whether your app links any other contact information to the user's identity.
+表示你的应用是否会将任何其他联系信息链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1821,7 +1835,7 @@ Indicates whether your app links any other contact information to the user's ide
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/used_for_tracking>`
 
-Indicates whether your app uses any other contact information for tracking.
+表示你的应用是否会将任何其他联系信息用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1833,7 +1847,7 @@ Indicates whether your app uses any other contact information for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_data_types/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collected>`
 
-Indicates whether your app collects any other data.
+表示你的应用是否会收集任何其它数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1845,7 +1859,7 @@ Indicates whether your app collects any other data.
 
 :ref:`int<class_int>` **privacy/collected_data/other_data_types/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collection_purposes>`
 
-The reasons your app collects any other data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集任何其他数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1857,7 +1871,7 @@ The reasons your app collects any other data. See `Describing data use in privac
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_data_types/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/linked_to_user>`
 
-Indicates whether your app links any other data to the user's identity.
+表示你的应用是否会将任何其它数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1869,7 +1883,7 @@ Indicates whether your app links any other data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_data_types/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/used_for_tracking>`
 
-Indicates whether your app uses any other data for tracking.
+表示你的应用是否会将任何其它数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1881,7 +1895,7 @@ Indicates whether your app uses any other data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collected>`
 
-Indicates whether your app collects any other diagnostic data.
+表示你的应用是否会收集任何其它诊断数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1893,7 +1907,7 @@ Indicates whether your app collects any other diagnostic data.
 
 :ref:`int<class_int>` **privacy/collected_data/other_diagnostic_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collection_purposes>`
 
-The reasons your app collects any other diagnostic data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集任何其他诊断数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1905,7 +1919,7 @@ The reasons your app collects any other diagnostic data. See `Describing data us
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/linked_to_user>`
 
-Indicates whether your app links any other diagnostic data to the user's identity.
+表示你的应用是否会将任何其它诊断数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1917,7 +1931,7 @@ Indicates whether your app links any other diagnostic data to the user's identit
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/used_for_tracking>`
 
-Indicates whether your app uses any other diagnostic data for tracking.
+表示你的应用是否会将任何其它诊断数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1929,7 +1943,7 @@ Indicates whether your app uses any other diagnostic data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collected>`
 
-Indicates whether your app collects any other financial information.
+表示你的应用程序是否收集任何其他财务信息。
 
 .. rst-class:: classref-item-separator
 
@@ -1941,7 +1955,7 @@ Indicates whether your app collects any other financial information.
 
 :ref:`int<class_int>` **privacy/collected_data/other_financial_info/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collection_purposes>`
 
-The reasons your app collects any other financial information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集任何其他财务信息的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1953,7 +1967,7 @@ The reasons your app collects any other financial information. See `Describing d
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/linked_to_user>`
 
-Indicates whether your app links any other financial information to the user's identity.
+表示你的应用是否会将任何其它财务信息链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -1965,7 +1979,7 @@ Indicates whether your app links any other financial information to the user's i
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/used_for_tracking>`
 
-Indicates whether your app uses any other financial information for tracking.
+表示你的应用是否会将任何其它财务信息用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -1977,7 +1991,7 @@ Indicates whether your app uses any other financial information for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collected>`
 
-Indicates whether your app collects any other usage data.
+表示你的应用是否会收集任何其它使用数据。
 
 .. rst-class:: classref-item-separator
 
@@ -1989,7 +2003,7 @@ Indicates whether your app collects any other usage data.
 
 :ref:`int<class_int>` **privacy/collected_data/other_usage_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collection_purposes>`
 
-The reasons your app collects any other usage data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集任何其他使用数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2001,7 +2015,7 @@ The reasons your app collects any other usage data. See `Describing data use in 
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/linked_to_user>`
 
-Indicates whether your app links any other usage data to the user's identity.
+表示你的应用是否会将任何其它使用数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2013,7 +2027,7 @@ Indicates whether your app links any other usage data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/used_for_tracking>`
 
-Indicates whether your app uses any other usage data for tracking.
+表示你的应用是否会将任何其它使用数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2025,7 +2039,7 @@ Indicates whether your app uses any other usage data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_user_content/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collected>`
 
-Indicates whether your app collects any other user generated content.
+表示你的应用是否会收集任何其它用户生成内容。
 
 .. rst-class:: classref-item-separator
 
@@ -2037,7 +2051,7 @@ Indicates whether your app collects any other user generated content.
 
 :ref:`int<class_int>` **privacy/collected_data/other_user_content/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collection_purposes>`
 
-The reasons your app collects any other user generated content. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集任何其他用户生成内容的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2049,7 +2063,7 @@ The reasons your app collects any other user generated content. See `Describing 
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_user_content/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/linked_to_user>`
 
-Indicates whether your app links any other user generated content to the user's identity.
+表示你的应用是否会将任何其它用户生成内容链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2061,7 +2075,7 @@ Indicates whether your app links any other user generated content to the user's 
 
 :ref:`bool<class_bool>` **privacy/collected_data/other_user_content/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/used_for_tracking>`
 
-Indicates whether your app uses any other user generated content for tracking.
+表示你的应用是否会将任何其它用户生成内容用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2073,7 +2087,7 @@ Indicates whether your app uses any other user generated content for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/payment_info/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collected>`
 
-Indicates whether your app collects payment information.
+表示你的应用程序是否收集支付信息。
 
 .. rst-class:: classref-item-separator
 
@@ -2085,7 +2099,7 @@ Indicates whether your app collects payment information.
 
 :ref:`int<class_int>` **privacy/collected_data/payment_info/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collection_purposes>`
 
-The reasons your app collects payment information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集支付信息的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2097,7 +2111,7 @@ The reasons your app collects payment information. See `Describing data use in p
 
 :ref:`bool<class_bool>` **privacy/collected_data/payment_info/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/linked_to_user>`
 
-Indicates whether your app links payment information to the user's identity.
+表示你的应用是否会将支付信息链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2109,7 +2123,7 @@ Indicates whether your app links payment information to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/payment_info/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/used_for_tracking>`
 
-Indicates whether your app uses payment information for tracking.
+表示你的应用是否会将支付信息用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2121,7 +2135,7 @@ Indicates whether your app uses payment information for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/performance_data/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collected>`
 
-Indicates whether your app collects performance data.
+表示你的应用程序是否收集性能数据。
 
 .. rst-class:: classref-item-separator
 
@@ -2133,7 +2147,7 @@ Indicates whether your app collects performance data.
 
 :ref:`int<class_int>` **privacy/collected_data/performance_data/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collection_purposes>`
 
-The reasons your app collects performance data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集性能数据的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2145,7 +2159,7 @@ The reasons your app collects performance data. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/performance_data/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/linked_to_user>`
 
-Indicates whether your app links performance data to the user's identity.
+表示你的应用是否会将性能数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2157,7 +2171,7 @@ Indicates whether your app links performance data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/performance_data/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/used_for_tracking>`
 
-Indicates whether your app uses performance data for tracking.
+表示你的应用是否会将性能数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2169,7 +2183,7 @@ Indicates whether your app uses performance data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/phone_number/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collected>`
 
-Indicates whether your app collects phone number.
+表示你的应用是否会收集电话号码。
 
 .. rst-class:: classref-item-separator
 
@@ -2181,7 +2195,7 @@ Indicates whether your app collects phone number.
 
 :ref:`int<class_int>` **privacy/collected_data/phone_number/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collection_purposes>`
 
-The reasons your app collects phone number. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集电话号码的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2193,7 +2207,7 @@ The reasons your app collects phone number. See `Describing data use in privacy 
 
 :ref:`bool<class_bool>` **privacy/collected_data/phone_number/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/linked_to_user>`
 
-Indicates whether your app links phone number to the user's identity.
+表示你的应用是否会将电话号码链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2205,7 +2219,7 @@ Indicates whether your app links phone number to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/phone_number/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/used_for_tracking>`
 
-Indicates whether your app uses phone number for tracking.
+表示你的应用是否会将电话号码用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2217,7 +2231,7 @@ Indicates whether your app uses phone number for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collected>`
 
-Indicates whether your app collects photos or videos.
+表示你的应用程序是否收集照片或视频。
 
 .. rst-class:: classref-item-separator
 
@@ -2229,7 +2243,7 @@ Indicates whether your app collects photos or videos.
 
 :ref:`int<class_int>` **privacy/collected_data/photos_or_videos/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collection_purposes>`
 
-The reasons your app collects photos or videos. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集照片或视频的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2241,7 +2255,7 @@ The reasons your app collects photos or videos. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/linked_to_user>`
 
-Indicates whether your app links photos or videos to the user's identity.
+表示你的应用是否会将照片或视频链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2253,7 +2267,7 @@ Indicates whether your app links photos or videos to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/used_for_tracking>`
 
-Indicates whether your app uses photos or videos for tracking.
+表示你的应用是否会将照片或视频用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2265,7 +2279,7 @@ Indicates whether your app uses photos or videos for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/physical_address/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collected>`
 
-Indicates whether your app collects physical address.
+表示你的应用是否会收集实际住址。
 
 .. rst-class:: classref-item-separator
 
@@ -2277,7 +2291,7 @@ Indicates whether your app collects physical address.
 
 :ref:`int<class_int>` **privacy/collected_data/physical_address/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collection_purposes>`
 
-The reasons your app collects physical address. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集实际住址的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2289,7 +2303,7 @@ The reasons your app collects physical address. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/physical_address/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/linked_to_user>`
 
-Indicates whether your app links physical address to the user's identity.
+表示你的应用是否会将实际住址链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2301,7 +2315,7 @@ Indicates whether your app links physical address to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/physical_address/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/used_for_tracking>`
 
-Indicates whether your app uses physical address for tracking.
+表示你的应用是否会将实际住址用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2313,7 +2327,7 @@ Indicates whether your app uses physical address for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/precise_location/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collected>`
 
-Indicates whether your app collects precise location data.
+表示你的应用是否会收集精确位置数据。
 
 .. rst-class:: classref-item-separator
 
@@ -2325,7 +2339,7 @@ Indicates whether your app collects precise location data.
 
 :ref:`int<class_int>` **privacy/collected_data/precise_location/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collection_purposes>`
 
-The reasons your app collects precise location data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集精确位置数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2337,7 +2351,7 @@ The reasons your app collects precise location data. See `Describing data use in
 
 :ref:`bool<class_bool>` **privacy/collected_data/precise_location/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/linked_to_user>`
 
-Indicates whether your app links precise location data to the user's identity.
+表示你的应用是否会将精确位置数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2349,7 +2363,7 @@ Indicates whether your app links precise location data to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/precise_location/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/used_for_tracking>`
 
-Indicates whether your app uses precise location data for tracking.
+表示你的应用是否会将精确位置数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2361,7 +2375,7 @@ Indicates whether your app uses precise location data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/product_interaction/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collected>`
 
-Indicates whether your app collects product interaction data.
+表示你的应用是否会收集产品互动数据。
 
 .. rst-class:: classref-item-separator
 
@@ -2373,7 +2387,7 @@ Indicates whether your app collects product interaction data.
 
 :ref:`int<class_int>` **privacy/collected_data/product_interaction/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collection_purposes>`
 
-The reasons your app collects product interaction data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集产品互动数据的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2385,7 +2399,7 @@ The reasons your app collects product interaction data. See `Describing data use
 
 :ref:`bool<class_bool>` **privacy/collected_data/product_interaction/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/linked_to_user>`
 
-Indicates whether your app links product interaction data to the user's identity.
+表示你的应用是否会将产品互动数据链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2397,7 +2411,7 @@ Indicates whether your app links product interaction data to the user's identity
 
 :ref:`bool<class_bool>` **privacy/collected_data/product_interaction/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/used_for_tracking>`
 
-Indicates whether your app uses product interaction data for tracking.
+表示你的应用是否会将产品互动数据用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2409,7 +2423,7 @@ Indicates whether your app uses product interaction data for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/purchase_history/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collected>`
 
-Indicates whether your app collects purchase history.
+表示你的应用是否会收集购买历史。
 
 .. rst-class:: classref-item-separator
 
@@ -2421,7 +2435,7 @@ Indicates whether your app collects purchase history.
 
 :ref:`int<class_int>` **privacy/collected_data/purchase_history/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collection_purposes>`
 
-The reasons your app collects purchase history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用收集购买历史的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2433,7 +2447,7 @@ The reasons your app collects purchase history. See `Describing data use in priv
 
 :ref:`bool<class_bool>` **privacy/collected_data/purchase_history/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/linked_to_user>`
 
-Indicates whether your app links purchase history to the user's identity.
+表示你的应用是否会将购买历史链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2445,7 +2459,7 @@ Indicates whether your app links purchase history to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/purchase_history/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/used_for_tracking>`
 
-Indicates whether your app uses purchase history for tracking.
+表示你的应用是否会将购买历史用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2457,7 +2471,7 @@ Indicates whether your app uses purchase history for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collected>`
 
-Indicates whether your app collects search history.
+表示你的应用程序是否收集搜索历史记录。
 
 .. rst-class:: classref-item-separator
 
@@ -2469,7 +2483,7 @@ Indicates whether your app collects search history.
 
 :ref:`int<class_int>` **privacy/collected_data/search_hhistory/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collection_purposes>`
 
-The reasons your app collects search history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集搜索历史的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2481,7 +2495,7 @@ The reasons your app collects search history. See `Describing data use in privac
 
 :ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/linked_to_user>`
 
-Indicates whether your app links search history to the user's identity.
+表示你的应用是否会将搜索历史链接到用户的身份。
 
 .. rst-class:: classref-item-separator
 
@@ -2493,7 +2507,7 @@ Indicates whether your app links search history to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/used_for_tracking>`
 
-Indicates whether your app uses search history for tracking.
+表示你的应用是否会将搜索历史用于追踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2505,7 +2519,7 @@ Indicates whether your app uses search history for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collected>`
 
-Indicates whether your app collects sensitive user information.
+表示你的应用程序是否收集敏感的用户信息。
 
 .. rst-class:: classref-item-separator
 
@@ -2517,7 +2531,7 @@ Indicates whether your app collects sensitive user information.
 
 :ref:`int<class_int>` **privacy/collected_data/sensitive_info/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collection_purposes>`
 
-The reasons your app collects sensitive user information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的应用程序收集敏感用户信息的原因。请参阅 `描述隐私清单中的数据使用 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2529,7 +2543,7 @@ The reasons your app collects sensitive user information. See `Describing data u
 
 :ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/linked_to_user>`
 
-Indicates whether your app links sensitive user information to the user's identity.
+表示你的 app 是否会将敏感用户信息链接到用户的身份上。
 
 .. rst-class:: classref-item-separator
 
@@ -2541,7 +2555,7 @@ Indicates whether your app links sensitive user information to the user's identi
 
 :ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/used_for_tracking>`
 
-Indicates whether your app uses sensitive user information for tracking.
+表示你的 app 是否会将敏感用户信息用于跟踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2553,7 +2567,7 @@ Indicates whether your app uses sensitive user information for tracking.
 
 :ref:`bool<class_bool>` **privacy/collected_data/user_id/collected** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collected>`
 
-Indicates whether your app collects user IDs.
+表示你的 app 是否会收集用户 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -2565,7 +2579,7 @@ Indicates whether your app collects user IDs.
 
 :ref:`int<class_int>` **privacy/collected_data/user_id/collection_purposes** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collection_purposes>`
 
-The reasons your app collects user IDs. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+你的 app 收集用户 ID 的原因。见\ `《在隐私清单中描述数据用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2577,7 +2591,7 @@ The reasons your app collects user IDs. See `Describing data use in privacy mani
 
 :ref:`bool<class_bool>` **privacy/collected_data/user_id/linked_to_user** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/linked_to_user>`
 
-Indicates whether your app links user IDs to the user's identity.
+表示你的 app 是否会将用户 ID 链接到用户的身份上。
 
 .. rst-class:: classref-item-separator
 
@@ -2589,7 +2603,7 @@ Indicates whether your app links user IDs to the user's identity.
 
 :ref:`bool<class_bool>` **privacy/collected_data/user_id/used_for_tracking** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/used_for_tracking>`
 
-Indicates whether your app uses user IDs for tracking.
+表示你的 app 是否会将用户 ID 用于跟踪。
 
 .. rst-class:: classref-item-separator
 
@@ -2601,7 +2615,7 @@ Indicates whether your app uses user IDs for tracking.
 
 :ref:`int<class_int>` **privacy/disk_space_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/disk_space_access_reasons>`
 
-The reasons your app use free disk space API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+你的 app 使用磁盘空间清理 API 的原因。见\ `《描述使用需要原因的 API 的用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2613,7 +2627,7 @@ The reasons your app use free disk space API. See `Describing use of required re
 
 :ref:`int<class_int>` **privacy/file_timestamp_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/file_timestamp_access_reasons>`
 
-The reasons your app use file timestamp/metadata API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+你的 app 使用文件时间戳/元数据 API 的原因。见\ `《描述使用需要原因的 API 的用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2673,7 +2687,7 @@ The reasons your app use file timestamp/metadata API. See `Describing use of req
 
 :ref:`int<class_int>` **privacy/system_boot_time_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/system_boot_time_access_reasons>`
 
-The reasons your app use system boot time / absolute time API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+你的 app 使用系统启动时间/绝对时间 API 的原因。见\ `《描述使用需要原因的 API 的用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2685,7 +2699,7 @@ The reasons your app use system boot time / absolute time API. See `Describing u
 
 :ref:`PackedStringArray<class_PackedStringArray>` **privacy/tracking_domains** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/tracking_domains>`
 
-The list of internet domains your app connects to that engage in tracking. See `Privacy manifest files <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__.
+你的应用程序连接到的参与跟踪的互联网域列表。请参阅 `隐私清单文件 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__\ 。
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
@@ -2699,7 +2713,7 @@ The list of internet domains your app connects to that engage in tracking. See `
 
 :ref:`bool<class_bool>` **privacy/tracking_enabled** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/tracking_enabled>`
 
-Indicates whether your app uses data for tracking. See `Privacy manifest files <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__.
+表示你的应用程序是否使用数据进行跟踪。请参阅 `隐私清单文件 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2711,7 +2725,7 @@ Indicates whether your app uses data for tracking. See `Privacy manifest files <
 
 :ref:`int<class_int>` **privacy/user_defaults_access_reasons** :ref:`🔗<class_EditorExportPlatformIOS_property_privacy/user_defaults_access_reasons>`
 
-The reasons your app use user defaults API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+你的 app 使用用户默认值 API 的原因。见\ `《描述使用需要原因的 API 的用途》 <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2798,10 +2812,10 @@ Storyboard 启动屏幕的自定义背景色。
 如果为 ``true``\ ，应用的“Documents”文件夹可以在 iTunes 文件共享中访问。见 `UIFileSharingEnabled <https://developer.apple.com/documentation/bundleresources/information_property_list/uifilesharingenabled>`__\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

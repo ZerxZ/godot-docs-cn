@@ -26,8 +26,8 @@
                     device).
                     You don't need to enable it to use the GDScript debugger locally.</paragraph>
             </section>
-            <section ids="small-deploy-with-network-filesystem" names="small\ deploy\ with\ network\ filesystem">
-                <title>Small Deploy with Network Filesystem</title>
+            <section ids="small-deploy-with-network-filesystem" names="small\ deploy\ with\ network\ filesystem 使用网络文件系统进行小型部署">
+                <title>使用网络文件系统进行小型部署</title>
                 <paragraph>这个选项加快了在远程设备上进行大足迹游戏的测试.</paragraph>
                 <paragraph>When <strong>Small Deploy with Network Filesystem</strong> is on, instead of exporting the
                     full game, deploying the game builds a minimal executable. The editor then
@@ -39,61 +39,50 @@
                 <paragraph>When this option is enabled, collision shapes and raycast nodes (for 2D and 3D)
                     will be visible in the running project.</paragraph>
             </section>
-            <section ids="visible-paths" names="visible\ paths">
-                <title>Visible Paths</title>
-                <paragraph>When this option is enabled, curve resources used by path nodes will be visible
-                    in the running project.</paragraph>
+            <section ids="visible-paths" names="visible\ paths 显示路径">
+                <title>显示路径</title>
+                <paragraph>启用该选项时，路径节点的曲线资源将在项目运行时可见。</paragraph>
             </section>
             <section ids="visible-navigation" names="visible\ navigation 显示导航">
                 <title>显示导航</title>
-                <paragraph>When this option is enabled, navigation meshes, and polygons will be visible in
-                    the running project.</paragraph>
+                <paragraph>启用该选项时，导航网格和多边形将在项目运行时可见。</paragraph>
             </section>
-            <section ids="visible-avoidance" names="visible\ avoidance">
-                <title>Visible Avoidance</title>
-                <paragraph>When this option is enabled, avoidance object shapes, radiuses, and velocities
-                    will be visible in the running project.</paragraph>
+            <section ids="visible-avoidance" names="visible\ avoidance 显示避障">
+                <title>显示避障</title>
+                <paragraph>启用该选项时，避障对象的形状、半径、速度都将在项目运行时可见。</paragraph>
             </section>
-            <section ids="debug-canvasitem-redraws" names="debug\ canvasitem\ redraws">
-                <title>Debug CanvasItem Redraws</title>
-                <paragraph>When this option is enabled, redraw requests of 2D objects will become visible
-                    (as a short flash) in the running project.
-                    This is useful to troubleshoot low processor mode.</paragraph>
+            <section ids="debug-canvasitem-redraws" names="debug\ canvasitem\ redraws 调试\ canvasitem\ 重绘">
+                <title>调试 CanvasItem 重绘</title>
+                <paragraph>启用该选项时，2D 对象的重绘请求将在项目运行时可见（短暂的闪光）。可用于低处理器模式下的故障排除。</paragraph>
             </section>
-            <section ids="synchronize-scene-changes" names="synchronize\ scene\ changes">
-                <title>Synchronize Scene Changes</title>
-                <paragraph>When this option is enabled, any changes made to the scene in the editor will be
-                    replicated in the running project.
-                    When used remotely on a device, this is more efficient when the network
-                    filesystem option is enabled.</paragraph>
+            <section ids="synchronize-scene-changes" names="synchronize\ scene\ changes 同步场景修改">
+                <title>同步场景修改</title>
+                <paragraph>启用该选项时，在编辑器中对场景的任何修改都会被应用于正在运行的项目中。当使用于远程设备时，启用网络文件系统能提高编辑效率。</paragraph>
             </section>
-            <section ids="synchronize-script-changes" names="synchronize\ script\ changes">
-                <title>Synchronize Script Changes</title>
-                <paragraph>When this option is enabled, any changes made to the script in the editor will
-                    be reloaded in the running project. When used
-                    remotely on a device, this is more efficient with the network filesystem.</paragraph>
+            <section ids="synchronize-script-changes" names="synchronize\ script\ changes 同步脚本修改">
+                <title>同步脚本修改</title>
+                <paragraph>启用该选项时，任何保存的脚本都会被正在运行的项目重新加载。当使用于远程设备时，启用网络文件系统能提高编辑效率。</paragraph>
             </section>
-            <section ids="keep-debug-server-open" names="keep\ debug\ server\ open">
-                <title>Keep Debug Server Open</title>
-                <paragraph>When this option is enabled, the editor debug server will stay open and listen
-                    for new sessions started outside of the editor itself.</paragraph>
+            <section ids="keep-debug-server-open" names="keep\ debug\ server\ open 调试服务器保持开放">
+                <title>调试服务器保持开放</title>
+                <paragraph>启用该选项时，编辑器的调试服务器将保持开放，监听在编辑器本身之外开始的新会话。</paragraph>
             </section>
-            <section ids="customize-run-instances" names="customize\ run\ instances...">
-                <title>Customize Run Instances...</title>
+            <section ids="customize-run-instances" names="customize\ run\ instances... 自定义运行实例...">
+                <title>自定义运行实例...</title>
                 <paragraph>This opens a dialog allowing you to tell Godot to run multiple instances of the
                     game at once, and to specify the command line arguments for each instance. This
                     is especially useful when building and debugging multiplayer games.</paragraph>
                 <image candidates="{'*': 'tutorials/scripting/debug/img/customize_run_instances.webp'}" uri="tutorials/scripting/debug/img/customize_run_instances.webp"></image>
-                <section ids="enable-multiple-instances" names="enable\ multiple\ instances">
-                    <title>Enable Multiple Instances</title>
+                <section ids="enable-multiple-instances" names="enable\ multiple\ instances 启用多实例">
+                    <title>启用多实例</title>
                     <paragraph>When this option is enabled, the editor will run multiple instances of the
                         project at once when you Run Project.</paragraph>
                     <paragraph>Below this checkbox is a selector to pick how many instances to run.</paragraph>
                     <paragraph>Checking the box and setting this to only 1 is the same as not checking this box
                         at all.</paragraph>
                 </section>
-                <section ids="main-run-args" names="main\ run\ args">
-                    <title>Main Run Args</title>
+                <section ids="main-run-args" names="main\ run\ args 主要运行参数">
+                    <title>主要运行参数</title>
                     <paragraph>These are the arguments that will be passed to <strong>every</strong> instance of the project
                         when you Run Project, unless you select "Enabled" under "Override Main Run Args"
                         for a specific instance.</paragraph>
@@ -107,14 +96,14 @@
                             passed when you Run Project.</paragraph>
                     </warning>
                 </section>
-                <section ids="main-feature-tags" names="main\ feature\ tags">
-                    <title>Main Feature Tags</title>
+                <section ids="main-feature-tags" names="main\ feature\ tags 主要特性标签">
+                    <title>主要特性标签</title>
                     <paragraph>These are the feature tags that will be passed to <strong>every</strong> instance of the
                         project when you Run Project, unless you select "Enabled" under "Override Main
                         Tags" for a specific instance.</paragraph>
                 </section>
-                <section ids="override-main-run-args" names="override\ main\ run\ args">
-                    <title>Override Main Run Args</title>
+                <section ids="override-main-run-args" names="override\ main\ run\ args 覆盖主要运行参数">
+                    <title>覆盖主要运行参数</title>
                     <paragraph>When this is enabled, the arguments in the "Main Run Args" field will <strong>not be
                             passed</strong> to this specific instance of the project when you Run Project.</paragraph>
                 </section>

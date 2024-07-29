@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -297,8 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -574,7 +574,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -587,7 +587,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/inspector_dock.html">检查器</a><ul>
@@ -801,6 +801,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,7 +1159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1308,7 +1318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1549,8 +1559,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1957,20 +1967,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1995,17 +2005,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2033,14 +2043,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2541,6 +2551,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2864,10 +2875,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2887,7 +2898,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2989,44 +3000,44 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">高级专题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">XR 动作映射</a><ul>
@@ -3053,17 +3064,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#some-final-words">最后的话</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3090,18 +3106,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3196,7 +3215,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3393,7 +3412,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3483,7 +3502,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_animationtree.html">AnimationTree</a><ul>
@@ -3516,7 +3535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4712,8 +4731,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6389,7 +6409,8 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8268,9 +8289,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiosample.html">AudioSample</a><ul>
@@ -10452,21 +10475,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_basis.html">Basis</a><ul>
@@ -10475,30 +10498,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_color.html">Color</a><ul>
@@ -10507,12 +10530,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_dictionary.html">Dictionary</a><ul>
@@ -10520,27 +10543,27 @@
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_nodepath.html">NodePath</a><ul>
@@ -10548,10 +10571,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_object.html">Object</a><ul>
@@ -10568,60 +10591,60 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10629,10 +10652,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10640,30 +10663,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_plane.html">Plane</a><ul>
@@ -10672,12 +10695,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_projection.html">Projection</a><ul>
@@ -10685,12 +10708,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_quaternion.html">Quaternion</a><ul>
@@ -10699,12 +10722,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2.html">Rect2</a><ul>
@@ -10713,11 +10736,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2i.html">Rect2i</a><ul>
@@ -10726,21 +10749,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_signal.html">Signal</a><ul>
@@ -10748,10 +10771,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_string.html">String</a><ul>
@@ -10759,20 +10782,20 @@
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform2d.html">Transform2D</a><ul>
@@ -10781,12 +10804,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform3d.html">Transform3D</a><ul>
@@ -10795,12 +10818,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Vector2</a><ul>
@@ -10809,12 +10832,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2i.html">Vector2i</a><ul>
@@ -10823,12 +10846,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3.html">Vector3</a><ul>
@@ -10837,12 +10860,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3i.html">Vector3i</a><ul>
@@ -10851,12 +10874,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4.html">Vector4</a><ul>
@@ -10864,12 +10887,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4i.html">Vector4i</a><ul>
@@ -10877,12 +10900,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -11002,154 +11025,154 @@
 <table class="colwidths-auto docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-abs"><span class="std std-ref">abs</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-abs"><span class="std std-ref">abs</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-angle"><span class="std std-ref">angle</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-angle"><span class="std std-ref">angle</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-angle-to"><span class="std std-ref">angle_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-angle-to"><span class="std std-ref">angle_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-angle-to-point"><span class="std std-ref">angle_to_point</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-angle-to-point"><span class="std std-ref">angle_to_point</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-aspect"><span class="std std-ref">aspect</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-aspect"><span class="std std-ref">aspect</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-bezier-derivative"><span class="std std-ref">bezier_derivative</span></a>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-bezier-derivative"><span class="std std-ref">bezier_derivative</span></a>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-bezier-interpolate"><span class="std std-ref">bezier_interpolate</span></a>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-bezier-interpolate"><span class="std std-ref">bezier_interpolate</span></a>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-ceil"><span class="std std-ref">ceil</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-ceil"><span class="std std-ref">ceil</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-clamp"><span class="std std-ref">clamp</span></a>(min: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, max: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-clamp"><span class="std std-ref">clamp</span></a>(min: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, max: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-clampf"><span class="std std-ref">clampf</span></a>(min: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, max: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-clampf"><span class="std std-ref">clampf</span></a>(min: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, max: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-cross"><span class="std std-ref">cross</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-cross"><span class="std std-ref">cross</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-cubic-interpolate"><span class="std std-ref">cubic_interpolate</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-cubic-interpolate"><span class="std std-ref">cubic_interpolate</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-cubic-interpolate-in-time"><span class="std std-ref">cubic_interpolate_in_time</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, pre_a_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, post_b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-cubic-interpolate-in-time"><span class="std std-ref">cubic_interpolate_in_time</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, pre_a_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, post_b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-direction-to"><span class="std std-ref">direction_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-direction-to"><span class="std std-ref">direction_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-distance-squared-to"><span class="std std-ref">distance_squared_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-distance-squared-to"><span class="std std-ref">distance_squared_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-distance-to"><span class="std std-ref">distance_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-distance-to"><span class="std std-ref">distance_to</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-dot"><span class="std std-ref">dot</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-dot"><span class="std std-ref">dot</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-floor"><span class="std std-ref">floor</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-floor"><span class="std std-ref">floor</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
 <td><p><a class="reference internal" href="#class-vector2-method-from-angle"><span class="std std-ref">from_angle</span></a>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="调用本方法无需实例，可直接使用类名进行调用。">static</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-is-finite"><span class="std std-ref">is_finite</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-is-finite"><span class="std std-ref">is_finite</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">is_normalized</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">is_normalized</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-is-zero-approx"><span class="std std-ref">is_zero_approx</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-is-zero-approx"><span class="std std-ref">is_zero_approx</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-length"><span class="std std-ref">length</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-length"><span class="std std-ref">length</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-length-squared"><span class="std std-ref">length_squared</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-length-squared"><span class="std std-ref">length_squared</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-lerp"><span class="std std-ref">lerp</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-lerp"><span class="std std-ref">lerp</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-limit-length"><span class="std std-ref">limit_length</span></a>(length: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> = 1.0) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-limit-length"><span class="std std-ref">limit_length</span></a>(length: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> = 1.0) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-max"><span class="std std-ref">max</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-max"><span class="std std-ref">max</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-max-axis-index"><span class="std std-ref">max_axis_index</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-max-axis-index"><span class="std std-ref">max_axis_index</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-maxf"><span class="std std-ref">maxf</span></a>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-maxf"><span class="std std-ref">maxf</span></a>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-min"><span class="std std-ref">min</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-min"><span class="std std-ref">min</span></a>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-min-axis-index"><span class="std std-ref">min_axis_index</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-min-axis-index"><span class="std std-ref">min_axis_index</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-minf"><span class="std std-ref">minf</span></a>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-minf"><span class="std std-ref">minf</span></a>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-move-toward"><span class="std std-ref">move_toward</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, delta: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-move-toward"><span class="std std-ref">move_toward</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, delta: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-normalized"><span class="std std-ref">normalized</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-normalized"><span class="std std-ref">normalized</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-orthogonal"><span class="std std-ref">orthogonal</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-orthogonal"><span class="std std-ref">orthogonal</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-posmod"><span class="std std-ref">posmod</span></a>(mod: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-posmod"><span class="std std-ref">posmod</span></a>(mod: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-posmodv"><span class="std std-ref">posmodv</span></a>(modv: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-posmodv"><span class="std std-ref">posmodv</span></a>(modv: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-project"><span class="std std-ref">project</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-project"><span class="std std-ref">project</span></a>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">reflect</span></a>(line: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">reflect</span></a>(line: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-rotated"><span class="std std-ref">rotated</span></a>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-rotated"><span class="std std-ref">rotated</span></a>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-round"><span class="std std-ref">round</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-round"><span class="std std-ref">round</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-sign"><span class="std std-ref">sign</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-sign"><span class="std std-ref">sign</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-slerp"><span class="std std-ref">slerp</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-slerp"><span class="std std-ref">slerp</span></a>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-slide"><span class="std std-ref">slide</span></a>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-slide"><span class="std std-ref">slide</span></a>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-snapped"><span class="std std-ref">snapped</span></a>(step: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-snapped"><span class="std std-ref">snapped</span></a>(step: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-vector2-method-snappedf"><span class="std std-ref">snappedf</span></a>(step: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-vector2-method-snappedf"><span class="std std-ref">snappedf</span></a>(step: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section class="classref-reftable-group" id="id6">
-<h2>操作符<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>运算符<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <table class="colwidths-auto docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
@@ -11258,75 +11281,75 @@
 <hr class="classref-section-separator docutils" />
 <section class="classref-descriptions-group" id="id10">
 <h2>方法说明<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
-<p class="classref-method" id="class-vector2-method-abs"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>abs</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-abs"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-abs"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>abs</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-abs"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个新向量，其所有分量都是绝对值，即正值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-angle"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-angle"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量与 X 轴正方向的夹角，单位为弧度。X 轴正方向为 <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">0)</span></code> 向量。</p>
 <p>例如，<code class="docutils literal notranslate"><span class="pre">Vector2.RIGHT.angle()</span></code> 将返回 0，<code class="docutils literal notranslate"><span class="pre">Vector2.DOWN.angle()</span></code> 将返回 <code class="docutils literal notranslate"><span class="pre">PI</span> <span class="pre">/</span> <span class="pre">2</span></code>（四分之一圈，即 90 度），<code class="docutils literal notranslate"><span class="pre">Vector2(1,</span> <span class="pre">-1).angle()</span></code> 将返回 <code class="docutils literal notranslate"><span class="pre">-PI</span> <span class="pre">/</span> <span class="pre">4</span></code>（负八分之一圈，即 -45 度）。</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png">返回夹角图示。</a></p>
 <p>相当于使用该向量的 <a class="reference internal" href="#class-vector2-property-y"><span class="std std-ref">y</span></a> 和 <a class="reference internal" href="#class-vector2-property-x"><span class="std std-ref">x</span></a> 作为参数对 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-atan2"><span class="std std-ref">&#64;GlobalScope.atan2</span></a> 进行调用的结果：<code class="docutils literal notranslate"><span class="pre">atan2(y,</span> <span class="pre">x)</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-angle-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle-to"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-angle-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle-to"><span class="std std-ref">🔗</span></a></p>
 <p>返回与给定向量的夹角，单位为弧度。</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png">返回夹角示意图。</a></p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-angle-to-point"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle_to_point</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle-to-point"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-angle-to-point"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>angle_to_point</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-angle-to-point"><span class="std std-ref">🔗</span></a></p>
 <p>返回连接两点的直线与 X 轴之间的夹角，单位为弧度。</p>
 <p><code class="docutils literal notranslate"><span class="pre">a.angle_to_point(b)</span></code> 等价于 <code class="docutils literal notranslate"><span class="pre">(b</span> <span class="pre">-</span> <span class="pre">a).angle()</span></code>。</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png">返回夹角示意图。</a></p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-aspect"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>aspect</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-aspect"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-aspect"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>aspect</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-aspect"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量的长宽比，即 <a class="reference internal" href="#class-vector2-property-x"><span class="std std-ref">x</span></a> 与 <a class="reference internal" href="#class-vector2-property-y"><span class="std std-ref">y</span></a> 的比例。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-bezier-derivative"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bezier_derivative</strong>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bezier-derivative"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-bezier-derivative"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bezier_derivative</strong>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bezier-derivative"><span class="std std-ref">🔗</span></a></p>
 <p>返回<a class="reference external" href="https://zh.wikipedia.org/zh-cn/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A">贝赛尔曲线</a>上 <code class="docutils literal notranslate"><span class="pre">t</span></code> 处的导数，该曲线由此向量和控制点 <code class="docutils literal notranslate"><span class="pre">control_1</span></code>、<code class="docutils literal notranslate"><span class="pre">control_2</span></code>、终点 <code class="docutils literal notranslate"><span class="pre">end</span></code> 定义。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-bezier-interpolate"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bezier_interpolate</strong>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bezier-interpolate"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-bezier-interpolate"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bezier_interpolate</strong>(control_1: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, control_2: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, end: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bezier-interpolate"><span class="std std-ref">🔗</span></a></p>
 <p>返回<a class="reference external" href="https://zh.wikipedia.org/zh-cn/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A">贝赛尔曲线</a>上 <code class="docutils literal notranslate"><span class="pre">t</span></code> 处的点，该曲线由此向量和控制点 <code class="docutils literal notranslate"><span class="pre">control_1</span></code>、<code class="docutils literal notranslate"><span class="pre">control_2</span></code>、终点 <code class="docutils literal notranslate"><span class="pre">end</span></code> 定义。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-bounce"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bounce</strong>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the vector &quot;bounced off&quot; from a line defined by the given normal <code class="docutils literal notranslate"><span class="pre">n</span></code> perpendicular to the line.</p>
-<p><strong>Note:</strong> <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a> performs the operation that most engines and frameworks call <code class="docutils literal notranslate"><span class="pre">reflect()</span></code>.</p>
+<p class="classref-method" id="class-vector2-method-bounce"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>bounce</strong>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">🔗</span></a></p>
+<p>返回从由给定垂直法线 <code class="docutils literal notranslate"><span class="pre">n</span></code> 定义的线“反弹”的向量。</p>
+<p><strong>注意：</strong> <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a> 执行大多数引擎和框架调用 <code class="docutils literal notranslate"><span class="pre">reflect()</span></code> 的操作。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-ceil"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>ceil</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-ceil"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-ceil"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>ceil</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-ceil"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个新向量，所有的分量都是向上舍入（正无穷大方向）。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-clamp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>clamp</strong>(min: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, max: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-clamp"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-clamp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>clamp</strong>(min: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, max: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-clamp"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个新向量，每个分量都使用 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-clamp"><span class="std std-ref">&#64;GlobalScope.clamp</span></a> 限制在 <code class="docutils literal notranslate"><span class="pre">min</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max</span></code> 之间。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-clampf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>clampf</strong>(min: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, max: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-clampf"><span class="std std-ref">🔗</span></a></p>
-<p>Returns a new vector with all components clamped between <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>, by running <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-clamp"><span class="std std-ref">&#64;GlobalScope.clamp</span></a> on each component.</p>
+<p class="classref-method" id="class-vector2-method-clampf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>clampf</strong>(min: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, max: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-clampf"><span class="std std-ref">🔗</span></a></p>
+<p>返回一个新向量，每个分量都使用 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-clamp"><span class="std std-ref">&#64;GlobalScope.clamp</span></a> 限制在 <code class="docutils literal notranslate"><span class="pre">min</span></code> 和 <code class="docutils literal notranslate"><span class="pre">max</span></code> 之间。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-cross"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>cross</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cross"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the 2D analog of the cross product for this vector and <code class="docutils literal notranslate"><span class="pre">with</span></code>.</p>
-<p>This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.</p>
-<p><strong>Note:</strong> Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.</p>
+<p class="classref-method" id="class-vector2-method-cross"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>cross</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cross"><span class="std std-ref">🔗</span></a></p>
+<p>返回该向量和 <code class="docutils literal notranslate"><span class="pre">with</span></code> 的 2D 类比叉积。</p>
+<p>这是由两个向量所形成的平行四边形的有符号面积。如果第二个向量是从第一个向量的顺时针方向出发的，则叉积为正面积。如果是逆时针方向，则叉积为负面积。如果两个向量平行，则返回零，这对于测试两个向量是否平行很有用。</p>
+<p><strong>注意：</strong>数学中没有定义二维空间的叉乘。此方法是将 2D 向量嵌入到 3D 空间的 XY 平面中，并使用它们的叉积的 Z 分量作为类比。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-cubic-interpolate"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>cubic_interpolate</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cubic-interpolate"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-cubic-interpolate"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>cubic_interpolate</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cubic-interpolate"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量和 <code class="docutils literal notranslate"><span class="pre">b</span></code> 之间进行三次插值 <code class="docutils literal notranslate"><span class="pre">weight</span></code> 处的结果，使用 <code class="docutils literal notranslate"><span class="pre">pre_a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">post_b</span></code> 作为控制柄。<code class="docutils literal notranslate"><span class="pre">weight</span></code> 在 0.0 到 1.0 的范围内，代表插值的量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-cubic-interpolate-in-time"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>cubic_interpolate_in_time</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, pre_a_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, post_b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cubic-interpolate-in-time"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-cubic-interpolate-in-time"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>cubic_interpolate_in_time</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, pre_a: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, post_b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, pre_a_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>, post_b_t: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-cubic-interpolate-in-time"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量和 <code class="docutils literal notranslate"><span class="pre">b</span></code> 之间进行三次插值 <code class="docutils literal notranslate"><span class="pre">weight</span></code> 处的结果，使用 <code class="docutils literal notranslate"><span class="pre">pre_a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">post_b</span></code> 作为控制柄。<code class="docutils literal notranslate"><span class="pre">weight</span></code> 在 0.0 到 1.0 的范围内，代表插值的量。</p>
 <p>通过使用时间值，可以比 <a class="reference internal" href="#class-vector2-method-cubic-interpolate"><span class="std std-ref">cubic_interpolate</span></a> 进行更平滑的插值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-direction-to"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>direction_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-direction-to"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-direction-to"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>direction_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-direction-to"><span class="std std-ref">🔗</span></a></p>
 <p>返回从该向量指向 <code class="docutils literal notranslate"><span class="pre">to</span></code> 的归一化向量。相当于使用 <code class="docutils literal notranslate"><span class="pre">(b</span> <span class="pre">-</span> <span class="pre">a).normalized()</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-distance-squared-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>distance_squared_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-distance-squared-to"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-distance-squared-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>distance_squared_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-distance-squared-to"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量与 <code class="docutils literal notranslate"><span class="pre">to</span></code> 之间的距离的平方。</p>
 <p>该方法比 <a class="reference internal" href="#class-vector2-method-distance-to"><span class="std std-ref">distance_to</span></a> 运行得更快，因此请在需要比较向量或者用于某些公式的平方距离时，优先使用这个方法。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-distance-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>distance_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-distance-to"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-distance-to"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>distance_to</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-distance-to"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量与 <code class="docutils literal notranslate"><span class="pre">to</span></code> 之间的距离。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-dot"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>dot</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-dot"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-dot"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>dot</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-dot"><span class="std std-ref">🔗</span></a></p>
 <p>Returns the dot product of this vector and <code class="docutils literal notranslate"><span class="pre">with</span></code>. This can be used to compare the angle between two vectors. For example, this can be used to determine whether an enemy is facing the player.</p>
 <p>The dot product will be <code class="docutils literal notranslate"><span class="pre">0</span></code> for a right angle (90 degrees), greater than 0 for angles narrower than 90 degrees and lower than 0 for angles wider than 90 degrees.</p>
 <p>When using unit (normalized) vectors, the result will always be between <code class="docutils literal notranslate"><span class="pre">-1.0</span></code> (180 degree angle) when the vectors are facing opposite directions, and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> (0 degree angle) when the vectors are aligned.</p>
 <p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">a.dot(b)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">b.dot(a)</span></code>.</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-floor"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>floor</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-floor"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-floor"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>floor</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-floor"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个新的向量，所有的向量都被四舍五入，向负无穷大。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-vector2-method-from-angle"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>from_angle</strong>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="调用本方法无需实例，可直接使用类名进行调用。">static</abbr> <a class="reference internal" href="#class-vector2-method-from-angle"><span class="std std-ref">🔗</span></a></p>
@@ -11337,100 +11360,100 @@
 </pre></div>
 </div>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-is-equal-approx"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_equal_approx</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-is-equal-approx"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_equal_approx</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">🔗</span></a></p>
 <p>如果这个向量与 <code class="docutils literal notranslate"><span class="pre">to</span></code> 大致相等，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>，判断方法是对每个分量执行 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-is-equal-approx"><span class="std std-ref">&#64;GlobalScope.is_equal_approx</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-is-finite"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_finite</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-finite"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-is-finite"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_finite</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-finite"><span class="std std-ref">🔗</span></a></p>
 <p>如果该向量无穷，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>，判断方法是对每个分量调用 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-is-finite"><span class="std std-ref">&#64;GlobalScope.is_finite</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-is-normalized"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_normalized</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-is-normalized"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_normalized</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">🔗</span></a></p>
 <p>如果该向量是归一化的，即长度约等于 1，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-is-zero-approx"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_zero_approx</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-zero-approx"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-is-zero-approx"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_zero_approx</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-is-zero-approx"><span class="std std-ref">🔗</span></a></p>
 <p>如果该向量的值大约为零，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>，判断方法是对每个分量运行 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-is-zero-approx"><span class="std std-ref">&#64;GlobalScope.is_zero_approx</span></a>。</p>
 <p>该方法比使用 <a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a> 和零向量比较要快。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-length"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>length</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-length"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-length"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>length</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-length"><span class="std std-ref">🔗</span></a></p>
 <p>返回这个向量的长度，即大小。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-length-squared"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>length_squared</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-length-squared"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-length-squared"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>length_squared</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-length-squared"><span class="std std-ref">🔗</span></a></p>
 <p>返回这个向量的平方长度，即平方大小。</p>
 <p>这个方法比 <a class="reference internal" href="#class-vector2-method-length"><span class="std std-ref">length</span></a> 运行得更快，所以如果你需要比较向量或需要一些公式的平方距离时，更喜欢用它。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-lerp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>lerp</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-lerp"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-lerp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>lerp</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-lerp"><span class="std std-ref">🔗</span></a></p>
 <p>返回此向量和 <code class="docutils literal notranslate"><span class="pre">to</span></code> 之间，按数量 <code class="docutils literal notranslate"><span class="pre">weight</span></code> 线性插值结果。<code class="docutils literal notranslate"><span class="pre">weight</span></code> 在 <code class="docutils literal notranslate"><span class="pre">0.0</span></code> 到 <code class="docutils literal notranslate"><span class="pre">1.0</span></code> 的范围内，代表插值的量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-limit-length"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>limit_length</strong>(length: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> = 1.0) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-limit-length"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-limit-length"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>limit_length</strong>(length: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> = 1.0) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-limit-length"><span class="std std-ref">🔗</span></a></p>
 <p>返回应用了最大长度限制的向量，长度被限制到 <code class="docutils literal notranslate"><span class="pre">length</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-max"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>max</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-max"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-max"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>max</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-max"><span class="std std-ref">🔗</span></a></p>
 <p>返回自身与 <code class="docutils literal notranslate"><span class="pre">with</span></code> 各分量的最大值，等价于 <code class="docutils literal notranslate"><span class="pre">Vector2(maxf(x,</span> <span class="pre">with.x),</span> <span class="pre">maxf(y,</span> <span class="pre">with.y))</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-max-axis-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>max_axis_index</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-max-axis-index"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-max-axis-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>max_axis_index</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-max-axis-index"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量中最大值的轴。见 <code class="docutils literal notranslate"><span class="pre">AXIS_*</span></code> 常量。如果所有分量相等，则该方法返回 <a class="reference internal" href="#class-vector2-constant-axis-x"><span class="std std-ref">AXIS_X</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-maxf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>maxf</strong>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-maxf"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-maxf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>maxf</strong>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-maxf"><span class="std std-ref">🔗</span></a></p>
 <p>返回自身与 <code class="docutils literal notranslate"><span class="pre">with</span></code> 各分量的最大值，等价于 <code class="docutils literal notranslate"><span class="pre">Vector2(maxf(x,</span> <span class="pre">with),</span> <span class="pre">maxf(y,</span> <span class="pre">with))</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-min"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>min</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-min"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-min"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>min</strong>(with: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-min"><span class="std std-ref">🔗</span></a></p>
 <p>返回自身与 <code class="docutils literal notranslate"><span class="pre">with</span></code> 各分量的最小值，等价于 <code class="docutils literal notranslate"><span class="pre">Vector2(minf(x,</span> <span class="pre">with.x),</span> <span class="pre">minf(y,</span> <span class="pre">with.y))</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-min-axis-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>min_axis_index</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-min-axis-index"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-min-axis-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>min_axis_index</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-min-axis-index"><span class="std std-ref">🔗</span></a></p>
 <p>返回该向量中最小值的轴。见 <code class="docutils literal notranslate"><span class="pre">AXIS_*</span></code> 常量。如果所有分量相等，则该方法返回 <a class="reference internal" href="#class-vector2-constant-axis-y"><span class="std std-ref">AXIS_Y</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-minf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>minf</strong>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-minf"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-minf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>minf</strong>(with: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-minf"><span class="std std-ref">🔗</span></a></p>
 <p>返回自身与 <code class="docutils literal notranslate"><span class="pre">with</span></code> 各分量的最小值，等价于 <code class="docutils literal notranslate"><span class="pre">Vector2(minf(x,</span> <span class="pre">with),</span> <span class="pre">minf(y,</span> <span class="pre">with))</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-move-toward"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>move_toward</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, delta: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-move-toward"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-move-toward"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>move_toward</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, delta: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-move-toward"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个新向量，该向量朝 <code class="docutils literal notranslate"><span class="pre">to</span></code> 移动了固定的量 <code class="docutils literal notranslate"><span class="pre">delta</span></code>。不会超过最终值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-normalized"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>normalized</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-normalized"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the result of scaling the vector to unit length. Equivalent to <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">/</span> <span class="pre">v.length()</span></code>. Returns <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> if <code class="docutils literal notranslate"><span class="pre">v.length()</span> <span class="pre">==</span> <span class="pre">0</span></code>. See also <a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">is_normalized</span></a>.</p>
-<p><strong>Note:</strong> This function may return incorrect values if the input vector length is near zero.</p>
+<p class="classref-method" id="class-vector2-method-normalized"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>normalized</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-normalized"><span class="std std-ref">🔗</span></a></p>
+<p>返回该向量缩放至单位长度的结果。等价于 <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">/</span> <span class="pre">v.length()</span></code>。如果 <code class="docutils literal notranslate"><span class="pre">v.length()</span> <span class="pre">==</span> <span class="pre">0</span></code> 则返回 <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>。另见 <a class="reference internal" href="#class-vector2-method-is-normalized"><span class="std std-ref">is_normalized</span></a>。</p>
+<p><strong>注意：</strong>如果输入向量的长度接近零，则这个函数可能返回不正确的值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-orthogonal"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>orthogonal</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-orthogonal"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-orthogonal"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>orthogonal</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-orthogonal"><span class="std std-ref">🔗</span></a></p>
 <p>返回一个与原来相比逆时针旋转 90 度的垂直向量，长度不变。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-posmod"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>posmod</strong>(mod: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-posmod"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-posmod"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>posmod</strong>(mod: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-posmod"><span class="std std-ref">🔗</span></a></p>
 <p>返回由该向量的分量与 <code class="docutils literal notranslate"><span class="pre">mod</span></code> 执行 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-fposmod"><span class="std std-ref">&#64;GlobalScope.fposmod</span></a> 运算后组成的向量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-posmodv"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>posmodv</strong>(modv: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-posmodv"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-posmodv"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>posmodv</strong>(modv: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-posmodv"><span class="std std-ref">🔗</span></a></p>
 <p>返回由该向量的分量与 <code class="docutils literal notranslate"><span class="pre">modv</span></code> 的分量执行 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-fposmod"><span class="std std-ref">&#64;GlobalScope.fposmod</span></a> 运算后组成的向量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-project"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>project</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-project"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-project"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>project</strong>(b: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-project"><span class="std std-ref">🔗</span></a></p>
 <p>返回将该向量投影到给定的 <code class="docutils literal notranslate"><span class="pre">b</span></code> 向量上所得到的新向量。得到的新向量与 <code class="docutils literal notranslate"><span class="pre">b</span></code> 平行。另见 <a class="reference internal" href="#class-vector2-method-slide"><span class="std std-ref">slide</span></a>。</p>
 <p><strong>注意：</strong>如果 <code class="docutils literal notranslate"><span class="pre">b</span></code> 向量为零向量，得到的新向量的分量均为 <a class="reference internal" href="class_%40gdscript.html#class-gdscript-constant-nan"><span class="std std-ref">&#64;GDScript.NAN</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-reflect"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>reflect</strong>(line: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the result of reflecting the vector from a line defined by the given direction vector <code class="docutils literal notranslate"><span class="pre">line</span></code>.</p>
-<p><strong>Note:</strong> <a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">reflect</span></a> differs from what other engines and frameworks call <code class="docutils literal notranslate"><span class="pre">reflect()</span></code>. In other engines, <code class="docutils literal notranslate"><span class="pre">reflect()</span></code> takes a normal direction which is a direction perpendicular to the line. In Godot, you specify the direction of the line directly. See also <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a> which does what most engines call <code class="docutils literal notranslate"><span class="pre">reflect()</span></code>.</p>
+<p class="classref-method" id="class-vector2-method-reflect"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>reflect</strong>(line: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">🔗</span></a></p>
+<p>返回从给定方向向量 <code class="docutils literal notranslate"><span class="pre">line</span></code> 定义的线反射向量的结果。</p>
+<p><strong>注意：</strong><a class="reference internal" href="#class-vector2-method-reflect"><span class="std std-ref">reflect</span></a> 与其他引擎和框架调用的 <code class="docutils literal notranslate"><span class="pre">reflect()</span></code> 不同。在其他引擎中，<code class="docutils literal notranslate"><span class="pre">reflect()</span></code> 采用法线方向，即垂直于线的方向。在 Godot 中，你可以直接指定线的方向。另请参阅 <a class="reference internal" href="#class-vector2-method-bounce"><span class="std std-ref">bounce</span></a>，它执行大多数引擎调用的 <code class="docutils literal notranslate"><span class="pre">reflect()</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-rotated"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>rotated</strong>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-rotated"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-rotated"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>rotated</strong>(angle: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-rotated"><span class="std std-ref">🔗</span></a></p>
 <p>返回将这个向量旋转 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 的结果（单位为弧度）。另见 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-deg-to-rad"><span class="std std-ref">&#64;GlobalScope.deg_to_rad</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-round"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>round</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-round"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-round"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>round</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-round"><span class="std std-ref">🔗</span></a></p>
 <p>返回所有分量都被四舍五入为最接近的整数的向量，中间情况向远离零的方向舍入。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-sign"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>sign</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-sign"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-sign"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>sign</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-sign"><span class="std std-ref">🔗</span></a></p>
 <p>返回新的向量，分量如果为正则设为 <code class="docutils literal notranslate"><span class="pre">1.0</span></code>，如果为负则设为 <code class="docutils literal notranslate"><span class="pre">-1.0</span></code>，如果为零则设为 <code class="docutils literal notranslate"><span class="pre">0.0</span></code>。结果与对每个分量调用 <a class="reference internal" href="class_%40globalscope.html#class-globalscope-method-sign"><span class="std std-ref">&#64;GlobalScope.sign</span></a> 一致。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-slerp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>slerp</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-slerp"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-slerp"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>slerp</strong>(to: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>, weight: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-slerp"><span class="std std-ref">🔗</span></a></p>
 <p>返回在这个向量和 <code class="docutils literal notranslate"><span class="pre">to</span></code> 之间进行 <code class="docutils literal notranslate"><span class="pre">weight</span></code> 的球面线性插值的结果。<code class="docutils literal notranslate"><span class="pre">weight</span></code> 在 0.0 和 1.0 的范围内，代表插值的量。</p>
 <p>如果输入向量的长度不同，这个函数也会对长度进行插值处理。对于输入向量中存在长度为零的向量的特殊情况，这个方法的行为与 <a class="reference internal" href="#class-vector2-method-lerp"><span class="std std-ref">lerp</span></a> 一致。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-slide"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>slide</strong>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-slide"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-slide"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>slide</strong>(n: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-slide"><span class="std std-ref">🔗</span></a></p>
 <p>返回将该向量沿着法线为 <code class="docutils literal notranslate"><span class="pre">n</span></code> 的直线滑动所得到的新向量。得到的新向量与 <code class="docutils literal notranslate"><span class="pre">n</span></code> 垂直，等价于将该向量减去在 <code class="docutils literal notranslate"><span class="pre">n</span></code> 上的投影。另见 <a class="reference internal" href="#class-vector2-method-project"><span class="std std-ref">project</span></a>。</p>
 <p><strong>注意：</strong>向量 <code class="docutils literal notranslate"><span class="pre">n</span></code> 必须为归一化的向量。另见 <a class="reference internal" href="#class-vector2-method-normalized"><span class="std std-ref">normalized</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-snapped"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>snapped</strong>(step: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-snapped"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-vector2-method-snapped"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>snapped</strong>(step: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-snapped"><span class="std std-ref">🔗</span></a></p>
 <p>返回新的向量，每个分量都吸附到了与 <code class="docutils literal notranslate"><span class="pre">step</span></code> 中对应分量最接近的倍数。也可以用于将分量四舍五入至小数点后的任意位置。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-vector2-method-snappedf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>snappedf</strong>(step: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-snappedf"><span class="std std-ref">🔗</span></a></p>
-<p>Returns a new vector with each component snapped to the nearest multiple of <code class="docutils literal notranslate"><span class="pre">step</span></code>. This can also be used to round the components to an arbitrary number of decimals.</p>
+<p class="classref-method" id="class-vector2-method-snappedf"><a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>snappedf</strong>(step: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-vector2-method-snappedf"><span class="std std-ref">🔗</span></a></p>
+<p>返回一个新向量，其中每个分量都吸附到 <code class="docutils literal notranslate"><span class="pre">step</span></code> 的最接近的倍数。这也可以用于将分量四舍五入为任意数位的小数。</p>
 </section>
 <hr class="classref-section-separator docutils" />
 <section class="classref-descriptions-group" id="id11">
-<h2>操作符说明<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<h2>运算符说明<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <p class="classref-operator" id="class-vector2-operator-neq-vector2"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>operator !=</strong>(right: <a class="reference internal" href="#class-vector2"><span class="std std-ref">Vector2</span></a>) <a class="reference internal" href="#class-vector2-operator-neq-vector2"><span class="std std-ref">🔗</span></a></p>
 <p>如果向量不相等，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <p><strong>注意：</strong>由于浮点数精度误差，请考虑改用 <a class="reference internal" href="#class-vector2-method-is-equal-approx"><span class="std std-ref">is_equal_approx</span></a>，会更可靠。</p>

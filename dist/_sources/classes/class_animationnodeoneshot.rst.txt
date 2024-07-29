@@ -289,9 +289,9 @@ enum **MixMode**: :ref:`🔗<enum_AnimationNodeOneShot_MixMode>`
 - |void| **set_fadein_time**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fadein_time**\ (\ )
 
-淡入持续时间。例如，对于5秒长的动画，将其设置为\ ``1.0``\ 将在动画过程中产生从0秒开始到1秒结束的交叉渐变。
+淡入的持续时间。例如有一个长度为 5 秒的动画，如果将该属性设置为 ``1.0``\ ，就会生成一个从动画的 0 秒处开始、1 秒处结束的交叉渐变。
 
-\ ** 注意：**\ **AnimationNodeOneShot**\ 在淡入结束后转换当前状态。当\ :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`\ 被视为最上游时，因此\ :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`\ 会根据下游增量进行缩放。例如，如果将此值设置为\ ``1.0``\ ，并且在下游链接值为\ ``2.0``\ 的\ :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`\ ，则实际处理时间将为0.5秒。
+\ **注意：**\ **AnimationNodeOneShot** 是在淡入淡出结束后转换当前状态的。将 :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` 视为最上游时，\ :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>` 会根据下游增量进行缩放。例如将该属性设置为 ``1.0`` 时，如果下游连接的是一个取值为 ``2.0`` 的 :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`\ ，那么实际的处理时间就是 0.5 秒。
 
 .. rst-class:: classref-item-separator
 
@@ -325,9 +325,9 @@ enum **MixMode**: :ref:`🔗<enum_AnimationNodeOneShot_MixMode>`
 - |void| **set_fadeout_time**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fadeout_time**\ (\ )
 
-淡出持续时间。例如，对于5秒长的动画，将其设置为\ ``1.0``\ 将在动画过程中产生从4秒开始到5秒结束的交叉渐变。
+淡出的持续时间。例如有一个长度为 5 秒的动画，如果将该属性设置为 ``1.0``\ ，就会生成一个从动画的 4 秒处开始、5 秒处结束的交叉渐变。
 
-\ ** 注意：**\ **AnimationNodeOneShot**\ 在淡入结束后转换当前状态。当\ :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`\ 被视为最上游时，因此\ :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`\ 会根据下游增量进行缩放。例如，如果将此值设置为\ ``1.0``\ ，并且在下游链接值为\ ``2.0``\ 的\ :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`\ ，则实际处理时间将为0.5秒。
+\ **注意：**\ **AnimationNodeOneShot** 是在淡入淡出结束后转换当前状态的。将 :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` 视为最上游时，\ :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>` 会根据下游增量进行缩放。例如将该属性设置为 ``1.0`` 时，如果下游连接的是一个取值为 ``2.0`` 的 :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`\ ，那么实际的处理时间就是 0.5 秒。
 
 .. rst-class:: classref-item-separator
 
@@ -347,10 +347,10 @@ enum **MixMode**: :ref:`🔗<enum_AnimationNodeOneShot_MixMode>`
 混合类型。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

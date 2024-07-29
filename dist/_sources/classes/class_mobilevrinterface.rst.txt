@@ -185,7 +185,7 @@ k2 镜头因子，见 k1。
 - |void| **set_offset_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
 - :ref:`Rect2<class_Rect2>` **get_offset_rect**\ (\ )
 
-Set the offset rect relative to the area being rendered. A length of 1 represents the whole rendering area on that axis.
+设置相对于正在渲染的区域的偏移矩形。1 的长度表示该轴上的整个渲染区域。
 
 .. rst-class:: classref-item-separator
 
@@ -219,9 +219,9 @@ Set the offset rect relative to the area being rendered. A length of 1 represent
 - |void| **set_vrs_min_radius**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_vrs_min_radius**\ (\ )
 
-The minimum radius around the focal point where full quality is guaranteed if VRS is used as a percentage of screen size.
+如果 VRS 用作屏幕大小的百分比，则焦点周围可保证完全质量的最小半径。
 
-\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
+\ **注意：**\ 仅限 Mobile 和 Forward+ 渲染器。需要将 :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` 设置为 :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -238,15 +238,15 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 - |void| **set_vrs_strength**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_vrs_strength**\ (\ )
 
-The strength used to calculate the VRS density map. The greater this value, the more noticeable VRS is. This improves performance at the cost of quality.
+用于计算 VRS 密度图的强度。该值越大，VRS 越明显。这会以牺牲质量为代价来提高性能。
 
-\ **Note:** Mobile and Forward+ renderers only. Requires :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to be set to :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`.
+\ **注意：**\ 仅限 Mobile 和 Forward+ 渲染器。需要将 :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` 设置为 :ref:`Viewport.VRS_XR<class_Viewport_constant_VRS_XR>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

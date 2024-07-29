@@ -19,9 +19,9 @@ Crypto
 描述
 ----
 
-The Crypto class provides access to advanced cryptographic functionalities.
+Crypto 类提供对高阶加密功能的访问。
 
-Currently, this includes asymmetric key encryption/decryption, signing/verification, and generating cryptographically secure random bytes, RSA keys, HMAC digests, and self-signed :ref:`X509Certificate<class_X509Certificate>`\ s.
+目前，包括非对称密钥的加密/解密和签名/验证、生成加密安全随机字节、RSA 密钥、HMAC 摘要以及自签名的 :ref:`X509Certificate<class_X509Certificate>`\ 。
 
 
 .. tabs::
@@ -30,30 +30,30 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
 
     var crypto = Crypto.new()
     
-    # Generate new RSA key.
+    # 生成新的 RSA 密钥。
     var key = crypto.generate_rsa(4096)
     
-    # Generate new self-signed certificate with the given key.
+    # 使用给定的密钥生成新的自签名证书。
     var cert = crypto.generate_self_signed_certificate(key, "CN=mydomain.com,O=My Game Company,C=IT")
     
-    # Save key and certificate in the user folder.
+    # 将密钥和证书保存在用户文件夹中。
     key.save("user://generated.key")
     cert.save("user://generated.crt")
     
-    # Encryption
+    # 加密
     var data = "Some data"
     var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
     
-    # Decryption
+    # 解密
     var decrypted = crypto.decrypt(key, encrypted)
     
-    # Signing
+    # 签名
     var signature = crypto.sign(HashingContext.HASH_SHA256, data.sha256_buffer(), key)
     
-    # Verifying
+    # 验证
     var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
     
-    # Checks
+    # 校验
     assert(verified)
     assert(data.to_utf8_buffer() == decrypted)
 
@@ -64,30 +64,30 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
     
     Crypto crypto = new Crypto();
     
-    // Generate new RSA key.
+    // 生成新的 RSA 密钥。
     CryptoKey key = crypto.GenerateRsa(4096);
     
-    // Generate new self-signed certificate with the given key.
+    // 使用给定的密钥生成新的自签名证书。
     X509Certificate cert = crypto.GenerateSelfSignedCertificate(key, "CN=mydomain.com,O=My Game Company,C=IT");
     
-    // Save key and certificate in the user folder.
+    // 将密钥和证书保存在用户文件夹中。
     key.Save("user://generated.key");
     cert.Save("user://generated.crt");
     
-    // Encryption
+    // 加密
     string data = "Some data";
     byte[] encrypted = crypto.Encrypt(key, data.ToUtf8Buffer());
     
-    // Decryption
+    // 解密
     byte[] decrypted = crypto.Decrypt(key, encrypted);
     
-    // Signing
+    // 签名
     byte[] signature = crypto.Sign(HashingContext.HashType.Sha256, Data.Sha256Buffer(), key);
     
-    // Verifying
+    // 验证
     bool verified = crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, key);
     
-    // Checks
+    // 校验
     Debug.Assert(verified);
     Debug.Assert(data.ToUtf8Buffer() == decrypted);
 
@@ -202,9 +202,9 @@ Currently, this includes asymmetric key encryption/decryption, signing/verificat
 
 :ref:`X509Certificate<class_X509Certificate>` **generate_self_signed_certificate**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, issuer_name\: :ref:`String<class_String>` = "CN=myserver,O=myorganisation,C=IT", not_before\: :ref:`String<class_String>` = "20140101000000", not_after\: :ref:`String<class_String>` = "20340101000000"\ ) :ref:`🔗<class_Crypto_method_generate_self_signed_certificate>`
 
-Generates a self-signed :ref:`X509Certificate<class_X509Certificate>` from the given :ref:`CryptoKey<class_CryptoKey>` and ``issuer_name``. The certificate validity will be defined by ``not_before`` and ``not_after`` (first valid date and last valid date). The ``issuer_name`` must contain at least "CN=" (common name, i.e. the domain name), "O=" (organization, i.e. your company name), "C=" (country, i.e. 2 lettered ISO-3166 code of the country the organization is based in).
+根据给定的 :ref:`CryptoKey<class_CryptoKey>` 和 ``issuer_name`` 生成自签名的 :ref:`X509Certificate<class_X509Certificate>`\ 。证书有效性将由 ``not_before`` 和 ``not_after``\ （第一个有效日期和最后一个有效日期）定义。\ ``issuer_name`` 必须至少包含“CN=”（通用名称，即域名）、“O=”（组织，即你的公司名称）、“C=”（国家，即 2 个字母的该组织所在的国家/地区的 ISO-3166 代码）。
 
-A small example to generate an RSA key and an X509 self-signed certificate.
+生成 RSA 密钥和 X509 自签名证书的小示例。
 
 
 .. tabs::
@@ -212,17 +212,17 @@ A small example to generate an RSA key and an X509 self-signed certificate.
  .. code-tab:: gdscript
 
     var crypto = Crypto.new()
-    # Generate 4096 bits RSA key.
+    # 生成 4096 比特 RSA 密钥。
     var key = crypto.generate_rsa(4096)
-    # Generate self-signed certificate using the given key.
+    # 使用给定的密钥生成自签名证书。
     var cert = crypto.generate_self_signed_certificate(key, "CN=example.com,O=A Game Company,C=IT")
 
  .. code-tab:: csharp
 
     var crypto = new Crypto();
-    // Generate 4096 bits RSA key.
+    // 生成 4096 比特 RSA 密钥。
     CryptoKey key = crypto.GenerateRsa(4096);
-    // Generate self-signed certificate using the given key.
+    // 使用给定的密钥生成自签名证书。
     X509Certificate cert = crypto.GenerateSelfSignedCertificate(key, "CN=mydomain.com,O=My Game Company,C=IT");
 
 
@@ -266,10 +266,10 @@ A small example to generate an RSA key and an X509 self-signed certificate.
 使用提供的公钥 ``key`` 验证类型为 ``hash_type`` 的给定签名 ``signature``\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

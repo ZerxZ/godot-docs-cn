@@ -219,10 +219,10 @@ InputEventScreenDrag
 \ **注意：**\ :ref:`velocity<class_InputEventScreenDrag_property_velocity>` 根据内容缩放系数自动缩放，内容缩放系数由项目的拉伸模式设置定义。这意味着在处理触摸瞄准的脚本中使用 :ref:`velocity<class_InputEventScreenDrag_property_velocity>` 时，触摸灵敏度将根据分辨率而表现不同。为了避免这种情况，请改用 :ref:`screen_velocity<class_InputEventScreenDrag_property_screen_velocity>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

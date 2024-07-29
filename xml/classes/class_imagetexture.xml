@@ -79,7 +79,7 @@ var image: Image = texture.get_image()</literal_block>
                                 <paragraph><reference internal="True" refuri="class_image#enum-image-format"><inline classes="std std-ref">Format</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-imagetexture-method-get-format"><inline classes="std std-ref">get_format</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-imagetexture-method-get-format"><inline classes="std std-ref">get_format</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -118,7 +118,7 @@ var image: Image = texture.get_image()</literal_block>
             <paragraph>创建一个新的 <strong>ImageTexture</strong>，并通过分配和设置来自 <reference internal="True" refuri="class_image#class-image"><inline classes="std std-ref">Image</inline></reference> 的数据来初始化它。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-imagetexture-method-get-format"></target>
-            <paragraph classes="classref-method" ids="class-imagetexture-method-get-format" names="class_imagetexture_method_get_format"><reference internal="True" refuri="class_image#enum-image-format"><inline classes="std std-ref">Format</inline></reference> <strong>get_format</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-imagetexture-method-get-format"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-imagetexture-method-get-format" names="class_imagetexture_method_get_format"><reference internal="True" refuri="class_image#enum-image-format"><inline classes="std std-ref">Format</inline></reference> <strong>get_format</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-imagetexture-method-get-format"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回纹理的格式，<reference internal="True" refuri="class_image#enum-image-format"><inline classes="std std-ref">Format</inline></reference> 之一。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-imagetexture-method-set-image"></target>
@@ -136,12 +136,12 @@ var image: Image = texture.get_image()</literal_block>
             <paragraph><strong>注意：</strong>该纹理必须使用 <reference internal="True" refid="class-imagetexture-method-create-from-image"><inline classes="std std-ref">create_from_image</inline></reference> 创建或首先使用 <reference internal="True" refid="class-imagetexture-method-set-image"><inline classes="std std-ref">set_image</inline></reference> 方法初始化，然后才能更新。新的图像大小、格式和 mipmap 配置，应与现有纹理的图像配置相匹配。</paragraph>
             <paragraph>如果需要频繁更新纹理，请使用该方法而不是 <reference internal="True" refid="class-imagetexture-method-set-image"><inline classes="std std-ref">set_image</inline></reference>，这比每次为一个新纹理分配额外内存要快。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

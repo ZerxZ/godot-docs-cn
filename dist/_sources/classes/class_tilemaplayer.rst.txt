@@ -286,11 +286,11 @@ enum **DebugVisibilityMode**: :ref:`🔗<enum_TileMapLayer_DebugVisibilityMode>`
 - |void| **set_rendering_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_rendering_quadrant_size**\ (\ )
 
-The **TileMapLayer**'s quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
+**TileMapLayer** 的象限大小。象限是在单个画布项上一起绘制的一组图块，用于优化。\ :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` 定义的是形成象限的正方形的边长，使用地图坐标系。因此，默认象限大小将 ``16 * 16 = 256`` 个图块组合到了一起。
 
-The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are grouped by Y position instead in that case.
+象限大小不适用于 Y 排序的 **TileMapLayer**\ ，因为在这种情况下图块按 Y 位置分组。
 
-\ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the **TileMapLayer**'s local coordinate system.
+\ **注意：**\ 象限是根据地图坐标系创建的，“正方形”的象限在 **TileMapLayer** 的局部坐标系中可能并不是正方形。
 
 .. rst-class:: classref-item-separator
 
@@ -343,7 +343,7 @@ The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are gr
 - |void| **set_use_kinematic_bodies**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_kinematic_bodies**\ (\ )
 
-If ``true``, this **TileMapLayer** collision shapes will be instantiated as kinematic bodies. This can be needed for moving **TileMapLayer** nodes (i.e. moving platforms).
+如果为 ``true``\ ，则该 **TileMapLayer** 碰撞形状将被实例化为运动体。这对于移动 **TileMapLayer** 节点（即移动平台）可能是必要的。
 
 .. rst-class:: classref-item-separator
 
@@ -360,7 +360,7 @@ If ``true``, this **TileMapLayer** collision shapes will be instantiated as kine
 - |void| **set_x_draw_order_reversed**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_x_draw_order_reversed**\ (\ )
 
-If :ref:`CanvasItem.y_sort_enabled<class_CanvasItem_property_y_sort_enabled>` is enabled, setting this to ``true`` will reverse the order the tiles are drawn on the X-axis.
+如果启用了 :ref:`CanvasItem.y_sort_enabled<class_CanvasItem_property_y_sort_enabled>`\ ，则将其设置为 ``true`` 将反转在 X 轴上绘制图块的顺序。
 
 .. rst-class:: classref-item-separator
 
@@ -394,13 +394,13 @@ If :ref:`CanvasItem.y_sort_enabled<class_CanvasItem_property_y_sort_enabled>` is
 
 |void| **_tile_data_runtime_update**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, tile_data\: :ref:`TileData<class_TileData>`\ ) |virtual| :ref:`🔗<class_TileMapLayer_private_method__tile_data_runtime_update>`
 
-Called with a :ref:`TileData<class_TileData>` object about to be used internally by the **TileMapLayer**, allowing its modification at runtime.
+使用即将由 **TileMapLayer** 内部使用的 :ref:`TileData<class_TileData>` 对象来调用，从而允许在运行时对其进行修改。
 
-This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMapLayer_private_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords``.
+仅当 :ref:`_use_tile_data_runtime_update<class_TileMapLayer_private_method__use_tile_data_runtime_update>` 已实现，且它为给定的图块 ``coords`` 返回 ``true`` 时，才会调用该方法。
 
-\ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
+\ **警告：**\ ``tile_data`` 对象的子资源与 TileSet 中的子资源相同。修改它们可能会影响整个 TileSet。请确保复制这些资源再进行修改。
 
-\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`notify_runtime_tile_data_update<class_TileMapLayer_method_notify_runtime_tile_data_update>` to notify the **TileMapLayer** it needs an update.
+\ **注意：**\ 如果 ``tile_data`` 对象的属性应随时间发生变化，请使用 :ref:`notify_runtime_tile_data_update<class_TileMapLayer_method_notify_runtime_tile_data_update>` 来通知 **TileMapLayer** 它需要更新。
 
 .. rst-class:: classref-item-separator
 
@@ -522,7 +522,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMapL
 
 :ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_get_coords_for_body_rid>`
 
-Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`. Such an :ref:`RID<class_RID>` can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
+返回给定物理物体 :ref:`RID<class_RID>` 对应图块的坐标。与图块发生碰撞时，可以通过 :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>` 获取该 :ref:`RID<class_RID>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -534,9 +534,9 @@ Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`
 
 :ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const| :ref:`🔗<class_TileMapLayer_method_get_navigation_map>`
 
-Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation used by this **TileMapLayer**.
+返回该 **TileMapLayer** 所使用的 :ref:`NavigationServer2D<class_NavigationServer2D>` 导航 :ref:`RID<class_RID>`\ 。
 
-By default this returns the default :ref:`World2D<class_World2D>` navigation map, unless a custom map was provided using :ref:`set_navigation_map<class_TileMapLayer_method_set_navigation_map>`.
+默认情况下返回的是默认 :ref:`World2D<class_World2D>` 导航地图，除非通过 :ref:`set_navigation_map<class_TileMapLayer_method_set_navigation_map>` 提供了自定义地图。
 
 .. rst-class:: classref-item-separator
 
@@ -624,7 +624,7 @@ By default this returns the default :ref:`World2D<class_World2D>` navigation map
 
 :ref:`bool<class_bool>` **has_body_rid**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TileMapLayer_method_has_body_rid>`
 
-Returns whether the provided ``body`` :ref:`RID<class_RID>` belongs to one of this **TileMapLayer**'s cells.
+返回给定的 ``body`` :ref:`RID<class_RID>` 属于该 **TileMapLayer** 中的某个单元格。
 
 .. rst-class:: classref-item-separator
 
@@ -648,7 +648,7 @@ Returns whether the provided ``body`` :ref:`RID<class_RID>` belongs to one of th
 
 :ref:`Vector2i<class_Vector2i>` **map_pattern**\ (\ position_in_tilemap\: :ref:`Vector2i<class_Vector2i>`, coords_in_pattern\: :ref:`Vector2i<class_Vector2i>`, pattern\: :ref:`TileMapPattern<class_TileMapPattern>`\ ) :ref:`🔗<class_TileMapLayer_method_map_pattern>`
 
-Returns for the given coordinates ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMapLayer_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``.
+如果图案粘贴在 ``position_in_tilemap`` 坐标处（请参阅 :ref:`set_pattern<class_TileMapLayer_method_set_pattern>`\ ），则返回 :ref:`TileMapPattern<class_TileMapPattern>` 中给定坐标 ``coords_in_pattern`` 对应的单元格坐标。该映射是必需的，因为在半偏移图块形状中，映射可能无法通过计算 ``position_in_tile_map + coords_in_pattern`` 工作。
 
 .. rst-class:: classref-item-separator
 
@@ -742,7 +742,7 @@ Returns for the given coordinates ``coords_in_pattern`` in a :ref:`TileMapPatter
 
 |void| **set_navigation_map**\ (\ map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_TileMapLayer_method_set_navigation_map>`
 
-Sets a custom ``map`` as a :ref:`NavigationServer2D<class_NavigationServer2D>` navigation map. If not set, uses the default :ref:`World2D<class_World2D>` navigation map instead.
+将自定义 ``map`` 设置为 :ref:`NavigationServer2D<class_NavigationServer2D>` 导航地图。如果未设置，则改用默认的 :ref:`World2D<class_World2D>` 导航地图。
 
 .. rst-class:: classref-item-separator
 
@@ -773,10 +773,10 @@ Sets a custom ``map`` as a :ref:`NavigationServer2D<class_NavigationServer2D>` n
 \ **警告：**\ 更新 **TileMapLayer** 的计算量很大，可能会影响性能。请尽量限制更新的次数和受影响的图块。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -288,9 +288,9 @@ enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 :ref:`ENetPacketPeer<class_ENetPacketPeer>` **connect_to_host**\ (\ address\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`, channels\: :ref:`int<class_int>` = 0, data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_connect_to_host>`
 
-使用指定的端口 ``port`` 并分配所需的通道 ``channels``\ ，向外部地址 ``address`` 建立连接。可以在连接期间可以传递数据 ``data`` ，形式为 32 位整数。
+Initiates a connection to a foreign ``address`` using the specified ``port`` and allocating the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
 
-\ **注意：**\ 在调用此方法之前，必须先调用 :ref:`create_host<class_ENetConnection_method_create_host>` 或 :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>`\ 。
+\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` on both ends before calling this method.
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +302,11 @@ enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_host**\ (\ max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host>`
 
-创建一个 ENetHost，最多允许 ``max_peers`` 个连接的对等体，每个连接最多分配 ``max_channels`` 个通道，可选择将带宽限制为 ``in_bandwidth`` 和 ``out_bandwidth``\ 。
+Creates an ENetHost that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+This method binds a random available dynamic UDP port on the host machine at the *unspecified* address. Use :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to specify the address and port.
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -314,7 +318,9 @@ enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_host_bound**\ (\ bind_address\: :ref:`String<class_String>`, bind_port\: :ref:`int<class_int>`, max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host_bound>`
 
-创建一个类似 :ref:`create_host<class_ENetConnection_method_create_host>` 的 ENetHost，它还被绑定到给定的 ``bind_address`` 和 ``bind_port``\ 。
+Creates an ENetHost bound to the given ``bind_address`` and ``bind_port`` that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -438,9 +444,11 @@ enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 :ref:`Array<class_Array>` **service**\ (\ timeout\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_service>`
 
-等待指定主机上的事件，并在主机与其对等体之间传送数据包。返回的 :ref:`Array<class_Array>` 将有 4 个元素。\ :ref:`EventType<enum_ENetConnection_EventType>`\ 、生成事件的 :ref:`ENetPacketPeer<class_ENetPacketPeer>`\ 、事件关联的数据（如果有）、事件关联的通道（如果有）。如果生成的事件是 :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`\ ，则接收到的数据包，将被队列到关联的 :ref:`ENetPacketPeer<class_ENetPacketPeer>`\ 。
+Waits for events on this connection and shuttles packets between the host and its peers, with the given ``timeout`` (in milliseconds). The returned :ref:`Array<class_Array>` will have 4 elements. An :ref:`EventType<enum_ENetConnection_EventType>`, the :ref:`ENetPacketPeer<class_ENetPacketPeer>` which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`, the received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
 
-定期调用该函数来处理连接、断开连接和接收新数据包。
+Call this function regularly to handle connections, disconnections, and to receive new packets.
+
+\ **Note:** This method must be called on both ends involved in the event (sending and receiving hosts).
 
 .. rst-class:: classref-item-separator
 
@@ -452,17 +460,17 @@ enum **HostStatistic**: :ref:`🔗<enum_ENetConnection_HostStatistic>`
 
 |void| **socket_send**\ (\ destination_address\: :ref:`String<class_String>`, destination_port\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_ENetConnection_method_socket_send>`
 
-Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance.
+向目标发送数据包 ``packet``\ ，发送方是该 ENetConnection 实例当前绑定的地址和端口。
 
-This is useful as it serves to establish entries in NAT routing tables on all devices between this bound instance and the public facing internet, allowing a prospective client's connection packets to be routed backward through the NAT device(s) between the public internet and this host.
+这样能够在该绑定实例和公共互联网之间的所有设备的 NAT 路由表中建立相关条目，因此非常有用，能够让潜在客户端的连接数据包能够通过公共互联网和该主机之间的 NAT 设备进行反向路由。
 
-This requires forward knowledge of a prospective client's address and communication port as seen by the public internet - after any NAT devices have handled their connection request. This information can be obtained by a `STUN <https://en.wikipedia.org/wiki/STUN>`__ service, and must be handed off to your host by an entity that is not the prospective client. This will never work for a client behind a Symmetric NAT due to the nature of the Symmetric NAT routing algorithm, as their IP and Port cannot be known beforehand.
+要求在 NAT 设备处理连接请求后，预先了解公共互联网所看到的潜在客户端的地址和通信端口。这一信息可以通过 `STUN <https://zh.wikipedia.org/wiki/STUN>`__ 服务获取，必须由非潜在客户端的实体交给你的主机。由于对称 NAT 路由算法的性质，这种方法对于对称 NAT 之后的客户端无效，因为无法提前得知他们的 IP 和端口。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

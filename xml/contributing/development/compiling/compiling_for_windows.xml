@@ -13,25 +13,16 @@
             <paragraph>要在Windows下进行编译, 需要以下内容:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference name="Visual Studio Community" refuri="https://www.visualstudio.com/vs/community/">Visual Studio Community</reference><target ids="visual-studio-community" names="visual\ studio\ community" refuri="https://www.visualstudio.com/vs/community/"></target>,
-                        version 2019 or later. Visual Studio 2022 is recommended.
-                        <strong>Make sure to enable C++ in the list of workflows to install.</strong>
-                        If you've already installed Visual Studio without C++ support, run the installer
-                        again; it should present you a <strong>Modify</strong> button.</paragraph>
+                    <paragraph><reference name="Visual Studio Community" refuri="https://www.visualstudio.com/vs/community/">Visual Studio Community</reference><target ids="visual-studio-community" names="visual\ studio\ community" refuri="https://www.visualstudio.com/vs/community/"></target>，至少是 2019 版，推荐 Visual Studio 2022。<strong>安装时请确保在工作流列表中启用了 C++</strong>。如果已经安装过 Visual Studio 但没有启用 C++ 支持，请重新运行安装器，会显示<strong>修改</strong>按钮。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="MinGW-w64" refuri="https://mingw-w64.org/">MinGW-w64</reference><target ids="mingw-w64" names="mingw-w64" refuri="https://mingw-w64.org/"></target> with GCC can be used as an alternative to
-                        Visual Studio. Be sure to install/configure it to use the <literal>posix</literal> thread model.
-                        <strong>Important:</strong> When using MinGW to compile the <literal>master</literal> branch, you need GCC 9 or later.</paragraph>
+                    <paragraph><reference name="MinGW-w64" refuri="https://mingw-w64.org/">MinGW-w64</reference><target ids="mingw-w64" names="mingw-w64" refuri="https://mingw-w64.org/"></target> 和 GCC 可以作为 Visual Studio 的替代品。请确保在安装/配置时使用 <literal>posix</literal> 线程模型。<strong>重要提示：</strong>使用 MinGW 编译 <literal>master</literal> 分支时需要至少是 GCC 9。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="Python 3.6+" refuri="https://www.python.org/downloads/windows/">Python 3.6+</reference><target ids="python-3-6" names="python\ 3.6+" refuri="https://www.python.org/downloads/windows/"></target>.
-                        <strong>Make sure to enable the option to add Python to the ``PATH`` in the installer.</strong></paragraph>
+                    <paragraph><reference name="Python 3.6+" refuri="https://www.python.org/downloads/windows/">Python 3.6+</reference><target ids="python-3-6" names="python\ 3.6+" refuri="https://www.python.org/downloads/windows/"></target>。<strong>请确保在安装器中启用将 Python 加入 ``PATH`` 的选项。</strong></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference><target ids="scons-3-1-2" names="scons\ 3.1.2+" refuri="https://scons.org/pages/download.html"></target> build system. Using the
-                        latest release is recommended, especially for proper support of recent Visual
-                        Studio releases.</paragraph>
+                    <paragraph><reference name="SCons 3.1.2+" refuri="https://scons.org/pages/download.html">SCons 3.1.2+</reference><target ids="scons-3-1-2" names="scons\ 3.1.2+" refuri="https://scons.org/pages/download.html"></target> 构建系统。建议使用最新稳定版本，这样就能够正确支持最近版本的 Visual Studio。</paragraph>
                 </list_item>
             </bullet_list>
             <note>
@@ -119,50 +110,35 @@
                 </note>
             </section>
         </section>
-        <section ids="compiling-with-support-for-direct3d-12" names="compiling\ with\ support\ for\ direct3d\ 12">
-            <title>Compiling with support for Direct3D 12</title>
-            <paragraph>By default, builds of Godot do not contain support for the Direct3D 12 graphics
-                API.</paragraph>
-            <paragraph>To compile Godot with Direct3D 12 support you need at least the following:</paragraph>
+        <section ids="compiling-with-support-for-direct3d-12" names="compiling\ with\ support\ for\ direct3d\ 12 编译时启用\ direct3d\ 12\ 支持">
+            <title>编译时启用 Direct3D 12 支持</title>
+            <paragraph>Godot 构建默认不包含对 Direct3D 12 图形 API 的支持。</paragraph>
+            <paragraph>To compile Godot with Direct3D 12 support you need at least the following item:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference name="The DirectX Shader Compiler" refuri="https://github.com/Microsoft/DirectXShaderCompiler/releases">The DirectX Shader Compiler</reference><target ids="the-directx-shader-compiler" names="the\ directx\ shader\ compiler" refuri="https://github.com/Microsoft/DirectXShaderCompiler/releases"></target>.
-                        The zip folder will be named "dxc_" followed by the date of release. Download
-                        it anywhere, unzip it and remember the path to the unzipped folder, you will
-                        need it below.</paragraph>
-                </list_item>
-                <list_item>
-                    <paragraph><reference name="godot-nir-static library" refuri="https://github.com/godotengine/godot-nir-static/releases/">godot-nir-static library</reference><target ids="godot-nir-static-library" names="godot-nir-static\ library" refuri="https://github.com/godotengine/godot-nir-static/releases/"></target>.
-                        We compile the Mesa libraries you will need into a static library. Download it
-                        anywhere, unzip it and remember the path to the unzipped folder, you will
-                        need it below.</paragraph>
+                    <paragraph><reference name="godot-nir-static 库" refuri="https://github.com/godotengine/godot-nir-static/releases/">godot-nir-static 库</reference><target ids="godot-nir-static" names="godot-nir-static\ 库" refuri="https://github.com/godotengine/godot-nir-static/releases/"></target>。我们将所需的 Mesa 库编译成了静态库。下载完成后将其解压，记下解压后得到的文件夹的路径，后面会用到。</paragraph>
                 </list_item>
             </bullet_list>
             <note>
-                <paragraph>You can optionally build the godot-nir-static libraries yourself with
-                    the following steps:</paragraph>
+                <paragraph>你也可以自行构建 godot-nir-static 库，方法如下：</paragraph>
                 <enumerated_list enumtype="arabic" prefix="" suffix=".">
                     <list_item>
-                        <paragraph>Install the Python package <reference name="mako" refuri="https://www.makotemplates.org">mako</reference><target ids="mako" names="mako" refuri="https://www.makotemplates.org"></target>
-                            which is needed to generate some files.</paragraph>
+                        <paragraph>安装 Python 包 <reference name="mako" refuri="https://www.makotemplates.org">mako</reference><target ids="mako" names="mako" refuri="https://www.makotemplates.org"></target>，用于生成部分文件。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Clone the <reference name="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static">godot-nir-static</reference><target ids="godot-nir-static" names="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static"></target>
-                            directory and navigate to it.</paragraph>
+                        <paragraph>克隆 <reference name="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static">godot-nir-static</reference><target ids="godot-nir-static" names="godot-nir-static" refuri="https://github.com/godotengine/godot-nir-static"></target> 目录并打开。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Run the following:</paragraph>
+                        <paragraph>执行：</paragraph>
                         <literal_block force="False" language="shell" linenos="False" xml:space="preserve">git submodule update --init
 ./update_mesa.sh
 scons</literal_block>
-                        <paragraph>If you are building with MinGW, add <literal>use_mingw=yes</literal> to the <literal>scons</literal>
-                            command, you can also specify build architecture using <literal>arch={architecture}</literal>.</paragraph>
-                        <paragraph>Mesa static library should be built using the same compiler you are
-                            using for building Godot.</paragraph>
+                        <paragraph>如果你是用 MinGW 进行的构建，请在 <literal>scons</literal> 命令后加上 <literal>use_mingw=yes</literal>，你还可以用 <literal>arch={架构}</literal> 指定构建的架构。</paragraph>
+                        <paragraph>构建 Mesa 静态库的编译器应该与构建 Godot 所用的编译器一致。</paragraph>
                     </list_item>
                 </enumerated_list>
             </note>
-            <paragraph>Optionally, you can compile with the following for additional features:</paragraph>
+            <paragraph>另外你还可以在编译时启用以下附加功能：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><reference name="PIX" refuri="https://devblogs.microsoft.com/pix/download">PIX</reference><target ids="pix" names="pix" refuri="https://devblogs.microsoft.com/pix/download"></target> is a performance tuning
@@ -197,22 +173,10 @@ dlltool --machine i386:x86-64 --no-leading-underscore -d WinPixEventRuntime.def 
 gendef ./bin/ARM64/WinPixEventRuntime.dll
 dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/ARM64/libWinPixEventRuntime.a</literal_block>
             </note>
-            <paragraph>When building Godot, you will need to tell SCons to use Direct3D 12 and where to
-                look for the additional libraries:</paragraph>
-            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes dxc_path=&lt;...&gt; mesa_libs=&lt;...&gt;</literal_block>
-            <paragraph>Or, with all options enabled:</paragraph>
-            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes dxc_path=&lt;...&gt; mesa_libs=&lt;...&gt; agility_sdk_path=&lt;...&gt; pix_path=&lt;...&gt;</literal_block>
-            <note>
-                <paragraph>The build process will copy <literal>dxil.dll</literal> from the <literal>bin/&lt;arch&gt;/</literal>
-                    directory in the DXC folder to the Godot binary directory and the
-                    appropriate <literal>bin/&lt;arch&gt;</literal> file in the Godot binary directory.
-                    Direct3D 12-enabled Godot packages for distribution to end users must
-                    include the <literal>dxil.dll</literal> (and relevant folders if using multi-arch),
-                    both for the editor and games. At runtime, the renderer will try to
-                    load the DLL from the arch-specific folders, and will fall back to the
-                    same directory as the Godot executable if the appropriate arch isn't
-                    found.</paragraph>
-            </note>
+            <paragraph>构建 Godot 时，你需要让 SCons 使用 Direct3D 12 并指定附加库的查找位置：</paragraph>
+            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes mesa_libs=&lt;...&gt;</literal_block>
+            <paragraph>或者启用所有选项：</paragraph>
+            <literal_block force="False" highlight_args="{}" language="doscon" linenos="False" xml:space="preserve">C:\godot&gt; scons platform=windows d3d12=yes mesa_libs=&lt;...&gt; agility_sdk_path=&lt;...&gt; pix_path=&lt;...&gt;</literal_block>
             <note>
                 <paragraph>For the Agility SDK's DLLs you have to explicitly choose the kind of
                     workflow. Single-arch is the default (DLLs copied to <literal>bin/</literal>). If you
@@ -221,8 +185,8 @@ dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D Win
                     subdirectories and at runtime the right one will be loaded.</paragraph>
             </note>
         </section>
-        <section ids="compiling-with-angle-support" names="compiling\ with\ angle\ support">
-            <title>Compiling with ANGLE support</title>
+        <section ids="compiling-with-angle-support" names="compiling\ with\ angle\ support 编译时启用\ angle\ 支持">
+            <title>编译时启用 ANGLE 支持</title>
             <paragraph>ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be used
                 to improve support for the Compatibility renderer on some older GPUs with outdated
                 OpenGL drivers and on Windows for ARM.</paragraph>
@@ -253,7 +217,7 @@ dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D Win
                             directory and navigate to it.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Run the following command:</paragraph>
+                        <paragraph>运行以下命令：</paragraph>
                         <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons</literal_block>
                         <paragraph>If you are buildng with MinGW, add <literal>use_mingw=yes</literal> to the command,
                             you can also specify build architecture using <literal>arch={architecture}</literal>.</paragraph>
@@ -276,7 +240,10 @@ dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D Win
         </section>
         <section ids="cross-compiling-for-windows-from-other-operating-systems" names="cross-compiling\ for\ windows\ from\ other\ operating\ systems 从其他操作系统为\ windows\ 交叉编译">
             <title>从其他操作系统为 Windows 交叉编译</title>
-            <paragraph>如果你是Linux或macOS用户, 你需要安装 <reference name="MinGW-w64" refuri="https://mingw-w64.org/doku.php">MinGW-w64</reference> , 它通常有32位和64位两种版本. 包的名称可能根据你的发行版而不同, 这里有一些已知的包:</paragraph>
+            <paragraph>If you are a Linux or macOS user, you need to install
+                <reference name="MinGW-w64" refuri="https://www.mingw-w64.org/">MinGW-w64</reference>, which typically comes in 32-bit
+                and 64-bit variants. The package names may differ based on your distribution,
+                here are some known ones:</paragraph>
             <table>
                 <tgroup cols="2">
                     <colspec colwidth="16"></colspec>

@@ -11,20 +11,14 @@
         </section>
         <section ids="how-to-control-a-rigid-body" names="how\ to\ control\ a\ rigid\ body 如何控制刚体">
             <title>如何控制刚体</title>
-            <paragraph>A rigid body's behavior can be altered by setting its properties, such as mass and weight.
-                A physics material needs to be added to the rigid body to adjust its friction and bounce,
-                and set if it's absorbent and/or rough. These properties can be set in the Inspector or via code.
-                See <reference internal="True" refuri="../../classes/class_rigidbody3d#class-rigidbody3d"><inline classes="std std-ref">RigidBody3D</inline></reference> and <reference internal="True" refuri="../../classes/class_physicsmaterial#class-physicsmaterial"><inline classes="std std-ref">PhysicsMaterial</inline></reference> for
-                the full list of properties and their effects.</paragraph>
+            <paragraph>刚体的行为可以通过设置其属性（例如质量和重量）来进行调整。需要给刚体添加一个物理材质来调整它的摩擦和反弹，并设置它是否具有吸收性、粗糙度。这些属性可以在检查器中或通过代码来设置。参见 <reference internal="True" refuri="../../classes/class_rigidbody3d#class-rigidbody3d"><inline classes="std std-ref">RigidBody3D</inline></reference> 和 <reference internal="True" refuri="../../classes/class_physicsmaterial#class-physicsmaterial"><inline classes="std std-ref">PhysicsMaterial</inline></reference> 获取完整的属性列表和它们的效果。</paragraph>
             <paragraph>有几种方法可以控制刚体的运动, 这取决于你的应用程序.</paragraph>
-            <paragraph>If you only need to place a rigid body once, for example to set its initial location, you can use the methods provided by the <reference internal="True" refuri="../../classes/class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> node, such as <literal>set_global_transform()</literal> or <literal>look_at()</literal>. However, these methods cannot be called every frame or the physics engine will not be able to correctly simulate the body's state.
-                As an example, consider a rigid body that you want to rotate so that it points towards another object. A common mistake when implementing this kind of behavior is to use <literal>look_at()</literal> every frame, which breaks the physics simulation. Below, we'll demonstrate how to implement this correctly.</paragraph>
+            <paragraph>如果你只需要放置一次刚体，例如设置它的初始位置，你可以使用 <reference internal="True" refuri="../../classes/class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> 节点提供的方法，例如 <literal>set_global_transform()</literal> 或 <literal>look_at()</literal> 。但是，这些方法不能每一帧都被调用，否则物理引擎将无法正确地仿真物体的状态。举个例子，考虑一个刚体，你想旋转它，使它指向另一个对象。在实现这种行为时，一个常见的错误是每一帧都使用 <literal>look_at()</literal> ，这样会破坏物理仿真。下面，我们将演示如何正确地实现这一点。</paragraph>
             <paragraph>你不能使用 <literal>set_global_transform()</literal> 或 <literal>look_at()</literal> 方法并不意味着你不能完全控制一个刚体. 相反, 你可以通过使用 <literal>_integrate_forces()</literal> 回调来控制它. 在这个方法中, 你可以添加 <emphasis>力</emphasis> , 应用 <emphasis>冲量</emphasis> , 或者设置 <emphasis>速度</emphasis> , 以实现你想要的任何运动.</paragraph>
         </section>
         <section ids="the-look-at-method" names='the\ "look\ at"\ method “look\ at”方法'>
             <title>“look at”方法</title>
-            <paragraph>As described above, using the Node3D's <literal>look_at()</literal> method can't be used each frame to follow a target.
-                Here is a custom <literal>look_at()</literal> method called <literal>look_follow()</literal> that will work with rigid bodies:</paragraph>
+            <paragraph>如上所述，使用 Node3D 节点的 <literal>look_at()</literal> 方法不能每一帧都用来跟踪一个目标。这里有一个自定义的 <literal>look_at()</literal> 方法叫做 <literal>look_follow()</literal> ，可以适用于刚体：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>

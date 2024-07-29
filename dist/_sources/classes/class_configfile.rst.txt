@@ -19,7 +19,7 @@ ConfigFile
 描述
 ----
 
-This helper class can be used to store :ref:`Variant<class_Variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
+该辅助类可用于使用 INI 样式格式在文件系统上存储 :ref:`Variant<class_Variant>` 值。存储的值由一个小节和一个键标识：
 
 .. code:: text
 
@@ -28,44 +28,44 @@ This helper class can be used to store :ref:`Variant<class_Variant>` values on t
     string_example="Hello World3D!"
     a_vector=Vector3(1, 0, 2)
 
-The stored data can be saved to or parsed from a file, though ConfigFile objects can also be used directly without accessing the filesystem.
+存储的数据可以被保存到文件中或从文件中解析出来，尽管 ConfigFile 对象也可以直接使用而无需访问文件系统。
 
-The following example shows how to create a simple **ConfigFile** and save it on disc:
+以下示例显示了如何创建一个简单的 **ConfigFile** 并将其保存在磁盘上：
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # Create new ConfigFile object.
+    # 创建新的 ConfigFile 对象。
     var config = ConfigFile.new()
     
-    # Store some values.
+    # 存储一些值。
     config.set_value("Player1", "player_name", "Steve")
     config.set_value("Player1", "best_score", 10)
     config.set_value("Player2", "player_name", "V3geta")
     config.set_value("Player2", "best_score", 9001)
     
-    # Save it to a file (overwrite if already exists).
+    # 将其保存到文件中（如果已存在则覆盖）。
     config.save("user://scores.cfg")
 
  .. code-tab:: csharp
 
-    // Create new ConfigFile object.
+    // 创建新的 ConfigFile 对象。
     var config = new ConfigFile();
     
-    // Store some values.
+    // 存储一些值。
     config.SetValue("Player1", "player_name", "Steve");
     config.SetValue("Player1", "best_score", 10);
     config.SetValue("Player2", "player_name", "V3geta");
     config.SetValue("Player2", "best_score", 9001);
     
-    // Save it to a file (overwrite if already exists).
+    // 将其保存到文件中（如果已存在则覆盖）。
     config.Save("user://scores.cfg");
 
 
 
-This example shows how the above file could be loaded:
+该示例展示了如何加载上面的文件：
 
 
 .. tabs::
@@ -75,16 +75,16 @@ This example shows how the above file could be loaded:
     var score_data = {}
     var config = ConfigFile.new()
     
-    # Load data from a file.
+    # 从文件加载数据。
     var err = config.load("user://scores.cfg")
     
-    # If the file didn't load, ignore it.
+    # 如果文件没有加载，忽略它。
     if err != OK:
         return
     
-    # Iterate over all sections.
+    # 迭代所有小节。
     for player in config.get_sections():
-        # Fetch the data for each section.
+        # 获取每个小节的数据。
         var player_name = config.get_value(player, "player_name")
         var player_score = config.get_value(player, "best_score")
         score_data[player_name] = player_score
@@ -94,19 +94,19 @@ This example shows how the above file could be loaded:
     var score_data = new Godot.Collections.Dictionary();
     var config = new ConfigFile();
     
-    // Load data from a file.
+    // 从文件加载数据。
     Error err = config.Load("user://scores.cfg");
     
-    // If the file didn't load, ignore it.
+    // 如果文件没有加载，忽略它。
     if (err != Error.Ok)
     {
         return;
     }
     
-    // Iterate over all sections.
+    // 迭代所有小节。
     foreach (String player in config.GetSections())
     {
-        // Fetch the data for each section.
+        // 获取每个小节的数据。
         var player_name = (String)config.GetValue(player, "player_name");
         var player_score = (int)config.GetValue(player, "best_score");
         score_data[player_name] = player_score;
@@ -114,13 +114,13 @@ This example shows how the above file could be loaded:
 
 
 
-Any operation that mutates the ConfigFile such as :ref:`set_value<class_ConfigFile_method_set_value>`, :ref:`clear<class_ConfigFile_method_clear>`, or :ref:`erase_section<class_ConfigFile_method_erase_section>`, only changes what is loaded in memory. If you want to write the change to a file, you have to save the changes with :ref:`save<class_ConfigFile_method_save>`, :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>`, or :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>`.
+任何改变 ConfigFile 的操作，例如 :ref:`set_value<class_ConfigFile_method_set_value>`\ 、\ :ref:`clear<class_ConfigFile_method_clear>`\ 、或 :ref:`erase_section<class_ConfigFile_method_erase_section>`\ ，只会改变加载到内存中的内容。如果要将更改写入文件，则必须使用 :ref:`save<class_ConfigFile_method_save>`\ 、\ :ref:`save_encrypted<class_ConfigFile_method_save_encrypted>` 或 :ref:`save_encrypted_pass<class_ConfigFile_method_save_encrypted_pass>` 保存更改。
 
-Keep in mind that section and property names can't contain spaces. Anything after a space will be ignored on save and on load.
+请记住，小节和属性名称不能包含空格。保存和加载时将忽略空格后的任何内容。
 
-ConfigFiles can also contain manually written comment lines starting with a semicolon (``;``). Those lines will be ignored when parsing the file. Note that comments will be lost when saving the ConfigFile. This can still be useful for dedicated server configuration files, which are typically never overwritten without explicit user action.
+ConfigFiles 还可以包含以分号（\ ``;``\ ）开头的手动编写的注释行。解析文件时将忽略这些行。请注意，保存 ConfigFile 时注释将丢失。注释对于专用服务器配置文件仍然很有用，如果没有明确的用户操作，这些文件通常永远不会被覆盖。
 
-\ **Note:** The file extension given to a ConfigFile does not have any impact on its formatting or behavior. By convention, the ``.cfg`` extension is used here, but any other extension such as ``.ini`` is also valid. Since neither ``.cfg`` nor ``.ini`` are standardized, Godot's ConfigFile formatting may differ from files written by other programs.
+\ **注意：**\ 为 ConfigFile 指定的文件扩展名对其格式或行为没有任何影响。按照惯例，此处使用 ``.cfg`` 扩展名，但 ``.ini`` 等任何其他扩展名也有效。由于 ``.cfg`` 和 ``.ini`` 都不是标准化的格式，Godot 的 ConfigFile 格式可能与其他程序编写的文件不同。
 
 .. rst-class:: classref-reftable-group
 
@@ -390,10 +390,10 @@ ConfigFiles can also contain manually written comment lines starting with a semi
 为指定小节的指定键赋值。如果小节或键不存在，则创建它们。如果指定的键存在，传递 ``null`` 值就会移除指定的键，如果键被移除后，小节最终是空的，就会移除小节。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

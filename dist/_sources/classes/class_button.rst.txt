@@ -557,7 +557,7 @@ Button
 
 :ref:`int<class_int>` **align_to_largest_stylebox** = ``0`` :ref:`🔗<class_Button_theme_constant_align_to_largest_stylebox>`
 
-This constant acts as a boolean. If ``true``, text and icon are always aligned to the largest stylebox margins, otherwise it's aligned to the current button state stylebox margins.
+This constant acts as a boolean. If ``true``, the minimum size of the button and text/icon alignment is always based on the largest stylebox margins, otherwise it's based on the current button state stylebox margins.
 
 .. rst-class:: classref-item-separator
 
@@ -581,7 +581,7 @@ This constant acts as a boolean. If ``true``, text and icon are always aligned t
 
 :ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_Button_theme_constant_icon_max_width>`
 
-The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio. If the button has additional icons (e.g. :ref:`CheckBox<class_CheckBox>`), they will also be limited.
+**Button** 图标的最大允许宽度。该限制应用于图标的默认大小，如果 :ref:`expand_icon<class_Button_property_expand_icon>` 为 ``true``\ ，则应用于其扩展大小。高度根据图标的缩放进行调整。如果按钮有其他图标（例如 :ref:`CheckBox<class_CheckBox>`\ ），它们也将会受到限制。
 
 .. rst-class:: classref-item-separator
 
@@ -766,10 +766,10 @@ The maximum allowed width of the **Button**'s icon. This limit is applied on top
 该 **Button** 处于按下状态时使用的 :ref:`StyleBox<class_StyleBox>`\ （用于从右至左布局）。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

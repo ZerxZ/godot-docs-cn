@@ -214,8 +214,7 @@ func take_damage(amount, effect=null):
             </section>
             <section ids="one-statement-per-line" names="one\ statement\ per\ line 一条语句一行">
                 <title>一条语句一行</title>
-                <paragraph>Avoid combining multiple statements on a single line, including conditional
-                    statements, to adhere to the GDScript style guidelines for readability.</paragraph>
+                <paragraph>要避免将多个语句放在一行当中，包括条件语句，以遵守 GDScript 的可读性风格指南。</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">if position.x &gt; width:
     position.x = 0
@@ -301,19 +300,12 @@ if position.x &gt; 200 and position.x &lt; 400 and position.y &gt; 300 and posit
                 <literal_block classes="code-example-bad" force="False" language="gdscript" linenos="False" xml:space="preserve">#This is a comment.
 # print("This is disabled code")</literal_block>
                 <note>
-                    <paragraph>In the script editor, to toggle commenting of the selected code, press
-                        <literal classes="kbd">Ctrl + K</literal>. This feature adds/removes a single <literal>#</literal> sign before any
-                        code on the selected lines.</paragraph>
+                    <paragraph>在脚本编辑器中，要切换已注释的选定代码，请按 <literal classes="kbd">Ctrl + K</literal>。此功能会在选定行的开头添加/删除一个 <literal>#</literal> 注释符号。</paragraph>
                 </note>
             </section>
             <section ids="whitespace" names="whitespace 空格">
                 <title>空格</title>
-                <paragraph>Always use one space around operators and after commas. Also, avoid extra spaces
-                    in dictionary references and function calls. One exception to this is for
-                    single-line dictionary declarations, where a space should be added after the
-                    opening brace and before the closing brace. This makes the dictionary easier to
-                    visually distinguish from an array, as the <literal>[]</literal> characters look close to
-                    <literal>{}</literal> with most fonts.</paragraph>
+                <paragraph>保持在运算符前后以及逗号之后用一个空格隔开的习惯。同时，避免在字典引用和函数调用中使用多余的空格。对于单行字典声明，在左大括号之后、右大括号之前应该添加一个空格，这是上述规范的例外情况，这样做可以使字典在视觉上更容易与数组区分，因为大多数字体中， <literal>[]</literal> 字符看起来与 <literal>{}</literal> 非常相似。</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">position.x = 5
 position.y = target_position.y + 10
@@ -425,8 +417,7 @@ signal score_changed</literal_block>
     AIR,
     FIRE,
 }</literal_block>
-                <paragraph>Write enums with each item on its own line. This allows adding documentation comments abve each item
-                    more easily, and also makes for cleaner diffs in version control when items are added or removed.</paragraph>
+                <paragraph>将枚举的每个项写在单独的一行，这样可以更轻易地在每个项上方添加文档注释，并且在版本控制中添加或删除项时，差异对比也会更加清晰。</paragraph>
                 <paragraph><strong>规范示例</strong> :</paragraph>
                 <literal_block classes="code-example-good" force="False" language="gdscript" linenos="False" xml:space="preserve">enum Element {
     EARTH,
@@ -521,7 +512,10 @@ var _speed = 300.0
 @onready var sword = get_node("Sword")
 @onready var gun = get_node("Gun")</literal_block>
                 <note>
-                    <paragraph>GDScript编译器在 <literal>_ready</literal> 函数回调之前计算就绪加载（onready）变量，因此可以使用该虚函数来缓存节点依赖项，在你的类所依赖的场景中获取子节点。这便是上面的例子所展示的内容。</paragraph>
+                    <paragraph>GDScript evaluates <literal>@onready</literal> variables right before the <literal>_ready</literal>
+                        callback. You can use that to cache node dependencies, that is to say, to get
+                        child nodes in the scene that your class relies on. This is what the example
+                        above shows.</paragraph>
                 </note>
             </section>
             <section ids="member-variables" names="member\ variables 成员变量">

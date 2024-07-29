@@ -17,7 +17,7 @@
 描述
 ----
 
-全局范围的枚举常量和内置函数的列表。这是所有驻留在全局的，关于错误代码、键码、属性提示等的常量。
+全局范围的枚举常量和内置函数的列表。这是所有驻留在全局的，关于错误代码、键码、属性提示等的常量的集合。
 
 单例也被记录在这里，因为它们可以从任何地方被访问。
 
@@ -25,7 +25,7 @@
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -3878,7 +3878,7 @@ flags **PropertyUsageFlags**: :ref:`🔗<enum_@GlobalScope_PropertyUsageFlags>`
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_STORAGE** = ``2``
 
-将属性序列化并保存到场景文件中（默认）。
+The property is serialized and saved in the scene file (default for exported properties).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR:
 
@@ -3886,7 +3886,7 @@ flags **PropertyUsageFlags**: :ref:`🔗<enum_@GlobalScope_PropertyUsageFlags>`
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR** = ``4``
 
-该属性将被显示在 :ref:`EditorInspector<class_EditorInspector>`\ （默认）中。
+The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (default for exported properties).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNAL:
 
@@ -5303,7 +5303,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **acosh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_acosh>`
 
-返回参数 x 的双曲弧（也称为反余弦），返回弧度值。使用它来获取在双曲空间中，如果参数 x 大于或等于 1 ，角的余弦的角度。对于参数 x 小于 1 的值，将返回 0 ，以防止 :ref:`acosh<class_@GlobalScope_method_acosh>` 返回 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` 。
+返回 ``x`` 的反双曲余弦值，返回值为弧度。使用它来获取在双曲空间中，如果 ``x`` 大于或等于 1，角的余弦的角度。对于 ``x`` 小于 1 的值，将返回 0，以防止 :ref:`acosh<class_@GlobalScope_method_acosh>` 返回 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`\ 。
 
 ::
 
@@ -5351,7 +5351,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **asinh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_asinh>`
 
-返回参数 x 的双曲弧（也称为反正弦），返回弧度值。使用它来获取在双曲空间中，角的正弦角度。
+返回 ``x`` 的反双曲正弦值，返回值为弧度。使用它来获取在双曲空间中，角的正弦角度。
 
 ::
 
@@ -5368,7 +5368,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **atan**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_atan>`
 
-返回 ``x`` 的反正切值，单位是弧度。在三角函数中用它来得到一个角上切线的角度。
+返回 ``x`` 的反正切值，单位为弧度。在三角函数中用它来得到一个角上切线的角度。
 
 该方法无法确定角度应该落在哪个象限。如果你同时拥有 ``y`` 和 ``x``\ ，请参见 :ref:`atan2<class_@GlobalScope_method_atan2>`\ 。
 
@@ -5406,9 +5406,9 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **atanh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_atanh>`
 
-返回 ``x`` 的双曲弧（也称为反正切），以弧度为单位。如果 ``x`` 在 -1 和 1 之间（不包括 -1 和 1 ），则使用它从双曲空间中的角度的正切值获取角度。
+返回 ``x`` 的反双曲正切值，返回值为弧度。如果 ``x`` 在 -1 和 1 之间（不包括 -1 和 1），则使用它从双曲空间中的角度的正切值获取角度。
 
-在数学中，只有在实数集中，-1 < ``x`` < 1 的情况下，双曲反正切才有意义。因此，为了预防 :ref:`atanh<class_@GlobalScope_method_atanh>` 返回 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` ，对于 ``x`` 等于或小于 -1 的值，返回负的 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` ；对于\ ``x``\ 等于或大于 1 的值，返回正的 :ref:`@GDScript.INF<class_@GDScript_constant_INF>` 。
+在数学中，只有在实数集中，-1 < ``x`` < 1 的情况下，双曲反正切才有意义。因此，为了预防 :ref:`atanh<class_@GlobalScope_method_atanh>` 返回 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`\ ，对于 ``x`` 等于或小于 -1 的值，返回负的 :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`\ ；对于 ``x``\ 等于或大于 1 的值，返回正的 :ref:`@GDScript.INF<class_@GDScript_constant_INF>`\ 。
 
 ::
 
@@ -5679,7 +5679,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **db_to_linear**\ (\ db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_db_to_linear>`
 
-从分贝转换为线性能量（音频）。
+将分贝值转换为线性能量（音频）值。
 
 .. rst-class:: classref-item-separator
 
@@ -5707,7 +5707,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`float<class_float>` **ease**\ (\ x\: :ref:`float<class_float>`, curve\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_ease>`
 
-基于用 ``curve`` 定义的缓动函数返回 ``x`` 的“缓动后”的值。该缓动函数是基于指数的。\ ``curve`` 可以是任意浮点数，具体数值会导致以下行为：
+基于用 ``curve`` 定义的缓动函数返回 ``x`` “缓动后”的值，该缓动函数是基于指数的缓动。\ ``curve`` 可以是任意浮点数，具体数值会导致以下行为：
 
 .. code:: text
 
@@ -6831,15 +6831,15 @@ URL 标签仅支持在 URL 标签中包含 URL，不支持使用不同标题的 
 
 :ref:`float<class_float>` **remap**\ (\ value\: :ref:`float<class_float>`, istart\: :ref:`float<class_float>`, istop\: :ref:`float<class_float>`, ostart\: :ref:`float<class_float>`, ostop\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_remap>`
 
-Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
+将 ``value`` 从范围 ``[istart, istop]`` 映射到 ``[ostart, ostop]``\ 。另见 :ref:`lerp<class_@GlobalScope_method_lerp>` 和 :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`\ 。如果 ``value`` 在 ``[istart, istop]`` 之外，那么结果值也将在 ``[ostart, ostop]`` 之外。如果不希望这样，请对该函数的结果使用 :ref:`clamp<class_@GlobalScope_method_clamp>`\ 。
 
 ::
 
-    remap(75, 0, 100, -1, 1) # Returns 0.5
+    remap(75, 0, 100, -1, 1) # 返回 0.5
 
-For complex use cases where multiple ranges are needed, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
+对于需要多个范围的复杂用例，请考虑改用 :ref:`Curve<class_Curve>` 或 :ref:`Gradient<class_Gradient>`\ 。
 
-\ **Note:** If ``istart == istop``, the return value is undefined (most likely NaN, INF, or -INF).
+\ **注意：**\ 如果 ``istart == istop``\ ，则返回值未定义（很可能是 NaN、INF 或 -INF）。
 
 .. rst-class:: classref-item-separator
 
@@ -7500,10 +7500,10 @@ For complex use cases where multiple ranges are needed, consider using :ref:`Cur
     var result = wrapi(-6, -5, -1)
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

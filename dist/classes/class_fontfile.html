@@ -146,7 +146,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -298,8 +298,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -575,7 +575,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -588,7 +588,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/inspector_dock.html">检查器</a><ul>
@@ -802,6 +802,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1150,7 +1160,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1309,7 +1319,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1550,8 +1560,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1958,20 +1968,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1996,17 +2006,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2034,14 +2044,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2542,6 +2552,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2865,10 +2876,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2888,7 +2899,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2990,44 +3001,44 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">高级专题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">XR 动作映射</a><ul>
@@ -3054,17 +3065,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#some-final-words">最后的话</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3091,18 +3107,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3197,7 +3216,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3394,7 +3413,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3484,7 +3503,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_animationtree.html">AnimationTree</a><ul>
@@ -3517,7 +3536,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4713,8 +4732,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6390,7 +6410,8 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8269,9 +8290,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiosample.html">AudioSample</a><ul>
@@ -10453,21 +10476,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_basis.html">Basis</a><ul>
@@ -10476,30 +10499,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_color.html">Color</a><ul>
@@ -10508,12 +10531,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_dictionary.html">Dictionary</a><ul>
@@ -10521,27 +10544,27 @@
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_nodepath.html">NodePath</a><ul>
@@ -10549,10 +10572,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_object.html">Object</a><ul>
@@ -10569,60 +10592,60 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10630,10 +10653,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10641,30 +10664,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_plane.html">Plane</a><ul>
@@ -10673,12 +10696,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_projection.html">Projection</a><ul>
@@ -10686,12 +10709,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_quaternion.html">Quaternion</a><ul>
@@ -10700,12 +10723,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2.html">Rect2</a><ul>
@@ -10714,11 +10737,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2i.html">Rect2i</a><ul>
@@ -10727,21 +10750,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_signal.html">Signal</a><ul>
@@ -10749,10 +10772,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_string.html">String</a><ul>
@@ -10760,20 +10783,20 @@
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform2d.html">Transform2D</a><ul>
@@ -10782,12 +10805,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform3d.html">Transform3D</a><ul>
@@ -10796,12 +10819,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2.html">Vector2</a><ul>
@@ -10810,12 +10833,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2i.html">Vector2i</a><ul>
@@ -10824,12 +10847,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3.html">Vector3</a><ul>
@@ -10838,12 +10861,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3i.html">Vector3i</a><ul>
@@ -10852,12 +10875,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4.html">Vector4</a><ul>
@@ -10865,12 +10888,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4i.html">Vector4i</a><ul>
@@ -10878,12 +10901,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -11016,7 +11039,7 @@
 <td><p><a class="reference internal" href="#class-fontfile-property-font-stretch"><span class="std std-ref">font_stretch</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">100</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><abbr title="这个值是由下列标志构成的位掩码整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>]</p></td>
+<tr class="row-odd"><td><p><abbr title="这个值是由下列位标志构成位掩码的整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>]</p></td>
 <td><p><a class="reference internal" href="#class-fontfile-property-font-style"><span class="std std-ref">font_style</span></a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
 </tr>
@@ -11087,94 +11110,94 @@
 <td><p><a class="reference internal" href="#class-fontfile-method-clear-textures"><span class="std std-ref">clear_textures</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-ascent"><span class="std std-ref">get_cache_ascent</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-ascent"><span class="std std-ref">get_cache_ascent</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-count"><span class="std std-ref">get_cache_count</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-count"><span class="std std-ref">get_cache_count</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-descent"><span class="std std-ref">get_cache_descent</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-descent"><span class="std std-ref">get_cache_descent</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-scale"><span class="std std-ref">get_cache_scale</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-scale"><span class="std std-ref">get_cache_scale</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-underline-position"><span class="std std-ref">get_cache_underline_position</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-underline-position"><span class="std std-ref">get_cache_underline_position</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-underline-thickness"><span class="std std-ref">get_cache_underline_thickness</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-cache-underline-thickness"><span class="std std-ref">get_cache_underline_thickness</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-char-from-glyph-index"><span class="std std-ref">get_char_from_glyph_index</span></a>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-char-from-glyph-index"><span class="std std-ref">get_char_from_glyph_index</span></a>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-embolden"><span class="std std-ref">get_embolden</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-embolden"><span class="std std-ref">get_embolden</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-extra-baseline-offset"><span class="std std-ref">get_extra_baseline_offset</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-extra-baseline-offset"><span class="std std-ref">get_extra_baseline_offset</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-extra-spacing"><span class="std std-ref">get_extra_spacing</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, spacing: <a class="reference internal" href="class_textserver.html#enum-textserver-spacingtype"><span class="std std-ref">SpacingType</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-extra-spacing"><span class="std std-ref">get_extra_spacing</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, spacing: <a class="reference internal" href="class_textserver.html#enum-textserver-spacingtype"><span class="std std-ref">SpacingType</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-face-index"><span class="std std-ref">get_face_index</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-face-index"><span class="std std-ref">get_face_index</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-advance"><span class="std std-ref">get_glyph_advance</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-advance"><span class="std std-ref">get_glyph_advance</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-index"><span class="std std-ref">get_glyph_index</span></a>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, char: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, variation_selector: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-index"><span class="std std-ref">get_glyph_index</span></a>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, char: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, variation_selector: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-list"><span class="std std-ref">get_glyph_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-list"><span class="std std-ref">get_glyph_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-offset"><span class="std std-ref">get_glyph_offset</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-offset"><span class="std std-ref">get_glyph_offset</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-size"><span class="std std-ref">get_glyph_size</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-size"><span class="std std-ref">get_glyph_size</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-texture-idx"><span class="std std-ref">get_glyph_texture_idx</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-texture-idx"><span class="std std-ref">get_glyph_texture_idx</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-uv-rect"><span class="std std-ref">get_glyph_uv_rect</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-glyph-uv-rect"><span class="std std-ref">get_glyph_uv_rect</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-kerning"><span class="std std-ref">get_kerning</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_pair: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-kerning"><span class="std std-ref">get_kerning</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_pair: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>]</p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-kerning-list"><span class="std std-ref">get_kerning_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-kerning-list"><span class="std std-ref">get_kerning_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-language-support-override"><span class="std std-ref">get_language_support_override</span></a>(language: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-language-support-override"><span class="std std-ref">get_language_support_override</span></a>(language: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-language-support-overrides"><span class="std std-ref">get_language_support_overrides</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-language-support-overrides"><span class="std std-ref">get_language_support_overrides</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-script-support-override"><span class="std std-ref">get_script_support_override</span></a>(script: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-script-support-override"><span class="std std-ref">get_script_support_override</span></a>(script: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-script-support-overrides"><span class="std std-ref">get_script_support_overrides</span></a>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-script-support-overrides"><span class="std std-ref">get_script_support_overrides</span></a>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>]</p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-size-cache-list"><span class="std std-ref">get_size_cache_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-size-cache-list"><span class="std std-ref">get_size_cache_list</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-count"><span class="std std-ref">get_texture_count</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-count"><span class="std std-ref">get_texture_count</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-image"><span class="std std-ref">get_texture_image</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-image"><span class="std std-ref">get_texture_image</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-offsets"><span class="std std-ref">get_texture_offsets</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-texture-offsets"><span class="std std-ref">get_texture_offsets</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-transform"><span class="std std-ref">get_transform</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-transform"><span class="std std-ref">get_transform</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a></p></td>
-<td><p><a class="reference internal" href="#class-fontfile-method-get-variation-coordinates"><span class="std std-ref">get_variation_coordinates</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-fontfile-method-get-variation-coordinates"><span class="std std-ref">get_variation_coordinates</span></a>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a></p></td>
 <td><p><a class="reference internal" href="#class-fontfile-method-load-bitmap-font"><span class="std std-ref">load_bitmap_font</span></a>(path: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>)</p></td>
@@ -11335,10 +11358,10 @@
 </ul>
 <p>与正常宽度相比的字体的拉伸量。 一个介于 <code class="docutils literal notranslate"><span class="pre">50%</span></code> 和 <code class="docutils literal notranslate"><span class="pre">200%</span></code> 之间的百分比值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-property" id="class-fontfile-property-font-style"><abbr title="这个值是由下列标志构成的位掩码整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>] <strong>font_style</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code> <a class="reference internal" href="#class-fontfile-property-font-style"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-property" id="class-fontfile-property-font-style"><abbr title="这个值是由下列位标志构成位掩码的整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>] <strong>font_style</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code> <a class="reference internal" href="#class-fontfile-property-font-style"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
-<li><p><abbr title="无返回值。">void</abbr> <strong>set_font_style</strong>(value: <abbr title="这个值是由下列标志构成的位掩码整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>])</p></li>
-<li><p><abbr title="这个值是由下列标志构成的位掩码整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>] <strong>get_font_style</strong>()</p></li>
+<li><p><abbr title="无返回值。">void</abbr> <strong>set_font_style</strong>(value: <abbr title="这个值是由下列位标志构成位掩码的整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>])</p></li>
+<li><p><abbr title="这个值是由下列位标志构成位掩码的整数。">BitField</abbr>[<a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>] <strong>get_font_style</strong>()</p></li>
 </ul>
 <p>字体样式标志，见 <a class="reference internal" href="class_textserver.html#enum-textserver-fontstyle"><span class="std std-ref">FontStyle</span></a>。</p>
 <hr class="classref-item-separator docutils" />
@@ -11428,8 +11451,8 @@
 <p>移除所有字体缓存条目。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-fontfile-method-clear-glyphs"><abbr title="无返回值。">void</abbr> <strong>clear_glyphs</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <a class="reference internal" href="#class-fontfile-method-clear-glyphs"><span class="std std-ref">🔗</span></a></p>
-<p>Removes all rendered glyph information from the cache entry.</p>
-<p><strong>Note:</strong> This function will not remove textures associated with the glyphs, use <a class="reference internal" href="#class-fontfile-method-remove-texture"><span class="std std-ref">remove_texture</span></a> to remove them manually.</p>
+<p>从字体缓存条目中，移除所有渲染的字形信息。</p>
+<p><strong>注意：</strong>该函数不会移除与字形相关的纹理，请使用 <a class="reference internal" href="#class-fontfile-method-remove-texture"><span class="std std-ref">remove_texture</span></a> 手动移除它们。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-fontfile-method-clear-kerning-map"><abbr title="无返回值。">void</abbr> <strong>clear_kerning_map</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <a class="reference internal" href="#class-fontfile-method-clear-kerning-map"><span class="std std-ref">🔗</span></a></p>
 <p>移除所有字距调整覆盖。</p>
@@ -11441,95 +11464,95 @@
 <p>从字体缓存条目中，移除所有纹理。</p>
 <p><strong>注意：</strong>该函数不会移除与纹理相关的字形，请使用 <a class="reference internal" href="#class-fontfile-method-remove-glyph"><span class="std std-ref">remove_glyph</span></a> 手动移除它们。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-ascent"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_ascent</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-ascent"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-ascent"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_ascent</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-ascent"><span class="std std-ref">🔗</span></a></p>
 <p>返回字体的上升幅度（超出基线的像素数）。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_cache_count</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-count"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_cache_count</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-count"><span class="std std-ref">🔗</span></a></p>
 <p>返回字体缓存条目的数量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-descent"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_descent</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-descent"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-descent"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_descent</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-descent"><span class="std std-ref">🔗</span></a></p>
 <p>返回字体的减少量（低于基线的像素数）。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-scale"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_scale</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-scale"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-scale"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_scale</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-scale"><span class="std std-ref">🔗</span></a></p>
 <p>返回颜色位图字体的缩放系数。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-underline-position"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_underline_position</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-underline-position"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-underline-position"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_underline_position</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-underline-position"><span class="std std-ref">🔗</span></a></p>
 <p>返回基线下方下划线的像素偏移。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-cache-underline-thickness"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_underline_thickness</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-underline-thickness"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-cache-underline-thickness"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_cache_underline_thickness</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-cache-underline-thickness"><span class="std std-ref">🔗</span></a></p>
 <p>返回下划线的粗细度，单位为像素。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-char-from-glyph-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_char_from_glyph_index</strong>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-char-from-glyph-index"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-char-from-glyph-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_char_from_glyph_index</strong>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-char-from-glyph-index"><span class="std std-ref">🔗</span></a></p>
 <p>返回与 <code class="docutils literal notranslate"><span class="pre">glyph_index</span></code> 关联的字符代码，如果 <code class="docutils literal notranslate"><span class="pre">glyph_index</span></code> 无效则返回 <code class="docutils literal notranslate"><span class="pre">0</span></code>。见 <a class="reference internal" href="#class-fontfile-method-get-glyph-index"><span class="std std-ref">get_glyph_index</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-embolden"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_embolden</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-embolden"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-embolden"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_embolden</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-embolden"><span class="std std-ref">🔗</span></a></p>
 <p>返回加粗强度，如果不等于零，则加粗字体轮廓。负值会减小轮廓粗细。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-extra-baseline-offset"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_extra_baseline_offset</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-extra-baseline-offset"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-extra-baseline-offset"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_extra_baseline_offset</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-extra-baseline-offset"><span class="std std-ref">🔗</span></a></p>
 <p>返回额外的基线偏移（作为字体高度的一部分）。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-extra-spacing"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_extra_spacing</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, spacing: <a class="reference internal" href="class_textserver.html#enum-textserver-spacingtype"><span class="std std-ref">SpacingType</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-extra-spacing"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-extra-spacing"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_extra_spacing</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, spacing: <a class="reference internal" href="class_textserver.html#enum-textserver-spacingtype"><span class="std std-ref">SpacingType</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-extra-spacing"><span class="std std-ref">🔗</span></a></p>
 <p>返回 <code class="docutils literal notranslate"><span class="pre">spacing</span></code> 的间距（见 <a class="reference internal" href="class_textserver.html#enum-textserver-spacingtype"><span class="std std-ref">SpacingType</span></a>），单位为像素（与字体大小无关）。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-face-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_face_index</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-face-index"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-face-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_face_index</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-face-index"><span class="std std-ref">🔗</span></a></p>
 <p>返回 TrueType / OpenType 集合中的活动字体索引。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-advance"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_advance</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-advance"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-advance"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_advance</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-advance"><span class="std std-ref">🔗</span></a></p>
 <p>返回字形前进量（下一个字形的偏移量）。</p>
 <p><strong>注意：</strong>字形轮廓的前进量，与基础字形的前进量相同，不会被保存。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_glyph_index</strong>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, char: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, variation_selector: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-index"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-index"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_glyph_index</strong>(size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, char: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, variation_selector: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-index"><span class="std std-ref">🔗</span></a></p>
 <p>返回 <code class="docutils literal notranslate"><span class="pre">char</span></code> 的字形索引，可以用 <code class="docutils literal notranslate"><span class="pre">variation_selector</span></code> 修改。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-list"><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a> <strong>get_glyph_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-list"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-list"><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a> <strong>get_glyph_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-list"><span class="std std-ref">🔗</span></a></p>
 <p>返回缓存条目中的已渲染字形列表。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-offset"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_offset</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-offset"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-offset"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_offset</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-offset"><span class="std std-ref">🔗</span></a></p>
 <p>返回字形的基线偏移量。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-size"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_size</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-size"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-size"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_glyph_size</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-size"><span class="std std-ref">🔗</span></a></p>
 <p>返回字形大小。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-texture-idx"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_glyph_texture_idx</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-texture-idx"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-texture-idx"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_glyph_texture_idx</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-texture-idx"><span class="std std-ref">🔗</span></a></p>
 <p>返回包含该字形的缓存纹理的索引。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-glyph-uv-rect"><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong>get_glyph_uv_rect</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-uv-rect"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-glyph-uv-rect"><a class="reference internal" href="class_rect2.html#class-rect2"><span class="std std-ref">Rect2</span></a> <strong>get_glyph_uv_rect</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, glyph: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-glyph-uv-rect"><span class="std std-ref">🔗</span></a></p>
 <p>返回包含该字形的缓存纹理中的矩形。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-kerning"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_kerning</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_pair: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-kerning"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-kerning"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_kerning</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, glyph_pair: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-kerning"><span class="std std-ref">🔗</span></a></p>
 <p>返回字形对的字距调整。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-kerning-list"><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>] <strong>get_kerning_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-kerning-list"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-kerning-list"><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>] <strong>get_kerning_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-kerning-list"><span class="std std-ref">🔗</span></a></p>
 <p>返回字距调整覆盖的列表。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-language-support-override"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_language_support_override</strong>(language: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-language-support-override"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-language-support-override"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_language_support_override</strong>(language: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-language-support-override"><span class="std std-ref">🔗</span></a></p>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">language</span></code> 启用了支持覆盖，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-language-support-overrides"><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a> <strong>get_language_support_overrides</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-language-support-overrides"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-language-support-overrides"><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a> <strong>get_language_support_overrides</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-language-support-overrides"><span class="std std-ref">🔗</span></a></p>
 <p>返回语言支持覆盖的列表。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-script-support-override"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_script_support_override</strong>(script: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-script-support-override"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-script-support-override"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_script_support_override</strong>(script: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-script-support-override"><span class="std std-ref">🔗</span></a></p>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">script</span></code> 启用了支持覆盖，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-script-support-overrides"><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a> <strong>get_script_support_overrides</strong>() <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-script-support-overrides"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-script-support-overrides"><a class="reference internal" href="class_packedstringarray.html#class-packedstringarray"><span class="std std-ref">PackedStringArray</span></a> <strong>get_script_support_overrides</strong>() <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-script-support-overrides"><span class="std std-ref">🔗</span></a></p>
 <p>返回文字支持覆盖的列表。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-size-cache-list"><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>] <strong>get_size_cache_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-size-cache-list"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-size-cache-list"><a class="reference internal" href="class_array.html#class-array"><span class="std std-ref">Array</span></a>[<a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>] <strong>get_size_cache_list</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-size-cache-list"><span class="std std-ref">🔗</span></a></p>
 <p>返回缓存中字体大小的列表。每个大小都是由字体大小和轮廓大小组成的 <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-texture-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_texture_count</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-count"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-texture-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_texture_count</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-count"><span class="std std-ref">🔗</span></a></p>
 <p>返回字体缓存条目所使用的纹理数。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-texture-image"><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a> <strong>get_texture_image</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-image"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-texture-image"><a class="reference internal" href="class_image.html#class-image"><span class="std std-ref">Image</span></a> <strong>get_texture_image</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-image"><span class="std std-ref">🔗</span></a></p>
 <p>返回字体缓存纹理图像的副本。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-texture-offsets"><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a> <strong>get_texture_offsets</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-offsets"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-texture-offsets"><a class="reference internal" href="class_packedint32array.html#class-packedint32array"><span class="std std-ref">PackedInt32Array</span></a> <strong>get_texture_offsets</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, size: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>, texture_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-texture-offsets"><span class="std std-ref">🔗</span></a></p>
 <p>返回包含字形打包数据的数组副本。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-transform"><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong>get_transform</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-transform"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-transform"><a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a> <strong>get_transform</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-transform"><span class="std std-ref">🔗</span></a></p>
 <p>返回应用于字体轮廓的 2D 变换，可用于倾斜、翻转和旋转字形。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-fontfile-method-get-variation-coordinates"><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong>get_variation_coordinates</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-variation-coordinates"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-fontfile-method-get-variation-coordinates"><a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a> <strong>get_variation_coordinates</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-fontfile-method-get-variation-coordinates"><span class="std std-ref">🔗</span></a></p>
 <p>返回指定字体缓存条目的变体坐标。有关详细信息，请参阅 <a class="reference internal" href="class_font.html#class-font-method-get-supported-variation-list"><span class="std std-ref">Font.get_supported_variation_list</span></a>。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-fontfile-method-load-bitmap-font"><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-error"><span class="std std-ref">Error</span></a> <strong>load_bitmap_font</strong>(path: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <a class="reference internal" href="#class-fontfile-method-load-bitmap-font"><span class="std std-ref">🔗</span></a></p>
@@ -11628,7 +11651,7 @@
 <p>设置包含字形打包数据的数组。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-fontfile-method-set-transform"><abbr title="无返回值。">void</abbr> <strong>set_transform</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, transform: <a class="reference internal" href="class_transform2d.html#class-transform2d"><span class="std std-ref">Transform2D</span></a>) <a class="reference internal" href="#class-fontfile-method-set-transform"><span class="std std-ref">🔗</span></a></p>
-<p>Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.</p>
+<p>设置应用于字体轮廓的 2D 变换，可用于倾斜、翻转、旋转字形。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-fontfile-method-set-variation-coordinates"><abbr title="无返回值。">void</abbr> <strong>set_variation_coordinates</strong>(cache_index: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, variation_coordinates: <a class="reference internal" href="class_dictionary.html#class-dictionary"><span class="std std-ref">Dictionary</span></a>) <a class="reference internal" href="#class-fontfile-method-set-variation-coordinates"><span class="std std-ref">🔗</span></a></p>
 <p>为指定的字体缓存条目设置变体坐标。有关详细信息，请参阅 <a class="reference internal" href="class_font.html#class-font-method-get-supported-variation-list"><span class="std std-ref">Font.get_supported_variation_list</span></a>。</p>

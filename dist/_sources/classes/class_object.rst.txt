@@ -715,7 +715,7 @@ enum **ConnectFlags**: :ref:`🔗<enum_Object_ConnectFlags>`
 
 |void| **add_user_signal**\ (\ signal\: :ref:`String<class_String>`, arguments\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_Object_method_add_user_signal>`
 
-Adds a user-defined ``signal``. Optional arguments for the signal can be added as an :ref:`Array<class_Array>` of dictionaries, each defining a ``name`` :ref:`String<class_String>` and a ``type`` :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`). See also :ref:`has_user_signal<class_Object_method_has_user_signal>` and :ref:`remove_user_signal<class_Object_method_remove_user_signal>`.
+添加用户定义的信号 ``signal``\ 。信号的参数是可选的，以字典的 :ref:`Array<class_Array>` 形式添加，字典中定义名称 ``name`` :ref:`String<class_String>`\ ，类型 ``type`` :ref:`int<class_int>`\ （见 :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ）。另见 :ref:`has_user_signal<class_Object_method_has_user_signal>` 和 :ref:`remove_user_signal<class_Object_method_remove_user_signal>`\ 。
 
 
 .. tabs::
@@ -883,15 +883,15 @@ Adds a user-defined ``signal``. Optional arguments for the signal can be added a
 
 :ref:`Error<enum_@GlobalScope_Error>` **connect**\ (\ signal\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Object_method_connect>`
 
-Connects a ``signal`` by name to a ``callable``. Optional ``flags`` can be also added to configure the connection's behavior (see :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants).
+按名称将 ``signal`` 连接到 ``callable``\ 。还可以添加可选的 ``flags`` 来配置该连接的行为（请参阅 :ref:`ConnectFlags<enum_Object_ConnectFlags>` 常量）。
 
-A signal can only be connected once to the same :ref:`Callable<class_Callable>`. If the signal is already connected, this method returns :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` and pushes an error message, unless the signal is connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To prevent this, use :ref:`is_connected<class_Object_method_is_connected>` first to check for existing connections.
+一个信号只能连接到同一个 :ref:`Callable<class_Callable>` 一次。如果该信号已经连接，除非该信号是使用 :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>` 连接的，否则该方法会返回 :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` 并推送一条错误消息。为防止这种情况，请首先使用 :ref:`is_connected<class_Object_method_is_connected>` 检查已存在的连接。
 
-If the ``callable``'s object is freed, the connection will be lost.
+如果 ``callable`` 的对象被释放，则该连接将会丢失。
 
-\ **Examples with recommended syntax:**\ 
+\ **推荐语法的示例：**\ 
 
-Connecting signals is one of the most common operations in Godot and the API gives many options to do so, which are described further down. The code block below shows the recommended approach.
+连接信号是 Godot 中最常见的操作之一，API 提供了许多这样做的选项，这些选项将在下面进一步介绍。下面的代码块显示了推荐的方法。
 
 
 .. tabs::
@@ -900,51 +900,51 @@ Connecting signals is one of the most common operations in Godot and the API giv
 
     func _ready():
         var button = Button.new()
-        # `button_down` here is a Signal variant type, and we thus call the Signal.connect() method, not Object.connect().
-        # See discussion below for a more in-depth overview of the API.
+        # 这里的 `button_down` 是一个 Signal 变体类型，因此我们调用 Signal.connect() 方法，而不是 Object.connect()。
+        # 请参阅下面的讨论以更深入地了解该 API。
         button.button_down.connect(_on_button_down)
     
-        # This assumes that a `Player` class exists, which defines a `hit` signal.
+        # 这假设存在一个“Player”类，它定义了一个“hit”信号。
         var player = Player.new()
-        # We use Signal.connect() again, and we also use the Callable.bind() method,
-        # which returns a new Callable with the parameter binds.
-        player.hit.connect(_on_player_hit.bind("sword", 100))
+        # 我们再次使用 Signal.connect() ，并且我们还使用了 Callable.bind() 方法，
+        # 它返回一个带有参数绑定的新 Callable。
+        player.hit.connect(_on_player_hit.bind("剑", 100))
     
     func _on_button_down():
-        print("Button down!")
+        print("按钮按下！")
     
     func _on_player_hit(weapon_type, damage):
-        print("Hit with weapon %s for %d damage." % [weapon_type, damage])
+        print("用武器 %s 击中，造成 %d 伤害。" % [weapon_type, damage])
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
         var button = new Button();
-        // C# supports passing signals as events, so we can use this idiomatic construct:
+        // C# 支持将信号作为事件传递，因此我们可以使用这个惯用的构造：
         button.ButtonDown += OnButtonDown;
     
-        // This assumes that a `Player` class exists, which defines a `Hit` signal.
+        // 这假设存在一个“Player”类，它定义了一个“Hit”信号。
         var player = new Player();
-        // We can use lambdas when we need to bind additional parameters.
-        player.Hit += () => OnPlayerHit("sword", 100);
+        // 当我们需要绑定额外的参数时，我们可以使用 Lambda 表达式。
+        player.Hit += () => OnPlayerHit("剑", 100);
     }
     
     private void OnButtonDown()
     {
-        GD.Print("Button down!");
+        GD.Print("按钮按下！");
     }
     
     private void OnPlayerHit(string weaponType, int damage)
     {
-        GD.Print($"Hit with weapon {weaponType} for {damage} damage.");
+        GD.Print($"用武器 {weaponType} 击中，造成 {damage} 伤害。");
     }
 
 
 
-\ **\ ``Object.connect()`` or ``Signal.connect()``?**\ 
+\ **\ ``Object.connect()`` 还是 ``Signal.connect()``\ ？**\ 
 
-As seen above, the recommended method to connect signals is not :ref:`connect<class_Object_method_connect>`. The code block below shows the four options for connecting signals, using either this legacy method or the recommended :ref:`Signal.connect<class_Signal_method_connect>`, and using either an implicit :ref:`Callable<class_Callable>` or a manually defined one.
+如上所示，推荐的连接信号的方法不是 :ref:`connect<class_Object_method_connect>`\ 。下面的代码块显示了连接信号的四个选项，使用该传统方法或推荐的 :ref:`Signal.connect<class_Signal_method_connect>`\ ，并使用一个隐式的 :ref:`Callable<class_Callable>` 或手动定义的 :ref:`Callable<class_Callable>`\ 。
 
 
 .. tabs::
@@ -953,45 +953,45 @@ As seen above, the recommended method to connect signals is not :ref:`connect<cl
 
     func _ready():
         var button = Button.new()
-        # Option 1: Object.connect() with an implicit Callable for the defined function.
+        # 选项 1：Object.connect() 并使用已定义的函数的隐式 Callable。
         button.connect("button_down", _on_button_down)
-        # Option 2: Object.connect() with a constructed Callable using a target object and method name.
+        # 选项 2：Object.connect() 并使用由目标对象和方法名称构造的 Callable。
         button.connect("button_down", Callable(self, "_on_button_down"))
-        # Option 3: Signal.connect() with an implicit Callable for the defined function.
+        # 选项 3：Signal.connect() 并使用已定义的函数的隐式 Callable。
         button.button_down.connect(_on_button_down)
-        # Option 4: Signal.connect() with a constructed Callable using a target object and method name.
+        # 选项 4：Signal.connect() 并使用由目标对象和方法名称构造的 Callable。
         button.button_down.connect(Callable(self, "_on_button_down"))
     
     func _on_button_down():
-        print("Button down!")
+        print("按钮按下！")
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
         var button = new Button();
-        // Option 1: In C#, we can use signals as events and connect with this idiomatic syntax:
+        // 选项 1：在 C# 中，我们可以将信号用作事件并使用以下惯用语法进行连接：
         button.ButtonDown += OnButtonDown;
-        // Option 2: GodotObject.Connect() with a constructed Callable from a method group.
+        // 选项 2：GodotObject.Connect() 并使用从方法组构造的 Callable。
         button.Connect(Button.SignalName.ButtonDown, Callable.From(OnButtonDown));
-        // Option 3: GodotObject.Connect() with a constructed Callable using a target object and method name.
+        // 选项 3：GodotObject.Connect() 并使用由目标对象和方法名称构造的 Callable。
         button.Connect(Button.SignalName.ButtonDown, new Callable(this, MethodName.OnButtonDown));
     }
     
     private void OnButtonDown()
     {
-        GD.Print("Button down!");
+        GD.Print("按钮按下！");
     }
 
 
 
-While all options have the same outcome (``button``'s :ref:`BaseButton.button_down<class_BaseButton_signal_button_down>` signal will be connected to ``_on_button_down``), **option 3** offers the best validation: it will print a compile-time error if either the ``button_down`` :ref:`Signal<class_Signal>` or the ``_on_button_down`` :ref:`Callable<class_Callable>` are not defined. On the other hand, **option 2** only relies on string names and will only be able to validate either names at runtime: it will print a runtime error if ``"button_down"`` doesn't correspond to a signal, or if ``"_on_button_down"`` is not a registered method in the object ``self``. The main reason for using options 1, 2, or 4 would be if you actually need to use strings (e.g. to connect signals programmatically based on strings read from a configuration file). Otherwise, option 3 is the recommended (and fastest) method.
+虽然所有选项都有相同的结果（\ ``button`` 的 :ref:`BaseButton.button_down<class_BaseButton_signal_button_down>` 信号将被连接到 ``_on_button_down``\ ），但\ **选项 3** 提供了最好的验证：如果 ``button_down`` :ref:`Signal<class_Signal>` 或 ``_on_button_down`` :ref:`Callable<class_Callable>` 没有被定义，它将打印一个编译时错误。另一方面，\ **选项 2** 只依赖于字符串名称，并且只能在运行时验证这两个名称：如果 ``"button_down"`` 不对应于一个信号，或者如果 ``"_on_button_down"`` 不是对象 ``self`` 中的注册方法，它将打印一个运行时错误。使用选项 1、2 或 4 的主要原因，是你是否确实需要使用字符串（例如，根据从配置文件读取的字符串，以编程的方式连接信号）。否则，选项 3 是推荐的（也是最快的）方法。
 
-\ **Binding and passing parameters:**\ 
+\ **绑定和传递参数：**\ 
 
-The syntax to bind parameters is through :ref:`Callable.bind<class_Callable_method_bind>`, which returns a copy of the :ref:`Callable<class_Callable>` with its parameters bound.
+绑定参数的语法是通过 :ref:`Callable.bind<class_Callable_method_bind>`\ ，它返回一个绑定了参数的 :ref:`Callable<class_Callable>` 的副本。
 
-When calling :ref:`emit_signal<class_Object_method_emit_signal>` or :ref:`Signal.emit<class_Signal_method_emit>`, the signal parameters can be also passed. The examples below show the relationship between these signal parameters and bound parameters.
+当调用 :ref:`emit_signal<class_Object_method_emit_signal>` 或 :ref:`Signal.emit<class_Signal_method_emit>` 时，信号参数也可以被传递。下面的示例显示了这些信号参数和绑定参数之间的关系。
 
 
 .. tabs::
@@ -999,38 +999,38 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>` or :ref:`Signal
  .. code-tab:: gdscript
 
     func _ready():
-        # This assumes that a `Player` class exists, which defines a `hit` signal.
+        # 这假设存在一个 `Player` 类，它定义了一个 `hit` 信号。
         var player = Player.new()
-        # Using Callable.bind().
-        player.hit.connect(_on_player_hit.bind("sword", 100))
+        # 使用 Callable.bind()。
+        player.hit.connect(_on_player_hit.bind("剑", 100))
     
-        # Parameters added when emitting the signal are passed first.
-        player.hit.emit("Dark lord", 5)
+        # 发出信号时添加的参数首先被传递。
+        player.hit.emit("黑暗领主", 5)
     
-    # We pass two arguments when emitting (`hit_by`, `level`),
-    # and bind two more arguments when connecting (`weapon_type`, `damage`).
+    # 我们在发出时传递两个参数（`hit_by`，`level`），
+    # 并在连接时再绑定两个参数（`weapon_type`、`damage`）。
     func _on_player_hit(hit_by, level, weapon_type, damage):
-        print("Hit by %s (level %d) with weapon %s for %d damage." % [hit_by, level, weapon_type, damage])
+        print("被 %s（等级 %d）用武器 %s 击中，造成 %d 伤害。" % [hit_by, level, weapon_type, damage])
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        // This assumes that a `Player` class exists, which defines a `Hit` signal.
+        // 这假设存在一个 `Player` 类，它定义了一个 `Hit` 信号。
         var player = new Player();
-        // Using lambda expressions that create a closure that captures the additional parameters.
-        // The lambda only receives the parameters defined by the signal's delegate.
-        player.Hit += (hitBy, level) => OnPlayerHit(hitBy, level, "sword", 100);
+        // 使用 lambda 表达式创建一个闭包来捕获额外的参数。
+        // lambda 仅接收由信号委托定义的参数。
+        player.Hit += (hitBy, level) => OnPlayerHit(hitBy, level, "剑", 100);
     
-        // Parameters added when emitting the signal are passed first.
-        player.EmitSignal(SignalName.Hit, "Dark lord", 5);
+        // 发出信号时添加的参数首先被传递。
+        player.EmitSignal(SignalName.Hit, "黑暗领主", 5);
     }
     
-    // We pass two arguments when emitting (`hit_by`, `level`),
-    // and bind two more arguments when connecting (`weapon_type`, `damage`).
+    // 我们在发出时传递两个参数（`hit_by`，`level`），
+    // 并在连接时再绑定两个参数（`weapon_type`、`damage`）。
     private void OnPlayerHit(string hitBy, int level, string weaponType, int damage)
     {
-        GD.Print($"Hit by {hitBy} (level {level}) with weapon {weaponType} for {damage} damage.");
+        GD.Print($"被 {hitBy}（等级 {level}）用武器 {weaponType} 击中，造成 {damage} 伤害。");
     }
 
 
@@ -1100,7 +1100,7 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>` or :ref:`Signal
 
 :ref:`Variant<class_Variant>` **get**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Object_method_get>`
 
-Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If the ``property`` does not exist, this method returns ``null``.
+返回给定 ``property`` 的 :ref:`Variant<class_Variant>` 值。如果 ``property`` 不存在，则该方法返回 ``null``\ 。
 
 
 .. tabs::
@@ -1109,17 +1109,17 @@ Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If th
 
     var node = Node2D.new()
     node.rotation = 1.5
-    var a = node.get("rotation") # a is 1.5
+    var a = node.get("rotation") # a 为 1.5
 
  .. code-tab:: csharp
 
     var node = new Node2D();
     node.Rotation = 1.5f;
-    var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5
+    var a = node.Get(Node2D.PropertyName.Rotation); // a 为 1.5
 
 
 
-\ **Note:** In C#, ``property`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
+\ **注意：**\ 在 C# 中，在引用 Godot 内置属性时，\ ``property`` 必须是 snake_case。最好使用 ``PropertyName`` 类中公开的名称，以避免在每次调用时分配一个新的 :ref:`StringName<class_StringName>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1242,9 +1242,9 @@ Returns the object's unique instance ID. This ID can be saved in :ref:`EncodedOb
 
 :ref:`int<class_int>` **get_method_argument_count**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Object_method_get_method_argument_count>`
 
-Returns the number of arguments of the given ``method`` by name.
+根据名称返回给定 ``method`` 的参数数量。
 
-\ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
+\ **注意：**\ 在 C# 中引用内置 Godot 方法时，\ ``method`` 必须采用 snake_case 蛇形命名法。请优先使用 ``MethodName`` 类中公开的名称，以避免在每次调用时分配一个新的 :ref:`StringName<class_StringName>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1396,7 +1396,7 @@ Returns the number of arguments of the given ``method`` by name.
 
 :ref:`bool<class_bool>` **has_user_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Object_method_has_user_signal>`
 
-Returns ``true`` if the given user-defined ``signal`` name exists. Only signals added with :ref:`add_user_signal<class_Object_method_add_user_signal>` are included. See also :ref:`remove_user_signal<class_Object_method_remove_user_signal>`.
+如果存在给定的用户定义信号名称 ``signal``\ ，则返回 ``true``\ 。仅包含通过 :ref:`add_user_signal<class_Object_method_add_user_signal>` 添加的信号。另见 :ref:`remove_user_signal<class_Object_method_remove_user_signal>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1576,7 +1576,7 @@ Returns ``true`` if the given user-defined ``signal`` name exists. Only signals 
 
 |void| **remove_user_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Object_method_remove_user_signal>`
 
-Removes the given user signal ``signal`` from the object. See also :ref:`add_user_signal<class_Object_method_add_user_signal>` and :ref:`has_user_signal<class_Object_method_has_user_signal>`.
+从对象中移除给定的用户信号 ``signal``\ 。另请参阅 :ref:`add_user_signal<class_Object_method_add_user_signal>` 和 :ref:`has_user_signal<class_Object_method_has_user_signal>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1588,7 +1588,7 @@ Removes the given user signal ``signal`` from the object. See also :ref:`add_use
 
 |void| **set**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Object_method_set>`
 
-Assigns ``value`` to the given ``property``. If the property does not exist or the given ``value``'s type doesn't match, nothing happens.
+将给定属性 ``property`` 的值分配为 ``value``\ 。如果该属性不存在，或者给定 ``value`` 的类型不匹配，则不会发生任何事情。
 
 
 .. tabs::
@@ -1597,17 +1597,17 @@ Assigns ``value`` to the given ``property``. If the property does not exist or t
 
     var node = Node2D.new()
     node.set("global_scale", Vector2(8, 2.5))
-    print(node.global_scale) # Prints (8, 2.5)
+    print(node.global_scale) # 输出 (8, 2.5)
 
  .. code-tab:: csharp
 
     var node = new Node2D();
     node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5));
-    GD.Print(node.GlobalScale); // Prints Vector2(8, 2.5)
+    GD.Print(node.GlobalScale); // 输出 Vector2(8, 2.5)
 
 
 
-\ **Note:** In C#, ``property`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
+\ **注意：**\ 在 C# 中引用内置 Godot 属性时 ``property`` 必须为 snake_case 蛇形大小写。请优先使用 ``PropertyName`` 类中暴露的名称，避免每次调用都重新分配一个 :ref:`StringName<class_StringName>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1631,7 +1631,7 @@ Assigns ``value`` to the given ``property``. If the property does not exist or t
 
 |void| **set_deferred**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Object_method_set_deferred>`
 
-Assigns ``value`` to the given ``property``, at the end of the current frame. This is equivalent to calling :ref:`set<class_Object_method_set>` through :ref:`call_deferred<class_Object_method_call_deferred>`.
+在当前帧的末尾，将给定属性 ``property`` 的值分配为 ``value``\ 。等价于通过 :ref:`call_deferred<class_Object_method_call_deferred>` 调用 :ref:`set<class_Object_method_set>`\ 。
 
 
 .. tabs::
@@ -1643,24 +1643,24 @@ Assigns ``value`` to the given ``property``, at the end of the current frame. Th
     
     node.rotation = 1.5
     node.set_deferred("rotation", 3.0)
-    print(node.rotation) # Prints 1.5
+    print(node.rotation) # 输出 1.5
     
     await get_tree().process_frame
-    print(node.rotation) # Prints 3.0
+    print(node.rotation) # 输出 3.0
 
  .. code-tab:: csharp
 
     var node = new Node2D();
     node.Rotation = 1.5f;
     node.SetDeferred(Node2D.PropertyName.Rotation, 3f);
-    GD.Print(node.Rotation); // Prints 1.5
+    GD.Print(node.Rotation); // 输出 1.5
     
     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-    GD.Print(node.Rotation); // Prints 3.0
+    GD.Print(node.Rotation); // 输出 3.0
 
 
 
-\ **Note:** In C#, ``property`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
+\ **注意：**\ 在 C# 中引用内置 Godot 属性时 ``property`` 必须为 snake_case 蛇形大小写。请优先使用 ``PropertyName`` 类中暴露的名称，避免每次调用都重新分配一个 :ref:`StringName<class_StringName>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1761,13 +1761,13 @@ Assigns ``value`` to the given ``property``, at the end of the current frame. Th
 
 :ref:`String<class_String>` **tr**\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Object_method_tr>`
 
-Translates a ``message``, using the translation catalogs configured in the Project Settings. Further ``context`` can be specified to help with the translation. Note that most :ref:`Control<class_Control>` nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
+使用项目设置中配置的翻译目录，翻译一个 ``message``\ 。可以进一步指定 ``context`` 来帮助翻译。请注意，大多数 :ref:`Control<class_Control>` 节点会自动翻译其字符串，因此该方法最适用于格式化的字符串或自定义绘制的文本。
 
-If :ref:`can_translate_messages<class_Object_method_can_translate_messages>` is ``false``, or no translation is available, this method returns the ``message`` without changes. See :ref:`set_message_translation<class_Object_method_set_message_translation>`.
+如果 :ref:`can_translate_messages<class_Object_method_can_translate_messages>` 为 ``false``\ ，或者没有翻译可用，则该方法将返回 ``message`` 而不做任何更改。请参阅 :ref:`set_message_translation<class_Object_method_set_message_translation>`\ 。
 
-For detailed examples, see :doc:`Internationalizing games <../tutorials/i18n/internationalizing_games>`.
+有关详细示例，请参阅\ :doc:`《国际化游戏》 <../tutorials/i18n/internationalizing_games>`\ 。
 
-\ **Note:** This method can't be used without an **Object** instance, as it requires the :ref:`can_translate_messages<class_Object_method_can_translate_messages>` method. To translate strings in a static context, use :ref:`TranslationServer.translate<class_TranslationServer_method_translate>`.
+\ **注意：**\ 如果没有 **Object** 实例，则无法使用该方法，因为它需要 :ref:`can_translate_messages<class_Object_method_can_translate_messages>` 方法。要在静态上下文中翻译字符串，请使用 :ref:`TranslationServer.translate<class_TranslationServer_method_translate>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1779,23 +1779,23 @@ For detailed examples, see :doc:`Internationalizing games <../tutorials/i18n/int
 
 :ref:`String<class_String>` **tr_n**\ (\ message\: :ref:`StringName<class_StringName>`, plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Object_method_tr_n>`
 
-Translates a ``message`` or ``plural_message``, using the translation catalogs configured in the Project Settings. Further ``context`` can be specified to help with the translation.
+使用项目设置中配置的翻译目录，翻译一个 ``message`` 或 ``plural_message``\ 。可以进一步指定 ``context`` 来帮助翻译。
 
-If :ref:`can_translate_messages<class_Object_method_can_translate_messages>` is ``false``, or no translation is available, this method returns ``message`` or ``plural_message``, without changes. See :ref:`set_message_translation<class_Object_method_set_message_translation>`.
+如果 :ref:`can_translate_messages<class_Object_method_can_translate_messages>` 为 ``false``\ ，或者没有翻译可用，则该方法将返回 ``message`` 或 ``plural_message``\ ，而不做任何更改。请参阅 :ref:`set_message_translation<class_Object_method_set_message_translation>`\ 。
 
-The ``n`` is the number, or amount, of the message's subject. It is used by the translation system to fetch the correct plural form for the current language.
+\ ``n`` 是消息主题的数字或数量。它被翻译系统用来获取当前语言的正确复数形式。
 
-For detailed examples, see :doc:`Localization using gettext <../tutorials/i18n/localization_using_gettext>`.
+有关详细示例，请参阅\ :doc:`《使用 gettext 进行本地化》 <../tutorials/i18n/localization_using_gettext>`\ 。
 
-\ **Note:** Negative and :ref:`float<class_float>` numbers may not properly apply to some countable subjects. It's recommended to handle these cases with :ref:`tr<class_Object_method_tr>`.
+\ **注意：**\ 负数和 :ref:`float<class_float>` 数字可能不适用于某些可数科目。建议使用 :ref:`tr<class_Object_method_tr>` 处理这些情况。
 
-\ **Note:** This method can't be used without an **Object** instance, as it requires the :ref:`can_translate_messages<class_Object_method_can_translate_messages>` method. To translate strings in a static context, use :ref:`TranslationServer.translate_plural<class_TranslationServer_method_translate_plural>`.
+\ **注意：**\ 如果没有 **Object** 实例，则无法使用该方法，因为它需要 :ref:`can_translate_messages<class_Object_method_can_translate_messages>` 方法。要在静态上下文中翻译字符串，请使用 :ref:`TranslationServer.translate_plural<class_TranslationServer_method_translate_plural>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -92,7 +92,7 @@ EngineDebugger
 
 |void| **clear_breakpoints**\ (\ ) :ref:`🔗<class_EngineDebugger_method_clear_breakpoints>`
 
-Clears all breakpoints.
+清除所有断点。
 
 .. rst-class:: classref-item-separator
 
@@ -104,7 +104,7 @@ Clears all breakpoints.
 
 |void| **debug**\ (\ can_continue\: :ref:`bool<class_bool>` = true, is_error_breakpoint\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EngineDebugger_method_debug>`
 
-Starts a debug break in script execution, optionally specifying whether the program can continue based on ``can_continue`` and whether the break was due to a breakpoint.
+在运行脚本时触发调试中断，可以使用 ``can_continue`` 指定程序是否能够继续运行，还可以指定该中断是否是由断点导致的。
 
 .. rst-class:: classref-item-separator
 
@@ -116,9 +116,9 @@ Starts a debug break in script execution, optionally specifying whether the prog
 
 :ref:`int<class_int>` **get_depth**\ (\ ) |const| :ref:`🔗<class_EngineDebugger_method_get_depth>`
 
-**实验性：** 未来版本中可能修改或移除该方法。
+**实验性：** 未来版本中可能会修改或移除该方法。
 
-Returns the current debug depth.
+返回当前调试深度。
 
 .. rst-class:: classref-item-separator
 
@@ -130,9 +130,9 @@ Returns the current debug depth.
 
 :ref:`int<class_int>` **get_lines_left**\ (\ ) |const| :ref:`🔗<class_EngineDebugger_method_get_lines_left>`
 
-**实验性：** 未来版本中可能修改或移除该方法。
+**实验性：** 未来版本中可能会修改或移除该方法。
 
-Returns the number of lines that remain.
+返回剩余的行数。
 
 .. rst-class:: classref-item-separator
 
@@ -168,7 +168,7 @@ Returns the number of lines that remain.
 
 |void| **insert_breakpoint**\ (\ line\: :ref:`int<class_int>`, source\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_insert_breakpoint>`
 
-Inserts a new breakpoint with the given ``source`` and ``line``.
+使用给定的 ``source`` 和 ``line`` 插入一个新断点。
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ Inserts a new breakpoint with the given ``source`` and ``line``.
 
 :ref:`bool<class_bool>` **is_breakpoint**\ (\ line\: :ref:`int<class_int>`, source\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_EngineDebugger_method_is_breakpoint>`
 
-Returns ``true`` if the given ``source`` and ``line`` represent an existing breakpoint.
+如果给定的 ``source`` 和 ``line`` 代表一个已存在的断点，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ Returns ``true`` if the given ``source`` and ``line`` represent an existing brea
 
 :ref:`bool<class_bool>` **is_skipping_breakpoints**\ (\ ) |const| :ref:`🔗<class_EngineDebugger_method_is_skipping_breakpoints>`
 
-Returns ``true`` if the debugger is skipping breakpoints otherwise ``false``.
+如果调试器跳过断点，则返回 ``true``\ ，否则返回 ``false``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -228,7 +228,7 @@ Returns ``true`` if the debugger is skipping breakpoints otherwise ``false``.
 
 |void| **line_poll**\ (\ ) :ref:`🔗<class_EngineDebugger_method_line_poll>`
 
-Forces a processing loop of debugger events. The purpose of this method is just processing events every now and then when the script might get too busy, so that bugs like infinite loops can be caught
+强制调试器事件的一个处理循环。该方法的目的是当脚本可能过于繁忙时不时地处理事件，以便可以捕获无限循环之类的错误
 
 .. rst-class:: classref-item-separator
 
@@ -290,7 +290,7 @@ Callable 必须接受消息字符串和数据数组参数。如果消息和数�
 
 |void| **remove_breakpoint**\ (\ line\: :ref:`int<class_int>`, source\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_remove_breakpoint>`
 
-Removes a breakpoint with the given ``source`` and ``line``.
+使用给定的 ``source`` 和 ``line`` 移除一个断点。
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +302,7 @@ Removes a breakpoint with the given ``source`` and ``line``.
 
 |void| **script_debug**\ (\ language\: :ref:`ScriptLanguage<class_ScriptLanguage>`, can_continue\: :ref:`bool<class_bool>` = true, is_error_breakpoint\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EngineDebugger_method_script_debug>`
 
-Starts a debug break in script execution, optionally specifying whether the program can continue based on ``can_continue`` and whether the break was due to a breakpoint.
+在运行脚本时触发调试中断，可以使用 ``can_continue`` 指定程序是否能够继续运行，还可以指定该中断是否是由断点导致的。
 
 .. rst-class:: classref-item-separator
 
@@ -326,9 +326,9 @@ Starts a debug break in script execution, optionally specifying whether the prog
 
 |void| **set_depth**\ (\ depth\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EngineDebugger_method_set_depth>`
 
-**实验性：** 未来版本中可能修改或移除该方法。
+**实验性：** 未来版本中可能会修改或移除该方法。
 
-Sets the current debugging depth.
+设置当前调试深度。
 
 .. rst-class:: classref-item-separator
 
@@ -340,9 +340,9 @@ Sets the current debugging depth.
 
 |void| **set_lines_left**\ (\ lines\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EngineDebugger_method_set_lines_left>`
 
-**实验性：** 未来版本中可能修改或移除该方法。
+**实验性：** 未来版本中可能会修改或移除该方法。
 
-Sets the current debugging lines that remain.
+设置当前剩余的调试行。
 
 .. rst-class:: classref-item-separator
 
@@ -369,10 +369,10 @@ Sets the current debugging lines that remain.
 将具有给定名称 ``name`` 的分析器解除注册。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

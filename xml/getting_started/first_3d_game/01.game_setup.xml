@@ -18,9 +18,12 @@
         <paragraph>里面有两个 3D 模型，<literal>player.glb</literal> 和 <literal>mob.glb</literal>，一些模型使用的材质，以及一首音乐。</paragraph>
         <section ids="setting-up-the-playable-area" names="setting\ up\ the\ playable\ area 设置游玩区域">
             <title>设置游玩区域</title>
-            <paragraph>我们将以普通的 <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference> 作为其根创建主场景。在<emphasis>场景</emphasis>面板中，单击左上角由“+”图标表示的<emphasis>添加子节点</emphasis>按钮，然后双击 <emphasis>Node</emphasis>。将节点命名为 <literal>Main</literal>。另一种重命名节点的方法是在<emphasis>节点</emphasis>上单击右键，然后选择<emphasis>重命名</emphasis>（或者按 <literal classes="kbd">F2</literal>）。另一种将节点添加到场景中的方法是按 <literal classes="kbd">Ctrl + a</literal> （macOS 上则是按 <literal classes="kbd">Cmd + a</literal>）。</paragraph>
+            <paragraph>We're going to create our main scene with a plain <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference> as its root. In the
+                <emphasis>Scene</emphasis> dock, click the <emphasis>Add Child Node</emphasis> button represented by a "+" icon in the
+                top-left and double-click on <emphasis>Node</emphasis>. Name the node <literal>Main</literal>. An alternate method to rename the node is to right-click on <emphasis>Node</emphasis> and choose <emphasis>Rename</emphasis> (or <literal classes="kbd">F2</literal>). Alternatively, to add
+                a node to the scene, you can press <literal classes="kbd">Ctrl + A</literal> (<literal classes="kbd">Cmd + A</literal> on macOS).</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/05.main_node.png'}" uri="getting_started/first_3d_game/img/01.game_setup/05.main_node.png"></image>
-            <paragraph>按 <literal classes="kbd">Ctrl + s</literal> 将场景保存为 <literal>main.tscn</literal>（macOS 上则是按 <literal classes="kbd">Cmd + s</literal>）。</paragraph>
+            <paragraph>Save the scene as <literal>main.tscn</literal> by pressing <literal classes="kbd">Ctrl + S</literal> (<literal classes="kbd">Cmd + S</literal> on macOS).</paragraph>
             <paragraph>我们先添加一个地板，以防止角色掉落。要创建地板、墙壁或天花板等静态碰撞器，可以使用 <reference internal="True" refuri="../../classes/class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> 节点。它们需要 <reference internal="True" refuri="../../classes/class_collisionshape3d#class-collisionshape3d"><inline classes="std std-ref">CollisionShape3D</inline></reference> 子节点来定义碰撞区域。选择 <emphasis>Main</emphasis> 节点后，添加 <reference internal="True" refuri="../../classes/class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> 节点，然后添加 <reference internal="True" refuri="../../classes/class_collisionshape3d#class-collisionshape3d"><inline classes="std std-ref">CollisionShape3D</inline></reference>。将 <reference internal="True" refuri="../../classes/class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> 重命名为 <literal>Ground</literal> 。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/adding_static_body3D.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/adding_static_body3D.webp"></image>
             <paragraph>你的场景树应该看上去像这样</paragraph>
@@ -30,7 +33,11 @@
             <paragraph>要创建形状，请选中 <reference internal="True" refuri="../../classes/class_collisionshape3d#class-collisionshape3d"><inline classes="std std-ref">CollisionShape3D</inline></reference>，转到<emphasis>检查器</emphasis>，然后单击 <emphasis>Shape</emphasis>（形状）属性旁边的 <emphasis>&lt;空&gt;</emphasis> 字段。创建一个新的 <emphasis>BoxShape3D</emphasis>。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/08.create_box_shape3D.jpg'}" uri="getting_started/first_3d_game/img/01.game_setup/08.create_box_shape3D.jpg"></image>
             <paragraph>盒子形状非常适合平坦的地面和墙壁。它的厚度使它能够可靠地阻挡甚至快速移动的物体。</paragraph>
-            <paragraph>盒子的线框会在视口中出现三个橙色的小点。你可以点击并拖动这些点来交互地编辑形状的范围。我们也可以在检查器中精确设置尺寸。点击 <reference internal="True" refuri="../../classes/class_boxshape3d#class-boxshape3d"><inline classes="std std-ref">BoxShape3D</inline></reference> 来展开资源。将它的 <emphasis>Size</emphasis> 设置为 X 轴上的 <literal>60</literal>，Y 轴的 <literal>2</literal> 和 Z 轴上的 <literal>60</literal>。</paragraph>
+            <paragraph>A box's wireframe appears in the viewport with three orange dots. You can click
+                and drag these to edit the shape's extents interactively. We can also precisely
+                set the size in the inspector. Click on the <reference internal="True" refuri="../../classes/class_boxshape3d#class-boxshape3d"><inline classes="std std-ref">BoxShape3D</inline></reference> to expand the resource.
+                Set its <emphasis>Size</emphasis> to <literal>60</literal> on the X-axis, <literal>2</literal> for the Y-axis, and <literal>60</literal> for
+                the Z-axis.</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/09.box_size.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/09.box_size.webp"></image>
             <paragraph>碰撞形状是不可见的。我们需要添加一个与之配套的视觉层。选择 <literal>Ground</literal> 节点并添加一个 <reference internal="True" refuri="../../classes/class_meshinstance3d#class-meshinstance3d"><inline classes="std std-ref">MeshInstance3D</inline></reference> 作为其子节点。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/10.mesh_instance3d.png'}" uri="getting_started/first_3d_game/img/01.game_setup/10.mesh_instance3d.png"></image>
@@ -39,7 +46,12 @@
             <paragraph>再次设置大小，对于默认值来说它有点太小了。点击立方体图标展开资源，并将其 <emphasis>Size</emphasis> 设置为 <literal>60</literal>、<literal>2</literal>、<literal>60</literal>。由于立方体资源使用的是大小（size）而不是范围（extents），我们需要使用这些值，以便它与我们的碰撞形状相匹配。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/12.cube_resized.png'}" uri="getting_started/first_3d_game/img/01.game_setup/12.cube_resized.png"></image>
             <paragraph>你应该会在视口中看到一个覆盖网格以及蓝色和红色轴的宽灰色平板。</paragraph>
-            <paragraph>我们要把地面往下移一点，这样才能看到地板网格。选中 <emphasis>Ground</emphasis> 节点，按住 <literal classes="kbd">Ctrl</literal>键启用网格吸附（macOS 上则是 <literal classes="kbd">Cmd</literal>），然后单击并在 Y 轴上向下拖动。也就是移动小工具里的绿色箭头。</paragraph>
+            <paragraph>We're going to move the ground down so we can see the floor grid. To do this, the grid snapping feature can be used.
+                Grid snapping can be activated 2 ways in the 3D editor.
+                The first is by pressing the <emphasis>Use Snap</emphasis> button (or pressing the <literal classes="kbd">Y</literal> key).
+                The second is by selecting a node, dragging a handle on the gizmo <strong>then</strong> holding <literal classes="kbd">Ctrl</literal> while still clicking to enable snapping as long as <literal classes="kbd">Ctrl</literal> is held.</paragraph>
+            <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/use_snap.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/use_snap.webp"></image>
+            <paragraph>Start by setting snapping with your preferred method. Then move the <literal>Ground</literal> node using the Y-axis (the green arrow on the gizmo).</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/move_gizmo_y_axis.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/move_gizmo_y_axis.webp"></image>
             <note>
                 <paragraph>如果你没有看到如上图所示的 3D 对象操作器，请确保已激活视图上方工具栏中的<emphasis>选择模式</emphasis>。</paragraph>
@@ -54,7 +66,10 @@
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/ground_down1meter.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/ground_down1meter.webp"></image>
             <paragraph>现在来添加一个平行光，从而让我们的整个场景不全都是灰色的。选择 <literal>Main</literal> 节点，然后添加一个子节点 <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference>。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/create_directional_light3d.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/create_directional_light3d.webp"></image>
-            <paragraph>我们需要移动并旋转 <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference> 节点。通过单击并拖动操纵器的绿色箭头将其向上移动，然后单击并拖动红色弧线以围绕 X 轴旋转它，直到地面被照亮。</paragraph>
+            <paragraph>We need to move and rotate the <reference internal="True" refuri="../../classes/class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference> node.
+                Move it up by clicking and dragging on the manipulator's green arrow
+                and click and drag on the red arc to rotate it around the X-axis, until the
+                ground is lit.</paragraph>
             <paragraph>在<emphasis>检查器</emphasis>中，勾选复选框打开<emphasis>Shadow -&gt; Enabled</emphasis>。</paragraph>
             <image candidates="{'*': 'getting_started/first_3d_game/img/01.game_setup/16.turn_on_shadows.webp'}" uri="getting_started/first_3d_game/img/01.game_setup/16.turn_on_shadows.webp"></image>
             <paragraph>项目此时看起来是这个样子。</paragraph>

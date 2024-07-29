@@ -146,16 +146,13 @@ public void Initialize(Vector3 startPosition, Vector3 playerPosition)
             <section ids="leaving-the-screen" names="leaving\ the\ screen 离开屏幕">
                 <title>离开屏幕</title>
                 <paragraph>我们还需要在小怪离开屏幕后将其销毁。实现方法是将 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 节点的 <literal>screen_exited</literal> 信号连接到 <literal>Mob</literal> 上。</paragraph>
-                <paragraph>Head back to the 3D viewport by clicking on the <emphasis>3D</emphasis> label at the top of the
-                    editor. You can also press <literal classes="kbd">Ctrl + F2</literal> (<literal classes="kbd">Opt + 2</literal> on macOS).</paragraph>
+                <paragraph>单击编辑器顶部的 <emphasis>3D</emphasis> 标签回到 3D 视口。你也可以按 <literal classes="kbd">Ctrl + F2</literal>（macOS 上则是 <literal classes="kbd">Alt + 2</literal>）。</paragraph>
                 <paragraph><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/09.switch_to_3d_workspace.png'}" uri="getting_started/first_3d_game/img/04.mob_scene/09.switch_to_3d_workspace.png"></image></paragraph>
                 <paragraph>选中 <reference internal="True" refuri="../../classes/class_visibleonscreennotifier3d#class-visibleonscreennotifier3d"><inline classes="std std-ref">VisibleOnScreenNotifier3D</inline></reference> 节点，然后在界面右侧打开<emphasis>节点</emphasis>面板。双击 <literal>screen_exited()</literal> 信号。</paragraph>
                 <paragraph><image alt="image9" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/10.node_dock.webp'}" uri="getting_started/first_3d_game/img/04.mob_scene/10.node_dock.webp"></image></paragraph>
                 <paragraph>将信号连接到 <emphasis>Mob</emphasis></paragraph>
                 <paragraph><image alt="image10" candidates="{'*': 'getting_started/first_3d_game/img/04.mob_scene/11.connect_signal.webp'}" uri="getting_started/first_3d_game/img/04.mob_scene/11.connect_signal.webp"></image></paragraph>
-                <paragraph>This will add a new function for you in your mob script,
-                    <literal>_on_visible_on_screen_notifier_3d_screen_exited()</literal>. From it, call the <literal>queue_free()</literal>
-                    method. This function destroys the instance it's called on.</paragraph>
+                <paragraph>这样会使你回到脚本编辑器，并且添加一个新的函数： <literal>_on_visible_on_screen_notifier_3d_screen_exited()</literal>。请在里面调用 <literal>queue_free()</literal> 方法。这个函数会将调用它的实例销毁。</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -174,7 +171,7 @@ private void OnVisibilityNotifierScreenExited()
                     </div>
                 </container>
                 <paragraph>我们的怪物已经准备好进入游戏了！在下一部分，你将在游戏关卡中生成怪物。</paragraph>
-                <paragraph>这是仅供参考的完整 <literal>Mob.gd</literal> 脚本。</paragraph>
+                <paragraph>Here is the complete <literal>mob.gd</literal> script for reference.</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -196,7 +193,7 @@ func initialize(start_position, player_position):
     # We position the mob by placing it at start_position
     # and rotate it towards player_position, so it looks at the player.
     look_at_from_position(start_position, player_position, Vector3.UP)
-    # Rotate this mob randomly within range of -90 and +90 degrees,
+    # Rotate this mob randomly within range of -45 and +45 degrees,
     # so that it doesn't move directly towards the player.
     rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -234,7 +231,7 @@ public partial class Mob : CharacterBody3D
         // We position the mob by placing it at startPosition
         // and rotate it towards playerPosition, so it looks at the player.
         LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-        // Rotate this mob randomly within range of -90 and +90 degrees,
+        // Rotate this mob randomly within range of -45 and +45 degrees,
         // so that it doesn't move directly towards the player.
         RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 

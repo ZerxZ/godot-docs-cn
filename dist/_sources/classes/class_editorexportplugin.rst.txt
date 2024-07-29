@@ -125,9 +125,9 @@ EditorExportPlugin
 
 :ref:`bool<class_bool>` **_begin_customize_resources**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__begin_customize_resources>`
 
-如果该插件将根据所使用的平台和功能自定义资源，则返回 ``true``\ 。
+Return ``true`` if this plugin will customize resources based on the platform and features used.
 
-启用后，\ :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>`\ 、\ :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` 和 :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` 将被调用并且必须被实现。
+When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -139,7 +139,9 @@ EditorExportPlugin
 
 :ref:`bool<class_bool>` **_begin_customize_scenes**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__begin_customize_scenes>`
 
-如果这个插件会根据所使用的平台和功能来定制场景，则返回 true。
+Return ``true`` if this plugin will customize scenes based on the platform and features used.
+
+When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -229,9 +231,9 @@ EditorExportPlugin
 
 |void| **_export_file**\ (\ path\: :ref:`String<class_String>`, type\: :ref:`String<class_String>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_file>`
 
-虚方法，需要用户重写。对于每个导出的文件调用，提供可用于标识文件的参数。\ ``path``\ 是文件的路径，\ ``type``\ 是文件所表示的\ :ref:`Resource<class_Resource>`\ （例如\ :ref:`PackedScene<class_PackedScene>`\ ），\ ``features``\ 是导出的特性列表。
+Virtual method to be overridden by the user. Called for each exported file before :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>`. The arguments can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`), and ``features`` is the list of features for the export.
 
-在此回调中调用\ :ref:`skip<class_EditorExportPlugin_method_skip>`\ 将使文件不包含在导出中。
+Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
 
 .. rst-class:: classref-item-separator
 
@@ -463,9 +465,11 @@ EditorExportPlugin
 
 |void| **add_file**\ (\ path\: :ref:`String<class_String>`, file\: :ref:`PackedByteArray<class_PackedByteArray>`, remap\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorExportPlugin_method_add_file>`
 
-添加一个要导出的自定义文件。\ ``path`` 是可以用来加载该文件的虚拟路径，\ ``file`` 是该文件的二进制数据。
+Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file.
 
-在 :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` 中调用时，如果 ``remap`` 为 ``true``\ ，则当前文件将不会被导出，而是被重新映射到这个自定义文件。在其他地方调用时会忽略 ``remap``\ 。
+When called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
+
+\ ``file`` will not be imported, so consider using :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` to remap imported resources.
 
 .. rst-class:: classref-item-separator
 
@@ -607,13 +611,13 @@ EditorExportPlugin
 
 |void| **skip**\ (\ ) :ref:`🔗<class_EditorExportPlugin_method_skip>`
 
-To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`, :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>`, or :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>`. Skips the current file, so it's not included in the export.
+To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

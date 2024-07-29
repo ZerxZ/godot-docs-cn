@@ -114,7 +114,7 @@ NavigationMeshSourceGeometryData3D
 
 |void| **add_projected_obstruction**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, elevation\: :ref:`float<class_float>`, height\: :ref:`float<class_float>`, carve\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationMeshSourceGeometryData3D_method_add_projected_obstruction>`
 
-Adds a projected obstruction shape to the source geometry. The ``vertices`` are considered projected on a xz-axes plane, placed at the global y-axis ``elevation`` and extruded by ``height``. If ``carve`` is ``true`` the carved shape will not be affected by additional offsets (e.g. agent radius) of the navigation mesh baking process.
+将投影的障碍物形状添加到源几何体。\ ``vertices`` 被视为投影在 xz 轴平面上，放置在全局 y 轴 ``elevation`` 处并按 ``height`` 挤压。如果 ``carve`` 为 ``true``\ ，则雕刻的形状将不会受到导航网格烘焙过程的额外偏移（例如代理半径）的影响。
 
 .. rst-class:: classref-item-separator
 
@@ -150,7 +150,7 @@ Adds a projected obstruction shape to the source geometry. The ``vertices`` are 
 
 |void| **clear_projected_obstructions**\ (\ ) :ref:`🔗<class_NavigationMeshSourceGeometryData3D_method_clear_projected_obstructions>`
 
-Clears all projected obstructions.
+清除所有投射的障碍物。
 
 .. rst-class:: classref-item-separator
 
@@ -174,15 +174,15 @@ Clears all projected obstructions.
 
 :ref:`Array<class_Array>` **get_projected_obstructions**\ (\ ) |const| :ref:`🔗<class_NavigationMeshSourceGeometryData3D_method_get_projected_obstructions>`
 
-Returns the projected obstructions as an :ref:`Array<class_Array>` of dictionaries. Each :ref:`Dictionary<class_Dictionary>` contains the following entries:
+将投影的障碍物作为字典的 :ref:`Array<class_Array>` 返回。 每个 :ref:`Dictionary<class_Dictionary>` 包含以下条目：
 
-- ``vertices`` - A :ref:`PackedFloat32Array<class_PackedFloat32Array>` that defines the outline points of the projected shape.
+- ``vertices`` - 一个 :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ，定义投影形状的轮廓点。
 
-- ``elevation`` - A :ref:`float<class_float>` that defines the projected shape placement on the y-axis.
+- ``elevation`` - 一个 :ref:`float<class_float>`\ ，定义 y 轴上的投影形状放置。
 
-- ``height`` - A :ref:`float<class_float>` that defines how much the projected shape is extruded along the y-axis.
+- ``height`` - 一个 :ref:`float<class_float>`\ ，定义投影形状沿 y 轴挤压的程度。
 
-- ``carve`` - A :ref:`bool<class_bool>` that defines how the obstacle affects the navigation mesh baking. If ``true`` the projected shape will not be affected by addition offsets, e.g. agent radius.
+- ``carve`` - 一个 :ref:`bool<class_bool>`\ ，定义障碍物如何影响导航网格烘焙。 如果为 ``true``\ ，则投影形状将不会受到附加偏移的影响，例如代理半径。
 
 .. rst-class:: classref-item-separator
 
@@ -244,7 +244,7 @@ Returns the projected obstructions as an :ref:`Array<class_Array>` of dictionari
 
 |void| **set_projected_obstructions**\ (\ projected_obstructions\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_NavigationMeshSourceGeometryData3D_method_set_projected_obstructions>`
 
-Sets the projected obstructions with an Array of Dictionaries with the following key value pairs:
+使用包含以下键值对的字典数组设置投影障碍物：
 
 
 .. tabs::
@@ -273,10 +273,10 @@ Sets the projected obstructions with an Array of Dictionaries with the following
 \ **警告：**\ 数据不正确会导致相关第三方库在烘焙过程中崩溃。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -21,7 +21,7 @@ Mesh
 描述
 ----
 
-Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials. The maximum number of surfaces per mesh is :ref:`RenderingServer.MAX_MESH_SURFACES<class_RenderingServer_constant_MAX_MESH_SURFACES>`.
+网格是一种包含了基于顶点数组的几何资源。网格被分为各种\ *平面*\ ，每一个平面包含了一个完整的、单独的顶点数组和材质用来绘制它。通过明智的设计，一个由多个面组成的网格胜过单个面的，这是因为在3D编辑软件中，一个物体通常包含多种材质。每个网格的最大表面数是 :ref:`RenderingServer.MAX_MESH_SURFACES<class_RenderingServer_constant_MAX_MESH_SURFACES>`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -189,7 +189,9 @@ enum **ArrayType**: :ref:`🔗<enum_Mesh_ArrayType>`
 
 :ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_NORMAL** = ``1``
 
-顶点法线的 :ref:`PackedVector3Array<class_PackedVector3Array>`\ 。
+:ref:`PackedVector3Array<class_PackedVector3Array>` of vertex normals.
+
+\ **Note:** The array has to consist of normal vectors, otherwise they will be normalized by the engine, potentially causing visual discrepancies.
 
 .. _class_Mesh_constant_ARRAY_TANGENT:
 
@@ -975,10 +977,10 @@ enum **BlendShapeMode**: :ref:`🔗<enum_Mesh_BlendShapeMode>`
 \ **注意：**\ 这会分配 **Mesh** 资源中的材质，而不是与 :ref:`MeshInstance3D<class_MeshInstance3D>` 的表面材质覆盖属性关联的 :ref:`Material<class_Material>`\ 。要设置与 :ref:`MeshInstance3D<class_MeshInstance3D>` 的表面材质覆盖属性关联的 :ref:`Material<class_Material>`\ ，请改用 :ref:`MeshInstance3D.set_surface_override_material<class_MeshInstance3D_method_set_surface_override_material>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

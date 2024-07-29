@@ -19,11 +19,11 @@ StyleBoxFlat
 描述
 ----
 
-By configuring various properties of this style box, you can achieve many common looks without the need of a texture. This includes optionally rounded borders, antialiasing, shadows, and skew.
+通过配置这个样式盒的各种属性，你可以不使用纹理实现许多常见外观，包括可选的圆角边框、抗锯齿、阴影、偏斜等。
 
-Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
+允许将圆角半径设置为较高的值。两角重叠时，样式盒将切换到相对系统。
 
-\ **Example:**\ 
+\ **示例：**\ 
 
 .. code:: text
 
@@ -31,7 +31,7 @@ Setting corner radius to high values is allowed. As soon as corners overlap, the
     corner_radius_top_left = 50
     corner_radius_bottom_left = 100
 
-The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
+相对系统现在将采用两个左角的 1:2 比率来计算实际角宽度。添加的两个角\ **永远**\ 不会超过高度。结果：
 
 .. code:: text
 
@@ -664,10 +664,10 @@ StyleBox的背景颜色。
 将所有边的扩展边距都设置为 ``size`` 像素。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -19,11 +19,11 @@ XRHandModifier3D
 描述
 ----
 
-This node uses hand tracking data from an :ref:`XRHandTracker<class_XRHandTracker>` to pose the skeleton of a hand mesh.
+该节点使用来自 :ref:`XRHandTracker<class_XRHandTracker>` 的手部跟踪数据来设置手部网格的骨架。
 
-Positioning of hands is performed by creating an :ref:`XRNode3D<class_XRNode3D>` ancestor of the hand mesh driven by the same :ref:`XRHandTracker<class_XRHandTracker>`.
+通过创建由相同 :ref:`XRHandTracker<class_XRHandTracker>` 驱动的手部网格的 :ref:`XRNode3D<class_XRNode3D>` 祖先来定位手部。
 
-The hand tracking position-data is scaled by :ref:`Skeleton3D.motion_scale<class_Skeleton3D_property_motion_scale>` when applied to the skeleton, which can be used to adjust the tracked hand to match the scale of the hand model.
+当将手部跟踪位置数据应用于骨架时，它会根据 :ref:`Skeleton3D.motion_scale<class_Skeleton3D_property_motion_scale>` 进行缩放，可用于调整跟踪的手部以匹配手部模型的缩放。
 
 .. rst-class:: classref-introduction-group
 
@@ -125,10 +125,10 @@ enum **BoneUpdate**: :ref:`🔗<enum_XRHandModifier3D_BoneUpdate>`
 向 :ref:`XRServer<class_XRServer>` 注册的 :ref:`XRHandTracker<class_XRHandTracker>` 的名称，可以从中获取手部跟踪数据。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

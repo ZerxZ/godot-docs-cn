@@ -21,7 +21,7 @@ Joint2D
 描述
 ----
 
-Abstract base class for all joints in 2D physics. 2D joints bind together two physics bodies (:ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>`) and apply a constraint.
+2D 物理中所有关节的抽象基类。2D 关节能够将两个物理体（\ :ref:`node_a<class_Joint2D_property_node_a>` 和 :ref:`node_b<class_Joint2D_property_node_b>`\ ）绑定在一起并施加约束。
 
 .. rst-class:: classref-reftable-group
 
@@ -92,7 +92,7 @@ Abstract base class for all joints in 2D physics. 2D joints bind together two ph
 - |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
-If ``true``, the two bodies bound together do not collide with each other.
+如果为 ``true``\ ，则绑定在一起的两个物体不会相互碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -109,7 +109,7 @@ If ``true``, the two bodies bound together do not collide with each other.
 - |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
-Path to the first body (A) attached to the joint. The node must inherit :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+连接到关节的第一个物体（A）的路径。该节点必须继承自 :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -126,7 +126,7 @@ Path to the first body (A) attached to the joint. The node must inherit :ref:`Ph
 - |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
-Path to the second body (B) attached to the joint. The node must inherit :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+连接到关节的第二个物体（B）的路径。该节点必须继承自 :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -143,13 +143,13 @@ Path to the second body (B) attached to the joint. The node must inherit :ref:`P
 
 :ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Joint2D_method_get_rid>`
 
-Returns the joint's internal :ref:`RID<class_RID>` from the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+从 :ref:`PhysicsServer2D<class_PhysicsServer2D>` 返回关节的内部 :ref:`RID<class_RID>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -83,7 +83,7 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
 
 **PI** = ``3.14159265358979`` :ref:`🔗<class_@GDScript_constant_PI>`
 
-常量，表示圆的周长是直径的多少倍。相当于 ``TAU / 2``\ ，或以弧度表示的180度。
+常量，表示圆的周长是直径的多少倍。相当于 ``TAU / 2``\ ，即 180 度旋转。
 
 .. _class_@GDScript_constant_TAU:
 
@@ -91,7 +91,7 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
 
 **TAU** = ``6.28318530717959`` :ref:`🔗<class_@GDScript_constant_TAU>`
 
-圆常量，单位圆的周长，单位为弧度。相当于 ``PI * 2``\ ，即 360 度的弧度值。
+圆常量，单位圆的周长，单位为弧度。相当于 ``PI * 2``\ ，即 360 度旋转。
 
 .. _class_@GDScript_constant_INF:
 
@@ -126,7 +126,7 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
 
 **@export**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export>`
 
-将后续的属性标记为导出属性（可以在检查器面板中编辑并保存至磁盘）。要控制导出属性的类型，请使用类型提示标记。
+Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property, use the type hint notation.
 
 ::
 
@@ -134,33 +134,33 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
     
     enum Direction {LEFT, RIGHT, UP, DOWN}
     
-    # 内置类型。
+    # Built-in types.
     @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
     
-    # 枚举。
+    # Enums.
     @export var type: Variant.Type
     @export var format: Image.Format
     @export var direction: Direction
     
-    # 资源。
+    # Resources.
     @export var image: Image
     @export var custom_resource: CustomResource
     
-    # 节点。
+    # Nodes.
     @export var node: Node
     @export var custom_node: CustomNode
     
-    # 类型数组。
+    # Typed arrays.
     @export var int_array: Array[int]
     @export var direction_array: Array[Direction]
     @export var image_array: Array[Image]
     @export var node_array: Array[Node]
 
-\ **注意：**\ 自定义资源和自定义节点必须使用 ``class_name`` 注册为全局类。
+\ **Note:** Custom resources and nodes should be registered as global classes using ``class_name``, since the Inspector currently only supports global classes. Otherwise, a less specific type will be exported instead.
 
-\ **注意：**\ 节点的导出只有派生自 :ref:`Node<class_Node>` 的类才支持，并且还有一些其他限制。
+\ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -172,7 +172,7 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
 
 **@export_category**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GDScript_annotation_@export_category>`
 
-为后续导出属性定义一个新类别。方便在检查器面板中组织属性。
+为后续导出属性定义一个新类别，方便在检查器面板中组织属性。
 
 另见 :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_PROPERTY_USAGE_CATEGORY>`\ 。
 
@@ -213,13 +213,13 @@ GDScript 专用的实用函数及注解列表，可在任何脚本中访问。
 
 **@export_custom**\ (\ hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_string\: :ref:`String<class_String>`, usage\: |bitfield|\[:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\] = 6\ ) :ref:`🔗<class_@GDScript_annotation_@export_custom>`
 
-Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the parameters to the editor.
+允许为导出的属性设置自定义提示、提示字符串、和使用标志。请注意，GDScript 中没有进行任何验证，它只是将参数传递给编辑器。
 
 ::
 
     @export_custom(PROPERTY_HINT_NONE, "suffix:m") var suffix: Vector3
 
-\ **Note:** Regardless of the ``usage`` value, the :ref:`@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` flag is always added, as with any explicitly declared script variable.
+\ **注意：**\ 无论 ``usage`` 值如何，总会添加 :ref:`@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` 标志，就像和任何显式声明的脚本变量一样。
 
 .. rst-class:: classref-item-separator
 
@@ -231,7 +231,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 **@export_dir**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@export_dir>`
 
-导出 :ref:`String<class_String>`\ 、\ :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \] 或 :ref:`PackedStringArray<class_PackedStringArray>` 属性，用作指向目录的路径。该路径会被限制在项目文件夹及其子文件夹中。要允许在整个文件系统中选取，见 :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>`\ 。
+导出 :ref:`String<class_String>`\ 、\ :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \] 或 :ref:`PackedStringArray<class_PackedStringArray>` 属性，用作指向目录的路径。该路径会被限制在项目文件夹及其子文件夹中，要允许在整个文件系统中选取，见 :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>`\ 。
 
 另见 :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPERTY_HINT_DIR>`\ 。
 
@@ -790,9 +790,9 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 使具有静态变量的脚本在所有引用丢失后不持久化。如果再次加载脚本，静态变量将恢复为默认值。
 
-\ ** 注意：**\ 当注释描述其主题时，\ :ref:`@static_unload<class_@GDScript_annotation_@static_unload>`\ 注释必须放在类定义和继承之前。
+\ **注意：**\ 因为注解需要描述对象，所以 :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` 注解必须放在类定义和继承之前。
 
-\ ** 警告：**\ 目前，由于一个错误，即使使用了\ :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` 注释，脚本也永远不会释放。
+\ **警告：**\ 目前由于一个 bug，即使使用了\ :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` 注解，脚本也永远不会释放。
 
 .. rst-class:: classref-item-separator
 
@@ -804,7 +804,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 **@tool**\ (\ ) :ref:`🔗<class_@GDScript_annotation_@tool>`
 
-将当前脚本标记为工具脚本，允许它被编辑器加载和执行。见\ :doc:`《在编辑器中运行代码》 <../tutorials/plugins/running_code_in_the_editor>`\ 。
+将当前脚本标记为工具脚本，允许该脚本由编辑器所加载与执行。见\ :doc:`《在编辑器中运行代码》 <../tutorials/plugins/running_code_in_the_editor>`\ 。
 
 ::
 
@@ -848,7 +848,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 :ref:`Color<class_Color>` **Color8**\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ ) :ref:`🔗<class_@GDScript_method_Color8>`
 
-返回一个由整数红通道（\ ``r8``\ ）、绿通道（\ ``g8``\ ）、蓝通道（\ ``b8``\ ）和可选的 Alpha 通道（\ ``a8``\ ）构造的 :ref:`Color<class_Color>`\ ，每个通道的最终值都会除以 ``255.0``\ 。如果你需要精确匹配 :ref:`Image<class_Image>` 中的颜色值，\ :ref:`Color8<class_@GDScript_method_Color8>` 比标准的 :ref:`Color<class_Color>` 构造函数更有用。
+返回一个由整数红通道（\ ``r8``\ ）、整数绿通道（\ ``g8``\ ）、整数蓝通道（\ ``b8``\ ）和可选的整数 Alpha 通道（\ ``a8``\ ）构造的 :ref:`Color<class_Color>`\ ，每个通道的最终值都会除以 ``255.0``\ 。如果你需要精确匹配 :ref:`Image<class_Image>` 中的颜色值，\ :ref:`Color8<class_@GDScript_method_Color8>` 比标准的 :ref:`Color<class_Color>` 构造函数更有用。
 
 ::
 
@@ -856,7 +856,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
     var dark_blue = Color8(0, 0, 51)        # 与 Color(0, 0, 0.2) 相同。
     var my_color = Color8(306, 255, 0, 102) # 与 Color(1.2, 1, 0, 0.4) 相同。
 
-\ **注意：**\ 因为 :ref:`Color8<class_@GDScript_method_Color8>` 比标准 :ref:`Color<class_Color>` 构造函数精度更低，所以使用 :ref:`Color8<class_@GDScript_method_Color8>` 创建的颜色通常与使用标准 :ref:`Color<class_Color>` 构造函数创建的相同颜色不相等。请使用 :ref:`Color.is_equal_approx<class_Color_method_is_equal_approx>` 进行比较，避免浮点数精度误差。
+\ **注意：**\ 由于 :ref:`Color8<class_@GDScript_method_Color8>` 比标准 :ref:`Color<class_Color>` 构造函数精度更低，故使用 :ref:`Color8<class_@GDScript_method_Color8>` 创建的颜色通常与使用标准 :ref:`Color<class_Color>` 构造函数创建的相同颜色不相等。请使用 :ref:`Color.is_equal_approx<class_Color_method_is_equal_approx>` 进行比较，避免浮点数精度误差。
 
 .. rst-class:: classref-item-separator
 
@@ -868,11 +868,11 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 |void| **assert**\ (\ condition\: :ref:`bool<class_bool>`, message\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_method_assert>`
 
-断言条件 ``condition`` 为 ``true``\ 。如果条件 ``condition`` 为 ``false`` ，则会生成错误。如果是从编辑器运行的，正在运行的项目还会被暂停，直到手动恢复。该函数可以作为 :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` 的加强版，用于向项目开发者和插件用户报错。
+断言条件 ``condition`` 为 ``true``\ 。如果条件 ``condition`` 为 ``false`` ，则会生成错误。如果是从编辑器运行的断言，正在运行的项目还会被暂停，需要手动恢复。该函数可以作为 :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` 的加强版使用，用于向项目开发者和插件用户报错。
 
-如果给出了可选的 ``message`` 参数，该信息会和通用的“Assertion failed”消息一起显示。你可以使用它来提供关于断言失败原因的其他详细信息。
+如果给出了可选的 ``message`` 参数，该信息会和通用的“Assertion failed”消息一起显示。你可以使用它来提供关于断言失败原因等详细信息。
 
-\ **警告：**\ 出于对性能的考虑，\ :ref:`assert<class_@GDScript_method_assert>` 中的代码只会在调试版本或者从编辑器运行项目时执行。请勿在 :ref:`assert<class_@GDScript_method_assert>` 调用中加入具有副作用的代码。否则，项目在以发布模式导出后将有不一致的行为。
+\ **警告：**\ 出于对性能的考虑，\ :ref:`assert<class_@GDScript_method_assert>` 中的代码只会在调试版本或者从编辑器运行项目时执行。请勿在 :ref:`assert<class_@GDScript_method_assert>` 调用中加入具有副作用的代码。否则，项目在以发布模式导出后将会出现行为不一致的现象。
 
 ::
 
@@ -915,7 +915,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 **已弃用：** Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 
-在可能的情况下将 ``what`` 转换为 ``type`` 。 ``type`` 使用 :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` 值。
+在可能的情况下将 ``what`` 转换为 ``type`` 类型的值， ``type`` 使用 :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` 值。
 
 ::
 
@@ -936,7 +936,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 :ref:`Object<class_Object>` **dict_to_inst**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_@GDScript_method_dict_to_inst>`
 
-将一个 ``dictionary`` （用 :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>` 创建的）转换回为一个 Object 实例。在反序列化时可能很有用。
+将一个 ``dictionary`` （用 :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>` 创建的）转换回为一个 Object 实例。在反序列化时可能会很有用。
 
 .. rst-class:: classref-item-separator
 
@@ -948,7 +948,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 :ref:`Array<class_Array>` **get_stack**\ (\ ) :ref:`🔗<class_@GDScript_method_get_stack>`
 
-返回一个表示当前调用堆栈的字典数组。另请参阅 :ref:`print_stack<class_@GDScript_method_print_stack>`\ 。
+返回一个表示当前调用堆栈的字典数组，另请参阅 :ref:`print_stack<class_@GDScript_method_print_stack>`\ 。
 
 ::
 
@@ -969,7 +969,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 \ **注意：**\ 只有在运行的实例连接到调试服务器（即编辑器实例）后，该函数才有效。\ :ref:`get_stack<class_@GDScript_method_get_stack>` 不适用于以发布模式导出的项目；或者在未连接到调试服务器的情况下，以调试模式导出的项目。
 
-\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 调用此函数。这样做将返回一个空数组。
+\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 调用此函数，这样做将返回一个空数组。
 
 .. rst-class:: classref-item-separator
 
@@ -981,9 +981,9 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 :ref:`Dictionary<class_Dictionary>` **inst_to_dict**\ (\ instance\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_@GDScript_method_inst_to_dict>`
 
-返回传入的 ``instance`` 转换为的字典。可用于序列化。
+将传入的 ``instance`` 转换为字典，并将该字典返回，可用于序列化。
 
-\ **注意：**\ 不能用于序列化附加了内置脚本的对象，或在内置脚本中分配的对象。
+\ **注意：**\ 不能用于序列化附加了内置脚本的对象，也不能用于序列化在内置脚本中分配的对象。
 
 ::
 
@@ -1012,13 +1012,13 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 如果 ``value`` 为 ``type`` 类型的实例，则返回 ``true``\ 。\ ``type`` 的值必须为下列值之一：
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` 枚举常量，例如 :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`\ 。
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` 枚举常量，如 :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`\ 。
 
-- :ref:`ClassDB<class_ClassDB>` 中存在的派生自 :ref:`Object<class_Object>` 的类，例如 :ref:`Node<class_Node>`\ 。
+- :ref:`ClassDB<class_ClassDB>` 中存在的派生自 :ref:`Object<class_Object>` 的类，如 :ref:`Node<class_Node>`\ 。
 
 - :ref:`Script<class_Script>`\ （可以用任何类，包括内部类）。
 
-\ ``type`` 可以不是常量，这一点与 ``is`` 的右操作数不同。\ ``is`` 运算符支持的功能更多（例如类型化数组）。如果你不需要动态类型检查，请使用该运算符，不要使用此方法。
+\ ``type`` 可以不是常量，这一点与 ``is`` 的右操作数不同，\ ``is`` 运算符支持的功能更多（例如类型化数组）。如果你不需要动态类型检查，请使用该运算符，不要使用此方法。
 
 示例：
 
@@ -1029,7 +1029,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
     print(is_instance_of(a, MyClass))
     print(is_instance_of(a, MyClass.InnerClass))
 
-\ **注意：**\ 如果 ``value`` 和/或 ``type`` 为已释放的对象（见 :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`\ ），或者 ``type`` 不是以上选项之一，则此方法会报运行时错误。
+\ **注意：**\ 如果 ``value`` 和/或 ``type`` 为已释放的对象（见 :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`\ ），或者 ``type`` 的数值不为以上选项中的任何一项，则此方法会报运行时错误。
 
 另见 :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>`\ 、\ :ref:`type_exists<class_@GDScript_method_type_exists>`\ 、\ :ref:`Array.is_same_typed<class_Array_method_is_same_typed>`\ （以及其他 :ref:`Array<class_Array>` 方法）。
 
@@ -1043,7 +1043,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 :ref:`int<class_int>` **len**\ (\ var\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GDScript_method_len>`
 
-返回给定 Variant ``var`` 的长度。长度可以是 :ref:`String<class_String>` 或 :ref:`StringName<class_StringName>` 的字符数、任意数组类型的元素数或 :ref:`Dictionary<class_Dictionary>` 的大小等。对于所有其他 Variant 类型，都会生成运行时错误并停止执行。
+返回给定 Variant ``var`` 的长度，该长度可以是 :ref:`String<class_String>` 或 :ref:`StringName<class_StringName>` 的字符数，也可以是任意数组类型的元素数或 :ref:`Dictionary<class_Dictionary>` 的大小等。对于所有其他 Variant 类型，都会生成运行时错误并停止执行。
 
 ::
 
@@ -1120,7 +1120,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
     Test print
     At: res://test.gd:15:_process()
 
-\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 中调用此方法。调用时会输出线程 ID。
+\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 中调用此方法，这样做会输出线程 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -1142,7 +1142,7 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
 
 \ **注意：**\ 只有在运行的实例连接到调试服务器（即编辑器实例）后，该函数才有效。\ :ref:`print_stack<class_@GDScript_method_print_stack>` 不适用于以发布模式导出的项目；或者在未连接到调试服务器的情况下，以调试模式导出的项目。
 
-\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 调用此函数。这样做将改为打印线程 ID。
+\ **注意：**\ 不支持从 :ref:`Thread<class_Thread>` 调用此函数，这样做将改为打印线程 ID。
 
 .. rst-class:: classref-item-separator
 
@@ -1224,10 +1224,10 @@ Allows you to set a custom hint, hint string, and usage flags for the exported p
     type_exists("NonExistentClass") # 返回 false
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

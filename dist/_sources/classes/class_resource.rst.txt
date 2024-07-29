@@ -194,13 +194,13 @@ Resource
 - |void| **set_scene_unique_id**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_scene_unique_id**\ (\ )
 
-An unique identifier relative to the this resource's scene. If left empty, the ID is automatically generated when this resource is saved inside a :ref:`PackedScene<class_PackedScene>`. If the resource is not inside a scene, this property is empty by default.
+相对于该资源场景的唯一标识，若留空，则当该资源保存在 :ref:`PackedScene<class_PackedScene>` 中时，会自动生成 ID；若资源不在场景中，则该属性默认为空。
 
-\ **Note:** When the :ref:`PackedScene<class_PackedScene>` is saved, if multiple resources in the same scene use the same ID, only the earliest resource in the scene hierarchy keeps the original ID. The other resources are assigned new IDs from :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`.
+\ **注意：**\ 保存 :ref:`PackedScene<class_PackedScene>` 时，若同一场景中的多个资源使用相同 ID，则只有场景层级中最早的资源保留原 ID，其他资源从 :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>` 中分配新 ID。
 
-\ **Note:** Setting this property does not emit the :ref:`changed<class_Resource_signal_changed>` signal.
+\ **注意：**\ 设置该属性不会发出 :ref:`changed<class_Resource_signal_changed>` 信号。
 
-\ **Warning:** When setting, the ID must only consist of letters, numbers, and underscores. Otherwise, it will fail and default to a randomly generated ID.
+\ **警告：**\ 设置时，ID 只能由字母、数字和下划线组成，否则会失败，且默认为一个随机生成的 ID。
 
 .. rst-class:: classref-section-separator
 
@@ -252,13 +252,19 @@ An unique identifier relative to the this resource's scene. If left empty, the I
 
 :ref:`Resource<class_Resource>` **duplicate**\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Resource_method_duplicate>`
 
-制作该资源的副本，返回资源中，\ ``export`` 的属性以及 :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` 的属性都会从原始资源中复制。
+Duplicates this resource, returning a new resource with its ``export``\ ed or :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` properties copied from the original.
 
-如果 ``subresources`` 为 ``false``\ ，则返回的是浅拷贝；子资源中的嵌套资源不会被复制，仍然会被共享。如果 ``subresources`` 为 ``true``\ ，则返回的是深拷贝；会制作嵌套子资源的副本，不会进行共享。
+If ``subresources`` is ``false``, a shallow copy is returned; nested resources within subresources are not duplicated and are shared with the original resource (with one exception; see below). If ``subresources`` is ``true``, a deep copy is returned; nested subresources will be duplicated and are not shared (with two exceptions; see below).
 
-带有 :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE>` 标志的子资源属性始终会被复制，即便 ``subresources`` 为 ``false``\ 。而带有 :ref:`@GlobalScope.PROPERTY_USAGE_NEVER_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE>` 标志的子资源属性始终不会被复制，即便 ``subresources`` 为 ``true``\ 。
+\ ``subresources`` is usually respected, with the following exceptions:
 
-\ **注意：**\ 对于自定义资源，如果定义 :ref:`Object._init<class_Object_private_method__init>` 时使用了必填的参数，则此方法会失败。
+- Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE>` flag are always duplicated.
+
+- Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_NEVER_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE>` flag are never duplicated.
+
+- Subresources inside :ref:`Array<class_Array>` and :ref:`Dictionary<class_Dictionary>` properties are never duplicated.
+
+\ **Note:** For custom resources, this method will fail if :ref:`Object._init<class_Object_private_method__init>` has been defined with required parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -292,7 +298,7 @@ An unique identifier relative to the this resource's scene. If left empty, the I
 
 :ref:`String<class_String>` **generate_scene_unique_id**\ (\ ) |static| :ref:`🔗<class_Resource_method_generate_scene_unique_id>`
 
-Generates a unique identifier for a resource to be contained inside a :ref:`PackedScene<class_PackedScene>`, based on the current date, time, and a random value. The returned string is only composed of letters (``a`` to ``y``) and numbers (``0`` to ``8``). See also :ref:`resource_scene_unique_id<class_Resource_property_resource_scene_unique_id>`.
+根据当前日期、时间和随机值，为要包含在 :ref:`PackedScene<class_PackedScene>` 中的资源生成唯一标识符。返回的字符串仅由字母（\ ``a`` 到 ``y``\ ）和数字（\ ``0`` 到 ``8``\ ）组成。另请参阅 :ref:`resource_scene_unique_id<class_Resource_property_resource_scene_unique_id>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -345,10 +351,10 @@ Generates a unique identifier for a resource to be contained inside a :ref:`Pack
 将 :ref:`resource_path<class_Resource_property_resource_path>` 设置为 ``path``\ ，可能会覆盖这个路径对应的已有缓存条目。后续尝试通过路径加载覆盖后的资源时，会返回这个资源。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

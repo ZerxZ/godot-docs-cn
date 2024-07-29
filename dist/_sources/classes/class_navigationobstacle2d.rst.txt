@@ -98,7 +98,7 @@ NavigationObstacle2D
 - |void| **set_affect_navigation_mesh**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_affect_navigation_mesh**\ (\ )
 
-If enabled and parsed in a navigation mesh baking process the obstacle will discard source geometry inside its :ref:`vertices<class_NavigationObstacle2D_property_vertices>` defined shape.
+如果启用并在导航网格烘焙过程中解析，则障碍物将丢弃其 :ref:`vertices<class_NavigationObstacle2D_property_vertices>` 定义形状内的源几何体。
 
 .. rst-class:: classref-item-separator
 
@@ -149,11 +149,11 @@ If enabled and parsed in a navigation mesh baking process the obstacle will disc
 - |void| **set_carve_navigation_mesh**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_carve_navigation_mesh**\ (\ )
 
-If enabled the obstacle vertices will carve into the baked navigation mesh with the shape unaffected by additional offsets (e.g. agent radius).
+如果启用，障碍物顶点将雕刻到烘焙的导航网格中，其形状不受额外偏移（例如代理半径）的影响。
 
-It will still be affected by further postprocessing of the baking process, like edge and polygon simplification.
+它仍会受到烘焙过程的后续后处理的影响，例如边缘和多边形简化。
 
-Requires :ref:`affect_navigation_mesh<class_NavigationObstacle2D_property_affect_navigation_mesh>` to be enabled.
+需要启用 :ref:`affect_navigation_mesh<class_NavigationObstacle2D_property_affect_navigation_mesh>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -274,10 +274,10 @@ Requires :ref:`affect_navigation_mesh<class_NavigationObstacle2D_property_affect
 设置该 NavigationObstacle 节点应使用的导航地图的 :ref:`RID<class_RID>`\ ，并会更新 NavigationServer 上的 ``obstacle``\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

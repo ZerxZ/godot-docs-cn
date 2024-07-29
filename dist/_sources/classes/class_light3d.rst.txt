@@ -319,9 +319,9 @@ enum **BakeMode**: :ref:`🔗<enum_Light3D_BakeMode>`
 
 :ref:`BakeMode<enum_Light3D_BakeMode>` **BAKE_DISABLED** = ``0``
 
-Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
+烘焙时灯光将被忽略。这是最快的模式，但是在烘焙全局照明时仍会考虑该灯光。该模式通常应用于快速变化的动态灯光，因为全局照明的效果在这些灯光上不太明显。
 
-\ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
+\ **注意：**\ 将灯光隐藏，\ *不*\ 影响烘焙 :ref:`LightmapGI<class_LightmapGI>`\ 。但将灯光隐藏，仍会影响烘焙 :ref:`VoxelGI<class_VoxelGI>` 和 SDFGI（请参阅 :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`\ ）。
 
 .. _class_Light3D_constant_BAKE_STATIC:
 
@@ -822,7 +822,7 @@ Light is ignored when baking. This is the fastest mode, but the light will be ta
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-section-separator
 
@@ -866,10 +866,10 @@ Light is ignored when baking. This is the fastest mode, but the light will be ta
 设置指定的 :ref:`Param<enum_Light3D_Param>` 参数的值。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -582,7 +582,7 @@ enum **PhysicsInterpolationMode**: :ref:`🔗<enum_Node_PhysicsInterpolationMode
 
 :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` **PHYSICS_INTERPOLATION_MODE_ON** = ``1``
 
-Enables physics interpolation for this node and for children set to :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>`. This is the default for the root node.
+为该节点以及设置为 :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>` 的子节点启用物理插值。这是根节点的默认设置。
 
 .. _class_Node_constant_PHYSICS_INTERPOLATION_MODE_OFF:
 
@@ -590,7 +590,7 @@ Enables physics interpolation for this node and for children set to :ref:`PHYSIC
 
 :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` **PHYSICS_INTERPOLATION_MODE_OFF** = ``2``
 
-Disables physics interpolation for this node and for children set to :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>`.
+禁用该节点以及设置为 :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>` 的子节点的物理插值。
 
 .. rst-class:: classref-item-separator
 
@@ -969,9 +969,9 @@ enum **AutoTranslateMode**: :ref:`🔗<enum_Node_AutoTranslateMode>`
 
 **NOTIFICATION_WM_GO_BACK_REQUEST** = ``1007`` :ref:`🔗<class_Node_constant_NOTIFICATION_WM_GO_BACK_REQUEST>`
 
-当一个返回请求发出时，从操作系统收到的通知（例如在 Android 系统上按下“返回”按钮）。
+Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
 
-仅在 iOS 上实现。
+Implemented only on Android.
 
 .. _class_Node_constant_NOTIFICATION_WM_SIZE_CHANGED:
 
@@ -1023,16 +1023,16 @@ enum **AutoTranslateMode**: :ref:`🔗<enum_Node_AutoTranslateMode>`
 
 **NOTIFICATION_TRANSLATION_CHANGED** = ``2010`` :ref:`🔗<class_Node_constant_NOTIFICATION_TRANSLATION_CHANGED>`
 
-Notification received when translations may have changed. Can be triggered by the user changing the locale, changing :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>` or when the node enters the scene tree. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+翻译可能发生改变时收到的通知。用户更改区域设置、更改 :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>`\ 、节点进入场景树时都会触发该通知。可以用来对语言的更改作出反应，例如动态更改 UI 字符串。使用 :ref:`Object.tr<class_Object_method_tr>` 等内置翻译支持时很有用。
 
-\ **Note:** This notification is received alongside :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>`, so if you are instantiating a scene, the child nodes will not be initialized yet. You can use it to setup translations for this node, child nodes created from script, or if you want to access child nodes added in the editor, make sure the node is ready using :ref:`is_node_ready<class_Node_method_is_node_ready>`.
+\ **注意：**\ 该通知是和 :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` 一起收到的，因此在实例化场景时，子节点尚未初始化。你可以用它设置该节点的翻译和用脚本创建的子节点的翻译，如果想要访问在编辑器中添加的子节点，请使用 :ref:`is_node_ready<class_Node_method_is_node_ready>` 确保该节点已就绪。
 
 ::
 
     func _notification(what):
         if what == NOTIFICATION_TRANSLATION_CHANGED:
             if not is_node_ready():
-                await ready # Wait until ready signal.
+                await ready # 等待就绪信号。
             $Label.text = atr("%d Bananas") % banana_counter
 
 .. _class_Node_constant_NOTIFICATION_WM_ABOUT:
@@ -1135,9 +1135,9 @@ Notification received when translations may have changed. Can be triggered by th
 - |void| **set_auto_translate_mode**\ (\ value\: :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`\ )
 - :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>` **get_auto_translate_mode**\ (\ )
 
-Defines if any text should automatically change to its translated version depending on the current locale (for nodes such as :ref:`Label<class_Label>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Window<class_Window>`, etc.). Also decides if the node's strings should be parsed for POT generation.
+定义是否应该根据当前区域设置自动将所有文本更改为翻译后的版本（针对 :ref:`Label<class_Label>`\ 、\ :ref:`RichTextLabel<class_RichTextLabel>`\ 、\ :ref:`Window<class_Window>` 等节点）。同时也会决定生成 POT 时是否解析该节点的字符串。
 
-\ **Note:** For the root node, auto translate mode can also be set via :ref:`ProjectSettings.internationalization/rendering/root_node_auto_translate<class_ProjectSettings_property_internationalization/rendering/root_node_auto_translate>`.
+\ **注意：**\ 根节点的自动翻译模式也可以通过 :ref:`ProjectSettings.internationalization/rendering/root_node_auto_translate<class_ProjectSettings_property_internationalization/rendering/root_node_auto_translate>` 设置。
 
 .. rst-class:: classref-item-separator
 
@@ -1208,9 +1208,9 @@ Defines if any text should automatically change to its translated version depend
 - |void| **set_owner**\ (\ value\: :ref:`Node<class_Node>`\ )
 - :ref:`Node<class_Node>` **get_owner**\ (\ )
 
-The owner of this node. The owner must be an ancestor of this node. When packing the owner node in a :ref:`PackedScene<class_PackedScene>`, all the nodes it owns are also saved with it.
+该节点的所有者。所有者必须是该节点的祖先节点。当将所有者节点打包到 :ref:`PackedScene<class_PackedScene>` 中时，它拥有的所有节点也会随之保存。
 
-\ **Note:** In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will **not** be saved. To prevent this, remember to set the owner after calling :ref:`add_child<class_Node_method_add_child>`. See also (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`)
+\ **注意：**\ 在编辑器中，不属于场景根的节点通常不会显示在场景面板中，并且\ **不**\ 会被保存。为了防止这种情况，请记住在调用 :ref:`add_child<class_Node_method_add_child>` 后设置所有者。另见（参见 :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`\ ）
 
 .. rst-class:: classref-item-separator
 
@@ -1227,9 +1227,9 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 - |void| **set_physics_interpolation_mode**\ (\ value\: :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>`\ )
 - :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` **get_physics_interpolation_mode**\ (\ )
 
-Allows enabling or disabling physics interpolation per node, offering a finer grain of control than turning physics interpolation on and off globally. See :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` and :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` for the global setting.
+允许启用或禁用每个节点的物理插值，提供比全局打开和关闭物理插值更精细的控制。请参阅 :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` 和 :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` 了解全局设置。
 
-\ **Note:** When teleporting a node to a distant position you should temporarily disable interpolation with :ref:`reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`.
+\ **注意：**\ 将节点传送到远处时，应使用 :ref:`reset_physics_interpolation<class_Node_method_reset_physics_interpolation>` 暂时禁用插值。
 
 .. rst-class:: classref-item-separator
 
@@ -1337,7 +1337,7 @@ Allows enabling or disabling physics interpolation per node, offering a finer gr
 - |void| **set_process_thread_messages**\ (\ value\: |bitfield|\[:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\]\ )
 - |bitfield|\[:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\] **get_process_thread_messages**\ (\ )
 
-Set whether the current thread group will process messages (calls to :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` on threads), and whether it wants to receive them during regular process or physics process callbacks.
+设置当前线程组是否处理消息（在线程上调用 :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>`\ ），以及是否需要在常规处理和物理处理回调中接收消息。
 
 .. rst-class:: classref-item-separator
 
@@ -1662,13 +1662,13 @@ Set whether the current thread group will process messages (calls to :ref:`call_
 
 :ref:`String<class_String>` **atr**\ (\ message\: :ref:`String<class_String>`, context\: :ref:`StringName<class_StringName>` = ""\ ) |const| :ref:`🔗<class_Node_method_atr>`
 
-Translates a ``message``, using the translation catalogs configured in the Project Settings. Further ``context`` can be specified to help with the translation. Note that most :ref:`Control<class_Control>` nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
+使用项目设置中配置的翻译目录，翻译一条 ``message``\ 。可以进一步指定 ``context`` 来帮助翻译。请注意，大多数 :ref:`Control<class_Control>` 节点会自动翻译其字符串，因此该方法最适用于格式化的字符串或自定义绘制的文本。
 
-This method works the same as :ref:`Object.tr<class_Object_method_tr>`, with the addition of respecting the :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>` state.
+该方法的工作方式与 :ref:`Object.tr<class_Object_method_tr>` 相同，此外还遵循 :ref:`auto_translate_mode<class_Node_property_auto_translate_mode>` 状态。
 
-If :ref:`Object.can_translate_messages<class_Object_method_can_translate_messages>` is ``false``, or no translation is available, this method returns the ``message`` without changes. See :ref:`Object.set_message_translation<class_Object_method_set_message_translation>`.
+如果 :ref:`Object.can_translate_messages<class_Object_method_can_translate_messages>` 为 ``false``\ ，或者没有翻译可用，则该方法将返回 ``message`` 而不做任何更改。请参阅 :ref:`Object.set_message_translation<class_Object_method_set_message_translation>`\ 。
 
-For detailed examples, see :doc:`Internationalizing games <../tutorials/i18n/internationalizing_games>`.
+有关详细示例，请参阅\ :doc:`《国际化游戏》 <../tutorials/i18n/internationalizing_games>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2395,9 +2395,9 @@ For detailed examples, see :doc:`Internationalizing games <../tutorials/i18n/int
 
 :ref:`bool<class_bool>` **is_physics_interpolated**\ (\ ) |const| :ref:`🔗<class_Node_method_is_physics_interpolated>`
 
-Returns ``true`` if physics interpolation is enabled for this node (see :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`).
+如果该节点启用了物理插值，则返回 ``true``\ （请参阅 :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`\ ）。
 
-\ **Note:** Interpolation will only be active if both the flag is set **and** physics interpolation is enabled within the :ref:`SceneTree<class_SceneTree>`. This can be tested using :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>`.
+\ **注意：**\ 仅当同时设置了标志\ **并且**\ 在 :ref:`SceneTree<class_SceneTree>` 中启用了物理插值时，插值才会处于活动状态。可以使用 :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>` 进行测试。
 
 .. rst-class:: classref-item-separator
 
@@ -2409,11 +2409,11 @@ Returns ``true`` if physics interpolation is enabled for this node (see :ref:`ph
 
 :ref:`bool<class_bool>` **is_physics_interpolated_and_enabled**\ (\ ) |const| :ref:`🔗<class_Node_method_is_physics_interpolated_and_enabled>`
 
-Returns ``true`` if physics interpolation is enabled (see :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`) **and** enabled in the :ref:`SceneTree<class_SceneTree>`.
+如果物理插值已启用（请参阅 :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`\ ）\ **并且**\ 已在 :ref:`SceneTree<class_SceneTree>` 中启用，则返回 ``true``\ 。
 
-This is a convenience version of :ref:`is_physics_interpolated<class_Node_method_is_physics_interpolated>` that also checks whether physics interpolation is enabled globally.
+这是 :ref:`is_physics_interpolated<class_Node_method_is_physics_interpolated>` 的便捷版本，它还检查物理插值是否已全局启用。
 
-See :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` and :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`.
+请参阅 :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` 和 :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2731,13 +2731,13 @@ See :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_inter
 
 |void| **reset_physics_interpolation**\ (\ ) :ref:`🔗<class_Node_method_reset_physics_interpolation>`
 
-When physics interpolation is active, moving a node to a radically different transform (such as placement within a level) can result in a visible glitch as the object is rendered moving from the old to new position over the physics tick.
+当物理插值处于活动状态时，将节点移动到完全不同的变换（例如放置在关卡内）可能会导致可见故障，因为对象在物理刻度内从旧位置渲染移动到新位置。
 
-That glitch can be prevented by calling this method, which temporarily disables interpolation until the physics tick is complete.
+可以通过调用该方法来防止该故障，该方法会暂时禁用插值，直到物理刻度完成。
 
-The notification :ref:`NOTIFICATION_RESET_PHYSICS_INTERPOLATION<class_Node_constant_NOTIFICATION_RESET_PHYSICS_INTERPOLATION>` will be received by the node and all children recursively.
+节点和所有子节点将递归接收通知 :ref:`NOTIFICATION_RESET_PHYSICS_INTERPOLATION<class_Node_constant_NOTIFICATION_RESET_PHYSICS_INTERPOLATION>`\ 。
 
-\ **Note:** This function should be called **after** moving the node, rather than before.
+\ **注意：**\ 应在移动节点\ **之后**\ 而不是之前调用该函数。
 
 .. rst-class:: classref-item-separator
 
@@ -2994,10 +2994,10 @@ The notification :ref:`NOTIFICATION_RESET_PHYSICS_INTERPOLATION<class_Node_const
 刷新场景面板中为该节点显示的警告。使用 :ref:`_get_configuration_warnings<class_Node_private_method__get_configuration_warnings>` 自定义要显示的警告消息。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

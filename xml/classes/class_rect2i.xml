@@ -17,7 +17,7 @@
             <paragraph><strong>注意：</strong>不支持负数的 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference>。如果大小为负数，<strong>Rect2i</strong> 的大多数方法都无法正常工作。请使用 <reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">abs</inline></reference> 获取等价且大小非负的 <strong>Rect2i</strong>。</paragraph>
             <paragraph><strong>注意：</strong>在布尔值上下文中，<reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 和 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference> 均为零（等于 <reference internal="True" refuri="class_vector2i#class-vector2i-constant-zero"><inline classes="std std-ref">Vector2i.ZERO</inline></reference>）的 <strong>Rect2i</strong> 会得到 <literal>false</literal>。否则得到 <literal>true</literal>。</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -139,7 +139,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">abs</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">abs</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -147,7 +147,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-encloses"><inline classes="std std-ref">encloses</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-encloses"><inline classes="std std-ref">encloses</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -155,7 +155,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-expand"><inline classes="std std-ref">expand</inline></reference>(to: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-expand"><inline classes="std std-ref">expand</inline></reference>(to: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -163,7 +163,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-get-area"><inline classes="std std-ref">get_area</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-get-area"><inline classes="std std-ref">get_area</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -171,7 +171,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-get-center"><inline classes="std std-ref">get_center</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-get-center"><inline classes="std std-ref">get_center</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -179,7 +179,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">grow</inline></reference>(amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">grow</inline></reference>(amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -187,7 +187,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">grow_individual</inline></reference>(left: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, top: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, bottom: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">grow_individual</inline></reference>(left: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, top: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, bottom: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -195,7 +195,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">grow_side</inline></reference>(side: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">grow_side</inline></reference>(side: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -203,7 +203,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-has-area"><inline classes="std std-ref">has_area</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-has-area"><inline classes="std std-ref">has_area</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -211,7 +211,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-has-point"><inline classes="std std-ref">has_point</inline></reference>(point: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-has-point"><inline classes="std std-ref">has_point</inline></reference>(point: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -219,7 +219,7 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-intersection"><inline classes="std std-ref">intersection</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-intersection"><inline classes="std std-ref">intersection</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -227,7 +227,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-intersects"><inline classes="std std-ref">intersects</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-intersects"><inline classes="std std-ref">intersects</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -235,15 +235,15 @@
                                 <paragraph><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rect2i-method-merge"><inline classes="std std-ref">merge</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rect2i-method-merge"><inline classes="std std-ref">merge</inline></reference>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id6" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id6" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="25"></colspec>
@@ -308,7 +308,7 @@
         <section classes="classref-descriptions-group" ids="id9" names="方法说明">
             <title>方法说明</title>
             <target refid="class-rect2i-method-abs"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-abs" names="class_rect2i_method_abs"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>abs</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-abs" names="class_rect2i_method_abs"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>abs</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回一个与该矩形等效的 <strong>Rect2i</strong>，其宽度和高度被修改为非负值，其 <reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 为该矩形的左上角。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -327,12 +327,12 @@ var absolute = rect.Abs(); // 绝对值为 Rect2I(-75, -25, 100, 50)</literal_bl
             <paragraph><strong>注意：</strong>当 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference> 为负时，建议使用该方法，因为 Godot 中的大多数其他方法都假设 <reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 是左上角，<reference internal="True" refid="class-rect2i-property-end"><inline classes="std std-ref">end</inline></reference> 是右下角。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-encloses"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-encloses" names="class_rect2i_method_encloses"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>encloses</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-encloses"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-encloses" names="class_rect2i_method_encloses"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>encloses</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-encloses"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>Rect2i</strong> 完全包含另一个，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-expand"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-expand" names="class_rect2i_method_expand"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>expand</strong>(to: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-expand"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns a copy of this rectangle expanded to align the edges with the given <literal>to</literal> point, if necessary.</paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-expand" names="class_rect2i_method_expand"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>expand</strong>(to: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-expand"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>返回该矩形的副本，如有必要，该矩形被扩展为将边缘与给定的 <literal>to</literal> 点对齐。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -341,28 +341,28 @@ var absolute = rect.Abs(); // 绝对值为 Rect2I(-75, -25, 100, 50)</literal_bl
                 <div aria-labelledby="tab-1-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var rect = Rect2i(0, 0, 5, 2)
 
-rect = rect.expand(Vector2i(10, 0)) # rect is Rect2i(0, 0, 10, 2)
-rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 15, 5)</literal_block>
+rect = rect.expand(Vector2i(10, 0)) # rect 为 Rect2i(0, 0, 10, 2)
+rect = rect.expand(Vector2i(-5, 5)) # rect 为 Rect2i(-5, 0, 15, 5)</literal_block>
                 </div>
                 <div aria-labelledby="tab-1-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-1-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var rect = new Rect2I(0, 0, 5, 2);
 
-rect = rect.Expand(new Vector2I(10, 0)); // rect is Rect2I(0, 0, 10, 2)
-rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 15, 5)</literal_block>
+rect = rect.Expand(new Vector2I(10, 0)); // rect 为 Rect2I(0, 0, 10, 2)
+rect = rect.Expand(new Vector2I(-5, 5)); // rect 为 Rect2I(-5, 0, 15, 5)</literal_block>
                 </div>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-get-area"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-get-area" names="class_rect2i_method_get_area"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_area</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-get-area"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-get-area" names="class_rect2i_method_get_area"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_area</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-get-area"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形的面积。这相当于 <literal>size.x * size.y</literal>。另请参阅 <reference internal="True" refid="class-rect2i-method-has-area"><inline classes="std std-ref">has_area</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-get-center"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-get-center" names="class_rect2i_method_get_center"><reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference> <strong>get_center</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-get-center"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-get-center" names="class_rect2i_method_get_center"><reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference> <strong>get_center</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-get-center"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形的中心点。这与 <literal>position + (size / 2)</literal> 相同。</paragraph>
             <paragraph><strong>注意：</strong>如果 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference> 为奇数，则结果将向 <reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 舍入。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-grow"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-grow" names="class_rect2i_method_grow"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow</strong>(amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-grow" names="class_rect2i_method_grow"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow</strong>(amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形的副本，该矩形在所有边上扩展给定的 <literal>amount</literal>。负的 <literal>amount</literal> 会缩小该矩形。另见 <reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">grow_individual</inline></reference> 和 <reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">grow_side</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -380,24 +380,24 @@ var b = new Rect2I(0, 0, 8, 4).Grow(2); // b 为 Rect2I(-2, -2, 12, 8)</literal_
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-grow-individual"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-grow-individual" names="class_rect2i_method_grow_individual"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow_individual</strong>(left: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, top: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, bottom: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-grow-individual" names="class_rect2i_method_grow_individual"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow_individual</strong>(left: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, top: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, right: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, bottom: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形的副本，其 <literal>left</literal>、<literal>top</literal>、<literal>right</literal> 和 <literal>bottom</literal> 边扩展了给定的量。相反，负值会缩小边。另见 <reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">grow</inline></reference> and <reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">grow_side</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-grow-side"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-grow-side" names="class_rect2i_method_grow_side"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow_side</strong>(side: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-grow-side" names="class_rect2i_method_grow_side"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>grow_side</strong>(side: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, amount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-grow-side"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形的副本，其 <literal>side</literal> 按给定的 <literal>amount</literal> 扩展（请参阅 <reference internal="True" refuri="class_@globalscope#enum-globalscope-side"><inline classes="std std-ref">Side</inline></reference> 常量）。相反，负的 <literal>amount</literal> 会缩小该矩形。另见 <reference internal="True" refid="class-rect2i-method-grow"><inline classes="std std-ref">grow</inline></reference> 和 <reference internal="True" refid="class-rect2i-method-grow-individual"><inline classes="std std-ref">grow_individual</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-has-area"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-has-area" names="class_rect2i_method_has_area"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_area</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-has-area"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-has-area" names="class_rect2i_method_has_area"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_area</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-has-area"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该矩形具有正的宽度和高度，则返回 <literal>true</literal>。另见 <reference internal="True" refid="class-rect2i-method-get-area"><inline classes="std std-ref">get_area</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-has-point"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-has-point" names="class_rect2i_method_has_point"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_point</strong>(point: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-has-point"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-has-point" names="class_rect2i_method_has_point"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_point</strong>(point: <reference internal="True" refuri="class_vector2i#class-vector2i"><inline classes="std std-ref">Vector2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-has-point"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该矩形包含给定的 <literal>point</literal>，则返回 <literal>true</literal>。依照惯例，<strong>不</strong>包括右侧和底部边缘上的点。</paragraph>
             <paragraph><strong>注意：</strong>对于<emphasis>大小为负</emphasis>的 <strong>Rect2i</strong>，该方法并不可靠。请首先使用 <reference internal="True" refid="class-rect2i-method-abs"><inline classes="std std-ref">abs</inline></reference> 获取一个有效的矩形。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-intersection"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-intersection" names="class_rect2i_method_intersection"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>intersection</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-intersection"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-intersection" names="class_rect2i_method_intersection"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>intersection</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-intersection"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该矩形与 <literal>b</literal> 之间的交集。如果矩形不相交，则返回空的 <strong>Rect2i</strong>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -420,16 +420,16 @@ var c = rect1.Intersection(rect2); // c 为 Rect2I(2, 0, 3, 4)</literal_block>
             <paragraph><strong>注意：</strong>如果你只需要知道两个矩形是否重叠，请改用 <reference internal="True" refid="class-rect2i-method-intersects"><inline classes="std std-ref">intersects</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-intersects"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-intersects" names="class_rect2i_method_intersects"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-intersects"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-intersects" names="class_rect2i_method_intersects"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-intersects"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该矩形与 <literal>b</literal> 矩形重叠，则返回 <literal>true</literal>。两个矩形的边缘均被排除。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rect2i-method-merge"></target>
-            <paragraph classes="classref-method" ids="class-rect2i-method-merge" names="class_rect2i_method_merge"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>merge</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-merge"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rect2i-method-merge" names="class_rect2i_method_merge"><reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference> <strong>merge</strong>(b: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rect2i-method-merge"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回一个包含该矩形和边缘周围的 <literal>b</literal> 的 <strong>Rect2i</strong>。另见 <reference internal="True" refid="class-rect2i-method-encloses"><inline classes="std std-ref">encloses</inline></reference>。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id10" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id10" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-rect2i-operator-neq-rect2i"></target>
             <paragraph classes="classref-operator" ids="class-rect2i-operator-neq-rect2i" names="class_rect2i_operator_neq_rect2i"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <reference internal="True" refid="class-rect2i-operator-neq-rect2i"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个矩形的 <reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 或 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference> 不相等，则返回 <literal>true</literal>。</paragraph>
@@ -438,12 +438,12 @@ var c = rect1.Intersection(rect2); // c 为 Rect2I(2, 0, 3, 4)</literal_block>
             <paragraph classes="classref-operator" ids="class-rect2i-operator-eq-rect2i" names="class_rect2i_operator_eq_rect2i"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator ==</strong>(right: <reference internal="True" refid="class-rect2i"><inline classes="std std-ref">Rect2i</inline></reference>) <reference internal="True" refid="class-rect2i-operator-eq-rect2i"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该矩形的 <reference internal="True" refid="class-rect2i-property-position"><inline classes="std std-ref">position</inline></reference> 和 <reference internal="True" refid="class-rect2i-property-size"><inline classes="std std-ref">size</inline></reference> 分别相等，则返回 <literal>true</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -592,9 +592,9 @@ PhysicsServer2DExtension
 
 |void| **_area_set_pickable**\ (\ area\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__area_set_pickable>`
 
-If set to ``true``, allows the area with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
+如果设置为 ``true``\ ，则允许具有给定 :ref:`RID<class_RID>` 的区域在鼠标光标悬停在其上时检测鼠标输入。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``area_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``area_set_pickable`` 方法的可覆盖版本。对应于 :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -834,9 +834,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`bool<class_bool>` **_body_collide_shape**\ (\ body\: :ref:`RID<class_RID>`, body_shape\: :ref:`int<class_int>`, shape\: :ref:`RID<class_RID>`, shape_xform\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_collide_shape>`
 
-Given a ``body``, a ``shape``, and their respective parameters, this method should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
+给定一个 ``body``\ 、一个 ``shape`` 及其各自的参数，如果两者之间发生碰撞，该方法应返回 ``true``\ ，并在 ``results`` 中传递其他详细信息。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``shape_collide`` 方法的可覆盖版本。对应于 :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -872,9 +872,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **_body_get_collision_exceptions**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_collision_exceptions>`
 
-Returns the :ref:`RID<class_RID>`\ s of all bodies added as collision exceptions for the given ``body``. See also :ref:`_body_add_collision_exception<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>` and :ref:`_body_remove_collision_exception<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`.
+返回所有添加为给定 ``body`` 的碰撞例外的物体的 :ref:`RID<class_RID>`\ 。另请参阅 :ref:`_body_add_collision_exception<class_PhysicsServer2DExtension_private_method__body_add_collision_exception>` 和 :ref:`_body_remove_collision_exception<class_PhysicsServer2DExtension_private_method__body_remove_collision_exception>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_collision_exceptions`` method. Corresponds to :ref:`PhysicsBody2D.get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``body_get_collision_exceptions`` 方法的可覆盖版本。对应于 :ref:`PhysicsBody2D.get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -946,9 +946,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_get_contacts_reported_depth_threshold>`
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_get_contacts_reported_depth_threshold`` method.
+:ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``body_get_contacts_reported_depth_threshold`` 方法的可覆盖版本。
 
-\ **Note:** This method is currently unused by Godot's default physics implementation.
+\ **注意：**\ Godot 的默认物理实现目前未使用该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -1212,9 +1212,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_body_set_contacts_reported_depth_threshold**\ (\ body\: :ref:`RID<class_RID>`, threshold\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_contacts_reported_depth_threshold>`
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_contacts_reported_depth_threshold`` method.
+:ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``body_set_contacts_reported_depth_threshold`` 方法的可覆盖版本。
 
-\ **Note:** This method is currently unused by Godot's default physics implementation.
+\ **注意：**\ Godot 的默认物理实现目前未使用该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -1298,9 +1298,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_body_set_pickable**\ (\ body\: :ref:`RID<class_RID>`, pickable\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__body_set_pickable>`
 
-If set to ``true``, allows the body with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
+如果设置为 ``true``\ ，则允许具有给定 :ref:`RID<class_RID>` 的物体在鼠标光标悬停在其上时检测鼠标输入。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``body_set_pickable`` 方法的可覆盖版本。对应于 :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1386,7 +1386,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 Assigns the ``body`` to call the given ``callable`` during the synchronization phase of the loop, before :ref:`_step<class_PhysicsServer2DExtension_private_method__step>` is called. See also :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_state_sync_callback`` method.
+Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback<class_PhysicsServer2D_method_body_set_state_sync_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1482,9 +1482,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_end_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__end_sync>`
 
-Called to indicate that the physics server has stopped synchronizing. It is in the loop's iteration/physics phase, and can access physics objects even if running on a separate thread. See also :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`.
+调用该方法表示物理服务器已停止同步。它处于循环的迭代/物理阶段，即使在单独的线程上运行也可以访问物理对象。另请参阅 :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``end_sync`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``end_sync`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1496,9 +1496,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_finish**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__finish>`
 
-Called when the main loop finalizes to shut down the physics server. See also :ref:`MainLoop._finalize<class_MainLoop_private_method__finalize>` and :ref:`_init<class_PhysicsServer2DExtension_private_method__init>`.
+当主循环结束时调用以关闭物理服务器。另请参阅 :ref:`MainLoop._finalize<class_MainLoop_private_method__finalize>` 和 :ref:`_init<class_PhysicsServer2DExtension_private_method__init>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``finish`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``finish`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1510,9 +1510,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_flush_queries**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__flush_queries>`
 
-Called every physics step before :ref:`_step<class_PhysicsServer2DExtension_private_method__step>` to process all remaining queries.
+:ref:`_step<class_PhysicsServer2DExtension_private_method__step>` 之前的每个物理步骤期间调用来处理所有剩余查询。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``flush_queries`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``flush_queries`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1548,9 +1548,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_init**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__init>`
 
-Called when the main loop is initialized and creates a new instance of this physics server. See also :ref:`MainLoop._initialize<class_MainLoop_private_method__initialize>` and :ref:`_finish<class_PhysicsServer2DExtension_private_method__finish>`.
+在主循环初始化并创建该物理服务器的新实例时调用。另请参阅 :ref:`MainLoop._initialize<class_MainLoop_private_method__initialize>` 和 :ref:`_finish<class_PhysicsServer2DExtension_private_method__finish>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``init`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``init`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1562,9 +1562,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`bool<class_bool>` **_is_flushing_queries**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__is_flushing_queries>`
 
-Overridable method that should return ``true`` when the physics server is processing queries. See also :ref:`_flush_queries<class_PhysicsServer2DExtension_private_method__flush_queries>`.
+当物理服务器正在处理查询时，应返回 ``true`` 的可覆盖方法。另请参阅 :ref:`_flush_queries<class_PhysicsServer2DExtension_private_method__flush_queries>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``is_flushing_queries`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``is_flushing_queries`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1792,9 +1792,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`bool<class_bool>` **_shape_collide**\ (\ shape_A\: :ref:`RID<class_RID>`, xform_A\: :ref:`Transform2D<class_Transform2D>`, motion_A\: :ref:`Vector2<class_Vector2>`, shape_B\: :ref:`RID<class_RID>`, xform_B\: :ref:`Transform2D<class_Transform2D>`, motion_B\: :ref:`Vector2<class_Vector2>`, results\: ``void*``, result_max\: :ref:`int<class_int>`, result_count\: ``int32_t*``\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_collide>`
 
-Given two shapes and their parameters, should return ``true`` if a collision between the two would occur, with additional details passed in ``results``.
+给定两个形状及其参数，如果两者之间发生碰撞，则应返回 ``true``\ ，并在 ``results`` 中传递其他详细信息。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_collide`` method. Corresponds to :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``shape_collide`` 方法的可覆盖版本。对应于 :ref:`PhysicsDirectSpaceState2D.collide_shape<class_PhysicsDirectSpaceState2D_method_collide_shape>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1806,9 +1806,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`float<class_float>` **_shape_get_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_get_custom_solver_bias>`
 
-Should return the custom solver bias of the given ``shape``, which defines how much bodies are forced to separate on contact when this shape is involved.
+应返回给定 ``shape`` 的自定义解算器偏差，该偏差定义了当涉及该形状时，物体在接触时被迫分离的程度。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_get_custom_solver_bias`` method. Corresponds to :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``shape_get_custom_solver_bias`` 方法的可覆盖版本。对应于 :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1844,9 +1844,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_shape_set_custom_solver_bias**\ (\ shape\: :ref:`RID<class_RID>`, bias\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__shape_set_custom_solver_bias>`
 
-Should set the custom solver bias for the given ``shape``. It defines how much bodies are forced to separate on contact.
+应为给定的 ``shape`` 设置自定义解算器偏差。它定义了接触时物体被迫分离的程度。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``shape_get_custom_solver_bias`` method. Corresponds to :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 内部 ``shape_get_custom_solver_bias`` 方法的可覆盖版本。对应于 :ref:`Shape2D.custom_solver_bias<class_Shape2D_property_custom_solver_bias>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1882,9 +1882,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`int<class_int>` **_space_get_contact_count**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contact_count>`
 
-Should return how many contacts have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contacts<class_PhysicsServer2DExtension_private_method__space_get_contacts>` and :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
+应返回在给定的 ``space`` 中最后一个物理步骤期间发生了多少次接触。另请参阅 :ref:`_space_get_contacts<class_PhysicsServer2DExtension_private_method__space_get_contacts>` 和 :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contact_count`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``space_get_contact_count`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1896,9 +1896,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **_space_get_contacts**\ (\ space\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_get_contacts>`
 
-Should return the positions of all contacts that have occurred during the last physics step in the given ``space``. See also :ref:`_space_get_contact_count<class_PhysicsServer2DExtension_private_method__space_get_contact_count>` and :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`.
+应返回给定 ``space`` 中上一个物理步骤中发生的所有接触的位置。另请参阅 :ref:`_space_get_contact_count<class_PhysicsServer2DExtension_private_method__space_get_contact_count>` 和 :ref:`_space_set_debug_contacts<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_get_contacts`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``space_get_contacts`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1958,9 +1958,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_space_set_debug_contacts**\ (\ space\: :ref:`RID<class_RID>`, max_contacts\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__space_set_debug_contacts>`
 
-Used internally to allow the given ``space`` to store contact points, up to ``max_contacts``. This is automatically set for the main :ref:`World2D<class_World2D>`'s space when :ref:`SceneTree.debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` is ``true``, or by checking "Visible Collision Shapes" in the editor. Only works in debug builds.
+内部使用以允许给定的 ``space`` 存储接触点，最多可达 ``max_contacts``\ 。当 :ref:`SceneTree.debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` 为 ``true`` 时，或通过在编辑器中勾选“可见碰撞形状”，将自动为主 :ref:`World2D<class_World2D>` 的空间设置该设置。仅适用于调试构建。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``space_set_debug_contacts`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``space_set_debug_contacts`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1984,9 +1984,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_step**\ (\ step\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__step>`
 
-Called every physics step to process the physics simulation. ``step`` is the time elapsed since the last physics step, in seconds. It is usually the same as :ref:`Node.get_physics_process_delta_time<class_Node_method_get_physics_process_delta_time>`.
+每个物理步骤期间调用来处理物理模拟。\ ``step`` 是自上一个物理步骤以来经过的时间，单位为秒。它通常与 :ref:`Node.get_physics_process_delta_time<class_Node_method_get_physics_process_delta_time>` 相同。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``step`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``step`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -1998,9 +1998,9 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 |void| **_sync**\ (\ ) |virtual| :ref:`🔗<class_PhysicsServer2DExtension_private_method__sync>`
 
-Called to indicate that the physics server is synchronizing and cannot access physics states if running on a separate thread. See also :ref:`_end_sync<class_PhysicsServer2DExtension_private_method__end_sync>`.
+调用该方法表示物理服务器正在同步，如果在单独的线程上运行则无法访问物理状态。另请参阅 :ref:`_end_sync<class_PhysicsServer2DExtension_private_method__end_sync>`\ 。
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``sync`` method.
+\ :ref:`PhysicsServer2D<class_PhysicsServer2D>` 的内部 ``sync`` 方法的可覆盖版本。
 
 .. rst-class:: classref-item-separator
 
@@ -2024,7 +2024,7 @@ Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal 
 
 :ref:`bool<class_bool>` **body_test_motion_is_excluding_body**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_body>`
 
-Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being excluded from :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+如果具有指定 :ref:`RID<class_RID>` 的物体被排除在 :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>` 之外，则返回 ``true``\ 。另见 :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2036,13 +2036,13 @@ Returns ``true`` if the body with the given :ref:`RID<class_RID>` is being exclu
 
 :ref:`bool<class_bool>` **body_test_motion_is_excluding_object**\ (\ object\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_object>`
 
-Returns ``true`` if the object with the given instance ID is being excluded from :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>`. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+如果具有指定实例 ID 的对象被排除在 :ref:`_body_test_motion<class_PhysicsServer2DExtension_private_method__body_test_motion>` 之外，则返回 ``true``\ 。另见 :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

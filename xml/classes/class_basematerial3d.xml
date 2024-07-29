@@ -1307,7 +1307,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-feature"><inline classes="std std-ref">get_feature</inline></reference>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-feature"><inline classes="std std-ref">get_feature</inline></reference>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -1315,7 +1315,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-flag"><inline classes="std std-ref">get_flag</inline></reference>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-flag"><inline classes="std std-ref">get_flag</inline></reference>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -1323,7 +1323,7 @@
                                 <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-texture"><inline classes="std std-ref">get_texture</inline></reference>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basematerial3d-method-get-texture"><inline classes="std std-ref">get_texture</inline></reference>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -1544,7 +1544,7 @@
             <paragraph>对象的颜色与背景相乘。</paragraph>
             <target refid="class-basematerial3d-constant-blend-mode-premult-alpha"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-basematerial3d-constant-blend-mode-premult-alpha" names="class_basematerial3d_constant_blend_mode_premult_alpha"><reference internal="True" refid="enum-basematerial3d-blendmode"><inline classes="std std-ref">BlendMode</inline></reference> <strong>BLEND_MODE_PREMULT_ALPHA</strong> = <literal>4</literal></paragraph>
-            <paragraph>The color of the object is added to the background and the alpha channel is used to mask out the background. This is effectively a hybrid of the blend mix and add modes, useful for effects like fire where you want the flame to add but the smoke to mix. By default, this works with unshaded materials using premultiplied textures. For shaded materials, use the <literal>PREMUL_ALPHA_FACTOR</literal> built-in so that lighting can be modulated as well.</paragraph>
+            <paragraph>对象的颜色被添加到背景中，而 alpha 通道用于遮盖背景。这实际上是混合模式和添加模式的混合，对于类似希望添加火焰但混合烟雾的火焰效果很有用。默认情况下，这适用于使用预乘纹理的未着色材质。对于着色材质，请使用内置的 <literal>PREMUL_ALPHA_FACTOR</literal>，以便也可以调节照明。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="enum-basematerial3d-alphaantialiasing"></target>
             <paragraph classes="classref-enumeration" ids="enum-basematerial3d-alphaantialiasing" names="enum_basematerial3d_alphaantialiasing">enum <strong>AlphaAntiAliasing</strong>: <reference internal="True" refid="enum-basematerial3d-alphaantialiasing"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -1764,7 +1764,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>要乘以 <reference internal="True" refid="class-basematerial3d-property-albedo-color"><inline classes="std std-ref">albedo_color</inline></reference> 的纹理。用于对象的基本纹理。</paragraph>
@@ -1777,7 +1777,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则强制将 <reference internal="True" refid="class-basematerial3d-property-albedo-texture"><inline classes="std std-ref">albedo_texture</inline></reference> 从 sRGB 颜色空间转换为线性颜色空间。另见 <reference internal="True" refid="class-basematerial3d-property-vertex-color-is-srgb"><inline classes="std std-ref">vertex_color_is_srgb</inline></reference>。</paragraph>
@@ -1790,7 +1790,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>启用多通道有符号距离场渲染着色器。使用 <reference internal="True" refid="class-basematerial3d-property-msdf-pixel-range"><inline classes="std std-ref">msdf_pixel_range</inline></reference> 和 <reference internal="True" refid="class-basematerial3d-property-msdf-outline-size"><inline classes="std std-ref">msdf_outline_size</inline></reference> 配置 MSDF 参数。</paragraph>
@@ -1862,7 +1862,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用各向异性。各向异性会改变镜面反射斑点的形状并将其与切线空间对齐。可用于拉丝铝材和毛发反射。</paragraph>
@@ -1876,7 +1876,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于对切线图进行偏移的纹理，用于各向异性的计算，（如果存在 Alpha 通道）还可以控制各向异性的效果。Flowmap 方向图纹理应该是一张派生图，红色通道表示 X 轴上的变形、绿色通道表示 Y 轴上的变形。小于 0.5 的值会朝负方向进行变形，而大于 0.5 的值则朝正方向变形。</paragraph>
@@ -1889,7 +1889,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，启用环境遮挡。环境遮挡根据 <reference internal="True" refid="class-basematerial3d-property-ao-texture"><inline classes="std std-ref">ao_texture</inline></reference> 使区域变暗。</paragraph>
@@ -1913,7 +1913,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，请使用 <literal>UV2</literal> 坐标从 <reference internal="True" refid="class-basematerial3d-property-ao-texture"><inline classes="std std-ref">ao_texture</inline></reference> 中查找。</paragraph>
@@ -1925,7 +1925,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>定义物体上给定点的环境遮挡量的纹理。</paragraph>
@@ -1961,7 +1961,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用背光效果。另请参阅 <reference internal="True" refid="class-basematerial3d-property-subsurf-scatter-transmittance-enabled"><inline classes="std std-ref">subsurf_scatter_transmittance_enabled</inline></reference>。</paragraph>
@@ -1973,7 +1973,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于控制每像素背光效果的纹理。与 <reference internal="True" refid="class-basematerial3d-property-backlight"><inline classes="std std-ref">backlight</inline></reference> 相加。</paragraph>
@@ -1985,7 +1985,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则着色器将保持为网格设置的缩放。否则，在做公告板时会丢失缩放。仅在 <reference internal="True" refid="class-basematerial3d-property-billboard-mode"><inline classes="std std-ref">billboard_mode</inline></reference> 不为 <reference internal="True" refid="class-basematerial3d-constant-billboard-disabled"><inline classes="std std-ref">BILLBOARD_DISABLED</inline></reference> 时适用。</paragraph>
@@ -2036,7 +2036,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用清漆渲染。将辅助透明通道添加到照明计算中，从而产生一个添加的镜面反射斑点。这使得材质看起来好像它们表面上有一层透明层，该透明层可以是有光泽的也可以是粗糙的。</paragraph>
@@ -2061,7 +2061,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>定义清漆效果的强度和清漆的光泽度的纹理。强度在红色通道中指定，光泽度在绿色通道中指定。</paragraph>
@@ -2097,7 +2097,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于指定细节覆盖层颜色的纹理。<reference internal="True" refid="class-basematerial3d-property-detail-albedo"><inline classes="std std-ref">detail_albedo</inline></reference> 的 alpha 通道会被用作遮罩，即使该材质不透明。要将专用纹理用作遮罩，请参阅 <reference internal="True" refid="class-basematerial3d-property-detail-mask"><inline classes="std std-ref">detail_mask</inline></reference>。</paragraph>
@@ -2122,7 +2122,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，启用细节叠加。细节是基于 <reference internal="True" refid="class-basematerial3d-property-detail-mask"><inline classes="std std-ref">detail_mask</inline></reference> 和 <reference internal="True" refid="class-basematerial3d-property-detail-albedo"><inline classes="std std-ref">detail_albedo</inline></reference> 的 Alpha 通道，在对象表面上混合的第二个纹理。这可用于为对象添加变化，或混合两种不同的反照率/法线纹理。</paragraph>
@@ -2134,7 +2134,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>纹理用于指定细节纹理如何与基础纹理混合。<reference internal="True" refid="class-basematerial3d-property-detail-mask"><inline classes="std std-ref">detail_mask</inline></reference> 可以与 <reference internal="True" refid="class-basematerial3d-property-detail-albedo"><inline classes="std std-ref">detail_albedo</inline></reference> 的 Alpha 通道（如果有）一起使用。</paragraph>
@@ -2146,7 +2146,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于指定细节覆盖层逐像素法线的纹理。<reference internal="True" refid="class-basematerial3d-property-detail-normal"><inline classes="std std-ref">detail_normal</inline></reference> 纹理只使用红色和绿色通道；会忽略蓝色和 alpha 通道。从 <reference internal="True" refid="class-basematerial3d-property-detail-normal"><inline classes="std std-ref">detail_normal</inline></reference> 读取的法线是围绕 <reference internal="True" refuri="class_mesh#class-mesh"><inline classes="std std-ref">Mesh</inline></reference> 所提供的表面法线的进行朝向的。</paragraph>
@@ -2183,7 +2183,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则对象不接收环境光。</paragraph>
@@ -2195,7 +2195,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则对象不会受到雾的影响（包括体积雾和深度雾）。可用于不着色材质和透明材质（例如例子），不开启时即便完全透明也会受到影响。</paragraph>
@@ -2207,7 +2207,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则对象不会收到投射到其上的阴影。</paragraph>
@@ -2269,7 +2269,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则实体会发光。发光会使物体看起来更亮。如果使用 <reference internal="True" refuri="class_voxelgi#class-voxelgi"><inline classes="std std-ref">VoxelGI</inline></reference>、SDFGI 或 <reference internal="True" refuri="class_lightmapgi#class-lightmapgi"><inline classes="std std-ref">LightmapGI</inline></reference>，并且该对象用于烘焙光照，则该对象还可以将光投射到其他对象上。</paragraph>
@@ -2305,7 +2305,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>使用 <literal>UV2</literal> 从 <reference internal="True" refid="class-basematerial3d-property-emission-texture"><inline classes="std std-ref">emission_texture</inline></reference> 中读取。</paragraph>
@@ -2329,7 +2329,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>纹理，指定某点的表面发光的程度。</paragraph>
@@ -2341,7 +2341,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则无论距离远近，对象都以相同的大小渲染。</paragraph>
@@ -2390,7 +2390,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用高度映射（也称为“视差映射”或“深度映射”）。另见 <reference internal="True" refid="class-basematerial3d-property-normal-enabled"><inline classes="std std-ref">normal_enabled</inline></reference>。高度映射是 GPU 上的一项要求很高的功能，因此它只能用于具有显著视觉差异的材质。</paragraph>
@@ -2427,7 +2427,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则将高度图纹理解释为深度图，与较暗的值相比，较亮的值在高度上显得“更低”。</paragraph>
@@ -2479,7 +2479,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用作高度图的纹理。另见 <reference internal="True" refid="class-basematerial3d-property-heightmap-enabled"><inline classes="std std-ref">heightmap_enabled</inline></reference>。</paragraph>
@@ -2518,7 +2518,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于指定对象的金属质感。这个值会与 <reference internal="True" refid="class-basematerial3d-property-metallic"><inline classes="std std-ref">metallic</inline></reference> 相乘。</paragraph>
@@ -2566,7 +2566,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，深度测试被禁用，对象将按渲染顺序绘制。</paragraph>
@@ -2578,7 +2578,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用法线映射。略微影响性能，尤其在移动 GPU 上。</paragraph>
@@ -2602,7 +2602,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于指定给定像素的法线的纹理。<reference internal="True" refid="class-basematerial3d-property-normal-texture"><inline classes="std std-ref">normal_texture</inline></reference> 只使用红色和绿色通道；会忽略蓝色和 alpha 通道。从 <reference internal="True" refid="class-basematerial3d-property-normal-texture"><inline classes="std std-ref">normal_texture</inline></reference> 读取的法线是围绕 <reference internal="True" refuri="class_mesh#class-mesh"><inline classes="std std-ref">Mesh</inline></reference> 所提供的表面法线的进行朝向的。</paragraph>
@@ -2617,7 +2617,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>要使用的遮挡/粗糙度/金属纹理。这是对 <reference internal="True" refuri="class_ormmaterial3d#class-ormmaterial3d"><inline classes="std std-ref">ORMMaterial3D</inline></reference> 中 <reference internal="True" refid="class-basematerial3d-property-ao-texture"><inline classes="std std-ref">ao_texture</inline></reference>、<reference internal="True" refid="class-basematerial3d-property-roughness-texture"><inline classes="std std-ref">roughness_texture</inline></reference> 和 <reference internal="True" refid="class-basematerial3d-property-metallic-texture"><inline classes="std std-ref">metallic_texture</inline></reference> 的更有效替代。环境遮挡被存储在红色通道中。粗糙度贴图被存储在绿色通道中。金属度贴图被存储在蓝色通道中。Alpha 通道将被忽略。</paragraph>
@@ -2701,7 +2701,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用折射效果。根据来自对象后面的光线来扭曲透明度。</paragraph>
@@ -2725,7 +2725,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>控制每个像素折射强度的纹理。会与 <reference internal="True" refid="class-basematerial3d-property-refraction-scale"><inline classes="std std-ref">refraction_scale</inline></reference> 相乘。</paragraph>
@@ -2761,7 +2761,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用边缘效果。边缘照明会增加物体上掠射角度的亮度。</paragraph>
@@ -2774,7 +2774,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>纹理用于设置每个像素的边缘光照效果的强度。会与 <reference internal="True" refid="class-basematerial3d-property-rim"><inline classes="std std-ref">rim</inline></reference> 相乘。</paragraph>
@@ -2810,7 +2810,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于控制每个像素粗糙度的纹理。会与 <reference internal="True" refid="class-basematerial3d-property-roughness"><inline classes="std std-ref">roughness</inline></reference> 相乘。</paragraph>
@@ -2847,7 +2847,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，启用“阴影到不透明度”的渲染模式，在该模式下，光照会修改 Alpha，使阴影区域不透明，非阴影区域透明。对于在 AR 中把阴影叠加到相机画面上很有用。</paragraph>
@@ -2872,7 +2872,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用次表面散射。模拟光线穿透物体表面，被散射，然后出现。次表面散射质量由 <reference internal="True" refuri="class_projectsettings#class-projectsettings-property-rendering-environment-subsurface-scattering-subsurface-scattering-quality"><inline classes="std std-ref">ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality</inline></reference> 控制。</paragraph>
@@ -2884,7 +2884,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则次表面散射将使用针对人类皮肤的颜色和密度进行优化的特殊模式，例如提升次表面散射中红色通道的强度。</paragraph>
@@ -2908,7 +2908,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于控制次表面散射强度的纹理。存储在红色纹理通道中。会与 <reference internal="True" refid="class-basematerial3d-property-subsurf-scatter-strength"><inline classes="std std-ref">subsurf_scatter_strength</inline></reference> 相乘。</paragraph>
@@ -2956,7 +2956,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用次表面散射透射率。仅当 <reference internal="True" refid="class-basematerial3d-property-subsurf-scatter-enabled"><inline classes="std std-ref">subsurf_scatter_enabled</inline></reference> 为 <literal>true</literal> 时有效。另请参见 <reference internal="True" refid="class-basematerial3d-property-backlight-enabled"><inline classes="std std-ref">backlight_enabled</inline></reference>。</paragraph>
@@ -2968,7 +2968,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>用于乘以次表面散射透射率强度的纹理。另请参见 <reference internal="True" refid="class-basematerial3d-property-subsurf-scatter-texture"><inline classes="std std-ref">subsurf_scatter_texture</inline></reference>。<reference internal="True" refid="class-basematerial3d-property-subsurf-scatter-skin-mode"><inline classes="std std-ref">subsurf_scatter_skin_mode</inline></reference> 为 <literal>true</literal> 时忽略。</paragraph>
@@ -2993,7 +2993,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>纹理的重复标志。可选项见 <reference internal="True" refid="enum-basematerial3d-texturefilter"><inline classes="std std-ref">TextureFilter</inline></reference>。</paragraph>
@@ -3017,7 +3017,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用 <reference internal="True" refuri="class_gpuparticles3d#class-gpuparticles3d"><inline classes="std std-ref">GPUParticles3D</inline></reference> 尾迹所需的部分着色器以发挥作用。这也需要使用具有适当蒙皮的网格，例如 <reference internal="True" refuri="class_ribbontrailmesh#class-ribbontrailmesh"><inline classes="std std-ref">RibbonTrailMesh</inline></reference> 或 <reference internal="True" refuri="class_tubetrailmesh#class-tubetrailmesh"><inline classes="std std-ref">TubeTrailMesh</inline></reference>。在 <reference internal="True" refuri="class_gpuparticles3d#class-gpuparticles3d"><inline classes="std std-ref">GPUParticles3D</inline></reference> 网格中使用的材质之外启用该功能将破坏材质渲染。</paragraph>
@@ -3029,7 +3029,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，可以改变渲染点大小。</paragraph>
@@ -3066,7 +3066,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，纹理将不使用 <literal>UV</literal>，而是使用三平面纹理查找来确定如何应用纹理。三平面纹理使用对象表面的方向来混合纹理坐标之间。它从源纹理中读取3次，每个轴一次，然后根据像素与每个轴的紧密程度在结果之间进行混合。这通常用于自然特征，以获得真实的材质混合。由于三平面纹理处理每一个像素需要更多的纹理读取，所以它比普通的UV纹理处理要慢得多。此外，由于它是在三个轴之间混合纹理，所以当你试图实现清晰的纹理时，它是不合适的。</paragraph>
@@ -3091,7 +3091,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则 <literal>UV</literal> 的三平面映射是在世界空间而不是对象局部空间中计算的。另见 <reference internal="True" refid="class-basematerial3d-property-uv1-triplanar"><inline classes="std std-ref">uv1_triplanar</inline></reference>。</paragraph>
@@ -3127,7 +3127,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，纹理将不使用 <literal>UV</literal>，而是使用三平面纹理查找来确定如何应用纹理。三平面纹理使用对象表面的方向来混合纹理坐标之间。它从源纹理中读取 3 次，每个轴一次，然后根据像素与每个轴的紧密程度在结果之间进行混合。这通常用于自然特征，以获得真实的材质混合。由于三平面纹理处理每一个像素需要更多的纹理读取，所以它比普通的 UV 纹理处理要慢得多。此外，由于它是在三个轴之间混合纹理，所以当你试图实现清晰的纹理时，它是不合适的。</paragraph>
@@ -3152,7 +3152,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则 <literal>UV2</literal> 的三平面映射是在世界空间而不是对象局部空间中计算的。另见 <reference internal="True" refid="class-basematerial3d-property-uv2-triplanar"><inline classes="std std-ref">uv2_triplanar</inline></reference>。</paragraph>
@@ -3164,7 +3164,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则顶点颜色被认为使用 sRGB 颜色空间存储，并在渲染期间被转换为线性颜色空间。如果为 <literal>false</literal>，则顶点颜色被认为使用线性颜色空间存储并按原样渲染。另见 <reference internal="True" refid="class-basematerial3d-property-albedo-texture-force-srgb"><inline classes="std std-ref">albedo_texture_force_srgb</inline></reference>。</paragraph>
@@ -3177,7 +3177,7 @@
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>, enable: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                    <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则使用顶点颜色作为反射率颜色。</paragraph>
@@ -3186,15 +3186,15 @@
         <section classes="classref-descriptions-group" ids="id7" names="方法说明">
             <title>方法说明</title>
             <target refid="class-basematerial3d-method-get-feature"></target>
-            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-feature" names="class_basematerial3d_method_get_feature"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-feature"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-feature" names="class_basematerial3d_method_get_feature"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_feature</strong>(feature: <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-feature"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果指定的 <reference internal="True" refid="enum-basematerial3d-feature"><inline classes="std std-ref">Feature</inline></reference> 被启用，返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basematerial3d-method-get-flag"></target>
-            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-flag" names="class_basematerial3d_method_get_flag"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-flag"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-flag" names="class_basematerial3d_method_get_flag"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_flag</strong>(flag: <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-flag"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果指定的标志被启用，返回 <literal>true</literal>。选项见 <reference internal="True" refid="enum-basematerial3d-flags"><inline classes="std std-ref">Flags</inline></reference> 枚举值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basematerial3d-method-get-texture"></target>
-            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-texture" names="class_basematerial3d_method_get_texture"><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-texture"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basematerial3d-method-get-texture" names="class_basematerial3d_method_get_texture"><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>get_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basematerial3d-method-get-texture"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回与指定 <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference> 关联的 <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basematerial3d-method-set-feature"></target>
@@ -3209,12 +3209,12 @@
             <paragraph classes="classref-method" ids="class-basematerial3d-method-set-texture" names="class_basematerial3d_method_set_texture"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_texture</strong>(param: <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>, texture: <reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference>) <reference internal="True" refid="class-basematerial3d-method-set-texture"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>设置由 <literal>param</literal> 指定的插槽的纹理。有关可用插槽，请参阅 <reference internal="True" refid="enum-basematerial3d-textureparam"><inline classes="std std-ref">TextureParam</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -13,8 +13,38 @@
         <paragraph>以图块的形式向 <reference internal="True" refuri="class_tileset#class-tileset"><inline classes="std std-ref">TileSet</inline></reference> 资源暴露一组场景。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>当放置在 <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> 上时，来自 <strong>TileSetScenesCollectionSource</strong> 中的图块将在 TileMap 中的单元格位置自动实例化一个关联场景。</paragraph>
-            <paragraph>当该 <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> 进入树时，场景被实例化为该 <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> 的子级。如果在已在树内的 <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> 中添加/移除一个场景图块，则该 <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> 将相应地自动实例化/释放该场景。</paragraph>
+            <paragraph>When placed on a <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference>, tiles from <strong>TileSetScenesCollectionSource</strong> will automatically instantiate an associated scene at the cell's position in the TileMap.</paragraph>
+            <paragraph>Scenes are instantiated as children of the <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> when it enters the tree. If you add/remove a scene tile in the <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> that is already inside the tree, the <reference internal="True" refuri="class_tilemap#class-tilemap"><inline classes="std std-ref">TileMap</inline></reference> will automatically instantiate/free the scene accordingly.</paragraph>
+            <paragraph><strong>Note:</strong> Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. <reference internal="True" refuri="class_tilesetsource#class-tilesetsource-method-get-tiles-count"><inline classes="std std-ref">TileSetSource.get_tiles_count</inline></reference> will always return <literal>1</literal>. Use <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tiles-count"><inline classes="std std-ref">get_scene_tiles_count</inline></reference> to get a number of scenes in a <strong>TileSetScenesCollectionSource</strong>.</paragraph>
+            <paragraph>Use this code if you want to find the scene path at a given tile in <reference internal="True" refuri="class_tilemaplayer#class-tilemaplayer"><inline classes="std std-ref">TileMapLayer</inline></reference>:</paragraph>
+            <container classes="sphinx-tabs" type="tab-element">
+                <div aria-label="Tabbed content" role="tablist">
+                    <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
+                    <button aria-controls="panel-0-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
+                </div>
+                <div aria-labelledby="tab-0-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var source_id = tile_map_layer.get_cell_source_id(Vector2i(x, y))
+if source_id &gt; -1:
+    var scene_source = tile_map_layer.tile_set.get_source(source_id)
+    if scene_source is TileSetScenesCollectionSource:
+        var alt_id = tile_map_layer.get_cell_alternative_tile(Vector2i(x, y))
+        # The assigned PackedScene.
+        var scene = scene_source.get_scene_tile_scene(alt_id)</literal_block>
+                </div>
+                <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">int sourceId = tileMapLayer.GetCellSourceId(new Vector2I(x, y));
+if (sourceId &gt; -1)
+{
+    TileSetSource source = tileMapLayer.TileSet.GetSource(sourceId);
+    if (source is TileSetScenesCollectionSource sceneSource)
+    {
+        int altId = tileMapLayer.GetCellAlternativeTile(new Vector2I(x, y));
+        // The assigned PackedScene.
+        PackedScene scene = sceneSource.GetSceneTileScene(altId);
+    }
+}</literal_block>
+                </div>
+            </container>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="方法">
             <title>方法</title>
@@ -36,7 +66,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-next-scene-tile-id"><inline classes="std std-ref">get_next_scene_tile_id</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-next-scene-tile-id"><inline classes="std std-ref">get_next_scene_tile_id</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -44,7 +74,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder"><inline classes="std std-ref">get_scene_tile_display_placeholder</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder"><inline classes="std std-ref">get_scene_tile_display_placeholder</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -60,7 +90,7 @@
                                 <paragraph><reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-scene"><inline classes="std std-ref">get_scene_tile_scene</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-scene"><inline classes="std std-ref">get_scene_tile_scene</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -124,11 +154,11 @@
             <paragraph>返回新生成的唯一 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-tilesetscenescollectionsource-method-get-next-scene-tile-id"></target>
-            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-next-scene-tile-id" names="class_tilesetscenescollectionsource_method_get_next_scene_tile_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_next_scene_tile_id</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-next-scene-tile-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-next-scene-tile-id" names="class_tilesetscenescollectionsource_method_get_next_scene_tile_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_next_scene_tile_id</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-next-scene-tile-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回后续调用 <reference internal="True" refid="class-tilesetscenescollectionsource-method-create-scene-tile"><inline classes="std std-ref">create_scene_tile</inline></reference> 时会返回的场景 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder"></target>
-            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder" names="class_tilesetscenescollectionsource_method_get_scene_tile_display_placeholder"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_scene_tile_display_placeholder</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder" names="class_tilesetscenescollectionsource_method_get_scene_tile_display_placeholder"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_scene_tile_display_placeholder</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-display-placeholder"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 ID 为 <literal>id</literal> 的场景图块是否在编辑器中显示占位图。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-tilesetscenescollectionsource-method-get-scene-tile-id"></target>
@@ -136,7 +166,7 @@
             <paragraph>返回索引为 <literal>index</literal> 的场景图块的场景图块 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-tilesetscenescollectionsource-method-get-scene-tile-scene"></target>
-            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-scene-tile-scene" names="class_tilesetscenescollectionsource_method_get_scene_tile_scene"><reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference> <strong>get_scene_tile_scene</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-scene"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-get-scene-tile-scene" names="class_tilesetscenescollectionsource_method_get_scene_tile_scene"><reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference> <strong>get_scene_tile_scene</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-tilesetscenescollectionsource-method-get-scene-tile-scene"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 ID 为 <literal>id</literal> 的场景图块的 <reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference> 资源。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-tilesetscenescollectionsource-method-get-scene-tiles-count"></target>
@@ -163,12 +193,12 @@
             <paragraph classes="classref-method" ids="class-tilesetscenescollectionsource-method-set-scene-tile-scene" names="class_tilesetscenescollectionsource_method_set_scene_tile_scene"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_scene_tile_scene</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, packed_scene: <reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference>) <reference internal="True" refid="class-tilesetscenescollectionsource-method-set-scene-tile-scene"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将 <reference internal="True" refuri="class_packedscene#class-packedscene"><inline classes="std std-ref">PackedScene</inline></reference> 资源分配给 ID 为 <literal>id</literal> 的场景图块。如果该场景扩展的不是 CanvasItem 则会失败，因为将场景放置到 TileMap 上需要位置属性。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

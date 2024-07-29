@@ -13,33 +13,33 @@
         <paragraph>使用 WebXR 的 AR/VR 接口。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>WebXR 是一种开放标准，允许创建在网络浏览器中运行的 VR 和 AR 应用程序。</paragraph>
-            <paragraph>因此，此接口仅在 Web 导出中运行时可用。</paragraph>
-            <paragraph>WebXR 支持范围广泛的设备，从功能强大的设备（如 Valve Index、HTC Vive、Oculus Rift 和 Quest）到功能低得多的设备（如 Google Cardboard、Oculus Go、GearVR 或普通智能手机）。</paragraph>
-            <paragraph>由于 WebXR 基于 JavaScript，它大量使用回调，这意味着 <strong>WebXRInterface</strong> 被迫使用信号，而其他 XR 接口将改为使用立即返回结果的函数。这使得 <strong>WebXRInterface</strong> 的初始化比其他 XR 接口要复杂得多。</paragraph>
-            <paragraph>以下是启动沉浸式 VR 会话所需的最少代码：</paragraph>
+            <paragraph>WebXR is an open standard that allows creating VR and AR applications that run in the web browser.</paragraph>
+            <paragraph>As such, this interface is only available when running in Web exports.</paragraph>
+            <paragraph>WebXR supports a wide range of devices, from the very capable (like Valve Index, HTC Vive, Oculus Rift and Quest) down to the much less capable (like Google Cardboard, Oculus Go, GearVR, or plain smartphones).</paragraph>
+            <paragraph>Since WebXR is based on JavaScript, it makes extensive use of callbacks, which means that <strong>WebXRInterface</strong> is forced to use signals, where other XR interfaces would instead use functions that return a result immediately. This makes <strong>WebXRInterface</strong> quite a bit more complicated to initialize than other XR interfaces.</paragraph>
+            <paragraph>Here's the minimum code required to start an immersive VR session:</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">extends Node3D
 
 var webxr_interface
 var vr_supported = false
 
 func _ready():
-    # 我们假设这个节点有一个按钮作为子节点。
-    # 该按钮供用户同意进入沉浸式 VR 模式。
+    # We assume this node has a button as a child.
+    # This button is for the user to consent to entering immersive VR mode.
     $Button.pressed.connect(self._on_button_pressed)
 
     webxr_interface = XRServer.find_interface("WebXR")
     if webxr_interface:
-        # WebXR 使用了很多异步回调，所以我们连接各种
-        # 信号，以便接收它们。
+        # WebXR uses a lot of asynchronous callbacks, so we connect to various
+        # signals in order to receive them.
         webxr_interface.session_supported.connect(self._webxr_session_supported)
         webxr_interface.session_started.connect(self._webxr_session_started)
         webxr_interface.session_ended.connect(self._webxr_session_ended)
         webxr_interface.session_failed.connect(self._webxr_session_failed)
 
-        # 这会立即返回——我们的 _webxr_session_supported() 方法
-        # （我们连接到上面的“session_supported”信号）将
-        # 在稍后的某个时间被调用，让我们知道它是否受支持。
+        # This returns immediately - our _webxr_session_supported() method
+        # (which we connected to the "session_supported" signal above) will
+        # be called sometime later to let us know if it's supported or not.
         webxr_interface.is_session_supported("immersive-vr")
 
 func _webxr_session_supported(session_mode, supported):
@@ -51,56 +51,60 @@ func _on_button_pressed():
         OS.alert("Your browser doesn't support VR")
         return
 
-    # 我们想要一个沉浸式 VR 会话，而不是 AR（'immersive-ar'）或
-    # 简单的 3DoF 查看器（'viewer'）。
+    # We want an immersive VR session, as opposed to AR ('immersive-ar') or a
+    # simple 3DoF viewer ('viewer').
     webxr_interface.session_mode = 'immersive-vr'
-    # 'bounded-floor' 是房间比例，'local-floor' 是站立或坐着
-    # 的体验（如果你有 3DoF 头戴设备，它会让你离地 1.6m），
-    # 而“local”会让你在 XROrigin 下。
-    # 这个列表意味着它会首先尝试请求“bounded-floor”，然后
-    # 回退到“local-floor”，最后是“local”，如果没有别的
-    # 支持的话。
+    # 'bounded-floor' is room scale, 'local-floor' is a standing or sitting
+    # experience (it puts you 1.6m above the ground if you have 3DoF headset),
+    # whereas as 'local' puts you down at the XROrigin.
+    # This list means it'll first try to request 'bounded-floor', then
+    # fallback on 'local-floor' and ultimately 'local', if nothing else is
+    # supported.
     webxr_interface.requested_reference_space_types = 'bounded-floor, local-floor, local'
-    # 为了使用“local-floor”或“bounded-floor”，我们还必须
-    # 将功能标记为必需或可选。
+    # In order to use 'local-floor' or 'bounded-floor' we must also
+    # mark the features as required or optional. By including 'hand-tracking'
+    # as an optional feature, it will be enabled if supported.
     webxr_interface.required_features = 'local-floor'
-    webxr_interface.optional_features = 'bounded-floor'
+    webxr_interface.optional_features = 'bounded-floor, hand-tracking'
 
-    # 如果我们甚至无法请求会话，这将返回 false，
-    # 但是，它仍然可以在稍后的过程中异步失败，
-    # 因此我们只有在调用 _webxr_session_started() 或
-    # _webxr_session_failed() 方法时才知道它是真的成功还是失败。
+    # This will return false if we're unable to even request the session,
+    # however, it can still fail asynchronously later in the process, so we
+    # only know if it's really succeeded or failed when our
+    # _webxr_session_started() or _webxr_session_failed() methods are called.
     if not webxr_interface.initialize():
         OS.alert("Failed to initialize")
         return
 
 func _webxr_session_started():
     $Button.visible = false
-    # 这告诉 Godot 开始渲染到头戴设备。
+    # This tells Godot to start rendering to the headset.
     get_viewport().use_xr = true
-    # 这将是你最终获得的参考空间类型，与你在上面请求的类型不同。
-    # 如果你希望游戏在 “bounded-floor” 和 “local-floor”
-    # 中的运行方式有所不同，这将很有用。
-    print ("Reference space type: " + webxr_interface.reference_space_type)
+    # This will be the reference space type you ultimately got, out of the
+    # types that you requested above. This is useful if you want the game to
+    # work a little differently in 'bounded-floor' versus 'local-floor'.
+    print("Reference space type: ", webxr_interface.reference_space_type)
+    # This will be the list of features that were successfully enabled
+    # (except on browsers that don't support this property).
+    print("Enabled features: ", webxr_interface.enabled_features)
 
 func _webxr_session_ended():
     $Button.visible = true
-    # 如果用户退出沉浸式模式，那么我们会告诉 Godot
-    # 再次渲染到网页。
+    # If the user exits immersive mode, then we tell Godot to render to the web
+    # page again.
     get_viewport().use_xr = false
 
 func _webxr_session_failed(message):
     OS.alert("Failed to initialize: " + message)</literal_block>
-            <paragraph>有几种方法可以处理“控制器”输入：</paragraph>
+            <paragraph>There are a couple ways to handle "controller" input:</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph>使用 <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d"><inline classes="std std-ref">XRController3D</inline></reference> 节点及其 <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d-signal-button-pressed"><inline classes="std std-ref">XRController3D.button_pressed</inline></reference> 和 <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d-signal-button-released"><inline classes="std std-ref">XRController3D.button_released</inline></reference> 信号。这是 Godot 中 XR 应用程序通常处理控制器的方式，但是，这仅适用于高级 VR 控制器，例如 Oculus Touch 或 Index 控制器。</paragraph>
+                    <paragraph>Using <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d"><inline classes="std std-ref">XRController3D</inline></reference> nodes and their <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d-signal-button-pressed"><inline classes="std std-ref">XRController3D.button_pressed</inline></reference> and <reference internal="True" refuri="class_xrcontroller3d#class-xrcontroller3d-signal-button-released"><inline classes="std std-ref">XRController3D.button_released</inline></reference> signals. This is how controllers are typically handled in XR apps in Godot, however, this will only work with advanced VR controllers like the Oculus Touch or Index controllers, for example.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>使用 <reference internal="True" refid="class-webxrinterface-signal-select"><inline classes="std std-ref">select</inline></reference>、<reference internal="True" refid="class-webxrinterface-signal-squeeze"><inline classes="std std-ref">squeeze</inline></reference> 和其他相关信号。这种方法适用于高级 VR 控制器和非传统输入源，例如屏幕上的轻敲、语音命令或设备本身的按钮按下。</paragraph>
+                    <paragraph>Using the <reference internal="True" refid="class-webxrinterface-signal-select"><inline classes="std std-ref">select</inline></reference>, <reference internal="True" refid="class-webxrinterface-signal-squeeze"><inline classes="std std-ref">squeeze</inline></reference> and related signals. This method will work for both advanced VR controllers, and non-traditional input sources like a tap on the screen, a spoken voice command or a button press on the device itself.</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>你可以使用这两种方法来让你的游戏或应用程序支持更多或更窄的设备和输入法集，或者允许与更高级的设备进行更高级的交互。</paragraph>
+            <paragraph>You can use both methods to allow your game or app to support a wider or narrower set of devices and input methods, or to allow more advanced interactions with more advanced devices.</paragraph>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
             <title>教程</title>
@@ -189,7 +193,7 @@ func _webxr_session_failed(message):
                                 <paragraph><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-available-display-refresh-rates"><inline classes="std std-ref">get_available_display_refresh_rates</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-available-display-refresh-rates"><inline classes="std std-ref">get_available_display_refresh_rates</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -197,7 +201,7 @@ func _webxr_session_failed(message):
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-display-refresh-rate"><inline classes="std std-ref">get_display_refresh_rate</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-display-refresh-rate"><inline classes="std std-ref">get_display_refresh_rate</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -205,7 +209,7 @@ func _webxr_session_failed(message):
                                 <paragraph><reference internal="True" refid="enum-webxrinterface-targetraymode"><inline classes="std std-ref">TargetRayMode</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-input-source-target-ray-mode"><inline classes="std std-ref">get_input_source_target_ray_mode</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-input-source-target-ray-mode"><inline classes="std std-ref">get_input_source_target_ray_mode</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -213,7 +217,7 @@ func _webxr_session_failed(message):
                                 <paragraph><reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-input-source-tracker"><inline classes="std std-ref">get_input_source_tracker</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-webxrinterface-method-get-input-source-tracker"><inline classes="std std-ref">get_input_source_tracker</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -221,7 +225,7 @@ func _webxr_session_failed(message):
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-webxrinterface-method-is-input-source-active"><inline classes="std std-ref">is_input_source_active</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-webxrinterface-method-is-input-source-active"><inline classes="std std-ref">is_input_source_active</inline></reference>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -338,8 +342,9 @@ func _webxr_session_failed(message):
                     <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_enabled_features</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>设置 WebXR 会话时通过 <reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> 成功启用的功能的逗号分隔列表。</paragraph>
-            <paragraph>这可能包括通过设置 <reference internal="True" refid="class-webxrinterface-property-required-features"><inline classes="std std-ref">required_features</inline></reference> 和 <reference internal="True" refid="class-webxrinterface-property-optional-features"><inline classes="std std-ref">optional_features</inline></reference> 请求的功能。</paragraph>
+            <paragraph>A comma-separated list of features that were successfully enabled by <reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> when setting up the WebXR session.</paragraph>
+            <paragraph>This may include features requested by setting <reference internal="True" refid="class-webxrinterface-property-required-features"><inline classes="std std-ref">required_features</inline></reference> and <reference internal="True" refid="class-webxrinterface-property-optional-features"><inline classes="std std-ref">optional_features</inline></reference>, and will only be available after <reference internal="True" refid="class-webxrinterface-signal-session-started"><inline classes="std std-ref">session_started</inline></reference> has been emitted.</paragraph>
+            <paragraph><strong>Note:</strong> This may not be support by all web browsers, in which case it will be an empty string.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-property-optional-features"></target>
             <paragraph classes="classref-property" ids="class-webxrinterface-property-optional-features" names="class_webxrinterface_property_optional_features"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>optional_features</strong> <reference internal="True" refid="class-webxrinterface-property-optional-features"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -351,10 +356,10 @@ func _webxr_session_failed(message):
                     <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_optional_features</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> 在设置 WebXR 会话时使用的以逗号分隔的可选功能列表。</paragraph>
-            <paragraph>如果用户的浏览器或设备，不支持给定的任一功能，初始化将继续，但将无法使用所请求的功能。</paragraph>
-            <paragraph>这对已经初始化的接口没有任何影响。</paragraph>
-            <paragraph>可能的值来自 <reference name="WebXR 的 XRReferenceSpaceType" refuri="https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType">WebXR 的 XRReferenceSpaceType</reference>。如果想要使用特定的参考空间类型，则它必须列在 <reference internal="True" refid="class-webxrinterface-property-required-features"><inline classes="std std-ref">required_features</inline></reference> 或 <reference internal="True" refid="class-webxrinterface-property-optional-features"><inline classes="std std-ref">optional_features</inline></reference> 中。</paragraph>
+            <paragraph>A comma-seperated list of optional features used by <reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> when setting up the WebXR session.</paragraph>
+            <paragraph>If a user's browser or device doesn't support one of the given features, initialization will continue, but you won't be able to use the requested feature.</paragraph>
+            <paragraph>This doesn't have any effect on the interface when already initialized.</paragraph>
+            <paragraph>Possible values come from <reference name="WebXR's XRReferenceSpaceType" refuri="https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType">WebXR's XRReferenceSpaceType</reference>, or include other features like <literal>"hand-tracking"</literal> to enable hand tracking.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-property-reference-space-type"></target>
             <paragraph classes="classref-property" ids="class-webxrinterface-property-reference-space-type" names="class_webxrinterface_property_reference_space_type"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>reference_space_type</strong> <reference internal="True" refid="class-webxrinterface-property-reference-space-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -391,10 +396,10 @@ func _webxr_session_failed(message):
                     <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_required_features</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> 在设置 WebXR 会话时使用的以逗号分隔的所需功能列表。</paragraph>
-            <paragraph>如果用户的浏览器或设备不支持给定的任一功能，则初始化将失败并发出 <reference internal="True" refid="class-webxrinterface-signal-session-failed"><inline classes="std std-ref">session_failed</inline></reference> 。</paragraph>
-            <paragraph>这对已经初始化的接口没有任何影响。</paragraph>
-            <paragraph>可能的值来自 <reference name="WebXR 的 XRReferenceSpaceType" refuri="https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType">WebXR 的 XRReferenceSpaceType</reference>。如果想要使用特定的参考空间类型，则它必须列在 <reference internal="True" refid="class-webxrinterface-property-required-features"><inline classes="std std-ref">required_features</inline></reference> 或 <reference internal="True" refid="class-webxrinterface-property-optional-features"><inline classes="std std-ref">optional_features</inline></reference> 中。</paragraph>
+            <paragraph>A comma-seperated list of required features used by <reference internal="True" refuri="class_xrinterface#class-xrinterface-method-initialize"><inline classes="std std-ref">XRInterface.initialize</inline></reference> when setting up the WebXR session.</paragraph>
+            <paragraph>If a user's browser or device doesn't support one of the given features, initialization will fail and <reference internal="True" refid="class-webxrinterface-signal-session-failed"><inline classes="std std-ref">session_failed</inline></reference> will be emitted.</paragraph>
+            <paragraph>This doesn't have any effect on the interface when already initialized.</paragraph>
+            <paragraph>Possible values come from <reference name="WebXR's XRReferenceSpaceType" refuri="https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType">WebXR's XRReferenceSpaceType</reference>, or include other features like <literal>"hand-tracking"</literal> to enable hand tracking.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-property-session-mode"></target>
             <paragraph classes="classref-property" ids="class-webxrinterface-property-session-mode" names="class_webxrinterface_property_session_mode"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>session_mode</strong> <reference internal="True" refid="class-webxrinterface-property-session-mode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -424,23 +429,23 @@ func _webxr_session_failed(message):
         <section classes="classref-descriptions-group" ids="id8" names="方法说明">
             <title>方法说明</title>
             <target refid="class-webxrinterface-method-get-available-display-refresh-rates"></target>
-            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-available-display-refresh-rates" names="class_webxrinterface_method_get_available_display_refresh_rates"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>get_available_display_refresh_rates</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-available-display-refresh-rates"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-available-display-refresh-rates" names="class_webxrinterface_method_get_available_display_refresh_rates"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>get_available_display_refresh_rates</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-available-display-refresh-rates"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前 HMD 所支持的显示刷新率。网页浏览器支持该功能，并且该接口已初始化时才会返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-method-get-display-refresh-rate"></target>
-            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-display-refresh-rate" names="class_webxrinterface_method_get_display_refresh_rate"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_display_refresh_rate</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-display-refresh-rate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-display-refresh-rate" names="class_webxrinterface_method_get_display_refresh_rate"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_display_refresh_rate</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-display-refresh-rate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前 HMD 的显示刷新率。不是所有 HMD 和浏览器都支持。使用 <reference internal="True" refid="class-webxrinterface-method-set-display-refresh-rate"><inline classes="std std-ref">set_display_refresh_rate</inline></reference> 前可能不会汇报精确值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-method-get-input-source-target-ray-mode"></target>
-            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-input-source-target-ray-mode" names="class_webxrinterface_method_get_input_source_target_ray_mode"><reference internal="True" refid="enum-webxrinterface-targetraymode"><inline classes="std std-ref">TargetRayMode</inline></reference> <strong>get_input_source_target_ray_mode</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-input-source-target-ray-mode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-input-source-target-ray-mode" names="class_webxrinterface_method_get_input_source_target_ray_mode"><reference internal="True" refid="enum-webxrinterface-targetraymode"><inline classes="std std-ref">TargetRayMode</inline></reference> <strong>get_input_source_target_ray_mode</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-input-source-target-ray-mode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回给定的 <literal>input_source_id</literal> 的目标射线模式。</paragraph>
             <paragraph>可用于帮助解析来自该输入源的输入。详见 <reference name="XRInputSource.targetRayMode" refuri="https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/targetRayMode">XRInputSource.targetRayMode</reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-method-get-input-source-tracker"></target>
-            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-input-source-tracker" names="class_webxrinterface_method_get_input_source_tracker"><reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference> <strong>get_input_source_tracker</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-input-source-tracker"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Gets an <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference> for the given <literal>input_source_id</literal>.</paragraph>
-            <paragraph>In the context of WebXR, an input source can be an advanced VR controller like the Oculus Touch or Index controllers, or even a tap on the screen, a spoken voice command or a button press on the device itself. When a non-traditional input source is used, interpret the position and orientation of the <reference internal="True" refuri="class_xrpositionaltracker#class-xrpositionaltracker"><inline classes="std std-ref">XRPositionalTracker</inline></reference> as a ray pointing at the object the user wishes to interact with.</paragraph>
-            <paragraph>Use this method to get information about the input source that triggered one of these signals:</paragraph>
+            <paragraph classes="classref-method" ids="class-webxrinterface-method-get-input-source-tracker" names="class_webxrinterface_method_get_input_source_tracker"><reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference> <strong>get_input_source_tracker</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-get-input-source-tracker"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>获取给定 <literal>input_source_id</literal> 的 <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference>。</paragraph>
+            <paragraph>在 WebXR 上下文中，输入源可以是类似 Oculus Touch 和 Index 控制器的高级 VR 控制器，甚至也可以是屏幕上的点击、语音命令或按下设备本身的按钮。当使用非传统输入源时，会将 <reference internal="True" refuri="class_xrpositionaltracker#class-xrpositionaltracker"><inline classes="std std-ref">XRPositionalTracker</inline></reference> 的位置和方向解释为指向用户希望与之交互的对象的射线。</paragraph>
+            <paragraph>可以使用此方法获取有关触发以下信号之一的输入源的信息：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><reference internal="True" refid="class-webxrinterface-signal-selectstart"><inline classes="std std-ref">selectstart</inline></reference></paragraph>
@@ -463,7 +468,7 @@ func _webxr_session_failed(message):
             </bullet_list>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-method-is-input-source-active"></target>
-            <paragraph classes="classref-method" ids="class-webxrinterface-method-is-input-source-active" names="class_webxrinterface_method_is_input_source_active"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_input_source_active</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-is-input-source-active"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-webxrinterface-method-is-input-source-active" names="class_webxrinterface_method_is_input_source_active"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_input_source_active</strong>(input_source_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-webxrinterface-method-is-input-source-active"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果存在具有给定 <literal>input_source_id</literal> 的活动输入源，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-webxrinterface-method-is-session-supported"></target>
@@ -476,12 +481,12 @@ func _webxr_session_failed(message):
             <paragraph classes="classref-method" ids="class-webxrinterface-method-set-display-refresh-rate" names="class_webxrinterface_method_set_display_refresh_rate"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_display_refresh_rate</strong>(refresh_rate: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-webxrinterface-method-set-display-refresh-rate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>为当前的 HMD 设置屏幕刷新率。不是所有 HMD 和浏览器都支持。不会立即生效，发出 <reference internal="True" refid="class-webxrinterface-signal-display-refresh-rate-changed"><inline classes="std std-ref">display_refresh_rate_changed</inline></reference> 信号后才会生效。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

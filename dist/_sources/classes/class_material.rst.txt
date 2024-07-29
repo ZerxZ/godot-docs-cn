@@ -136,11 +136,11 @@ Material
 - |void| **set_render_priority**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_render_priority**\ (\ )
 
-Sets the render priority for objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects. In other words, all objects with :ref:`render_priority<class_Material_property_render_priority>` ``1`` will render before all objects with :ref:`render_priority<class_Material_property_render_priority>` ``0``.
+设置 3D 场景中物体的渲染优先级。优先级高的物体将被排序在优先级低的物体前面。换句话说，所有具有 :ref:`render_priority<class_Material_property_render_priority>` ``1`` 的对象，将在所有具有 :ref:`render_priority<class_Material_property_render_priority>` ``0`` 的对象之前渲染。
 
-\ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+\ **注意：**\ 仅适用于 :ref:`StandardMaterial3D<class_StandardMaterial3D>` 和“Spatial”类型的 :ref:`ShaderMaterial<class_ShaderMaterial>`\ 。
 
-\ **Note:** This will not impact how transparent objects are sorted relative to opaque objects or how dynamic meshes will be sorted relative to other opaque meshes. This is because all transparent objects are drawn after all opaque objects and all dynamic opaque meshes are drawn before other opaque meshes.
+\ **注意：**\ 这不会影响透明对象相对于不透明对象的排序方式，或动态网格体相对于其他不透明网格体的排序方式。这是因为所有透明对象都是在所有不透明对象之后绘制的，并且所有动态不透明网格都是在其他不透明网格之前绘制的。
 
 .. rst-class:: classref-section-separator
 
@@ -220,10 +220,10 @@ Sets the render priority for objects in 3D scenes. Higher priority objects will 
 仅在编辑器中运行时可用。打开一个弹出窗口，其中可视化生成的着色器代码，包括所有变体和内部着色器代码。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

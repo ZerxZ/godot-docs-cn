@@ -14,23 +14,23 @@
         <paragraph>可以将 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 骨骼链中的所有骨骼进行旋转，从而将末端骨骼放置在正确的 3D 位置的节点。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>SkeletonIK3D is used to rotate all bones of a <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> bone chain a way that places the end bone at a desired 3D position. A typical scenario for IK in games is to place a character's feet on the ground or a character's hands on a currently held object. SkeletonIK uses FabrikInverseKinematic internally to solve the bone chain and applies the results to the <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <literal>bones_global_pose_override</literal> property for all affected bones in the chain. If fully applied, this overwrites any bone transform from <reference internal="True" refuri="class_animation#class-animation"><inline classes="std std-ref">Animation</inline></reference>s or bone custom poses set by users. The applied amount can be controlled with the <reference internal="True" refuri="class_skeletonmodifier3d#class-skeletonmodifier3d-property-influence"><inline classes="std std-ref">SkeletonModifier3D.influence</inline></reference> property.</paragraph>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Apply IK effect automatically on every new frame (not the current)
+            <paragraph>SkeletonIK3D 可以将 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 骨骼链中的所有骨骼进行旋转，从而将末端骨骼放置在正确的 3D 位置。游戏中 IK 的典型场景是将角色的脚放在地面上，或者将角色的手放在当前持有的物体上。SkeletonIK 在内部使用 FabrikInverseKinematic 来解决骨骼链，并将结果应用于 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <literal>bones_global_pose_override</literal> 属性中所有受影响的骨骼链。如果完全应用，这将覆盖任何来自 <reference internal="True" refuri="class_animation#class-animation"><inline classes="std std-ref">Animation</inline></reference> 的骨骼变换或用户设置的骨骼自定义姿势。应用量可以用 <reference internal="True" refuri="class_skeletonmodifier3d#class-skeletonmodifier3d-property-influence"><inline classes="std std-ref">SkeletonModifier3D.influence</inline></reference> 属性来控制。</paragraph>
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># 在每一个新的帧上自动应用 IK 效果（不是当前的）。
 skeleton_ik_node.start()
 
-# Apply IK effect only on the current frame
+# 只在当前帧上应用 IK 效果
 skeleton_ik_node.start(true)
 
-# Stop IK effect and reset bones_global_pose_override on Skeleton
+# 停止 IK 效果并重置骨骼上的 bones_global_pose_override
 skeleton_ik_node.stop()
 
-# Apply full IK effect
+# 应用完整的 IK 效果
 skeleton_ik_node.set_influence(1.0)
 
-# Apply half IK effect
+# 应用一半的 IK 效果
 skeleton_ik_node.set_influence(0.5)
 
-# Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
+# 应用零 IK 效果（数值为 0.01 或低于 0.01 也会移除 Skeleton 上的 bones_global_pose_override）
 skeleton_ik_node.set_influence(0.0)</literal_block>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="属性">
@@ -166,7 +166,7 @@ skeleton_ik_node.set_influence(0.0)</literal_block>
                                 <paragraph><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-skeletonik3d-method-get-parent-skeleton"><inline classes="std std-ref">get_parent_skeleton</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-skeletonik3d-method-get-parent-skeleton"><inline classes="std std-ref">get_parent_skeleton</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -211,7 +211,7 @@ skeleton_ik_node.set_influence(0.0)</literal_block>
                 </list_item>
             </bullet_list>
             <paragraph><strong>已弃用：</strong> Use <reference internal="True" refuri="class_skeletonmodifier3d#class-skeletonmodifier3d-property-influence"><inline classes="std std-ref">SkeletonModifier3D.influence</inline></reference> instead.</paragraph>
-            <paragraph>Interpolation value for how much the IK results are applied to the current skeleton bone chain. A value of <literal>1.0</literal> will overwrite all skeleton bone transforms completely while a value of <literal>0.0</literal> will visually disable the SkeletonIK.</paragraph>
+            <paragraph>IK 效果被应用于当前骨架骨骼链的程度的插值。<literal>1.0</literal> 的值将完全覆盖所有骨架骨骼变换，而 <literal>0.0</literal> 的值将在视觉上禁用 SkeletonIK。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-skeletonik3d-property-magnet"></target>
             <paragraph classes="classref-property" ids="class-skeletonik3d-property-magnet" names="class_skeletonik3d_property_magnet"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>magnet</strong> = <literal>Vector3(0, 0, 0)</literal> <reference internal="True" refid="class-skeletonik3d-property-magnet"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -325,7 +325,7 @@ skeleton_ik_node.set_influence(0.0)</literal_block>
         <section classes="classref-descriptions-group" ids="id5" names="方法说明">
             <title>方法说明</title>
             <target refid="class-skeletonik3d-method-get-parent-skeleton"></target>
-            <paragraph classes="classref-method" ids="class-skeletonik3d-method-get-parent-skeleton" names="class_skeletonik3d_method_get_parent_skeleton"><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <strong>get_parent_skeleton</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-skeletonik3d-method-get-parent-skeleton"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-skeletonik3d-method-get-parent-skeleton" names="class_skeletonik3d_method_get_parent_skeleton"><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <strong>get_parent_skeleton</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-skeletonik3d-method-get-parent-skeleton"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 SkeletonIK 进入 <reference internal="True" refuri="class_scenetree#class-scenetree"><inline classes="std std-ref">SceneTree</inline></reference> 时存在的父级 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 节点。如果 SkeletonIK3D 进入 <reference internal="True" refuri="class_scenetree#class-scenetree"><inline classes="std std-ref">SceneTree</inline></reference> 时父节点不是 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 节点，则返回 null。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-skeletonik3d-method-is-running"></target>
@@ -340,12 +340,12 @@ skeleton_ik_node.set_influence(0.0)</literal_block>
             <paragraph classes="classref-method" ids="class-skeletonik3d-method-stop" names="class_skeletonik3d_method_stop"><abbreviation explanation="无返回值。">void</abbreviation> <strong>stop</strong>() <reference internal="True" refid="class-skeletonik3d-method-stop"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>停止将 IK 效果应用到每帧的 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 骨骼，并调用 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d-method-clear-bones-global-pose-override"><inline classes="std std-ref">Skeleton3D.clear_bones_global_pose_override</inline></reference> 来移除所有骨骼上的现有覆盖。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

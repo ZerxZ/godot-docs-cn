@@ -735,11 +735,11 @@ enum **ClipChildrenMode**: :ref:`🔗<enum_CanvasItem_ClipChildrenMode>`
 - |void| **set_y_sort_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_y_sort_enabled**\ (\ )
 
-如果为 ``true``\ ，则该节点及其子 **CanvasItem** 节点中 Y 位置较小的节点会渲染在 Y 位置较高的节点的前面。如果为 ``false``\ ，则该节点及其子 **CanvasItem** 节点会按照场景树的顺序正常渲染。
+If ``true``, this and child **CanvasItem** nodes with a higher Y position are rendered in front of nodes with a lower Y position. If ``false``, this and child **CanvasItem** nodes are rendered normally in scene tree order.
 
-如果父节点（“A”）启用了 Y 排序，而子节点（“B”）没有启用，那么子节点（“B”）会进行排序，但它自己的子节点（“C1”“C2”等）会渲染在与子节点“B”相同的 Y 位置。这样你就可以在不修改场景树的前提下组织场景的渲染顺序了。
+With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B'), the child node ('B') is sorted but its children ('C1', 'C2', etc) render together on the same Y position as the child node ('B'). This allows you to organize the render order of a scene without changing the scene tree.
 
-只有 :ref:`z_index<class_CanvasItem_property_z_index>` 相同的节点才会互相进行排序。
+Nodes sort relative to each other only if they are on the same :ref:`z_index<class_CanvasItem_property_z_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -858,15 +858,15 @@ enum **ClipChildrenMode**: :ref:`🔗<enum_CanvasItem_ClipChildrenMode>`
 
 |void| **draw_circle**\ (\ position\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_circle>`
 
-Draws a circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+绘制圆形。另见 :ref:`draw_arc<class_CanvasItem_method_draw_arc>`\ 、\ :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`\ 、\ :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`\ 。
 
-If ``filled`` is ``true``, the circle will be filled with the ``color`` specified. If ``filled`` is ``false``, the circle will be drawn as a stroke with the ``color`` and ``width`` specified.
+如果 ``filled`` 为 ``true``\ ，则圆形将使用指定的 ``color`` 填充。如果 ``filled`` 为 ``false``\ ，则圆形将被绘制为具有指定的 ``color`` 和 ``width`` 的笔划。
 
-If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+如果 ``width`` 为负，则将绘制两点图元而不是四点图元。这意味着当缩放 CanvasItem 时，线条将保持细长。如果不需要此行为，请传递一个正的 ``width``\ ，如 ``1.0``\ 。
 
-If ``antialiased`` is ``true``, half transparent "feathers" will be attached to the boundary, making outlines smooth.
+如果 ``antialiased`` 为 ``true``\ ，则半透明的“羽毛”将附加到边界，使轮廓变得平滑。
 
-\ **Note:** ``width`` is only effective if ``filled`` is ``false``.
+\ **注意：**\ ``width`` 只有在 ``filled`` 为 ``false`` 时才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -890,13 +890,13 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 |void| **draw_dashed_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, dash\: :ref:`float<class_float>` = 2.0, aligned\: :ref:`bool<class_bool>` = true, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_dashed_line>`
 
-Draws a dashed line from a 2D point to another, with a given color and width. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
+使用给定的颜色和宽度，从一个 2D 点到另一个点绘制一条虚线。另见 :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` 和 :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`\ 。
 
-If ``width`` is negative, then a two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the line parts will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+如果 ``width`` 为负，则将绘制一个两点图元而不是一个四点图元。这意味着当缩放 CanvasItem 时，线条部分将保持细长。如果不需要此行为，请传递一个正的 ``width``\ ，如 ``1.0``\ 。
 
-If ``antialiased`` is ``true``, half transparent "feathers" will be attached to the boundary, making outlines smooth.
+如果 ``antialiased`` 为 ``true``\ ，则半透明的“羽毛”将附加到边界，使轮廓变得平滑。
 
-\ **Note:** ``antialiased`` is only effective if ``width`` is greater than ``0.0``.
+\ **注意：**\ 仅当 ``width`` 大于 ``0.0`` 时，\ ``antialiased`` 才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -983,11 +983,11 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 |void| **draw_multiline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline>`
 
-Draws multiple disconnected lines with a uniform ``width`` and ``color``. Each line is defined by two consecutive points from ``points`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` instead.
+使用一致的宽度 ``width`` 和颜色 ``color`` 绘制多条断开的线段。\ ``points`` 数组中相邻的两个点定义一条线段，即第 i 条线段由端点 ``points[2 * i]`` 和 ``points[2 * i + 1]`` 组成。绘制大量线段时，这种方法比使用 :ref:`draw_line<class_CanvasItem_method_draw_line>` 一条条画要快。要绘制相连的线段，请改用 :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`\ 。
 
-If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+如果 ``width`` 为负数，则会绘制由两个点组成的图元，不使用四个点组成的图元。此时如果 CanvasItem 发生缩放，则线段仍然会很细。如果不想要这样的行为，请传入 ``1.0`` 等正数 ``width``\ 。
 
-\ **Note:** ``antialiased`` is only effective if ``width`` is greater than ``0.0``.
+\ **注意：**\ 仅当 ``width`` 大于 ``0.0`` 时，\ ``antialiased`` 才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -999,11 +999,11 @@ If ``width`` is negative, then two-point primitives will be drawn instead of a f
 
 |void| **draw_multiline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline_colors>`
 
-Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Each segment is defined by two consecutive points from ``points`` array and a corresponding color from ``colors`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints and has ``colors[i]`` color. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>` instead.
+使用一致的宽度 ``width`` 分段颜色绘制多条断开的线段。\ ``points`` 数组中相邻的两个点定义一条线段，即第 i 条线段由端点 ``points[2 * i]`` 和 ``points[2 * i + 1]`` 组成，使用的颜色为 ``colors[i]``\ 。绘制大量线段时，这种方法比使用 :ref:`draw_line<class_CanvasItem_method_draw_line>` 一条条画要快。要绘制相连的线段，请改用 :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`\ 。
 
-If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+如果 ``width`` 为负数，则会绘制由两个点组成的图元，不使用四个点组成的图元。此时如果 CanvasItem 发生缩放，则线段仍然会很细。如果不想要这样的行为，请传入 ``1.0`` 等正数 ``width``\ 。
 
-\ **Note:** ``antialiased`` is only effective if ``width`` is greater than ``0.0``.
+\ **注意：**\ 仅当 ``width`` 大于 ``0.0`` 时，\ ``antialiased`` 才有效。
 
 .. rst-class:: classref-item-separator
 
@@ -1103,15 +1103,15 @@ If ``width`` is negative, then two-point primitives will be drawn instead of a f
 
 |void| **draw_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_rect>`
 
-Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
+绘制一个矩形。如果 ``filled`` 为 ``true``\ ，则矩形将使用指定的 ``color`` 填充。如果 ``filled`` 为 ``false``\ ，则矩形将被绘制为具有指定的 ``color`` 和 ``width`` 的笔划。另见 :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`\ 。
 
-If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+如果 ``width`` 为负，则将绘制一个两点图元而不是一个四点图元。这意味着当缩放 CanvasItem 时，线条将保持细长。如果不需要此行为，请传递一个正的 ``width``\ ，如 ``1.0``\ 。
 
-If ``antialiased`` is ``true``, half transparent "feathers" will be attached to the boundary, making outlines smooth.
+如果 ``antialiased`` 为 ``true``\ ，则半透明的“羽毛”将附加到边界，使轮廓变得平滑。
 
-\ **Note:** ``width`` is only effective if ``filled`` is ``false``.
+\ **注意：**\ ``width`` 只有在 ``filled`` 为 ``false`` 时才有效。
 
-\ **Note:** Unfilled rectangles drawn with a negative ``width`` may not display perfectly. For example, corners may be missing or brighter due to overlapping lines (for a translucent ``color``).
+\ **注意：**\ 使用负 ``width`` 绘制的未填充矩形可能不会完美显示。例如，由于线条的重叠，角可能会缺失或变亮（对于半透明的 ``color``\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1468,7 +1468,9 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 :ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_visible_in_tree>`
 
-如果该节点位于 :ref:`SceneTree<class_SceneTree>` 中，并且其 :ref:`visible<class_CanvasItem_property_visible>` 属性为 ``true``\ ，并且其所有上层节点也均可见，则返回 ``true``\ 。如果任何上层节点被隐藏，则该节点在场景树中将不可见，因此也不会进行绘制（见 :ref:`_draw<class_CanvasItem_private_method__draw>`\ ）。
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
+
+Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
 
 .. rst-class:: classref-item-separator
 
@@ -1569,10 +1571,10 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 如果该 **CanvasItem** 目前是隐藏的，则将其显示。相当于将 :ref:`visible<class_CanvasItem_property_visible>` 设为 ``true``\ 。对于继承自 :ref:`Popup<class_Popup>` 的控件，让它们可见的正确做法是换成调用各种 ``popup*()`` 函数的其中之一。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

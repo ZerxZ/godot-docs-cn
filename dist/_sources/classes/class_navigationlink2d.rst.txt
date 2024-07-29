@@ -273,7 +273,7 @@ NavigationLink2D
 
 |void| **set_global_end_position**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationLink2D_method_set_global_end_position>`
 
-设置该链接的 :ref:`end_position<class_NavigationLink2D_property_end_position>` 的全局位置。
+使用全局位置 ``position`` 设置相对于链接的结束位置 :ref:`end_position<class_NavigationLink2D_property_end_position>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -285,7 +285,7 @@ NavigationLink2D
 
 |void| **set_global_start_position**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationLink2D_method_set_global_start_position>`
 
-设置该链接的 :ref:`start_position<class_NavigationLink2D_property_start_position>` 的全局位置。
+使用全局位置 ``position`` 设置相对于链接的起始位置 :ref:`start_position<class_NavigationLink2D_property_start_position>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -300,10 +300,10 @@ NavigationLink2D
 根据 ``value``\ ，启用或禁用 :ref:`navigation_layers<class_NavigationLink2D_property_navigation_layers>` 位掩码中指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

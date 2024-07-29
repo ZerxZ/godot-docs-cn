@@ -309,25 +309,25 @@ Raycast 代表的是从它的原点到 :ref:`target_position<class_RayCast2D_pro
 
 :ref:`int<class_int>` **get_collider_shape**\ (\ ) |const| :ref:`🔗<class_RayCast2D_method_get_collider_shape>`
 
-Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
+返回与射线相交的第一个对象的形状 ID，射线未与任何对象相交时返回 ``0``\ （即 :ref:`is_colliding<class_RayCast2D_method_is_colliding>` 返回 ``false`` 时）。
 
-To get the intersected shape node, for a :ref:`CollisionObject2D<class_CollisionObject2D>` target, use:
+要获取相交的形状节点，比如假设目标是 :ref:`CollisionObject2D<class_CollisionObject2D>`\ ，可以使用：
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var target = get_collider() # A CollisionObject2D.
-    var shape_id = get_collider_shape() # The shape index in the collider.
-    var owner_id = target.shape_find_owner(shape_id) # The owner ID in the collider.
+    var target = get_collider() # 是 CollisionObject2D 节点。
+    var shape_id = get_collider_shape() # 碰撞体中的形状索引。
+    var owner_id = target.shape_find_owner(shape_id) # 碰撞体中的所有者 ID。
     var shape = target.shape_owner_get_owner(owner_id)
 
  .. code-tab:: csharp
 
-    var target = (CollisionObject2D)GetCollider(); // A CollisionObject2D.
-    var shapeId = GetColliderShape(); // The shape index in the collider.
-    var ownerId = target.ShapeFindOwner(shapeId); // The owner ID in the collider.
+    var target = (CollisionObject2D)GetCollider(); // 是 CollisionObject2D 节点。
+    var shapeId = GetColliderShape(); // 碰撞体中的形状索引。
+    var ownerId = target.ShapeFindOwner(shapeId); // 碰撞体中的所有者 ID。
     var shape = target.ShapeOwnerGetOwner(ownerId);
 
 
@@ -368,9 +368,9 @@ To get the intersected shape node, for a :ref:`CollisionObject2D<class_Collision
 
 :ref:`Vector2<class_Vector2>` **get_collision_point**\ (\ ) |const| :ref:`🔗<class_RayCast2D_method_get_collision_point>`
 
-Returns the collision point at which the ray intersects the closest object, in the global coordinate system. If :ref:`hit_from_inside<class_RayCast2D_property_hit_from_inside>` is ``true`` and the ray starts inside of a collision shape, this function will return the origin point of the ray.
+返回全局坐标系中射线与最近的物体相交的碰撞点。如果 :ref:`hit_from_inside<class_RayCast2D_property_hit_from_inside>` 为 ``true`` 并且射线从碰撞形状内部开始，则该函数将返回该射线的原点。
 
-\ **Note:** Check that :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
+\ **注意：**\ 在调用该方法之前，请检查 :ref:`is_colliding<class_RayCast2D_method_is_colliding>` 是否返回 ``true``\ ，以确保返回的点有效且最新。
 
 .. rst-class:: classref-item-separator
 
@@ -421,10 +421,10 @@ Returns the collision point at which the ray intersects the closest object, in t
 根据 ``value``\ ，启用或禁用 :ref:`collision_mask<class_RayCast2D_property_collision_mask>` 中指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

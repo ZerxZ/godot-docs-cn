@@ -42,12 +42,7 @@ public void _AddASceneManually()
         <paragraph>要完成循环并将旧场景替换为旧场景, 开发人员可以选择制作. 从视图中删除场景有很多策略 <reference internal="True" refuri="../../classes/class_viewport#class-viewport"><inline classes="std std-ref">Viewport</inline></reference>. 权衡涉及平衡操作速度和内存消耗以及平衡数据访问和完整性.</paragraph>
         <enumerated_list enumtype="arabic" prefix="" suffix=".">
             <list_item>
-                <paragraph><strong>We can delete the existing scene.</strong>
-                    <reference internal="True" refuri="../../classes/class_scenetree#class-scenetree-method-change-scene-to-file"><inline classes="std std-ref">SceneTree.change_scene_to_file()</inline></reference> and
-                    <reference internal="True" refuri="../../classes/class_scenetree#class-scenetree-method-change-scene-to-packed"><inline classes="std std-ref">SceneTree.change_scene_to_packed()</inline></reference>
-                    will delete the current scene immediately. Developers can also delete the
-                    main scene though. Assuming the root node's name is "Main", one could do
-                    <literal>get_node("/root/Main").free()</literal> to delete the whole scene.</paragraph>
+                <paragraph><strong>我们可以删除现有的场景。</strong><reference internal="True" refuri="../../classes/class_scenetree#class-scenetree-method-change-scene-to-file"><inline classes="std std-ref">SceneTree.change_scene_to_file()</inline></reference> 和 <reference internal="True" refuri="../../classes/class_scenetree#class-scenetree-method-change-scene-to-packed"><inline classes="std std-ref">SceneTree.change_scene_to_packed()</inline></reference> 都会立即删除当前场景。当然开发者也可以删除主场景。比如根节点的名称为“Main”的话，<literal>get_node("/root/Main").free()</literal> 就可以删除整个场景。</paragraph>
                 <block_quote>
                     <bullet_list bullet="-">
                         <list_item>
@@ -100,8 +95,7 @@ public void _AddASceneManually()
                                         <paragraph>好处: 无需再移动任何节点来保存数据.</paragraph>
                                     </list_item>
                                     <list_item>
-                                        <paragraph>Con: More data is being kept in memory which will become a problem
-                                            on memory-sensitive platforms like web or mobile.</paragraph>
+                                        <paragraph>坏处：内存中需要保留更多的数据，在 Web、移动设备等内存比较紧张的平台上可能会造成一些问题。</paragraph>
                                     </list_item>
                                 </bullet_list>
                             </block_quote>
@@ -145,9 +139,7 @@ public void _AddASceneManually()
                 </block_quote>
             </list_item>
         </enumerated_list>
-        <paragraph>There are also cases where one may wish to have many scenes present at the same
-            time. Perhaps one is adding their own singleton at runtime, or preserving
-            a scene's data between scene changes (adding the scene to the root node).</paragraph>
+        <paragraph>有些情况下，也会有人想要同时显示多个场景。比如需要在运行时添加单例场景，或者是需要在场景切换后保持某个场景的数据（将这个场景添加到根节点）。</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
             <div aria-label="Tabbed content" role="tablist">
                 <button aria-controls="panel-1-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-1-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -160,10 +152,7 @@ public void _AddASceneManually()
                 <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">GetTree().Root.AddChild(scene);</literal_block>
             </div>
         </container>
-        <paragraph>Perhaps instead they wish to display multiple scenes at the same time using
-            <reference internal="True" refuri="../../classes/class_subviewportcontainer#class-subviewportcontainer"><inline classes="std std-ref">SubViewportContainers</inline></reference>. This is optimal in
-            cases where the intent is to render different content in different parts of the
-            screen. Minimaps and split-screen multiplayer are good examples.</paragraph>
+        <paragraph>也有可能是想要使用 <reference internal="True" refuri="../../classes/class_subviewportcontainer#class-subviewportcontainer"><inline classes="std std-ref">SubViewportContainer</inline></reference> 来同时显示多个场景。如果你想要的就是在屏幕上的不同区域渲染不同的内容的话，这确实不失为一种最优解。比如小地图和分屏形式的多人游戏里就会用到这种做法。</paragraph>
         <paragraph>每个选项都有最合适的情况, 因此必须检查每个选项的效果并确定最适合其独特情况的路径.</paragraph>
         <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
     </section>

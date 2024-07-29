@@ -50,8 +50,8 @@
                 <paragraph>自动加载脚本时，会创建一个 <reference internal="True" refuri="../../classes/class_node#class-node"><inline classes="std std-ref">Node</inline></reference> 并把脚本附加上去。加载其它任何场景前，这个节点就会被加到根视图上。</paragraph>
             </note>
             <image candidates="{'*': 'tutorials/scripting/img/singleton.webp'}" uri="tutorials/scripting/img/singleton.webp"></image>
-            <paragraph>To autoload a scene or script, select <strong>Project &gt; Project Settings</strong> from the
-                menu and switch to the <strong>Autoload</strong> tab.</paragraph>
+            <paragraph>To autoload a scene or script, start from the menu and navigate to
+                <strong>Project &gt; Project Settings &gt; Globals &gt; Autoload</strong>.</paragraph>
             <image candidates="{'*': 'tutorials/scripting/img/autoload_tab.webp'}" uri="tutorials/scripting/img/autoload_tab.webp"></image>
             <paragraph>你可以在这里添加任意数量的场景或脚本。列表中的每个条目都需要一个名称，会被用来给该节点的 <literal>name</literal> 属性赋值。使用上下箭头键可以操纵将条目添加到全局场景树时的顺序。与普通场景一样，引擎读取这些节点的顺序是从上到下的。</paragraph>
             <image candidates="{'*': 'tutorials/scripting/img/autoload_example.webp'}" uri="tutorials/scripting/img/autoload_example.webp"></image>
@@ -121,8 +121,9 @@
                 <paragraph>Open the <strong>Script</strong> window and create a new script called <literal>global.gd</literal>.
                     Make sure it inherits from <literal>Node</literal>:</paragraph>
                 <image candidates="{'*': 'tutorials/scripting/img/autoload_script.webp'}" uri="tutorials/scripting/img/autoload_script.webp"></image>
-                <paragraph>The next step is to add this script to the autoLoad list. Open
-                    <strong>Project &gt; Project Settings</strong> from the menu, switch to the <strong>Autoload</strong> tab and
+                <paragraph>The next step is to add this script to the autoLoad list.
+                    Starting from the menu, open
+                    <strong>Project &gt; Project Settings &gt; Globals &gt; Autoload</strong> and
                     select the script by clicking the browse button or typing its path:
                     <literal>res://global.gd</literal>. Press <strong>Add</strong> to add it to the autoload list:</paragraph>
                 <image candidates="{'*': 'tutorials/scripting/img/autoload_tutorial1.webp'}" uri="tutorials/scripting/img/autoload_tutorial1.webp"></image>

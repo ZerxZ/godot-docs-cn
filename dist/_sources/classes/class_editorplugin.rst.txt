@@ -1143,17 +1143,17 @@ enum **AfterGUIInput**: :ref:`🔗<enum_EditorPlugin_AfterGUIInput>`
 
 |void| **add_custom_type**\ (\ type\: :ref:`String<class_String>`, base\: :ref:`String<class_String>`, script\: :ref:`Script<class_Script>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_EditorPlugin_method_add_custom_type>`
 
-添加一个自定义类型，它将出现在节点或资源的列表中。可以选择传递一个图标。
+Adds a custom type, which will appear in the list of nodes or resources.
 
-选择给定的节点或资源时，将实例化基本类型（例如“Node3D”、“Control”、“Resource”），然后脚本将被加载并将其设置为该对象。
+When a given node or resource is selected, the base type will be instantiated (e.g. "Node3D", "Control", "Resource"), then the script will be loaded and set to this object.
 
-\ **注意：**\ 基本类型是该类型的类层次继承的基本引擎类，而不是任何自定义类型的父类。
+\ **Note:** The base type is the base engine class which this type's class hierarchy inherits, not any custom type parent classes.
 
-可以使用虚方法 :ref:`_handles<class_EditorPlugin_private_method__handles>` 通过检查脚本或使用 ``is`` 关键字来检查你的自定义对象是否正在被编辑。
+You can use the virtual method :ref:`_handles<class_EditorPlugin_private_method__handles>` to check if your custom object is being edited by checking the script or using the ``is`` keyword.
 
-在运行时，这将是一个带有脚本的简单对象，因此不需要调用该函数。
+During run-time, this will be a simple object with a script so this function does not need to be called then.
 
-\ **注意：**\ 以这种方式添加的自定义类型不是真正的类。它们只是使用特定脚本创建节点的助手。
+\ **Note:** Custom types added this way are not true classes. They are just a helper to create a node with specific script.
 
 .. rst-class:: classref-item-separator
 
@@ -1639,7 +1639,7 @@ enum **AfterGUIInput**: :ref:`🔗<enum_EditorPlugin_AfterGUIInput>`
 
 |void| **set_dock_tab_icon**\ (\ control\: :ref:`Control<class_Control>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_EditorPlugin_method_set_dock_tab_icon>`
 
-Sets the tab icon for the given control in a dock slot. Setting to ``null`` removes the icon.
+设置停靠面板插槽中给定控件的选项卡图标。设置为 ``null`` 会移除该图标。
 
 .. rst-class:: classref-item-separator
 
@@ -1678,10 +1678,10 @@ Sets the tab icon for the given control in a dock slot. Setting to ``null`` remo
 更新 2D 和 3D 编辑器视口的叠加层。会导致方法 :ref:`_forward_canvas_draw_over_viewport<class_EditorPlugin_private_method__forward_canvas_draw_over_viewport>`\ 、\ :ref:`_forward_canvas_force_draw_over_viewport<class_EditorPlugin_private_method__forward_canvas_force_draw_over_viewport>`\ 、\ :ref:`_forward_3d_draw_over_viewport<class_EditorPlugin_private_method__forward_3d_draw_over_viewport>` 和 :ref:`_forward_3d_force_draw_over_viewport<class_EditorPlugin_private_method__forward_3d_force_draw_over_viewport>` 被调用。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -103,10 +103,18 @@
                         </row>
                         <row>
                             <entry>
+                                <paragraph><abbreviation explanation="无返回值。">void</abbreviation></paragraph>
+                            </entry>
+                            <entry>
+                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-force-fixed-history"><inline classes="std std-ref">force_fixed_history</inline></reference>()</paragraph>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>
                                 <paragraph><reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-get-history-undo-redo"><inline classes="std std-ref">get_history_undo_redo</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-get-history-undo-redo"><inline classes="std std-ref">get_history_undo_redo</inline></reference>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -114,7 +122,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-get-object-history-id"><inline classes="std std-ref">get_object_history_id</inline></reference>(object: <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-get-object-history-id"><inline classes="std std-ref">get_object_history_id</inline></reference>(object: <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -122,7 +130,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-is-committing-action"><inline classes="std std-ref">is_committing_action</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-editorundoredomanager-method-is-committing-action"><inline classes="std std-ref">is_committing_action</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -197,26 +205,31 @@
             <paragraph>如果提供了 <literal>custom_context</literal> 对象，则它将被用于推断目标历史（而不是使用第一个操作）。</paragraph>
             <paragraph>动作中撤销操作的顺序由 <literal>backward_undo_ops</literal> 决定。<literal>backward_undo_ops</literal> 为 <literal>false</literal> 时，撤销选项的顺序和添加顺序一致。也就是说，先添加的操作会先撤销。</paragraph>
             <transition classes="classref-item-separator"></transition>
+            <target refid="class-editorundoredomanager-method-force-fixed-history"></target>
+            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-force-fixed-history" names="class_editorundoredomanager_method_force_fixed_history"><abbreviation explanation="无返回值。">void</abbreviation> <strong>force_fixed_history</strong>() <reference internal="True" refid="class-editorundoredomanager-method-force-fixed-history"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Forces the next operation (e.g. <reference internal="True" refid="class-editorundoredomanager-method-add-do-method"><inline classes="std std-ref">add_do_method</inline></reference>) to use the action's history rather than guessing it from the object. This is sometimes needed when a history can't be correctly determined, like for a nested resource that doesn't have a path yet.</paragraph>
+            <paragraph>This method should only be used when absolutely necessary, otherwise it might cause invalid history state. For most of complex cases, the <literal>custom_context</literal> parameter of <reference internal="True" refid="class-editorundoredomanager-method-create-action"><inline classes="std std-ref">create_action</inline></reference> is sufficient.</paragraph>
+            <transition classes="classref-item-separator"></transition>
             <target refid="class-editorundoredomanager-method-get-history-undo-redo"></target>
-            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-get-history-undo-redo" names="class_editorundoredomanager_method_get_history_undo_redo"><reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference> <strong>get_history_undo_redo</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-get-history-undo-redo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-get-history-undo-redo" names="class_editorundoredomanager_method_get_history_undo_redo"><reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference> <strong>get_history_undo_redo</strong>(id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-get-history-undo-redo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回与给定历史 <literal>id</literal> 关联的 <reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference> 对象。</paragraph>
             <paragraph><literal>0</literal> 以上的 <literal>id</literal> 被映射到打开的场景选项卡（但它与它们的顺序不匹配）。<literal>0</literal> 或更低的 <literal>id</literal> 具有特殊含义（参阅 <reference internal="True" refid="enum-editorundoredomanager-specialhistory"><inline classes="std std-ref">SpecialHistory</inline></reference>）。</paragraph>
             <paragraph>最好与 <reference internal="True" refid="class-editorundoredomanager-method-get-object-history-id"><inline classes="std std-ref">get_object_history_id</inline></reference> 一起使用。该方法被提供，只是以防需要 <reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference> 的一些更高级的方法的情况（但请记住，直接操作 <reference internal="True" refuri="class_undoredo#class-undoredo"><inline classes="std std-ref">UndoRedo</inline></reference> 对象可能会影响编辑器的稳定性）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-editorundoredomanager-method-get-object-history-id"></target>
-            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-get-object-history-id" names="class_editorundoredomanager_method_get_object_history_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_object_history_id</strong>(object: <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-get-object-history-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-get-object-history-id" names="class_editorundoredomanager_method_get_object_history_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_object_history_id</strong>(object: <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-get-object-history-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回从给定的 <literal>object</literal> 推导出的历史 ID。它可以与 <reference internal="True" refid="class-editorundoredomanager-method-get-history-undo-redo"><inline classes="std std-ref">get_history_undo_redo</inline></reference> 一起使用。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-editorundoredomanager-method-is-committing-action"></target>
-            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-is-committing-action" names="class_editorundoredomanager_method_is_committing_action"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_committing_action</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-is-committing-action"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-editorundoredomanager-method-is-committing-action" names="class_editorundoredomanager_method_is_committing_action"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_committing_action</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-editorundoredomanager-method-is-committing-action"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <strong>EditorUndoRedoManager</strong> 当前正在提交该动作，即运行其“做”方法或属性更改（请参阅 <reference internal="True" refid="class-editorundoredomanager-method-commit-action"><inline classes="std std-ref">commit_action</inline></reference>）时，则返回 <literal>true</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

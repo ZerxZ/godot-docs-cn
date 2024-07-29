@@ -14,9 +14,9 @@
         <paragraph>能够对 Skeleton3D 中的骨骼进行修改的节点。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph><strong>SkeletonModifier3D</strong> retrieves a target <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> by having a <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> parent.</paragraph>
-            <paragraph>If there is <reference internal="True" refuri="class_animationmixer#class-animationmixer"><inline classes="std std-ref">AnimationMixer</inline></reference>, modification always performs after playback process of the <reference internal="True" refuri="class_animationmixer#class-animationmixer"><inline classes="std std-ref">AnimationMixer</inline></reference>.</paragraph>
-            <paragraph>This node should be used to implement custom IK solvers, constraints, or skeleton physics</paragraph>
+            <paragraph><strong>SkeletonModifier3D</strong> 会将父级 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 节点作为目标 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference>。</paragraph>
+            <paragraph>如果存在 <reference internal="True" refuri="class_animationmixer#class-animationmixer"><inline classes="std std-ref">AnimationMixer</inline></reference>，则修改会在 <reference internal="True" refuri="class_animationmixer#class-animationmixer"><inline classes="std std-ref">AnimationMixer</inline></reference> 的播放处理后执行。</paragraph>
+            <paragraph>该节点应该用于实现自定义 IK 解算器、约束、骨架物理。</paragraph>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="属性">
             <title>属性</title>
@@ -72,7 +72,7 @@
                                 <paragraph><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-skeletonmodifier3d-method-get-skeleton"><inline classes="std std-ref">get_skeleton</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-skeletonmodifier3d-method-get-skeleton"><inline classes="std std-ref">get_skeleton</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -84,8 +84,8 @@
             <title>信号</title>
             <target refid="class-skeletonmodifier3d-signal-modification-processed"></target>
             <paragraph classes="classref-signal" ids="class-skeletonmodifier3d-signal-modification-processed" names="class_skeletonmodifier3d_signal_modification_processed"><strong>modification_processed</strong>() <reference internal="True" refid="class-skeletonmodifier3d-signal-modification-processed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Notifies when the modification have been finished.</paragraph>
-            <paragraph><strong>Note:</strong> If you want to get the modified bone pose by the modifier, you must use <reference internal="True" refuri="class_skeleton3d#class-skeleton3d-method-get-bone-pose"><inline classes="std std-ref">Skeleton3D.get_bone_pose</inline></reference> or <reference internal="True" refuri="class_skeleton3d#class-skeleton3d-method-get-bone-global-pose"><inline classes="std std-ref">Skeleton3D.get_bone_global_pose</inline></reference> at the moment this signal is fired.</paragraph>
+            <paragraph>修改完成后通知。</paragraph>
+            <paragraph><strong>注意：</strong>如果要获取修改器修改后的骨骼姿势，必须在触发该信号时使用 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d-method-get-bone-pose"><inline classes="std std-ref">Skeleton3D.get_bone_pose</inline></reference> 或 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d-method-get-bone-global-pose"><inline classes="std std-ref">Skeleton3D.get_bone_global_pose</inline></reference>。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id5" names="属性说明">
@@ -112,27 +112,27 @@
                     <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_influence</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Sets the influence of the modification.</paragraph>
-            <paragraph><strong>Note:</strong> This value is used by <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> to blend, so the <strong>SkeletonModifier3D</strong> should always apply only 100% of the result without interpolation.</paragraph>
+            <paragraph>设置修改的影响。</paragraph>
+            <paragraph><strong>注意：</strong>该值由 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 用来混合，因此 <strong>SkeletonModifier3D</strong> 应始终仅应用结果的 100% 而不进行插值。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-skeletonmodifier3d-private-method-process-modification"></target>
             <paragraph classes="classref-method" ids="class-skeletonmodifier3d-private-method-process-modification" names="class_skeletonmodifier3d_private_method__process_modification"><abbreviation explanation="无返回值。">void</abbreviation> <strong>_process_modification</strong>() <abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation> <reference internal="True" refid="class-skeletonmodifier3d-private-method-process-modification"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Override this virtual method to implement a custom skeleton modifier. You should do things like get the <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference>'s current pose and apply the pose here.</paragraph>
-            <paragraph><reference internal="True" refid="class-skeletonmodifier3d-private-method-process-modification"><inline classes="std std-ref">_process_modification</inline></reference> must not apply <reference internal="True" refid="class-skeletonmodifier3d-property-influence"><inline classes="std std-ref">influence</inline></reference> to bone poses because the <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> automatically applies influence to all bone poses set by the modifier.</paragraph>
+            <paragraph>覆盖该虚拟方法以实现自定义骨架修改器。你应该执行诸如获取 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 的当前姿势并在此处应用姿势之类的操作。</paragraph>
+            <paragraph><reference internal="True" refid="class-skeletonmodifier3d-private-method-process-modification"><inline classes="std std-ref">_process_modification</inline></reference> 不得将 <reference internal="True" refid="class-skeletonmodifier3d-property-influence"><inline classes="std std-ref">influence</inline></reference> 应用于骨骼姿势，因为 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 会自动将影响应用于修改器设置的所有骨骼姿势。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-skeletonmodifier3d-method-get-skeleton"></target>
-            <paragraph classes="classref-method" ids="class-skeletonmodifier3d-method-get-skeleton" names="class_skeletonmodifier3d_method_get_skeleton"><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <strong>get_skeleton</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-skeletonmodifier3d-method-get-skeleton"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Get parent <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> node if found.</paragraph>
+            <paragraph classes="classref-method" ids="class-skeletonmodifier3d-method-get-skeleton" names="class_skeletonmodifier3d_method_get_skeleton"><reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> <strong>get_skeleton</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-skeletonmodifier3d-method-get-skeleton"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>存在 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 父节点时将其返回。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

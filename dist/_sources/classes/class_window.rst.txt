@@ -1089,7 +1089,7 @@ enum **WindowInitialPosition**: :ref:`🔗<enum_Window_WindowInitialPosition>`
 - |void| **set_force_native**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_force_native**\ (\ )
 
-If ``true``, native window will be used regardless of parent viewport and project settings.
+如果为 ``true``\ ，则无论父视口及项目设置如何都会使用原生窗口。
 
 .. rst-class:: classref-item-separator
 
@@ -1691,9 +1691,9 @@ If ``true``, native window will be used regardless of parent viewport and projec
 
 :ref:`Vector2i<class_Vector2i>` **get_position_with_decorations**\ (\ ) |const| :ref:`🔗<class_Window_method_get_position_with_decorations>`
 
-Returns the window's position including its border.
+返回该窗口的位置，包括边框。
 
-\ **Note:** If :ref:`visible<class_Window_property_visible>` is ``false``, this method returns the same value as :ref:`position<class_Window_property_position>`.
+\ **注意：**\ 如果 :ref:`visible<class_Window_property_visible>` 为 ``false``\ ，则该方法返回的位置与 :ref:`position<class_Window_property_position>` 一致。
 
 .. rst-class:: classref-item-separator
 
@@ -1705,9 +1705,9 @@ Returns the window's position including its border.
 
 :ref:`Vector2i<class_Vector2i>` **get_size_with_decorations**\ (\ ) |const| :ref:`🔗<class_Window_method_get_size_with_decorations>`
 
-Returns the window's size including its border.
+返回该窗口的大小，包括边框。
 
-\ **Note:** If :ref:`visible<class_Window_property_visible>` is ``false``, this method returns the same value as :ref:`size<class_Window_property_size>`.
+\ **注意：**\ 如果 :ref:`visible<class_Window_property_visible>` 为 ``false``\ ，则该方法返回的大小与 :ref:`size<class_Window_property_size>` 一致。
 
 .. rst-class:: classref-item-separator
 
@@ -2607,10 +2607,10 @@ Returns the window's size including its border.
 **Window** 为嵌入式且未获得焦点时使用的背景样式。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

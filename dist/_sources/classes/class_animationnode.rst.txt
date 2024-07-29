@@ -21,19 +21,19 @@ AnimationNode
 描述
 ----
 
-:ref:`AnimationTree<class_AnimationTree>`\ 节点的基本资源。通常，它不会直接使用，但你可以使用自定义混合公式创建自定义混合公式。
+:ref:`AnimationTree<class_AnimationTree>` 节点的基本资源。通常不会直接使用，不过你可以使用自定义混合公式创建自定义节点。
 
-在创建主要用于\ :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`\ 的动画节点时继承此项，否则应使用\ :ref:`AnimationRootNode<class_AnimationRootNode>`\ 。
+继承这个类的动画节点主要用于 :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`\ ，否则请使用 :ref:`AnimationRootNode<class_AnimationRootNode>`\ 。
 
-你可以将时间信息作为只读参数访问，该参数在上一帧中处理并存储在除\ :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`\ 之外的所有节点中。
+除 :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` 外，所有节点的时间信息都可以通过只读参数来访问，这些信息是在上一帧处理并存储的。
 
-\ **Note:**\ 如果\ **AnimationNode**\ 中存在多个输入，则哪个时间信息优先取决于\ **AnimationNode**\ 的类型。
+\ **注意：**\ 如果 **AnimationNode** 中存在多个输入，优先使用哪个输入的时间信息取决于 **AnimationNode** 的类型。
 
 ::
 
-    var current_length=$AnimationTree[parameters/AnimationNodeName/current_length]
-    var current_position=$AnimationTree[parameters/AnimationNodeName/current_position]
-    var current_delta=$AnimationTree[parameters/AnimationNodeName/current_delta]
+    var current_length = $AnimationTree[parameters/AnimationNodeName/current_length]
+    var current_position = $AnimationTree[parameters/AnimationNodeName/current_position]
+    var current_delta = $AnimationTree[parameters/AnimationNodeName/current_delta]
 
 .. rst-class:: classref-introduction-group
 
@@ -482,10 +482,10 @@ enum **FilterAction**: :ref:`🔗<enum_AnimationNode_FilterAction>`
 设置一个自定义参数。这些参数被用作本地内存，因为资源可以在树或场景中重复使用。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -120,7 +120,7 @@ Godot 定义了许多标准姿势名称，例如 ``aim`` 和 ``grip``\ ，但也
 - |void| **set_show_when_tracked**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_show_when_tracked**\ (\ )
 
-Enables showing the node when tracking starts, and hiding the node when tracking is lost.
+启用在跟踪开始时显示节点，并在跟踪丢失时隐藏节点。
 
 .. rst-class:: classref-item-separator
 
@@ -192,15 +192,23 @@ Godot 定义了许多标准跟踪器，例如 ``left_hand`` 和 ``right_hand``\ 
 
 |void| **trigger_haptic_pulse**\ (\ action_name\: :ref:`String<class_String>`, frequency\: :ref:`float<class_float>`, amplitude\: :ref:`float<class_float>`, duration_sec\: :ref:`float<class_float>`, delay_sec\: :ref:`float<class_float>`\ ) :ref:`🔗<class_XRNode3D_method_trigger_haptic_pulse>`
 
-在与此接口关联的设备上触发触觉脉冲。
+Triggers a haptic pulse on a device associated with this interface.
 
-\ ``action_name`` 是该脉冲的动作名称。
+\ ``action_name`` is the name of the action for this pulse.
+
+\ ``frequency`` is the frequency of the pulse, set to ``0.0`` to have the system use a default frequency.
+
+\ ``amplitude`` is the amplitude of the pulse between ``0.0`` and ``1.0``.
+
+\ ``duration_sec`` is the duration of the pulse in seconds.
+
+\ ``delay_sec`` is a delay in seconds before the pulse is given.
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

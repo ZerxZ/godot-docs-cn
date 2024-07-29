@@ -19,9 +19,9 @@ CollisionPolygon2D
 描述
 ----
 
-A node that provides a polygon shape to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent and allows to edit it. The polygon can be concave or convex. This can give a detection shape to an :ref:`Area2D<class_Area2D>`, turn :ref:`PhysicsBody2D<class_PhysicsBody2D>` into a solid object, or give a hollow shape to a :ref:`StaticBody2D<class_StaticBody2D>`.
+一个节点，为 :ref:`CollisionObject2D<class_CollisionObject2D>` 父级提供多边形形状并允许对其进行编辑。该多边形可以是凹的或凸的。这可以为 :ref:`Area2D<class_Area2D>` 提供检测形状，将 :ref:`PhysicsBody2D<class_PhysicsBody2D>` 变成实体对象，或为 :ref:`StaticBody2D<class_StaticBody2D>` 提供空心形状。
 
-\ **Warning:** A non-uniformly scaled :ref:`CollisionShape2D<class_CollisionShape2D>` will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its shape resource instead.
+\ **警告：**\ 非均匀缩放的 :ref:`CollisionShape2D<class_CollisionShape2D>` 可能不会按预期运行。请确保在所有轴上保持其缩放相同，可改为调整其形状资源。
 
 .. rst-class:: classref-reftable-group
 
@@ -171,10 +171,10 @@ enum **BuildMode**: :ref:`🔗<enum_CollisionPolygon2D_BuildMode>`
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

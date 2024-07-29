@@ -26,16 +26,17 @@
 ^"/root/Title"      # May point to the main scene's root node named "Title".
 ^"/root/Global"     # May point to an autoloaded node or scene named "Global".</literal_block>
             <paragraph>Despite their name, node paths may also point to a property:</paragraph>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">^"position"            # Points to this object's position.
-^"position:x"          # Points to this object's position in the x axis.
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">^":position"           # Points to this object's position.
+^":position:x"         # Points to this object's position in the x axis.
 ^"Camera3D:rotation:y" # Points to the child Camera3D and its y rotation.
 ^"/root:size:x"        # Points to the root Window and its width.</literal_block>
+            <paragraph>In some situations, it's possible to omit the leading <literal>:</literal> when pointing to an object's property. As an example, this is the case with <reference internal="True" refuri="class_object#class-object-method-set-indexed"><inline classes="std std-ref">Object.set_indexed</inline></reference> and <reference internal="True" refuri="class_tween#class-tween-method-tween-property"><inline classes="std std-ref">Tween.tween_property</inline></reference>, as those methods call <reference internal="True" refid="class-nodepath-method-get-as-property-path"><inline classes="std std-ref">get_as_property_path</inline></reference> under the hood. However, it's generally recommended to keep the <literal>:</literal> prefix.</paragraph>
             <paragraph>Node paths cannot check whether they are valid and may point to nodes or properties that do not exist. Their meaning depends entirely on the context in which they're used.</paragraph>
             <paragraph>You usually do not have to worry about the <strong>NodePath</strong> type, as strings are automatically converted to the type when necessary. There are still times when defining node paths is useful. For example, exported <strong>NodePath</strong> properties allow you to easily select any node within the currently edited scene. They are also automatically updated when moving, renaming or deleting nodes in the scene tree editor. See also <reference internal="True" refuri="class_@gdscript#class-gdscript-annotation-export-node-path"><inline classes="std std-ref">@GDScript.@export_node_path</inline></reference>.</paragraph>
             <paragraph>See also <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>, which is a similar type designed for optimized strings.</paragraph>
             <paragraph><strong>Note:</strong> In a boolean context, a <strong>NodePath</strong> will evaluate to <literal>false</literal> if it is empty (<literal>NodePath("")</literal>). Otherwise, a <strong>NodePath</strong> will always evaluate to <literal>true</literal>.</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -93,7 +94,7 @@
                                 <paragraph><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-as-property-path"><inline classes="std std-ref">get_as_property_path</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-as-property-path"><inline classes="std std-ref">get_as_property_path</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -101,7 +102,7 @@
                                 <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-concatenated-names"><inline classes="std std-ref">get_concatenated_names</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-concatenated-names"><inline classes="std std-ref">get_concatenated_names</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -109,7 +110,7 @@
                                 <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-concatenated-subnames"><inline classes="std std-ref">get_concatenated_subnames</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-concatenated-subnames"><inline classes="std std-ref">get_concatenated_subnames</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -117,7 +118,7 @@
                                 <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-name"><inline classes="std std-ref">get_name</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-name"><inline classes="std std-ref">get_name</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -125,7 +126,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">get_name_count</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">get_name_count</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -133,7 +134,7 @@
                                 <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-subname"><inline classes="std std-ref">get_subname</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-subname"><inline classes="std std-ref">get_subname</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -141,7 +142,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">get_subname_count</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">get_subname_count</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -149,7 +150,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-hash"><inline classes="std std-ref">hash</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-hash"><inline classes="std std-ref">hash</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -157,7 +158,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-is-absolute"><inline classes="std std-ref">is_absolute</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-is-absolute"><inline classes="std std-ref">is_absolute</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -165,7 +166,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-is-empty"><inline classes="std std-ref">is_empty</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-is-empty"><inline classes="std std-ref">is_empty</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -173,15 +174,15 @@
                                 <paragraph><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-nodepath-method-slice"><inline classes="std std-ref">slice</inline></reference>(begin: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, end: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2147483647) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-nodepath-method-slice"><inline classes="std std-ref">slice</inline></reference>(begin: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, end: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2147483647) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id5" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id5" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="25"></colspec>
@@ -243,7 +244,7 @@
         <section classes="classref-descriptions-group" ids="id7" names="方法说明">
             <title>方法说明</title>
             <target refid="class-nodepath-method-get-as-property-path"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-as-property-path" names="class_nodepath_method_get_as_property_path"><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>get_as_property_path</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-as-property-path"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-as-property-path" names="class_nodepath_method_get_as_property_path"><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>get_as_property_path</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-as-property-path"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该节点路径带有冒号字符（<literal>:</literal>）前缀的副本，将其转换为没有节点名称的纯属性路径（相对于当前节点）。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -269,11 +270,11 @@ GD.Print(propertyPath); // 打印 “:position:x”。</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-concatenated-names"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-concatenated-names" names="class_nodepath_method_get_concatenated_names"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_concatenated_names</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-concatenated-names"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-concatenated-names" names="class_nodepath_method_get_concatenated_names"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_concatenated_names</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-concatenated-names"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将与斜杠字符（<literal>/</literal>）连接的所有节点名称作为单个 <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> 返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-concatenated-subnames"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-concatenated-subnames" names="class_nodepath_method_get_concatenated_subnames"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_concatenated_subnames</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-concatenated-subnames"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-concatenated-subnames" names="class_nodepath_method_get_concatenated_subnames"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_concatenated_subnames</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-concatenated-subnames"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将与冒号字符（<literal>:</literal>）连接的所有属性子名称作为单个 <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> 返回。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -291,7 +292,7 @@ GD.Print(nodePath.GetConcatenatedSubnames()); // 打印 “texture:resource_name
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-name"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-name" names="class_nodepath_method_get_name"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_name</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-name" names="class_nodepath_method_get_name"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_name</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回由从 0 开始的 <literal>idx</literal> 指示的节点名称。如果 <literal>idx</literal> 超出范围，则会生成错误。另请参阅 <reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">get_subname_count</inline></reference> 和 <reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">get_name_count</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -313,12 +314,12 @@ GD.Print(spritePath.GetName(2)); // 打印 “Sprite”。</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-name-count"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-name-count" names="class_nodepath_method_get_name_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_name_count</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-name-count" names="class_nodepath_method_get_name_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_name_count</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回路径中节点名称的数量。不包括属性子名称。</paragraph>
             <paragraph>例如，<literal>"../RigidBody2D/Sprite2D:texture"</literal> 包含 3 个节点名称。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-subname"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-subname" names="class_nodepath_method_get_subname"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_subname</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-subname"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-subname" names="class_nodepath_method_get_subname"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_subname</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-subname"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回由从 0 开始的 <literal>idx</literal> 指示的属性名称。如果 <literal>idx</literal> 超出范围，则会生成错误。另请参阅 <reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">get_subname_count</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -338,32 +339,32 @@ GD.Print(pathToName.GetSubname(1)); // 打印 “resource_name”。</literal_bl
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-get-subname-count"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-get-subname-count" names="class_nodepath_method_get_subname_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_subname_count</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-get-subname-count" names="class_nodepath_method_get_subname_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_subname_count</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回路径中属性名称（“子名称”）的数量。节点路径中的每个子名称都列在冒号字符（<literal>:</literal>）之后。</paragraph>
             <paragraph>例如，<literal>"Level/RigidBody2D/Sprite2D:texture:resource_name"</literal> 包含 2 个子名称。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-hash"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-hash" names="class_nodepath_method_hash"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>hash</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-hash"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-hash" names="class_nodepath_method_hash"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>hash</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-hash"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回代表该节点路径内容的 32 位哈希值。</paragraph>
             <paragraph><strong>注意：</strong>由于哈希冲突，具有相等哈希值的节点路径<emphasis>无法</emphasis>保证相同。不同哈希值的节点路径保证是不同的。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-is-absolute"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-is-absolute" names="class_nodepath_method_is_absolute"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_absolute</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-is-absolute"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-is-absolute" names="class_nodepath_method_is_absolute"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_absolute</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-is-absolute"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果节点路径是绝对路径，则返回 <literal>true</literal>。与相对路径不同，绝对路径由前导斜杠字符（<literal>/</literal>）表示，并且始终从 <reference internal="True" refuri="class_scenetree#class-scenetree"><inline classes="std std-ref">SceneTree</inline></reference> 开始。它可用于从根节点可靠地访问节点（例如，如果存在名为 “Global” 的自动加载，则 <literal>"/root/Global"</literal>）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-is-empty"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-is-empty" names="class_nodepath_method_is_empty"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_empty</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-is-empty"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-is-empty" names="class_nodepath_method_is_empty"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_empty</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-is-empty"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果节点路径是从空的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>（<literal>""</literal>）构造的，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-nodepath-method-slice"></target>
-            <paragraph classes="classref-method" ids="class-nodepath-method-slice" names="class_nodepath_method_slice"><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>slice</strong>(begin: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, end: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2147483647) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-slice"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-nodepath-method-slice" names="class_nodepath_method_slice"><reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>slice</strong>(begin: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, end: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2147483647) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-nodepath-method-slice"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>NodePath</strong> 的切片，是从 <literal>begin</literal>（含）到 <literal>end</literal>（不含）的全新 <strong>NodePath</strong>。</paragraph>
             <paragraph><literal>begin</literal> 和 <literal>end</literal> 的绝对值将被限制为 <reference internal="True" refid="class-nodepath-method-get-name-count"><inline classes="std std-ref">get_name_count</inline></reference> 和 <reference internal="True" refid="class-nodepath-method-get-subname-count"><inline classes="std std-ref">get_subname_count</inline></reference> 的总和，因此 <literal>end</literal> 的默认值默认会使其切片到 <strong>NodePath</strong> 的末尾（即 <literal>path.slice(1)</literal> 是 <literal>path.slice(1, path.get_name_count() + path.get_subname_count())</literal> 的简写）。</paragraph>
             <paragraph>如果 <literal>begin</literal> 或 <literal>end</literal> 为负，则表示相对于 <strong>NodePath</strong> 的末尾（即 <literal>path.slice(0, -2)</literal> 是 <literal>path.slice(0, path.get_name_count() + path.get_subname_count() - 2)</literal> 的简写）。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id8" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id8" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-nodepath-operator-neq-nodepath"></target>
             <paragraph classes="classref-operator" ids="class-nodepath-operator-neq-nodepath" names="class_nodepath_operator_neq_nodepath"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference>) <reference internal="True" refid="class-nodepath-operator-neq-nodepath"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个节点路径不相等，则返回 <literal>true</literal>。</paragraph>
@@ -372,12 +373,12 @@ GD.Print(pathToName.GetSubname(1)); // 打印 “resource_name”。</literal_bl
             <paragraph classes="classref-operator" ids="class-nodepath-operator-eq-nodepath" names="class_nodepath_operator_eq_nodepath"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator ==</strong>(right: <reference internal="True" refid="class-nodepath"><inline classes="std std-ref">NodePath</inline></reference>) <reference internal="True" refid="class-nodepath-operator-eq-nodepath"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个节点路径相等，即它们由相同的节点名称和子名称按相同的顺序组成，则返回 <literal>true</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

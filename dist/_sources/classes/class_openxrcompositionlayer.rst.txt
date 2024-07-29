@@ -16,16 +16,16 @@ OpenXRCompositionLayer
 
 **派生：** :ref:`OpenXRCompositionLayerCylinder<class_OpenXRCompositionLayerCylinder>`, :ref:`OpenXRCompositionLayerEquirect<class_OpenXRCompositionLayerEquirect>`, :ref:`OpenXRCompositionLayerQuad<class_OpenXRCompositionLayerQuad>`
 
-The parent class of all OpenXR composition layer nodes.
+所有 OpenXR 合成层节点的父类。
 
 .. rst-class:: classref-introduction-group
 
 描述
 ----
 
-Composition layers allow 2D viewports to be displayed inside of the headset by the XR compositor through special projections that retain their quality. This allows for rendering clear text while keeping the layer at a native resolution.
+合成层允许 XR 合成器通过保留其质量的特殊投影，从而在头戴式设备内显示 2D 视口。这样可以在保持图层的原始分辨率的同时，渲染清晰的文本。
 
-\ **Note:** If the OpenXR runtime doesn't support the given composition layer type, a fallback mesh can be generated with a :ref:`ViewportTexture<class_ViewportTexture>`, in order to emulate the composition layer.
+\ **注意：**\ 如果 OpenXR 运行时不支持给定的合成层类型，则可以使用 :ref:`ViewportTexture<class_ViewportTexture>` 生成后备网格，以模拟合成层。
 
 .. rst-class:: classref-reftable-group
 
@@ -79,9 +79,9 @@ Composition layers allow 2D viewports to be displayed inside of the headset by t
 - |void| **set_alpha_blend**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_alpha_blend**\ (\ )
 
-Enables the blending the layer using its alpha channel.
+启用使用其 alpha 通道混合图层的功能。
 
-Can be combined with :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` to give the layer a transparent background.
+可以与 :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` 结合使用，以便为图层提供透明背景。
 
 .. rst-class:: classref-item-separator
 
@@ -98,9 +98,9 @@ Can be combined with :ref:`Viewport.transparent_bg<class_Viewport_property_trans
 - |void| **set_enable_hole_punch**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_enable_hole_punch**\ (\ )
 
-Enables a technique called "hole punching", which allows putting the composition layer behind the main projection layer (i.e. setting :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>` to a negative value) while "punching a hole" through everything rendered by Godot so that the layer is still visible.
+启用一种称为“打孔”的技术，该技术允许将合成层置于主投影层后面（即将 :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>` 设置为负值），同时在 Godot 渲染的所有内容上“打一个洞”，以便该层仍然可见。
 
-This can be used to create the illusion that the composition layer exists in the same 3D space as everything rendered by Godot, allowing objects to appear to pass both behind or in front of the composition layer.
+这可用于创建合成层与 Godot 渲染的所有内容存在于同一 3D 空间中的幻觉，使对象看起来既从合成层的后面又从合成层的前面经过。
 
 .. rst-class:: classref-item-separator
 
@@ -117,7 +117,7 @@ This can be used to create the illusion that the composition layer exists in the
 - |void| **set_layer_viewport**\ (\ value\: :ref:`SubViewport<class_SubViewport>`\ )
 - :ref:`SubViewport<class_SubViewport>` **get_layer_viewport**\ (\ )
 
-The :ref:`SubViewport<class_SubViewport>` to render on the composition layer.
+合成层上渲染的 :ref:`SubViewport<class_SubViewport>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -134,9 +134,9 @@ The :ref:`SubViewport<class_SubViewport>` to render on the composition layer.
 - |void| **set_sort_order**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sort_order**\ (\ )
 
-The sort order for this composition layer. Higher numbers will be shown in front of lower numbers.
+合成层的排序顺序。数字较大的层显示在数字较小的层之前。
 
-\ **Note:** This will have no effect if a fallback mesh is being used.
+\ **注意：**\ 使用回退网格时无效。
 
 .. rst-class:: classref-section-separator
 
@@ -153,9 +153,9 @@ The sort order for this composition layer. Higher numbers will be shown in front
 
 :ref:`Vector2<class_Vector2>` **intersects_ray**\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_OpenXRCompositionLayer_method_intersects_ray>`
 
-Returns UV coordinates where the given ray intersects with the composition layer. ``origin`` and ``direction`` must be in global space.
+返回给定射线与合成层相交的 UV 坐标。\ ``origin`` 和 ``direction`` 必须位于全局空间中。
 
-Returns ``Vector2(-1.0, -1.0)`` if the ray doesn't intersect.
+如果射线不相交，则返回 ``Vector2(-1.0, -1.0)``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -167,15 +167,15 @@ Returns ``Vector2(-1.0, -1.0)`` if the ray doesn't intersect.
 
 :ref:`bool<class_bool>` **is_natively_supported**\ (\ ) |const| :ref:`🔗<class_OpenXRCompositionLayer_method_is_natively_supported>`
 
-Returns true if the OpenXR runtime natively supports this composition layer type.
+如果 OpenXR 运行时本身支持该合成层类型，则返回 true。
 
-\ **Note:** This will only return an accurate result after the OpenXR session has started.
+\ **注意：**\ 仅在 OpenXR 会话启动后才会返回准确结果。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

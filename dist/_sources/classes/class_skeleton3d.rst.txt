@@ -41,6 +41,8 @@ Skeleton3D
    :widths: auto
 
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                         | :ref:`animate_physical_bones<class_Skeleton3D_property_animate_physical_bones>`                 | ``true``  |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
    | :ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>` | :ref:`modifier_callback_mode_process<class_Skeleton3D_property_modifier_callback_mode_process>` | ``1``     |
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                                                       | :ref:`motion_scale<class_Skeleton3D_property_motion_scale>`                                     | ``1.0``   |
@@ -70,8 +72,6 @@ Skeleton3D
    | |void|                                          | :ref:`force_update_all_bone_transforms<class_Skeleton3D_method_force_update_all_bone_transforms>`\ (\ )                                                                                                                                                             |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`force_update_bone_child_transform<class_Skeleton3D_method_force_update_bone_child_transform>`\ (\ bone_idx\: :ref:`int<class_int>`\ )                                                                                                                         |
-   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`get_animate_physical_bones<class_Skeleton3D_method_get_animate_physical_bones>`\ (\ ) |const|                                                                                                                                                                 |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_bone_children<class_Skeleton3D_method_get_bone_children>`\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                 |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,8 +122,6 @@ Skeleton3D
    | |void|                                          | :ref:`reset_bone_pose<class_Skeleton3D_method_reset_bone_pose>`\ (\ bone_idx\: :ref:`int<class_int>`\ )                                                                                                                                                             |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`reset_bone_poses<class_Skeleton3D_method_reset_bone_poses>`\ (\ )                                                                                                                                                                                             |
-   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                          | :ref:`set_animate_physical_bones<class_Skeleton3D_method_set_animate_physical_bones>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                      |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`set_bone_enabled<class_Skeleton3D_method_set_bone_enabled>`\ (\ bone_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>` = true\ )                                                                                                                 |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,7 +175,7 @@ Skeleton3D
 
 .. container:: contribute
 
-	目前没有这个信号的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该信号目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧 ！
 
 .. rst-class:: classref-item-separator
 
@@ -189,9 +187,9 @@ Skeleton3D
 
 **pose_updated**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_pose_updated>`
 
-Emitted when the pose is updated.
+姿势发生更改时发出。
 
-\ **Note:** During the update process, this signal is not fired, so modification by :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` is not detected.
+\ **注意：**\ 更新过程中不会发出该信号，因此不会检测到 :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` 的修改。
 
 .. rst-class:: classref-item-separator
 
@@ -215,9 +213,9 @@ Emitted when the pose is updated.
 
 **skeleton_updated**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_skeleton_updated>`
 
-Emitted when the final pose has been calculated will be applied to the skin in the update process.
+当最终姿势计算完成后发出，将在更新过程中应用于皮肤。
 
-This means that all :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` processing is complete. In order to detect the completion of the processing of each :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`, use :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
+这意味着所有 :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` 处理都已完成。为了检测每个 :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` 处理的完成情况，请使用 :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -265,7 +263,7 @@ enum **ModifierCallbackModeProcess**: :ref:`🔗<enum_Skeleton3D_ModifierCallbac
 
 **NOTIFICATION_UPDATE_SKELETON** = ``50`` :ref:`🔗<class_Skeleton3D_constant_NOTIFICATION_UPDATE_SKELETON>`
 
-Notification received when this skeleton's pose needs to be updated. In that case, this is called only once per frame in a deferred process.
+骨架的姿势需要更新时收到的通知。每帧只会通过延迟处理调用一次。
 
 .. rst-class:: classref-section-separator
 
@@ -275,6 +273,27 @@ Notification received when this skeleton's pose needs to be updated. In that cas
 
 属性说明
 --------
+
+.. _class_Skeleton3D_property_animate_physical_bones:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animate_physical_bones** = ``true`` :ref:`🔗<class_Skeleton3D_property_animate_physical_bones>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_animate_physical_bones**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_animate_physical_bones**\ (\ )
+
+**已弃用：** 未来版本中可能会修改或移除该属性。
+
+If you follow the recommended workflow and explicitly have :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` as a child of **Skeleton3D**, you can control whether it is affected by raycasting without running :ref:`physical_bones_start_simulation<class_Skeleton3D_method_physical_bones_start_simulation>`, by its :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>`.
+
+However, for old (deprecated) configurations, **Skeleton3D** has an internal virtual :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` for compatibility. This property controls the internal virtual :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>`'s :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Skeleton3D_property_modifier_callback_mode_process:
 
@@ -287,7 +306,7 @@ Notification received when this skeleton's pose needs to be updated. In that cas
 - |void| **set_modifier_callback_mode_process**\ (\ value\: :ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>`\ )
 - :ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>` **get_modifier_callback_mode_process**\ (\ )
 
-Sets the processing timing for the Modifier.
+设置修改器的处理时机。
 
 .. rst-class:: classref-item-separator
 
@@ -366,7 +385,7 @@ Sets the processing timing for the Modifier.
 
 |void| **clear_bones_global_pose_override**\ (\ ) :ref:`🔗<class_Skeleton3D_method_clear_bones_global_pose_override>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 移除骨架中所有骨骼上的全局姿势覆盖。
 
@@ -382,7 +401,7 @@ Sets the processing timing for the Modifier.
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +413,7 @@ Sets the processing timing for the Modifier.
 
 :ref:`int<class_int>` **find_bone**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_find_bone>`
 
-Returns the bone index that matches ``name`` as its name. Returns ``-1`` if no bone with this name exists.
+返回与 ``name`` 匹配的骨骼索引。如果不存在具有该名称的骨骼，则返回 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -421,18 +440,6 @@ Returns the bone index that matches ``name`` as its name. Returns ``-1`` if no b
 |void| **force_update_bone_child_transform**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_method_force_update_bone_child_transform>`
 
 强制更新索引为 ``bone_idx`` 的骨骼及其所有子项的变换/姿势。
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Skeleton3D_method_get_animate_physical_bones:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **get_animate_physical_bones**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_animate_physical_bones>`
-
-**已弃用：** 未来版本中可能修改或移除该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -468,9 +475,9 @@ Returns the bone index that matches ``name`` as its name. Returns ``-1`` if no b
 
 :ref:`Transform3D<class_Transform3D>` **get_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose>`
 
-Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
+返回指定骨骼相对于骨架的整体变换。相对于骨架帧，这不是骨骼的实际“全局”变换。
 
-\ **Note:** This is the global pose you set to the skeleton in the process, the final global pose can get overridden by modifiers in the deferred process, if you want to access the final global pose, use :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
+\ **注意：**\ 这是你在 process 期间为骨架设置的全局姿势，最终全局姿势可能会被延迟 process 期间的修改器覆盖，如果你想访问最终全局姿势，请使用 :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -482,7 +489,7 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 :ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_no_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose_no_override>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 返回指定骨骼的整体变换，相对于骨架，不包含任何全局姿势覆盖。由于是相对于骨架的，这不是该骨骼的实际“全局”变换。
 
@@ -496,7 +503,7 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 :ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose_override>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 返回 ``bone_idx`` 骨骼的全局姿势覆盖变换。
 
@@ -548,9 +555,9 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 :ref:`Transform3D<class_Transform3D>` **get_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_pose>`
 
-Returns the pose transform of the specified bone.
+返回指定骨骼的姿势变换。
 
-\ **Note:** This is the pose you set to the skeleton in the process, the final pose can get overridden by modifiers in the deferred process, if you want to access the final pose, use :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
+\ **注意：**\ 这是你在 process 期间为骨架设置的姿势，最终姿势可能会被延迟 process 期间的修改器覆盖，如果你想访问最终姿势，请使用\ :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -610,9 +617,9 @@ Returns the pose transform of the specified bone.
 
 :ref:`StringName<class_StringName>` **get_concatenated_bone_names**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_concatenated_bone_names>`
 
-Returns all bone names concatenated with commas (``,``) as a single :ref:`StringName<class_StringName>`.
+返回将所有骨骼名称用英文逗号（\ ``,``\ ）连接得到的 :ref:`StringName<class_StringName>`\ 。
 
-It is useful to set it as a hint for the enum property.
+可以用作枚举属性的提示。
 
 .. rst-class:: classref-item-separator
 
@@ -676,7 +683,7 @@ It is useful to set it as a hint for the enum property.
 
 |void| **physical_bones_add_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_add_collision_exception>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 向物理骨骼添加一个碰撞例外。
 
@@ -692,7 +699,7 @@ It is useful to set it as a hint for the enum property.
 
 |void| **physical_bones_remove_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_remove_collision_exception>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 移除物理骨骼的一个碰撞例外。
 
@@ -708,7 +715,7 @@ It is useful to set it as a hint for the enum property.
 
 |void| **physical_bones_start_simulation**\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_start_simulation>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 让 Skeleton 中的 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 节点开始仿真模拟，对物理世界做出反应。
 
@@ -724,7 +731,7 @@ It is useful to set it as a hint for the enum property.
 
 |void| **physical_bones_stop_simulation**\ (\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_stop_simulation>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 让 Skeleton 中的 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 节点停止仿真模拟。
 
@@ -768,18 +775,6 @@ It is useful to set it as a hint for the enum property.
 
 ----
 
-.. _class_Skeleton3D_method_set_animate_physical_bones:
-
-.. rst-class:: classref-method
-
-|void| **set_animate_physical_bones**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Skeleton3D_method_set_animate_physical_bones>`
-
-**已弃用：** 未来版本中可能修改或移除该方法。
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Skeleton3D_method_set_bone_enabled:
 
 .. rst-class:: classref-method
@@ -798,9 +793,9 @@ It is useful to set it as a hint for the enum property.
 
 |void| **set_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_global_pose>`
 
-Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
+为 ``bone_idx`` 处的骨骼设置全局姿势变换 ``pose``\ 。
 
-\ **Note:** If other bone poses have been changed, this method executes a dirty poses recalculation and will cause performance to deteriorate. If you know that multiple global poses will be applied, consider using :ref:`set_bone_pose<class_Skeleton3D_method_set_bone_pose>` with precalculation.
+\ **注意：**\ 如果其他骨骼姿势已更改，该方法将执行一个脏的姿势重新计算，并会导致性能下降。如果你知道将应用多个全局姿势，请考虑使用带预计算的 :ref:`set_bone_pose<class_Skeleton3D_method_set_bone_pose>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -812,7 +807,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 |void| **set_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`, amount\: :ref:`float<class_float>`, persistent\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_global_pose_override>`
 
-**已弃用：** 未来版本中可能修改或移除该方法。
+**已弃用：** 未来版本中可能会修改或移除该方法。
 
 为 ``bone_idx`` 处的骨骼设置全局姿势变换 ``pose``\ 。
 
@@ -830,7 +825,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 |void| **set_bone_name**\ (\ bone_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_name>`
 
-Sets the bone name, ``name``, for the bone at ``bone_idx``.
+将索引号为 ``bone_idx`` 的骨骼的名称设置为 ``name``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -856,7 +851,7 @@ Sets the bone name, ``name``, for the bone at ``bone_idx``.
 
 |void| **set_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_pose>`
 
-Sets the pose transform, ``pose``, for the bone at ``bone_idx``.
+将索引号为 ``bone_idx`` 的骨骼的姿势变换设置为 ``pose``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -919,10 +914,10 @@ Sets the pose transform, ``pose``, for the bone at ``bone_idx``.
 让位于 ``bone_idx`` 的骨骼不再有父级，并将其放松位置设置为之前父级放松时的位置。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

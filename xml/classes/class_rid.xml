@@ -16,7 +16,7 @@
             <paragraph>A low-level resource may correspond to a high-level <reference internal="True" refuri="class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference>, such as <reference internal="True" refuri="class_texture#class-texture"><inline classes="std std-ref">Texture</inline></reference> or <reference internal="True" refuri="class_mesh#class-mesh"><inline classes="std std-ref">Mesh</inline></reference>.</paragraph>
             <paragraph><strong>Note:</strong> RIDs are only useful during the current session. It won't correspond to a similar resource if sent over a network, or loaded from a file at a later time.</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="构造函数">
@@ -58,7 +58,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rid-method-get-id"><inline classes="std std-ref">get_id</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rid-method-get-id"><inline classes="std std-ref">get_id</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -66,15 +66,15 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-rid-method-is-valid"><inline classes="std std-ref">is_valid</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-rid-method-is-valid"><inline classes="std std-ref">is_valid</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id4" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id4" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="25"></colspec>
@@ -146,16 +146,16 @@
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-rid-method-get-id"></target>
-            <paragraph classes="classref-method" ids="class-rid-method-get-id" names="class_rid_method_get_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_id</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rid-method-get-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rid-method-get-id" names="class_rid_method_get_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_id</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rid-method-get-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回引用的底层资源的 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-rid-method-is-valid"></target>
-            <paragraph classes="classref-method" ids="class-rid-method-is-valid" names="class_rid_method_is_valid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_valid</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rid-method-is-valid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-rid-method-is-valid" names="class_rid_method_is_valid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_valid</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-rid-method-is-valid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>RID</strong> 非 <literal>0</literal>，则返回 <literal>true</literal>。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id7" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id7" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-rid-operator-neq-rid"></target>
             <paragraph classes="classref-operator" ids="class-rid-operator-neq-rid" names="class_rid_operator_neq_rid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-rid"><inline classes="std std-ref">RID</inline></reference>) <reference internal="True" refid="class-rid-operator-neq-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <strong>RID</strong> 不相等，则返回 <literal>true</literal>。</paragraph>
@@ -180,12 +180,12 @@
             <paragraph classes="classref-operator" ids="class-rid-operator-gte-rid" names="class_rid_operator_gte_rid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator &gt;=</strong>(right: <reference internal="True" refid="class-rid"><inline classes="std std-ref">RID</inline></reference>) <reference internal="True" refid="class-rid-operator-gte-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>RID</strong> 的 ID 大于等于右侧 <literal>right</literal> 的 ID，则返回 <literal>true</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -10,12 +10,12 @@
     <section ids="resourceimportermp3 class-resourceimportermp3" names="resourceimportermp3 class_resourceimportermp3">
         <title>ResourceImporterMP3</title>
         <paragraph><strong>继承：</strong> <reference internal="True" refuri="class_resourceimporter#class-resourceimporter"><inline classes="std std-ref">ResourceImporter</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference></paragraph>
-        <paragraph>Imports an MP3 audio file for playback.</paragraph>
+        <paragraph>导入 MP3 音频文件以供播放。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>MP3 is a lossy audio format, with worse audio quality compared to <reference internal="True" refuri="class_resourceimporteroggvorbis#class-resourceimporteroggvorbis"><inline classes="std std-ref">ResourceImporterOggVorbis</inline></reference> at a given bitrate.</paragraph>
-            <paragraph>In most cases, it's recommended to use Ogg Vorbis over MP3. However, if you're using an MP3 sound source with no higher quality source available, then it's recommended to use the MP3 file directly to avoid double lossy compression.</paragraph>
-            <paragraph>MP3 requires more CPU to decode than <reference internal="True" refuri="class_resourceimporterwav#class-resourceimporterwav"><inline classes="std std-ref">ResourceImporterWAV</inline></reference>. If you need to play a lot of simultaneous sounds, it's recommended to use WAV for those sounds instead, especially if targeting low-end devices.</paragraph>
+            <paragraph>MP3 是一种有损音频格式，在给定比特率下，与 <reference internal="True" refuri="class_resourceimporteroggvorbis#class-resourceimporteroggvorbis"><inline classes="std std-ref">ResourceImporterOggVorbis</inline></reference> 相比，音频质量较差。</paragraph>
+            <paragraph>在大多数情况下，建议使用 Ogg Vorbis 而不是 MP3。但是，如果你使用的 MP3 音源没有更高质量的可用源，则建议直接使用 MP3 文件以避免两次有损压缩。</paragraph>
+            <paragraph>MP3 比 <reference internal="True" refuri="class_resourceimporterwav#class-resourceimporterwav"><inline classes="std std-ref">ResourceImporterWAV</inline></reference> 需要更多的 CPU 来解码。如果你需要同时播放很多声音，建议对这些声音使用 WAV，特别是针对低端设备。</paragraph>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
             <title>教程</title>
@@ -121,12 +121,12 @@
             <paragraph>仅当 <reference internal="True" refid="class-resourceimportermp3-property-loop"><inline classes="std std-ref">loop</inline></reference> 为 <literal>true</literal> 时才有效。</paragraph>
             <paragraph><strong>高级导入设置</strong>对话框中为 <reference internal="True" refid="class-resourceimportermp3-property-loop-offset"><inline classes="std std-ref">loop_offset</inline></reference> 提供了更方便的编辑器，因为它可以让你预览更改，且无需重新导入音频。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

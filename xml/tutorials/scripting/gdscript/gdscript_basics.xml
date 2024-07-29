@@ -111,7 +111,7 @@ func _init():
             </section>
             <section ids="keywords" names="keywords 关键字">
                 <title>关键字</title>
-                <paragraph>下表为该语言所支持的关键字列表。由于关键字是保留字（令牌字），因此不能用作标识符。操作符（如 <literal>in</literal>、<literal>not</literal>、<literal>and</literal>、<literal>or</literal>）及后文中出现的内置类型名称亦为保留字。</paragraph>
+                <paragraph>下表为该语言所支持的关键字列表。由于关键字是保留字（令牌字），因此不能用作标识符。运算符（如 <literal>in</literal>、<literal>not</literal>、<literal>and</literal>、<literal>or</literal>）及后文中出现的内置类型名称亦为保留字。</paragraph>
                 <paragraph>若想深入了解关键字，可在 <reference name="GDScript 词法分析器" refuri="https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript_tokenizer.cpp">GDScript 词法分析器</reference><target ids="gdscript" names="gdscript\ 词法分析器" refuri="https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript_tokenizer.cpp"></target>中找到对于关键字的定义。</paragraph>
                 <table>
                     <tgroup cols="2">
@@ -269,7 +269,7 @@ func _init():
                                     <paragraph>super</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph>Resolves the scope of the parent method. See <reference name="Inheritance" refid="inheritance">Inheritance</reference>.</paragraph>
+                                    <paragraph>解析父类作用域内的方法，参见 <reference name="继承" refid="inheritance">继承</reference> 。</paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -341,7 +341,7 @@ func _init():
                                     <paragraph>await</paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph>Waits for a signal or a coroutine to finish. See <reference name="Awaiting signals or coroutines" refid="awaiting-signals-or-coroutines">Awaiting signals or coroutines</reference>.</paragraph>
+                                    <paragraph>等待信号或协程完成，参见<reference name="等待信号和协程" refid="awaiting-signals-or-coroutines">等待信号和协程</reference>。</paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -406,9 +406,7 @@ func _init():
             </section>
             <section ids="operators" names="operators 运算符">
                 <title>运算符</title>
-                <paragraph>The following is the list of supported operators and their precedence. All binary operators are <reference name="left-associative" refuri="https://en.wikipedia.org/wiki/Operator_associativity">left-associative</reference><target ids="left-associative" names="left-associative" refuri="https://en.wikipedia.org/wiki/Operator_associativity"></target>,
-                    including the <literal>**</literal> operator. This means that <literal>2 ** 2 ** 3</literal> is equal to <literal>(2 ** 2) ** 3</literal>. Use parentheses to explicitly specify precedence you need, for
-                    example <literal>2 ** (2 ** 3)</literal>. The ternary <literal>if/else</literal> operator is right-associative.</paragraph>
+                <paragraph>下列为 GDScript 所支持的运算符及其运算优先级。所有二进制运算符均为 <reference name="左结合运算符" refuri="https://en.wikipedia.org/wiki/Operator_associativity">左结合运算符</reference><target ids="id1" names="左结合运算符" refuri="https://en.wikipedia.org/wiki/Operator_associativity"></target> ，其中就包括 <literal>**</literal> ，即 <literal>2 ** 2 ** 3</literal> 等价于 <literal>(2 ** 2) ** 3</literal> 。为避免运算歧义，请使用括号来处理该运算的优先级，如 <literal>2 ** (2 ** 3)</literal> 。</paragraph>
                 <table>
                     <tgroup cols="2">
                         <colspec colwidth="39"></colspec>
@@ -462,7 +460,7 @@ func _init():
                                     <paragraph><literal>await x</literal></paragraph>
                                 </entry>
                                 <entry>
-                                    <paragraph><reference name="Awaiting signals or coroutines" refid="awaiting-signals-or-coroutines">Awaiting signals or coroutines</reference></paragraph>
+                                    <paragraph><reference name="等待信号或协程" refid="awaiting-signals-or-coroutines">等待信号或协程</reference></paragraph>
                                 </entry>
                             </row>
                             <row>
@@ -677,7 +675,7 @@ func _init():
                             <paragraph>运算符 <literal>%</literal> 仅适用于整型数值的取余运算，对于小数的取余运算，请使用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-fmod"><inline classes="std std-ref">fmod()</inline></reference> 方法。</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph>对于负值，<literal>%</literal> 运算符和 <literal>fmod()</literal> 函数会使用 <reference name="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation">截断算法</reference><target ids="id1" names="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation"></target> 进行运算，而非向负无穷大舍入，此时余数会带有符号（即余数可能为负）。如果你需要数学意义上的余数，请改用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-posmod"><inline classes="std std-ref">posmod()</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-fposmod"><inline classes="std std-ref">fposmod()</inline></reference> 函数。</paragraph>
+                            <paragraph>对于负值， <literal>%</literal> 运算符和 <literal>fmod()</literal> 函数会使用 <reference name="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation">截断算法</reference><target ids="id1" names="截断算法" refuri="https://en.wikipedia.org/wiki/Truncation"></target> 进行运算，而非向负无穷大舍入，此时余数会带有符号（即余数可能为负）。如果你需要数学意义上的余数，请改用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-posmod"><inline classes="std std-ref">posmod()</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-fposmod"><inline classes="std std-ref">fposmod()</inline></reference> 函数。</paragraph>
                         </list_item>
                         <list_item>
                             <paragraph><literal>==</literal> 和 <literal>!=</literal> 运算符在有些情况下允许比较不同类型的值（例如，<literal>1 == 1.0</literal> 的结果为真），但在其他情况下可能会发生运行时错误。若你不能确定操作数的类型，可使用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-same"><inline classes="std std-ref">is_same()</inline></reference> 函数来进行安全比较（但请注意，该函数对类型和引用更加严格）。要比较浮点数，请改用 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx()</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-method-is-zero-approx"><inline classes="std std-ref">is_zero_approx()</inline></reference> 函数。</paragraph>
@@ -961,28 +959,18 @@ func _init():
                 </bullet_list>
                 <paragraph>此外，在字符串中使用 <literal>\</literal> 后换行可以让斜杠后的文字自动换行，而无需在字符串中插入换行符。</paragraph>
                 <paragraph>使用某一种引号（如 <literal>"</literal>）构成的字符串，无需转义即可包含另一种引号（如 <literal>'</literal>），而三引号字符串在与其他字符串边缘不相邻的情况下，最多可避免连续两个同种引号的转义。</paragraph>
-                <paragraph><strong>Raw string literals</strong> always encode the string as it appears in the source code.
-                    This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
-                    however it does recognize <literal>\\</literal> and <literal>\"</literal> (<literal>\'</literal>) and replaces them with themselves.
-                    Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.</paragraph>
+                <paragraph><strong>原始字符串字面量</strong> 始终按照源代码中出现的方式对字符串进行编码，特别适用于正则表达式当中。原始字符串虽不处理转义序列，但可以识别 <literal>\\</literal> 和 <literal>\"</literal> （ <literal>\'</literal> ）等字符，并将其替换为其自身。一个字符串内可以含有一对相匹配的引号，但这些引号前面必须有一个反斜杠才可以让字符串包含它们。</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
 print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.</literal_block>
                 <note>
-                    <paragraph>Some strings cannot be represented using raw string literals: you cannot have an odd number
-                        of backslashes at the end of a string or have an unescaped opening quote inside the string.
-                        However, in practice this doesn't matter since you can use a different quote type
-                        or use concatenation with a regular string literal.</paragraph>
+                    <paragraph>而有些字符串却不能使用原始字符串字面量来表示：不能在字符串末尾有奇数个反斜杠，不能在字符串内部有未转义的开引号。但在实际应用中，这些问题并不重要，因为你可以通过使用不同类型的引号，或者与普通字符串字面量进行拼接，来解决这个问题。</paragraph>
                 </note>
                 <paragraph>GDScript 也支持 <reference internal="True" refuri="gdscript_format_string#doc-gdscript-printf"><inline classes="std std-ref">GDScript 格式字符串</inline></reference>。</paragraph>
             </section>
             <section ids="annotations" names="annotations 注解">
                 <title>注解</title>
-                <paragraph>Annotations are special tokens in GDScript that act as modifiers to a script or
-                    its code and may affect how the script is treated by the Godot engine or
-                    editor.</paragraph>
-                <paragraph>Every annotation starts with the <literal>@</literal> character and is specified by a name. A
-                    detailed description and example for each annotation can be found inside the
-                    <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript"><inline classes="std std-ref">GDScript class reference</inline></reference>.</paragraph>
+                <paragraph>注解是 GDScript 中的一类特殊标记，用来修饰脚本或脚本中的代码，影响 Godot 引擎或编辑器对该脚本或代码的所产生的效果。</paragraph>
+                <paragraph>每个注解均以 <literal>@</literal> 符号开头，加以注解名称而构成。有关注解的详细说明及其使用范例，请参考 <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript"><inline classes="std std-ref">GDScript class reference</inline></reference> 。</paragraph>
                 <paragraph>比如，可以将变量导出到编辑器中：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_range(1, 100, 1, "or_greater")
 var ranged_var: int = 50</literal_block>
@@ -1374,7 +1362,14 @@ var my_node := Sprite2D.new() # 'my_node' is of type 'Sprite2D'.</literal_block>
                             <paragraph>变量根据其静态类型，取值为 <literal>null</literal>（无类型变量和对象）或类型的默认值（<literal>int</literal>为 <literal>0</literal>、<literal>bool</literal>为<literal>false</literal>等）。</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph>根据脚本中变量的声明顺序，由上至下进行指定值的赋值。——<emphasis>（仅适用于派生自 ``Node`` 的类）</emphasis>如果变量由 <literal>@onready</literal> 注解修饰，则会推迟到第 5 步再初始化。</paragraph>
+                            <paragraph>The specified values are assigned in the order of the variables in the script,
+                                from top to bottom.</paragraph>
+                            <bullet_list bullet="-">
+                                <list_item>
+                                    <paragraph>(Only for <literal>Node</literal>-derived classes) If the <literal>@onready</literal> annotation is applied to a variable,
+                                        its initialization is deferred to step 5.</paragraph>
+                                </list_item>
+                            </bullet_list>
                         </list_item>
                         <list_item>
                             <paragraph>所有非 <literal>@onready</literal> 成员变量均完成定义时调用 <literal>_init()</literal> 方法。</paragraph>
@@ -1383,10 +1378,10 @@ var my_node := Sprite2D.new() # 'my_node' is of type 'Sprite2D'.</literal_block>
                             <paragraph>初始化场景和资源时，赋导出的值。</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph><emphasis>（仅适用于派生自 ``Node`` 的类）</emphasis>初始化 <literal>@onready</literal> 变量。</paragraph>
+                            <paragraph>(Only for <literal>Node</literal>-derived classes) <literal>@onready</literal> variables are initialized.</paragraph>
                         </list_item>
                         <list_item>
-                            <paragraph><emphasis>（仅适用于派生自 ``Node`` 的类）</emphasis>所有 <literal>@onready</literal> 变量均完成定义时调用 <literal>_ready()</literal> 方法。</paragraph>
+                            <paragraph>(Only for <literal>Node</literal>-derived classes) If defined, the <literal>_ready()</literal> method is called.</paragraph>
                         </list_item>
                     </enumerated_list>
                     <warning>
@@ -1580,7 +1575,9 @@ func empty_function(): pass</literal_block>
                 </note>
                 <section ids="referencing-functions" names="referencing\ functions 引用函数">
                     <title>引用函数</title>
-                    <paragraph>就 <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> 对象而言，函数是其第一类对象。通过函数名称来引用一个函数，会自动生成指向该函数的可调用体，而非调用该函数。这种操作可用于将函数作为参数传递。</paragraph>
+                    <paragraph>Functions are first-class values in terms of the <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> object.
+                        Referencing a function by name without calling it will automatically generate the proper
+                        callable. This can be used to pass functions as arguments.</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func map(arr: Array, function: Callable) -&gt; Array:
     var result = []
     for item in arr:
@@ -1593,38 +1590,72 @@ func add1(value: int) -&gt; int:
 func _ready() -&gt; void:
     var my_array = [1, 2, 3]
     var plus_one = map(my_array, add1)
-    print(plus_one) # Prints [2, 3, 4].</literal_block>
+    print(plus_one) # Prints `[2, 3, 4]`.</literal_block>
                     <note>
-                        <paragraph>可调用体<strong>必须</strong>使用 <literal>call</literal> 方法进行调用，不能直接使用 <literal>()</literal> 运算符。实现这种行为是为了避免影响直接函数调用的性能。</paragraph>
+                        <paragraph>Callables <strong>must</strong> be called with the <reference internal="True" refuri="../../../classes/class_callable#class-callable-method-call"><inline classes="std std-ref">call()</inline></reference> method.
+                            You cannot use the <literal>()</literal> operator directly. This behavior is implemented to avoid
+                            performance issues on direct function calls.</paragraph>
                     </note>
                 </section>
                 <section ids="lambda-functions" names="lambda\ functions lambda\ 函数">
                     <title>Lambda 函数</title>
-                    <paragraph>Lambda 函数允许声明不属于类的函数，直接创建 <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> 对象并将其赋值给变量，可以创建可传递的可调用体，同时又不会污染该类的作用范围，非常有用。</paragraph>
-                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func(x): print(x)
-lambda.call(42) # Prints "42"</literal_block>
-                    <paragraph>Lambda 函数还可用于代码调试：</paragraph>
+                    <paragraph>Lambda functions allow you to declare functions that do not belong to a class. Instead, a
+                        <reference internal="True" refuri="../../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference> object is created and assigned to a variable directly.
+                        This can be useful to create callables to pass around without polluting the class scope.</paragraph>
+                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func (x):
+    print(x)</literal_block>
+                    <paragraph>To call the created lambda you can use the <reference internal="True" refuri="../../../classes/class_callable#class-callable-method-call"><inline classes="std std-ref">call()</inline></reference> method:</paragraph>
+                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">lambda.call(42) # Prints `42`.</literal_block>
+                    <paragraph>Lambda functions can be named for debugging purposes (the name is displayed in the Debugger):</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func my_lambda(x):
     print(x)</literal_block>
-                    <paragraph>注意，若想要在 Lambda 函数中返回值，必须显式使用 <literal>return</literal> 关键字进行返回（即无法省略 <literal>return</literal>）</paragraph>
-                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func(x): return x ** 2
+                    <paragraph>You can specify type hints for lambda functions in the same way as for regular ones:</paragraph>
+                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda := func (x: int) -&gt; void:
+    print(x)</literal_block>
+                    <paragraph>Note that if you want to return a value from a lambda function, an explicit <literal>return</literal>
+                        is required (you can't omit <literal>return</literal>):</paragraph>
+                    <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var lambda = func (x): return x ** 2
 print(lambda.call(2)) # Prints `4`.</literal_block>
-                    <paragraph>局部变量是按值传递的，而Lambda 函数又会自动捕获其所在的函数体作用域。因此，这些局部变量即便在其所在的函数体作用域内发生更改，也不会影响其在 Lambda 函数中的效果：</paragraph>
+                    <paragraph>Lambda functions capture the local environment:</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var x = 42
-var my_lambda = func(): print(x)
-my_lambda.call() # Prints "42"
+var lambda = func ():
+    print(x) # Prints `42`.
+lambda.call()</literal_block>
+                    <warning>
+                        <paragraph>Local variables are captured by value once, when the lambda is created.
+                            So they won't be updated in the lambda if reassigned in the outer function:</paragraph>
+                        <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var x = 42
+var lambda = func (): print(x)
+lambda.call() # Prints `42`.
 x = "Hello"
-my_lambda.call() # Prints "42"</literal_block>
-                    <note>
-                        <paragraph>作用在 Lambda 函数体之外的变量值对该 Lambda 函数而言就像常量一样，如果你给变量声明了一个数组类型或字典类型的值，那么在 Lambda 函数的声明后面仍可修改这些值。</paragraph>
-                    </note>
+lambda.call() # Prints `42`.</literal_block>
+                        <paragraph>Also, a lambda cannot reassign an outer local variable. After exiting the lambda,
+                            the variable will be unchanged, because the lambda capture implicitly shadows it:</paragraph>
+                        <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var x = 42
+var lambda = func ():
+    print(x) # Prints `42`.
+    x = "Hello" # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+    print(x) # Prints `Hello`.
+lambda.call()
+print(x) # Prints `42`.</literal_block>
+                        <paragraph>However, if you use pass-by-reference data types (arrays, dictionaries, and objects),
+                            then the content changes are shared until you reassign the variable:</paragraph>
+                        <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = []
+var lambda = func ():
+    a.append(1)
+    print(a) # Prints `[1]`.
+    a = [2] # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+    print(a) # Prints `[2]`.
+lambda.call()
+print(a) # Prints `[1]`.</literal_block>
+                    </warning>
                 </section>
                 <section ids="static-functions" names="static\ functions 静态函数">
                     <title>静态函数</title>
                     <paragraph>函数可以声明为静态函数。静态函数不能访问实例成员变量，也不能使用 <literal>self</literal>，非常适用于创建辅助函数库：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">static func sum2(a, b):
     return a + b</literal_block>
-                    <paragraph>Lambda 函数不可声明为静态函数。</paragraph>
+                    <paragraph>Lambda functions cannot be declared static.</paragraph>
                     <paragraph>见<reference name="静态变量" refid="static-variables">静态变量</reference>和<reference name="静态构造函数" refid="static-constructor">静态构造函数</reference>。</paragraph>
                 </section>
             </section>
@@ -1687,7 +1718,7 @@ var fruit_alt = \
         else "banana" if count == 0 \
         else "orange"
 print(fruit_alt)  # banana</literal_block>
-                    <paragraph>你可能还想要检查某个值是否包含在某些容器之中，可以通过 <literal>if</literal> 语句与 <literal>in</literal> 操作符组合来实现：</paragraph>
+                    <paragraph>你可能还想要检查某个值是否包含在某些容器之中，可以通过 <literal>if</literal> 语句与 <literal>in</literal> 运算符组合来实现：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Check if a letter is in a string.
 var text = "abc"
 if 'b' in text: print("The string contains b")
@@ -1973,11 +2004,7 @@ class_name Item
 extends Node</literal_block>
                 <image candidates="{'*': 'tutorials/scripting/gdscript/img/class_name_editor_register_example.png'}" uri="tutorials/scripting/gdscript/img/class_name_editor_register_example.png"></image>
                 <tip>
-                    <paragraph>SVG images that are used as custom node icons should have the
-                        <strong>Editor &gt; Scale With Editor Scale</strong> and <strong>Editor &gt; Convert Icons With Editor Theme</strong>
-                        <reference internal="True" refuri="../../assets_pipeline/importing_images#doc-importing-images-editor-import-options"><inline classes="std std-ref">import options</inline></reference> enabled. This allows
-                        icons to follow the editor's scale and theming settings if the icons are designed with
-                        the same color palette as Godot's own icons.</paragraph>
+                    <paragraph>SVG图片在用作自定义节点图标时，需要在该图片的 <reference internal="True" refuri="../../assets_pipeline/importing_images#doc-importing-images-editor-import-options"><inline classes="std std-ref">导入选项</inline></reference> 中将 <strong>编辑器 &gt; 依照编辑器比例缩放</strong> 与 <strong>编辑器 &gt; 依照编辑器主题转换颜色</strong> 勾选，这样才能让有跟 Godot 图标色调相同的图标在编辑器中能够同步其缩放、同步其主题设置。</paragraph>
                 </tip>
                 <paragraph>这是一个类文件示例：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Saved as a file named 'character.gd'.
@@ -2057,7 +2084,11 @@ func dont_override():
                 </section>
                 <section ids="class-constructor" names="class\ constructor 类的构造函数">
                     <title>类的构造函数</title>
-                    <paragraph>类的构造函数在类进行初始化时调用，在 GDScript 中构造函数为虚函数 <literal>_init</literal> 。若想要在构造函数中调用父类构造函数，同样可以使用 <literal>super</literal> 语法。需要注意：每个类都有一个隐式构造函数，始终由引擎调用，用于定义类变量的默认值，而 <literal>super</literal> 则用于显式调用构造函数：</paragraph>
+                    <paragraph>The class constructor, called on class instantiation, is named <literal>_init</literal>. If you
+                        want to call the base class constructor, you can also use the <literal>super</literal> syntax.
+                        Note that every class has an implicit constructor that is always called
+                        (defining the default values of class variables). <literal>super</literal> is used to call the
+                        explicit constructor:</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _init(arg):
    super("some_default", arg) # Call the custom base constructor.</literal_block>
                     <paragraph>通过示例可以更好地说明这一点。考虑一下这种情况：</paragraph>
@@ -2134,10 +2165,7 @@ func _init():
                 </section>
                 <section ids="classes-as-resources doc-gdscript-classes-as-resources" names="classes\ as\ resources 类作为资源 doc_gdscript_classes_as_resources">
                     <title>类作为资源</title>
-                    <paragraph>Classes stored as files are treated as <reference internal="True" refuri="../../../classes/class_gdscript#class-gdscript"><inline classes="std std-ref">GDScripts</inline></reference>. They
-                        must be loaded from disk to access them in other classes. This is done using
-                        either the <literal>load</literal> or <literal>preload</literal> functions (see below). Instancing of a loaded
-                        class resource is done by calling the <literal>new</literal> function on the class object:</paragraph>
+                    <paragraph>存储为文件的类将会视为 <inline classes="xref std std-ref">GDScript &lt;class_GDScript&gt;`资源，且必须从磁盘加载这些文件之后才能在其他类中访问它们，可以通过调用 ``load`</inline> 或 <literal>preload</literal> 函数来完成（后述）。一个加载的类资源通过调用类对象上的 <literal>new</literal> 函数来完成实例化：</paragraph>
                     <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># Load the class resource when calling load().
 var MyClass = load("myclass.gd")
 
@@ -2169,7 +2197,10 @@ var seconds: int:
     set(value):
         milliseconds = value * 1000</literal_block>
                 <note>
-                    <paragraph>与之前的 Godot 版本中的 <literal>setget</literal> 不同，即使在同一个类中进行访问（不管是否添加 <literal>self.</literal> 前缀），也<strong>始终</strong>会调用属性的 setter 和 getter（例外见下文） 。这样访问属性时的行为就一致了。如果你需要直接访问实际的值，请再添加一个变量用于直接访问，然后在属性相关的代码中使用这个变量的变量名。</paragraph>
+                    <paragraph>Unlike <literal>setget</literal> in previous Godot versions, <literal>set</literal> and <literal>get</literal> methods are <strong>always</strong> called (except as noted below),
+                        even when accessed inside the same class (with or without prefixing with <literal>self.</literal>). This makes the behavior
+                        consistent. If you need direct access to the value, use another variable for direct access and make the property
+                        code use that name.</paragraph>
                 </note>
                 <section ids="alternative-syntax" names="alternative\ syntax 替代方案（具名\ setter/getter\ 函数）">
                     <title>替代方案（具名 setter/getter 函数）</title>
@@ -2340,8 +2371,8 @@ func _on_Character_health_changed(old_value, new_value, character_name):
     var damage = old_value - new_value
     label.text += character_name + " took " + str(damage) + " damage."</literal_block>
             </section>
-            <section ids="awaiting-signals-or-coroutines" names="awaiting\ signals\ or\ coroutines">
-                <title>Awaiting signals or coroutines</title>
+            <section ids="awaiting-signals-or-coroutines" names="awaiting\ signals\ or\ coroutines 等待信号或协程函数">
+                <title>等待信号或协程函数</title>
                 <paragraph><literal>await</literal> 关键字可以用来创建<reference name="协程" refuri="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B">协程</reference><target ids="id1" names="协程" refuri="https://zh.wikipedia.org/wiki/%E5%8D%8F%E7%A8%8B"></target>，会等待某个信号发出之后再继续执行下面的代码。对信号或者对同为协程的函数调用使用 <literal>await</literal> 关键字会立即将控制权返回给调用方。发出信号时（或者调用的协程函数完成时），就会从停止的地方继续往下执行代码。</paragraph>
                 <paragraph>例如，要暂停代码执行，直到到用户按下某个按钮后才能继续往下执行剩余代码，你就可以这样写：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func wait_confirmation():
@@ -2349,7 +2380,7 @@ func _on_Character_health_changed(old_value, new_value, character_name):
     await $Button.button_up # Waits for the button_up signal from Button node.
     print("User confirmed")
     return true</literal_block>
-                <paragraph>In this case, the <literal>wait_confirmation</literal> becomes a coroutine, which means that the caller also needs to await it:</paragraph>
+                <paragraph>此时 <literal>wait_confirmation</literal> 就会变成协程函数，调用方也需要对它进行等待操作：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func request_confirmation():
     print("Will ask the user")
     var confirmed = await wait_confirmation()
@@ -2371,7 +2402,7 @@ func _on_Character_health_changed(old_value, new_value, character_name):
 
 func get_five():
     return 5</literal_block>
-                <paragraph>This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal:</paragraph>
+                <paragraph>也就是说，如果从非协程函数中返回信号，那么调用方就会等待那个信号：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func get_signal():
     return $Button.button_up
 

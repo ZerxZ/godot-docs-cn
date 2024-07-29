@@ -273,6 +273,22 @@ enum **BakeError**: :ref:`🔗<enum_LightmapGI_BakeError>`
 
 光照贴图烘焙失败，因为最大纹理尺寸太小，无法容纳某些被标记为烘焙的网格。
 
+.. _class_LightmapGI_constant_BAKE_ERROR_LIGHTMAP_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_LIGHTMAP_TOO_SMALL** = ``10``
+
+Lightmap baking failed as the lightmap is too small.
+
+.. _class_LightmapGI_constant_BAKE_ERROR_ATLAS_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_ATLAS_TOO_SMALL** = ``11``
+
+Lightmap baking failed as the lightmap was unable to fit into an atlas.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -407,7 +423,7 @@ enum **EnvironmentMode**: :ref:`🔗<enum_LightmapGI_EnvironmentMode>`
 - |void| **set_denoiser_range**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_denoiser_range**\ (\ )
 
-The distance in pixels from which the denoiser samples. Lower values preserve more details, but may give blotchy results if the lightmap quality is not high enough. Only effective if :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` is ``true`` and :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>` is set to JNLM.
+降噪器采样的像素距离。较低的值会保留更多细节，但如果光照贴图质量不够高，则可能会产生斑点结果。仅当 :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` 为 ``true`` 且 :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>` 被设置为 JNLM 时有效。
 
 .. rst-class:: classref-item-separator
 
@@ -658,10 +674,10 @@ The distance in pixels from which the denoiser samples. Lower values preserve mo
 \ **注意：**\ :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>` 仅在 :ref:`bounces<class_LightmapGI_property_bounces>` 被设置为大于或等于 ``1`` 的值时才有效。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

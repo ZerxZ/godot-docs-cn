@@ -67,13 +67,15 @@
             <paragraph>要在 Windows 上禁用此覆盖，请在 NVIDIA 控制面板中将图形驱动程序设置恢复为默认值。</paragraph>
             <paragraph>要在 Linux 上禁用此覆盖，请打开 <literal>nvidia-settings</literal>，转到 <strong>X Screen 0 &gt; OpenGL Settings</strong>，然后取消选中 <strong>Enable Graphics API Visual Indicator</strong>。</paragraph>
         </section>
-        <section ids="a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window" names='a\ microphone\ or\ "refresh"\ icon\ appears\ in\ the\ bottom-right\ corner\ of\ the\ project\ manager\ and\ editor\ window'>
-            <title>A microphone or "refresh" icon appears in the bottom-right corner of the Project Manager and editor window</title>
-            <paragraph>This is caused by the NVIDIA graphics driver injecting an overlay to display
-                instant replay information on ShadowPlay recording. This overlay can only be
-                seen on Windows, as Linux does not have support for ShadowPlay.</paragraph>
-            <paragraph>To disable this overlay, press <literal classes="kbd">Alt + Z</literal> (default shortcut for the NVIDIA overlay)
-                and disable <strong>Settings &gt; HUD Layout &gt; Status Indicator</strong> in the NVIDIA overlay.</paragraph>
+        <section ids="a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window" names='a\ microphone\ or\ "refresh"\ icon\ appears\ in\ the\ bottom-right\ corner\ of\ the\ project\ manager\ and\ editor\ window 在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标'>
+            <title>在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</title>
+            <paragraph>这是由于NVIDIA图形驱动程序注入覆盖以显示ShadowPlay录制的即时重播信息造成的。此覆盖只能在Windows上看到，因为Linux不支持ShadowPlay。</paragraph>
+            <paragraph>要禁用此覆盖，请按：kbd: <problematic ids="id2" refid="id1">`</problematic>Alt+Z`（NVIDIA覆盖的默认快捷方式）并在NVIDIA覆盖中禁用**设置&gt;HUD布局&gt;状态指示器。</paragraph>
+            <paragraph>Alternatively, you can install the <title_reference>new NVIDIA app
+                    &lt;https://www.nvidia.com/en-us/software/nvidia-app/&gt;</title_reference> which replaces GeForce
+                Experience and does not suffer from this issue. Unlike GeForce Experience, the
+                NVIDIA app draws the replay indicator in the corner of the screen as opposed to
+                the corner of each window.</paragraph>
         </section>
         <section ids="the-editor-or-project-appears-overly-sharp-or-blurry" names="the\ editor\ or\ project\ appears\ overly\ sharp\ or\ blurry 编辑器或项目显示得过于锐利或模糊">
             <title>编辑器或项目显示得过于锐利或模糊</title>

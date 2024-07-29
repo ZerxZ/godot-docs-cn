@@ -72,15 +72,15 @@ ViewportTexture
 - |void| **set_viewport_path_in_scene**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene**\ (\ )
 
-The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the local scene root (see :ref:`Resource.get_local_scene<class_Resource_method_get_local_scene>`), **not** to the nodes that use this texture.
+要显示的 :ref:`Viewport<class_Viewport>` 节点的路径。相对于本地场景的根节点（见 :ref:`Resource.get_local_scene<class_Resource_method_get_local_scene>`\ ），\ **并非**\ 相对于使用该纹理的节点。
 
-\ **Note:** In the editor, this path is automatically updated when the target viewport or one of its ancestors is renamed or moved. At runtime, this path may not automatically update if the scene root cannot be found.
+\ **注意：**\ 在编辑器中，目标视口或其祖级节点发生重命名或移动时会自动更新这个路径。在运行时，该路径可能无法自动更新，因为无法确定场景的根节点。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

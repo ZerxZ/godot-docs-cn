@@ -21,7 +21,7 @@ Joint3D
 描述
 ----
 
-Abstract base class for all joints in 3D physics. 3D joints bind together two physics bodies (:ref:`node_a<class_Joint3D_property_node_a>` and :ref:`node_b<class_Joint3D_property_node_b>`) and apply a constraint. If only one body is defined, it is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
+3D 物理中所有关节的抽象基类。3D 关节将两个物理体（\ :ref:`node_a<class_Joint3D_property_node_a>` 和 :ref:`node_b<class_Joint3D_property_node_b>`\ ）绑定在一起并应用约束。如果仅定义一个物体，则将其附加到固定的 :ref:`StaticBody3D<class_StaticBody3D>` 上，而没有碰撞形状。
 
 .. rst-class:: classref-introduction-group
 
@@ -80,7 +80,7 @@ Abstract base class for all joints in 3D physics. 3D joints bind together two ph
 - |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
-If ``true``, the two bodies bound together do not collide with each other.
+如果为 ``true``\ ，则绑定在一起的两个物体不会相互碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -97,9 +97,9 @@ If ``true``, the two bodies bound together do not collide with each other.
 - |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
-Path to the first node (A) attached to the joint. The node must inherit :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+连接到关节的第一个节点（A）的路径。该节点必须继承自 :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ 。
 
-If left empty and :ref:`node_b<class_Joint3D_property_node_b>` is set, the body is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
+如果留空且设置了 :ref:`node_b<class_Joint3D_property_node_b>`\ ，则该物体将连接到固定的 :ref:`StaticBody3D<class_StaticBody3D>`\ ，且没有碰撞形状。
 
 .. rst-class:: classref-item-separator
 
@@ -116,9 +116,9 @@ If left empty and :ref:`node_b<class_Joint3D_property_node_b>` is set, the body 
 - |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
-Path to the second node (B) attached to the joint. The node must inherit :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+连接到关节的第二个节点（B）的路径。该节点必须继承自 :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ 。
 
-If left empty and :ref:`node_a<class_Joint3D_property_node_a>` is set, the body is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
+如果留空且设置了 :ref:`node_a<class_Joint3D_property_node_a>`\ ，则该物体将连接到固定的 :ref:`StaticBody3D<class_StaticBody3D>`\ ，且没有碰撞形状。
 
 .. rst-class:: classref-item-separator
 
@@ -152,13 +152,13 @@ If left empty and :ref:`node_a<class_Joint3D_property_node_a>` is set, the body 
 
 :ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Joint3D_method_get_rid>`
 
-Returns the joint's internal :ref:`RID<class_RID>` from the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+从 :ref:`PhysicsServer3D<class_PhysicsServer3D>` 返回关节的内部 :ref:`RID<class_RID>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

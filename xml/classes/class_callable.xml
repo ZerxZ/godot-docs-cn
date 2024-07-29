@@ -69,7 +69,7 @@ tween.tween_callback(dictionary.clear)
 # 这会有效。
 tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="构造函数">
@@ -119,7 +119,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">bind</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">bind</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -135,7 +135,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">call</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">call</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -143,7 +143,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><abbreviation explanation="无返回值。">void</abbreviation></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-call-deferred"><inline classes="std std-ref">call_deferred</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-call-deferred"><inline classes="std std-ref">call_deferred</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -151,7 +151,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-callv"><inline classes="std std-ref">callv</inline></reference>(arguments: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-callv"><inline classes="std std-ref">callv</inline></reference>(arguments: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -167,7 +167,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-argument-count"><inline classes="std std-ref">get_argument_count</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-argument-count"><inline classes="std std-ref">get_argument_count</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -175,7 +175,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-bound-arguments"><inline classes="std std-ref">get_bound_arguments</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-bound-arguments"><inline classes="std std-ref">get_bound_arguments</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -183,7 +183,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">get_bound_arguments_count</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">get_bound_arguments_count</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -191,7 +191,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-method"><inline classes="std std-ref">get_method</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-method"><inline classes="std std-ref">get_method</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -199,7 +199,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-object"><inline classes="std std-ref">get_object</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-object"><inline classes="std std-ref">get_object</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -207,7 +207,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-get-object-id"><inline classes="std std-ref">get_object_id</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-get-object-id"><inline classes="std std-ref">get_object_id</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -215,7 +215,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-hash"><inline classes="std std-ref">hash</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-hash"><inline classes="std std-ref">hash</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -223,7 +223,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-is-custom"><inline classes="std std-ref">is_custom</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-is-custom"><inline classes="std std-ref">is_custom</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -231,7 +231,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-is-null"><inline classes="std std-ref">is_null</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-is-null"><inline classes="std std-ref">is_null</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -239,7 +239,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-is-standard"><inline classes="std std-ref">is_standard</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-is-standard"><inline classes="std std-ref">is_standard</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -247,7 +247,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-is-valid"><inline classes="std std-ref">is_valid</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-is-valid"><inline classes="std std-ref">is_valid</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -255,7 +255,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><abbreviation explanation="无返回值。">void</abbreviation></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-rpc"><inline classes="std std-ref">rpc</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-rpc"><inline classes="std std-ref">rpc</inline></reference>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -263,7 +263,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><abbreviation explanation="无返回值。">void</abbreviation></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-rpc-id"><inline classes="std std-ref">rpc_id</inline></reference>(peer_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, ...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-rpc-id"><inline classes="std std-ref">rpc_id</inline></reference>(peer_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, ...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -271,15 +271,15 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
                                 <paragraph><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">unbind</inline></reference>(argcount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">unbind</inline></reference>(argcount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id4" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id4" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="25"></colspec>
@@ -323,7 +323,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-callable-method-bind"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-bind" names="class_callable_method_bind"><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference> <strong>bind</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-bind" names="class_callable_method_bind"><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference> <strong>bind</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 的副本，绑定其中的一个或多个参数。调用时，被绑定的参数在提供给 <reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">call</inline></reference> 的参数<emphasis>之后</emphasis>传递。另见 <reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">unbind</inline></reference>。</paragraph>
             <paragraph><strong>注意：</strong>这个方法与其他类似方法链式调用时，参数列表的修改顺序是从右至左的。</paragraph>
             <transition classes="classref-item-separator"></transition>
@@ -333,11 +333,11 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             <paragraph><strong>注意：</strong>这个方法与其他类似方法链式调用时，参数列表的修改顺序是从右至左的。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-call"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-call" names="class_callable_method_call"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>call</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-call" names="class_callable_method_call"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>call</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>调用该 <strong>Callable</strong> 所代表的方法。可以传递参数，必须与该方法的签名相匹配。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-call-deferred"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-call-deferred" names="class_callable_method_call_deferred"><abbreviation explanation="无返回值。">void</abbreviation> <strong>call_deferred</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-call-deferred"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-call-deferred" names="class_callable_method_call_deferred"><abbreviation explanation="无返回值。">void</abbreviation> <strong>call_deferred</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-call-deferred"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>使用延迟模式调用该 <strong>Callable</strong> 所代表的方法，即在当前帧的末尾调用。可以传递参数，必须与该方法的签名相匹配。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -359,7 +359,7 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             <paragraph>另见 <reference internal="True" refuri="class_object#class-object-method-call-deferred"><inline classes="std std-ref">Object.call_deferred</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-callv"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-callv" names="class_callable_method_callv"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>callv</strong>(arguments: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-callv"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-callv" names="class_callable_method_callv"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>callv</strong>(arguments: <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-callv"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>调用该 <strong>Callable</strong> 所代表的方法。与 <reference internal="True" refid="class-callable-method-call"><inline classes="std std-ref">call</inline></reference> 不同，这个方法需要所有参数都放在 <literal>arguments</literal> <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> 之中。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-create"></target>
@@ -368,36 +368,36 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             <paragraph><strong>注意：</strong>该方法对于 <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> 类型始终是必需的，因为属性语法被用于访问其条目。当事先未知 <literal>variant</literal> 的类型时（对于多态），你也可以使用该方法。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-argument-count"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-argument-count" names="class_callable_method_get_argument_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_argument_count</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-argument-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-argument-count" names="class_callable_method_get_argument_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_argument_count</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-argument-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 应接受的所有参数的数量，包括可选参数。也就是说，结果中会<emphasis>减去</emphasis>使用 <reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">bind</inline></reference> 绑定的参数、<emphasis>加上</emphasis>使用 <reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">unbind</inline></reference> 解除绑定的参数。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-bound-arguments"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-bound-arguments" names="class_callable_method_get_bound_arguments"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>get_bound_arguments</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-bound-arguments"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-bound-arguments" names="class_callable_method_get_bound_arguments"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>get_bound_arguments</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-bound-arguments"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回绑定的参数（只要 <reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">get_bound_arguments_count</inline></reference> 大于零）或者空数组（如果 <reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">get_bound_arguments_count</inline></reference> 小于等于零）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-bound-arguments-count"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-bound-arguments-count" names="class_callable_method_get_bound_arguments_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_bound_arguments_count</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-bound-arguments-count" names="class_callable_method_get_bound_arguments_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_bound_arguments_count</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-bound-arguments-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回通过成功调用 <reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">bind</inline></reference> 或 <reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">unbind</inline></reference> 绑定（或解绑）参数的总数。如果解绑参数的总数比绑定参数大，则这个函数的返回值小于零。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-method"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-method" names="class_callable_method_get_method"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_method</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-method"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-method" names="class_callable_method_get_method"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_method</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-method"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 所代表的方法的名称。如果该可调用体是 GDScript lambda 函数，则返回该函数的名称或 <literal>"&lt;anonymous lambda&gt;"</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-object"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-object" names="class_callable_method_get_object"><reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference> <strong>get_object</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-object"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-object" names="class_callable_method_get_object"><reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference> <strong>get_object</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-object"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 所调用的对象。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-get-object-id"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-get-object-id" names="class_callable_method_get_object_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_object_id</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-object-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-get-object-id" names="class_callable_method_get_object_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_object_id</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-get-object-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 中对象的 ID（见 <reference internal="True" refuri="class_object#class-object-method-get-instance-id"><inline classes="std std-ref">Object.get_instance_id</inline></reference>）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-hash"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-hash" names="class_callable_method_hash"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>hash</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-hash"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-hash" names="class_callable_method_hash"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>hash</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-hash"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 <strong>Callable</strong> 对象的 32 位哈希值。</paragraph>
             <paragraph><strong>注意：</strong>内容相同的 <strong>Callable</strong> 哈希值始终相同。反之则不然，返回的哈希值相同<emphasis>并不</emphasis>意味着可调用体相等，因为不同的可调用体可能由于哈希冲突而具有相同的哈希值。引擎在 <reference internal="True" refid="class-callable-method-hash"><inline classes="std std-ref">hash</inline></reference> 中使用 32 位哈希算法。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-is-custom"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-is-custom" names="class_callable_method_is_custom"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_custom</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-custom"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-is-custom" names="class_callable_method_is_custom"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_custom</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-custom"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>Callable</strong> 是自定义可调用对象，则返回 <literal>true</literal>。使用自定义可调用对象：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -415,27 +415,27 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             </bullet_list>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-is-null"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-is-null" names="class_callable_method_is_null"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_null</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-null"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-is-null" names="class_callable_method_is_null"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_null</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-null"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>Callable</strong> 没有调用方法的目标，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-is-standard"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-is-standard" names="class_callable_method_is_standard"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_standard</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-standard"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-is-standard" names="class_callable_method_is_standard"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_standard</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-standard"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该 <strong>Callable</strong> 为标准可调用体，则返回 <literal>true</literal>。这个方法与 <reference internal="True" refid="class-callable-method-is-custom"><inline classes="std std-ref">is_custom</inline></reference> 相对。如果该可调用体为 lambda 函数，则返回 <literal>false</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-is-valid"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-is-valid" names="class_callable_method_is_valid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_valid</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-valid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-is-valid" names="class_callable_method_is_valid"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_valid</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-is-valid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该可调用体的对象存在，且分配了有效的方法名，或者为自定义可调用体，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-rpc"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-rpc" names="class_callable_method_rpc"><abbreviation explanation="无返回值。">void</abbreviation> <strong>rpc</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-rpc"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-rpc" names="class_callable_method_rpc"><abbreviation explanation="无返回值。">void</abbreviation> <strong>rpc</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-rpc"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>在所有已连接的对等体上执行 RPC（Remote Procedure Call，远程过程调用）。用于多人游戏，一般不可用，除非所调用的函数有 <emphasis>RPC</emphasis> 标记（使用 <reference internal="True" refuri="class_@gdscript#class-gdscript-annotation-rpc"><inline classes="std std-ref">@GDScript.@rpc</inline></reference> 或 <reference internal="True" refuri="class_node#class-node-method-rpc-config"><inline classes="std std-ref">Node.rpc_config</inline></reference>）。在不支持的方法上调用该方法会导致出错。见 <reference internal="True" refuri="class_node#class-node-method-rpc"><inline classes="std std-ref">Node.rpc</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-rpc-id"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-rpc-id" names="class_callable_method_rpc_id"><abbreviation explanation="无返回值。">void</abbreviation> <strong>rpc_id</strong>(peer_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, ...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-rpc-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-rpc-id" names="class_callable_method_rpc_id"><abbreviation explanation="无返回值。">void</abbreviation> <strong>rpc_id</strong>(peer_id: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, ...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-rpc-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>在指定的对等体 ID（请参阅多人游戏文档）上执行 RPC（Remote Procedure Call，远程过程调用）。用于多人游戏，一般不可用，除非所调用的函数有 <emphasis>RPC</emphasis> 标记（使用 <reference internal="True" refuri="class_@gdscript#class-gdscript-annotation-rpc"><inline classes="std std-ref">@GDScript.@rpc</inline></reference> 或 <reference internal="True" refuri="class_node#class-node-method-rpc-config"><inline classes="std std-ref">Node.rpc_config</inline></reference>）。在不支持的方法上调用该方法会导致出错。见 <reference internal="True" refuri="class_node#class-node-method-rpc-id"><inline classes="std std-ref">Node.rpc_id</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-callable-method-unbind"></target>
-            <paragraph classes="classref-method" ids="class-callable-method-unbind" names="class_callable_method_unbind"><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference> <strong>unbind</strong>(argcount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-callable-method-unbind" names="class_callable_method_unbind"><reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference> <strong>unbind</strong>(argcount: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-callable-method-unbind"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回这个 <strong>Callable</strong> 的副本，解绑了一些参数。换句话说，调用新的可调用体时，用户提供的最后几个参数会被忽略，忽略几个由 <literal>argcount</literal> 决定。剩余的参数会被传递给该可调用体。这样传入的参数就能够比原本可调用体所能处理的参数要多，例如带有固定数量参数的信号。另见 <reference internal="True" refid="class-callable-method-bind"><inline classes="std std-ref">bind</inline></reference>。</paragraph>
             <paragraph><strong>注意：</strong>这个方法与其他类似方法链式调用时，参数列表的修改顺序是从右至左的。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _ready():
@@ -443,8 +443,8 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
     foo.bind(3, 4).unbind(1).call(1, 2) # 调用 foo(1, 3, 4)，注意改动的不是 bind 中的参数。</literal_block>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id7" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id7" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-callable-operator-neq-callable"></target>
             <paragraph classes="classref-operator" ids="class-callable-operator-neq-callable" names="class_callable_operator_neq_callable"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference>) <reference internal="True" refid="class-callable-operator-neq-callable"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个 <strong>Callable</strong> 调用的目标不同，则返回 <literal>true</literal>。</paragraph>
@@ -453,12 +453,12 @@ tween.tween_callback(Callable.create(dictionary, "clear"))</literal_block>
             <paragraph classes="classref-operator" ids="class-callable-operator-eq-callable" names="class_callable_operator_eq_callable"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator ==</strong>(right: <reference internal="True" refid="class-callable"><inline classes="std std-ref">Callable</inline></reference>) <reference internal="True" refid="class-callable-operator-eq-callable"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个 <strong>Callable</strong> 调用的自定义目标相同，则返回 <literal>true</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

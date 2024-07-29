@@ -277,7 +277,7 @@ enum **AnimationCallbackModeDiscrete**: :ref:`🔗<enum_AnimationMixer_Animation
 
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT** = ``0``
 
-An :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track value takes precedence when blending :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values.
+将 :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` 或 :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` 轨道值与 :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 轨道值混合时，\ :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 轨道值优先。
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE:
 
@@ -285,7 +285,7 @@ An :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` tr
 
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE** = ``1``
 
-An :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track value takes precedence when blending the :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` or :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` track values and the :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track values. This is the default behavior for :ref:`AnimationPlayer<class_AnimationPlayer>`.
+将 :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` 或 :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` 轨道值与 :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 轨道值混合时，\ :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` 或 :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>` 轨道值优先。这是 :ref:`AnimationPlayer<class_AnimationPlayer>` 的默认行为。
 
 .. _class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS:
 
@@ -293,9 +293,9 @@ An :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>
 
 :ref:`AnimationCallbackModeDiscrete<enum_AnimationMixer_AnimationCallbackModeDiscrete>` **ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS** = ``2``
 
-Always treat the :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` track value as :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` with :ref:`Animation.INTERPOLATION_NEAREST<class_Animation_constant_INTERPOLATION_NEAREST>`. This is the default behavior for :ref:`AnimationTree<class_AnimationTree>`.
+在和 :ref:`Animation.INTERPOLATION_NEAREST<class_Animation_constant_INTERPOLATION_NEAREST>` 混合时，始终将 :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 轨道值视为 :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>`\ 。这是 :ref:`AnimationTree<class_AnimationTree>` 的默认行为。
 
-If a value track has non-numeric type key values, it is internally converted to use :ref:`ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE>` with :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>`.
+如果值轨道具有非数字类型键值，则在和 :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 混合时，会在内部转换为使用 :ref:`ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -416,7 +416,7 @@ If a value track has non-numeric type key values, it is internally converted to 
 
 如果为 ``false``\ ，则混合不会使用确定性算法。总权重将归一化且始终为 ``1.0``\ 。如果混合动画之间的轨道数量不同，则不会对缺少轨道的动画执行任何操作。
 
-\ ** 注意：** 在 :ref:`AnimationTree<class_AnimationTree>` 中，与 :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>` 、 :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>` 、 :ref:`AnimationNodeSub2<class_AnimationNodeSub2>` 或权重大于 ``1.0`` 混合可能产生意想不到的结果。
+\ **注意：**\ 在 :ref:`AnimationTree<class_AnimationTree>` 中，与 :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>` 、 :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>` 、 :ref:`AnimationNodeSub2<class_AnimationNodeSub2>` 或权重大于 ``1.0`` 混合可能产生意想不到的结果。
 
 例如，如果 :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>` 混合了两个取值为 ``1.0`` 的节点，则总权重为 ``2.0``\ ，但它将被归一化使总权重保持 ``1.0``\ ，且结果将等于取值为 ``0.5`` 的 :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`\ 。
 
@@ -454,9 +454,9 @@ If a value track has non-numeric type key values, it is internally converted to 
 - |void| **set_root_motion_track**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_root_motion_track**\ (\ )
 
-用于根部运动的动画轨道的路径。路径必须是指向节点的场景树有效路径，必须从将实现动画的节点的父节点开始指定。要指定控件属性或骨骼的轨道，请在路径后附加其名称，用 ``":"`` 隔开。例如，\ ``"character/skeleton:ankle"`` 或 ``"character/mesh:transform/local"``\ 。
+The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. The :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` uses the same format as :ref:`Animation.track_set_path<class_Animation_method_track_set_path>`, but note that a bone must be specified.
 
-如果轨道的类型是 :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`\ 、\ :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`\ 、或者 :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>`\ ，那么将取消视觉上的变换，其动画看起来将是留在原地。另见 :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`\ 、\ :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`\ 、\ :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>`\ 、\ :ref:`RootMotionView<class_RootMotionView>`\ 。
+If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`, or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>`, and :ref:`RootMotionView<class_RootMotionView>`.
 
 .. rst-class:: classref-item-separator
 
@@ -502,7 +502,19 @@ If a value track has non-numeric type key values, it is internally converted to 
 
 :ref:`Error<enum_@GlobalScope_Error>` **add_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`, library\: :ref:`AnimationLibrary<class_AnimationLibrary>`\ ) :ref:`🔗<class_AnimationMixer_method_add_animation_library>`
 
-将 ``library`` 添加到该动画播放器的键 ``name`` 下。
+Adds ``library`` to the animation player, under the key ``name``.
+
+AnimationMixer has a global library by default with an empty string as key. For adding an animation to the global library:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var global_library = mixer.get_animation_library("")
+    global_library.add_animation("animation_name", animation_resource)
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -745,13 +757,13 @@ If a value track has non-numeric type key values, it is internally converted to 
 
 :ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation_accumulator**\ (\ ) |const| :ref:`🔗<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`
 
-检索带有 :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` 的旋转轨道的混合值，作为一个 :ref:`Quaternion<class_Quaternion>`\ ，可以在其他地方使用。
+Retrieve the blended value of the rotation tracks with the :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
 
-这里必须正确地结合根运动位置，并且要考虑到旋转。参考 :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`\ 。
+This is necessary to apply the root motion position correctly, taking rotation into account. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`.
 
-并且，当你想重视动画的初始动画帧的值时，这会很有用。
+Also, this is useful in cases where you want to respect the initial key values of the animation.
 
-比如说，如果一个动画在上一帧只播放一个 ``Quaternion(0, 0, 0, 1)`` 动画帧，并且一个动画在下一帧只播放了一个动画帧的 ``Quaternion(0, 0.707, 0, 0.707)`` 时，它们相差的值可以这样求出：
+For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is played in the previous frame and then an animation with only one key ``Quaternion(0, 0.707, 0, 0.707)`` is played in the next frame, the difference can be calculated as follows:
 
 
 .. tabs::
@@ -763,14 +775,14 @@ If a value track has non-numeric type key values, it is internally converted to 
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_Quaternion_accumulator()
+        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_rotation_accumulator()
         var difference: Quaternion = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
         prev_root_motion_rotation_accumulator = current_root_motion_rotation_accumulator
-        transform.basis *= difference
+        transform.basis *=  Basis(difference)
 
 
 
-然而，当一个动画循环时，可能会得到一个意料之外的变化，所以这个只在一些简单情况下才有用。
+However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
 .. rst-class:: classref-item-separator
 
@@ -890,10 +902,10 @@ If a value track has non-numeric type key values, it is internally converted to 
 将与键 ``name`` 关联的 :ref:`AnimationLibrary<class_AnimationLibrary>` 移动到键 ``newname``\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

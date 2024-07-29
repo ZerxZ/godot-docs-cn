@@ -219,7 +219,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-default"><inline classes="std std-ref">get_option_default</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-default"><inline classes="std std-ref">get_option_default</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -227,7 +227,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-name"><inline classes="std std-ref">get_option_name</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-name"><inline classes="std std-ref">get_option_name</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -235,7 +235,7 @@
                                 <paragraph><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-values"><inline classes="std std-ref">get_option_values</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-filedialog-method-get-option-values"><inline classes="std std-ref">get_option_values</inline></reference>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -243,7 +243,7 @@
                                 <paragraph><reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-filedialog-method-get-selected-options"><inline classes="std std-ref">get_selected_options</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-filedialog-method-get-selected-options"><inline classes="std std-ref">get_selected_options</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -476,8 +476,8 @@
                     <paragraph><reference internal="True" refid="enum-filedialog-access"><inline classes="std std-ref">Access</inline></reference> <strong>get_access</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>文件系统的访问范围。见 <reference internal="True" refid="enum-filedialog-access"><inline classes="std std-ref">Access</inline></reference> 常量。</paragraph>
-            <paragraph><strong>警告：</strong>目前，在 Web 构建或沙盒 macOS 应用程序等沙盒环境中，FileDialog 无法访问主机文件系统。参见 <reference name="godot-proposals#1123" refuri="https://github.com/godotengine/godot-proposals/issues/1123">godot-proposals#1123</reference>。</paragraph>
+            <paragraph>The file system access scope. See <reference internal="True" refid="enum-filedialog-access"><inline classes="std std-ref">Access</inline></reference> constants.</paragraph>
+            <paragraph><strong>Warning:</strong> In Web builds, FileDialog cannot access the host file system. In sandboxed Linux and macOS environments, <reference internal="True" refid="class-filedialog-property-use-native-dialog"><inline classes="std std-ref">use_native_dialog</inline></reference> is automatically used to allow limited access to host file system.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-property-current-dir"></target>
             <paragraph classes="classref-property" ids="class-filedialog-property-current-dir" names="class_filedialog_property_current_dir"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>current_dir</strong> <reference internal="True" refid="class-filedialog-property-current-dir"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -489,7 +489,8 @@
                     <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_current_dir</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>文件对话框的当前工作目录。</paragraph>
+            <paragraph>The current working directory of the file dialog.</paragraph>
+            <paragraph><strong>Note:</strong> For native file dialogs, this property is only treated as a hint and may not be respected by specific OS implementations.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-property-current-file"></target>
             <paragraph classes="classref-property" ids="class-filedialog-property-current-file" names="class_filedialog_property_current_file"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>current_file</strong> <reference internal="True" refid="class-filedialog-property-current-file"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -574,7 +575,8 @@
                     <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_root_subfolder</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>如果非空，则给定的子文件夹将是该 <strong>FileDialog</strong> 的“根”，即用户将无法转到其父目录。</paragraph>
+            <paragraph>If non-empty, the given sub-folder will be "root" of this <strong>FileDialog</strong>, i.e. user won't be able to go to its parent directory.</paragraph>
+            <paragraph><strong>Note:</strong> This property is ignored by native file dialogs.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-property-show-hidden-files"></target>
             <paragraph classes="classref-property" ids="class-filedialog-property-show-hidden-files" names="class_filedialog_property_show_hidden_files"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>show_hidden_files</strong> = <literal>false</literal> <reference internal="True" refid="class-filedialog-property-show-hidden-files"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -586,7 +588,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_showing_hidden_files</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>如果为 <literal>true</literal>，对话框将显示出隐藏文件。</paragraph>
+            <paragraph>If <literal>true</literal>, the dialog will show hidden files.</paragraph>
+            <paragraph><strong>Note:</strong> This property is ignored by native file dialogs on Linux.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-property-use-native-dialog"></target>
             <paragraph classes="classref-property" ids="class-filedialog-property-use-native-dialog" names="class_filedialog_property_use_native_dialog"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>use_native_dialog</strong> = <literal>false</literal> <reference internal="True" refid="class-filedialog-property-use-native-dialog"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -598,8 +601,10 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_use_native_dialog</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>如果为 <literal>true</literal>，<reference internal="True" refid="class-filedialog-property-access"><inline classes="std std-ref">access</inline></reference> 被设置为<reference internal="True" refid="class-filedialog-constant-access-filesystem"><inline classes="std std-ref">ACCESS_FILESYSTEM</inline></reference>，并且它被当前的 <reference internal="True" refuri="class_displayserver#class-displayserver"><inline classes="std std-ref">DisplayServer</inline></reference> 支持，则将使用操作系统原生对话框而不是自定义对话框。</paragraph>
-            <paragraph><strong>注意：</strong>在 macOS 上，沙盒应用程序始终使用原生对话框来访问主机文件系统。</paragraph>
+            <paragraph>If <literal>true</literal>, <reference internal="True" refid="class-filedialog-property-access"><inline classes="std std-ref">access</inline></reference> is set to <reference internal="True" refid="class-filedialog-constant-access-filesystem"><inline classes="std std-ref">ACCESS_FILESYSTEM</inline></reference>, and it is supported by the current <reference internal="True" refuri="class_displayserver#class-displayserver"><inline classes="std std-ref">DisplayServer</inline></reference>, OS native dialog will be used instead of custom one.</paragraph>
+            <paragraph><strong>Note:</strong> On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.</paragraph>
+            <paragraph><strong>Note:</strong> On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use <reference internal="True" refuri="class_os#class-os-method-get-granted-permissions"><inline classes="std std-ref">OS.get_granted_permissions</inline></reference> to get a list of saved bookmarks.</paragraph>
+            <paragraph><strong>Note:</strong> Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id8" names="方法说明">
@@ -629,29 +634,31 @@
             <paragraph><strong>警告：</strong>这是一个必需的内部节点，删除和释放它可能会导致崩溃。如果你希望隐藏它或其任何子项，请使用它们的 <reference internal="True" refuri="class_canvasitem#class-canvasitem-property-visible"><inline classes="std std-ref">CanvasItem.visible</inline></reference> 属性。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-get-option-default"></target>
-            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-default" names="class_filedialog_method_get_option_default"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_option_default</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-default"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-default" names="class_filedialog_method_get_option_default"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_option_default</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-default"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回索引为 <literal>option</literal> 的 <reference internal="True" refuri="class_optionbutton#class-optionbutton"><inline classes="std std-ref">OptionButton</inline></reference> 或 <reference internal="True" refuri="class_checkbox#class-checkbox"><inline classes="std std-ref">CheckBox</inline></reference> 的默认值索引。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-get-option-name"></target>
-            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-name" names="class_filedialog_method_get_option_name"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_option_name</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-name" names="class_filedialog_method_get_option_name"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_option_name</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回索引为 <literal>option</literal> 的 <reference internal="True" refuri="class_optionbutton#class-optionbutton"><inline classes="std std-ref">OptionButton</inline></reference> 或 <reference internal="True" refuri="class_checkbox#class-checkbox"><inline classes="std std-ref">CheckBox</inline></reference> 的名称。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-get-option-values"></target>
-            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-values" names="class_filedialog_method_get_option_values"><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> <strong>get_option_values</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-values"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-filedialog-method-get-option-values" names="class_filedialog_method_get_option_values"><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> <strong>get_option_values</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-option-values"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回索引为 <literal>option</literal> 的 <reference internal="True" refuri="class_optionbutton#class-optionbutton"><inline classes="std std-ref">OptionButton</inline></reference> 值的数组。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-get-selected-options"></target>
-            <paragraph classes="classref-method" ids="class-filedialog-method-get-selected-options" names="class_filedialog_method_get_selected_options"><reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> <strong>get_selected_options</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-selected-options"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-filedialog-method-get-selected-options" names="class_filedialog_method_get_selected_options"><reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> <strong>get_selected_options</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-filedialog-method-get-selected-options"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回一个 <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference>，其中包含附加 <reference internal="True" refuri="class_optionbutton#class-optionbutton"><inline classes="std std-ref">OptionButton</inline></reference> 和/或 <reference internal="True" refuri="class_checkbox#class-checkbox"><inline classes="std std-ref">CheckBox</inline></reference> 的选定值。<reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> 的键是名称，而值是选定的值索引。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-get-vbox"></target>
             <paragraph classes="classref-method" ids="class-filedialog-method-get-vbox" names="class_filedialog_method_get_vbox"><reference internal="True" refuri="class_vboxcontainer#class-vboxcontainer"><inline classes="std std-ref">VBoxContainer</inline></reference> <strong>get_vbox</strong>() <reference internal="True" refid="class-filedialog-method-get-vbox"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回对话框的垂直框容器，可以向其中添加自定义控件。</paragraph>
-            <paragraph><strong>警告：</strong>这是一个必需的内部节点，删除和释放它可能会导致崩溃。如果你希望隐藏它或其任何子项，请使用它们的 <reference internal="True" refuri="class_canvasitem#class-canvasitem-property-visible"><inline classes="std std-ref">CanvasItem.visible</inline></reference> 属性。</paragraph>
+            <paragraph>Returns the vertical box container of the dialog, custom controls can be added to it.</paragraph>
+            <paragraph><strong>Warning:</strong> This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their <reference internal="True" refuri="class_canvasitem#class-canvasitem-property-visible"><inline classes="std std-ref">CanvasItem.visible</inline></reference> property.</paragraph>
+            <paragraph><strong>Note:</strong> Changes to this node are ignored by native file dialogs, use <reference internal="True" refid="class-filedialog-method-add-option"><inline classes="std std-ref">add_option</inline></reference> to add custom elements to the dialog instead.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-invalidate"></target>
             <paragraph classes="classref-method" ids="class-filedialog-method-invalidate" names="class_filedialog_method_invalidate"><abbreviation explanation="无返回值。">void</abbreviation> <strong>invalidate</strong>() <reference internal="True" refid="class-filedialog-method-invalidate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>使当前对话框内容列表无效并更新。</paragraph>
+            <paragraph>Invalidate and update the current dialog content list.</paragraph>
+            <paragraph><strong>Note:</strong> This method does nothing on native file dialogs.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-filedialog-method-set-option-default"></target>
             <paragraph classes="classref-method" ids="class-filedialog-method-set-option-default" names="class_filedialog_method_set_option_default"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_option_default</strong>(option: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, default_value_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-filedialog-method-set-option-default"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -712,12 +719,12 @@
             <paragraph classes="classref-themeproperty" ids="class-filedialog-theme-icon-toggle-hidden" names="class_filedialog_theme_icon_toggle_hidden"><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>toggle_hidden</strong> <reference internal="True" refid="class-filedialog-theme-icon-toggle-hidden"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>切换隐藏按钮的自定义图标。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

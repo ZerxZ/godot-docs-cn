@@ -19,9 +19,42 @@ TileSetScenesCollectionSource
 描述
 ----
 
-当放置在 :ref:`TileMap<class_TileMap>` 上时，来自 **TileSetScenesCollectionSource** 中的图块将在 TileMap 中的单元格位置自动实例化一个关联场景。
+When placed on a :ref:`TileMap<class_TileMap>`, tiles from **TileSetScenesCollectionSource** will automatically instantiate an associated scene at the cell's position in the TileMap.
 
-当该 :ref:`TileMap<class_TileMap>` 进入树时，场景被实例化为该 :ref:`TileMap<class_TileMap>` 的子级。如果在已在树内的 :ref:`TileMap<class_TileMap>` 中添加/移除一个场景图块，则该 :ref:`TileMap<class_TileMap>` 将相应地自动实例化/释放该场景。
+Scenes are instantiated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instantiate/free the scene accordingly.
+
+\ **Note:** Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. :ref:`TileSetSource.get_tiles_count<class_TileSetSource_method_get_tiles_count>` will always return ``1``. Use :ref:`get_scene_tiles_count<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>` to get a number of scenes in a **TileSetScenesCollectionSource**.
+
+Use this code if you want to find the scene path at a given tile in :ref:`TileMapLayer<class_TileMapLayer>`:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var source_id = tile_map_layer.get_cell_source_id(Vector2i(x, y))
+    if source_id > -1:
+        var scene_source = tile_map_layer.tile_set.get_source(source_id)
+        if scene_source is TileSetScenesCollectionSource:
+            var alt_id = tile_map_layer.get_cell_alternative_tile(Vector2i(x, y))
+            # The assigned PackedScene.
+            var scene = scene_source.get_scene_tile_scene(alt_id)
+
+ .. code-tab:: csharp
+
+    int sourceId = tileMapLayer.GetCellSourceId(new Vector2I(x, y));
+    if (sourceId > -1)
+    {
+        TileSetSource source = tileMapLayer.TileSet.GetSource(sourceId);
+        if (source is TileSetScenesCollectionSource sceneSource)
+        {
+            int altId = tileMapLayer.GetCellAlternativeTile(new Vector2I(x, y));
+            // The assigned PackedScene.
+            PackedScene scene = sceneSource.GetSceneTileScene(altId);
+        }
+    }
+
+
 
 .. rst-class:: classref-reftable-group
 
@@ -195,10 +228,10 @@ TileSetScenesCollectionSource
 将 :ref:`PackedScene<class_PackedScene>` 资源分配给 ID 为 ``id`` 的场景图块。如果该场景扩展的不是 CanvasItem 则会失败，因为将场景放置到 TileMap 上需要位置属性。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

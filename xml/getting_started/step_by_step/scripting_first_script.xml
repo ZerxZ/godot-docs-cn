@@ -65,6 +65,7 @@ Techniques:
                 </div>
                 <div aria-labelledby="tab-0-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-0-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
+using System;
 
 public partial class MySprite2D : Sprite2D
 {
@@ -158,9 +159,7 @@ private float _angularSpeed = Mathf.Pi;</literal_block>
             </note>
             <paragraph>函数内部的那一行 <literal>rotation += angular_speed * delta</literal> 每一帧都会增加我们的精灵的旋转量。这里 <literal>rotation</literal> 是从 <literal>Sprite2D</literal> 所扩展的 <literal>Node2D</literal> 类继承的属性。它可以控制我们节点的旋转，以弧度为单位。</paragraph>
             <tip>
-                <paragraph>In the code editor, you can Ctrl-click (Cmd-click on MacOS) on any built-in property or
-                    function like <literal>position</literal>, <literal>rotation</literal>, or <literal>_process</literal> to open the
-                    corresponding documentation in a new tab.</paragraph>
+                <paragraph>在代码编辑器中，你可以按住 ctrl（在macOS上使用Command键） 单击任何内置的属性或函数，如 <literal>position</literal>、<literal>rotation</literal>、<literal>_process</literal> 以在新标签页中打开相应的文档。</paragraph>
             </tip>
             <paragraph>运行该场景，可以看到 Godot 的图标在原地转动。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/scripting_first_script_godot_turning_in_place.gif'}" uri="getting_started/step_by_step/img/scripting_first_script_godot_turning_in_place.gif"></image>
@@ -221,6 +220,7 @@ func _process(delta):
                 </div>
                 <div aria-labelledby="tab-5-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-5-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">using Godot;
+using System;
 
 public partial class MySprite2D : Sprite2D
 {

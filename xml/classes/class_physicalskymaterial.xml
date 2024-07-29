@@ -13,8 +13,8 @@
         <paragraph>通过一组物理属性定义 <reference internal="True" refuri="class_sky#class-sky"><inline classes="std std-ref">Sky</inline></reference> 资源的天空的材质。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>The <strong>PhysicalSkyMaterial</strong> uses the Preetham analytic daylight model to draw a sky based on physical properties. This results in a substantially more realistic sky than the <reference internal="True" refuri="class_proceduralskymaterial#class-proceduralskymaterial"><inline classes="std std-ref">ProceduralSkyMaterial</inline></reference>, but it is slightly slower and less flexible.</paragraph>
-            <paragraph>The <strong>PhysicalSkyMaterial</strong> only supports one sun. The color, energy, and direction of the sun are taken from the first <reference internal="True" refuri="class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference> in the scene tree.</paragraph>
+            <paragraph>该 <strong>PhysicalSkyMaterial</strong> 使用 Preetham 解析日光模型，根据物理属性绘制一个天空。这会产生比 <reference internal="True" refuri="class_proceduralskymaterial#class-proceduralskymaterial"><inline classes="std std-ref">ProceduralSkyMaterial</inline></reference> 更加逼真的天空，但速度稍慢且灵活性较差。</paragraph>
+            <paragraph>该 <strong>PhysicalSkyMaterial</strong> 仅支持一个太阳。太阳的颜色、能量和方向，取自场景树中的第一个 <reference internal="True" refuri="class_directionallight3d#class-directionallight3d"><inline classes="std std-ref">DirectionalLight3D</inline></reference>。</paragraph>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="属性">
             <title>属性</title>
@@ -283,12 +283,12 @@
             </bullet_list>
             <paragraph>如果为 <literal>true</literal>，则启用去色带。去色带会增加少量噪点，这有助于减少天空中颜色的平滑变化而出现的色带。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

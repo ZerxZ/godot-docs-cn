@@ -292,9 +292,9 @@ GDScript 具有一个简化的 :ref:`@GDScript.load<class_@GDScript_method_load>
 
 :ref:`Resource<class_Resource>` **load_threaded_get**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get>`
 
-返回由 :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` 加载的资源。
+Returns the resource loaded by :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
 
-如果在加载线程完成之前调用此方法（即 :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` 不是 :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`\ ），则调用线程将被阻塞，直到资源加载完成。
+If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
 
 .. rst-class:: classref-item-separator
 
@@ -306,9 +306,11 @@ GDScript 具有一个简化的 :ref:`@GDScript.load<class_@GDScript_method_load>
 
 :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status**\ (\ path\: :ref:`String<class_String>`, progress\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get_status>`
 
-返回使用 :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` 在 ``path`` 处启动的线程加载操作的状态。可能的返回值见 :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>`\ 。
+Returns the status of a threaded loading operation started with :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` for the resource at ``path``. See :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` for possible return values.
 
-可以通过 ``progress`` 可选地传递一个数组变量，并返回一个包含线程加载完成百分比的单元素的数组。
+An array variable can optionally be passed via ``progress``, and will return a one-element array containing the percentage of completion of the threaded loading.
+
+\ **Note:** The recommended way of using this method is to call it during different frames (e.g., in :ref:`Node._process<class_Node_private_method__process>`, instead of a loop).
 
 .. rst-class:: classref-item-separator
 
@@ -349,10 +351,10 @@ GDScript 具有一个简化的 :ref:`@GDScript.load<class_@GDScript_method_load>
 更改缺少子资源时的行为。默认行为是中止加载。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

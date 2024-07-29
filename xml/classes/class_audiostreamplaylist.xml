@@ -10,7 +10,7 @@
     <section ids="audiostreamplaylist class-audiostreamplaylist" names="audiostreamplaylist class_audiostreamplaylist">
         <title>AudioStreamPlaylist</title>
         <paragraph><strong>继承：</strong> <reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference></paragraph>
-        <paragraph><reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference> that includes sub-streams and plays them back like a playlist.</paragraph>
+        <paragraph><reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference> 包含子音频流并像播放列表一样播放它们。</paragraph>
         <section classes="classref-reftable-group" ids="id1" names="属性">
             <title>属性</title>
             <table classes="colwidths-auto">
@@ -79,7 +79,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-audiostreamplaylist-method-get-bpm"><inline classes="std std-ref">get_bpm</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-audiostreamplaylist-method-get-bpm"><inline classes="std std-ref">get_bpm</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -87,7 +87,7 @@
                                 <paragraph><reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-audiostreamplaylist-method-get-list-stream"><inline classes="std std-ref">get_list_stream</inline></reference>(stream_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-audiostreamplaylist-method-get-list-stream"><inline classes="std std-ref">get_list_stream</inline></reference>(stream_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -134,7 +134,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_loop</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If <literal>true</literal>, the playlist will loop, otherwise the playlist will end when the last stream is finished.</paragraph>
+            <paragraph>如果为 <literal>true</literal>，则播放列表将循环播放，否则播放列表将在播放完最后一个音频流时结束。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-audiostreamplaylist-property-shuffle"></target>
             <paragraph classes="classref-property" ids="class-audiostreamplaylist-property-shuffle" names="class_audiostreamplaylist_property_shuffle"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>shuffle</strong> = <literal>false</literal> <reference internal="True" refid="class-audiostreamplaylist-property-shuffle"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -146,7 +146,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_shuffle</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If <literal>true</literal>, the playlist will shuffle each time playback starts and each time it loops.</paragraph>
+            <paragraph>如果为 <literal>true</literal>，则每次播放开始和循环时，播放列表都会随机播放。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-audiostreamplaylist-property-stream-count"></target>
             <paragraph classes="classref-property" ids="class-audiostreamplaylist-property-stream-count" names="class_audiostreamplaylist_property_stream_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>stream_count</strong> = <literal>0</literal> <reference internal="True" refid="class-audiostreamplaylist-property-stream-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -164,23 +164,23 @@
         <section classes="classref-descriptions-group" ids="id5" names="方法说明">
             <title>方法说明</title>
             <target refid="class-audiostreamplaylist-method-get-bpm"></target>
-            <paragraph classes="classref-method" ids="class-audiostreamplaylist-method-get-bpm" names="class_audiostreamplaylist_method_get_bpm"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_bpm</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audiostreamplaylist-method-get-bpm"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns the BPM of the playlist, which can vary depending on the clip being played.</paragraph>
+            <paragraph classes="classref-method" ids="class-audiostreamplaylist-method-get-bpm" names="class_audiostreamplaylist_method_get_bpm"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_bpm</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audiostreamplaylist-method-get-bpm"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>返回播放列表的 BPM（每分钟节拍数），该值可能根据正在播放的剪辑而变化。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-audiostreamplaylist-method-get-list-stream"></target>
-            <paragraph classes="classref-method" ids="class-audiostreamplaylist-method-get-list-stream" names="class_audiostreamplaylist_method_get_list_stream"><reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference> <strong>get_list_stream</strong>(stream_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audiostreamplaylist-method-get-list-stream"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns the stream at playback position index.</paragraph>
+            <paragraph classes="classref-method" ids="class-audiostreamplaylist-method-get-list-stream" names="class_audiostreamplaylist_method_get_list_stream"><reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference> <strong>get_list_stream</strong>(stream_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audiostreamplaylist-method-get-list-stream"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>返回播放位置索引处的音频流。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-audiostreamplaylist-method-set-list-stream"></target>
             <paragraph classes="classref-method" ids="class-audiostreamplaylist-method-set-list-stream" names="class_audiostreamplaylist_method_set_list_stream"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_list_stream</strong>(stream_index: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, audio_stream: <reference internal="True" refuri="class_audiostream#class-audiostream"><inline classes="std std-ref">AudioStream</inline></reference>) <reference internal="True" refid="class-audiostreamplaylist-method-set-list-stream"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Sets the stream at playback position index.</paragraph>
+            <paragraph>设置播放位置索引处的音频流。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

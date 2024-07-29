@@ -817,7 +817,7 @@ enum **BlendMode**: :ref:`🔗<enum_BaseMaterial3D_BlendMode>`
 
 :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **BLEND_MODE_PREMULT_ALPHA** = ``4``
 
-The color of the object is added to the background and the alpha channel is used to mask out the background. This is effectively a hybrid of the blend mix and add modes, useful for effects like fire where you want the flame to add but the smoke to mix. By default, this works with unshaded materials using premultiplied textures. For shaded materials, use the ``PREMUL_ALPHA_FACTOR`` built-in so that lighting can be modulated as well.
+对象的颜色被添加到背景中，而 alpha 通道用于遮盖背景。这实际上是混合模式和添加模式的混合，对于类似希望添加火焰但混合烟雾的火焰效果很有用。默认情况下，这适用于使用预乘纹理的未着色材质。对于着色材质，请使用内置的 ``PREMUL_ALPHA_FACTOR``\ ，以便也可以调节照明。
 
 .. rst-class:: classref-item-separator
 
@@ -3497,10 +3497,10 @@ Alpha 剪刀将丢弃值的阈值。较高的值将导致更多像素被丢弃�
 设置由 ``param`` 指定的插槽的纹理。有关可用插槽，请参阅 :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -17,7 +17,7 @@
             <paragraph><strong>注意：</strong>在布尔上下文中，等于 <literal>Color(0, 0, 0, 1)</literal>（不透明的黑色）的 Color 将被评估为 <literal>false</literal>。否则，Color 将始终被评估为 <literal>true</literal>。</paragraph>
             <paragraph><reference name="Color 常量速查表" refuri="https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png">Color 常量速查表</reference></paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -246,7 +246,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-blend"><inline classes="std std-ref">blend</inline></reference>(over: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-blend"><inline classes="std std-ref">blend</inline></reference>(over: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -254,7 +254,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-clamp"><inline classes="std std-ref">clamp</inline></reference>(min: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(0, 0, 0, 0), max: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(1, 1, 1, 1)) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-clamp"><inline classes="std std-ref">clamp</inline></reference>(min: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(0, 0, 0, 0), max: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(1, 1, 1, 1)) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -262,7 +262,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-darkened"><inline classes="std std-ref">darkened</inline></reference>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-darkened"><inline classes="std std-ref">darkened</inline></reference>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -302,7 +302,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-get-luminance"><inline classes="std std-ref">get_luminance</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-get-luminance"><inline classes="std std-ref">get_luminance</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -342,7 +342,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-inverted"><inline classes="std std-ref">inverted</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-inverted"><inline classes="std std-ref">inverted</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -350,7 +350,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -358,7 +358,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-lerp"><inline classes="std std-ref">lerp</inline></reference>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-lerp"><inline classes="std std-ref">lerp</inline></reference>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -366,7 +366,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-lightened"><inline classes="std std-ref">lightened</inline></reference>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-lightened"><inline classes="std std-ref">lightened</inline></reference>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -374,7 +374,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-linear-to-srgb"><inline classes="std std-ref">linear_to_srgb</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-linear-to-srgb"><inline classes="std std-ref">linear_to_srgb</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -382,7 +382,7 @@
                                 <paragraph><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">srgb_to_linear</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">srgb_to_linear</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -390,7 +390,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-abgr32"><inline classes="std std-ref">to_abgr32</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-abgr32"><inline classes="std std-ref">to_abgr32</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -398,7 +398,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-abgr64"><inline classes="std std-ref">to_abgr64</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-abgr64"><inline classes="std std-ref">to_abgr64</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -406,7 +406,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-argb32"><inline classes="std std-ref">to_argb32</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-argb32"><inline classes="std std-ref">to_argb32</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -414,7 +414,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-argb64"><inline classes="std std-ref">to_argb64</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-argb64"><inline classes="std std-ref">to_argb64</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -422,7 +422,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-html"><inline classes="std std-ref">to_html</inline></reference>(with_alpha: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-html"><inline classes="std std-ref">to_html</inline></reference>(with_alpha: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -430,7 +430,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-rgba32"><inline classes="std std-ref">to_rgba32</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-rgba32"><inline classes="std std-ref">to_rgba32</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -438,15 +438,15 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-color-method-to-rgba64"><inline classes="std std-ref">to_rgba64</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-color-method-to-rgba64"><inline classes="std std-ref">to_rgba64</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id6" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id6" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="27"></colspec>
@@ -1115,7 +1115,7 @@
         <section classes="classref-descriptions-group" ids="id10" names="方法说明">
             <title>方法说明</title>
             <target refid="class-color-method-blend"></target>
-            <paragraph classes="classref-method" ids="class-color-method-blend" names="class_color_method_blend"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>blend</strong>(over: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-blend"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-blend" names="class_color_method_blend"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>blend</strong>(over: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-blend"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回将该颜色混合到给定颜色上所产生的新颜色。在绘画程序中，你可以将其想象为在该颜色（包括 alpha）上绘制的 <literal>over</literal> 颜色。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1135,11 +1135,11 @@ Color blendedColor = bg.Blend(fg); // 75% 不透明的棕色</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-clamp"></target>
-            <paragraph classes="classref-method" ids="class-color-method-clamp" names="class_color_method_clamp"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>clamp</strong>(min: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(0, 0, 0, 0), max: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(1, 1, 1, 1)) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-clamp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-clamp" names="class_color_method_clamp"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>clamp</strong>(min: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(0, 0, 0, 0), max: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> = Color(1, 1, 1, 1)) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-clamp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>通过在每个分量上运行 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-clamp"><inline classes="std std-ref">@GlobalScope.clamp</inline></reference>，返回一种新颜色，其中所有分量都被钳制在 <literal>min</literal> 和 <literal>max</literal> 的分量之间。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-darkened"></target>
-            <paragraph classes="classref-method" ids="class-color-method-darkened" names="class_color_method_darkened"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>darkened</strong>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-darkened"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-darkened" names="class_color_method_darkened"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>darkened</strong>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-darkened"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回通过指定 <literal>amount</literal>（从 0.0 到 1.0 的比率）使该颜色变暗而产生的新颜色。另见 <reference internal="True" refid="class-color-method-lightened"><inline classes="std std-ref">lightened</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1190,14 +1190,14 @@ Color darkgreen = green.Darkened(0.2f); // 比普通的绿色深 20%</literal_bl
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-from-rgbe9995"></target>
             <paragraph classes="classref-method" ids="class-color-method-from-rgbe9995" names="class_color_method_from_rgbe9995"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>from_rgbe9995</strong>(rgbe: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-color-method-from-rgbe9995"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Decodes a <strong>Color</strong> from an RGBE9995 format integer. See <reference internal="True" refuri="class_image#class-image-constant-format-rgbe9995"><inline classes="std std-ref">Image.FORMAT_RGBE9995</inline></reference>.</paragraph>
+            <paragraph>从 RGBE9995 格式的整数解码 <strong>Color</strong>。见 <reference internal="True" refuri="class_image#class-image-constant-format-rgbe9995"><inline classes="std std-ref">Image.FORMAT_RGBE9995</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-from-string"></target>
             <paragraph classes="classref-method" ids="class-color-method-from-string" names="class_color_method_from_string"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>from_string</strong>(str: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, default: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-color-method-from-string"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>从给定的字符串创建 <strong>Color</strong>，该字符串可以是 HTML 颜色代码，也可以是颜色名称（不区分大小写）。如果无法从字符串中推断出颜色，则返回 <literal>default</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-get-luminance"></target>
-            <paragraph classes="classref-method" ids="class-color-method-get-luminance" names="class_color_method_get_luminance"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_luminance</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-get-luminance"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-get-luminance" names="class_color_method_get_luminance"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_luminance</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-get-luminance"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将颜色的光照强度返回为一个介于 0.0 和 1.0（包含）之间的值。这在确定浅色或深色时很有用。亮度小于 0.5 的颜色通常可以认为是深色。</paragraph>
             <paragraph><strong>注意：</strong><reference internal="True" refid="class-color-method-get-luminance"><inline classes="std std-ref">get_luminance</inline></reference> 依赖于线性色彩空间中的颜色，以返回准确的相对亮度值。如果颜色在 sRGB 色彩空间，请先使用 <reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">srgb_to_linear</inline></reference> 将其转换为线性色彩空间。</paragraph>
             <transition classes="classref-item-separator"></transition>
@@ -1277,7 +1277,7 @@ Color.HtmlIsValid("#55aaFF5");  // 返回 false</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-inverted"></target>
-            <paragraph classes="classref-method" ids="class-color-method-inverted" names="class_color_method_inverted"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>inverted</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-inverted"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-inverted" names="class_color_method_inverted"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>inverted</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-inverted"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回将 <reference internal="True" refid="class-color-property-r"><inline classes="std std-ref">r</inline></reference>、<reference internal="True" refid="class-color-property-g"><inline classes="std std-ref">g</inline></reference>、<reference internal="True" refid="class-color-property-b"><inline classes="std std-ref">b</inline></reference> 分量翻转后的颜色（<literal>(1 - r, 1 - g, 1 - b, a)</literal>）。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1297,11 +1297,11 @@ Color invertedColor = color.Inverted(); // 等价于 `new Color(0.7f, 0.6f, 0.1f
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-is-equal-approx"></target>
-            <paragraph classes="classref-method" ids="class-color-method-is-equal-approx" names="class_color_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-is-equal-approx" names="class_color_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该颜色和 <literal>to</literal> 近似相等，则返回 <literal>true</literal>，判断近似相等的方法是通过在每个分量上运行 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-equal-approx"><inline classes="std std-ref">@GlobalScope.is_equal_approx</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-lerp"></target>
-            <paragraph classes="classref-method" ids="class-color-method-lerp" names="class_color_method_lerp"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>lerp</strong>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-lerp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-lerp" names="class_color_method_lerp"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>lerp</strong>(to: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-lerp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回将该颜色的分量和 <literal>to</literal> 的分量进行线性插值的结果。插值系数 <literal>weight</literal> 应该在 0.0 和 1.0 之间（闭区间）。另请参阅 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-lerp"><inline classes="std std-ref">@GlobalScope.lerp</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1327,7 +1327,7 @@ red.Lerp(aqua, 1.0f); // 返回 Color(0.0f, 1.0f, 0.8f)</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-lightened"></target>
-            <paragraph classes="classref-method" ids="class-color-method-lightened" names="class_color_method_lightened"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>lightened</strong>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-lightened"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-lightened" names="class_color_method_lightened"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>lightened</strong>(amount: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-lightened"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回通过指定 <literal>amount</literal>（从 0.0 到 1.0 的比率）使该颜色变亮而产生的新颜色。另见 <reference internal="True" refid="class-color-method-darkened"><inline classes="std std-ref">darkened</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1345,15 +1345,15 @@ Color lightGreen = green.Lightened(0.2f); // 比普通的绿色要淡 20%</liter
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-linear-to-srgb"></target>
-            <paragraph classes="classref-method" ids="class-color-method-linear-to-srgb" names="class_color_method_linear_to_srgb"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>linear_to_srgb</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-linear-to-srgb"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-linear-to-srgb" names="class_color_method_linear_to_srgb"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>linear_to_srgb</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-linear-to-srgb"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换到 <reference name="sRGB" refuri="https://en.wikipedia.org/wiki/SRGB">sRGB</reference> 色彩空间的颜色。该方法假定原始颜色位于线性色彩空间中。另请参阅执行相反操作的 <reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">srgb_to_linear</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-srgb-to-linear"></target>
-            <paragraph classes="classref-method" ids="class-color-method-srgb-to-linear" names="class_color_method_srgb_to_linear"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>srgb_to_linear</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-srgb-to-linear" names="class_color_method_srgb_to_linear"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>srgb_to_linear</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-srgb-to-linear"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换到线性色彩空间的颜色。该方法假定原始颜色已经在 sRGB 色彩空间中。另请参见执行相反操作的 <reference internal="True" refid="class-color-method-linear-to-srgb"><inline classes="std std-ref">linear_to_srgb</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-abgr32"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-abgr32" names="class_color_method_to_abgr32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_abgr32</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-abgr32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-abgr32" names="class_color_method_to_abgr32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_abgr32</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-abgr32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换为 ABGR 格式（每个分量为 8 位）的 32 位整数的颜色。ABGR 是默认 RGBA 格式的反转版本。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1371,7 +1371,7 @@ GD.Print(color.ToAbgr32()); // 输出 4281565439</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-abgr64"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-abgr64" names="class_color_method_to_abgr64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_abgr64</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-abgr64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-abgr64" names="class_color_method_to_abgr64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_abgr64</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-abgr64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换为 ABGR 格式（每个分量为 16 位）的 64 位整数的颜色。ABGR 是默认 RGBA 格式的反转版本。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1389,7 +1389,7 @@ GD.Print(color.ToAbgr64()); // 输出 -225178692812801</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-argb32"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-argb32" names="class_color_method_to_argb32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_argb32</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-argb32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-argb32" names="class_color_method_to_argb32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_argb32</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-argb32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换为 ARGB 格式（每个分量为 8 位）的 32 位整数的颜色。ARGB 与 DirectX 更兼容。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1407,7 +1407,7 @@ GD.Print(color.ToArgb32()); // 输出 4294934323</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-argb64"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-argb64" names="class_color_method_to_argb64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_argb64</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-argb64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-argb64" names="class_color_method_to_argb64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_argb64</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-argb64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回转换为 ARGB 格式（每个分量为 16 位）的 64 位整数的颜色。ARGB 与 DirectX 更兼容。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1425,7 +1425,7 @@ GD.Print(color.ToArgb64()); // 输出 -2147470541</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-html"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-html" names="class_color_method_to_html"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>to_html</strong>(with_alpha: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-html"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-html" names="class_color_method_to_html"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>to_html</strong>(with_alpha: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = true) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-html"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回将该颜色转换为 RGBA 格式的 HTML 十六进制颜色 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>，不带（<literal>#</literal>）前缀。</paragraph>
             <paragraph>将 <literal>with_alpha</literal> 设置为 <literal>false</literal>，会从十六进制字符串中排除 alpha，使用 RGB 格式而不是 RGBA 格式。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
@@ -1446,7 +1446,7 @@ string withoutAlpha = white.ToHtml(false); // 返回 "ffffff"</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-rgba32"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-rgba32" names="class_color_method_to_rgba32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_rgba32</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-rgba32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-rgba32" names="class_color_method_to_rgba32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_rgba32</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-rgba32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>Returns the color converted to a 32-bit integer in RGBA format (each component is 8 bits). RGBA is Godot's default format. This method is the inverse of <reference internal="True" refid="class-color-method-hex"><inline classes="std std-ref">hex</inline></reference>.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1464,7 +1464,7 @@ GD.Print(color.ToRgba32()); // Prints 4286526463</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-color-method-to-rgba64"></target>
-            <paragraph classes="classref-method" ids="class-color-method-to-rgba64" names="class_color_method_to_rgba64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_rgba64</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-rgba64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-color-method-to-rgba64" names="class_color_method_to_rgba64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>to_rgba64</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-color-method-to-rgba64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>Returns the color converted to a 64-bit integer in RGBA format (each component is 16 bits). RGBA is Godot's default format. This method is the inverse of <reference internal="True" refid="class-color-method-hex64"><inline classes="std std-ref">hex64</inline></reference>.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -1482,8 +1482,8 @@ GD.Print(color.ToRgba64()); // Prints -140736629309441</literal_block>
             </container>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id11" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id11" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-color-operator-neq-color"></target>
             <paragraph classes="classref-operator" ids="class-color-operator-neq-color" names="class_color_operator_neq_color"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference>) <reference internal="True" refid="class-color-operator-neq-color"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果颜色不完全相等，则返回 <literal>true</literal>。</paragraph>
@@ -1538,12 +1538,12 @@ GD.Print(color.ToRgba64()); // Prints -140736629309441</literal_block>
             <paragraph classes="classref-operator" ids="class-color-operator-unminus" names="class_color_operator_unminus"><reference internal="True" refid="class-color"><inline classes="std std-ref">Color</inline></reference> <strong>operator unary-</strong>() <reference internal="True" refid="class-color-operator-unminus"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>反转给定的颜色。这相当于 <literal>Color.WHITE - c</literal> 或 <literal>Color(1 - c.r, 1 - c.g, 1 - c.b, 1 - c.a)</literal>。与 <reference internal="True" refid="class-color-method-inverted"><inline classes="std std-ref">inverted</inline></reference> 不同，<reference internal="True" refid="class-color-property-a"><inline classes="std std-ref">a</inline></reference> 分量也将被反转。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

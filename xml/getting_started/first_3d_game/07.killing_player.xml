@@ -90,8 +90,7 @@ private void OnPlayerHit()
                 </div>
             </container>
             <paragraph>如果你现在试玩游戏，你死亡后就会停止刷怪，现有的怪物会离开屏幕。</paragraph>
-            <paragraph>Notice also that the game no longer crashes or displays an error when the player dies. Because
-                we are stopping the MobTimer, it no longer triggers the <literal>_on_mob_timer_timeout()</literal> function.</paragraph>
+            <paragraph>同时注意到在玩家死亡时，游戏不再崩溃或报错。 这是因为我们停止了 Mobtimer，也就不再触发 <title_reference>_on_mob_timer_timeout()</title_reference> 函数了.</paragraph>
             <paragraph>另外请注意，敌人与玩家碰撞并死亡取决于 <literal>Player</literal> 和 <literal>Mob</literal> 的碰撞形状的大小和位置。你可能需要移动它们，调整它们的大小，以达到紧凑的游戏感觉。</paragraph>
             <paragraph>你可以鼓励鼓励自己了：你做出了完整 3D 游戏的原型，虽说还有点粗糙。</paragraph>
             <paragraph>在此基础上，我们将会添加计分、重启游戏的选项，你还会看到如何使用简单的动画让游戏变得更加活灵活现。</paragraph>
@@ -163,7 +162,7 @@ public partial class Main : Node
 }</literal_block>
                 </div>
             </container>
-            <paragraph>然后是 <literal>Mob.gd</literal>。</paragraph>
+            <paragraph>Next is <literal>mob.gd</literal>.</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -188,7 +187,7 @@ func initialize(start_position, player_position):
     # We position the mob by placing it at start_position
     # and rotate it towards player_position, so it looks at the player.
     look_at_from_position(start_position, player_position, Vector3.UP)
-    # Rotate this mob randomly within range of -90 and +90 degrees,
+    # Rotate this mob randomly within range of -45 and +45 degrees,
     # so that it doesn't move directly towards the player.
     rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -234,7 +233,7 @@ public partial class Mob : CharacterBody3D
         // We position the mob by placing it at startPosition
         // and rotate it towards playerPosition, so it looks at the player.
         LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-        // Rotate this mob randomly within range of -90 and +90 degrees,
+        // Rotate this mob randomly within range of -45 and +45 degrees,
         // so that it doesn't move directly towards the player.
         RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
@@ -260,7 +259,7 @@ public partial class Mob : CharacterBody3D
 }</literal_block>
                 </div>
             </container>
-            <paragraph>最后是最长的脚本 <literal>Player.gd</literal>：</paragraph>
+            <paragraph>Finally, the longest script, <literal>player.gd</literal>:</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>

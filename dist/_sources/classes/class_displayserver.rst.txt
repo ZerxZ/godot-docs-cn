@@ -190,6 +190,8 @@ DisplayServer
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`global_menu_set_popup_callbacks<class_DisplayServer_method_global_menu_set_popup_callbacks>`\ (\ menu_root\: :ref:`String<class_String>`, open_callback\: :ref:`Callable<class_Callable>`, close_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`has_additional_outputs<class_DisplayServer_method_has_additional_outputs>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_feature<class_DisplayServer_method_has_feature>`\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                  |
@@ -229,6 +231,8 @@ DisplayServer
    | |void|                                                                  | :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`process_events<class_DisplayServer_method_process_events>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`screen_get_dpi<class_DisplayServer_method_screen_get_dpi>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -297,6 +301,8 @@ DisplayServer
    | |void|                                                                  | :ref:`tts_speak<class_DisplayServer_method_tts_speak>`\ (\ text\: :ref:`String<class_String>`, voice\: :ref:`String<class_String>`, volume\: :ref:`int<class_int>` = 50, pitch\: :ref:`float<class_float>` = 1.0, rate\: :ref:`float<class_float>` = 1.0, utterance_id\: :ref:`int<class_int>` = 0, interrupt\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`tts_stop<class_DisplayServer_method_tts_stop>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`unregister_additional_output<class_DisplayServer_method_unregister_additional_output>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`virtual_keyboard_get_height<class_DisplayServer_method_virtual_keyboard_get_height>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -490,7 +496,7 @@ enum **Feature**: :ref:`🔗<enum_DisplayServer_Feature>`
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG** = ``9``
 
-Display server supports spawning text dialogs using the operating system's native look-and-feel. See :ref:`dialog_show<class_DisplayServer_method_dialog_show>`. **Windows, macOS**
+显示服务器支持使用操作系统的原生外观生成文本对话框。请参阅 :ref:`dialog_show<class_DisplayServer_method_dialog_show>`\ 。\ **Windows、macOS**
 
 .. _class_DisplayServer_constant_FEATURE_IME:
 
@@ -602,7 +608,7 @@ Display server supports spawning text dialogs using the operating system's nativ
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_INPUT** = ``24``
 
-Display server supports spawning text input dialogs using the operating system's native look-and-feel. See :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>`. **Windows, macOS**
+显示服务器支持使用操作系统的原生外观生成文本输入对话框。请参阅 :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>`\ 。\ **Windows、macOS**
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE:
 
@@ -610,7 +616,7 @@ Display server supports spawning text input dialogs using the operating system's
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE** = ``25``
 
-Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
+显示服务器支持使用操作系统的原生外观生成用于选择文件或目录的对话框。请参阅 :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` 和 :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`\ 。\ **Windows、macOS、Linux（X11/Wayland）**
 
 .. rst-class:: classref-item-separator
 
@@ -1118,11 +1124,11 @@ enum **WindowFlags**: :ref:`🔗<enum_DisplayServer_WindowFlags>`
 
 :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_TRANSPARENT** = ``3``
 
-The window background can be transparent.
+该窗口背景可以是透明的。
 
-\ **Note:** This flag has no effect if :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
+\ **注意：**\ 如果 :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>` 返回 ``false``\ ，则该标志无效。
 
-\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+\ **注意：**\ Linux （X11/Wayland）、macOS 和 Windows 上实现了透明支持，但可用性可能因 GPU 驱动程序、显示管理器和合成器功能而异。
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_NO_FOCUS:
 
@@ -1506,7 +1512,9 @@ enum **TTSUtteranceEvent**: :ref:`🔗<enum_DisplayServer_TTSUtteranceEvent>`
 
 :ref:`Image<class_Image>` **clipboard_get_image**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_get_image>`
 
-如果可能，将用户的剪贴板作为图像返回。
+Returns the user's clipboard as an image if possible.
+
+\ **Note:** This method uses the copied pixel data, e.g. from a image editing software or a web browser, not an image file copied from file explorer.
 
 .. rst-class:: classref-item-separator
 
@@ -1582,9 +1590,9 @@ enum **TTSUtteranceEvent**: :ref:`🔗<enum_DisplayServer_TTSUtteranceEvent>`
 
 :ref:`int<class_int>` **create_status_indicator**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_create_status_indicator>`
 
-Creates a new application status indicator with the specified icon, tooltip, and activation callback.
+新建应用程序状态指示器，可以指定图标、工具提示以及激活回调。
 
-\ ``callback`` should take two arguments: the pressed mouse button (one of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` constants) and the click position in screen coordinates (a :ref:`Vector2i<class_Vector2i>`).
+\ ``callback`` 应该接受两个参数：按下的鼠标按键（\ :ref:`MouseButton<enum_@GlobalScope_MouseButton>` 常量）以及点击位置（屏幕坐标 :ref:`Vector2i<class_Vector2i>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -1646,9 +1654,9 @@ Creates a new application status indicator with the specified icon, tooltip, and
 
 :ref:`Error<enum_@GlobalScope_Error>` **dialog_input_text**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, existing_text\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_dialog_input_text>`
 
-Shows a text input dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`String<class_String>` parameter which contains the text field's contents.
+显示文本输入对话框，该对话框使用操作系统原生外观。\ ``callback`` 应接受包含文本字段内容的单个 :ref:`String<class_String>` 参数。
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_INPUT<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT>` feature. Supported platforms include macOS and Windows.
+\ **注意：**\ 如果显示服务器具有 :ref:`FEATURE_NATIVE_DIALOG_INPUT<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT>` 功能，则实现该方法。支持的平台包括 macOS 和 Windows。
 
 .. rst-class:: classref-item-separator
 
@@ -1660,9 +1668,9 @@ Shows a text input dialog which uses the operating system's native look-and-feel
 
 :ref:`Error<enum_@GlobalScope_Error>` **dialog_show**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, buttons\: :ref:`PackedStringArray<class_PackedStringArray>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_dialog_show>`
 
-Shows a text dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`int<class_int>` parameter which corresponds to the index of the pressed button.
+显示文本对话框，该对话框使用操作系统原生外观。\ ``callback`` 应接受与按下按钮的索引相对应的单个 :ref:`int<class_int>` 参数。
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include macOS and Windows.
+\ **注意：**\ 如果显示服务器具有 :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` 功能，则实现该方法。支持的平台包括 macOS 和 Windows。
 
 .. rst-class:: classref-item-separator
 
@@ -1892,7 +1900,7 @@ Shows a text dialog which uses the operating system's native look-and-feel. ``ca
 
 :ref:`int<class_int>` **get_window_at_screen_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_window_at_screen_position>`
 
-Returns the ID of the window at the specified screen ``position`` (in pixels). On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+返回位于指定屏幕位置 ``position`` 的窗口 ID（单位为像素）。使用多个监视器时，屏幕位置是相对于虚拟桌面区域的位置。如果多监视器中使用了不同的屏幕分辨率或朝向，原点有可能位于所有显示器之外，类似于：
 
 .. code:: text
 
@@ -1929,25 +1937,25 @@ Returns the ID of the window at the specified screen ``position`` (in pixels). O
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new checkable item with text ``label`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的可勾选菜单项，显示的文本为 ``label``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -1961,25 +1969,25 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new checkable item with text ``label`` and icon ``icon`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的可勾选菜单项，显示的文本为 ``label``\ ，图标为 ``icon``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -1993,25 +2001,25 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new item with text ``label`` and icon ``icon`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的菜单项，显示的文本为 ``label``\ ，图标为 ``icon``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2025,27 +2033,27 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new radio-checkable item with text ``label`` and icon ``icon`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的单选菜单项，显示的文本为 ``label``\ ，图标为 ``icon``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
+\ **注意：**\ 单选菜单项只负责显示选中标记，并没有任何内置检查行为，必须手动进行选中、取消选中的操作。关于如何进行控制的更多信息见 :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>`\ 。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2059,25 +2067,25 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new item with text ``label`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的菜单项，显示的文本为 ``label``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2091,29 +2099,29 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new item with text ``label`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的菜单项，显示的文本为 ``label``\ 。
 
-Contrarily to normal binary items, multistate items can have more than two states, as defined by ``max_states``. Each press or activate of the item will increase the state by one. The default value is defined by ``default_state``.
+与常规的二态菜单项不同，多状态菜单项的状态可以多于两个，由 ``max_states`` 定义。每点击或激活该菜单项一次，状态就会加一。默认值由 ``default_state`` 定义。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** By default, there's no indication of the current item state, it should be changed manually.
+\ **注意：**\ 默认情况下不会展示当前菜单项的状态，应该手动更改。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2127,27 +2135,27 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a new radio-checkable item with text ``label`` to the global menu with ID ``menu_root``.
+向 ID 为 ``menu_root`` 的全局菜单添加新的单选菜单项，显示的文本为 ``label``\ 。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+还可以定义键盘快捷键 ``accelerator``\ ，按下后即便该菜单按钮尚未打开，也会进行触发。\ ``accelerator`` 通常是将 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` 和 :ref:`Key<enum_@GlobalScope_Key>` 用按位或操作进行的组合，例如 ``KEY_MASK_CTRL | KEY_A``\ （\ :kbd:`Ctrl + A`\ ）。
 
-\ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
+\ **注意：**\ 单选菜单项只负责显示选中标记，并没有任何内置检查行为，必须手动进行选中、取消选中的操作。关于如何进行控制的更多信息见 :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>`\ 。
 
-\ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
+\ **注意：**\ ``callback`` 和 ``key_callback`` Callable 均只接受一个 Variant 参数，传入 Callable 的参数是传给 ``tag`` 的参数。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2161,21 +2169,21 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds a separator between items to the global menu with ID ``menu_root``. Separators also occupy an index.
+向 ID 为 ``menu_root`` 的全局菜单添加分隔符。分隔符也拥有索引。
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2189,21 +2197,21 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Adds an item that will act as a submenu of the global menu ``menu_root``. The ``submenu`` argument is the ID of the global menu root that will be shown when the item is clicked.
+向 ID 为 ``menu_root`` 的全局菜单添加作为子菜单的菜单项。\ ``submenu`` 参数为全局菜单根菜单项的 ID，会在点击该菜单项时显示
 
-Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+返回插入菜单项的索引，不保证与 ``index`` 的值相同。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2217,19 +2225,19 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Removes all items from the global menu with ID ``menu_root``.
+移除 ID 为 ``menu_root`` 的全局菜单中的所有菜单项。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
-\ **Supported system menu IDs:**\ 
+\ **支持的系统菜单 ID：**\ 
 
 .. code:: text
 
-    "_main" - Main menu (macOS).
-    "_dock" - Dock popup menu (macOS).
-    "_apple" - Apple menu (macOS, custom items added before "Services").
-    "_window" - Window menu (macOS, custom items added after "Bring All to Front").
-    "_help" - Help menu (macOS).
+    "_main" - 主菜单（macOS）。
+    "_dock" - 程序坞弹出菜单（macOS）。
+    "_apple" - Apple 菜单（macOS，在“服务”之前添加的自定义项目）。
+    "_window" - 窗口菜单（macOS，“将所有内容置于前面”之后添加的自定义项目）。
+    "_help" - 帮助菜单 (macOS)。
 
 .. rst-class:: classref-item-separator
 
@@ -2323,9 +2331,9 @@ Removes all items from the global menu with ID ``menu_root``.
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the index of the item with the specified ``tag``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
+返回标签为指定的 ``tag`` 的菜单项的索引。引擎会自动为每个菜单项分配索引，无法手动设置。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -2339,9 +2347,9 @@ Returns the index of the item with the specified ``tag``. Indices are automatica
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the index of the item with the specified ``text``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
+返回文本为指定的 ``text`` 的菜单项的索引。引擎会自动为每个菜单项分配索引，无法手动设置。
 
-\ **Note:** This method is implemented only on macOS.
+\ **注意：**\ 该方法仅在 macOS 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -2869,7 +2877,19 @@ Returns the index of the item with the specified ``text``. Indices are automatic
 
 **已弃用：** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Registers callables to emit when the menu is respectively about to show or closed. Callback methods should have zero arguments.
+注册当菜单分别即将显示或关闭时发出的可调用对象。回调方法应该没有参数。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_has_additional_outputs:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_additional_outputs**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_has_additional_outputs>`
+
+Returns ``true`` if any additional outputs have been registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2979,7 +2999,7 @@ Registers callables to emit when the menu is respectively about to show or close
 
 :ref:`bool<class_bool>` **is_window_transparency_available**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_is_window_transparency_available>`
 
-Returns ``true`` if the window background can be made transparent. This method returns ``false`` if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``, or if transparency is not supported by the renderer or OS compositor.
+如果窗口背景可以设为透明，则返回 ``true``\ 。如果 :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` 被设置为 ``false``\ ，或者如果渲染器或 OS 合成器不支持透明，则该方法将返回 ``false``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3143,17 +3163,31 @@ Returns ``true`` if the window background can be made transparent. This method r
 
 ----
 
+.. _class_DisplayServer_method_register_additional_output:
+
+.. rst-class:: classref-method
+
+|void| **register_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_register_additional_output>`
+
+Registers an :ref:`Object<class_Object>` which represents an additional output that will be rendered too, beyond normal windows. The :ref:`Object<class_Object>` is only used as an identifier, which can be later passed to :ref:`unregister_additional_output<class_DisplayServer_method_unregister_additional_output>`.
+
+This can be used to prevent Godot from skipping rendering when no normal windows are visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_screen_get_dpi:
 
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **screen_get_dpi**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_dpi>`
 
-Returns the dots per inch density of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
+返回指定屏幕的每英寸点数密度。如果 ``screen`` 为 :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`\ （默认值），则将使用带有主窗口的屏幕。
 
-\ **Note:** On macOS, returned value is inaccurate if fractional display scaling mode is used.
+\ **注意：**\ 在 macOS 上，如果使用小数显示缩放模式，则返回值不准确。
 
-\ **Note:** On Android devices, the actual screen densities are grouped into six generalized densities:
+\ **注意：**\ 在 Android 设备上，实际屏幕密度分为六种通用密度：
 
 .. code:: text
 
@@ -3164,7 +3198,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
-\ **Note:** This method is implemented on Android, Linux (X11/Wayland), macOS and Windows. Returns ``72`` on unsupported platforms.
+\ **注意：**\ 该方法在 Android、Linux（X11/Wayland）、macOS 和 Windows 上实现。在不受支持的平台上返回 ``72``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3238,7 +3272,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 
 :ref:`Vector2i<class_Vector2i>` **screen_get_position**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_position>`
 
-Returns the screen's top-left corner position in pixels. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+返回屏幕左上角的位置，单位为像素。使用多个监视器时，屏幕位置是相对于虚拟桌面区域的位置。如果多监视器中使用了不同的屏幕分辨率或朝向，原点有可能位于所有显示器之外，类似于：
 
 .. code:: text
 
@@ -3249,9 +3283,9 @@ Returns the screen's top-left corner position in pixels. On multi-monitor setups
     |             | |       |
     +-------------+ +-------+
 
-See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
+另见 :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`\ 。
 
-\ **Note:** On Linux (Wayland) this method always returns ``(0, 0)``.
+\ **注意：**\ 在 Linux（Wayland）上，该方法始终返回 ``(0, 0)``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -3285,13 +3319,13 @@ See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
 :ref:`float<class_float>` **screen_get_scale**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_scale>`
 
-Returns the scale factor of the specified screen by index.
+返回屏幕的缩放系数，屏幕使用索引号指定。
 
-\ **Note:** On macOS, the returned value is ``2.0`` for hiDPI (Retina) screens, and ``1.0`` for all other cases.
+\ **注意：**\ 在 macOS 上，hiDPI（视网膜）屏幕返回 ``2.0``\ ，其它所有情况均返回 ``1.0``\ 。
 
-\ **Note:** On Linux (Wayland), the returned value is accurate only when ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`. Due to API limitations, passing a direct index will return a rounded-up integer, if the screen has a fractional scale (e.g. ``1.25`` would get rounded up to ``2.0``).
+\ **注意：**\ 在 Linux（Wayland）上，只有 ``screen`` 为 :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` 时返回值才是精确的。由于 API 的限制，如果屏幕缩放存在小数点，传入直接的索引号返回的是向上取整后的结果（即 ``1.25`` 会向上取整成 ``2.0``\ ）。
 
-\ **Note:** This method is implemented only on macOS and Linux (Wayland).
+\ **注意：**\ 该方法仅在 macOS 和 Linux（Wayland）上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -3421,9 +3455,9 @@ Returns the scale factor of the specified screen by index.
 
 |void| **status_indicator_set_callback**\ (\ id\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_callback>`
 
-Sets the application status indicator activation callback. ``callback`` should take two arguments: :ref:`int<class_int>` mouse button index (one of :ref:`MouseButton<enum_@GlobalScope_MouseButton>` values) and :ref:`Vector2i<class_Vector2i>` click position in screen coordinates.
+设置应用程序状态指示器激活回调。\ ``callback`` 应采用两个参数：\ :ref:`int<class_int>` 鼠标按钮索引（\ :ref:`MouseButton<enum_@GlobalScope_MouseButton>` 值之一）和 :ref:`Vector2i<class_Vector2i>` 屏幕坐标中的点击位置。
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **注意：**\ 该方法在 macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -3449,13 +3483,13 @@ Sets the application status indicator activation callback. ``callback`` should t
 
 |void| **status_indicator_set_menu**\ (\ id\: :ref:`int<class_int>`, menu_rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_menu>`
 
-Sets the application status indicator native popup menu.
+设置应用程序状态指示器原生弹出菜单。
 
-\ **Note:** On macOS, the menu is activated by any mouse button. Its activation callback is *not* triggered.
+\ **注意：**\ 在 macOS 上，该菜单可通过任何鼠标按键激活。其激活回调\ *未*\ 触发。
 
-\ **Note:** On Windows, the menu is activated by the right mouse button, selecting the status icon and pressing :kbd:`Shift + F10`, or the applications key. The menu's activation callback for the other mouse buttons is still triggered.
+\ **注意：**\ 在 Windows 上，该菜单可通过鼠标右键激活，选择状态图标并按下 :kbd:`Shift + F10` 或应用程序键。菜单的其他鼠标按键的激活回调仍会触发。
 
-\ **Note:** Native popup is only supported if :ref:`NativeMenu<class_NativeMenu>` supports the :ref:`NativeMenu.FEATURE_POPUP_MENU<class_NativeMenu_constant_FEATURE_POPUP_MENU>` feature.
+\ **注意：**\ 仅当 :ref:`NativeMenu<class_NativeMenu>` 支持 :ref:`NativeMenu.FEATURE_POPUP_MENU<class_NativeMenu_constant_FEATURE_POPUP_MENU>` 功能时，才支持原生弹出窗口。
 
 .. rst-class:: classref-item-separator
 
@@ -3708,6 +3742,18 @@ Sets the application status indicator native popup menu.
 \ **注意：**\ 该方法在 Android、iOS、Web、Linux（X11/Wayland）、macOS 以及 Windows 上实现。
 
 \ **注意：**\ 要使用文本转语音，\ :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` 应该为 ``true``\ 。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_unregister_additional_output:
+
+.. rst-class:: classref-method
+
+|void| **unregister_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_unregister_additional_output>`
+
+Unregisters an :ref:`Object<class_Object>` representing an additional output, that was registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4079,11 +4125,11 @@ Sets the application status indicator native popup menu.
 
 |void| **window_set_drop_files_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_drop_files_callback>`
 
-Sets the ``callback`` that should be called when files are dropped from the operating system's file manager to the window specified by ``window_id``. ``callback`` should take one :ref:`PackedStringArray<class_PackedStringArray>` argument, which is the list of dropped files.
+设置当文件从操作系统的文件管理器拖放到 ``window_id`` 指定的窗口时应调用的 ``callback``\ 。\ ``callback`` 应采用一个 :ref:`PackedStringArray<class_PackedStringArray>` 参数，即拖放的文件列表。
 
-\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+\ **警告：**\ 仅限高级用户！将这样的回调添加到 :ref:`Window<class_Window>` 节点将覆盖其默认实现，这可能会引入错误。
 
-\ **Note:** This method is implemented on Windows, macOS, Linux (X11/Wayland), and Web.
+\ **注意：**\ 这个方法在 Windows、macOS、Linux（X11/Wayland）、Web 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -4175,11 +4221,11 @@ Sets the ``callback`` that should be called when files are dropped from the oper
 
 |void| **window_set_max_size**\ (\ max_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_max_size>`
 
-Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
+设置由 ``window_id`` 指定的窗口的最大大小（单位为像素）。通常，用户将无法拖动窗口使其大于该指定大小。另见 :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`\ 。
 
-\ **Note:** It's recommended to change this value using :ref:`Window.max_size<class_Window_property_max_size>` instead.
+\ **注意：**\ 建议改用 :ref:`Window.max_size<class_Window_property_max_size>` 更改此值。
 
-\ **Note:** Using third-party tools, it is possible for users to disable window geometry restrictions and therefore bypass this limit.
+\ **注意：**\ 使用第三方工具，用户可以禁用窗口几何限制，从而绕过此限制。
 
 .. rst-class:: classref-item-separator
 
@@ -4191,13 +4237,13 @@ Sets the maximum size of the window specified by ``window_id`` in pixels. Normal
 
 |void| **window_set_min_size**\ (\ min_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_min_size>`
 
-Sets the minimum size for the given window to ``min_size`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
+将给定窗口的最小大小设置为 ``min_size``\ （单位为像素）。通常，用户将无法拖动窗口使其小于该指定大小。另见 :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`\ 。
 
-\ **Note:** It's recommended to change this value using :ref:`Window.min_size<class_Window_property_min_size>` instead.
+\ **注意：**\ 建议改用 :ref:`Window.min_size<class_Window_property_min_size>` 来更改此值。
 
-\ **Note:** By default, the main window has a minimum size of ``Vector2i(64, 64)``. This prevents issues that can arise when the window is resized to a near-zero size.
+\ **注意：**\ 默认情况下，主窗口的最小大小为 ``Vector2i(64, 64)``\ 。这可以防止将窗口调整为接近零的大小时可能出现的问题。
 
-\ **Note:** Using third-party tools, it is possible for users to disable window geometry restrictions and therefore bypass this limit.
+\ **注意：**\ 使用第三方工具，用户可以禁用窗口几何限制，从而绕过此限制。
 
 .. rst-class:: classref-item-separator
 
@@ -4280,7 +4326,7 @@ Sets the minimum size for the given window to ``min_size`` in pixels. Normally, 
 
 |void| **window_set_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_position>`
 
-Sets the position of the given window to ``position``. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+将给定窗口的位置设置为 ``position``\ 。使用多个监视器时，屏幕位置是相对于虚拟桌面区域的位置。如果多监视器中使用了不同的屏幕分辨率或朝向，原点有可能位于所有显示器之外，类似于：
 
 .. code:: text
 
@@ -4291,11 +4337,11 @@ Sets the position of the given window to ``position``. On multi-monitor setups, 
     |             | |       |
     +-------------+ +-------+
 
-See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>` and :ref:`window_set_size<class_DisplayServer_method_window_set_size>`.
+另见 :ref:`window_get_position<class_DisplayServer_method_window_get_position>` 和 :ref:`window_set_size<class_DisplayServer_method_window_set_size>`\ 。
 
-\ **Note:** It's recommended to change this value using :ref:`Window.position<class_Window_property_position>` instead.
+\ **注意：**\ 建议改用 :ref:`Window.position<class_Window_property_position>` 更改此值。
 
-\ **Note:** On Linux (Wayland): this method is a no-op.
+\ **注意：**\ 在 Linux（Wayland）上：该方法是没有操作。
 
 .. rst-class:: classref-item-separator
 
@@ -4404,10 +4450,10 @@ See also :ref:`window_get_position<class_DisplayServer_method_window_get_positio
 \ **警告：**\ 仅限高级用户！将这样的回调添加到 :ref:`Window<class_Window>` 节点将覆盖其默认实现，这可能会引入错误。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

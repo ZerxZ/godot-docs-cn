@@ -208,7 +208,7 @@ enum **OpenXRAlphaBlendModeSupport**: :ref:`🔗<enum_OpenXRAPIExtension_OpenXRA
 
 :ref:`int<class_int>` **get_next_frame_time**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_next_frame_time>`
 
-Returns the predicted display timing for the next frame.
+返回下一帧的预测显示时间。
 
 .. rst-class:: classref-item-separator
 
@@ -232,7 +232,7 @@ Returns the predicted display timing for the next frame.
 
 :ref:`int<class_int>` **get_predicted_display_time**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_predicted_display_time>`
 
-Returns the predicted display timing for the current frame.
+返回当前帧的预测显示时间。
 
 .. rst-class:: classref-item-separator
 
@@ -379,10 +379,10 @@ Returns the predicted display timing for the current frame.
 如果提供的 `XrResult <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrResult.html>`__\ （转换为整数）是成功的，则返回 ``true``\ 。否则返回 ``false`` 并打印被转换为字符串的 `XrResult <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrResult.html>`__ ，以及指定的附加信息。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

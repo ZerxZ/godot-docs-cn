@@ -31,13 +31,13 @@
             <title>属性</title>
             <table classes="colwidths-auto">
                 <tgroup cols="3">
-                    <colspec colwidth="53"></colspec>
+                    <colspec colwidth="61"></colspec>
                     <colspec colwidth="97"></colspec>
                     <colspec colwidth="26"></colspec>
                     <tbody>
                         <row>
                             <entry>
-                                <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
+                                <paragraph><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference></paragraph>
                             </entry>
                             <entry>
                                 <paragraph><reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">accessor_type</inline></reference></paragraph>
@@ -197,7 +197,6 @@
                                 <paragraph><reference internal="True" refid="class-gltfaccessor-property-type"><inline classes="std std-ref">type</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><literal>0</literal></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -205,19 +204,46 @@
             </table>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id4" names="属性说明">
+        <section classes="classref-descriptions-group" ids="id4" names="枚举">
+            <title>枚举</title>
+            <target refid="enum-gltfaccessor-gltfaccessortype"></target>
+            <paragraph classes="classref-enumeration" ids="enum-gltfaccessor-gltfaccessortype" names="enum_gltfaccessor_gltfaccessortype">enum <strong>GLTFAccessorType</strong>: <reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <target refid="class-gltfaccessor-constant-type-scalar"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-scalar" names="class_gltfaccessor_constant_type_scalar"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_SCALAR</strong> = <literal>0</literal></paragraph>
+            <paragraph>Accessor type "SCALAR". For the glTF object model, this can be used to map to a single float, int, or bool value, or a float array.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-vec2"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-vec2" names="class_gltfaccessor_constant_type_vec2"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_VEC2</strong> = <literal>1</literal></paragraph>
+            <paragraph>Accessor type "VEC2". For the glTF object model, this maps to "float2", represented in the glTF JSON as an array of two floats.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-vec3"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-vec3" names="class_gltfaccessor_constant_type_vec3"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_VEC3</strong> = <literal>2</literal></paragraph>
+            <paragraph>Accessor type "VEC3". For the glTF object model, this maps to "float3", represented in the glTF JSON as an array of three floats.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-vec4"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-vec4" names="class_gltfaccessor_constant_type_vec4"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_VEC4</strong> = <literal>3</literal></paragraph>
+            <paragraph>Accessor type "VEC4". For the glTF object model, this maps to "float4", represented in the glTF JSON as an array of four floats.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-mat2"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-mat2" names="class_gltfaccessor_constant_type_mat2"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_MAT2</strong> = <literal>4</literal></paragraph>
+            <paragraph>Accessor type "MAT2". For the glTF object model, this maps to "float2x2", represented in the glTF JSON as an array of four floats.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-mat3"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-mat3" names="class_gltfaccessor_constant_type_mat3"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_MAT3</strong> = <literal>5</literal></paragraph>
+            <paragraph>Accessor type "MAT3". For the glTF object model, this maps to "float3x3", represented in the glTF JSON as an array of nine floats.</paragraph>
+            <target refid="class-gltfaccessor-constant-type-mat4"></target>
+            <paragraph classes="classref-enumeration-constant" ids="class-gltfaccessor-constant-type-mat4" names="class_gltfaccessor_constant_type_mat4"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>TYPE_MAT4</strong> = <literal>6</literal></paragraph>
+            <paragraph>Accessor type "MAT4". For the glTF object model, this maps to "float4x4", represented in the glTF JSON as an array of sixteen floats.</paragraph>
+        </section>
+        <transition classes="classref-section-separator"></transition>
+        <section classes="classref-descriptions-group" ids="id5" names="属性说明">
             <title>属性说明</title>
             <target refid="class-gltfaccessor-property-accessor-type"></target>
-            <paragraph classes="classref-property" ids="class-gltfaccessor-property-accessor-type" names="class_gltfaccessor_property_accessor_type"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>accessor_type</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-property" ids="class-gltfaccessor-property-accessor-type" names="class_gltfaccessor_property_accessor_type"><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>accessor_type</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <bullet_list bullet="-" classes="classref-property-setget">
                 <list_item>
-                    <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_accessor_type</strong>(value: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>)</paragraph>
+                    <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_accessor_type</strong>(value: <reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference>)</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_accessor_type</strong>()</paragraph>
+                    <paragraph><reference internal="True" refid="enum-gltfaccessor-gltfaccessortype"><inline classes="std std-ref">GLTFAccessorType</inline></reference> <strong>get_accessor_type</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The GLTF accessor type as an enum. Possible values are 0 for "SCALAR", 1 for "VEC2", 2 for "VEC3", 3 for "VEC4", 4 for "MAT2", 5 for "MAT3", and 6 for "MAT4".</paragraph>
+            <paragraph>GLTF 访问器类型枚举。取值为 0 表示“SCALAR”、1 表示“VEC2”、2 表示“VEC3”、3 表示“VEC4”、4 表示“MAT2”、5 表示“MAT3”、6 表示“MAT4”。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-buffer-view"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-buffer-view" names="class_gltfaccessor_property_buffer_view"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>buffer_view</strong> = <literal>-1</literal> <reference internal="True" refid="class-gltfaccessor-property-buffer-view"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -241,7 +267,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_byte_offset</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The offset relative to the start of the buffer view in bytes.</paragraph>
+            <paragraph>相对于缓冲视图起点的偏移量，单位为字节。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-component-type"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-component-type" names="class_gltfaccessor_property_component_type"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>component_type</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-component-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -253,7 +279,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_component_type</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The GLTF component type as an enum. Possible values are 5120 for "BYTE", 5121 for "UNSIGNED_BYTE", 5122 for "SHORT", 5123 for "UNSIGNED_SHORT", 5125 for "UNSIGNED_INT", and 5126 for "FLOAT". A value of 5125 or "UNSIGNED_INT" must not be used for any accessor that is not referenced by mesh.primitive.indices.</paragraph>
+            <paragraph>GLTF 组件类型枚举。取值为 5120 表示“BYTE”、5121 表示“UNSIGNED_BYTE”、5122 表示“SHORT”、5123 表示“UNSIGNED_SHORT”、5125 表示“UNSIGNED_INT”、5126 表示“FLOAT”。不是通过mesh.primitive.indices 引用的访问器不能使用 5125 或“UNSIGNED_INT”。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-count"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-count" names="class_gltfaccessor_property_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>count</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -265,7 +291,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_count</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The number of elements referenced by this accessor.</paragraph>
+            <paragraph>该访问器引用的元素数量。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-max"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-max" names="class_gltfaccessor_property_max"><reference internal="True" refuri="class_packedfloat64array#class-packedfloat64array"><inline classes="std std-ref">PackedFloat64Array</inline></reference> <strong>max</strong> = <literal>PackedFloat64Array()</literal> <reference internal="True" refid="class-gltfaccessor-property-max"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -277,7 +303,7 @@
                     <paragraph><reference internal="True" refuri="class_packedfloat64array#class-packedfloat64array"><inline classes="std std-ref">PackedFloat64Array</inline></reference> <strong>get_max</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Maximum value of each component in this accessor.</paragraph>
+            <paragraph>该访问器中每个组件的最大值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-min"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-min" names="class_gltfaccessor_property_min"><reference internal="True" refuri="class_packedfloat64array#class-packedfloat64array"><inline classes="std std-ref">PackedFloat64Array</inline></reference> <strong>min</strong> = <literal>PackedFloat64Array()</literal> <reference internal="True" refid="class-gltfaccessor-property-min"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -289,7 +315,7 @@
                     <paragraph><reference internal="True" refuri="class_packedfloat64array#class-packedfloat64array"><inline classes="std std-ref">PackedFloat64Array</inline></reference> <strong>get_min</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Minimum value of each component in this accessor.</paragraph>
+            <paragraph>该访问器中每个组件的最小值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-normalized"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-normalized" names="class_gltfaccessor_property_normalized"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>normalized</strong> = <literal>false</literal> <reference internal="True" refid="class-gltfaccessor-property-normalized"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -301,7 +327,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_normalized</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Specifies whether integer data values are normalized before usage.</paragraph>
+            <paragraph>指定整数数据值在使用前是否进行了归一化。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-count"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-count" names="class_gltfaccessor_property_sparse_count"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_count</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-count"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -313,7 +339,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_count</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Number of deviating accessor values stored in the sparse array.</paragraph>
+            <paragraph>存储在稀疏数组中的偏差访问器值的数量。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-indices-buffer-view"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-indices-buffer-view" names="class_gltfaccessor_property_sparse_indices_buffer_view"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_indices_buffer_view</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-indices-buffer-view"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -325,7 +351,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_indices_buffer_view</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The index of the buffer view with sparse indices. The referenced buffer view MUST NOT have its target or byteStride properties defined. The buffer view and the optional byteOffset MUST be aligned to the componentType byte length.</paragraph>
+            <paragraph>具有稀疏索引的缓冲视图的索引。引用的缓冲视图不得定义其 target 或 byteStride 属性。缓冲视图和可选的 byteOffset 必须与 componentType 字节长度对齐。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-indices-byte-offset"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-indices-byte-offset" names="class_gltfaccessor_property_sparse_indices_byte_offset"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_indices_byte_offset</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-indices-byte-offset"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -337,7 +363,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_indices_byte_offset</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The offset relative to the start of the buffer view in bytes.</paragraph>
+            <paragraph>相对于缓冲视图起点的偏移量，单位为字节。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-indices-component-type"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-indices-component-type" names="class_gltfaccessor_property_sparse_indices_component_type"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_indices_component_type</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-indices-component-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -349,7 +375,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_indices_component_type</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The indices component data type as an enum. Possible values are 5121 for "UNSIGNED_BYTE", 5123 for "UNSIGNED_SHORT", and 5125 for "UNSIGNED_INT".</paragraph>
+            <paragraph>索引组件数据类型枚举。取值 5121 为“UNSIGNED_BYTE”、5123 为“UNSIGNED_SHORT”、5125 为“UNSIGNED_INT”。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-values-buffer-view"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-values-buffer-view" names="class_gltfaccessor_property_sparse_values_buffer_view"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_values_buffer_view</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-values-buffer-view"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -361,7 +387,7 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_values_buffer_view</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The index of the bufferView with sparse values. The referenced buffer view MUST NOT have its target or byteStride properties defined.</paragraph>
+            <paragraph>具有稀疏值的 bufferView 的索引。引用的缓冲视图不得定义其 target 或 byteStride 属性。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-sparse-values-byte-offset"></target>
             <paragraph classes="classref-property" ids="class-gltfaccessor-property-sparse-values-byte-offset" names="class_gltfaccessor_property_sparse_values_byte_offset"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sparse_values_byte_offset</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-sparse-values-byte-offset"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -373,10 +399,10 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sparse_values_byte_offset</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The offset relative to the start of the bufferView in bytes.</paragraph>
+            <paragraph>相对于 bufferView 起始位置的偏移量，单位为字节。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gltfaccessor-property-type"></target>
-            <paragraph classes="classref-property" ids="class-gltfaccessor-property-type" names="class_gltfaccessor_property_type"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>type</strong> = <literal>0</literal> <reference internal="True" refid="class-gltfaccessor-property-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-property" ids="class-gltfaccessor-property-type" names="class_gltfaccessor_property_type"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>type</strong> <reference internal="True" refid="class-gltfaccessor-property-type"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <bullet_list bullet="-" classes="classref-property-setget">
                 <list_item>
                     <paragraph><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_type</strong>(value: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>)</paragraph>
@@ -386,14 +412,14 @@
                 </list_item>
             </bullet_list>
             <paragraph><strong>已弃用：</strong> Use <reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">accessor_type</inline></reference> instead.</paragraph>
-            <paragraph>The GLTF accessor type as an enum. Use <reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">accessor_type</inline></reference> instead.</paragraph>
+            <paragraph>GLTF 访问器类型枚举。请改用 <reference internal="True" refid="class-gltfaccessor-property-accessor-type"><inline classes="std std-ref">accessor_type</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

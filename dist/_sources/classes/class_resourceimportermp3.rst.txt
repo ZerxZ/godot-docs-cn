@@ -12,18 +12,18 @@ ResourceImporterMP3
 
 **继承：** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports an MP3 audio file for playback.
+导入 MP3 音频文件以供播放。
 
 .. rst-class:: classref-introduction-group
 
 描述
 ----
 
-MP3 is a lossy audio format, with worse audio quality compared to :ref:`ResourceImporterOggVorbis<class_ResourceImporterOggVorbis>` at a given bitrate.
+MP3 是一种有损音频格式，在给定比特率下，与 :ref:`ResourceImporterOggVorbis<class_ResourceImporterOggVorbis>` 相比，音频质量较差。
 
-In most cases, it's recommended to use Ogg Vorbis over MP3. However, if you're using an MP3 sound source with no higher quality source available, then it's recommended to use the MP3 file directly to avoid double lossy compression.
+在大多数情况下，建议使用 Ogg Vorbis 而不是 MP3。但是，如果你使用的 MP3 音源没有更高质量的可用源，则建议直接使用 MP3 文件以避免两次有损压缩。
 
-MP3 requires more CPU to decode than :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. If you need to play a lot of simultaneous sounds, it's recommended to use WAV for those sounds instead, especially if targeting low-end devices.
+MP3 比 :ref:`ResourceImporterWAV<class_ResourceImporterWAV>` 需要更多的 CPU 来解码。如果你需要同时播放很多声音，建议对这些声音使用 WAV，特别是针对低端设备。
 
 .. rst-class:: classref-introduction-group
 
@@ -130,10 +130,10 @@ MP3 requires more CPU to decode than :ref:`ResourceImporterWAV<class_ResourceImp
 \ **高级导入设置**\ 对话框中为 :ref:`loop_offset<class_ResourceImporterMP3_property_loop_offset>` 提供了更方便的编辑器，因为它可以让你预览更改，且无需重新导入音频。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

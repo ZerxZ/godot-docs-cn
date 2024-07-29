@@ -143,31 +143,31 @@ Godot 编辑器的脚本编辑器。
 
 |void| **goto_help**\ (\ topic\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditor_method_goto_help>`
 
-Opens help for the given topic. The ``topic`` is an encoded string that controls which class, method, constant, signal, annotation, property, or theme item should be focused.
+打开指定主题的帮助。\ ``topic`` 是一个编码字符串，用于控制哪个类、方法、常量、信号、注解、属性或主题项应该被关注。
 
-The supported ``topic`` formats include ``class_name:class``, ``class_method:class:method``, ``class_constant:class:constant``, ``class_signal:class:signal``, ``class_annotation:class:@annotation``, ``class_property:class:property``, and ``class_theme_item:class:item``, where ``class`` is the class name, ``method`` is the method name, ``constant`` is the constant name, ``signal`` is the signal name, ``annotation`` is the annotation name, ``property`` is the property name, and ``item`` is the theme item.
+支持的 ``topic`` 格式包括 ``class_name:class``\ 、\ ``class_method:class:method``\ 、\ ``class_constant:class:constant``\ 、\ ``class_signal:class:signal``\ 、\ ``class_annotation:class:@annotation``\ 、\ ``class_property:class:property`` 和 ``class_theme_item:class:item``\ ，其中 ``class`` 为类名，\ ``method`` 为方法名，\ ``constant`` 为常量名，\ ``signal`` 为信号名，\ ``annotation`` 为注解名，\ ``property`` 为属性名，\ ``item`` 为主题项。
 
-\ **Examples:**\ 
+\ **示例：**\ 
 
 ::
 
-    # Shows help for the Node class.
+    # 显示 Node 类的帮助。
     class_name:Node
-    # Shows help for the global min function.
-    # Global objects are accessible in the `@GlobalScope` namespace, shown here.
+    # 显示全局 min 函数的帮助。
+    # 全局对象可在 `@GlobalScope` 命名空间中访问，如下所示。
     class_method:@GlobalScope:min
-    # Shows help for get_viewport in the Node class.
+    # 显示 Node 类中 get_viewport 的帮助。
     class_method:Node:get_viewport
-    # Shows help for the Input constant MOUSE_BUTTON_MIDDLE.
+    # 显示输入常量 MOUSE_BUTTON_MIDDLE 的帮助。
     class_constant:Input:MOUSE_BUTTON_MIDDLE
-    # Shows help for the BaseButton signal pressed.
+    # 显示 BaseButton 信号 pressed 的帮助。
     class_signal:BaseButton:pressed
-    # Shows help for the CanvasItem property visible.
+    # 显示 CanvasItem 属性 visible 的帮助。
     class_property:CanvasItem:visible
-    # Shows help for the GDScript annotation export.
-    # Annotations should be prefixed with the `@` symbol in the descriptor, as shown here.
+    # 显示 GDScript 注解 export 的帮助。
+    # 注解应在描述符中以 `@` 符号为前缀，如下所示。
     class_annotation:@GDScript:@export
-    # Shows help for the GraphNode theme item named panel_selected.
+    # 显示名为 panel_selected 的 GraphNode 主题项的帮助。
     class_theme_item:GraphNode:panel_selected
 
 .. rst-class:: classref-item-separator
@@ -223,10 +223,10 @@ The supported ``topic`` formats include ``class_name:class``, ``class_method:cla
 \ **注意：**\ 已经打开的脚本仍然适用该 :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -23,8 +23,8 @@
             <title>需求</title>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference name="XCode with the iOS SDK" refuri="https://developer.apple.com/xcode/download">XCode with the iOS SDK</reference>
-                        (a dmg image, for newer versions a <strong>xip</strong> file is going to be downloaded.)</paragraph>
+                    <paragraph><reference name="XCode with the iOS SDK" refuri="https://developer.apple.com/download/all/?q=Xcode">XCode with the iOS SDK</reference>
+                        (you must be logged into an Apple ID to download Xcode).</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="Clang &gt;= 3.5" refuri="https://clang.llvm.org">Clang &gt;= 3.5</reference> for your development
@@ -32,96 +32,70 @@
                         to target <literal>arm64</literal> architecture.</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference name="Fuse" refuri="https://github.com/libfuse/libfuse">Fuse</reference> for mounting and unmounting
-                        the dmg image.</paragraph>
-                </list_item>
-                <list_item>
-                    <paragraph><reference name="darling-dmg" refuri="https://github.com/darlinghq/darling-dmg">darling-dmg</reference>, 需要从源码构建. 下面说明其过程.</paragraph>
-                    <block_quote>
-                        <bullet_list bullet="-">
-                            <list_item>
-                                <paragraph>For newer versions you should download <reference name="xar" refuri="https://mackyle.github.io/xar/">xar</reference>
-                                    and <reference name="pbzx" refuri="https://github.com/NiklasRosenstein/pbzx">pbzx</reference>.</paragraph>
-                            </list_item>
-                            <list_item>
-                                <paragraph>要构建darling-dmg, 你需要以下库的开发包:fuse,icu,openssl,zlib,bzip2.</paragraph>
-                            </list_item>
-                            <list_item>
-                                <paragraph>For building xar and pbzx you may want to follow
-                                    <reference name="this guide" refuri="https://gist.github.com/phracker/1944ce190e01963c550566b749bd2b54">this guide</reference>.</paragraph>
-                            </list_item>
-                        </bullet_list>
-                    </block_quote>
+                    <paragraph><reference name="xar" refuri="https://mackyle.github.io/xar/">xar</reference> and <reference name="pbzx" refuri="https://github.com/NiklasRosenstein/pbzx">pbzx</reference>
+                        (required to extract the <literal>.xip</literal> archive Xcode comes in).</paragraph>
+                    <bullet_list bullet="-">
+                        <list_item>
+                            <paragraph>For building xar and pbzx, you may want to follow
+                                <reference name="this guide" refuri="https://gist.github.com/phracker/1944ce190e01963c550566b749bd2b54">this guide</reference>.</paragraph>
+                        </list_item>
+                    </bullet_list>
                 </list_item>
                 <list_item>
                     <paragraph><reference name="cctools-port" refuri="https://github.com/tpoechtrager/cctools-port">cctools-port</reference> 用于所需的构建工具. 构建过程非常特殊, 下面将进行描述.</paragraph>
-                    <block_quote>
-                        <bullet_list bullet="-">
-                            <list_item>
-                                <paragraph>这也有一些额外的依赖:automake,autogen,libtool.</paragraph>
-                            </list_item>
-                        </bullet_list>
-                    </block_quote>
+                    <bullet_list bullet="-">
+                        <list_item>
+                            <paragraph>这也有一些额外的依赖:automake,autogen,libtool.</paragraph>
+                        </list_item>
+                    </bullet_list>
                 </list_item>
             </bullet_list>
         </section>
         <section ids="configuring-the-environment" names="configuring\ the\ environment 配置环境">
             <title>配置环境</title>
-            <section ids="darling-dmg" names="darling-dmg">
-                <title>darling-dmg</title>
-                <paragraph>在你的机器上克隆该仓库：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ git clone https://github.com/darlinghq/darling-dmg.git</literal_block>
-                <paragraph>构建它：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ cd darling-dmg
-$ mkdir build
-$ cd build
-$ cmake .. -DCMAKE_BUILD_TYPE=Release
-$ make -j 4  # The number is the amount of cores your processor has, for faster build
-$ cd ../..</literal_block>
-            </section>
             <section ids="preparing-the-sdk" names="preparing\ the\ sdk 准备\ sdk">
                 <title>准备 SDK</title>
-                <paragraph>挂载 XCode 镜像：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ mkdir xcode
-$ ./darling-dmg/build/darling-dmg /path/to/Xcode_7.1.1.dmg xcode
-[...]
-Everything looks OK, disk mounted</literal_block>
-                <paragraph>For newer versions you should extract the <strong>xip</strong> file:</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ mkdir xcode
-$ xar -xf /path/to/Xcode_X.x.xip -C xcode
-$ pbzx -n Content | cpio -i
+                <paragraph>Extract the Xcode <literal>.xip</literal> file you downloaded from Apple's developer website:</paragraph>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">mkdir xcode
+xar -xf /path/to/Xcode_X.x.xip -C xcode
+pbzx -n Content | cpio -i
+
 [...]
 ######### Blocks</literal_block>
-                <paragraph>Note that for the commands below, you may need to replace the version (<title_reference>X.x</title_reference>) with whatever iOS SDK version you're using.</paragraph>
+                <paragraph>Note that for the commands below, you will need to replace the version (<literal>x.x</literal>)
+                    with whatever iOS SDK version you're using. If you don't know your iPhone SDK
+                    version, you can see the JSON file inside of
+                    <literal>Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs</literal>.</paragraph>
                 <paragraph>解压缩 iOS SDK：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ # If you don't know your iPhone SDK version you can see the json file inside of Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
-$ mkdir -p iPhoneSDK/iPhoneOSX.x.sdk
-$ cp -r xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/* iPhoneSDK/iPhoneOSX.x.sdk
-$ cp -r xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/* iPhoneSDK/iPhoneOSX.x.sdk/usr/include/c++
-$ fusermount -u xcode  # unmount the image</literal_block>
-                <paragraph>打包 SDK：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ cd iPhoneSDK
-$ tar -cf - * | xz -9 -c - &gt; iPhoneOSX.x.sdk.tar.xz</literal_block>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">export IOS_SDK_VERSION="x.x"
+mkdir -p iPhoneSDK/iPhoneOS${IOS_SDK_VERSION}.sdk
+cp -r xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/* iPhoneSDK/iPhoneOS${IOS_SDK_VERSION}.sdk
+cp -r xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/* iPhoneSDK/iPhoneOS${IOS_SDK_VERSION}.sdk/usr/include/c++
+fusermount -u xcode</literal_block>
+                <paragraph>Pack the SDK so that cctools can use it:</paragraph>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">cd iPhoneSDK
+tar -cf - * | xz -9 -c - &gt; iPhoneOS${IOS_SDK_VERSION}.sdk.tar.xz</literal_block>
             </section>
             <section ids="toolchain" names="toolchain 工具链">
                 <title>工具链</title>
                 <paragraph>构建 cctools：</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ git clone https://github.com/tpoechtrager/cctools-port.git
-$ cd cctools-port/usage_examples/ios_toolchain
-$ ./build.sh /path/iPhoneOSX.x.sdk.tar.xz arm64</literal_block>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">git clone https://github.com/tpoechtrager/cctools-port.git
+cd cctools-port/usage_examples/ios_toolchain
+./build.sh /path/iPhoneOS${IOS_SDK_VERSION}.sdk.tar.xz arm64</literal_block>
                 <paragraph>将工具复制到更好的位置. 请注意, 用于构建的SCons脚本将在你为工具链二进制文件提供的目录中的 <literal>usr/bin</literal> 下查找, 因此, 你必须复制到这样的子目录, 类似于以下命令:</paragraph>
-                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ mkdir -p /home/user/iostoolchain/usr
-$ cp -r target/bin /home/user/iostoolchain/usr/</literal_block>
-                <paragraph>现在你应该在 <literal>/home/user/iostoolchain/usr/bin</literal> 中拥有iOS工具链二进制文件.</paragraph>
+                <literal_block force="False" language="shell" linenos="False" xml:space="preserve">mkdir -p "$HOME/iostoolchain/usr"
+cp -r target/bin "$HOME/iostoolchain/usr/"</literal_block>
+                <paragraph>Now you should have the iOS toolchain binaries in
+                    <literal>$HOME/iostoolchain/usr/bin</literal>.</paragraph>
             </section>
         </section>
         <section ids="compiling-godot-for-iphone" names="compiling\ godot\ for\ iphone 为\ iphone\ 编译\ godot">
             <title>为 iPhone 编译 Godot</title>
             <paragraph>完成上述步骤后, 应在环境中保留两件事: 构建的工具链和iPhoneOS SDK目录. 那些可以留在你想要的任何地方, 因此你必须提供它们的路径给SCons构建命令.</paragraph>
             <paragraph>为了检测iPhone平台, 你需要将 <literal>OSXCROSS_IOS</literal> 环境变量定义为 <literal>anything</literal>.</paragraph>
-            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ export OSXCROSS_IOS=anything</literal_block>
+            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">export OSXCROSS_IOS="anything"</literal_block>
             <paragraph>现在你可以使用SCons像标准Godot方式一样编译iPhone, 带有一些其他参数以提供正确的路径:</paragraph>
-            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">$ scons -j 4 platform=ios arch=arm64 target=template_release IOS_SDK_PATH="/path/to/iPhoneSDK" IOS_TOOLCHAIN_PATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"</literal_block>
+            <literal_block force="False" language="shell" linenos="False" xml:space="preserve">scons platform=ios arch=arm64 target=template_release IOS_SDK_PATH="/path/to/iPhoneSDK" IOS_TOOLCHAIN_PATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"</literal_block>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

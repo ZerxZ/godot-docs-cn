@@ -19,11 +19,11 @@ XMLParser
 描述
 ----
 
-Provides a low-level interface for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`__ files. This class can serve as base to make custom XML parsers.
+为创建 `XML <https://zh.wikipedia.org/wiki/XML>`__ 文件解析器提供低阶接口。制作自定义 XML 解析器时，可以将这个类作为基础。
 
-To parse XML, you must open a file with the :ref:`open<class_XMLParser_method_open>` method or a buffer with the :ref:`open_buffer<class_XMLParser_method_open_buffer>` method. Then, the :ref:`read<class_XMLParser_method_read>` method must be called to parse the next nodes. Most of the methods take into consideration the currently parsed node.
+要解析 XML，你必须使用 :ref:`open<class_XMLParser_method_open>` 方法打开文件，或者使用 :ref:`open_buffer<class_XMLParser_method_open_buffer>` 方法打开缓冲区。然后必须使用 :ref:`read<class_XMLParser_method_read>` 方法解析后续节点。大多数方法使用的是当前解析节点。
 
-Here is an example of using **XMLParser** to parse an SVG file (which is based on XML), printing each element and its attributes as a dictionary:
+以下是使用 **XMLParser** 解析 SVG 文件（基于 XML）的粒子，会输出所有的元素，以字典的形式输出对应的属性：
 
 
 .. tabs::
@@ -38,7 +38,7 @@ Here is an example of using **XMLParser** to parse an SVG file (which is based o
             var attributes_dict = {}
             for idx in range(parser.get_attribute_count()):
                 attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
-            print("The ", node_name, " element has the following attributes: ", attributes_dict)
+            print("元素 ", node_name, " 包含的属性有：", attributes_dict)
 
  .. code-tab:: csharp
 
@@ -54,7 +54,7 @@ Here is an example of using **XMLParser** to parse an SVG file (which is based o
             {
                 attributesDict[parser.GetAttributeName(idx)] = parser.GetAttributeValue(idx);
             }
-            GD.Print($"The {nodeName} element has the following attributes: {attributesDict}");
+            GD.Print($"元素 {nodeName} 包含的属性有：{attributesDict}");
         }
     }
 
@@ -389,10 +389,10 @@ CDATA（字符数据）部分对应的节点类型，例如 ``<![CDATA[CDATA sec
 跳过当前部分。如果当前解析的节点包含其他内部节点，则会忽略这些节点，光标将跳转到当前元素的结尾处。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

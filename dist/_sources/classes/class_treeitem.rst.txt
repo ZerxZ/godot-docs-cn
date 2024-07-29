@@ -280,7 +280,7 @@ enum **TreeCellMode**: :ref:`🔗<enum_TreeItem_TreeCellMode>`
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_STRING** = ``0``
 
-Cell shows a string label. When editable, the text can be edited using a :ref:`LineEdit<class_LineEdit>`, or a :ref:`TextEdit<class_TextEdit>` popup if :ref:`set_edit_multiline<class_TreeItem_method_set_edit_multiline>` is used.
+单元格显示字符串标签。可编辑时，该文本可以使用 :ref:`LineEdit<class_LineEdit>` 进行编辑，如果使用了 :ref:`set_edit_multiline<class_TreeItem_method_set_edit_multiline>` 则会使用 :ref:`TextEdit<class_TextEdit>` 弹框进行编辑。
 
 .. _class_TreeItem_constant_CELL_MODE_CHECK:
 
@@ -288,7 +288,7 @@ Cell shows a string label. When editable, the text can be edited using a :ref:`L
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_CHECK** = ``1``
 
-Cell shows a checkbox, optionally with text. The checkbox can be pressed, released, or indeterminate (via :ref:`set_indeterminate<class_TreeItem_method_set_indeterminate>`). The checkbox can't be clicked unless the cell is editable.
+单元格显示复选框，文本是可选的。复选框可以处于勾选、未勾选以及未定状态（使用 :ref:`set_indeterminate<class_TreeItem_method_set_indeterminate>`\ ）。单元格可编辑时才能够点击复选框。
 
 .. _class_TreeItem_constant_CELL_MODE_RANGE:
 
@@ -296,9 +296,9 @@ Cell shows a checkbox, optionally with text. The checkbox can be pressed, releas
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_RANGE** = ``2``
 
-Cell shows a numeric range. When editable, it can be edited using a range slider. Use :ref:`set_range<class_TreeItem_method_set_range>` to set the value and :ref:`set_range_config<class_TreeItem_method_set_range_config>` to configure the range.
+单元格显示数字范围。可编辑时，该数字可以使用范围滑块编辑。设值请使用 :ref:`set_range<class_TreeItem_method_set_range>`\ ，设置范围请使用 :ref:`set_range_config<class_TreeItem_method_set_range_config>`\ 。
 
-This cell can also be used in a text dropdown mode when you assign a text with :ref:`set_text<class_TreeItem_method_set_text>`. Separate options with a comma, e.g. ``"Option1,Option2,Option3"``.
+如果使用 :ref:`set_text<class_TreeItem_method_set_text>` 设置文本，该单元格也可以处于文本下拉框模式。请使用英文逗号分隔选项，例如 ``"选项甲,选项乙,选项丙"``\ 。
 
 .. _class_TreeItem_constant_CELL_MODE_ICON:
 
@@ -306,7 +306,7 @@ This cell can also be used in a text dropdown mode when you assign a text with :
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_ICON** = ``3``
 
-Cell shows an icon. It can't be edited nor display text.
+单元格显示图标。无法编辑和显示文本。
 
 .. _class_TreeItem_constant_CELL_MODE_CUSTOM:
 
@@ -314,9 +314,9 @@ Cell shows an icon. It can't be edited nor display text.
 
 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` **CELL_MODE_CUSTOM** = ``4``
 
-Cell shows as a clickable button. It will display an arrow similar to :ref:`OptionButton<class_OptionButton>`, but doesn't feature a dropdown (for that you can use :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>`). Clicking the button emits the :ref:`Tree.item_edited<class_Tree_signal_item_edited>` signal. The button is flat by default, you can use :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>` to display it with a :ref:`StyleBox<class_StyleBox>`.
+单元格显示可点击的按钮。单元格会显示一个类似于 :ref:`OptionButton<class_OptionButton>` 的箭头，但是不带下拉框（如果对此有需要请使用 :ref:`CELL_MODE_RANGE<class_TreeItem_constant_CELL_MODE_RANGE>`\ ）。点击按钮会发出 :ref:`Tree.item_edited<class_Tree_signal_item_edited>` 信号。按钮默认是扁平的，可以使用 :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>` 为其设置 :ref:`StyleBox<class_StyleBox>`\ 。
 
-This mode also supports custom drawing using :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>`.
+该模式还支持通过使用 :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` 进行自定义绘制。
 
 .. rst-class:: classref-section-separator
 
@@ -924,7 +924,7 @@ This mode also supports custom drawing using :ref:`set_custom_draw_callback<clas
 
 :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_get_structured_text_bidi_override>`
 
-Returns the BiDi algorithm override set for this cell.
+返回为该单元格设置的 BiDi 算法覆盖。
 
 .. rst-class:: classref-item-separator
 
@@ -936,7 +936,7 @@ Returns the BiDi algorithm override set for this cell.
 
 :ref:`Array<class_Array>` **get_structured_text_bidi_override_options**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_get_structured_text_bidi_override_options>`
 
-Returns the additional BiDi options set for this cell.
+返回为该单元格设置的附加 BiDi 选项。
 
 .. rst-class:: classref-item-separator
 
@@ -1070,7 +1070,7 @@ Returns the additional BiDi options set for this cell.
 
 :ref:`bool<class_bool>` **is_custom_set_as_button**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_is_custom_set_as_button>`
 
-Returns ``true`` if the cell was made into a button with :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>`.
+如果使用 :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>` 将该单元格变成了按钮，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1142,7 +1142,7 @@ Returns ``true`` if the cell was made into a button with :ref:`set_custom_as_but
 
 :ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const| :ref:`🔗<class_TreeItem_method_is_visible_in_tree>`
 
-Returns ``true`` if :ref:`visible<class_TreeItem_property_visible>` is ``true`` and all its ancestors are also visible.
+如果 :ref:`visible<class_TreeItem_property_visible>` 为 ``true`` 并且所有祖级项目也都可见，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1280,7 +1280,7 @@ Returns ``true`` if :ref:`visible<class_TreeItem_property_visible>` is ``true`` 
 
 |void| **set_cell_mode**\ (\ column\: :ref:`int<class_int>`, mode\: :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>`\ ) :ref:`🔗<class_TreeItem_method_set_cell_mode>`
 
-Sets the given column's cell mode to ``mode``. This determines how the cell is displayed and edited. See :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` constants for details.
+将给定列的单元格模式设置为 ``mode``\ 。决定了单元格的显示和编辑方式。见 :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` 常量。
 
 .. rst-class:: classref-item-separator
 
@@ -1316,7 +1316,7 @@ Sets the given column's cell mode to ``mode``. This determines how the cell is d
 
 |void| **set_custom_as_button**\ (\ column\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TreeItem_method_set_custom_as_button>`
 
-Makes a cell with :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` display as a non-flat button with a :ref:`StyleBox<class_StyleBox>`.
+让 :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` 的单元格显示为使用 :ref:`StyleBox<class_StyleBox>` 的非扁平按钮。
 
 .. rst-class:: classref-item-separator
 
@@ -1368,9 +1368,9 @@ Makes a cell with :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTO
 
 |void| **set_custom_draw_callback**\ (\ column\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_TreeItem_method_set_custom_draw_callback>`
 
-Sets the given column's custom draw callback. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback. The cell has to be in :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` to use this feature.
+设置给定列的自定义绘制回调。使用空的 :ref:`Callable<class_Callable>`\ （\ ``Callable()``\ ）清除自定义回调。单元格必须处于 :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` 模式才能使用该功能。
 
-The ``callback`` should accept two arguments: the **TreeItem** that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
+名为 ``callback`` 的方法应接受两个参数：被绘制的 **TreeItem** 及其作为一个 :ref:`Rect2<class_Rect2>` 的位置和大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1444,7 +1444,7 @@ The ``callback`` should accept two arguments: the **TreeItem** that is drawn and
 
 |void| **set_icon**\ (\ column\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_TreeItem_method_set_icon>`
 
-Sets the given cell's icon :ref:`Texture2D<class_Texture2D>`. The cell has to be in :ref:`CELL_MODE_ICON<class_TreeItem_constant_CELL_MODE_ICON>` mode.
+设置给定单元格的图标 :ref:`Texture2D<class_Texture2D>`\ 。该单元格需要处于 :ref:`CELL_MODE_ICON<class_TreeItem_constant_CELL_MODE_ICON>` 模式。
 
 .. rst-class:: classref-item-separator
 
@@ -1568,7 +1568,7 @@ Sets the given cell's icon :ref:`Texture2D<class_Texture2D>`. The cell has to be
 
 |void| **set_structured_text_bidi_override**\ (\ column\: :ref:`int<class_int>`, parser\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`\ ) :ref:`🔗<class_TreeItem_method_set_structured_text_bidi_override>`
 
-Set BiDi algorithm override for the structured text. Has effect for cells that display text.
+为结构化文本设置 BiDi 算法覆盖。对显示文本的单元格有影响。
 
 .. rst-class:: classref-item-separator
 
@@ -1580,7 +1580,7 @@ Set BiDi algorithm override for the structured text. Has effect for cells that d
 
 |void| **set_structured_text_bidi_override_options**\ (\ column\: :ref:`int<class_int>`, args\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_TreeItem_method_set_structured_text_bidi_override_options>`
 
-Set additional options for BiDi override. Has effect for cells that display text.
+设置 BiDi 覆盖的附加选项。对显示文本的单元格有效果。
 
 .. rst-class:: classref-item-separator
 
@@ -1667,10 +1667,10 @@ Set additional options for BiDi override. Has effect for cells that display text
 展开显示该 **TreeItem** 所需的所有 **TreeItem**\ ，即所有祖先 **TreeItem**\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -11,15 +11,10 @@
             font for and select the font tab. The second is in the inspector
             for control nodes under <strong>Theme Overrides &gt; Fonts</strong>. Lastly, in
             the inspector settings for themes under <strong>Default Font</strong>.</paragraph>
-        <paragraph>If no font override is specified anywhere,
-            <reference name="Open Sans" refuri="https://fonts.google.com/specimen/Open+Sans">Open Sans</reference> SemiBold
-            is used as the default project font.</paragraph>
+        <paragraph>如果其他地方都没有指定字体覆盖项，那么就会使用 <reference name="Open Sans" refuri="https://fonts.google.com/specimen/Open+Sans">Open Sans</reference> SemiBold 作为默认的项目字体。</paragraph>
         <note>
-            <paragraph>Since Godot 4.0, font sizes are no longer defined in the font itself but are
-                instead defined in the node that uses the font. This is done in the
-                <strong>Theme Overrides &gt; Font Sizes</strong> section of the inspector.</paragraph>
-            <paragraph>This allows changing the font size without having to duplicate the font
-                resource for every different font size.</paragraph>
+            <paragraph>从 Godot 4.0 开始，字体的大小不再随字体本身指定，而是在使用字体的节点中定义。可以在检查器的 <strong>Theme Overrides &gt; Font Sizes</strong> 中找到。</paragraph>
+            <paragraph>这样修改字体大小的时候就不必为每种字体大小复制字体一份资源了。</paragraph>
         </note>
         <paragraph>There are 2 kinds of font files: <emphasis>dynamic</emphasis> (TTF/OTF/WOFF/WOFF2 formats) and
             <emphasis>bitmap</emphasis> (BMFont <literal>.fnt</literal> format or monospaced image). Dynamic fonts are the
@@ -603,19 +598,15 @@
                             the project.</paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph>The engine automatically uses system fonts as fallback fonts, which makes it
-                    possible to display CJK characters and emoji without having to load a custom
-                    font. There are some restrictions that apply though, as mentioned in the
-                    <reference internal="True" refid="doc-using-fonts-emoji"><inline classes="std std-ref">Using emoji</inline></reference> section.</paragraph>
-                <paragraph>Create a <reference internal="True" refuri="../../classes/class_systemfont#class-systemfont"><inline classes="std std-ref">SystemFont</inline></reference> resource in the location where you desire to
-                    use the system font:</paragraph>
+                <paragraph>引擎会自动使用系统字体作为回退字体，因此不加载自定义字体也能够显示中日韩字符以及 emoji。不过仍然会有一些限制，见<reference internal="True" refid="doc-using-fonts-emoji"><inline classes="std std-ref">使用 emoji</inline></reference> 中的相关内容。</paragraph>
+                <paragraph>需要使用系统字体的地方，请创建 <reference internal="True" refuri="../../classes/class_systemfont#class-systemfont"><inline classes="std std-ref">SystemFont</inline></reference> 资源：</paragraph>
                 <figure align="center" ids="id30">
                     <image candidates="{'*': 'tutorials/ui/img/using_fonts_system_font_create.webp'}" uri="tutorials/ui/img/using_fonts_system_font_create.webp"></image>
-                    <caption>Creating a SystemFont resource</caption>
+                    <caption>创建 SystemFont 资源</caption>
                 </figure>
                 <figure align="center" ids="id31">
                     <image candidates="{'*': 'tutorials/ui/img/using_fonts_system_font_specify.webp'}" uri="tutorials/ui/img/using_fonts_system_font_specify.webp"></image>
-                    <caption>Specifying a font name to use in a SystemFont resource</caption>
+                    <caption>指定 SystemFont 资源中使用的字体名称</caption>
                 </figure>
                 <paragraph>你可以显式指定若干字体名称（例如 <literal>Arial</literal>），也可以指定字体的<emphasis>别名</emphasis>，后者会映射到系统中的“标准”默认字体：</paragraph>
                 <comment xml:space="preserve">Android font information sourced from &lt;https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/fonts.xml&gt;</comment>

@@ -208,6 +208,8 @@ PhysicsServer2D 是负责所有 2D 物理的服务器。它可以直接创建和
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>`\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                                       |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`body_set_state_sync_callback<class_PhysicsServer2D_method_body_set_state_sync_callback>`\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`body_test_motion<class_PhysicsServer2D_method_body_test_motion>`\ (\ body\: :ref:`RID<class_RID>`, parameters\: :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>`, result\: :ref:`PhysicsTestMotionResult2D<class_PhysicsTestMotionResult2D>` = null\ )                                         |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`capsule_shape_create<class_PhysicsServer2D_method_capsule_shape_create>`\ (\ )                                                                                                                                                                                                                                          |
@@ -1155,9 +1157,9 @@ enum **ProcessInfo**: :ref:`🔗<enum_PhysicsServer2D_ProcessInfo>`
 
 :ref:`RID<class_RID>` **area_create**\ (\ ) :ref:`🔗<class_PhysicsServer2D_method_area_create>`
 
-Creates a 2D area object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and ``monitorable`` set to ``false``.
+在物理服务器中创建一个 2D 区域对象，并返回标识该区域的 :ref:`RID<class_RID>`\ 。所创建区域的默认设置包括设置为 ``1`` 的碰撞层和遮罩，以及设置为 ``false`` 的 ``monitorable``\ 。
 
-Use :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` to add shapes to it, use :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` to set its transform, and use :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` to add the area to a space. If you want the area to be detectable use :ref:`area_set_monitorable<class_PhysicsServer2D_method_area_set_monitorable>`.
+使用 :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` 向其添加形状，使用 :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` 设置其变换，并使用 :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` 将区域添加到一个空间。如果你希望该区域可被检测，请使用 :ref:`area_set_monitorable<class_PhysicsServer2D_method_area_set_monitorable>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1645,9 +1647,9 @@ Use :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` to add sh
 
 :ref:`RID<class_RID>` **body_create**\ (\ ) :ref:`🔗<class_PhysicsServer2D_method_body_create>`
 
-Creates a 2D body object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and body mode set to :ref:`BODY_MODE_RIGID<class_PhysicsServer2D_constant_BODY_MODE_RIGID>`.
+在物理服务器中创建一个 2D 物体对象，并返回标识它的 :ref:`RID<class_RID>`\ 。所创建区域的默认设置包括设置为 ``1`` 的碰撞层和遮罩，以及设置为 :ref:`BODY_MODE_RIGID<class_PhysicsServer2D_constant_BODY_MODE_RIGID>` 的物体模式。
 
-Use :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` to add shapes to it, use :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>` to set its transform, and use :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>` to add the body to a space.
+使用 :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` 为其添加形状，使用 :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>` 设置其变换，使用 :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>` 将物体添加到一个空间。
 
 .. rst-class:: classref-item-separator
 
@@ -1867,7 +1869,7 @@ Use :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` to add sh
 
 :ref:`bool<class_bool>` **body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_PhysicsServer2D_method_body_is_omitting_force_integration>`
 
-Returns ``true`` if the body is omitting the standard force integration. See :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`.
+如果物体省略了标准力积分，则返回 ``true``\ 。参见 :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1879,7 +1881,7 @@ Returns ``true`` if the body is omitting the standard force integration. See :re
 
 |void| **body_remove_collision_exception**\ (\ body\: :ref:`RID<class_RID>`, excepted_body\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_remove_collision_exception>`
 
-返回附加到该实体的 ``ObjectID``\ 。可使用 :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` 从非零 ``ObjectID`` 中检索一个 :ref:`Object<class_Object>`\ 。
+从物体的碰撞例外列表中移除 ``excepted_body``\ ，不再忽略与该物体的碰撞。
 
 .. rst-class:: classref-item-separator
 
@@ -2005,17 +2007,17 @@ Returns ``true`` if the body is omitting the standard force integration. See :re
 
 |void| **body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_force_integration_callback>`
 
-Sets the body's custom force integration callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback.
+将物体的自定义力积分回调函数设置为 ``callable``\ 。使用空的 :ref:`Callable<class_Callable>`\ （\ ``Callable()``\ ） 清除自定义回调。
 
-The function ``callable`` will be called every physics tick, before the standard force integration (see :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`). It can be used for example to update the body's linear and angular velocity based on contact with other bodies.
+函数 ``callable`` 将在标准力积分之前的每个物理刻度被调用（参见 :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`\ ）。例如，它可用于根据与其他物体的接触更新物体的线速度和角速度。
 
-If ``userdata`` is not ``null``, the function ``callable`` must take the following two parameters:
+如果 ``userdata`` 不为 ``null``\ ，函数 ``callable`` 必须采用以下两个参数：
 
-1. ``state``: a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` used to retrieve and modify the body's state,
+1. ``state``\ ：用于检索和修改物体状态的 :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`\ ，
 
-2. ``userdata``: a :ref:`Variant<class_Variant>`; its value will be the ``userdata`` passed into this method.
+2. ``userdata``\ ：\ :ref:`Variant<class_Variant>`\ ；其值将是传递到该方法的 ``userdata``\ 。
 
-If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` parameter.
+如果 ``userdata`` 为 ``null``\ ，则 ``callable`` 必须仅采用 ``state`` 参数。
 
 .. rst-class:: classref-item-separator
 
@@ -2051,9 +2053,9 @@ If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` para
 
 |void| **body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_omit_force_integration>`
 
-Sets whether the body omits the standard force integration. If ``enable`` is ``true``, the body will not automatically use applied forces, torques, and damping to update the body's linear and angular velocity. In this case, :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>` can be used to manually update the linear and angular velocity instead.
+设置物体是否省略标准力积分。如果 ``enable`` 为 ``true``\ ，物体将不会自动使用施加的力、扭矩和阻尼来更新物体的线速度和角速度。在这种情况下，可以使用 :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>` 手动更新线速度和角速度。
 
-This method is called when the property :ref:`RigidBody2D.custom_integrator<class_RigidBody2D_property_custom_integrator>` is set.
+当设置属性 :ref:`RigidBody2D.custom_integrator<class_RigidBody2D_property_custom_integrator>` 时，将调用该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -2146,6 +2148,24 @@ This method is called when the property :ref:`RigidBody2D.custom_integrator<clas
 设置实体状态的值。有关可用状态的列表，请参阅 :ref:`BodyState<enum_PhysicsServer2D_BodyState>`\ 。
 
 \ **注意：**\ 状态更改不会立即生效。状态更改将发生在下一个物理帧上。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_body_set_state_sync_callback:
+
+.. rst-class:: classref-method
+
+|void| **body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_state_sync_callback>`
+
+Sets the body's state synchronization callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the callback.
+
+The function ``callable`` will be called every physics frame, assuming that the body was active during the previous physics tick, and can be used to fetch the latest state from the physics server.
+
+The function ``callable`` must take the following parameters:
+
+1. ``state``: a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, used to retrieve the body's state.
 
 .. rst-class:: classref-item-separator
 
@@ -2610,10 +2630,10 @@ This method is called when the property :ref:`RigidBody2D.custom_integrator<clas
 在物理服务器中创建一个 2D 世界边界形状，并返回标识它的 :ref:`RID<class_RID>`\ 。可使用 :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` 设置形状的法线方向和距离属性。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

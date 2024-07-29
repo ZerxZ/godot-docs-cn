@@ -177,6 +177,8 @@ ProjectSettings
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_capture_reassignment<class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment>`                                                     | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_identifier<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_declaration<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration>`                                                           | ``1``                                                                                            |
@@ -276,6 +278,8 @@ ProjectSettings
    | :ref:`int<class_int>`                             | :ref:`debug/settings/gdscript/max_call_stack<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`                                                                                       | ``1024``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                                                         | ``16384``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_timestamp_query_elements<class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements>`                                                           | ``256``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/settings/stdout/print_fps<class_ProjectSettings_property_debug/settings/stdout/print_fps>`                                                                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1816,9 +1820,11 @@ ProjectSettings
 
 :ref:`String<class_String>` **application/config/custom_user_dir_name** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/custom_user_dir_name>`
 
-该用户目录用于存储持久数据（\ ``user://`` 文件系统）。如果定义了自定义目录名称，则该名称将被追加到系统特定的用户数据目录（与 :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>` 中记录的 Godot 配置文件夹相同的父文件夹）。
+This user directory is used for storing persistent data (``user://`` filesystem). If a custom directory name is defined, this name will be appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
 
-\ :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` 设置必须被启用，该设置才能生效。
+The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` setting must be enabled for this to take effect.
+
+\ **Note:** If :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` contains trailing periods, they will be stripped as folder names ending with a period are not allowed on Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2080,7 +2086,7 @@ ProjectSettings
 
 :ref:`bool<class_bool>` **application/run/low_processor_mode** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/low_processor_mode>`
 
-如果为 ``true``\ ，则启用低处理器使用模式。只要视觉上没有任何变化，就不会重绘屏幕。该功能旨在编写应用程序和编辑器，在大多数游戏中并没什么用处（还可能损害性能）。
+If ``true``, enables low-processor usage mode. When enabled, the engine takes longer to redraw, but only redraws the screen if necessary. This may lower power consumption, and is intended for editors or mobile applications. For most games, because the screen needs to be redrawn every frame, it is recommended to keep this setting disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -2128,21 +2134,21 @@ ProjectSettings
 
 :ref:`int<class_int>` **application/run/max_fps** = ``0`` :ref:`🔗<class_ProjectSettings_property_application/run/max_fps>`
 
-Maximum number of frames per second allowed. A value of ``0`` means "no limit". The actual number of frames per second may still be below this value if the CPU or GPU cannot keep up with the project logic and rendering.
+每秒允许的最大帧数。\ ``0`` 表示“不限制”。如果 CPU 或 GPU 无法满足项目逻辑和渲染，则实际每秒的帧数可能仍然比这个值小。
 
-Limiting the FPS can be useful to reduce system power consumption, which reduces heat and noise emissions (and improves battery life on mobile devices).
+限制 FPS 可以降低系统对电源的消耗，能够降低发热、减少噪音（延长移动设备的电池寿命）。
 
-If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is set to ``Enabled`` or ``Adaptive``, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate.
+\ :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 ``Enabled`` 或 ``Adaptive`` 时，该设置优先生效，强制的 FPS 数无法超过显示器的刷新率。
 
-If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled``, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+\ :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 ``Enabled`` 时，在启用了可变刷新率（G-Sync/FreeSync）的显示器上使用比显示器刷新率略低几帧的 FPS 限制会\ `降低输入延迟，避免画面撕裂 <https://blurbusters.com/howto-low-lag-vsync-on/>`__\ 。
 
-If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Disabled``, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
+\ :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 ``Disabled`` 时，与不限制帧率相比，将 FPS 限制设为系统所能达到的较高值能够降低输入延迟。因为原理是确保 GPU 负载低于 100%，所以只有在 GPU 为瓶颈时才会降低延迟，无法缓解 CPU 瓶颈导致的延迟。
 
-See also :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
+另见 :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`\ 。
 
-This setting can be overridden using the ``--max-fps <fps>`` command line argument (including with a value of ``0`` for unlimited framerate).
+这个设置可以使用 ``--max-fps <fps>`` 命令行参数覆盖（设为 ``0`` 则是不限制帧率）。
 
-\ **Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.max_fps<class_Engine_property_max_fps>` instead.
+\ **注意：**\ 这个属性仅在项目启动时读取。要在运行时修改渲染 FPS 上限，请改为设置 :ref:`Engine.max_fps<class_Engine_property_max_fps>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -2314,7 +2320,7 @@ Audio output latency can be overridden using the ``--audio-output-latency <ms>``
 
 :ref:`int<class_int>` **audio/general/default_playback_type** = ``0`` :ref:`🔗<class_ProjectSettings_property_audio/general/default_playback_type>`
 
-**实验性：** 未来版本中可能修改或移除该属性。
+**实验性：** 未来版本中可能会修改或移除该属性。
 
 Specifies the default playback type of the platform.
 
@@ -2330,7 +2336,7 @@ The default value is set to **Stream**, as most platforms have no issues mixing 
 
 :ref:`int<class_int>` **audio/general/default_playback_type.web** = ``1`` :ref:`🔗<class_ProjectSettings_property_audio/general/default_playback_type.web>`
 
-**实验性：** 未来版本中可能修改或移除该属性。
+**实验性：** 未来版本中可能会修改或移除该属性。
 
 Specifies the default playback type of the Web platform.
 
@@ -2566,6 +2572,18 @@ Zstandard 的默认压缩级别。影响压缩的场景和资源。较高的级�
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_capture_reassignment** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment>`
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable captured by a lambda is reassigned, since this does not modify the outer local variable.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier:
 
 .. rst-class:: classref-property
@@ -2622,9 +2640,9 @@ Zstandard 的默认压缩级别。影响压缩的场景和资源。较高的级�
 
 :ref:`int<class_int>` **debug/gdscript/warnings/deprecated_keyword** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when deprecated keywords are used.
+设为 ``warn`` 或 ``error`` 时，会在使用已启用的关键字时对应产生警告或错误。
 
-\ **Note:** There are currently no deprecated keywords, so this warning is never produced.
+\ **注意：**\ 目前没有弃用的关键字，因此不会产生该警告。
 
 .. rst-class:: classref-item-separator
 
@@ -2660,7 +2678,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/enum_variable_without_default** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/enum_variable_without_default>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable has an enum type but no explicit default value, but only if the enum does not contain ``0`` as a valid value.
+设置为 ``warn`` 或 ``error`` 时，如果变量具有枚举类型但没有明确的默认值，且枚举不包含 ``0`` 作为有效值时，会分别产生一个警告或一个错误。
 
 .. rst-class:: classref-item-separator
 
@@ -2918,7 +2936,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+设置为 ``warn`` 或 ``error`` 时，当调用可能对周围代码没有影响的表达式，例如将 ``2 + 2`` 写为语句时，会分别产生一个警告或一个错误。
 
 .. rst-class:: classref-item-separator
 
@@ -2930,7 +2948,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+设置为 ``warn`` 或 ``error`` 时，当调用可能对周围代码没有影响的三元表达式，例如将 ``42 if active else 0`` 写为语句时，会分别产生一个警告或一个错误。
 
 .. rst-class:: classref-item-separator
 
@@ -3014,7 +3032,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_cast** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a :ref:`Variant<class_Variant>` value is cast to a non-Variant.
+设为 ``warn`` 或 ``error`` 时，当 :ref:`Variant<class_Variant>` 值转换为非 Variant 时，会分别产生一个警告或一个错误。
 
 .. rst-class:: classref-item-separator
 
@@ -3112,7 +3130,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/unused_signal** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a signal is declared but never explicitly used in the class.
+设置为 ``warn`` 或 ``error`` 时，当信号在类中声明但从未明确使用时，会分别产生一个警告或一个错误。
 
 .. rst-class:: classref-item-separator
 
@@ -3173,6 +3191,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/settings/profiler/max_functions** = ``16384`` :ref:`🔗<class_ProjectSettings_property_debug/settings/profiler/max_functions>`
 
 分析时单帧允许的最大函数数量。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/settings/profiler/max_timestamp_query_elements** = ``256`` :ref:`🔗<class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements>`
+
+Maximum number of timestamp query elements allowed per frame for visual profiling.
 
 .. rst-class:: classref-item-separator
 
@@ -3268,7 +3298,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`bool<class_bool>` **debug/shader_language/warnings/magic_position_write** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/magic_position_write>`
 
-When set to ``true``, produces a warning when the shader contains ``POSITION = vec4(vertex,`` as this was very common code written in Godot 4.2 and earlier that was paired with a QuadMesh to produce a full screen post processes pass. With the switch to reversed z in 4.3, this trick no longer works, as it implicitly relied on the ``VERTEX.z`` being 0.
+当设置为 ``true`` 时，如果着色器包含 ``POSITION = vec4(vertex,``\ ，则会产生警告，因为这是在 Godot 4.2 及更早版本中编写的非常常见的代码，与 QuadMesh 配对以产生一个全屏后期处理阶段。在 4.3 中切换到反转 z 后，该技巧不再有效，因为它隐式依赖于 ``VERTEX.z`` 为 0。
 
 .. rst-class:: classref-item-separator
 
@@ -4184,7 +4214,7 @@ When set to ``true``, produces a warning when the shader contains ``POSITION = v
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -4196,13 +4226,13 @@ When set to ``true``, produces a warning when the shader contains ``POSITION = v
 
 :ref:`String<class_String>` **display/window/stretch/mode** = ``"disabled"`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/mode>`
 
-定义如何将基础大小进行拉伸，从而适应窗口或屏幕的分辨率。
+Defines how the base size is stretched to fit the resolution of the window or screen.
 
-\ **"disabled"**\ ：不进行拉伸。场景中的一个单位对应屏幕上的一个像素。\ :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` 在该模式下无效。推荐非游戏应用程序使用。
+\ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ **"canvas_items"**\ ：将项目设置中指定的基础大小拉伸至覆盖整个屏幕（会考虑 :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>`\ ）。这样所有东西都是直接按照目标分辨率渲染的。3D 不受影响，但在 2D 中精灵的像素和屏幕像素就不再是 1:1 的关系了，缩放可能导致画面问题。推荐大多数非像素风的游戏使用，但像素风游戏也是可以使用该拉伸模式的（尤其是 3D）。
+\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
 
-\ **"viewport"**\ ：将根 :ref:`Viewport<class_Viewport>` 的大小设为项目设置中“显示”部分中指定的基础大小。场景会现在这个视口中渲染。最终会将该视口缩放至适合屏幕的尺寸（会考虑 :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>`\ ）。推荐像素风游戏使用。
+\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -4256,17 +4286,17 @@ When set to ``true``, produces a warning when the shader contains ``POSITION = v
 
 :ref:`int<class_int>` **display/window/vsync/vsync_mode** = ``1`` :ref:`🔗<class_ProjectSettings_property_display/window/vsync/vsync_mode>`
 
-Sets the V-Sync mode for the main game window. The editor's own V-Sync mode can be set using :ref:`EditorSettings.interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>`.
+设置游戏主窗口的垂直同步模式。编辑器自己的垂直同步模式可以使用 :ref:`EditorSettings.interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>` 来设置。
 
-See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
+请参阅 :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` 了解可能的值以及它们如何影响应用程序的行为。
 
-Depending on the platform and rendering method, the engine will fall back to **Enabled** if the desired mode is not supported.
+根据平台和渲染方法，如果所需的模式不受支持，则引擎将回退到 **Enabled**\ 。
 
-V-Sync can be disabled on the command line using the ``--disable-vsync`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
+可以在命令行中使用 ``--disable-vsync`` :doc:`命令行参数 <../tutorials/editor/command_line_tutorial>`\ 禁用 V-Sync。
 
-\ **Note:** The **Adaptive** and **Mailbox** V-Sync modes are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+\ **注意：**\ **Adaptive**\ 和 **Mailbox**\ 垂直同步模式仅支持 Forward+ 和 Mobile 渲染方法，不支持 Compatibility。
 
-\ **Note:** This property is only read when the project starts. To change the V-Sync mode at runtime, call :ref:`DisplayServer.window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>` instead.
+\ **注意：**\ 这个属性只在项目启动时读取。要在运行时改变垂直同步模式，请改为调用 :ref:`DisplayServer.window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4316,9 +4346,11 @@ V-Sync can be disabled on the command line using the ``--disable-vsync`` :doc:`c
 
 :ref:`bool<class_bool>` **editor/export/convert_text_resources_to_binary** = ``true`` :ref:`🔗<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>`
 
-如果为 ``true``\ ，则导出时会将文本格式的资源转换为二进制格式。这样能够减小文件大小，略微加快加载速度。
+If ``true``, text resource (``tres``) and text scene (``tscn``) files are converted to their corresponding binary format on export. This decreases file sizes and speeds up loading slightly.
 
-\ **注意：**\ 如果 :ref:`editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` 为 ``true``\ ，则 :ref:`@GDScript.load<class_@GDScript_method_load>` 无法在导出后的项目中读取已转换的文件。导出后的 PCK 中，部分文件的路径也会改变，例如 ``project.godot`` 会变成 ``project.binary``\ 。如果你需要在运行时加载存在于 PCK 中的文件，请将 :ref:`editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` 设置为 ``false``\ 。
+\ **Note:** Because a resource's file extension may change in an exported project, it is heavily recommended to use :ref:`@GDScript.load<class_@GDScript_method_load>` or :ref:`ResourceLoader<class_ResourceLoader>` instead of :ref:`FileAccess<class_FileAccess>` to load resources dynamically.
+
+\ **Note:** The project settings file (``project.godot``) will always be converted to binary on export, regardless of this setting.
 
 .. rst-class:: classref-item-separator
 
@@ -4344,7 +4376,7 @@ V-Sync can be disabled on the command line using the ``--disable-vsync`` :doc:`c
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -4528,11 +4560,11 @@ Godot 有两个内置的 :ref:`MovieWriter<class_MovieWriter>`\ ：
 
 :ref:`String<class_String>` **editor/run/main_run_args** = ``""`` :ref:`🔗<class_ProjectSettings_property_editor/run/main_run_args>`
 
-The command-line arguments to append to Godot's own command line when running the project. This doesn't affect the editor itself.
+运行项目时附加到 Godot 自己的命令行的命令行参数。这不会影响编辑器本身。
 
-It is possible to make another executable run Godot by using the ``%command%`` placeholder. The placeholder will be replaced with Godot's own command line. Program-specific arguments should be placed *before* the placeholder, whereas Godot-specific arguments should be placed *after* the placeholder.
+可以使用 ``%command%`` 占位符使另一个可执行文件运行 Godot。占位符将替换为 Godot 自己的命令行。程序特定的参数应该放在\ *占位符之前*\ ，而 Godot 特定参数应该放在\ *占位符之后*\ 。
 
-For example, this can be used to force the project to run on the dedicated GPU in an NVIDIA Optimus system on Linux:
+例如，这可用于强制项目在 Linux 上的 NVIDIA Optimus 系统中的专用 GPU 上运行：
 
 .. code:: text
 
@@ -4576,7 +4608,7 @@ For example, this can be used to force the project to run on the dedicated GPU i
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -4590,7 +4622,7 @@ For example, this can be used to force the project to run on the dedicated GPU i
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -4640,9 +4672,9 @@ For example, this can be used to force the project to run on the dedicated GPU i
 
 :ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled>`
 
-If ``true``, Autodesk FBX 3D scene files with the ``.fbx`` extension will be imported by converting them to glTF 2.0.
+如果为 ``true``\ ，扩展名为 ``.fbx`` 的 Autodesk FBX 3D 场景文件会通过转换为 glTF 2.0 来导入。
 
-This requires configuring a path to an FBX2glTF executable in the editor settings at :ref:`EditorSettings.filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`.
+需要在编辑器设置 :ref:`EditorSettings.filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>` 中，配置 FBX2glTF 可执行文件的路径。
 
 .. rst-class:: classref-item-separator
 
@@ -4730,7 +4762,7 @@ This requires configuring a path to an FBX2glTF executable in the editor setting
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -5906,13 +5938,13 @@ LCD 次像素布局，用于字体抗锯齿。见 :ref:`FontLCDSubpixelLayout<en
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_skip_selection_for_next_occurrence** :ref:`🔗<class_ProjectSettings_property_input/ui_text_skip_selection_for_next_occurrence>`
 
-If no selection is currently active with the last caret in text fields, searches for the next occurrence of the the word currently under the caret and moves the caret to the next occurrence. The action can be performed sequentially for other occurrences of the word under the last caret.
+如果文本字段的最后一个文本光标当前未处于活动状态，则会搜索当前位于文本光标下方的单词的下一次出现的位置，并将文本光标移动到下一个出现位置。可以对最后一个文本光标下方的单词的其他出现位置依次执行该动作。
 
-If a selection is currently active with the last caret in text fields, searches for the next occurrence of the selection, adds a caret, selects the next occurrence then deselects the previous selection and its associated caret. The action can be performed sequentially for other occurrences of the selection of the last caret.
+如果文本字段中最后一个文本光标当前处于活动状态，则搜索所选内容的下一个出现位置，添加文本光标，选择下一个出现位置，然后取消选择上一个选择及其关联的文本光标。可以对上一个文本光标的其他出现位置依次执行该动作。
 
-The viewport is adjusted to the latest newly added caret.
+视口会根据最近新添加的文本光标进行调整。
 
-\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **注意：**\ 默认的 ``ui_*`` 动作对于多个 :ref:`Control<class_Control>` 的内部逻辑是必需的，无法删除。但是可以修改分配给该动作的事件。
 
 .. rst-class:: classref-item-separator
 
@@ -8898,7 +8930,7 @@ Godot 使用一个消息队列来延迟一些函数调用。如果你的空间�
 
 :ref:`bool<class_bool>` **navigation/baking/use_crash_prevention_checks** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/baking/use_crash_prevention_checks>`
 
-If enabled, and baking would potentially lead to an engine crash, the baking will be interrupted and an error message with explanation will be raised.
+如果启用，当烘焙可能导致引擎崩溃时，会打断烘焙并发出错误消息进行解释。
 
 .. rst-class:: classref-item-separator
 
@@ -9492,13 +9524,13 @@ If enabled, and baking would potentially lead to an engine crash, the baking wil
 
 :ref:`bool<class_bool>` **physics/common/physics_interpolation** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_interpolation>`
 
-If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames. See also :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` and :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`.
+如果为 ``true``\ ，则渲染器将在最后两个变换之间插入物理对象的变换，这样即使物理刻度与渲染帧不一致，也可以看到平滑的运动。另请参阅 :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` 和 :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`\ 。
 
-\ **Note:** If ``true``, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
+\ **注意：**\ 如果为 ``true``\ ，则应通过将 :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` 设置为 ``0.0`` 来禁用物理抖动修复。
 
-\ **Note:** This property is only read when the project starts. To toggle physics interpolation at runtime, set :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` instead.
+\ **注意：**\ 该属性仅在项目启动时读取。要在运行时切换物理插值，请改为设置 :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>`\ 。
 
-\ **Note:** This feature is currently only implemented in the 2D renderer.
+\ **注意：**\ 该功能目前仅在 2D 渲染器中实现。
 
 .. rst-class:: classref-item-separator
 
@@ -9510,11 +9542,11 @@ If ``true``, the renderer will interpolate the transforms of physics objects bet
 
 :ref:`float<class_float>` **physics/common/physics_jitter_fix** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_jitter_fix>`
 
-Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be good enough for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+控制物理周期与真实时间的同步程度。小于等于 0 时，周期是同步的。对时钟同步有要求的网络游戏建议使用此类值。较高的值会导致游戏内时钟和真实时钟的较大偏差，但可以平滑帧率抖动。大多数情况下，默认值 0.5 应该足够好了；大于 2 的值可能导致游戏对丢帧作出明显延迟的反应，因此不推荐使用。
 
-\ **Note:** When using a physics interpolation solution (such as enabling :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` or using a custom solution), the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
+\ **注意：**\ 当使用物理插值解决方案（例如启用 :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` 或使用自定义解决方案）时，应通过将 :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` 设置为 ``0.0`` 来禁用物理抖动修复。
 
-\ **Note:** This property is only read when the project starts. To change the physics jitter fix at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
+\ **注意：**\ 该属性仅在项目启动时读取。 要在运行时更改物理抖动修复，请改为设置 :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -9636,9 +9668,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 :ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_3d** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`
 
-设置用于 3D 渲染的 MSAA 采样数（为 2 的幂）。MSAA 用于减少多边形边缘周围的锯齿。较高的 MSAA 值会产生更平滑的边缘，但在某些硬件上可能会明显变慢，尤其是显存带宽比较有限的集成显卡。另见用于超级采样的双线性缩放 3d :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>`\ ，它提供更高的质量但更昂贵。这对着色器引起的锯齿或纹理锯齿无效。
-
-\ **注意：**\ MSAA 仅支持 Forward+ 和 Mobile 渲染方式，不支持 Compatibility。
+Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware, especially integrated graphics due to their limited memory bandwidth. See also :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
 
 .. rst-class:: classref-item-separator
 
@@ -10804,7 +10834,7 @@ The maximum number of uniforms that can be used by the global shader uniform buf
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10818,7 +10848,7 @@ The maximum number of uniforms that can be used by the global shader uniform buf
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11052,7 +11082,7 @@ Web 平台的 :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pr
 
 :ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``613`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`
 
-Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.613.3`` installed, you need to input ``613`` here.
+要使用的 `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ 的版本代码（\ ``D3D12SDKVersion``\ ）。该代码必须与安装在编辑器二进制文件旁边的\ *次要*\ 版本以及当前编辑器版本的导出模板目录中的版本相匹配。例如，如果安装了 ``1.613.3``\ ，则需要在此处输入 ``613``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -11178,9 +11208,9 @@ Direct3D 12 渲染驱动每帧所使用的采样器描述符堆中的条目数�
 
 :ref:`bool<class_bool>` **rendering/rendering_device/pipeline_cache/enable** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/enable>`
 
-Enable the pipeline cache that is saved to disk if the graphics API supports it.
+如果图形 API 支持，则启用保存到磁盘的管道缓存。
 
-\ **Note:** This property is unable to control the pipeline caching the GPU driver itself does. Only turn this off along with deleting the contents of the driver's cache if you wish to simulate the experience a user will get when starting the game for the first time.
+\ **注意：**\ 该属性无法控制 GPU 驱动程序本身的管道缓存。如果希望模拟用户首次启动游戏时的体验，则只需关闭该功能并删除驱动程序缓存的内容即可。
 
 .. rst-class:: classref-item-separator
 
@@ -11206,7 +11236,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11220,7 +11250,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11234,7 +11264,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11288,7 +11318,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11340,7 +11370,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11366,7 +11396,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11380,7 +11410,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11394,7 +11424,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11660,9 +11690,9 @@ WebP 的默认压缩方法。影响有损和无损 WebP。较高的值会以压�
 
 :ref:`String<class_String>` **rendering/vrs/texture** = ``""`` :ref:`🔗<class_ProjectSettings_property_rendering/vrs/texture>`
 
-If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` is set to **Texture**, this is the path to default texture loaded as the VRS image.
+如果 :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` 为 **Texture**\ ，则这是 VRS 图像所加载的默认纹理的路径。
 
-The texture *must* use a lossless compression format so that colors can be matched precisely. The following VRS densities are mapped to various colors, with brighter colors representing a lower level of shading precision:
+该纹理\ *必须*\ 使用无损压缩格式，以便可以精确匹配颜色。以下 VRS 密度会映射为各种颜色，较亮的颜色代表较低的着色精度。
 
 .. code:: text
 
@@ -11673,9 +11703,9 @@ The texture *must* use a lossless compression format so that colors can be match
     - 2×4 = rgb(85, 170, 0)  - #55aa00
     - 4×2 = rgb(170, 85, 0)  - #aa5500
     - 4×4 = rgb(170, 170, 0) - #aaaa00
-    - 4×8 = rgb(170, 255, 0) - #aaff00 - Not supported on most hardware
-    - 8×4 = rgb(255, 170, 0) - #ffaa00 - Not supported on most hardware
-    - 8×8 = rgb(255, 255, 0) - #ffff00 - Not supported on most hardware
+    - 4×8 = rgb(170, 255, 0) - #aaff00 - 大多数硬件不支持
+    - 8×4 = rgb(255, 170, 0) - #ffaa00 - 大多数硬件不支持
+    - 8×8 = rgb(255, 255, 0) - #ffff00 - 大多数硬件不支持
 
 .. rst-class:: classref-item-separator
 
@@ -11759,7 +11789,7 @@ The texture *must* use a lossless compression format so that colors can be match
 
 :ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`
 
-If true the hand interaction profile extension will be activated if supported by the platform.
+如果为 true，平台支持时会激活手部交互配置扩展。
 
 .. rst-class:: classref-item-separator
 
@@ -11795,9 +11825,9 @@ If true the hand interaction profile extension will be activated if supported by
 
 :ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`
 
-如果为 true 并且支持注视点，将根据帧速率自动调整注视点级别，直至达到 :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>` 上设置的级别。
+If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
-\ **注意：**\ 仅适用于兼容性渲染器。
+\ **Note:** Only works on the Compatibility rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -11809,9 +11839,9 @@ If true the hand interaction profile extension will be activated if supported by
 
 :ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_level>`
 
-应用的注视点级别（如果支持）：0 = 关闭、1 = 低、2 = 中、3 = 高。
+Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
-\ **注意：**\ 仅适用于兼容性渲染器。
+\ **Note:** Only works on the Compatibility rendering method. On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -12226,10 +12256,10 @@ If true the hand interaction profile extension will be activated if supported by
 也可以用来擦除自定义项目设置。方法是将设置项的值设置为 ``null``\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

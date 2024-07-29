@@ -92,7 +92,9 @@ public partial class MyBuildings : Node
                     <paragraph>如果只希望“导入”另一个类资源（脚本或者场景），那么最好的解决方法就是使用预加载常量（Preloaded Constant）。不过也有例外的情况：</paragraph>
                     <enumerated_list enumtype="arabic" prefix="" suffix=".">
                         <list_item>
-                            <paragraph>如果已被导入的类有可能发生变化，那么它应该是一个使用 <literal>export</literal> 、 <literal>load</literal> 或之后进行初始化的属性。</paragraph>
+                            <paragraph>If the 'imported' class is liable to change, then it should be a property
+                                instead, initialized either using an <literal>@export</literal> or a <literal>load()</literal> (and
+                                perhaps not even initialized until later).</paragraph>
                         </list_item>
                         <list_item>
                             <paragraph>如果脚本需要大量依赖关系，又不想消耗太多内存，则可以在环境变化时动态地加载或卸载各种依赖关系。如果将资源预加载为常量，则卸载这些资源的唯一方法是卸载整个脚本。如果改为加载属性，则可以将它们设置为 <literal>null</literal> 并完全删除对资源的所有引用（扩展自 <reference internal="True" refuri="../../classes/class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference> 的类型会在指向其的所有引用均已消失时自动释放内存）。</paragraph>

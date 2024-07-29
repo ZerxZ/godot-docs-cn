@@ -206,9 +206,9 @@ enum **GenEditState**: :ref:`🔗<enum_PackedScene_GenEditState>`
 
 :ref:`Dictionary<class_Dictionary>` **_bundled** = ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }`` :ref:`🔗<class_PackedScene_property__bundled>`
 
-A dictionary representation of the scene contents.
+场景内容的字典表示。
 
-Available keys include "names" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for paths to overridden nodes, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
+可用的键包括资源的“names”和“variants”，节点的“node_count”、“nodes”、“node_paths”，覆盖节点的路径的“editable_instances”，信号连接的“conn_count”和“conns”，以及 PackedScene 格式样式的版本“version”。
 
 .. rst-class:: classref-section-separator
 
@@ -261,13 +261,13 @@ Available keys include "names" and "variants" for resources, "node_count", "node
 
 :ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ path\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_PackedScene_method_pack>`
 
-Packs the ``path`` node, and all owned sub-nodes, into this **PackedScene**. Any existing data will be cleared. See :ref:`Node.owner<class_Node_property_owner>`.
+将 ``path`` 节点及其所有子节点打包到该 **PackedScene** 中。所有现有数据都将被清除。请参阅 :ref:`Node.owner<class_Node_property_owner>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

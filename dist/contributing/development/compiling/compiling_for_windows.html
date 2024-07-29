@@ -6,8 +6,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="contributing/development/compiling/compiling_for_windows.html" />
 <meta property="og:site_name" content="Godot Engine documentation" />
-<meta property="og:description" content="需求: 要在Windows下进行编译, 需要以下内容: Visual Studio Community, version 2019 or later. Visual Studio 2022 is recommended. Make sure to enable C++ in the list of workflows to install. If you've already install..." />
-<meta name="description" content="需求: 要在Windows下进行编译, 需要以下内容: Visual Studio Community, version 2019 or later. Visual Studio 2022 is recommended. Make sure to enable C++ in the list of workflows to install. If you've already install..." />
+<meta property="og:description" content="需求: 要在Windows下进行编译, 需要以下内容: Visual Studio Community ，至少是 2019 版，推荐 Visual Studio 2022。 安装时请确保在工作流列表中启用了 C++ 。如果已经安装过 Visual Studio 但没有启用 C++ 支持，请重新运行安装器，会显示 修改 按钮。, MinGW-w64 和 GCC 可以作为 Visual Stud..." />
+<meta name="description" content="需求: 要在Windows下进行编译, 需要以下内容: Visual Studio Community ，至少是 2019 版，推荐 Visual Studio 2022。 安装时请确保在工作流列表中启用了 C++ 。如果已经安装过 Visual Studio 但没有启用 C++ 支持，请重新运行安装器，会显示 修改 按钮。, MinGW-w64 和 GCC 可以作为 Visual Stud..." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) 为 Windows 平台编译 &mdash; Godot Engine (latest) 简体中文文档</title>
 
@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -297,8 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -574,7 +574,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -587,7 +587,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/editor/inspector_dock.html">检查器</a><ul>
@@ -801,6 +801,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,7 +1159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1308,7 +1318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1549,8 +1559,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1957,20 +1967,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1995,17 +2005,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2033,14 +2043,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2541,6 +2551,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2864,10 +2875,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2887,7 +2898,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2989,44 +3000,44 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/xr/index.html#advanced-topics">高级专题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/xr_action_map.html">XR 动作映射</a><ul>
@@ -3053,17 +3064,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#some-final-words">最后的话</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3090,18 +3106,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3196,7 +3215,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3393,7 +3412,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3483,7 +3502,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_animationtree.html">AnimationTree</a><ul>
@@ -3516,7 +3535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4712,8 +4731,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6389,7 +6409,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8268,9 +8289,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_audiosample.html">AudioSample</a><ul>
@@ -10452,21 +10475,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_basis.html">Basis</a><ul>
@@ -10475,30 +10498,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_color.html">Color</a><ul>
@@ -10507,12 +10530,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_dictionary.html">Dictionary</a><ul>
@@ -10520,27 +10543,27 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_nodepath.html">NodePath</a><ul>
@@ -10548,10 +10571,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_object.html">Object</a><ul>
@@ -10568,60 +10591,60 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10629,10 +10652,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10640,30 +10663,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_plane.html">Plane</a><ul>
@@ -10672,12 +10695,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_projection.html">Projection</a><ul>
@@ -10685,12 +10708,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_quaternion.html">Quaternion</a><ul>
@@ -10699,12 +10722,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_rect2.html">Rect2</a><ul>
@@ -10713,11 +10736,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_rect2i.html">Rect2i</a><ul>
@@ -10726,21 +10749,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_signal.html">Signal</a><ul>
@@ -10748,10 +10771,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_string.html">String</a><ul>
@@ -10759,20 +10782,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_transform2d.html">Transform2D</a><ul>
@@ -10781,12 +10804,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_transform3d.html">Transform3D</a><ul>
@@ -10795,12 +10818,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector2.html">Vector2</a><ul>
@@ -10809,12 +10832,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector2i.html">Vector2i</a><ul>
@@ -10823,12 +10846,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector3.html">Vector3</a><ul>
@@ -10837,12 +10860,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector3i.html">Vector3i</a><ul>
@@ -10851,12 +10874,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector4.html">Vector4</a><ul>
@@ -10864,12 +10887,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../classes/class_vector4i.html">Vector4i</a><ul>
@@ -10877,12 +10900,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../classes/class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -10980,19 +11003,10 @@
 <h2>需求<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
 <p>要在Windows下进行编译, 需要以下内容:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.visualstudio.com/vs/community/">Visual Studio Community</a>,
-version 2019 or later. Visual Studio 2022 is recommended.
-<strong>Make sure to enable C++ in the list of workflows to install.</strong>
-If you've already installed Visual Studio without C++ support, run the installer
-again; it should present you a <strong>Modify</strong> button.</p></li>
-<li><p><a class="reference external" href="https://mingw-w64.org/">MinGW-w64</a> with GCC can be used as an alternative to
-Visual Studio. Be sure to install/configure it to use the <code class="docutils literal notranslate"><span class="pre">posix</span></code> thread model.
-<strong>Important:</strong> When using MinGW to compile the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, you need GCC 9 or later.</p></li>
-<li><p><a class="reference external" href="https://www.python.org/downloads/windows/">Python 3.6+</a>.
-<strong>Make sure to enable the option to add Python to the ``PATH`` in the installer.</strong></p></li>
-<li><p><a class="reference external" href="https://scons.org/pages/download.html">SCons 3.1.2+</a> build system. Using the
-latest release is recommended, especially for proper support of recent Visual
-Studio releases.</p></li>
+<li><p><a class="reference external" href="https://www.visualstudio.com/vs/community/">Visual Studio Community</a>，至少是 2019 版，推荐 Visual Studio 2022。<strong>安装时请确保在工作流列表中启用了 C++</strong>。如果已经安装过 Visual Studio 但没有启用 C++ 支持，请重新运行安装器，会显示<strong>修改</strong>按钮。</p></li>
+<li><p><a class="reference external" href="https://mingw-w64.org/">MinGW-w64</a> 和 GCC 可以作为 Visual Studio 的替代品。请确保在安装/配置时使用 <code class="docutils literal notranslate"><span class="pre">posix</span></code> 线程模型。<strong>重要提示：</strong>使用 MinGW 编译 <code class="docutils literal notranslate"><span class="pre">master</span></code> 分支时需要至少是 GCC 9。</p></li>
+<li><p><a class="reference external" href="https://www.python.org/downloads/windows/">Python 3.6+</a>。<strong>请确保在安装器中启用将 Python 加入 ``PATH`` 的选项。</strong></p></li>
+<li><p><a class="reference external" href="https://scons.org/pages/download.html">SCons 3.1.2+</a> 构建系统。建议使用最新稳定版本，这样就能够正确支持最近版本的 Visual Studio。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
@@ -11095,43 +11109,30 @@ lightweight but less effective form of LTO.</p>
 </section>
 </section>
 <section id="compiling-with-support-for-direct3d-12">
-<h2>Compiling with support for Direct3D 12<a class="headerlink" href="#compiling-with-support-for-direct3d-12" title="永久链接至标题">¶</a></h2>
-<p>By default, builds of Godot do not contain support for the Direct3D 12 graphics
-API.</p>
-<p>To compile Godot with Direct3D 12 support you need at least the following:</p>
+<h2>编译时启用 Direct3D 12 支持<a class="headerlink" href="#compiling-with-support-for-direct3d-12" title="永久链接至标题">¶</a></h2>
+<p>Godot 构建默认不包含对 Direct3D 12 图形 API 的支持。</p>
+<p>To compile Godot with Direct3D 12 support you need at least the following item:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Microsoft/DirectXShaderCompiler/releases">The DirectX Shader Compiler</a>.
-The zip folder will be named &quot;dxc_&quot; followed by the date of release. Download
-it anywhere, unzip it and remember the path to the unzipped folder, you will
-need it below.</p></li>
-<li><p><a class="reference external" href="https://github.com/godotengine/godot-nir-static/releases/">godot-nir-static library</a>.
-We compile the Mesa libraries you will need into a static library. Download it
-anywhere, unzip it and remember the path to the unzipped folder, you will
-need it below.</p></li>
+<li><p><a class="reference external" href="https://github.com/godotengine/godot-nir-static/releases/">godot-nir-static 库</a>。我们将所需的 Mesa 库编译成了静态库。下载完成后将其解压，记下解压后得到的文件夹的路径，后面会用到。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>You can optionally build the godot-nir-static libraries yourself with
-the following steps:</p>
+<p>你也可以自行构建 godot-nir-static 库，方法如下：</p>
 <ol class="arabic">
-<li><p>Install the Python package <a class="reference external" href="https://www.makotemplates.org">mako</a>
-which is needed to generate some files.</p></li>
-<li><p>Clone the <a class="reference external" href="https://github.com/godotengine/godot-nir-static">godot-nir-static</a>
-directory and navigate to it.</p></li>
-<li><p>Run the following:</p>
+<li><p>安装 Python 包 <a class="reference external" href="https://www.makotemplates.org">mako</a>，用于生成部分文件。</p></li>
+<li><p>克隆 <a class="reference external" href="https://github.com/godotengine/godot-nir-static">godot-nir-static</a> 目录并打开。</p></li>
+<li><p>执行：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
 ./update_mesa.sh
 scons
 </pre></div>
 </div>
-<p>If you are building with MinGW, add <code class="docutils literal notranslate"><span class="pre">use_mingw=yes</span></code> to the <code class="docutils literal notranslate"><span class="pre">scons</span></code>
-command, you can also specify build architecture using <code class="docutils literal notranslate"><span class="pre">arch={architecture}</span></code>.</p>
-<p>Mesa static library should be built using the same compiler you are
-using for building Godot.</p>
+<p>如果你是用 MinGW 进行的构建，请在 <code class="docutils literal notranslate"><span class="pre">scons</span></code> 命令后加上 <code class="docutils literal notranslate"><span class="pre">use_mingw=yes</span></code>，你还可以用 <code class="docutils literal notranslate"><span class="pre">arch={架构}</span></code> 指定构建的架构。</p>
+<p>构建 Mesa 静态库的编译器应该与构建 Godot 所用的编译器一致。</p>
 </li>
 </ol>
 </div>
-<p>Optionally, you can compile with the following for additional features:</p>
+<p>另外你还可以在编译时启用以下附加功能：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://devblogs.microsoft.com/pix/download">PIX</a> is a performance tuning
 and debugging application for Direct3D12 applications. If you compile-in
@@ -11166,26 +11167,13 @@ dlltool<span class="w"> </span>--machine<span class="w"> </span>arm64<span class
 </pre></div>
 </div>
 </div>
-<p>When building Godot, you will need to tell SCons to use Direct3D 12 and where to
-look for the additional libraries:</p>
-<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\godot&gt;</span> scons platform=windows d3d12=yes dxc_path=<span class="p">&lt;</span>...<span class="p">&gt;</span> mesa_libs=<span class="p">&lt;</span>...&gt;
+<p>构建 Godot 时，你需要让 SCons 使用 Direct3D 12 并指定附加库的查找位置：</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\godot&gt;</span> scons platform=windows d3d12=yes mesa_libs=<span class="p">&lt;</span>...&gt;
 </pre></div>
 </div>
-<p>Or, with all options enabled:</p>
-<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\godot&gt;</span> scons platform=windows d3d12=yes dxc_path=<span class="p">&lt;</span>...<span class="p">&gt;</span> mesa_libs=<span class="p">&lt;</span>...<span class="p">&gt;</span> agility_sdk_path=<span class="p">&lt;</span>...<span class="p">&gt;</span> pix_path=<span class="p">&lt;</span>...&gt;
+<p>或者启用所有选项：</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\godot&gt;</span> scons platform=windows d3d12=yes mesa_libs=<span class="p">&lt;</span>...<span class="p">&gt;</span> agility_sdk_path=<span class="p">&lt;</span>...<span class="p">&gt;</span> pix_path=<span class="p">&lt;</span>...&gt;
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>The build process will copy <code class="docutils literal notranslate"><span class="pre">dxil.dll</span></code> from the <code class="docutils literal notranslate"><span class="pre">bin/&lt;arch&gt;/</span></code>
-directory in the DXC folder to the Godot binary directory and the
-appropriate <code class="docutils literal notranslate"><span class="pre">bin/&lt;arch&gt;</span></code> file in the Godot binary directory.
-Direct3D 12-enabled Godot packages for distribution to end users must
-include the <code class="docutils literal notranslate"><span class="pre">dxil.dll</span></code> (and relevant folders if using multi-arch),
-both for the editor and games. At runtime, the renderer will try to
-load the DLL from the arch-specific folders, and will fall back to the
-same directory as the Godot executable if the appropriate arch isn't
-found.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
@@ -11197,7 +11185,7 @@ subdirectories and at runtime the right one will be loaded.</p>
 </div>
 </section>
 <section id="compiling-with-angle-support">
-<h2>Compiling with ANGLE support<a class="headerlink" href="#compiling-with-angle-support" title="永久链接至标题">¶</a></h2>
+<h2>编译时启用 ANGLE 支持<a class="headerlink" href="#compiling-with-angle-support" title="永久链接至标题">¶</a></h2>
 <p>ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be used
 to improve support for the Compatibility renderer on some older GPUs with outdated
 OpenGL drivers and on Windows for ARM.</p>
@@ -11226,7 +11214,7 @@ the following steps:</p>
 <ol class="arabic">
 <li><p>Clone the <a class="reference external" href="https://github.com/godotengine/godot-angle-static">godot-angle-static</a>
 directory and navigate to it.</p></li>
-<li><p>Run the following command:</p>
+<li><p>运行以下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scons
 </pre></div>
 </div>
@@ -11254,7 +11242,10 @@ using for building Godot.</p>
 </section>
 <section id="cross-compiling-for-windows-from-other-operating-systems">
 <h2>从其他操作系统为 Windows 交叉编译<a class="headerlink" href="#cross-compiling-for-windows-from-other-operating-systems" title="永久链接至标题">¶</a></h2>
-<p>如果你是Linux或macOS用户, 你需要安装 <a class="reference external" href="https://mingw-w64.org/doku.php">MinGW-w64</a> , 它通常有32位和64位两种版本. 包的名称可能根据你的发行版而不同, 这里有一些已知的包:</p>
+<p>If you are a Linux or macOS user, you need to install
+<a class="reference external" href="https://www.mingw-w64.org/">MinGW-w64</a>, which typically comes in 32-bit
+and 64-bit variants. The package names may differ based on your distribution,
+here are some known ones:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />

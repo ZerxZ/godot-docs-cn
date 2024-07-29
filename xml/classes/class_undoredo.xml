@@ -237,7 +237,7 @@ _undo_redo.CommitAction();</literal_block>
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-undoredo-method-get-current-action-name"><inline classes="std std-ref">get_current_action_name</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-undoredo-method-get-current-action-name"><inline classes="std std-ref">get_current_action_name</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -253,7 +253,7 @@ _undo_redo.CommitAction();</literal_block>
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-undoredo-method-get-version"><inline classes="std std-ref">get_version</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-undoredo-method-get-version"><inline classes="std std-ref">get_version</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -261,7 +261,7 @@ _undo_redo.CommitAction();</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-undoredo-method-has-redo"><inline classes="std std-ref">has_redo</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-undoredo-method-has-redo"><inline classes="std std-ref">has_redo</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -269,7 +269,7 @@ _undo_redo.CommitAction();</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-undoredo-method-has-undo"><inline classes="std std-ref">has_undo</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-undoredo-method-has-undo"><inline classes="std std-ref">has_undo</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -277,7 +277,7 @@ _undo_redo.CommitAction();</literal_block>
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-undoredo-method-is-committing-action"><inline classes="std std-ref">is_committing_action</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-undoredo-method-is-committing-action"><inline classes="std std-ref">is_committing_action</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -325,10 +325,10 @@ _undo_redo.CommitAction();</literal_block>
             <paragraph>使“do”/“undo”操作保持在单独的动作中。</paragraph>
             <target refid="class-undoredo-constant-merge-ends"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-undoredo-constant-merge-ends" names="class_undoredo_constant_merge_ends"><reference internal="True" refid="enum-undoredo-mergemode"><inline classes="std std-ref">MergeMode</inline></reference> <strong>MERGE_ENDS</strong> = <literal>1</literal></paragraph>
-            <paragraph>Merges this action with the previous one if they have the same name. Keeps only the first action's "undo" operations and the last action's "do" operations. Useful for sequential changes to a single value.</paragraph>
+            <paragraph>如果当前动作与上一个动作的名称相同，则将两者合并。仅保留第一个动作的“undo”操作和最后一个动作的“do”操作。适用于对单个值的连续更改。</paragraph>
             <target refid="class-undoredo-constant-merge-all"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-undoredo-constant-merge-all" names="class_undoredo_constant_merge_all"><reference internal="True" refid="enum-undoredo-mergemode"><inline classes="std std-ref">MergeMode</inline></reference> <strong>MERGE_ALL</strong> = <literal>2</literal></paragraph>
-            <paragraph>Merges this action with the previous one if they have the same name.</paragraph>
+            <paragraph>如果当前动作与上一个动作的名称相同，则将两者合并。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id6" names="属性说明">
@@ -414,7 +414,7 @@ undo_redo.commit_action()</literal_block>
             <paragraph>获取当前动作的索引。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-get-current-action-name"></target>
-            <paragraph classes="classref-method" ids="class-undoredo-method-get-current-action-name" names="class_undoredo_method_get_current_action_name"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_current_action_name</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-get-current-action-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-undoredo-method-get-current-action-name" names="class_undoredo_method_get_current_action_name"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_current_action_name</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-get-current-action-name"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>获取当前动作的名称，等价于 <literal>get_action_name(get_current_action())</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-get-history-count"></target>
@@ -422,20 +422,20 @@ undo_redo.commit_action()</literal_block>
             <paragraph>返回历史中有多少元素。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-get-version"></target>
-            <paragraph classes="classref-method" ids="class-undoredo-method-get-version" names="class_undoredo_method_get_version"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_version</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-get-version"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-undoredo-method-get-version" names="class_undoredo_method_get_version"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_version</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-get-version"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>获取版本。每次提交一个新的操作，<strong>UndoRedo</strong> 的版本号都会自动增加。</paragraph>
             <paragraph>这主要用于检查保存的版本是否发生了更改。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-has-redo"></target>
-            <paragraph classes="classref-method" ids="class-undoredo-method-has-redo" names="class_undoredo_method_has_redo"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_redo</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-has-redo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-undoredo-method-has-redo" names="class_undoredo_method_has_redo"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_redo</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-has-redo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>有“重做”动作可用时返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-has-undo"></target>
-            <paragraph classes="classref-method" ids="class-undoredo-method-has-undo" names="class_undoredo_method_has_undo"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_undo</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-has-undo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-undoredo-method-has-undo" names="class_undoredo_method_has_undo"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_undo</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-has-undo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>有“撤销”动作可用时返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-is-committing-action"></target>
-            <paragraph classes="classref-method" ids="class-undoredo-method-is-committing-action" names="class_undoredo_method_is_committing_action"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_committing_action</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-is-committing-action"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-undoredo-method-is-committing-action" names="class_undoredo_method_is_committing_action"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_committing_action</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-undoredo-method-is-committing-action"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <strong>UndoRedo</strong> 当前正在提交动作，即运行其“do”的方法或属性变化，则返回 <literal>true</literal>（请参阅 <reference internal="True" refid="class-undoredo-method-commit-action"><inline classes="std std-ref">commit_action</inline></reference>）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-undoredo-method-redo"></target>
@@ -450,12 +450,12 @@ undo_redo.commit_action()</literal_block>
             <paragraph classes="classref-method" ids="class-undoredo-method-undo" names="class_undoredo_method_undo"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>undo</strong>() <reference internal="True" refid="class-undoredo-method-undo"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>撤销上一个动作。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

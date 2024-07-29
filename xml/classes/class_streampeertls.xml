@@ -60,7 +60,7 @@
                                 <paragraph><reference internal="True" refid="enum-streampeertls-status"><inline classes="std std-ref">Status</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-streampeertls-method-get-status"><inline classes="std std-ref">get_status</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-streampeertls-method-get-status"><inline classes="std std-ref">get_status</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -68,7 +68,7 @@
                                 <paragraph><reference internal="True" refuri="class_streampeer#class-streampeer"><inline classes="std std-ref">StreamPeer</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-streampeertls-method-get-stream"><inline classes="std std-ref">get_stream</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-streampeertls-method-get-stream"><inline classes="std std-ref">get_stream</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -120,23 +120,23 @@
             <paragraph>与主机断开连接。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-streampeertls-method-get-status"></target>
-            <paragraph classes="classref-method" ids="class-streampeertls-method-get-status" names="class_streampeertls_method_get_status"><reference internal="True" refid="enum-streampeertls-status"><inline classes="std std-ref">Status</inline></reference> <strong>get_status</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-streampeertls-method-get-status"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-streampeertls-method-get-status" names="class_streampeertls_method_get_status"><reference internal="True" refid="enum-streampeertls-status"><inline classes="std std-ref">Status</inline></reference> <strong>get_status</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-streampeertls-method-get-status"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回连接的状态。取值见 <reference internal="True" refid="enum-streampeertls-status"><inline classes="std std-ref">Status</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-streampeertls-method-get-stream"></target>
-            <paragraph classes="classref-method" ids="class-streampeertls-method-get-stream" names="class_streampeertls_method_get_stream"><reference internal="True" refuri="class_streampeer#class-streampeer"><inline classes="std std-ref">StreamPeer</inline></reference> <strong>get_stream</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-streampeertls-method-get-stream"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-streampeertls-method-get-stream" names="class_streampeertls_method_get_stream"><reference internal="True" refuri="class_streampeer#class-streampeer"><inline classes="std std-ref">StreamPeer</inline></reference> <strong>get_stream</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-streampeertls-method-get-stream"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回底层 <reference internal="True" refuri="class_streampeer#class-streampeer"><inline classes="std std-ref">StreamPeer</inline></reference> 连接，在 <reference internal="True" refid="class-streampeertls-method-accept-stream"><inline classes="std std-ref">accept_stream</inline></reference> 或 <reference internal="True" refid="class-streampeertls-method-connect-to-stream"><inline classes="std std-ref">connect_to_stream</inline></reference> 中使用。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-streampeertls-method-poll"></target>
             <paragraph classes="classref-method" ids="class-streampeertls-method-poll" names="class_streampeertls_method_poll"><abbreviation explanation="无返回值。">void</abbreviation> <strong>poll</strong>() <reference internal="True" refid="class-streampeertls-method-poll"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>轮询连接以检查传入的字节。在 <reference internal="True" refuri="class_streampeer#class-streampeer-method-get-available-bytes"><inline classes="std std-ref">StreamPeer.get_available_bytes</inline></reference> 之前调用它以使其正常工作。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

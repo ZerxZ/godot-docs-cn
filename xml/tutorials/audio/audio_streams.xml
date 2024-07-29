@@ -12,42 +12,62 @@
         <section ids="audiostream" names="audiostream">
             <title>AudioStream</title>
             <paragraph>音频流(audio stream)是一种发出声音的抽象对象. 声音可以来自许多地方, 最常见的是从文件系统加载. 音频文件可以作为AudioStreams加载并放置在AudioStreamPlayer中. 你可以在 <reference internal="True" refuri="../assets_pipeline/importing_audio_samples#doc-importing-audio-samples"><inline classes="std std-ref">导入音频采样</inline></reference> 中找到有关支持的格式和格式差异的信息.</paragraph>
-            <paragraph>AudioStream有不同的类型, 例如AudioStreamRandomPitch, 它在每次播放声音时随机调整音高(对于某些音效非常有用), 可以为频繁播放的声音增加一些变化.</paragraph>
+            <paragraph>There are other types of AudioStreams, such as <reference internal="True" refuri="../../classes/class_audiostreamrandomizer#class-audiostreamrandomizer"><inline classes="std std-ref">AudioStreamRandomizer</inline></reference>.
+                This one picks a different audio stream from a list of streams each time it's played
+                back, and applies random pitch and volume shifting. This can be helpful for adding
+                variation to sounds that are played back often.</paragraph>
         </section>
         <section ids="audiostreamplayer" names="audiostreamplayer">
             <title>AudioStreamPlayer</title>
-            <image candidates="{'*': 'tutorials/audio/img/audio_stream_player.png'}" uri="tutorials/audio/img/audio_stream_player.png"></image>
+            <image candidates="{'*': 'tutorials/audio/img/audio_stream_player.webp'}" uri="tutorials/audio/img/audio_stream_player.webp"></image>
             <paragraph>这是一个标准的, 非位置型的流播放器, 可以播放到任意总线. 在5.1立体声中, 它可以将音频发送到立体声混音或前置扬声器.</paragraph>
+            <paragraph>Playback Type is an experimental setting, and could change in future versions
+                of Godot. It exists so Web exports use Web Audio-API based samples instead of
+                streaming all sounds to the browser, unlike most platforms. This prevents the
+                audio from being garbled in single-threaded Web exports. By default, only the
+                Web platform will use samples. Changing this setting is not recommended, unless
+                you have an explicit reason to. You can change the default playback type
+                for the web and other platforms in the project settings under <strong>Audio &gt; General</strong>
+                (advanced settings must be turned on to see the setting).</paragraph>
         </section>
         <section ids="audiostreamplayer2d" names="audiostreamplayer2d">
             <title>AudioStreamPlayer2D</title>
-            <image candidates="{'*': 'tutorials/audio/img/audio_stream_2d.png'}" uri="tutorials/audio/img/audio_stream_2d.png"></image>
+            <image candidates="{'*': 'tutorials/audio/img/audio_stream_2d.webp'}" uri="tutorials/audio/img/audio_stream_2d.webp"></image>
             <paragraph>这是AudioStreamPlayer的一种变体, 它将声音发散到2D位置环境中. 当靠近屏幕左侧时, 声像将向左偏移. 靠近右侧时, 则向右偏移.</paragraph>
             <note>
                 <paragraph>Area2D可以将它们包含的AudioStreamPlayer2D的声音转移到特定的总线上. 这样就可以创造具有不同混响或声音质量的总线, 从而处理在游戏世界的特定区域中发生的动作.</paragraph>
             </note>
-            <image candidates="{'*': 'tutorials/audio/img/audio_stream_2d_area.png'}" uri="tutorials/audio/img/audio_stream_2d_area.png"></image>
+            <image candidates="{'*': 'tutorials/audio/img/audio_stream_2d_area.webp'}" uri="tutorials/audio/img/audio_stream_2d_area.webp"></image>
         </section>
         <section ids="audiostreamplayer3d" names="audiostreamplayer3d">
             <title>AudioStreamPlayer3D</title>
-            <image candidates="{'*': 'tutorials/audio/img/audio_stream_3d.png'}" uri="tutorials/audio/img/audio_stream_3d.png"></image>
+            <image candidates="{'*': 'tutorials/audio/img/audio_stream_3d.webp'}" uri="tutorials/audio/img/audio_stream_3d.webp"></image>
             <paragraph>这是AudioStreamPlayer的一种变体, 它将声音发散到3D位置环境中. 根据播放器相对于屏幕的位置, 它可以将声音定位在立体声(5.1或7.1)中, 具体取决于所选的音频设置.</paragraph>
-            <paragraph>类似AudioStreamPlayer2D,Area可以将声音转移到音频总线上.</paragraph>
-            <image candidates="{'*': 'tutorials/audio/img/audio_stream_3d_area.png'}" uri="tutorials/audio/img/audio_stream_3d_area.png"></image>
+            <paragraph>Similar to AudioStreamPlayer2D, an Area3D can divert the sound to an audio bus.</paragraph>
+            <image candidates="{'*': 'tutorials/audio/img/audio_stream_3d_area.webp'}" uri="tutorials/audio/img/audio_stream_3d_area.webp"></image>
             <paragraph>与2D不同,AudioStreamPlayer的3D版本有一些更高级的选项:</paragraph>
             <target refid="doc-audio-streams-reverb-buses"></target>
             <section ids="reverb-buses doc-audio-streams-reverb-buses" names="reverb\ buses 混响总线 doc_audio_streams_reverb_buses">
                 <title>混响总线</title>
-                <paragraph>Godot允许进入特定Area节点的3D音频流将干音频和湿音频发送到不同的总线上. 当你为不同类型的房间设置不同的混响配置时十分有用. 这是通过在Area属性的 <strong>Reverb Bus</strong> 部分中启用此类混响来实现的:</paragraph>
-                <image candidates="{'*': 'tutorials/audio/img/audio_stream_reverb_bus.png'}" uri="tutorials/audio/img/audio_stream_reverb_bus.png"></image>
-                <paragraph>同时, 还创建了一个特殊的总线布局, 每个区域都接收各自的混响信息. 最后需要在每条总线中创建并配置一个实际的混响效果, 才能完成所需效果的设置:</paragraph>
-                <image candidates="{'*': 'tutorials/audio/img/audio_stream_reverb_bus2.png'}" uri="tutorials/audio/img/audio_stream_reverb_bus2.png"></image>
-                <paragraph>Area的 <strong>Reverb Bus</strong> 部分还有一个名为 <strong>Uniformity</strong> (均匀性)的参数. 有些类型的房间比其他类型的房间反弹的声音更多(例如仓库), 因此即使声源离得很远, 也能在整个房间里听到几乎均匀的混响. 调整此参数可以模拟这种效果.</paragraph>
+                <paragraph>Godot allows for 3D audio streams that enter a specific Area3D node to send dry
+                    and wet audio to separate buses. This is useful when you have several reverb
+                    configurations for different types of rooms. This is done by enabling this type
+                    of reverb in the <strong>Reverb Bus</strong> section of the Area3D's properties:</paragraph>
+                <image candidates="{'*': 'tutorials/audio/img/audio_stream_reverb_bus.webp'}" uri="tutorials/audio/img/audio_stream_reverb_bus.webp"></image>
+                <paragraph>At the same time, a special bus layout is created where each Area3D receives the
+                    reverb info from each Area3D. A Reverb effect needs to be created and configured
+                    in each reverb bus to complete the setup for the desired effect:</paragraph>
+                <image candidates="{'*': 'tutorials/audio/img/audio_stream_reverb_bus2.webp'}" uri="tutorials/audio/img/audio_stream_reverb_bus2.webp"></image>
+                <paragraph>The Area3D's <strong>Reverb Bus</strong> section also has a parameter named <strong>Uniformity</strong>.
+                    Some types of rooms bounce sounds more than others (like a warehouse), so
+                    reverberation can be heard almost uniformly across the room even though the
+                    source may be far away. Playing around with this parameter can simulate
+                    that effect.</paragraph>
             </section>
             <section ids="doppler" names="doppler 多普勒">
                 <title>多普勒</title>
                 <paragraph>当发射源和接收者之间的相对速度发生变化时, 发出声音的音高会随之升高/降低.Godot可以跟踪AudioStreamPlayer3D和Camera节点的速度变化. 这两个节点都有这个属性, 需要手动启用:</paragraph>
-                <image candidates="{'*': 'tutorials/audio/img/audio_stream_doppler.png'}" uri="tutorials/audio/img/audio_stream_doppler.png"></image>
+                <image candidates="{'*': 'tutorials/audio/img/audio_stream_doppler.webp'}" uri="tutorials/audio/img/audio_stream_doppler.webp"></image>
                 <paragraph>根据对象的移动方法选择启用设置: 如果用 <literal>_process</literal> 来移动, 选择 <strong>Idle</strong> ；如果使用 <literal>_physics_process</literal> 来移动, 选择 <strong>Physics</strong> . 追踪将自动进行.</paragraph>
                 <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
             </section>

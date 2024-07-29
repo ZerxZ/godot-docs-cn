@@ -188,7 +188,14 @@ public partial class Right : Node
                 <paragraph>为了避免创建和维护此类文档，可以将依赖节点（上面的子级）转换为工具脚本，该脚本实现 <literal>_get_configuration_warnings()</literal> 。从中返回的一个非空字符串紧缩数组（PackedStringArray）将使场景停靠面板生成警告图标，其中包含上述字符串作为节点的工具提示。这个警告图标和没有定义 <reference internal="True" refuri="../../classes/class_collisionshape2d#class-collisionshape2d"><inline classes="std std-ref">CollisionShape2D</inline></reference> 子节点时 <reference internal="True" refuri="../../classes/class_area2d#class-area2d"><inline classes="std std-ref">Area2D</inline></reference> 节点旁出现的图标是一样的。这样，编辑器通过脚本代码自记录（self-document）场景，也就不需要在文档里记录一些与之重复的内容了。</paragraph>
                 <paragraph>这样的GUI可以更好地通知项目用户有关节点的关键信息. 它具有外部依赖性吗？这些依赖性是否得到满足？其他程序员, 尤其是设计师和作家, 将需要消息中的明确指示, 告诉他们如何进行配置.</paragraph>
             </warning>
-            <paragraph>那么，为什么所有这些复杂的开关都能起作用呢？嗯，因为场景单独运行时效果最好。如果无法单独工作，那么与其他人匿名合作（具有最小的硬依赖性，即松散耦合）是第二好的选项。在不可避免的情况下，可能需要对类进行更改，如果这些更改导致该类以不可预见的方式与其他场景交互，那么就会开始出现故障。所有这些间接实现的目的都是为了避免最终出现这样的情况：更改一个类会对依赖它的其他类产生不利影响。</paragraph>
+            <paragraph>So, why does all this complex switcheroo work? Well, because scenes operate
+                best when they operate alone. If unable to work alone, then working with
+                others anonymously (with minimal hard dependencies, i.e. loose coupling)
+                is the next best thing. Inevitably, changes may need to be made to a class and
+                if these changes cause it to interact with other scenes in unforeseen ways,
+                then things will start to break down. The whole point of all this indirection
+                is to avoid ending up in a situation where changing one class results in
+                adversely affecting other classes dependent on it.</paragraph>
             <paragraph>脚本和场景作为引擎类的扩展, 应该遵守 <emphasis>所有</emphasis> 的OOP原则. 例如...</paragraph>
             <bullet_list bullet="-">
                 <list_item>

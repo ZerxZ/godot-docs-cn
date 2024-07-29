@@ -19,9 +19,9 @@ FileAccess
 描述
 ----
 
-This class can be used to permanently store data in the user device's file system and to read from it. This is useful for store game save data or player configuration files.
+这个类可以用于在用户设备的文件系统中永久存储数据，也可以从中读取数据。适用于存储游戏存档数据或玩家配置文件。
 
-Here's a sample on how to write and read from a file:
+下面是一个关于如何写入和读取文件的示例：
 
 
 .. tabs::
@@ -54,13 +54,13 @@ Here's a sample on how to write and read from a file:
 
 
 
-In the example above, the file will be saved in the user data folder as specified in the :doc:`Data paths <../tutorials/io/data_paths>` documentation.
+在上面的例子中，文件将被保存在\ :doc:`数据路径 <../tutorials/io/data_paths>`\ 文件中指定的用户数据文件夹中。
 
-\ **FileAccess** will close when it's freed, which happens when it goes out of scope or when it gets assigned with ``null``. :ref:`close<class_FileAccess_method_close>` can be used to close it before then explicitly. In C# the reference must be disposed manually, which can be done with the ``using`` statement or by calling the ``Dispose`` method directly.
+\ **FileAccess** 会在释放时关闭，超出作用于、赋值为 ``null`` 等情况都会导致释放。可以使用 :ref:`close<class_FileAccess_method_close>` 在此之前显式关闭。在 C# 中，引用必须手动释放，可以通过 ``using`` 语句或直接调用 ``Dispose`` 方法来完成。
 
-\ **Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of **FileAccess**, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
+\ **注意：**\ 要在导出后访问项目资源，建议使用 :ref:`ResourceLoader<class_ResourceLoader>` 而不是 **FileAccess**\ ，因为有些文件已被转换为特定于引擎的格式，并且它们的原始源文件可能并不存在于导出的 PCK 包中。
 
-\ **Note:** Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing **Alt + F4**). If you stop the project execution by pressing **F8** while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling :ref:`flush<class_FileAccess_method_flush>` at regular intervals.
+\ **注意：**\ 只有当进程“正常”退出时（例如通过单击窗口管理器的关闭按钮或按 **Alt + F4**\ ），文件才会自动关闭。如果在项目运行时按 **F8** 停止项目执行，则不会关闭文件，因为游戏进程将被杀死。可以通过定期调用 :ref:`flush<class_FileAccess_method_flush>` 来解决这个问题。
 
 .. rst-class:: classref-introduction-group
 
@@ -234,9 +234,9 @@ enum **ModeFlags**: :ref:`🔗<enum_FileAccess_ModeFlags>`
 
 :ref:`ModeFlags<enum_FileAccess_ModeFlags>` **WRITE** = ``2``
 
-Opens the file for write operations. The file is created if it does not exist, and truncated if it does.
+打开文件进行写操作。如果文件不存在则会创建该文件，如果存在则会截断。
 
-\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`.
+\ **注意：**\ 创建文件必须在已有目录中执行。如果要递归创建文件路径中的目录，见 :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`\ 。
 
 .. _class_FileAccess_constant_READ_WRITE:
 
@@ -252,9 +252,9 @@ Opens the file for write operations. The file is created if it does not exist, a
 
 :ref:`ModeFlags<enum_FileAccess_ModeFlags>` **WRITE_READ** = ``7``
 
-Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The cursor is positioned at the beginning of the file.
+打开文件进行读写操作。如果文件不存在则会创建该文件，如果存在则会截断。光标位于文件的开头。
 
-\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`.
+\ **注意：**\ 创建文件必须在已有目录中执行。如果要递归创建文件路径中的目录，见 :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -602,11 +602,11 @@ flags **UnixPermissionFlags**: :ref:`🔗<enum_FileAccess_UnixPermissionFlags>`
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_csv_line**\ (\ delim\: :ref:`String<class_String>` = ","\ ) |const| :ref:`🔗<class_FileAccess_method_get_csv_line>`
 
-Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long, and cannot be a double quotation mark.
+以 CSV（逗号分隔值）格式返回文件的下一个值。可以传递不同的分隔符 ``delim``\ ，以使用默认 ``","``\ （逗号）以外的其他分隔符。这个分隔符必须为一个字符长，且不能是双引号。
 
-Text is interpreted as being UTF-8 encoded. Text values must be enclosed in double quotes if they include the delimiter character. Double quotes within a text value can be escaped by doubling their occurrence.
+文本被解析为 UTF-8 编码。如果文本值包含分隔符，则它们必须用双引号引起来。文本值中的双引号可以通过将它们的出现次数加倍来转义。
 
-For example, the following CSV lines are valid and will be properly parsed as two strings each:
+例如，以下 CSV 行是有效的，每行将被正确解析为两个字符串：
 
 .. code:: text
 
@@ -614,7 +614,7 @@ For example, the following CSV lines are valid and will be properly parsed as tw
     Bob,Alice! What a surprise!
     Alice,"I thought you'd reply with ""Hello, world""."
 
-Note how the second line can omit the enclosing quotes as it does not include the delimiter. However it *could* very well use quotes, it was only written without for demonstration purposes. The third line must use ``""`` for each quotation mark that needs to be interpreted as such instead of the end of a text value.
+请注意第二行如何省略封闭的引号，因为它不包含分隔符。然而它\ *可以*\ 很好地使用引号，它只是为了演示目的而没有编写。第三行必须为每个需要被解析为引号而不是文本值的末尾而使用 ``""``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -842,7 +842,7 @@ Note how the second line can omit the enclosing quotes as it does not include th
 
 :ref:`String<class_String>` **get_sha256**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_sha256>`
 
-Returns an SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
+返回一个表示给定路径下文件的 SHA-256 :ref:`String<class_String>`\ ，失败时返回一个空的 :ref:`String<class_String>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1244,10 +1244,10 @@ Returns an SHA-256 :ref:`String<class_String>` representing the file at the give
 \ **注意：**\ 并非所有属性都包括在内。只有配置了 :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` 标志集的属性才会被序列化。可以通过覆盖类中的 :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` 方法来向属性添加新的使用标志。还可以通过调用 :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` 来检查属性使用的配置方式。有关可能的使用标志，请参阅 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

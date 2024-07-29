@@ -509,17 +509,17 @@ enum **SystemDir**: :ref:`🔗<enum_OS_SystemDir>`
 
 :ref:`int<class_int>` **execute**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_OS_method_execute>`
 
-Executes the given process in a *blocking* way. The file specified in ``path`` must exist and be executable. The system path resolution will be used. The ``arguments`` are used in the given order, separated by spaces, and wrapped in quotes.
+以\ *阻塞*\ 方式执行给定进程。\ ``path`` 中指定的文件必须存在且可执行。将使用系统路径解析。\ ``arguments`` 按给定顺序使用，用空格分隔，并用引号包裹。
 
-If an ``output`` array is provided, the complete shell output of the process is appended to ``output`` as a single :ref:`String<class_String>` element. If ``read_stderr`` is ``true``, the output to the standard error stream is also appended to the array.
+如果提供了 ``output`` 数组，则进程的完整 shell 输出，将作为单个 :ref:`String<class_String>` 元素被追加到 ``output``\ 。如果 ``read_stderr`` 为 ``true``\ ，则标准错误流的输出也会被追加到数组中。
 
-On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window is opened.
+在 Windows 上，如果 ``open_console`` 为 ``true`` 并且进程是控制台应用程序，则会打开一个新的终端窗口。
 
-This method returns the exit code of the command, or ``-1`` if the process fails to execute.
+该方法返回命令的退出代码，如果进程执行失败，则返回 ``-1``\ 。
 
-\ **Note:** The main thread will be blocked until the executed command terminates. Use :ref:`Thread<class_Thread>` to create a separate thread that will not block the main thread, or use :ref:`create_process<class_OS_method_create_process>` to create a completely independent process.
+\ **注意：**\ 主线程将被阻塞，直到执行的命令终止。使用 :ref:`Thread<class_Thread>` 创建一个不会阻塞主线程的独立线程，或者使用 :ref:`create_process<class_OS_method_create_process>` 创建一个完全独立的进程。
 
-For example, to retrieve a list of the working directory's contents:
+例如，要检索工作目录内容的列表：
 
 
 .. tabs::
@@ -536,7 +536,7 @@ For example, to retrieve a list of the working directory's contents:
 
 
 
-If you wish to access a shell built-in or execute a composite command, a platform-specific shell can be invoked. For example:
+如果希望访问内置的 shell 或执行复合命令，则可以调用特定于平台的 shell。例如：
 
 
 .. tabs::
@@ -553,17 +553,17 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 
 
-\ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
+\ **注意：**\ 该方法在 Android、Linux、macOS 和 Windows 上实现。
 
-\ **Note:** To execute a Windows command interpreter built-in command, specify ``cmd.exe`` in ``path``, ``/c`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 Windows 命令解释器的内置命令，在 ``path`` 中指定 ``cmd.exe``\ ，将 ``/c`` 作为第一个参数，并将所需的命令作为第二个参数。
 
-\ **Note:** To execute a PowerShell built-in command, specify ``powershell.exe`` in ``path``, ``-Command`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 PowerShell 的内置命令，在 ``path`` 中指定 ``powershell.exe``\ ，将 ``-Command`` 作为第一个参数，然后将所需的命令作为第二个参数。
 
-\ **Note:** To execute a Unix shell built-in command, specify shell executable name in ``path``, ``-c`` as the first argument, and the desired command as the second argument.
+\ **注意：**\ 要执行 Unix shell 内置命令，请在 ``path`` 中指定 shell 可执行文件名称，将 ``-c`` 作为第一个参数，并将所需的命令作为第二个参数。
 
-\ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export.
+\ **注意：**\ 在 macOS 上，沙盒应用程序仅限于运行在导出期间指定的嵌入的辅助可执行文件。
 
-\ **Note:** On Android, system commands such as ``dumpsys`` can only be run on a rooted device.
+\ **注意：**\ 在 Android 上，\ ``dumpsys`` 等系统命令只能在 root 设备上运行。
 
 .. rst-class:: classref-item-separator
 
@@ -654,15 +654,15 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_args**\ (\ ) :ref:`🔗<class_OS_method_get_cmdline_args>`
 
-Returns the command-line arguments passed to the engine.
+返回传递给引擎的命令行参数。
 
-Command-line arguments can be written in any form, including both ``--key value`` and ``--key=value`` forms so they can be properly parsed, as long as custom command-line arguments do not conflict with engine arguments.
+命令行参数可以写成任何形式，包括 ``--key value`` 和 ``--key=value`` 两种形式，这样它们就可以被正确解析，只要自定义命令行参数不与引擎参数冲突。
 
-You can also incorporate environment variables using the :ref:`get_environment<class_OS_method_get_environment>` method.
+还可以使用 :ref:`get_environment<class_OS_method_get_environment>` 方法合并环境变量。
 
-You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
+可以设置 :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` 来定义编辑器在运行项目时传递的命令行参数。
 
-Here's a minimal example on how to parse command-line arguments into a :ref:`Dictionary<class_Dictionary>` using the ``--key=value`` form for arguments:
+下面是一个关于如何使用参数的 ``--key=value`` 形式，将命令行参数解析为一个 :ref:`Dictionary<class_Dictionary>` 的最小示例：
 
 
 .. tabs::
@@ -675,8 +675,8 @@ Here's a minimal example on how to parse command-line arguments into a :ref:`Dic
             var key_value = argument.split("=")
             arguments[key_value[0].trim_prefix("--")] = key_value[1]
         else:
-            # Options without an argument will be present in the dictionary,
-            # with the value set to an empty string.
+            # 没有参数的选项将出现在字典中，
+            # 其值被设置为空字符串。
             arguments[argument.trim_prefix("--")] = ""
 
  .. code-tab:: csharp
@@ -691,15 +691,15 @@ Here's a minimal example on how to parse command-line arguments into a :ref:`Dic
         }
         else
         {
-            // Options without an argument will be present in the dictionary,
-            // with the value set to an empty string.
+            // 没有参数的选项将出现在字典中，
+            // 其值被设置为空字符串。
             arguments[argument.TrimPrefix("--")] = "";
         }
     }
 
 
 
-\ **Note:** Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, pass the standard UNIX double dash (``--``) and then the custom arguments, which the engine will ignore by design. These can be read via :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`.
+\ **注意：**\ 不建议直接传递自定义用户参数，因为引擎可能会丢弃或修改它们。相反，传递标准的 UNIX 双破折号（\ ``--``\ ），然后传递自定义参数，引擎将根据设计忽略这些参数。这些可以通过 :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` 读取。
 
 .. rst-class:: classref-item-separator
 
@@ -827,9 +827,9 @@ Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically s
 
 :ref:`String<class_String>` **get_executable_path**\ (\ ) |const| :ref:`🔗<class_OS_method_get_executable_path>`
 
-返回当前引擎可执行文件的文件路径。
+Returns the file path to the current engine executable.
 
-\ **注意：**\ 在 macOS 上，请始终使用 :ref:`create_instance<class_OS_method_create_instance>`\ ，不要依赖可执行文件的路径。
+\ **Note:** On macOS, if you want to launch another instance of Godot, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on the executable path.
 
 .. rst-class:: classref-item-separator
 
@@ -1069,9 +1069,9 @@ Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically s
 
 :ref:`int<class_int>` **get_process_id**\ (\ ) |const| :ref:`🔗<class_OS_method_get_process_id>`
 
-Returns the number used by the host machine to uniquely identify this application.
+返回主机用来唯一标识该应用程序的编号。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1398,9 +1398,9 @@ Returns the list of certification authorities trusted by the operating system as
 
 :ref:`bool<class_bool>` **is_process_running**\ (\ pid\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OS_method_is_process_running>`
 
-Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated. ``pid`` must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
+如果该子进程 ID（\ ``pid``\ ）仍在运行，则返回 ``true``\ ；如果它已终止，则返回 ``false``\ 。\ ``pid`` 必须是从 :ref:`create_process<class_OS_method_create_process>` 生成的有效 ID。
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
+\ **注意：**\ 该方法在 Android、iOS、Linux、macOS 和 Windows 上实现。
 
 .. rst-class:: classref-item-separator
 
@@ -1688,10 +1688,10 @@ Returns ``true`` if the child process ID (``pid``) is still running or ``false``
 \ **注意：**\ 环境变量名称在除 Windows 以外的所有平台上都区分大小写。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

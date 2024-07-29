@@ -17,7 +17,7 @@
             <paragraph><strong>注意：</strong>不支持负的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference>。对于负大小，大多数 <strong>AABB</strong> 方法都无法正常工作。使用 <reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">abs</inline></reference> 获取具有非负大小的等效 <strong>AABB</strong>。</paragraph>
             <paragraph><strong>注意：</strong>在布尔上下文中，如果 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 和 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 均为零（等于 <reference internal="True" refuri="class_vector3#class-vector3-constant-zero"><inline classes="std std-ref">Vector3.ZERO</inline></reference>），则 <strong>AABB</strong> 的计算结果为 <literal>false</literal>。否则，它的计算结果始终为 <literal>true</literal>。</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -126,7 +126,7 @@
                                 <paragraph><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">abs</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">abs</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -134,7 +134,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-encloses"><inline classes="std std-ref">encloses</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-encloses"><inline classes="std std-ref">encloses</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -142,7 +142,7 @@
                                 <paragraph><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-expand"><inline classes="std std-ref">expand</inline></reference>(to_point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-expand"><inline classes="std std-ref">expand</inline></reference>(to_point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -150,7 +150,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-center"><inline classes="std std-ref">get_center</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-center"><inline classes="std std-ref">get_center</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -158,7 +158,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-endpoint"><inline classes="std std-ref">get_endpoint</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-endpoint"><inline classes="std std-ref">get_endpoint</inline></reference>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -166,7 +166,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">get_longest_axis</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">get_longest_axis</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -174,7 +174,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis-index"><inline classes="std std-ref">get_longest_axis_index</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis-index"><inline classes="std std-ref">get_longest_axis_index</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -182,7 +182,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis-size"><inline classes="std std-ref">get_longest_axis_size</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-longest-axis-size"><inline classes="std std-ref">get_longest_axis_size</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -190,7 +190,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">get_shortest_axis</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">get_shortest_axis</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -198,7 +198,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">get_shortest_axis_index</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">get_shortest_axis_index</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -206,7 +206,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">get_shortest_axis_size</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">get_shortest_axis_size</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -214,7 +214,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-support"><inline classes="std std-ref">get_support</inline></reference>(dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-support"><inline classes="std std-ref">get_support</inline></reference>(dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -222,7 +222,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-get-volume"><inline classes="std std-ref">get_volume</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-get-volume"><inline classes="std std-ref">get_volume</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -230,7 +230,7 @@
                                 <paragraph><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-grow"><inline classes="std std-ref">grow</inline></reference>(by: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-grow"><inline classes="std std-ref">grow</inline></reference>(by: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -238,7 +238,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-has-point"><inline classes="std std-ref">has_point</inline></reference>(point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-has-point"><inline classes="std std-ref">has_point</inline></reference>(point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -246,7 +246,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-has-surface"><inline classes="std std-ref">has_surface</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-has-surface"><inline classes="std std-ref">has_surface</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -254,7 +254,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">has_volume</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">has_volume</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -262,7 +262,7 @@
                                 <paragraph><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-intersection"><inline classes="std std-ref">intersection</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-intersection"><inline classes="std std-ref">intersection</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -270,7 +270,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-intersects"><inline classes="std std-ref">intersects</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-intersects"><inline classes="std std-ref">intersects</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -278,7 +278,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-plane"><inline classes="std std-ref">intersects_plane</inline></reference>(plane: <reference internal="True" refuri="class_plane#class-plane"><inline classes="std std-ref">Plane</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-plane"><inline classes="std std-ref">intersects_plane</inline></reference>(plane: <reference internal="True" refuri="class_plane#class-plane"><inline classes="std std-ref">Plane</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -286,7 +286,7 @@
                                 <paragraph><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-ray"><inline classes="std std-ref">intersects_ray</inline></reference>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-ray"><inline classes="std std-ref">intersects_ray</inline></reference>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -294,7 +294,7 @@
                                 <paragraph><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-segment"><inline classes="std std-ref">intersects_segment</inline></reference>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, to: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-intersects-segment"><inline classes="std std-ref">intersects_segment</inline></reference>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, to: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -302,7 +302,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(aabb: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(aabb: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -310,7 +310,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -318,15 +318,15 @@
                                 <paragraph><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-aabb-method-merge"><inline classes="std std-ref">merge</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-aabb-method-merge"><inline classes="std std-ref">merge</inline></reference>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id6" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id6" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="25"></colspec>
@@ -393,7 +393,7 @@
         <section classes="classref-descriptions-group" ids="id9" names="方法说明">
             <title>方法说明</title>
             <target refid="class-aabb-method-abs"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-abs" names="class_aabb_method_abs"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>abs</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-abs" names="class_aabb_method_abs"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>abs</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回一个与该边界框等效的 <strong>AABB</strong>，其宽度、高度和深度被修改为非负值。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -416,7 +416,7 @@ GD.Print(absolute.Size);     // 打印 (20, 10, 5)</literal_block>
             <paragraph><strong>注意：</strong>当 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 为负时，建议使用该方法，因为 Godot 中的大多数其他方法都假设 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的分量大于 <literal>0</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-encloses"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-encloses" names="class_aabb_method_encloses"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>encloses</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-encloses"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-encloses" names="class_aabb_method_encloses"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>encloses</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-encloses"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框<emphasis>完全</emphasis>包围 <literal>with</literal> 框，则返回 <literal>true</literal>。两个框的边都包括在内。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -444,7 +444,7 @@ GD.Print(a.Encloses(c)); // 打印 False</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-expand"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-expand" names="class_aabb_method_expand"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>expand</strong>(to_point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-expand"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-expand" names="class_aabb_method_expand"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>expand</strong>(to_point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-expand"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的副本，如有必要，该边界框被扩展为将边与给定的 <literal>to_point</literal> 对齐。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -476,15 +476,15 @@ GD.Print(box.Size);     // 打印 (15, 2, 5)</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-center"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-center" names="class_aabb_method_get_center"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_center</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-center"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-center" names="class_aabb_method_get_center"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_center</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-center"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的中心点。这与 <literal>position + (size / 2.0)</literal> 相同。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-endpoint"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-endpoint" names="class_aabb_method_get_endpoint"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_endpoint</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-endpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-endpoint" names="class_aabb_method_get_endpoint"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_endpoint</strong>(idx: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-endpoint"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回组成该边界框的 8 个顶点之一的位置。当 <literal>idx</literal> 为 <literal>0</literal> 时，这与 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 相同；<literal>idx</literal> 为 <literal>7</literal> 时，与 <reference internal="True" refid="class-aabb-property-end"><inline classes="std std-ref">end</inline></reference> 相同。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-longest-axis"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis" names="class_aabb_method_get_longest_axis"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_longest_axis</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis" names="class_aabb_method_get_longest_axis"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_longest_axis</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最长归一化轴，作为 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>（<reference internal="True" refuri="class_vector3#class-vector3-constant-right"><inline classes="std std-ref">Vector3.RIGHT</inline></reference>、<reference internal="True" refuri="class_vector3#class-vector3-constant-up"><inline classes="std std-ref">Vector3.UP</inline></reference> 或 <reference internal="True" refuri="class_vector3#class-vector3-constant-back"><inline classes="std std-ref">Vector3.BACK</inline></reference>）。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -509,18 +509,18 @@ GD.Print(box.GetLongestAxisSize());  // 打印 8</literal_block>
             <paragraph>另见 <reference internal="True" refid="class-aabb-method-get-longest-axis-index"><inline classes="std std-ref">get_longest_axis_index</inline></reference> 和 <reference internal="True" refid="class-aabb-method-get-longest-axis-size"><inline classes="std std-ref">get_longest_axis_size</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-longest-axis-index"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis-index" names="class_aabb_method_get_longest_axis_index"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_longest_axis_index</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis-index"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis-index" names="class_aabb_method_get_longest_axis_index"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_longest_axis_index</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis-index"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最长轴的索引（见 <reference internal="True" refuri="class_vector3#class-vector3-constant-axis-x"><inline classes="std std-ref">Vector3.AXIS_X</inline></reference>、<reference internal="True" refuri="class_vector3#class-vector3-constant-axis-y"><inline classes="std std-ref">Vector3.AXIS_Y</inline></reference> 和 <reference internal="True" refuri="class_vector3#class-vector3-constant-axis-z"><inline classes="std std-ref">Vector3.AXIS_Z</inline></reference>）。</paragraph>
             <paragraph>示例见 <reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">get_longest_axis</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-longest-axis-size"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis-size" names="class_aabb_method_get_longest_axis_size"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_longest_axis_size</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis-size"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-longest-axis-size" names="class_aabb_method_get_longest_axis_size"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_longest_axis_size</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-longest-axis-size"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最长尺度。</paragraph>
             <paragraph>有关示例，请参阅 <reference internal="True" refid="class-aabb-method-get-longest-axis"><inline classes="std std-ref">get_longest_axis</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-shortest-axis"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis" names="class_aabb_method_get_shortest_axis"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_shortest_axis</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最短归一化轴，作为 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>（<reference internal="True" refuri="class_vector3#class-vector3-constant-right"><inline classes="std std-ref">Vector3.RIGHT</inline></reference>、<reference internal="True" refuri="class_vector3#class-vector3-constant-up"><inline classes="std std-ref">Vector3.UP</inline></reference> 或 <reference internal="True" refuri="class_vector3#class-vector3-constant-back"><inline classes="std std-ref">Vector3.BACK</inline></reference>）。</paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis" names="class_aabb_method_get_shortest_axis"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_shortest_axis</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the shortest normalized axis of this bounding box's <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference>, as a <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> (<reference internal="True" refuri="class_vector3#class-vector3-constant-right"><inline classes="std std-ref">Vector3.RIGHT</inline></reference>, <reference internal="True" refuri="class_vector3#class-vector3-constant-up"><inline classes="std std-ref">Vector3.UP</inline></reference>, or <reference internal="True" refuri="class_vector3#class-vector3-constant-back"><inline classes="std std-ref">Vector3.BACK</inline></reference>).</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -529,40 +529,40 @@ GD.Print(box.GetLongestAxisSize());  // 打印 8</literal_block>
                 <div aria-labelledby="tab-4-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve">var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
 
-print(box.get_shortest_axis())       # 打印 (1, 0, 0)
-print(box.get_shortest_axis_index()) # 打印 0
-print(box.get_shortest_axis_size())  # 打印 2</literal_block>
+print(box.get_shortest_axis())       # Prints (1, 0, 0)
+print(box.get_shortest_axis_index()) # Prints 0
+print(box.get_shortest_axis_size())  # Prints 2</literal_block>
                 </div>
                 <div aria-labelledby="tab-4-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-4-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
 
-GD.Print(box.GetShortestAxis());      // 打印 (1, 0, 0)
-GD.Print(box.GetShortestAxisIndex()); // 打印 0
-GD.Print(box.GetShortestAxisSize());  // 打印 2</literal_block>
+GD.Print(box.GetShortestAxis());      // Prints (1, 0, 0)
+GD.Print(box.GetShortestAxisIndex()); // Prints 0
+GD.Print(box.GetShortestAxisSize());  // Prints 2</literal_block>
                 </div>
             </container>
-            <paragraph>另见 <reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">get_shortest_axis_index</inline></reference> 和 <reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">get_shortest_axis_size</inline></reference>。</paragraph>
+            <paragraph>See also <reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">get_shortest_axis_index</inline></reference> and <reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">get_shortest_axis_size</inline></reference>.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-shortest-axis-index"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis-index" names="class_aabb_method_get_shortest_axis_index"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_shortest_axis_index</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis-index" names="class_aabb_method_get_shortest_axis_index"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_shortest_axis_index</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis-index"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最短轴的索引（见 <reference internal="True" refuri="class_vector3#class-vector3-constant-axis-x"><inline classes="std std-ref">Vector3.AXIS_X</inline></reference>、<reference internal="True" refuri="class_vector3#class-vector3-constant-axis-y"><inline classes="std std-ref">Vector3.AXIS_Y</inline></reference> 和 <reference internal="True" refuri="class_vector3#class-vector3-constant-axis-z"><inline classes="std std-ref">Vector3.AXIS_Z</inline></reference>）。</paragraph>
             <paragraph>示例见 <reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">get_shortest_axis</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-shortest-axis-size"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis-size" names="class_aabb_method_get_shortest_axis_size"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_shortest_axis_size</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-shortest-axis-size" names="class_aabb_method_get_shortest_axis_size"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_shortest_axis_size</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-shortest-axis-size"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的最短尺度。</paragraph>
             <paragraph>有关示例，请参阅 <reference internal="True" refid="class-aabb-method-get-shortest-axis"><inline classes="std std-ref">get_shortest_axis</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-support"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-support" names="class_aabb_method_get_support"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_support</strong>(dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-support"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-support" names="class_aabb_method_get_support"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_support</strong>(dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-support"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回给定方向上最远的边界框的顶点位置。该点在碰撞检测算法中通常被称为支撑点。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-get-volume"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-get-volume" names="class_aabb_method_get_volume"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_volume</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-volume"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-get-volume" names="class_aabb_method_get_volume"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_volume</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-get-volume"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的体积。这相当于 <literal>size.x * size.y * size.z</literal>。另请参阅 <reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">has_volume</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-grow"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-grow" names="class_aabb_method_grow"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>grow</strong>(by: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-grow"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-grow" names="class_aabb_method_grow"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>grow</strong>(by: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-grow"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框的副本，该边界框在所有边上扩展给定量 <literal>by</literal>。负数会缩小该框。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -590,20 +590,20 @@ GD.Print(b.Size);     // 打印 (12, 8, 6)</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-has-point"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-has-point" names="class_aabb_method_has_point"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_point</strong>(point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-point"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-has-point" names="class_aabb_method_has_point"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_point</strong>(point: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-point"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框包含给定的 <literal>point</literal>，则返回 <literal>true</literal>。依照惯例，<strong>不</strong>包括正好位于右侧、顶部和前侧的点。</paragraph>
             <paragraph><strong>注意：</strong>对于具有<emphasis>负</emphasis> <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的 <strong>AABB</strong>，该方法并不可靠。请首先使用 <reference internal="True" refid="class-aabb-method-abs"><inline classes="std std-ref">abs</inline></reference> 获取一个有效的边界框。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-has-surface"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-has-surface" names="class_aabb_method_has_surface"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_surface</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-surface"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-has-surface" names="class_aabb_method_has_surface"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_surface</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-surface"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框具有表面或长度，即 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 的至少一个分量大于 <literal>0</literal>，则返回 <literal>true</literal>。否则，返回 <literal>false</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-has-volume"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-has-volume" names="class_aabb_method_has_volume"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_volume</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-has-volume" names="class_aabb_method_has_volume"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_volume</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框的宽度、高度和深度均为正值，则返回 <literal>true</literal>。另见 <reference internal="True" refid="class-aabb-method-get-volume"><inline classes="std std-ref">get_volume</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-intersection"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-intersection" names="class_aabb_method_intersection"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>intersection</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersection"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-intersection" names="class_aabb_method_intersection"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>intersection</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersection"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框与 <literal>with</literal> 之间的交集。如果框不相交，则返回空的 <strong>AABB</strong>。如果框在边相交，则返回没有体积的平 <strong>AABB</strong>（请参阅 <reference internal="True" refid="class-aabb-method-has-surface"><inline classes="std std-ref">has_surface</inline></reference> 和 <reference internal="True" refid="class-aabb-method-has-volume"><inline classes="std std-ref">has_volume</inline></reference>）。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -630,38 +630,38 @@ GD.Print(intersection.Size);     // 打印 (3, 2, 4)</literal_block>
             <paragraph><strong>注意：</strong>如果你只需要知道两个边界框是否相交，请改用 <reference internal="True" refid="class-aabb-method-intersects"><inline classes="std std-ref">intersects</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-intersects"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-intersects" names="class_aabb_method_intersects"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-intersects" names="class_aabb_method_intersects"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框与框 <literal>with</literal> 重叠，则返回 <literal>true</literal>。两个框的边<emphasis>总是</emphasis>被排除。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-intersects-plane"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-intersects-plane" names="class_aabb_method_intersects_plane"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects_plane</strong>(plane: <reference internal="True" refuri="class_plane#class-plane"><inline classes="std std-ref">Plane</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-plane"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-intersects-plane" names="class_aabb_method_intersects_plane"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>intersects_plane</strong>(plane: <reference internal="True" refuri="class_plane#class-plane"><inline classes="std std-ref">Plane</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-plane"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框位于给定 <literal>plane</literal> 的两侧，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-intersects-ray"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-intersects-ray" names="class_aabb_method_intersects_ray"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>intersects_ray</strong>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-ray"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-intersects-ray" names="class_aabb_method_intersects_ray"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>intersects_ray</strong>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, dir: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-ray"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框与给定射线相交的第一个点，作为 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>。如果没有交集存在，则返回 <literal>null</literal>。</paragraph>
             <paragraph>射线从 <literal>from</literal> 开始，面向 <literal>dir</literal> 并向无穷远延伸。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-intersects-segment"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-intersects-segment" names="class_aabb_method_intersects_segment"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>intersects_segment</strong>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, to: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-segment"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-intersects-segment" names="class_aabb_method_intersects_segment"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>intersects_segment</strong>(from: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, to: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-intersects-segment"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该边界框与给定线段相交的第一个点，作为 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>。如果没有交集存在，则返回 <literal>null</literal>。</paragraph>
             <paragraph>该线段从 <literal>from</literal> 开始，到 <literal>to</literal> 结束。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-is-equal-approx"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-is-equal-approx" names="class_aabb_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(aabb: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-is-equal-approx" names="class_aabb_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(aabb: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框和 <literal>aabb</literal> 近似相等，则返回 <literal>true</literal>，判断方法是通过在 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 和 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 上调用 <reference internal="True" refuri="class_vector3#class-vector3-method-is-equal-approx"><inline classes="std std-ref">Vector3.is_equal_approx</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-is-finite"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-is-finite" names="class_aabb_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-is-finite" names="class_aabb_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该边界框的值是有限的，则返回 <literal>true</literal>，判断方法是通过在 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 和 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 上调用 <reference internal="True" refuri="class_vector3#class-vector3-method-is-finite"><inline classes="std std-ref">Vector3.is_finite</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-aabb-method-merge"></target>
-            <paragraph classes="classref-method" ids="class-aabb-method-merge" names="class_aabb_method_merge"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>merge</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-merge"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-aabb-method-merge" names="class_aabb_method_merge"><reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference> <strong>merge</strong>(with: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-aabb-method-merge"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回边界包围该边界框和 <literal>with</literal> 的 <strong>AABB</strong>。另见 <reference internal="True" refid="class-aabb-method-encloses"><inline classes="std std-ref">encloses</inline></reference>。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id10" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id10" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-aabb-operator-neq-aabb"></target>
             <paragraph classes="classref-operator" ids="class-aabb-operator-neq-aabb" names="class_aabb_operator_neq_aabb"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-aabb"><inline classes="std std-ref">AABB</inline></reference>) <reference internal="True" refid="class-aabb-operator-neq-aabb"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个边界框的 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 不相等或 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 不相等，则返回 <literal>true</literal>。</paragraph>
@@ -678,12 +678,12 @@ GD.Print(intersection.Size);     // 打印 (3, 2, 4)</literal_block>
             <paragraph>如果两个边界框的 <reference internal="True" refid="class-aabb-property-position"><inline classes="std std-ref">position</inline></reference> 完全相等且 <reference internal="True" refid="class-aabb-property-size"><inline classes="std std-ref">size</inline></reference> 完全相等，则返回 <literal>true</literal>。</paragraph>
             <paragraph><strong>注意：</strong>由于浮点数精度误差，请考虑改用 <reference internal="True" refid="class-aabb-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>，会更可靠。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

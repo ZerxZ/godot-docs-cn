@@ -19,9 +19,9 @@ SkeletonProfileHumanoid
 描述
 ----
 
-A :ref:`SkeletonProfile<class_SkeletonProfile>` as a preset that is optimized for the human form. This exists for standardization, so all parameters are read-only.
+:ref:`SkeletonProfile<class_SkeletonProfile>` 是针对人形优化的预设。它存在的目的是进行标准化，因此所有参数都是只读的。
 
-A humanoid skeleton profile contains 54 bones divided in 4 groups: ``"Body"``, ``"Face"``, ``"LeftHand"``, and ``"RightHand"``. It is structured as follows:
+人形骨架预设包含了 54 根骨骼，分为 ``"Body"``\ （身体）、\ ``"Face"``\ （面部）、 ``"LeftHand"``\ （左手）、\ ``"RightHand"``\ （右手）4 组。结构如下：
 
 .. code:: text
 
@@ -106,10 +106,10 @@ A humanoid skeleton profile contains 54 bones divided in 4 groups: ``"Body"``, `
    +-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

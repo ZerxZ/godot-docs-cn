@@ -55,7 +55,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-performance-method-get-monitor"><inline classes="std std-ref">get_monitor</inline></reference>(monitor: <reference internal="True" refid="enum-performance-monitor"><inline classes="std std-ref">Monitor</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-performance-method-get-monitor"><inline classes="std std-ref">get_monitor</inline></reference>(monitor: <reference internal="True" refid="enum-performance-monitor"><inline classes="std std-ref">Monitor</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -263,7 +263,7 @@ public int GetMonitorValue()
             <paragraph>以一个 <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>，返回活动自定义监视器的名称。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-performance-method-get-monitor"></target>
-            <paragraph classes="classref-method" ids="class-performance-method-get-monitor" names="class_performance_method_get_monitor"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_monitor</strong>(monitor: <reference internal="True" refid="enum-performance-monitor"><inline classes="std std-ref">Monitor</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-performance-method-get-monitor"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-performance-method-get-monitor" names="class_performance_method_get_monitor"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_monitor</strong>(monitor: <reference internal="True" refid="enum-performance-monitor"><inline classes="std std-ref">Monitor</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-performance-method-get-monitor"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回任一可用的内置监视器的值。应该提供任一 <reference internal="True" refid="enum-performance-monitor"><inline classes="std std-ref">Monitor</inline></reference> 常量作为参数，如下所示：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -291,12 +291,12 @@ public int GetMonitorValue()
             <paragraph classes="classref-method" ids="class-performance-method-remove-custom-monitor" names="class_performance_method_remove_custom_monitor"><abbreviation explanation="无返回值。">void</abbreviation> <strong>remove_custom_monitor</strong>(id: <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference>) <reference internal="True" refid="class-performance-method-remove-custom-monitor"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>移除具有给定 <literal>id</literal> 的自定义监视器。如果给定的 <literal>id</literal> 已经不存在，则打印一个错误。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

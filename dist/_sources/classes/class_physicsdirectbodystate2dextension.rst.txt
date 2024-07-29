@@ -244,7 +244,7 @@ PhysicsDirectBodyState2DExtension
 
 :ref:`float<class_float>` **_get_angular_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_angular_velocity>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_vel
 
 :ref:`Vector2<class_Vector2>` **_get_center_of_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_center_of_mass>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -268,7 +268,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_m
 
 :ref:`Vector2<class_Vector2>` **_get_center_of_mass_local**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_center_of_mass_local>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -448,7 +448,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_m
 
 :ref:`float<class_float>` **_get_inverse_inertia**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_inverse_inertia>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +460,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_ine
 
 :ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_inverse_mass>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -472,7 +472,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_mas
 
 :ref:`Vector2<class_Vector2>` **_get_linear_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_linear_velocity>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +496,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velo
 
 :ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_step>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.step<class_PhysicsDirectBodyState2D_property_step>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.step<class_PhysicsDirectBodyState2D_property_step>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -508,7 +508,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.step<class_
 
 :ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_angular_damp>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +520,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_angul
 
 :ref:`Vector2<class_Vector2>` **_get_total_gravity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_gravity>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -532,7 +532,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_gravi
 
 :ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_linear_damp>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -544,7 +544,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_linea
 
 :ref:`Transform2D<class_Transform2D>` **_get_transform**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_transform>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -580,7 +580,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<c
 
 :ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__is_sleeping>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective getter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` 及其对应 getter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -592,7 +592,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<cl
 
 |void| **_set_angular_velocity**\ (\ velocity\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_angular_velocity>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective setter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` 及其对应 setter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -628,7 +628,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_vel
 
 |void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_linear_velocity>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective setter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` 及其对应 setter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -640,7 +640,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velo
 
 |void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_sleep_state>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective setter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` 及其对应 setter 的行为。
 
 .. rst-class:: classref-item-separator
 
@@ -652,13 +652,13 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<cl
 
 |void| **_set_transform**\ (\ transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_transform>`
 
-Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective setter.
+实现后能够覆盖 :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` 及其对应 setter 的行为。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

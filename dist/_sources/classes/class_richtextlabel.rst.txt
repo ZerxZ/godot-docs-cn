@@ -1395,7 +1395,7 @@ RichTextEffect 示例：
 
 :ref:`bool<class_bool>` **invalidate_paragraph**\ (\ paragraph\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_invalidate_paragraph>`
 
-Invalidates ``paragraph`` and all subsequent paragraphs cache.
+使 ``paragraph`` 和所有后续段落缓存无效。
 
 .. rst-class:: classref-item-separator
 
@@ -1551,7 +1551,7 @@ Invalidates ``paragraph`` and all subsequent paragraphs cache.
 
 |void| **push_cell**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_cell>`
 
-Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_method_push_table>` for details. Use :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` to set column expansion ratio, :ref:`set_cell_border_color<class_RichTextLabel_method_set_cell_border_color>` to set cell border, :ref:`set_cell_row_background_color<class_RichTextLabel_method_set_cell_row_background_color>` to set cell background, :ref:`set_cell_size_override<class_RichTextLabel_method_set_cell_size_override>` to override cell size, and :ref:`set_cell_padding<class_RichTextLabel_method_set_cell_padding>` to set padding.
+将 ``[cell]`` 标签添加到标签栈。必须位于 ``[table]`` 标签内。有关详细信息，请参阅 :ref:`push_table<class_RichTextLabel_method_push_table>`\ 。使用 :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` 设置列扩展率，使用 :ref:`set_cell_border_color<class_RichTextLabel_method_set_cell_border_color>` 设置单元格边框，使用 :ref:`set_cell_row_background_color<class_RichTextLabel_method_set_cell_row_background_color>` 设置单元格背景，使用 :ref:`set_cell_size_override<class_RichTextLabel_method_set_cell_size_override>` 覆盖单元格大小，使用 :ref:`set_cell_padding<class_RichTextLabel_method_set_cell_padding>` 设置填充。
 
 .. rst-class:: classref-item-separator
 
@@ -1797,7 +1797,7 @@ Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :r
 
 |void| **push_table**\ (\ columns\: :ref:`int<class_int>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 0, align_to_row\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_RichTextLabel_method_push_table>`
 
-Adds a ``[table=columns,inline_align]`` tag to the tag stack. Use :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` to set column expansion ratio. Use :ref:`push_cell<class_RichTextLabel_method_push_cell>` to add cells.
+向标签栈添加 ``[table=columns,inline_align]`` 标签。使用 :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` 设置列扩展率。使用 :ref:`push_cell<class_RichTextLabel_method_push_cell>` 添加单元格。
 
 .. rst-class:: classref-item-separator
 
@@ -1821,11 +1821,11 @@ Adds a ``[table=columns,inline_align]`` tag to the tag stack. Use :ref:`set_tabl
 
 :ref:`bool<class_bool>` **remove_paragraph**\ (\ paragraph\: :ref:`int<class_int>`, no_invalidate\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RichTextLabel_method_remove_paragraph>`
 
-Removes a paragraph of content from the label. Returns ``true`` if the paragraph exists.
+从标签中移除一段内容。如果该段落存在，则返回 ``true``\ 。
 
-The ``paragraph`` argument is the index of the paragraph to remove, it can take values in the interval ``[0, get_paragraph_count() - 1]``.
+\ ``paragraph`` 参数是要移除的段落的索引，它可以在 ``[0, get_paragraph_count() - 1]`` 区间内取值。
 
-If ``no_invalidate`` is set to ``true``, cache for the subsequent paragraphs is not invalidated. Use it for faster updates if deleted paragraph is fully self-contained (have no unclosed tags), or this call is part of the complex edit operation and :ref:`invalidate_paragraph<class_RichTextLabel_method_invalidate_paragraph>` will be called at the end of operation.
+如果 ``no_invalidate`` 设置为 ``true``\ ，则后续段落的缓存不会失效。如果已删除的段落完全独立（没有未关闭的标签），或者该调用是复杂编辑操作的一部分，并且 :ref:`invalidate_paragraph<class_RichTextLabel_method_invalidate_paragraph>` 将在操作结束时调用，则使用它来更快地进行更新。
 
 .. rst-class:: classref-item-separator
 
@@ -2309,10 +2309,10 @@ If ``no_invalidate`` is set to ``true``, cache for the subsequent paragraphs is 
 **RichTextLabel** 的正常背景。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

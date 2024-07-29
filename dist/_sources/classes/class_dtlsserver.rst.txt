@@ -19,9 +19,9 @@ DTLSServer
 描述
 ----
 
-This class is used to store the state of a DTLS server. Upon :ref:`setup<class_DTLSServer_method_setup>` it converts connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` to :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` accepting them via :ref:`take_connection<class_DTLSServer_method_take_connection>` as DTLS clients. Under the hood, this class is used to store the DTLS state and cookies of the server. The reason of why the state and cookies are needed is outside of the scope of this documentation.
+该类用于存储 DTLS 服务器的状态。在 :ref:`setup<class_DTLSServer_method_setup>` 之后，它将连接的 :ref:`PacketPeerUDP<class_PacketPeerUDP>` 转换为 :ref:`PacketPeerDTLS<class_PacketPeerDTLS>`\ ，通过 :ref:`take_connection<class_DTLSServer_method_take_connection>` 接受它们作为 DTLS 客户端。在底层，这个类用于存储服务器的 DTLS 状态和 cookie。为什么需要状态和 cookie 的原因不在本文档的范围内。
 
-Below a small example of how to use it:
+下面是一个如何使用它的小例子：
 
 
 .. tabs::
@@ -37,8 +37,8 @@ Below a small example of how to use it:
     
     func _ready():
         server.listen(4242)
-        var key = load("key.key") # Your private key.
-        var cert = load("cert.crt") # Your X509 certificate.
+        var key = load("key.key") # 你的私钥。
+        var cert = load("cert.crt") # 你的 X509 证书。
         dtls.setup(key, cert)
     
     func _process(delta):
@@ -46,16 +46,16 @@ Below a small example of how to use it:
             var peer: PacketPeerUDP = server.take_connection()
             var dtls_peer: PacketPeerDTLS = dtls.take_connection(peer)
             if dtls_peer.get_status() != PacketPeerDTLS.STATUS_HANDSHAKING:
-                continue # It is normal that 50% of the connections fails due to cookie exchange.
-            print("Peer connected!")
+                continue # 由于 cookie 交换，50% 的连接会失败，这是正常现象。
+            print("对等体已连接！")
             peers.append(dtls_peer)
     
         for p in peers:
-            p.poll() # Must poll to update the state.
+            p.poll() # 必须轮询以更新状态。
             if p.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
                 while p.get_available_packet_count() > 0:
-                    print("Received message from client: %s" % p.get_packet().get_string_from_utf8())
-                    p.put_packet("Hello DTLS client".to_utf8_buffer())
+                    print("从客户端收到消息：%s" % p.get_packet().get_string_from_utf8())
+                    p.put_packet("你好 DTLS 客户端".to_utf8_buffer())
 
  .. code-tab:: csharp
 
@@ -71,8 +71,8 @@ Below a small example of how to use it:
         public override void _Ready()
         {
             _server.Listen(4242);
-            var key = GD.Load<CryptoKey>("key.key"); // Your private key.
-            var cert = GD.Load<X509Certificate>("cert.crt"); // Your X509 certificate.
+            var key = GD.Load<CryptoKey>("key.key"); // 你的私钥。
+            var cert = GD.Load<X509Certificate>("cert.crt"); // 你的 X509 证书。
             _dtls.Setup(key, cert);
         }
     
@@ -84,21 +84,21 @@ Below a small example of how to use it:
                 PacketPeerDtls dtlsPeer = _dtls.TakeConnection(peer);
                 if (dtlsPeer.GetStatus() != PacketPeerDtls.Status.Handshaking)
                 {
-                    continue; // It is normal that 50% of the connections fails due to cookie exchange.
+                    continue; // 由于 cookie 交换，50% 的连接会失败，这是正常现象。
                 }
-                GD.Print("Peer connected!");
+                GD.Print("对等体已连接！");
                 _peers.Add(dtlsPeer);
             }
     
             foreach (var p in _peers)
             {
-                p.Poll(); // Must poll to update the state.
+                p.Poll(); // 必须轮询以更新状态。
                 if (p.GetStatus() == PacketPeerDtls.Status.Connected)
                 {
                     while (p.GetAvailablePacketCount() > 0)
                     {
-                        GD.Print($"Received Message From Client: {p.GetPacket().GetStringFromUtf8()}");
-                        p.PutPacket("Hello DTLS Client".ToUtf8Buffer());
+                        GD.Print($"从客户端收到消息：{p.GetPacket().GetStringFromUtf8()}");
+                        p.PutPacket("你好 DTLS 客户端".ToUtf8Buffer());
                     }
                 }
             }
@@ -121,16 +121,16 @@ Below a small example of how to use it:
     
     func _ready():
         udp.connect_to_host("127.0.0.1", 4242)
-        dtls.connect_to_peer(udp, false) # Use true in production for certificate validation!
+        dtls.connect_to_peer(udp, false) # 生产环境中请使用 true 进行证书校验！
     
     func _process(delta):
         dtls.poll()
         if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
             if !connected:
-                # Try to contact server
-                dtls.put_packet("The answer is... 42!".to_utf8_buffer())
+                # 尝试联系服务器
+                dtls.put_packet("回应是… 42！".to_utf8_buffer())
             while dtls.get_available_packet_count() > 0:
-                print("Connected: %s" % dtls.get_packet().get_string_from_utf8())
+                print("已连接：%s" % dtls.get_packet().get_string_from_utf8())
                 connected = true
 
  .. code-tab:: csharp
@@ -148,7 +148,7 @@ Below a small example of how to use it:
         public override void _Ready()
         {
             _udp.ConnectToHost("127.0.0.1", 4242);
-            _dtls.ConnectToPeer(_udp, validateCerts: false); // Use true in production for certificate validation!
+            _dtls.ConnectToPeer(_udp, validateCerts: false); // 生产环境中请使用 true 进行证书校验！
         }
     
         public override void _Process(double delta)
@@ -158,12 +158,12 @@ Below a small example of how to use it:
             {
                 if (!_connected)
                 {
-                    // Try to contact server
-                    _dtls.PutPacket("The Answer Is..42!".ToUtf8Buffer());
+                    // 尝试联系服务器
+                    _dtls.PutPacket("回应是… 42！".ToUtf8Buffer());
                 }
                 while (_dtls.GetAvailablePacketCount() > 0)
                 {
-                    GD.Print($"Connected: {_dtls.GetPacket().GetStringFromUtf8()}");
+                    GD.Print($"已连接：{_dtls.GetPacket().GetStringFromUtf8()}");
                     _connected = true;
                 }
             }
@@ -218,10 +218,10 @@ Below a small example of how to use it:
 \ **注意：**\ 必须检查返回的 PacketPeerUDP 的状态是否为 :ref:`PacketPeerDTLS.STATUS_HANDSHAKING<class_PacketPeerDTLS_constant_STATUS_HANDSHAKING>`\ ，因为正常情况下，50% 的新连接会因为 cookie 交换而无效。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -50,10 +50,19 @@
             </figure>
             <paragraph><literal>Fixed FPS</literal> 属性限制了粒子系统的处理频率，包括属性更新以及碰撞和吸引器。这可以有效提高性能，特别是在大量使用粒子碰撞的场景中。请注意，这不会改变粒子移动或旋转的速度。要更改这些属性，应该使用 <literal>Speed Scale</literal> 属性。</paragraph>
             <paragraph>当 <literal>Fixed FPS</literal> 设置为非常低的值时，你会注意到粒子动画开始看起来不流畅。如果符合艺术设计，有可能是期望的效果，但大多数情况下，会希望粒子系统动画是平滑的。这就是 <literal>Interpolate</literal> 属性的作用，它会在更新之间混合粒子属性，因此即使粒子系统以 <literal>10</literal> FPS运行，看起来也像是 <literal>60</literal> FPS运行一样平滑。</paragraph>
+            <note>
+                <paragraph>When using <reference internal="True" refuri="collision#doc-3d-particles-collision"><inline classes="std std-ref">particle collision</inline></reference>, tunneling can occur
+                    if the particles move fast and colliders are thin. This can be remedied by increasing
+                    <literal>Fixed FPS</literal> (at a performance cost).</paragraph>
+            </note>
             <target refid="doc-3d-particles-properties-collision"></target>
         </section>
         <section ids="collision-properties doc-3d-particles-properties-collision" names="collision\ properties 碰撞属性 doc_3d_particles_properties_collision">
             <title>碰撞属性</title>
+            <seealso>
+                <paragraph>Setting up particle collision requires following further steps described in
+                    <reference internal="True" refuri="collision#doc-3d-particles-collision"><inline classes="std std-ref">3D粒子碰撞</inline></reference>.</paragraph>
+            </seealso>
             <paragraph><literal>Base Size</literal> 属性定义了每个粒子的默认碰撞大小，用于检查粒子当前是否与环境发生碰撞。通常，希望这个大小与粒子的大小大致相同。对于非常小且移动非常快的粒子，增加此值可以防止其穿过碰撞几何体。</paragraph>
             <target refid="doc-3d-particles-properties-draw"></target>
         </section>
@@ -63,7 +72,10 @@
                 <image alt="粒子绘制属性" candidates="{'*': 'tutorials/3d/particles/img/particle_drawing.webp'}" uri="tutorials/3d/particles/img/particle_drawing.webp"></image>
             </figure>
             <paragraph><literal>Visibility AABB</literal> 属性定义了一个围绕粒子系统原点的盒子。只要这个盒子的任意部分在相机的视野内，粒子系统就是可见的，一旦离开相机视野，粒子系统将停止渲染，可以尽可能使盒子较小来提高性能。</paragraph>
-            <paragraph>设置 <literal>Visibility AABB</literal> 的大小时，需要注意的一点是，当粒子系统离开相机视野时，超出其边界的粒子会立即消失。虽然这不是技术上的错误，但可能带来不好的视觉体验。</paragraph>
+            <paragraph>One thing to keep in mind when you set a size for the <literal>Visibility AABB</literal> is that particles
+                that are outside of its bounds disappear instantly when it leaves the camera's field of view.
+                Particle collision will also not occur outside the <literal>Visibility AABB</literal>.
+                While not technically a bug, this can have a negative effect on the visual experience.</paragraph>
             <paragraph>当选中 <literal>Local Coords</literal> 属性时，所有粒子计算都使用局部坐标系来确定诸如上下、重力和运动方向等。例如，上下会跟随粒子系统或其父节点而旋转。当未选中该属性时，这些计算将使用全局世界空间：在世界空间中，向下始终为 -Y ，不跟随粒子系统旋转。</paragraph>
             <figure ids="id4">
                 <image candidates="{'*': 'tutorials/3d/particles/img/particle_coords.webp'}" uri="tutorials/3d/particles/img/particle_coords.webp"></image>

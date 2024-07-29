@@ -14,7 +14,7 @@
         <paragraph>所有 3D 物理关节的抽象基类。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>Abstract base class for all joints in 3D physics. 3D joints bind together two physics bodies (<reference internal="True" refid="class-joint3d-property-node-a"><inline classes="std std-ref">node_a</inline></reference> and <reference internal="True" refid="class-joint3d-property-node-b"><inline classes="std std-ref">node_b</inline></reference>) and apply a constraint. If only one body is defined, it is attached to a fixed <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> without collision shapes.</paragraph>
+            <paragraph>3D 物理中所有关节的抽象基类。3D 关节将两个物理体（<reference internal="True" refid="class-joint3d-property-node-a"><inline classes="std std-ref">node_a</inline></reference> 和 <reference internal="True" refid="class-joint3d-property-node-b"><inline classes="std std-ref">node_b</inline></reference>）绑定在一起并应用约束。如果仅定义一个物体，则将其附加到固定的 <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> 上，而没有碰撞形状。</paragraph>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
             <title>教程</title>
@@ -92,7 +92,7 @@
                                 <paragraph><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-joint3d-method-get-rid"><inline classes="std std-ref">get_rid</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-joint3d-method-get-rid"><inline classes="std std-ref">get_rid</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -112,7 +112,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_exclude_nodes_from_collision</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If <literal>true</literal>, the two bodies bound together do not collide with each other.</paragraph>
+            <paragraph>如果为 <literal>true</literal>，则绑定在一起的两个物体不会相互碰撞。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-joint3d-property-node-a"></target>
             <paragraph classes="classref-property" ids="class-joint3d-property-node-a" names="class_joint3d_property_node_a"><reference internal="True" refuri="class_nodepath#class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>node_a</strong> = <literal>NodePath("")</literal> <reference internal="True" refid="class-joint3d-property-node-a"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -124,8 +124,8 @@
                     <paragraph><reference internal="True" refuri="class_nodepath#class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>get_node_a</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Path to the first node (A) attached to the joint. The node must inherit <reference internal="True" refuri="class_physicsbody3d#class-physicsbody3d"><inline classes="std std-ref">PhysicsBody3D</inline></reference>.</paragraph>
-            <paragraph>If left empty and <reference internal="True" refid="class-joint3d-property-node-b"><inline classes="std std-ref">node_b</inline></reference> is set, the body is attached to a fixed <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> without collision shapes.</paragraph>
+            <paragraph>连接到关节的第一个节点（A）的路径。该节点必须继承自 <reference internal="True" refuri="class_physicsbody3d#class-physicsbody3d"><inline classes="std std-ref">PhysicsBody3D</inline></reference>。</paragraph>
+            <paragraph>如果留空且设置了 <reference internal="True" refid="class-joint3d-property-node-b"><inline classes="std std-ref">node_b</inline></reference>，则该物体将连接到固定的 <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference>，且没有碰撞形状。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-joint3d-property-node-b"></target>
             <paragraph classes="classref-property" ids="class-joint3d-property-node-b" names="class_joint3d_property_node_b"><reference internal="True" refuri="class_nodepath#class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>node_b</strong> = <literal>NodePath("")</literal> <reference internal="True" refid="class-joint3d-property-node-b"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -137,8 +137,8 @@
                     <paragraph><reference internal="True" refuri="class_nodepath#class-nodepath"><inline classes="std std-ref">NodePath</inline></reference> <strong>get_node_b</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Path to the second node (B) attached to the joint. The node must inherit <reference internal="True" refuri="class_physicsbody3d#class-physicsbody3d"><inline classes="std std-ref">PhysicsBody3D</inline></reference>.</paragraph>
-            <paragraph>If left empty and <reference internal="True" refid="class-joint3d-property-node-a"><inline classes="std std-ref">node_a</inline></reference> is set, the body is attached to a fixed <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference> without collision shapes.</paragraph>
+            <paragraph>连接到关节的第二个节点（B）的路径。该节点必须继承自 <reference internal="True" refuri="class_physicsbody3d#class-physicsbody3d"><inline classes="std std-ref">PhysicsBody3D</inline></reference>。</paragraph>
+            <paragraph>如果留空且设置了 <reference internal="True" refid="class-joint3d-property-node-a"><inline classes="std std-ref">node_a</inline></reference>，则该物体将连接到固定的 <reference internal="True" refuri="class_staticbody3d#class-staticbody3d"><inline classes="std std-ref">StaticBody3D</inline></reference>，且没有碰撞形状。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-joint3d-property-solver-priority"></target>
             <paragraph classes="classref-property" ids="class-joint3d-property-solver-priority" names="class_joint3d_property_solver_priority"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>solver_priority</strong> = <literal>1</literal> <reference internal="True" refid="class-joint3d-property-solver-priority"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -156,15 +156,15 @@
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-joint3d-method-get-rid"></target>
-            <paragraph classes="classref-method" ids="class-joint3d-method-get-rid" names="class_joint3d_method_get_rid"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_rid</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-joint3d-method-get-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns the joint's internal <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> from the <reference internal="True" refuri="class_physicsserver3d#class-physicsserver3d"><inline classes="std std-ref">PhysicsServer3D</inline></reference>.</paragraph>
+            <paragraph classes="classref-method" ids="class-joint3d-method-get-rid" names="class_joint3d_method_get_rid"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_rid</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-joint3d-method-get-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>从 <reference internal="True" refuri="class_physicsserver3d#class-physicsserver3d"><inline classes="std std-ref">PhysicsServer3D</inline></reference> 返回关节的内部 <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

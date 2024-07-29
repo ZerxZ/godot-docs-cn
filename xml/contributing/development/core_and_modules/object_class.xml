@@ -94,7 +94,7 @@ BIND_CONSTANT(MODE_SECOND);</literal_block>
             <literal_block force="False" highlight_args="{}" language="cpp" linenos="False" xml:space="preserve">PropertyInfo(Variant::STRING, "modes", PROPERTY_HINT_ENUM, "Enabled,Disabled,Turbo")</literal_block>
             <paragraph>这是一个字符串属性, 可以接受任何字符串, 但编辑器只允许定义的提示字符串. 由于未指定使用标志, 因此默认值为 <literal>PROPERTY_USAGE_STORAGE</literal> 和 <literal>PROPERTY_USAGE_EDITOR</literal>.</paragraph>
             <paragraph>在object.h中有很多提示和用法标记, 请对其进行检查.</paragraph>
-            <paragraph>属性也可以像C#属性一样工作, 并且可以使用索引从脚本访问, 但通常不鼓励这种用法, 因为使用函数是易读性的首选. 许多属性也与类别绑定, 例如 <literal>动画/帧</literal>, 除非使用操作符 <literal>[]</literal>, 否则也无法建立索引.</paragraph>
+            <paragraph>属性也可以像C#属性一样工作, 并且可以使用索引从脚本访问, 但通常不鼓励这种用法, 因为使用函数是易读性的首选. 许多属性也与类别绑定, 例如 <literal>动画/帧</literal>, 除非使用运算符 <literal>[]</literal>, 否则也无法建立索引.</paragraph>
             <paragraph>从 <literal>_bind_methods()</literal> 开始, 只要存在set/get函数, 就可以创建和绑定属性. 例如:</paragraph>
             <literal_block force="False" highlight_args="{}" language="cpp" linenos="False" xml:space="preserve">ADD_PROPERTY(PropertyInfo(Variant::INT, "amount"), "set_amount", "get_amount")</literal_block>
             <paragraph>这将使用setter和getter创建属性.</paragraph>

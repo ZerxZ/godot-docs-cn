@@ -35,7 +35,7 @@
                                 <paragraph><reference internal="True" refuri="class_control#class-control"><inline classes="std std-ref">Control</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-scripteditorbase-method-get-base-editor"><inline classes="std std-ref">get_base_editor</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-scripteditorbase-method-get-base-editor"><inline classes="std std-ref">get_base_editor</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -78,8 +78,8 @@
             <paragraph>用户进行上下文跳转，并且该条目在同一个脚本中时发出。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-scripteditorbase-signal-request-save-previous-state"></target>
-            <paragraph classes="classref-signal" ids="class-scripteditorbase-signal-request-save-previous-state" names="class_scripteditorbase_signal_request_save_previous_state"><strong>request_save_previous_state</strong>(line: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-scripteditorbase-signal-request-save-previous-state"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Emitted when the user changes current script or moves caret by 10 or more columns within the same script.</paragraph>
+            <paragraph classes="classref-signal" ids="class-scripteditorbase-signal-request-save-previous-state" names="class_scripteditorbase_signal_request_save_previous_state"><strong>request_save_previous_state</strong>(state: <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference>) <reference internal="True" refid="class-scripteditorbase-signal-request-save-previous-state"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>当用户更改当前脚本或在同一脚本内将文本光标移动 10 列或更多列时发出。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-scripteditorbase-signal-search-in-files-requested"></target>
             <paragraph classes="classref-signal" ids="class-scripteditorbase-signal-search-in-files-requested" names="class_scripteditorbase_signal_search_in_files_requested"><strong>search_in_files_requested</strong>(text: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <reference internal="True" refid="class-scripteditorbase-signal-search-in-files-requested"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -93,15 +93,15 @@
             <paragraph>将 <reference internal="True" refuri="class_editorsyntaxhighlighter#class-editorsyntaxhighlighter"><inline classes="std std-ref">EditorSyntaxHighlighter</inline></reference> 添加到打开的脚本中。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-scripteditorbase-method-get-base-editor"></target>
-            <paragraph classes="classref-method" ids="class-scripteditorbase-method-get-base-editor" names="class_scripteditorbase_method_get_base_editor"><reference internal="True" refuri="class_control#class-control"><inline classes="std std-ref">Control</inline></reference> <strong>get_base_editor</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-scripteditorbase-method-get-base-editor"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-scripteditorbase-method-get-base-editor" names="class_scripteditorbase_method_get_base_editor"><reference internal="True" refuri="class_control#class-control"><inline classes="std std-ref">Control</inline></reference> <strong>get_base_editor</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-scripteditorbase-method-get-base-editor"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回用于编辑脚本的底层 <reference internal="True" refuri="class_control#class-control"><inline classes="std std-ref">Control</inline></reference>。文本脚本对应 <reference internal="True" refuri="class_codeedit#class-codeedit"><inline classes="std std-ref">CodeEdit</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -634,7 +634,7 @@ enum **SDFGIYScale**: :ref:`🔗<enum_Environment_SDFGIYScale>`
 - |void| **set_adjustment_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_adjustment_enabled**\ (\ )
 
-If ``true``, enables the ``adjustment_*`` properties provided by this resource. If ``false``, modifications to the ``adjustment_*`` properties will have no effect on the rendered scene.
+如果为 ``true``\ ，则启用该资源提供的 ``adjustment_*`` 属性。如果为 ``false``\ ，则对 ``adjustment_*`` 属性的修改将不会对渲染场景产生影响。
 
 .. rst-class:: classref-item-separator
 
@@ -2056,7 +2056,7 @@ SDFGI 可见的最大距离。超出该距离，环境照明或其他 GI 来源�
 - |void| **set_tonemapper**\ (\ value\: :ref:`ToneMapper<enum_Environment_ToneMapper>`\ )
 - :ref:`ToneMapper<enum_Environment_ToneMapper>` **get_tonemapper**\ (\ )
 
-The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on an LDR display. (Godot doesn't support rendering on HDR displays yet.)
+要使用的色调映射模式。色调映射是对 HDR 值进行“转换”的过程，转换后的值适合在 LDR 显示器上渲染。（Godot 尚不支持在 HDR 显示器上进行渲染。）
 
 .. rst-class:: classref-item-separator
 
@@ -2340,10 +2340,10 @@ The tonemapping mode to use. Tonemapping is the process that "converts" HDR valu
 设置辉光级别 ``idx`` 的强度。大于 ``0.0`` 时启用该级别。每个级别都依赖于前一个级别。这意味着启用较高的辉光等级会减慢辉光效果的渲染速度，即使之前的等级没有启用。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

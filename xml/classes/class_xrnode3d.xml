@@ -81,7 +81,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-xrnode3d-method-get-has-tracking-data"><inline classes="std std-ref">get_has_tracking_data</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-xrnode3d-method-get-has-tracking-data"><inline classes="std std-ref">get_has_tracking_data</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -89,7 +89,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-xrnode3d-method-get-is-active"><inline classes="std std-ref">get_is_active</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-xrnode3d-method-get-is-active"><inline classes="std std-ref">get_is_active</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -145,7 +145,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_show_when_tracked</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Enables showing the node when tracking starts, and hiding the node when tracking is lost.</paragraph>
+            <paragraph>启用在跟踪开始时显示节点，并在跟踪丢失时隐藏节点。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-xrnode3d-property-tracker"></target>
             <paragraph classes="classref-property" ids="class-xrnode3d-property-tracker" names="class_xrnode3d_property_tracker"><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>tracker</strong> = <literal>&amp;""</literal> <reference internal="True" refid="class-xrnode3d-property-tracker"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -164,11 +164,11 @@
         <section classes="classref-descriptions-group" ids="id7" names="方法说明">
             <title>方法说明</title>
             <target refid="class-xrnode3d-method-get-has-tracking-data"></target>
-            <paragraph classes="classref-method" ids="class-xrnode3d-method-get-has-tracking-data" names="class_xrnode3d_method_get_has_tracking_data"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_has_tracking_data</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-xrnode3d-method-get-has-tracking-data"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-xrnode3d-method-get-has-tracking-data" names="class_xrnode3d_method_get_has_tracking_data"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_has_tracking_data</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-xrnode3d-method-get-has-tracking-data"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <reference internal="True" refid="class-xrnode3d-property-tracker"><inline classes="std std-ref">tracker</inline></reference> 中有被跟踪 <reference internal="True" refid="class-xrnode3d-property-pose"><inline classes="std std-ref">pose</inline></reference> 的当前跟踪数据，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-xrnode3d-method-get-is-active"></target>
-            <paragraph classes="classref-method" ids="class-xrnode3d-method-get-is-active" names="class_xrnode3d_method_get_is_active"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_is_active</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-xrnode3d-method-get-is-active"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-xrnode3d-method-get-is-active" names="class_xrnode3d_method_get_is_active"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_is_active</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-xrnode3d-method-get-is-active"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <reference internal="True" refid="class-xrnode3d-property-tracker"><inline classes="std std-ref">tracker</inline></reference> 已注册，并且 <reference internal="True" refid="class-xrnode3d-property-pose"><inline classes="std std-ref">pose</inline></reference> 正在被追踪，则返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-xrnode3d-method-get-pose"></target>
@@ -177,15 +177,19 @@
             <transition classes="classref-item-separator"></transition>
             <target refid="class-xrnode3d-method-trigger-haptic-pulse"></target>
             <paragraph classes="classref-method" ids="class-xrnode3d-method-trigger-haptic-pulse" names="class_xrnode3d_method_trigger_haptic_pulse"><abbreviation explanation="无返回值。">void</abbreviation> <strong>trigger_haptic_pulse</strong>(action_name: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, frequency: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, amplitude: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, duration_sec: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, delay_sec: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-xrnode3d-method-trigger-haptic-pulse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>在与此接口关联的设备上触发触觉脉冲。</paragraph>
-            <paragraph><literal>action_name</literal> 是该脉冲的动作名称。</paragraph>
+            <paragraph>Triggers a haptic pulse on a device associated with this interface.</paragraph>
+            <paragraph><literal>action_name</literal> is the name of the action for this pulse.</paragraph>
+            <paragraph><literal>frequency</literal> is the frequency of the pulse, set to <literal>0.0</literal> to have the system use a default frequency.</paragraph>
+            <paragraph><literal>amplitude</literal> is the amplitude of the pulse between <literal>0.0</literal> and <literal>1.0</literal>.</paragraph>
+            <paragraph><literal>duration_sec</literal> is the duration of the pulse in seconds.</paragraph>
+            <paragraph><literal>delay_sec</literal> is a delay in seconds before the pulse is given.</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -161,9 +161,9 @@ MeshInstance3D 节点接受 :ref:`Mesh<class_Mesh>` 资源，会为该网格创�
 
 :ref:`ArrayMesh<class_ArrayMesh>` **bake_mesh_from_current_blend_shape_mix**\ (\ existing\: :ref:`ArrayMesh<class_ArrayMesh>` = null\ ) :ref:`🔗<class_MeshInstance3D_method_bake_mesh_from_current_blend_shape_mix>`
 
-Takes a snapshot from the current :ref:`ArrayMesh<class_ArrayMesh>` with all blend shapes applied according to their current weights and bakes it to the provided ``existing`` mesh. If no ``existing`` mesh is provided a new :ref:`ArrayMesh<class_ArrayMesh>` is created, baked and returned. Mesh surface materials are not copied.
+根据当前权重从当前 :ref:`ArrayMesh<class_ArrayMesh>` 中获取所有混合形状的快照，并将其烘焙到提供的 ``existing`` 网格中。如果未提供 ``existing`` 网格，则将创建一个新的 :ref:`ArrayMesh<class_ArrayMesh>`\ ，然后烘焙并返回。不会复制网格表面材质。
 
-\ **Performance:** :ref:`Mesh<class_Mesh>` data needs to be received from the GPU, stalling the :ref:`RenderingServer<class_RenderingServer>` in the process.
+\ **性能：**\ 需要从 GPU 接收 :ref:`Mesh<class_Mesh>` 数据，从而在该过程中拖延了 :ref:`RenderingServer<class_RenderingServer>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -277,7 +277,7 @@ Takes a snapshot from the current :ref:`ArrayMesh<class_ArrayMesh>` with all ble
 
 :ref:`SkinReference<class_SkinReference>` **get_skin_reference**\ (\ ) |const| :ref:`🔗<class_MeshInstance3D_method_get_skin_reference>`
 
-Returns the internal :ref:`SkinReference<class_SkinReference>` containing the skeleton's :ref:`RID<class_RID>` attached to this RID. See also :ref:`Resource.get_rid<class_Resource_method_get_rid>`, :ref:`SkinReference.get_skeleton<class_SkinReference_method_get_skeleton>`, and :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`.
+返回包含附加到该 RID 的骨架的 :ref:`RID<class_RID>` 的内部 :ref:`SkinReference<class_SkinReference>`\ 。另请参阅 :ref:`Resource.get_rid<class_Resource_method_get_rid>`\ 、\ :ref:`SkinReference.get_skeleton<class_SkinReference_method_get_skeleton>` 和 :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -332,10 +332,10 @@ Returns the internal :ref:`SkinReference<class_SkinReference>` containing the sk
 \ **注意：**\ 这将分配与 **MeshInstance3D** 的表面材质覆盖属性关联的 :ref:`Material<class_Material>`\ ，而不是 :ref:`Mesh<class_Mesh>` 资源内的材质。要在 :ref:`Mesh<class_Mesh>` 资源中设置材质，请改用 :ref:`Mesh.surface_get_material<class_Mesh_method_surface_get_material>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

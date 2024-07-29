@@ -17,10 +17,7 @@
                 </list_item>
             </bullet_list>
         </note>
-        <paragraph>Right-click the <literal>Player</literal> node and select <emphasis>Attach Script</emphasis> to add a new script to
-            it. In the popup, set the <emphasis>Template</emphasis> to <emphasis>Empty</emphasis> before pressing the <emphasis>Create</emphasis>
-            button. We set it to <emphasis>Empty</emphasis> because we want to write our own code for
-            player movement.</paragraph>
+        <paragraph>右键单击 <literal>Player</literal> 节点，选择<emphasis>附加脚本</emphasis>为其添加一个新脚本。在弹出窗口中，先将<emphasis>模板</emphasis>设置为 <emphasis>空</emphasis>，然后按下<emphasis>创建</emphasis>按钮 。之所以要设置为<emphasis>空</emphasis>是因为我们想要自己写玩家的移动代码。</paragraph>
         <paragraph><image alt="image0" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/01.attach_script_to_player.webp'}" uri="getting_started/first_3d_game/img/03.player_movement_code/01.attach_script_to_player.webp"></image></paragraph>
         <paragraph>先定义类的属性。我们将定义移动速率（标量）、重力加速度，以及一个我们将用来移动角色的速度（向量）。</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
@@ -208,7 +205,7 @@ public partial class Player : CharacterBody3D
         <comment xml:space="preserve">the character from accumulating vertical momentum, which could otherwise get so</comment>
         <comment xml:space="preserve">big the character would move through the ground slab after a while.</comment>
         <paragraph>这就是你在地面上移动角色所需的所有代码。</paragraph>
-        <paragraph>下面是供参考的完整 <literal>Player.gd</literal> 代码。</paragraph>
+        <paragraph>Here is the complete <literal>player.gd</literal> code for reference.</paragraph>
         <container classes="sphinx-tabs" type="tab-element">
             <div aria-label="Tabbed content" role="tablist">
                 <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -328,8 +325,7 @@ public partial class Player : CharacterBody3D
                     Select <literal>CameraPivot</literal> and add a child node <reference internal="True" refuri="../../classes/class_camera3d#class-camera3d"><inline classes="std std-ref">Camera3D</inline></reference> to it.
                     Your scene tree should look similar to this.</paragraph>
                 <paragraph><image alt="image3" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/04.scene_tree_with_camera.webp'}" uri="getting_started/first_3d_game/img/03.player_movement_code/04.scene_tree_with_camera.webp"></image></paragraph>
-                <paragraph>Notice the <emphasis>Preview</emphasis> checkbox that appears in the top-left of the 3D view when you
-                    have the <emphasis>Camera</emphasis> selected. You can click it to preview the in-game camera projection.</paragraph>
+                <paragraph>请注意在选中 <emphasis>Camera</emphasis> 时，左上角会出现一个<emphasis>预览</emphasis>复选框。你可以单击预览游戏中的摄像机投影视角。</paragraph>
                 <paragraph><image alt="image4" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/05.camera_preview_checkbox.png'}" uri="getting_started/first_3d_game/img/03.player_movement_code/05.camera_preview_checkbox.png"></image></paragraph>
                 <paragraph>我们要使用 <emphasis>Pivot</emphasis> 来旋转摄像机，让他像被吊车吊起来一样。让我们先拆分 3D 视图，以便在进行自由移动的同时观察摄像机拍摄到的内容。</paragraph>
                 <paragraph>在视口上方的工具栏中，单击<emphasis>视图</emphasis>，然后单击<emphasis>2 个视口</emphasis>。你也可以按 <literal classes="kbd">Ctrl + 2</literal>（macOS 上则为 <literal classes="kbd">Cmd + 2</literal>）。</paragraph>
@@ -337,8 +333,7 @@ public partial class Player : CharacterBody3D
                 <paragraph><image alt="image5" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/06.two_viewports.png'}" uri="getting_started/first_3d_game/img/03.player_movement_code/06.two_viewports.png"></image></paragraph>
                 <paragraph>在下面那个视图中，选中 <reference internal="True" refuri="../../classes/class_camera3d#class-camera3d"><inline classes="std std-ref">Camera3D</inline></reference>，然后勾选预览复选框打开摄像机预览。</paragraph>
                 <paragraph><image alt="image6" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/07.camera_preview_checkbox.png'}" uri="getting_started/first_3d_game/img/03.player_movement_code/07.camera_preview_checkbox.png"></image></paragraph>
-                <paragraph>In the top view, make sure your <emphasis>Camera3D</emphasis> is selected and move the camera about
-                    <literal>19</literal> units on the Z axis (drag the blue arrow).</paragraph>
+                <paragraph>在上面那个视图中，选中摄像机后将它沿 Z 轴（蓝色）移动 <literal>19</literal> 个单位。</paragraph>
                 <paragraph><image alt="image7" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/08.camera_moved.png'}" uri="getting_started/first_3d_game/img/03.player_movement_code/08.camera_moved.png"></image></paragraph>
                 <paragraph>接下来就是关键。选中 <emphasis>CameraPivot</emphasis> 并将其围绕 X 周旋转 <literal>-45</literal> 度（使用红色的圆圈）。你会看到摄像机就像是被连上了吊车一样移动。</paragraph>
                 <paragraph><image alt="image8" candidates="{'*': 'getting_started/first_3d_game/img/03.player_movement_code/09.camera_rotated.png'}" uri="getting_started/first_3d_game/img/03.player_movement_code/09.camera_rotated.png"></image></paragraph>

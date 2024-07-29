@@ -14,7 +14,7 @@
         <paragraph>追踪对象。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>This object is the base of all XR trackers.</paragraph>
+            <paragraph>所有 XR 追踪器的基类对象。</paragraph>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
             <title>教程</title>
@@ -94,28 +94,28 @@
                     <paragraph><reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> <strong>get_tracker_name</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The unique name of this tracker. The trackers that are available differ between various XR runtimes and can often be configured by the user. Godot maintains a number of reserved names that it expects the <reference internal="True" refuri="class_xrinterface#class-xrinterface"><inline classes="std std-ref">XRInterface</inline></reference> to implement if applicable:</paragraph>
+            <paragraph>该追踪器的唯一名称。可用的追踪器因各种 XR 运行时而异，并且通常可以由用户配置。Godot 维护了一些保留名称，如果可应用，它希望 <reference internal="True" refuri="class_xrinterface#class-xrinterface"><inline classes="std std-ref">XRInterface</inline></reference> 实现这些名称：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><literal>head</literal> identifies the <reference internal="True" refuri="class_xrpositionaltracker#class-xrpositionaltracker"><inline classes="std std-ref">XRPositionalTracker</inline></reference> of the players head</paragraph>
+                    <paragraph><literal>head</literal> 标识玩家头部的 <reference internal="True" refuri="class_xrpositionaltracker#class-xrpositionaltracker"><inline classes="std std-ref">XRPositionalTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>left_hand</literal> identifies the <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference> in the players left hand</paragraph>
+                    <paragraph><literal>left_hand</literal> 标识玩家左手的 <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>right_hand</literal> identifies the <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference> in the players right hand</paragraph>
+                    <paragraph><literal>right_hand</literal> 标识玩家右手的 <reference internal="True" refuri="class_xrcontrollertracker#class-xrcontrollertracker"><inline classes="std std-ref">XRControllerTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>/user/hand_tracker/left</literal> identifies the <reference internal="True" refuri="class_xrhandtracker#class-xrhandtracker"><inline classes="std std-ref">XRHandTracker</inline></reference> for the players left hand</paragraph>
+                    <paragraph><literal>/user/hand_tracker/left</literal> 标识玩家左手的 <reference internal="True" refuri="class_xrhandtracker#class-xrhandtracker"><inline classes="std std-ref">XRHandTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>/user/hand_tracker/right</literal> identifies the <reference internal="True" refuri="class_xrhandtracker#class-xrhandtracker"><inline classes="std std-ref">XRHandTracker</inline></reference> for the players right hand</paragraph>
+                    <paragraph><literal>/user/hand_tracker/right</literal> 标识玩家右手的 <reference internal="True" refuri="class_xrhandtracker#class-xrhandtracker"><inline classes="std std-ref">XRHandTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>/user/body_tracker</literal> identifies the <reference internal="True" refuri="class_xrbodytracker#class-xrbodytracker"><inline classes="std std-ref">XRBodyTracker</inline></reference> for the players body</paragraph>
+                    <paragraph><literal>/user/body_tracker</literal> 标识玩家身体的 <reference internal="True" refuri="class_xrbodytracker#class-xrbodytracker"><inline classes="std std-ref">XRBodyTracker</inline></reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>/user/face_tracker</literal> identifies the <reference internal="True" refuri="class_xrfacetracker#class-xrfacetracker"><inline classes="std std-ref">XRFaceTracker</inline></reference> for the players face</paragraph>
+                    <paragraph><literal>/user/face_tracker</literal> 标识玩家脸部的 <reference internal="True" refuri="class_xrfacetracker#class-xrfacetracker"><inline classes="std std-ref">XRFaceTracker</inline></reference></paragraph>
                 </list_item>
             </bullet_list>
             <transition classes="classref-item-separator"></transition>
@@ -131,12 +131,12 @@
             </bullet_list>
             <paragraph>该追踪器的类型。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

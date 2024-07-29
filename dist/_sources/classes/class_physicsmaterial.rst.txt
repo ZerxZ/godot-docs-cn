@@ -76,9 +76,9 @@ PhysicsMaterial
 - |void| **set_bounce**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_bounce**\ (\ )
 
-The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
+身体的反弹力。值范围从 ``0`` （无反弹）到 ``1``\ （完全反弹）。
 
-\ **Note:** Even with :ref:`bounce<class_PhysicsMaterial_property_bounce>` set to ``1.0``, some energy will be lost over time due to linear and angular damping. To have a physics body that preserves all its energy over time, set :ref:`bounce<class_PhysicsMaterial_property_bounce>` to ``1.0``, the body's linear damp mode to **Replace** (if applicable), its linear damp to ``0.0``, its angular damp mode to **Replace** (if applicable), and its angular damp to ``0.0``.
+\ **注意：**\ 即使将 :ref:`bounce<class_PhysicsMaterial_property_bounce>` 设置为 ``1.0``\ ，由于线性和角度阻尼，一些能量也会随着时间的推移而损失。要让物理体随时间推移保留其所有能量，请将 :ref:`bounce<class_PhysicsMaterial_property_bounce>` 设置为 ``1.0``\ 、将该物体的线性阻尼模式设置为 **Replace**\ （如果可用）、将它的线性阻尼设置为 ``0.0``\ 、它的角度阻尼模式设置为 **Replace**\ （如果可用）、并将它的角度阻尼设置为 ``0.0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -115,10 +115,10 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 如果为 ``true``\ ，当两个物体碰撞时，物理引擎将使用标记为“粗糙”的物体的摩擦。如果 ``false``\ ，物理引擎将使用所有碰撞物体的最低摩擦力来代替。如果两个碰撞的对象都为 ``true``\ ，物理引擎将使用最高的摩擦力。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

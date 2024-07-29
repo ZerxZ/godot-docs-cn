@@ -112,7 +112,7 @@ Vector2i
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -374,7 +374,7 @@ Y 轴的枚举值。由 :ref:`max_axis_index<class_Vector2i_method_max_axis_inde
 
 :ref:`Vector2i<class_Vector2i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector2i_method_clampi>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+返回一个新向量，每个分量都使用 :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` 限制在 ``min`` 和 ``max`` 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -534,7 +534,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 :ref:`Vector2i<class_Vector2i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector2i_method_snappedi>`
 
-Returns a new vector with each component snapped to the closest multiple of ``step``.
+返回一个新向量，其中每个分量都吸附到了 ``step`` 的最接近倍数。
 
 .. rst-class:: classref-section-separator
 
@@ -542,7 +542,7 @@ Returns a new vector with each component snapped to the closest multiple of ``st
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Vector2i_operator_neq_Vector2i:
@@ -802,10 +802,10 @@ Returns a new vector with each component snapped to the closest multiple of ``st
 返回该 **Vector2i** 的负值。和写 ``Vector2i(-v.x, -v.y)`` 是一样的。该操作在保持相同幅度的同时，翻转向量的方向。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

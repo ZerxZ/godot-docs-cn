@@ -148,6 +148,8 @@ PopupMenu
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                            |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
+   +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                           | :ref:`remove_item<class_PopupMenu_method_remove_item>`\ (\ index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                |
@@ -443,7 +445,9 @@ ID 为 ``id`` 的菜单项被按下或者由快捷键激活时发出。
 - |void| **set_prefer_native_menu**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_prefer_native_menu**\ (\ )
 
-如果为 ``true``\ ，则 :ref:`MenuBar<class_MenuBar>` 会尽可能使用原生菜单。
+If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
+
+\ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>` to check it.
 
 .. rst-class:: classref-item-separator
 
@@ -477,7 +481,7 @@ ID 为 ``id`` 的菜单项被按下或者由快捷键激活时发出。
 - |void| **set_system_menu**\ (\ value\: :ref:`SystemMenus<enum_NativeMenu_SystemMenus>`\ )
 - :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` **get_system_menu**\ (\ )
 
-If set to one of the values of :ref:`SystemMenus<enum_NativeMenu_SystemMenus>`, this **PopupMenu** is bound to the special system menu. Only one **PopupMenu** can be bound to each special menu at a time.
+如果设置为 :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` 的值之一，则该 **PopupMenu** 将绑定到特殊系统菜单。每个特殊菜单在同一时间只能绑定一个 **PopupMenu**\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -1071,6 +1075,18 @@ If set to one of the values of :ref:`SystemMenus<enum_NativeMenu_SystemMenus>`, 
 :ref:`bool<class_bool>` **is_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_shortcut_disabled>`
 
 如果指定菜单项的快捷方式被禁用，则返回 ``true``\ 。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_is_native_menu:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_native_menu>`
+
+Returns ``true`` if the system native menu is supported and currently used by this **PopupMenu**.
 
 .. rst-class:: classref-item-separator
 
@@ -1834,10 +1850,10 @@ If set to one of the values of :ref:`SystemMenus<enum_NativeMenu_SystemMenus>`, 
 用于分隔符的 :ref:`StyleBox<class_StyleBox>`\ 。请参阅 :ref:`add_separator<class_PopupMenu_method_add_separator>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

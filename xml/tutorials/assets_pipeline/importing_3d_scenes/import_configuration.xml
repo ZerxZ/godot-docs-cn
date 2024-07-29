@@ -108,6 +108,27 @@
                         <paragraph><strong>嵌入图像处理：</strong> 控制如何处理嵌入 glTF 场景中的纹理。 <strong>Discard All Textures</strong> （忽略所有纹理）不会导入任何纹理，如果你想在 Godot 中手动设置材质，该选项将非常有用。 <strong>Extract Textures</strong> （提取纹理）将纹理提取到外部图像中，从而减小文件大小，并对导入选项进行更多控制。 <strong>Embed as Basis Universal</strong> （嵌入为基础通用）和 <strong>Embed as Uncompressed</strong> （嵌入为未压缩）分别将纹理嵌入已导入的场景中，并对 VRAM 进行压缩和不压缩。</paragraph>
                     </list_item>
                 </bullet_list>
+                <paragraph><strong>FBX</strong></paragraph>
+                <bullet_list bullet="-">
+                    <list_item>
+                        <paragraph><strong>Importer</strong> Which import method is used. ubfx handles fbx files as fbx files.
+                            FBX2glTF converts FBX files to glTF on import and requires additonal setup.
+                            FBX2glTF is not recommended unless you have a specific rason to use it over
+                            ufbx or working with a different file format.</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>Allow Geometry Helper Nodes</strong> enables or disables geometry helper nodes</paragraph>
+                    </list_item>
+                    <list_item>
+                        <paragraph><strong>Embedded Texture Handling:</strong> Controls how textures embedded within fbx
+                            scenes should be handled. <strong>Discard All Textures</strong> will not import any
+                            textures, which is useful if you wish to manually set up materials in Godot
+                            instead. <strong>Extract Textures</strong> extracts textures to external images, resulting
+                            in smaller file sizes and more control over import options. <strong>Embed as Basis
+                                Universal</strong> and <strong>Embed as Uncompressed</strong> keeps the textures embedded in the
+                            imported scene, with and without VRAM compression respectively.</paragraph>
+                    </list_item>
+                </bullet_list>
             </section>
             <section ids="using-the-advanced-import-settings-dialog" names="using\ the\ advanced\ import\ settings\ dialog 使用高级导入设置对话框">
                 <title>使用高级导入设置对话框</title>
@@ -259,7 +280,7 @@ func iterate(node):
         for child in node.get_children():
             iterate(child)</literal_block>
                 <paragraph><literal>_post_import(scene: Node)</literal> 函数以导入的场景为参数（参数实际上是场景的根节点），必须返回最终使用的场景，可以是完全不同的另一个场景。</paragraph>
-                <paragraph>To use your script, locate the script in the import tab's "Path" option under the "Import Script" category.</paragraph>
+                <paragraph>要使用你的脚本，请在导入选项卡的“导入脚本”类别下的“路径”选项中找到该脚本。</paragraph>
             </section>
             <section ids="using-animation-libraries" names="using\ animation\ libraries 使用动画库">
                 <title>使用动画库</title>

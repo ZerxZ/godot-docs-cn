@@ -1560,7 +1560,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1572,7 +1572,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1584,7 +1584,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1596,7 +1596,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1608,7 +1608,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1620,7 +1620,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1632,7 +1632,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1644,7 +1644,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1656,7 +1656,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -1676,7 +1676,7 @@ flags **ArrayFormat**: :ref:`🔗<enum_RenderingServer_ArrayFormat>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2124,7 +2124,7 @@ enum **LightParam**: :ref:`🔗<enum_RenderingServer_LightParam>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2578,7 +2578,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2590,7 +2590,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2602,7 +2602,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2614,7 +2614,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2678,7 +2678,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2690,7 +2690,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2702,7 +2702,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2714,7 +2714,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2726,7 +2726,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2738,7 +2738,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2750,7 +2750,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2772,7 +2772,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2784,7 +2784,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2796,7 +2796,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2808,7 +2808,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2820,7 +2820,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -2832,7 +2832,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3628,7 +3628,7 @@ enum **ViewportVRSMode**: :ref:`🔗<enum_RenderingServer_ViewportVRSMode>`
 
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_XR** = ``2``
 
-Variable rate shading texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`. Note that this may override the update mode.
+可变速率着色纹理由主 :ref:`XRInterface<class_XRInterface>` 提供。请注意，这可能会覆盖更新模式。
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_MAX:
 
@@ -3654,7 +3654,7 @@ enum **ViewportVRSUpdateMode**: :ref:`🔗<enum_RenderingServer_ViewportVRSUpdat
 
 :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_DISABLED** = ``0``
 
-The input texture for variable rate shading will not be processed.
+可变速率着色的输入纹理将不会被处理。
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ONCE:
 
@@ -3662,7 +3662,7 @@ The input texture for variable rate shading will not be processed.
 
 :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_ONCE** = ``1``
 
-The input texture for variable rate shading will be processed once.
+可变速率着色的输入纹理将被处理一次。
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ALWAYS:
 
@@ -3670,7 +3670,7 @@ The input texture for variable rate shading will be processed once.
 
 :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_ALWAYS** = ``2``
 
-The input texture for variable rate shading will be processed each frame.
+可变速率着色的输入纹理将每帧进行处理。
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_MAX:
 
@@ -3832,7 +3832,7 @@ enum **CompositorEffectCallbackType**: :ref:`🔗<enum_RenderingServer_Composito
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5130,7 +5130,7 @@ enum **CanvasGroupMode**: :ref:`🔗<enum_RenderingServer_CanvasGroupMode>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5673,7 +5673,7 @@ enum **Features**: :ref:`🔗<enum_RenderingServer_Features>`
 
 **MAX_MESH_SURFACES** = ``256`` :ref:`🔗<class_RenderingServer_constant_MAX_MESH_SURFACES>`
 
-The maximum number of surfaces a mesh can have.
+网格可拥有的最大表面数。
 
 .. _class_RenderingServer_constant_MATERIAL_RENDER_PRIORITY_MIN:
 
@@ -5707,7 +5707,7 @@ The maximum number of surfaces a mesh can have.
 
 .. container:: contribute
 
-	目前没有这个常量的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该常量目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5719,7 +5719,7 @@ The maximum number of surfaces a mesh can have.
 
 .. container:: contribute
 
-	目前没有这个常量的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该常量目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5731,7 +5731,7 @@ The maximum number of surfaces a mesh can have.
 
 .. container:: contribute
 
-	目前没有这个常量的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该常量目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5743,7 +5743,7 @@ The maximum number of surfaces a mesh can have.
 
 .. container:: contribute
 
-	目前没有这个常量的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该常量目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5755,7 +5755,7 @@ The maximum number of surfaces a mesh can have.
 
 .. container:: contribute
 
-	目前没有这个常量的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该常量目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -5884,16 +5884,16 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 |void| **camera_attributes_set_exposure**\ (\ camera_attributes\: :ref:`RID<class_RID>`, multiplier\: :ref:`float<class_float>`, normalization\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_camera_attributes_set_exposure>`
 
-Sets the exposure values that will be used by the renderers. The normalization amount is used to bake a given Exposure Value (EV) into rendering calculations to reduce the dynamic range of the scene.
+设置渲染器所使用的曝光值。归一化量用于将给定的曝光值（Exposure Value，EV）烘焙进渲染计算，从而降低场景的动态范围。
 
-The normalization factor can be calculated from exposure value (EV100) as follows:
+可以用如下方法根据曝光值（EV100）来计算归一化系数：
 
 ::
 
     func get_exposure_normalization(ev100: float):
         return 1.0 / (pow(2.0, ev100) * 1.2)
 
-The exposure value can be calculated from aperture (in f-stops), shutter speed (in seconds), and sensitivity (in ISO) as follows:
+可以使用如下方法根据光圈（单位为 F 值）、快门速度（单位为秒）、感光度（单位为 ISO）来计算曝光值：
 
 ::
 
@@ -6308,9 +6308,9 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 |void| **canvas_item_reset_physics_interpolation**\ (\ item\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_reset_physics_interpolation>`
 
-Prevents physics interpolation for the current physics tick.
+防止当前物理刻度的物理插值。
 
-This is useful when moving a canvas item to a new location, to give an instantaneous change rather than interpolation from the previous location.
+这在将画布项移动到新位置时很有用，可以产生瞬时变化，而不是从先前位置进行插值。
 
 .. rst-class:: classref-item-separator
 
@@ -6604,9 +6604,9 @@ This is useful when moving a canvas item to a new location, to give an instantan
 
 |void| **canvas_item_transform_physics_interpolation**\ (\ item\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_transform_physics_interpolation>`
 
-Transforms both the current and previous stored transform for a canvas item.
+同时变换画布项的当前变换和之前存储的变换。
 
-This allows transforming a canvas item without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
+这允许变换画布项而不会在插值中产生“卡顿”，这对于利用原点移位的大型世界特别有用。
 
 .. rst-class:: classref-item-separator
 
@@ -6690,7 +6690,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -6762,9 +6762,9 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 |void| **canvas_light_occluder_transform_physics_interpolation**\ (\ occluder\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_occluder_transform_physics_interpolation>`
 
-Transforms both the current and previous stored transform for a light occluder.
+同时变换光遮挡器的当前变换和之前存储的变换。
 
-This allows transforming an occluder without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
+这允许变换遮挡器而不会在插值中产生“卡顿”，这对于利用原点移位的大型世界特别有用。
 
 .. rst-class:: classref-item-separator
 
@@ -6776,9 +6776,9 @@ This allows transforming an occluder without creating a "glitch" in the interpol
 
 |void| **canvas_light_reset_physics_interpolation**\ (\ light\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_reset_physics_interpolation>`
 
-Prevents physics interpolation for the current physics tick.
+防止当前物理刻度的物理插值。
 
-This is useful when moving a canvas item to a new location, to give an instantaneous change rather than interpolation from the previous location.
+这在将画布项移动到新位置时很有用，可以产生瞬时变化，而不是从先前位置进行插值。
 
 .. rst-class:: classref-item-separator
 
@@ -7018,9 +7018,9 @@ This is useful when moving a canvas item to a new location, to give an instantan
 
 |void| **canvas_light_transform_physics_interpolation**\ (\ light\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_transform_physics_interpolation>`
 
-Transforms both the current and previous stored transform for a canvas light.
+同时变换画布灯光的当前变换和之前存储的变换。
 
-This allows transforming a light without creating a "glitch" in the interpolation, which is is particularly useful for large worlds utilizing a shifting origin.
+这允许变换灯光而不会在插值中产生“卡顿”，这对于利用原点移位的大型世界特别有用。
 
 .. rst-class:: classref-item-separator
 
@@ -7074,7 +7074,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -7756,7 +7756,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8624,7 +8624,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 :ref:`bool<class_bool>` **is_on_render_thread**\ (\ ) :ref:`🔗<class_RenderingServer_method_is_on_render_thread>`
 
-Returns ``true`` if our code is currently executing on the rendering thread.
+如果我们的代码当前正在渲染线程上执行，则返回 ``true``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -8834,7 +8834,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8848,7 +8848,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8862,7 +8862,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8876,7 +8876,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8902,7 +8902,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8916,7 +8916,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8930,7 +8930,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -8944,7 +8944,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9058,7 +9058,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9072,7 +9072,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9116,7 +9116,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9166,7 +9166,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9216,7 +9216,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9338,7 +9338,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9352,7 +9352,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9366,7 +9366,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9380,7 +9380,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -9580,22 +9580,22 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 |void| **multimesh_set_buffer**\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_buffer>`
 
-Set the entire data to use for drawing the ``multimesh`` at once to ``buffer`` (such as instance transforms and colors). ``buffer``'s size must match the number of instances multiplied by the per-instance data size (which depends on the enabled MultiMesh fields). Otherwise, an error message is printed and nothing is rendered. See also :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>`.
+将用于绘制 ``multimesh`` 的全部数据立即写入 ``buffer``\ （例如实例的变换和颜色）。\ ``buffer`` 的大小必须与实例数和单实例数据大小的乘积匹配（后者取决于启用的 MultiMesh 字段）。否则，会输出错误信息，不渲染任何东西。另见 :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>`\ 。
 
-The per-instance data size and expected data order is:
+单实例数据大小与预期的数据顺序如下：
 
 .. code:: text
 
     2D:
-      - Position: 8 floats (8 floats for Transform2D)
-      - Position + Vertex color: 12 floats (8 floats for Transform2D, 4 floats for Color)
-      - Position + Custom data: 12 floats (8 floats for Transform2D, 4 floats of custom data)
-      - Position + Vertex color + Custom data: 16 floats (8 floats for Transform2D, 4 floats for Color, 4 floats of custom data)
+      - 位置：8 个 float（Transform2D 占 8 个 float）
+      - 位置 + 顶点颜色：12 个 float（Transform2D 占 8 个 float、颜色占 4 个 float）
+      - 位置 + 自定义数据：12 个 float（Transform2D 占 8 个 float、自定义数据占 4 个 float）
+      - 位置 + 顶点颜色 + 自定义数据：16 个 float（Transform2D 占 8 个 float、颜色占 4 个 float、自定义数据占 4 个 float）
     3D:
-      - Position: 12 floats (12 floats for Transform3D)
-      - Position + Vertex color: 16 floats (12 floats for Transform3D, 4 floats for Color)
-      - Position + Custom data: 16 floats (12 floats for Transform3D, 4 floats of custom data)
-      - Position + Vertex color + Custom data: 20 floats (12 floats for Transform3D, 4 floats for Color, 4 floats of custom data)
+      - 位置：12 个 float（Transform3D 占 12 个 float）
+      - 位置 + 顶点颜色：16 个 float（Transform3D 占 12 个 float、颜色占 4 个 float）
+      - 位置 + 自定义数据：16 个 float（Transform3D 占 12 个 float、自定义数据占 4 个 float）
+      - 位置 + 顶点颜色 + 自定义数据：20 个 float（Transform3D 占 12 个 float、颜色占 4 个 float、自定义数据占 4 个 float）
 
 .. rst-class:: classref-item-separator
 
@@ -9941,7 +9941,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10087,7 +10087,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10187,7 +10187,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10201,7 +10201,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10227,7 +10227,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10679,7 +10679,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -10767,7 +10767,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11077,7 +11077,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11155,7 +11155,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11169,7 +11169,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11183,7 +11183,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11788,9 +11788,9 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 |void| **viewport_set_use_hdr_2d**\ (\ viewport\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_hdr_2d>`
 
-If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
+如果为 ``true``\ ，2D 渲染将使用与 3D 帧缓冲区的位深度匹配的高动态范围（HDR）格式帧缓冲区。当使用 Forward+ 渲染器时，这将是一个 ``RGBA16`` 帧缓冲区，而当使用 Mobile 渲染器时，它将是一个 ``RGB10_A2`` 帧缓冲区。此外，2D 渲染将在线性色彩空间中进行，并在位块传输到屏幕之前（如果视口被连接到屏幕）立即转换为 sRGB 空间。实际上，这意味着视口的最终结果不会被钳制在 ``0-1`` 范围内，并且可以在不进行色彩空间调整的情况下被用于 3D 渲染。这使得 2D 渲染能够利用需要高动态范围的效果（例如 2D 辉光），并显著改善需要高度详细渐变的效果的外观。该设置与 :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` 效果相同。
 
-\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+\ **注意：**\ 使用 GL 兼容渲染器时，该设置无效，因为出于性能原因，GL 兼容渲染器始终在低动态范围内渲染。
 
 .. rst-class:: classref-item-separator
 
@@ -11862,9 +11862,9 @@ If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer
 
 |void| **viewport_set_vrs_update_mode**\ (\ viewport\: :ref:`RID<class_RID>`, mode\: :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_vrs_update_mode>`
 
-Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requires the input texture to be converted to the format usable by the VRS method supported by the hardware. The update mode defines how often this happens. If the GPU does not support VRS, or VRS is not enabled, this property is ignored.
+设置视口的可变速率着色（VRS）更新模式。VRS 要求将输入纹理转换为硬件支持的 VRS 方法可用的格式。更新模式定义这种情况发生的频率。如果 GPU 不支持 VRS，或者未启用 VRS，则忽略该属性。
 
-If set to :ref:`VIEWPORT_VRS_UPDATE_ONCE<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ONCE>`, the input texture is copied once and the mode is changed to :ref:`VIEWPORT_VRS_UPDATE_DISABLED<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_DISABLED>`.
+如果设置为 :ref:`VIEWPORT_VRS_UPDATE_ONCE<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ONCE>`\ ，则输入纹理将被复制一次，且模式更改为 :ref:`VIEWPORT_VRS_UPDATE_DISABLED<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_DISABLED>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -11896,7 +11896,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11910,7 +11910,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11924,7 +11924,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11954,7 +11954,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11968,7 +11968,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11982,7 +11982,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -11996,7 +11996,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -12010,7 +12010,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -12024,7 +12024,7 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -12135,10 +12135,10 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 为 :ref:`RID<class_RID>` 为 ``voxel_gi`` 的对象设置 :ref:`VoxelGIData.use_two_bounces<class_VoxelGIData_property_use_two_bounces>` 值。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

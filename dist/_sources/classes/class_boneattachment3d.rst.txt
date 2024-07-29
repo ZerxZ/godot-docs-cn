@@ -184,10 +184,10 @@ BoneAttachment3D 节点是否会覆盖所附着骨骼的骨骼姿势。设置为
 设置该 BoneAttachment3D 节点是否将使用外部 :ref:`Skeleton3D<class_Skeleton3D>` 节点，而不是尝试使用其父节点作为 :ref:`Skeleton3D<class_Skeleton3D>`\ 。当设置为 ``true`` 时，BoneAttachment3D 节点将使用 :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>` 中设置的外部 :ref:`Skeleton3D<class_Skeleton3D>` 节点。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

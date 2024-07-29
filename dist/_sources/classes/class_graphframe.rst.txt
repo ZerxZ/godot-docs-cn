@@ -21,9 +21,9 @@ GraphFrame 是一种特殊的 :ref:`GraphElement<class_GraphElement>`\ ，可用
 描述
 ----
 
-GraphFrame is a special :ref:`GraphElement<class_GraphElement>` to which other :ref:`GraphElement<class_GraphElement>`\ s can be attached. It can be configured to automatically resize to enclose all attached :ref:`GraphElement<class_GraphElement>`\ s. If the frame is moved, all the attached :ref:`GraphElement<class_GraphElement>`\ s inside it will be moved as well.
+GraphFrame 是一种特殊的 :ref:`GraphElement<class_GraphElement>`\ ，其他 :ref:`GraphElement<class_GraphElement>` 可以附加到其上。可以将其配置为自动调整大小以包含所有附加的 :ref:`GraphElement<class_GraphElement>`\ 。如果移动该框，则其内的所有附加 :ref:`GraphElement<class_GraphElement>` 也会移动。
 
-A GraphFrame is always kept behind the connection layer and other :ref:`GraphElement<class_GraphElement>`\ s inside a :ref:`GraphEdit<class_GraphEdit>`.
+GraphFrame 在 :ref:`GraphEdit<class_GraphEdit>` 内始终位于连接层和其他 :ref:`GraphElement<class_GraphElement>` 后面。
 
 .. rst-class:: classref-reftable-group
 
@@ -118,7 +118,7 @@ A GraphFrame is always kept behind the connection layer and other :ref:`GraphEle
 - |void| **set_autoshrink_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_autoshrink_enabled**\ (\ )
 
-If ``true``, the frame's rect will be adjusted automatically to enclose all attached :ref:`GraphElement<class_GraphElement>`\ s.
+如果为 ``true``\ ，则框的矩形将自动调整以包含所有附加的 :ref:`GraphElement<class_GraphElement>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +135,7 @@ If ``true``, the frame's rect will be adjusted automatically to enclose all atta
 - |void| **set_autoshrink_margin**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_autoshrink_margin**\ (\ )
 
-The margin around the attached nodes that is used to calculate the size of the frame when :ref:`autoshrink_enabled<class_GraphFrame_property_autoshrink_enabled>` is ``true``.
+当 :ref:`autoshrink_enabled<class_GraphFrame_property_autoshrink_enabled>` 为 ``true`` 时，附加节点周围用于计算框大小的边距。
 
 .. rst-class:: classref-item-separator
 
@@ -263,7 +263,7 @@ The margin around the attached nodes that is used to calculate the size of the f
 
 :ref:`StyleBox<class_StyleBox>` **panel_selected** :ref:`🔗<class_GraphFrame_theme_style_panel_selected>`
 
-The :ref:`StyleBox<class_StyleBox>` used for the background of the **GraphFrame** when it is selected.
+当 **GraphFrame** 被选中时，其背景使用的 :ref:`StyleBox<class_StyleBox>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -275,7 +275,7 @@ The :ref:`StyleBox<class_StyleBox>` used for the background of the **GraphFrame*
 
 :ref:`StyleBox<class_StyleBox>` **titlebar** :ref:`🔗<class_GraphFrame_theme_style_titlebar>`
 
-The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphFrame**.
+用于 **GraphFrame** 标题栏的 :ref:`StyleBox<class_StyleBox>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -287,13 +287,13 @@ The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphFrame**
 
 :ref:`StyleBox<class_StyleBox>` **titlebar_selected** :ref:`🔗<class_GraphFrame_theme_style_titlebar_selected>`
 
-The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphFrame** when it is selected.
+当 **GraphFrame** 被选中时，用于其标题栏的 :ref:`StyleBox<class_StyleBox>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

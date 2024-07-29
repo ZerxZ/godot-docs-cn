@@ -153,7 +153,7 @@ enum **GIMode**: :ref:`🔗<enum_GeometryInstance3D_GIMode>`
 
 :ref:`GIMode<enum_GeometryInstance3D_GIMode>` **GI_MODE_DISABLED** = ``0``
 
-Disabled global illumination mode. Use for dynamic objects that do not contribute to global illumination (such as characters). When using :ref:`VoxelGI<class_VoxelGI>` and SDFGI, the geometry will *receive* indirect lighting and reflections but the geometry will not be considered in GI baking.
+禁用全局照明模式。用于对全局照明没有贡献的动态对象（例如角色）。使用 :ref:`VoxelGI<class_VoxelGI>` 和 SDFGI 时，几何体将\ *接收*\ 间接照明和反射，但在 GI 烘焙中不会考虑几何体。
 
 .. _class_GeometryInstance3D_constant_GI_MODE_STATIC:
 
@@ -169,7 +169,7 @@ Disabled global illumination mode. Use for dynamic objects that do not contribut
 
 :ref:`GIMode<enum_GeometryInstance3D_GIMode>` **GI_MODE_DYNAMIC** = ``2``
 
-Dynamic global illumination mode. Use for dynamic objects that contribute to global illumination. This GI mode is only effective when using :ref:`VoxelGI<class_VoxelGI>`, but it has a higher performance impact than :ref:`GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. When using other GI methods, this will act the same as :ref:`GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>`. When using :ref:`LightmapGI<class_LightmapGI>`, the object will receive indirect lighting using lightmap probes instead of using the baked lightmap texture.
+动态全局照明模式。用于有助于全局照明的动态对象。这种 GI 模式只有在使用 :ref:`VoxelGI<class_VoxelGI>` 时才有效，但它对性能的影响，比 :ref:`GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` 更高。当使用其他 GI 方法时，它的作用与 :ref:`GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>` 相同。使用 :ref:`LightmapGI<class_LightmapGI>` 时，对象将使用光照贴图探针接收间接光照，而不是使用烘焙的光照贴图纹理。
 
 .. rst-class:: classref-item-separator
 
@@ -442,13 +442,13 @@ enum **VisibilityRangeFadeMode**: :ref:`🔗<enum_GeometryInstance3D_VisibilityR
 - |void| **set_transparency**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_transparency**\ (\ )
 
-The transparency applied to the whole geometry (as a multiplier of the materials' existing transparency). ``0.0`` is fully opaque, while ``1.0`` is fully transparent. Values greater than ``0.0`` (exclusive) will force the geometry's materials to go through the transparent pipeline, which is slower to render and can exhibit rendering issues due to incorrect transparency sorting. However, unlike using a transparent material, setting :ref:`transparency<class_GeometryInstance3D_property_transparency>` to a value greater than ``0.0`` (exclusive) will *not* disable shadow rendering.
+应用于整个几何体的透明度（作为材质现有透明度的乘数）。\ ``0.0`` 是完全不透明的，而 ``1.0`` 是完全透明的。大于 ``0.0``\ （不含）的值将强制几何体的材质通过透明管道，这会导致渲染速度变慢，并且可能会因不正确的透明度排序而出现渲染问题。但是，与使用透明材质不同的是，将 :ref:`transparency<class_GeometryInstance3D_property_transparency>` 设置为大于 ``0.0``\ （不含）的值并\ *不会*\ 禁用阴影渲染。
 
-In spatial shaders, ``1.0 - transparency`` is set as the default value of the ``ALPHA`` built-in.
+在空间着色器中，\ ``1.0 - transparency`` 被设置为内置 ``ALPHA`` 的默认值。
 
-\ **Note:** :ref:`transparency<class_GeometryInstance3D_property_transparency>` is clamped between ``0.0`` and ``1.0``, so this property cannot be used to make transparent materials more opaque than they originally are.
+\ **注意：**\ :ref:`transparency<class_GeometryInstance3D_property_transparency>` 被钳制在 ``0.0`` 和 ``1.0`` 之间，所以这个属性不能被用来使透明材质变得比原来更加不透明。
 
-\ **Note:** Only supported when using the Forward+ rendering method. When using the Mobile or Compatibility rendering method, :ref:`transparency<class_GeometryInstance3D_property_transparency>` is ignored and is considered as always being ``0.0``.
+\ **注意：**\ 仅在使用 Forward+ 渲染方法时受支持。使用 Mobile 或 Compatibility 渲染方法时，\ :ref:`transparency<class_GeometryInstance3D_property_transparency>` 将被忽略并被视为始终为 ``0.0``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -575,10 +575,10 @@ GeometryInstance3D 将被隐藏的距离，同时考虑 :ref:`visibility_range_e
 \ **注意：**\ 逐实例着色器 uniform 目前仅在 3D 中可用，因此没有该方法的 2D 等效方法。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

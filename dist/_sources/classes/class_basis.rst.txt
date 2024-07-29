@@ -17,21 +17,21 @@ Basis
 描述
 ----
 
-**Basis** 内置 :ref:`Variant<class_Variant>` 类型是一种 3×3 `矩阵 <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`__\ ，用于表示 3D 旋转、缩放和剪切。常用于 :ref:`Transform3D<class_Transform3D>`\ 。
+The **Basis** built-in :ref:`Variant<class_Variant>` type is a 3×3 `matrix <https://en.wikipedia.org/wiki/Matrix_(mathematics)>`__ used to represent 3D rotation, scale, and shear. It is frequently used within a :ref:`Transform3D<class_Transform3D>`.
 
-\ **Basis** 由 3 个轴向量组成，每个轴向量代表矩阵的一列：\ :ref:`x<class_Basis_property_x>`\ 、\ :ref:`y<class_Basis_property_y>` 和 :ref:`z<class_Basis_property_z>`\ 。每个轴的长度（\ :ref:`Vector3.length<class_Vector3_method_length>`\ ）都会影响该基的缩放，而所有轴的方向将影响旋转。通常，这些轴彼此垂直。但是，当你单独旋转任意轴时，该基会被剪切。对 3D 模型应用剪切基将使模型显得扭曲。
+A **Basis** is composed by 3 axis vectors, each representing a column of the matrix: :ref:`x<class_Basis_property_x>`, :ref:`y<class_Basis_property_y>`, and :ref:`z<class_Basis_property_z>`. The length of each axis (:ref:`Vector3.length<class_Vector3_method_length>`) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.
 
-如果 **Basis** 的轴彼此垂直，则它是\ **正交的**\ 。如果每个轴的长度为 ``1``\ ，则该基是\ **归一化的**\ 。如果所有轴共享相同的长度，则该基是\ **均匀的**\ （请参阅 :ref:`get_scale<class_Basis_method_get_scale>`\ ）。如果一个基既是正交的又是归一化的，则它是\ **正交归一的**\ ，这使得它只能表示旋转。如果一个基既正交又均匀，那么它就是\ **共形的**\ ，这确保了它不被扭曲。
+A **Basis** is **orthogonal** if its axes are perpendicular to each other. A basis is **normalized** if the length of every axis is ``1``. A basis is **uniform** if all axes share the same length (see :ref:`get_scale<class_Basis_method_get_scale>`). A basis is **orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations. A basis is **conformal** if it is both orthogonal and uniform, which ensures it is not distorted.
 
-通用介绍见教程\ :doc:`《矩阵与变换》 <../tutorials/math/matrices_and_transforms>`\ 。
+For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
-\ **注意：**\ Godot 使用\ `右手坐标系 <https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%89%87>`__\ ，这是一种普遍标准。方向方面，\ :ref:`Camera3D<class_Camera3D>` 等内置类型的约定是 -Z 指向前方（+X 为右、+Y 为上、+Z 为后）。其他对象可能使用不同的方向约定。更多信息见教程\ `《导入 3D 场景》 <../tutorials/assets_pipeline/importing_scenes.html#d-asset-direction-conventions>`__\ 。
+\ **Note:** Godot uses a `right-handed coordinate system <https://en.wikipedia.org/wiki/Right-hand_rule>`__, which is a common standard. For directions, the convention for built-in types like :ref:`Camera3D<class_Camera3D>` is for -Z to point forward (+X is right, +Y is up, and +Z is back). Other objects may use different direction conventions. For more information, see the `3D asset direction conventions <../tutorials/assets_pipeline/importing_3d_scenes/model_export_considerations.html#d-asset-direction-conventions>`__ tutorial.
 
-\ **注意：**\ 基矩阵按\ `列为主 <https://www.mindcontrol.org/~hplus/graphics/matrix-layout.html>`__\ 的顺序公开，这与 OpenGL 一致。但是内部使用行为主的顺序存储，这与 DirectX 一致。
+\ **Note:** The basis matrices are exposed as `column-major <https://www.mindcontrol.org/~hplus/graphics/matrix-layout.html>`__ order, which is the same as OpenGL. However, they are stored internally in row-major order, which is the same as DirectX.
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -138,7 +138,7 @@ Basis
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -820,7 +820,7 @@ Basis
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Basis_operator_neq_Basis:
@@ -857,22 +857,22 @@ Basis
 
 :ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Basis_operator_mul_Vector3>`
 
-Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Vector3<class_Vector3>`.
+由该基变换（乘以）\ ``right`` 向量，返回一个 :ref:`Vector3<class_Vector3>`\ 。
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # Basis that swaps the X/Z axes and doubles the scale.
+    # 交换 X/Z 轴并使缩放加倍的基。
     var my_basis = Basis(Vector3(0, 2, 0), Vector3(2, 0, 0), Vector3(0, 0, 2))
-    print(my_basis * Vector3(1, 2, 3)) # Prints (4, 2, 6)
+    print(my_basis * Vector3(1, 2, 3)) # 输出 (4, 2, 6)
 
  .. code-tab:: csharp
 
-    // Basis that swaps the X/Z axes and doubles the scale.
+    // 交换 X/Z 轴并使缩放加倍的基。
     var myBasis = new Basis(new Vector3(0, 2, 0), new Vector3(2, 0, 0), new Vector3(0, 0, 2));
-    GD.Print(myBasis * new Vector3(1, 2, 3)); // Prints (4, 2, 6)
+    GD.Print(myBasis * new Vector3(1, 2, 3)); // 输出 (4, 2, 6)
 
 
 
@@ -953,10 +953,10 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 \ **注意：**\ 在 C++ 中，该运算符访问基础矩阵的行，而\ *不*\ 是列。对于与脚本语言相同的行为，请使用 ``set_column`` 和 ``get_column`` 方法。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

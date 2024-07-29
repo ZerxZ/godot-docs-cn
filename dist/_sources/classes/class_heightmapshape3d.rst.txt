@@ -170,17 +170,17 @@ HeightMapShape3D
 
 |void| **update_map_data_from_image**\ (\ image\: :ref:`Image<class_Image>`, height_min\: :ref:`float<class_float>`, height_max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_HeightMapShape3D_method_update_map_data_from_image>`
 
-Updates :ref:`map_data<class_HeightMapShape3D_property_map_data>` with data read from an :ref:`Image<class_Image>` reference. Automatically resizes heightmap :ref:`map_width<class_HeightMapShape3D_property_map_width>` and :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` to fit the full image width and height.
+使用从 :ref:`Image<class_Image>` 引用读取的数据更新 :ref:`map_data<class_HeightMapShape3D_property_map_data>`\ 。自动调整高度图 :ref:`map_width<class_HeightMapShape3D_property_map_width>` 和 :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` 的大小以适应整个图像的宽度和高度。
 
-The image needs to be in either :ref:`Image.FORMAT_RF<class_Image_constant_FORMAT_RF>` (32 bit), :ref:`Image.FORMAT_RH<class_Image_constant_FORMAT_RH>` (16 bit), or :ref:`Image.FORMAT_R8<class_Image_constant_FORMAT_R8>` (8 bit).
+图像格式需要为 :ref:`Image.FORMAT_RF<class_Image_constant_FORMAT_RF>`\ （32 位）、\ :ref:`Image.FORMAT_RH<class_Image_constant_FORMAT_RH>`\ （16 位）或 :ref:`Image.FORMAT_R8<class_Image_constant_FORMAT_R8>`\ （8 位）。
 
-Each image pixel is read in as a float on the range from ``0.0`` (black pixel) to ``1.0`` (white pixel). This range value gets remapped to ``height_min`` and ``height_max`` to form the final height value.
+每个图像像素都以浮点数形式读入，范围从 ``0.0``\ （黑色像素）到 ``1.0``\ （白色像素）。该范围值重新映射到 ``height_min`` 和 ``height_max`` 以形成最终高度值。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

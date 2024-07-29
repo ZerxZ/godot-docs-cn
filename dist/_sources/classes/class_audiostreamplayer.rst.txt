@@ -226,7 +226,7 @@ enum **MixTarget**: :ref:`🔗<enum_AudioStreamPlayer_MixTarget>`
 - |void| **set_mix_target**\ (\ value\: :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>`\ )
 - :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` **get_mix_target**\ (\ )
 
-The mix target channels, as one of the :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` constants. Has no effect when two speakers or less are detected (see :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`).
+混合目标声道，使用 :ref:`MixTarget<enum_AudioStreamPlayer_MixTarget>` 常量。检测到小于等于两个扬声器时无效（见 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -260,7 +260,7 @@ The mix target channels, as one of the :ref:`MixTarget<enum_AudioStreamPlayer_Mi
 - |void| **set_playback_type**\ (\ value\: :ref:`PlaybackType<enum_AudioServer_PlaybackType>`\ )
 - :ref:`PlaybackType<enum_AudioServer_PlaybackType>` **get_playback_type**\ (\ )
 
-**实验性：** 未来版本中可能修改或移除该属性。
+**实验性：** 未来版本中可能会修改或移除该属性。
 
 The playback type of the stream player. If set other than to the default value, it will force that playback type.
 
@@ -352,7 +352,7 @@ The playback type of the stream player. If set other than to the default value, 
 
 以秒为单位返回最后播放的声音在 :ref:`AudioStream<class_AudioStream>` 中的位置。如果没有正在播放的声音，将返回 ``0.0``\ 。
 
-\ **注意：**\ 返回的位置不一定精准，因为\ :ref:`AudioServer<class_AudioServer>`\ 不会在每个处理的帧中混合音频。要想得到更多准确的结果，请将\ :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>`\ 添加到返回的位置。
+\ **注意：**\ 返回的位置不一定精准，因为 :ref:`AudioServer<class_AudioServer>` 不会在每个处理的帧中混合音频。要想得到更多准确的结果，请将 :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` 添加到返回的位置。
 
 .. rst-class:: classref-item-separator
 
@@ -415,10 +415,10 @@ The playback type of the stream player. If set other than to the default value, 
 停止该节点发出的所有声音。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

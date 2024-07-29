@@ -182,7 +182,7 @@ Vector2
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -494,9 +494,9 @@ Y 轴的枚举值。由 :ref:`max_axis_index<class_Vector2_method_max_axis_index
 
 :ref:`Vector2<class_Vector2>` **bounce**\ (\ n\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Vector2_method_bounce>`
 
-Returns the vector "bounced off" from a line defined by the given normal ``n`` perpendicular to the line.
+返回从由给定垂直法线 ``n`` 定义的线“反弹”的向量。
 
-\ **Note:** :ref:`bounce<class_Vector2_method_bounce>` performs the operation that most engines and frameworks call ``reflect()``.
+\ **注意：** :ref:`bounce<class_Vector2_method_bounce>` 执行大多数引擎和框架调用 ``reflect()`` 的操作。
 
 .. rst-class:: classref-item-separator
 
@@ -532,7 +532,7 @@ Returns the vector "bounced off" from a line defined by the given normal ``n`` p
 
 :ref:`Vector2<class_Vector2>` **clampf**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector2_method_clampf>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+返回一个新向量，每个分量都使用 :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` 限制在 ``min`` 和 ``max`` 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -544,11 +544,11 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 :ref:`float<class_float>` **cross**\ (\ with\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Vector2_method_cross>`
 
-Returns the 2D analog of the cross product for this vector and ``with``.
+返回该向量和 ``with`` 的 2D 类比叉积。
 
-This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.
+这是由两个向量所形成的平行四边形的有符号面积。如果第二个向量是从第一个向量的顺时针方向出发的，则叉积为正面积。如果是逆时针方向，则叉积为负面积。如果两个向量平行，则返回零，这对于测试两个向量是否平行很有用。
 
-\ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
+\ **注意：**\ 数学中没有定义二维空间的叉乘。此方法是将 2D 向量嵌入到 3D 空间的 XY 平面中，并使用它们的叉积的 Z 分量作为类比。
 
 .. rst-class:: classref-item-separator
 
@@ -856,9 +856,9 @@ When using unit (normalized) vectors, the result will always be between ``-1.0``
 
 :ref:`Vector2<class_Vector2>` **normalized**\ (\ ) |const| :ref:`🔗<class_Vector2_method_normalized>`
 
-Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. Returns ``(0, 0)`` if ``v.length() == 0``. See also :ref:`is_normalized<class_Vector2_method_is_normalized>`.
+返回该向量缩放至单位长度的结果。等价于 ``v / v.length()``\ 。如果 ``v.length() == 0`` 则返回 ``(0, 0)``\ 。另见 :ref:`is_normalized<class_Vector2_method_is_normalized>`\ 。
 
-\ **Note:** This function may return incorrect values if the input vector length is near zero.
+\ **注意：**\ 如果输入向量的长度接近零，则这个函数可能返回不正确的值。
 
 .. rst-class:: classref-item-separator
 
@@ -920,9 +920,9 @@ Returns the result of scaling the vector to unit length. Equivalent to ``v / v.l
 
 :ref:`Vector2<class_Vector2>` **reflect**\ (\ line\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Vector2_method_reflect>`
 
-Returns the result of reflecting the vector from a line defined by the given direction vector ``line``.
+返回从给定方向向量 ``line`` 定义的线反射向量的结果。
 
-\ **Note:** :ref:`reflect<class_Vector2_method_reflect>` differs from what other engines and frameworks call ``reflect()``. In other engines, ``reflect()`` takes a normal direction which is a direction perpendicular to the line. In Godot, you specify the direction of the line directly. See also :ref:`bounce<class_Vector2_method_bounce>` which does what most engines call ``reflect()``.
+\ **注意：**\ :ref:`reflect<class_Vector2_method_reflect>` 与其他引擎和框架调用的 ``reflect()`` 不同。在其他引擎中，\ ``reflect()`` 采用法线方向，即垂直于线的方向。在 Godot 中，你可以直接指定线的方向。另请参阅 :ref:`bounce<class_Vector2_method_bounce>`\ ，它执行大多数引擎调用的 ``reflect()``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1010,7 +1010,7 @@ Returns the result of reflecting the vector from a line defined by the given dir
 
 :ref:`Vector2<class_Vector2>` **snappedf**\ (\ step\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector2_method_snappedf>`
 
-Returns a new vector with each component snapped to the nearest multiple of ``step``. This can also be used to round the components to an arbitrary number of decimals.
+返回一个新向量，其中每个分量都吸附到 ``step`` 的最接近的倍数。这也可以用于将分量四舍五入为任意数位的小数。
 
 .. rst-class:: classref-section-separator
 
@@ -1018,7 +1018,7 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Vector2_operator_neq_Vector2:
@@ -1270,10 +1270,10 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 返回该 **Vector2** 的负值。和写 ``Vector2(-v.x, -v.y)`` 是一样的。该操作在保持相同幅度的同时，翻转向量的方向。对于浮点数，零也有正负两种。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

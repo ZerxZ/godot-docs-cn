@@ -354,9 +354,9 @@ enum **AnimationMethodCallMode**: :ref:`🔗<enum_AnimationPlayer_AnimationMetho
 - |void| **set_auto_capture**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_auto_capture**\ (\ )
 
-如果\ ``true``\ ，则在自动播放之前执行\ :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`\ 。这意味着只使用默认参数执行\ :ref:`play_with_capture<class_AnimationPlayer_method_play_with_capture>`\ ，而不是\ :ref:`play<class_AnimationPlayer_method_play>`\ 。
+如果为 ``true``\ ，则会在自动播放之前执行 :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`\ 。这意味着只会使用默认参数执行 :ref:`play_with_capture<class_AnimationPlayer_method_play_with_capture>`\ ，不会执行 :ref:`play<class_AnimationPlayer_method_play>`\ 。
 
-\ ** 注意：**\ 只有当动画包含捕捉轨迹时，才会执行捕捉插值。另请参见\ :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>`\ 。
+\ **注意：**\ 只有当动画包含捕获轨道时才会执行捕获插值。另见 :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -636,9 +636,9 @@ enum **AnimationMethodCallMode**: :ref:`🔗<enum_AnimationPlayer_AnimationMetho
 
 |void| **play_with_capture**\ (\ name\: :ref:`StringName<class_StringName>` = &"", duration\: :ref:`float<class_float>` = -1.0, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false, trans_type\: :ref:`TransitionType<enum_Tween_TransitionType>` = 0, ease_type\: :ref:`EaseType<enum_Tween_EaseType>` = 0\ ) :ref:`🔗<class_AnimationPlayer_method_play_with_capture>`
 
-另请参见 :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`\ 。
+另见 :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`\ 。
 
-你可以使用此方法比 :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>`\ 执行的选项有更详细的捕获选项。当\ :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>`\ 为\ ``false``\ 时，此方法与下列相同：
+该方法提供的选项比 :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>` 更丰富。\ :ref:`playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>` 为 ``false`` 时，该方法与下面这两行基本相同：
 
 ::
 
@@ -647,9 +647,9 @@ enum **AnimationMethodCallMode**: :ref:`🔗<enum_AnimationPlayer_AnimationMetho
 
 如果 ``name`` 为空，则指定的是 :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`\ 。
 
-如果 ``duration`` 为负数，则 duration 被设置为当前位置和第一个关键帧之间的间隔，\ ``from_end`` 为 ``true`` 时使用的是当前位置和最后一个关键帧之间的间隔。
+如果 ``duration`` 为负值，则持续时间是当前位置与第一个关键帧的间隔，\ ``from_end`` 为 ``true`` 时使用的则是当前位置与最后一个关键帧之间的间隔。
 
-\ **Note:**\ ``duration`` 会考虑 :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>`\ ，但是 ``custom_speed`` 不会考虑，因为捕获缓存是和混合结果进行插值的，而插值结果可能包含多个动画。
+\ **注意：**\ ``duration`` 会考虑 :ref:`speed_scale<class_AnimationPlayer_property_speed_scale>`\ ，但 ``custom_speed`` 不会考虑，因为捕获缓存会和混合结果进行插值，而混合结果可能包含多个动画。
 
 .. rst-class:: classref-item-separator
 
@@ -661,9 +661,9 @@ enum **AnimationMethodCallMode**: :ref:`🔗<enum_AnimationPlayer_AnimationMetho
 
 |void| **queue**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationPlayer_method_queue>`
 
-将动画加入队列，在当前动画播放完毕后播放。
+Queues an animation for playback once the current animation and all previously queued animations are done.
 
-\ **注意：**\ 如果当前正在播放循环动画，除非以某种方式停止循环动画，否则排队的动画将永远不会播放。
+\ **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 
 .. rst-class:: classref-item-separator
 
@@ -752,10 +752,10 @@ enum **AnimationMethodCallMode**: :ref:`🔗<enum_AnimationPlayer_AnimationMetho
 \ **注意：**\ 方法/音频/动画播放轨道不会被该方法处理。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

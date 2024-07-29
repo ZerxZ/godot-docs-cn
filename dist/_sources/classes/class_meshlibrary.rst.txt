@@ -125,7 +125,7 @@ MeshLibrary
 
 :ref:`int<class_int>` **find_item_by_name**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_find_item_by_name>`
 
-Returns the first item with the given name, or ``-1`` if no item is found.
+返回具有给定名称的第一个项目，如果未找到任何项目，则返回 ``-1``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -362,10 +362,10 @@ Returns the first item with the given name, or ``-1`` if no item is found.
 该数组应由 :ref:`Shape3D<class_Shape3D>` 对象组成，每个对象后跟一个将应用于它的 :ref:`Transform3D<class_Transform3D>`\ 。对于不应具有变换的形状，请使用 :ref:`Transform3D.IDENTITY<class_Transform3D_constant_IDENTITY>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

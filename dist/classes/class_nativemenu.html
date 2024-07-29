@@ -6,8 +6,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="classes/class_nativemenu.html" />
 <meta property="og:site_name" content="Godot Engine documentation" />
-<meta property="og:description" content="继承： Object 操作系统原生菜单的服务器接口。 描述: NativeMenu handles low-level access to the OS native global menu bar and popup menus. Note: This is low-level API, consider using MenuBar with MenuBar.prefer_global_m..." />
-<meta name="description" content="继承： Object 操作系统原生菜单的服务器接口。 描述: NativeMenu handles low-level access to the OS native global menu bar and popup menus. Note: This is low-level API, consider using MenuBar with MenuBar.prefer_global_m..." />
+<meta property="og:description" content="继承： Object 操作系统原生菜单的服务器接口。 描述: NativeMenu 处理对 OS 原生全局菜单栏和弹出菜单的低级访问。 注意： 这是低级 API，请考虑使用将 MenuBar.prefer_global_menu 设置为 true 的 MenuBar ，以及将 PopupMenu.prefer_native_menu 设置为 true 的 PopupMenu 。 要创建一个菜..." />
+<meta name="description" content="继承： Object 操作系统原生菜单的服务器接口。 描述: NativeMenu 处理对 OS 原生全局菜单栏和弹出菜单的低级访问。 注意： 这是低级 API，请考虑使用将 MenuBar.prefer_global_menu 设置为 true 的 MenuBar ，以及将 PopupMenu.prefer_native_menu 设置为 true 的 PopupMenu 。 要创建一个菜..." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) NativeMenu &mdash; Godot Engine (latest) 简体中文文档</title>
 
@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -297,8 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -574,7 +574,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -587,7 +587,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/inspector_dock.html">检查器</a><ul>
@@ -801,6 +801,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,7 +1159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1308,7 +1318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1549,8 +1559,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1957,20 +1967,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1995,17 +2005,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2033,14 +2043,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2541,6 +2551,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2864,10 +2875,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2887,7 +2898,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2989,44 +3000,44 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">高级专题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">XR 动作映射</a><ul>
@@ -3053,17 +3064,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#some-final-words">最后的话</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3090,18 +3106,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3196,7 +3215,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3393,7 +3412,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3483,7 +3502,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_animationtree.html">AnimationTree</a><ul>
@@ -3516,7 +3535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4712,8 +4731,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6389,7 +6409,8 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8268,9 +8289,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiosample.html">AudioSample</a><ul>
@@ -10452,21 +10475,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_basis.html">Basis</a><ul>
@@ -10475,30 +10498,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_color.html">Color</a><ul>
@@ -10507,12 +10530,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_dictionary.html">Dictionary</a><ul>
@@ -10520,27 +10543,27 @@
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_nodepath.html">NodePath</a><ul>
@@ -10548,10 +10571,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_object.html">Object</a><ul>
@@ -10568,60 +10591,60 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10629,10 +10652,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10640,30 +10663,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_plane.html">Plane</a><ul>
@@ -10672,12 +10695,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_projection.html">Projection</a><ul>
@@ -10685,12 +10708,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_quaternion.html">Quaternion</a><ul>
@@ -10699,12 +10722,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2.html">Rect2</a><ul>
@@ -10713,11 +10736,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2i.html">Rect2i</a><ul>
@@ -10726,21 +10749,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_signal.html">Signal</a><ul>
@@ -10748,10 +10771,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_string.html">String</a><ul>
@@ -10759,20 +10782,20 @@
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform2d.html">Transform2D</a><ul>
@@ -10781,12 +10804,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform3d.html">Transform3D</a><ul>
@@ -10795,12 +10818,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2.html">Vector2</a><ul>
@@ -10809,12 +10832,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2i.html">Vector2i</a><ul>
@@ -10823,12 +10846,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3.html">Vector3</a><ul>
@@ -10837,12 +10860,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3i.html">Vector3i</a><ul>
@@ -10851,12 +10874,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4.html">Vector4</a><ul>
@@ -10864,12 +10887,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4i.html">Vector4i</a><ul>
@@ -10877,12 +10900,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -10948,9 +10971,9 @@
 <p>操作系统原生菜单的服务器接口。</p>
 <section class="classref-introduction-group" id="id1">
 <h2>描述<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p><strong>NativeMenu</strong> handles low-level access to the OS native global menu bar and popup menus.</p>
-<p><strong>Note:</strong> This is low-level API, consider using <a class="reference internal" href="class_menubar.html#class-menubar"><span class="std std-ref">MenuBar</span></a> with <a class="reference internal" href="class_menubar.html#class-menubar-property-prefer-global-menu"><span class="std std-ref">MenuBar.prefer_global_menu</span></a> set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, and <a class="reference internal" href="class_popupmenu.html#class-popupmenu"><span class="std std-ref">PopupMenu</span></a> with <a class="reference internal" href="class_popupmenu.html#class-popupmenu-property-prefer-native-menu"><span class="std std-ref">PopupMenu.prefer_native_menu</span></a> set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p>To create a menu, use <a class="reference internal" href="#class-nativemenu-method-create-menu"><span class="std std-ref">create_menu</span></a>, add menu items using <code class="docutils literal notranslate"><span class="pre">add_*_item</span></code> methods. To remove a menu, use <a class="reference internal" href="#class-nativemenu-method-free-menu"><span class="std std-ref">free_menu</span></a>.</p>
+<p><strong>NativeMenu</strong> 处理对 OS 原生全局菜单栏和弹出菜单的低级访问。</p>
+<p><strong>注意：</strong>这是低级 API，请考虑使用将 <a class="reference internal" href="class_menubar.html#class-menubar-property-prefer-global-menu"><span class="std std-ref">MenuBar.prefer_global_menu</span></a> 设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 的 <a class="reference internal" href="class_menubar.html#class-menubar"><span class="std std-ref">MenuBar</span></a>，以及将 <a class="reference internal" href="class_popupmenu.html#class-popupmenu-property-prefer-native-menu"><span class="std std-ref">PopupMenu.prefer_native_menu</span></a> 设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 的 <a class="reference internal" href="class_popupmenu.html#class-popupmenu"><span class="std std-ref">PopupMenu</span></a>。</p>
+<p>要创建一个菜单，请使用 <a class="reference internal" href="#class-nativemenu-method-create-menu"><span class="std std-ref">create_menu</span></a>，使用 <code class="docutils literal notranslate"><span class="pre">add_*_item</span></code> 方法添加菜单项。要移除一个菜单，请使用 <a class="reference internal" href="#class-nativemenu-method-free-menu"><span class="std std-ref">free_menu</span></a>。</p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">menu</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_menu_callback</span><span class="p">(</span><span class="n">item_id</span><span class="p">):</span>
@@ -10962,7 +10985,7 @@
 <span class="w">        </span><span class="n">paste</span><span class="p">()</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_enter_tree</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># Create new menu and add items:</span>
+<span class="w">    </span><span class="c1"># 创建新菜单并添加项目：</span>
 <span class="w">    </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">create_menu</span><span class="p">()</span>
 <span class="w">    </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">menu</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cut&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_menu_callback</span><span class="p">,</span><span class="w"> </span><span class="n">Callable</span><span class="p">(),</span><span class="w"> </span><span class="s2">&quot;ITEM_CUT&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">menu</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_menu_callback</span><span class="p">,</span><span class="w"> </span><span class="n">Callable</span><span class="p">(),</span><span class="w"> </span><span class="s2">&quot;ITEM_COPY&quot;</span><span class="p">)</span>
@@ -10970,11 +10993,11 @@
 <span class="w">    </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="n">menu</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Paste&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_menu_callback</span><span class="p">,</span><span class="w"> </span><span class="n">Callable</span><span class="p">(),</span><span class="w"> </span><span class="s2">&quot;ITEM_PASTE&quot;</span><span class="p">)</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_on_button_pressed</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># Show popup menu at mouse position:</span>
+<span class="w">    </span><span class="c1"># 在鼠标位置显示弹出菜单：</span>
 <span class="w">    </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">popup</span><span class="p">(</span><span class="n">menu</span><span class="p">,</span><span class="w"> </span><span class="n">DisplayServer</span><span class="o">.</span><span class="n">mouse_get_position</span><span class="p">())</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_exit_tree</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># Remove menu when it&#39;s no longer needed:</span>
+<span class="w">    </span><span class="c1"># 当不再需要时移除菜单：</span>
 <span class="w">    </span><span class="n">NativeMenu</span><span class="o">.</span><span class="n">free_menu</span><span class="p">(</span><span class="n">menu</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -11017,100 +11040,100 @@
 <td><p><a class="reference internal" href="#class-nativemenu-method-create-menu"><span class="std std-ref">create_menu</span></a>()</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-submenu"><span class="std std-ref">find_item_index_with_submenu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, submenu_rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-submenu"><span class="std std-ref">find_item_index_with_submenu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, submenu_rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-tag"><span class="std std-ref">find_item_index_with_tag</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, tag: <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-tag"><span class="std std-ref">find_item_index_with_tag</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, tag: <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-text"><span class="std std-ref">find_item_index_with_text</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, text: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-find-item-index-with-text"><span class="std std-ref">find_item_index_with_text</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, text: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><abbr title="无返回值。">void</abbr></p></td>
 <td><p><a class="reference internal" href="#class-nativemenu-method-free-menu"><span class="std std-ref">free_menu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-accelerator"><span class="std std-ref">get_item_accelerator</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-callback"><span class="std std-ref">get_item_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-callback"><span class="std std-ref">get_item_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-count"><span class="std std-ref">get_item_count</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-count"><span class="std std-ref">get_item_count</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-icon"><span class="std std-ref">get_item_icon</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-icon"><span class="std std-ref">get_item_icon</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-indentation-level"><span class="std std-ref">get_item_indentation_level</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-indentation-level"><span class="std std-ref">get_item_indentation_level</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-key-callback"><span class="std std-ref">get_item_key_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-key-callback"><span class="std std-ref">get_item_key_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-max-states"><span class="std std-ref">get_item_max_states</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-max-states"><span class="std std-ref">get_item_max_states</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-state"><span class="std std-ref">get_item_state</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-state"><span class="std std-ref">get_item_state</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-submenu"><span class="std std-ref">get_item_submenu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-submenu"><span class="std std-ref">get_item_submenu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">get_item_tag</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">get_item_tag</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-text"><span class="std std-ref">get_item_text</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-text"><span class="std std-ref">get_item_text</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-tooltip"><span class="std std-ref">get_item_tooltip</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-item-tooltip"><span class="std std-ref">get_item_tooltip</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-minimum-width"><span class="std std-ref">get_minimum_width</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-minimum-width"><span class="std std-ref">get_minimum_width</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-popup-close-callback"><span class="std std-ref">get_popup_close_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-popup-close-callback"><span class="std std-ref">get_popup_close_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-popup-open-callback"><span class="std std-ref">get_popup_open_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-popup-open-callback"><span class="std std-ref">get_popup_open_callback</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-size"><span class="std std-ref">get_size</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-size"><span class="std std-ref">get_size</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-system-menu"><span class="std std-ref">get_system_menu</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-system-menu"><span class="std std-ref">get_system_menu</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-get-system-menu-name"><span class="std std-ref">get_system_menu_name</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-get-system-menu-name"><span class="std std-ref">get_system_menu_name</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-has-feature"><span class="std std-ref">has_feature</span></a>(feature: <a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-has-feature"><span class="std std-ref">has_feature</span></a>(feature: <a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-has-menu"><span class="std std-ref">has_menu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-has-menu"><span class="std std-ref">has_menu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-has-system-menu"><span class="std std-ref">has_system_menu</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-has-system-menu"><span class="std std-ref">has_system_menu</span></a>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-checkable"><span class="std std-ref">is_item_checkable</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-checkable"><span class="std std-ref">is_item_checkable</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-checked"><span class="std std-ref">is_item_checked</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-checked"><span class="std std-ref">is_item_checked</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-disabled"><span class="std std-ref">is_item_disabled</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-disabled"><span class="std std-ref">is_item_disabled</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-hidden"><span class="std std-ref">is_item_hidden</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-hidden"><span class="std std-ref">is_item_hidden</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-radio-checkable"><span class="std std-ref">is_item_radio_checkable</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-item-radio-checkable"><span class="std std-ref">is_item_radio_checkable</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">is_opened</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">is_opened</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-nativemenu-method-is-system-menu"><span class="std std-ref">is_system_menu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-nativemenu-method-is-system-menu"><span class="std std-ref">is_system_menu</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><abbr title="无返回值。">void</abbr></p></td>
 <td><p><a class="reference internal" href="#class-nativemenu-method-popup"><span class="std std-ref">popup</span></a>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, position: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>)</p></td>
@@ -11189,29 +11212,29 @@
 <h2>枚举<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p class="classref-enumeration" id="enum-nativemenu-feature">enum <strong>Feature</strong>: <a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">🔗</span></a></p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-feature-global-menu"><a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a> <strong>FEATURE_GLOBAL_MENU</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-<p><strong>NativeMenu</strong> supports native global main menu.</p>
+<p><strong>NativeMenu</strong> 支持原生全局主菜单。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-feature-popup-menu"><a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a> <strong>FEATURE_POPUP_MENU</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
-<p><strong>NativeMenu</strong> supports native popup menus.</p>
+<p><strong>NativeMenu</strong> 支持原生弹出菜单。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-feature-open-close-callback"><a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a> <strong>FEATURE_OPEN_CLOSE_CALLBACK</strong> = <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
-<p><strong>NativeMenu</strong> supports menu open and close callbacks.</p>
+<p><strong>NativeMenu</strong> 支持菜单打开和关闭回调。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-feature-hover-callback"><a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a> <strong>FEATURE_HOVER_CALLBACK</strong> = <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
-<p><strong>NativeMenu</strong> supports menu item hover callback.</p>
+<p><strong>NativeMenu</strong> 支持菜单项悬停回调。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-feature-key-callback"><a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a> <strong>FEATURE_KEY_CALLBACK</strong> = <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
-<p><strong>NativeMenu</strong> supports menu item accelerator/key callback.</p>
+<p><strong>NativeMenu</strong> 支持菜单项加速器/键回调。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-enumeration" id="enum-nativemenu-systemmenus">enum <strong>SystemMenus</strong>: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">🔗</span></a></p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-invalid-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>INVALID_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-<p>Invalid special system menu ID.</p>
+<p>无效的特殊系统菜单 ID。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-main-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>MAIN_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
-<p>Global main menu ID.</p>
+<p>全局主菜单 ID。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-application-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>APPLICATION_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
-<p>Application (first menu after &quot;Apple&quot; menu on macOS) menu ID.</p>
+<p>应用程序（macOS 上“Apple”菜单后的第一个菜单）菜单 ID。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-window-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>WINDOW_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
-<p>&quot;Window&quot; menu ID (on macOS this menu includes standard window control items and a list of open windows).</p>
+<p>“窗口”菜单 ID（在 macOS 上，该菜单包括标准窗口控制项和打开的窗口列表）。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-help-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>HELP_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
-<p>&quot;Help&quot; menu ID (on macOS this menu includes help search bar).</p>
+<p>“帮助”菜单 ID（在 macOS 上，该菜单包括帮助搜索栏）。</p>
 <p class="classref-enumeration-constant" id="class-nativemenu-constant-dock-menu-id"><a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a> <strong>DOCK_MENU_ID</strong> = <code class="docutils literal notranslate"><span class="pre">5</span></code></p>
-<p>Dock icon right-click menu ID (on macOS this menu include standard application control items and a list of open windows).</p>
+<p>Dock 图标右键菜单 ID（在 macOS 上，该菜单包括标准应用程序控制项和打开的窗口列表）。</p>
 </section>
 <hr class="classref-section-separator docutils" />
 <section class="classref-descriptions-group" id="id4">
@@ -11287,177 +11310,177 @@
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-clear"><abbr title="无返回值。">void</abbr> <strong>clear</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <a class="reference internal" href="#class-nativemenu-method-clear"><span class="std std-ref">🔗</span></a></p>
-<p>Removes all items from the global menu <code class="docutils literal notranslate"><span class="pre">rid</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>从全局菜单中移除所有菜单项 <code class="docutils literal notranslate"><span class="pre">rid</span></code>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-create-menu"><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong>create_menu</strong>() <a class="reference internal" href="#class-nativemenu-method-create-menu"><span class="std std-ref">🔗</span></a></p>
 <p>新建全局菜单对象。</p>
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-find-item-index-with-submenu"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_submenu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, submenu_rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-submenu"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the index of the item with the submenu specified by <code class="docutils literal notranslate"><span class="pre">submenu_rid</span></code>. Indices are automatically assigned to each item by the engine, and cannot be set manually.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-find-item-index-with-submenu"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_submenu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, submenu_rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-submenu"><span class="std std-ref">🔗</span></a></p>
+<p>返回由 <code class="docutils literal notranslate"><span class="pre">submenu_rid</span></code> 指定的子菜单项的索引。索引由引擎自动分配给每个菜单项，无法手动设置。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-find-item-index-with-tag"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_tag</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, tag: <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-tag"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the index of the item with the specified <code class="docutils literal notranslate"><span class="pre">tag</span></code>. Indices are automatically assigned to each item by the engine, and cannot be set manually.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-find-item-index-with-tag"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_tag</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, tag: <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-tag"><span class="std std-ref">🔗</span></a></p>
+<p>返回具有指定 <code class="docutils literal notranslate"><span class="pre">tag</span></code> 的菜单项的索引。引擎会自动为每个菜单项分配索引，无法手动设置。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-find-item-index-with-text"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_text</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, text: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-text"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the index of the item with the specified <code class="docutils literal notranslate"><span class="pre">text</span></code>. Indices are automatically assigned to each item by the engine, and cannot be set manually.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-find-item-index-with-text"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>find_item_index_with_text</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, text: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-find-item-index-with-text"><span class="std std-ref">🔗</span></a></p>
+<p>返回具有指定 <code class="docutils literal notranslate"><span class="pre">text</span></code> 的菜单项的索引。引擎会自动为每个菜单项分配索引，无法手动设置。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-free-menu"><abbr title="无返回值。">void</abbr> <strong>free_menu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <a class="reference internal" href="#class-nativemenu-method-free-menu"><span class="std std-ref">🔗</span></a></p>
 <p>释放该 <strong>NativeMenu</strong> 所创建的全局菜单对象。</p>
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-accelerator"><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a> <strong>get_item_accelerator</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-accelerator"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-item-accelerator"><a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a> <strong>get_item_accelerator</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-accelerator"><span class="std std-ref">🔗</span></a></p>
 <p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的快捷键。快捷键是能够激活该菜单项的特殊按键组合，无论该控件是否有焦点。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_item_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-callback"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the callback of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_item_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-callback"><span class="std std-ref">🔗</span></a></p>
+<p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的回调。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_count</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-count"><span class="std std-ref">🔗</span></a></p>
-<p>Returns number of items in the global menu <code class="docutils literal notranslate"><span class="pre">rid</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-count"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_count</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-count"><span class="std std-ref">🔗</span></a></p>
+<p>返回全局菜单 <code class="docutils literal notranslate"><span class="pre">rid</span></code> 中的菜单项的数量。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-icon"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_item_icon</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-icon"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the icon of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-icon"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_item_icon</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-icon"><span class="std std-ref">🔗</span></a></p>
+<p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的图标。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-indentation-level"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_indentation_level</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-indentation-level"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-item-indentation-level"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_indentation_level</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-indentation-level"><span class="std std-ref">🔗</span></a></p>
 <p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的水平偏移量。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-key-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_item_key_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-key-callback"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-item-key-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_item_key_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-key-callback"><span class="std std-ref">🔗</span></a></p>
 <p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的快捷键回调。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-max-states"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_max_states</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-max-states"><span class="std std-ref">🔗</span></a></p>
-<p>Returns number of states of a multistate item. See <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-max-states"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_max_states</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-max-states"><span class="std std-ref">🔗</span></a></p>
+<p>返回多状态项的状态数。详见 <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-state"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_state</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-state"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the state of a multistate item. See <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-state"><a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a> <strong>get_item_state</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-state"><span class="std std-ref">🔗</span></a></p>
+<p>返回多状态项的状态。详见 <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-submenu"><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong>get_item_submenu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-submenu"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the submenu ID of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. See <a class="reference internal" href="#class-nativemenu-method-add-submenu-item"><span class="std std-ref">add_submenu_item</span></a> for more info on how to add a submenu.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-submenu"><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong>get_item_submenu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-submenu"><span class="std std-ref">🔗</span></a></p>
+<p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的子菜单 ID。关于如何添加子菜单的更多信息见 <a class="reference internal" href="#class-nativemenu-method-add-submenu-item"><span class="std std-ref">add_submenu_item</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-tag"><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong>get_item_tag</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">🔗</span></a></p>
-<p>Returns the metadata of the specified item, which might be of any type. You can set it with <a class="reference internal" href="#class-nativemenu-method-set-item-tag"><span class="std std-ref">set_item_tag</span></a>, which provides a simple way of assigning context data to items.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-get-item-tag"><a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a> <strong>get_item_tag</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">🔗</span></a></p>
+<p>返回指定菜单项的元数据，可能是任何类型。元数据可以使用 <a class="reference internal" href="#class-nativemenu-method-set-item-tag"><span class="std std-ref">set_item_tag</span></a> 设置，该方法提供了一种将上下文数据分配给菜单项的简单方式。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-text"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_item_text</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-text"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-item-text"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_item_text</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-text"><span class="std std-ref">🔗</span></a></p>
 <p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的文本。</p>
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-item-tooltip"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_item_tooltip</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-tooltip"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-item-tooltip"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_item_tooltip</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-item-tooltip"><span class="std std-ref">🔗</span></a></p>
 <p>返回索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项所关联的工具提示。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-minimum-width"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_minimum_width</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-minimum-width"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-minimum-width"><a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a> <strong>get_minimum_width</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-minimum-width"><span class="std std-ref">🔗</span></a></p>
 <p>返回全局菜单的最小宽度。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-popup-close-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_popup_close_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-popup-close-callback"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-popup-close-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_popup_close_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-popup-close-callback"><span class="std std-ref">🔗</span></a></p>
 <p>返回全局菜单的关闭回调。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-popup-open-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_popup_open_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-popup-open-callback"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-popup-open-callback"><a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a> <strong>get_popup_open_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-popup-open-callback"><span class="std std-ref">🔗</span></a></p>
 <p>返回全局菜单的打开回调。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-size"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_size</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-size"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-size"><a class="reference internal" href="class_vector2.html#class-vector2"><span class="std std-ref">Vector2</span></a> <strong>get_size</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-size"><span class="std std-ref">🔗</span></a></p>
 <p>返回全局菜单的大小。</p>
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-system-menu"><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong>get_system_menu</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-system-menu"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-system-menu"><a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a> <strong>get_system_menu</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-system-menu"><span class="std std-ref">🔗</span></a></p>
 <p>返回特殊系统菜单的 RID。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-get-system-menu-name"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_system_menu_name</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-system-menu-name"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-get-system-menu-name"><a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a> <strong>get_system_menu_name</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-get-system-menu-name"><span class="std std-ref">🔗</span></a></p>
 <p>返回特殊系统菜单的可读名称。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-has-feature"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_feature</strong>(feature: <a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-feature"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the specified <code class="docutils literal notranslate"><span class="pre">feature</span></code> is supported by the current <strong>NativeMenu</strong>, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-has-feature"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_feature</strong>(feature: <a class="reference internal" href="#enum-nativemenu-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-feature"><span class="std std-ref">🔗</span></a></p>
+<p>如果当前的 <strong>NativeMenu</strong> 支持指定的特性 <code class="docutils literal notranslate"><span class="pre">feature</span></code>，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>，否则返回 <code class="docutils literal notranslate"><span class="pre">false</span></code>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-has-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_menu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-menu"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-has-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_menu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-menu"><span class="std std-ref">🔗</span></a></p>
 <p>如果 <code class="docutils literal notranslate"><span class="pre">rid</span></code> 是有效的全局菜单，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-has-system-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_system_menu</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-system-menu"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-nativemenu-method-has-system-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>has_system_menu</strong>(menu_id: <a class="reference internal" href="#enum-nativemenu-systemmenus"><span class="std std-ref">SystemMenus</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-has-system-menu"><span class="std std-ref">🔗</span></a></p>
 <p>如果支持特殊系统菜单则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-item-checkable"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-checkable"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is checkable in some way, i.e. if it has a checkbox or radio button.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-is-item-checkable"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-checkable"><span class="std std-ref">🔗</span></a></p>
+<p>如果索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项能够以某种方式被勾选，即有复选框或单选按钮，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-item-checked"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_checked</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-checked"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is checked.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-is-item-checked"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_checked</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-checked"><span class="std std-ref">🔗</span></a></p>
+<p>如果索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 处的菜单项被勾选，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-item-disabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_disabled</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-disabled"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is disabled. When it is disabled it can't be selected, or its action invoked.</p>
-<p>See <a class="reference internal" href="#class-nativemenu-method-set-item-disabled"><span class="std std-ref">set_item_disabled</span></a> for more info on how to disable an item.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-is-item-disabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_disabled</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-disabled"><span class="std std-ref">🔗</span></a></p>
+<p>如果索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 处的菜单项被禁用，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。禁用后，无法选择它，也无法调用其动作。</p>
+<p>有关如何禁用菜单项的更多信息，请参阅 <a class="reference internal" href="#class-nativemenu-method-set-item-disabled"><span class="std std-ref">set_item_disabled</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-item-hidden"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_hidden</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-hidden"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is hidden.</p>
-<p>See <a class="reference internal" href="#class-nativemenu-method-set-item-hidden"><span class="std std-ref">set_item_hidden</span></a> for more info on how to hide an item.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p class="classref-method" id="class-nativemenu-method-is-item-hidden"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_hidden</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-hidden"><span class="std std-ref">🔗</span></a></p>
+<p>如果索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 处的菜单项被隐藏，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
+<p>有关如何隐藏菜单项的更多信息，请参阅 <a class="reference internal" href="#class-nativemenu-method-set-item-hidden"><span class="std std-ref">set_item_hidden</span></a>。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-item-radio-checkable"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_radio_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-radio-checkable"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> has radio button-style checkability.</p>
-<p><strong>Note:</strong> This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p class="classref-method" id="class-nativemenu-method-is-item-radio-checkable"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_item_radio_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-item-radio-checkable"><span class="std std-ref">🔗</span></a></p>
+<p>如果索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项为单选按钮风格，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
+<p><strong>注意：</strong>仅为装饰作用；必须自行为单选组添加勾选、取消勾选的逻辑。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-opened"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_opened</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">🔗</span></a></p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the menu is currently opened.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p class="classref-method" id="class-nativemenu-method-is-opened"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_opened</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">🔗</span></a></p>
+<p>如果菜单当前已打开，则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-nativemenu-method-is-system-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_system_menu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-system-menu"><span class="std std-ref">🔗</span></a></p>
-<p>Return <code class="docutils literal notranslate"><span class="pre">true</span></code> is global menu is a special system menu.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p class="classref-method" id="class-nativemenu-method-is-system-menu"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>is_system_menu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-nativemenu-method-is-system-menu"><span class="std std-ref">🔗</span></a></p>
+<p>如果全局菜单为特殊系统菜单则返回 <code class="docutils literal notranslate"><span class="pre">true</span></code> 。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-popup"><abbr title="无返回值。">void</abbr> <strong>popup</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, position: <a class="reference internal" href="class_vector2i.html#class-vector2i"><span class="std std-ref">Vector2i</span></a>) <a class="reference internal" href="#class-nativemenu-method-popup"><span class="std std-ref">🔗</span></a></p>
-<p>Shows the global menu at <code class="docutils literal notranslate"><span class="pre">position</span></code> in the screen coordinates.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>在屏幕坐标中的 <code class="docutils literal notranslate"><span class="pre">position</span></code> 处显示全局菜单。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-remove-item"><abbr title="无返回值。">void</abbr> <strong>remove_item</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <a class="reference internal" href="#class-nativemenu-method-remove-item"><span class="std std-ref">🔗</span></a></p>
-<p>Removes the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> from the global menu <code class="docutils literal notranslate"><span class="pre">rid</span></code>.</p>
-<p><strong>Note:</strong> The indices of items after the removed item will be shifted by one.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>从全局菜单 <code class="docutils literal notranslate"><span class="pre">rid</span></code> 中移除索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 处的菜单项。</p>
+<p><strong>注意：</strong>被移除菜单项之后的菜单项的索引将移动一格。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-interface-direction"><abbr title="无返回值。">void</abbr> <strong>set_interface_direction</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, is_rtl: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-interface-direction"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the menu text layout direction from right-to-left if <code class="docutils literal notranslate"><span class="pre">is_rtl</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">is_rtl</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则设置菜单文本布局方向为从右到左。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-accelerator"><abbr title="无返回值。">void</abbr> <strong>set_item_accelerator</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, keycode: <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-accelerator"><span class="std std-ref">🔗</span></a></p>
 <p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的快捷键。<code class="docutils literal notranslate"><span class="pre">keycode</span></code> 可以是单一 <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a>，也可以是 <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-keymodifiermask"><span class="std std-ref">KeyModifierMask</span></a> 和 <a class="reference internal" href="class_%40globalscope.html#enum-globalscope-key"><span class="std std-ref">Key</span></a> 用按位或操作进行的组合，例如 <code class="docutils literal notranslate"><span class="pre">KEY_MASK_CTRL</span> <span class="pre">|</span> <span class="pre">KEY_A</span></code>（<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">A</kbd></kbd>）。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-callback"><abbr title="无返回值。">void</abbr> <strong>set_item_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, callback: <a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-callback"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the callback of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. Callback is emitted when an item is pressed.</p>
-<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">callback</span></code> Callable needs to accept exactly one Variant parameter, the parameter passed to the Callable will be the value passed to the <code class="docutils literal notranslate"><span class="pre">tag</span></code> parameter when the menu item was created.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的回调。回调会在按下菜单项时发出。</p>
+<p><strong>注意：</strong><code class="docutils literal notranslate"><span class="pre">callback</span></code> Callable 只接受一个 Variant 参数，传入 Callable 的参数是创建菜单项时传给 <code class="docutils literal notranslate"><span class="pre">tag</span></code> 参数的值。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-checkable"><abbr title="无返回值。">void</abbr> <strong>set_item_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, checkable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-checkable"><span class="std std-ref">🔗</span></a></p>
-<p>Sets whether the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> has a checkbox. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, sets the type of the item to plain text.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项是否为复选框。如果为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，则会将该菜单项的类型设置为纯文本。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-checked"><abbr title="无返回值。">void</abbr> <strong>set_item_checked</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, checked: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-checked"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the checkstate status of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的勾选状态。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-disabled"><abbr title="无返回值。">void</abbr> <strong>set_item_disabled</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, disabled: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-disabled"><span class="std std-ref">🔗</span></a></p>
-<p>Enables/disables the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. When it is disabled, it can't be selected and its action can't be invoked.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>启用/禁用索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项。禁用状态下无法被选中，也无法激活动作。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-hidden"><abbr title="无返回值。">void</abbr> <strong>set_item_hidden</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, hidden: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-hidden"><span class="std std-ref">🔗</span></a></p>
 <p>隐藏/显示索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项。当它被隐藏时，项目不会出现在菜单中，并且无法调用其操作。</p>
@@ -11469,9 +11492,9 @@
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-icon"><abbr title="无返回值。">void</abbr> <strong>set_item_icon</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, icon: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-icon"><span class="std std-ref">🔗</span></a></p>
-<p>Replaces the <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> icon of the specified <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
-<p><strong>Note:</strong> This method is not supported by macOS Dock menu items.</p>
+<p>替换指定索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的 <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> 图标。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
+<p><strong>注意：</strong>macOS Dock 菜单项不支持该方法。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-indentation-level"><abbr title="无返回值。">void</abbr> <strong>set_item_indentation_level</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, level: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-indentation-level"><span class="std std-ref">🔗</span></a></p>
 <p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的水平偏移量。</p>
@@ -11483,46 +11506,46 @@
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-max-states"><abbr title="无返回值。">void</abbr> <strong>set_item_max_states</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, max_states: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-max-states"><span class="std std-ref">🔗</span></a></p>
-<p>Sets number of state of a multistate item. See <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置多状态项的状态数。详见 <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-radio-checkable"><abbr title="无返回值。">void</abbr> <strong>set_item_radio_checkable</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, checkable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-radio-checkable"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the type of the item at the specified index <code class="docutils literal notranslate"><span class="pre">idx</span></code> to radio button. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, sets the type of the item to plain text.</p>
-<p><strong>Note:</strong> This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>将索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项设置为单选按钮风格。如果为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，则会将该菜单项的类型设置为纯文本。</p>
+<p><strong>注意：</strong>仅为装饰作用；必须自行为单选组添加选中、取消选中的逻辑。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-state"><abbr title="无返回值。">void</abbr> <strong>set_item_state</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, state: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-state"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the state of a multistate item. See <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a> for details.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置多状态项的状态。详见 <a class="reference internal" href="#class-nativemenu-method-add-multistate-item"><span class="std std-ref">add_multistate_item</span></a>。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-submenu"><abbr title="无返回值。">void</abbr> <strong>set_item_submenu</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, submenu_rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-submenu"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the submenu RID of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. The submenu is a global menu that would be shown when the item is clicked.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置索引 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 处菜单项的子菜单 RID。子菜单是一个全局菜单，点击该菜单项时将显示该菜单。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-tag"><abbr title="无返回值。">void</abbr> <strong>set_item_tag</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, tag: <a class="reference internal" href="class_variant.html#class-variant"><span class="std std-ref">Variant</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-tag"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the metadata of an item, which may be of any type. You can later get it with <a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">get_item_tag</span></a>, which provides a simple way of assigning context data to items.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置指定菜单项的元数据，可以是任何类型。后续可以使用 <a class="reference internal" href="#class-nativemenu-method-get-item-tag"><span class="std std-ref">get_item_tag</span></a> 获取，它提供了一种将上下文数据分配给项目的简单方式。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-text"><abbr title="无返回值。">void</abbr> <strong>set_item_text</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, text: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-text"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the text of the item at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
-<p><strong>Note:</strong> This method is implemented on macOS and Windows.</p>
+<p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的文本。</p>
+<p><strong>注意：</strong>该方法在 macOS 和 Windows 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-item-tooltip"><abbr title="无返回值。">void</abbr> <strong>set_item_tooltip</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, idx: <a class="reference internal" href="class_int.html#class-int"><span class="std std-ref">int</span></a>, tooltip: <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-item-tooltip"><span class="std std-ref">🔗</span></a></p>
 <p>设置索引为 <code class="docutils literal notranslate"><span class="pre">idx</span></code> 的菜单项的工具提示 <a class="reference internal" href="class_string.html#class-string"><span class="std std-ref">String</span></a>。</p>
 <p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-minimum-width"><abbr title="无返回值。">void</abbr> <strong>set_minimum_width</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, width: <a class="reference internal" href="class_float.html#class-float"><span class="std std-ref">float</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-minimum-width"><span class="std std-ref">🔗</span></a></p>
-<p>Sets the minimum width of the global menu.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p>设置全局菜单的最小宽度。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-popup-close-callback"><abbr title="无返回值。">void</abbr> <strong>set_popup_close_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, callback: <a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-popup-close-callback"><span class="std std-ref">🔗</span></a></p>
-<p>Registers callable to emit when the menu is about to show.</p>
-<p><strong>Note:</strong> The OS can simulate menu opening to track menu item changes and global shortcuts, in which case the corresponding close callback is not triggered. Use <a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">is_opened</span></a> to check if the menu is currently opened.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p>注册可调用函数，以在菜单即将显示时发出。</p>
+<p><strong>注意：</strong>操作系统可以模拟菜单打开来跟踪菜单项更改和全局快捷键，在这种情况下不会触发相应的关闭回调。使用 <a class="reference internal" href="#class-nativemenu-method-is-opened"><span class="std std-ref">is_opened</span></a> 检查菜单当前是否已打开。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-nativemenu-method-set-popup-open-callback"><abbr title="无返回值。">void</abbr> <strong>set_popup_open_callback</strong>(rid: <a class="reference internal" href="class_rid.html#class-rid"><span class="std std-ref">RID</span></a>, callback: <a class="reference internal" href="class_callable.html#class-callable"><span class="std std-ref">Callable</span></a>) <a class="reference internal" href="#class-nativemenu-method-set-popup-open-callback"><span class="std std-ref">🔗</span></a></p>
-<p>Registers callable to emit after the menu is closed.</p>
-<p><strong>Note:</strong> This method is implemented only on macOS.</p>
+<p>注册可调用函数以在菜单关闭后发出。</p>
+<p><strong>注意：</strong>该方法仅在 macOS 上实现。</p>
 </section>
 </section>
 

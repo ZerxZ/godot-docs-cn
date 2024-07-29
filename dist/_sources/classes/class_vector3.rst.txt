@@ -184,7 +184,7 @@ Vector3
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -536,9 +536,9 @@ Z 轴的枚举值。由 :ref:`max_axis_index<class_Vector3_method_max_axis_index
 
 :ref:`Vector3<class_Vector3>` **bounce**\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Vector3_method_bounce>`
 
-Returns the vector "bounced off" from a plane defined by the given normal ``n``.
+返回从给定法线 ``n`` 定义的平面“弹起”的向量。
 
-\ **Note:** :ref:`bounce<class_Vector3_method_bounce>` performs the operation that most engines and frameworks call ``reflect()``.
+\ **注意：**\ :ref:`bounce<class_Vector3_method_bounce>` 执行大多数引擎和框架调用 ``reflect()`` 的操作。
 
 .. rst-class:: classref-item-separator
 
@@ -574,7 +574,7 @@ Returns the vector "bounced off" from a plane defined by the given normal ``n``.
 
 :ref:`Vector3<class_Vector3>` **clampf**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector3_method_clampf>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+返回一个新向量，每个分量都使用 :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` 限制在 ``min`` 和 ``max`` 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -586,9 +586,9 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 :ref:`Vector3<class_Vector3>` **cross**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Vector3_method_cross>`
 
-Returns the cross product of this vector and ``with``.
+返回该向量与 ``with`` 的叉积。
 
-This returns a vector perpendicular to both this and ``with``, which would be the normal vector of the plane defined by the two vectors. As there are two such vectors, in opposite directions, this method returns the vector defined by a right-handed coordinate system. If the two vectors are parallel this returns an empty vector, making it useful for testing if two vectors are parallel.
+这将返回一个垂直于该向量和 ``with`` 的向量，它将是两个向量定义的平面的法向量。由于有两个这样的向量，方向相反，该方法返回由右手坐标系定义的向量。如果这两个向量平行，则返回一个空向量，这使其可用于测试两个向量是否平行。
 
 .. rst-class:: classref-item-separator
 
@@ -890,9 +890,9 @@ When using unit (normalized) vectors, the result will always be between ``-1.0``
 
 :ref:`Vector3<class_Vector3>` **normalized**\ (\ ) |const| :ref:`🔗<class_Vector3_method_normalized>`
 
-Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. Returns ``(0, 0, 0)`` if ``v.length() == 0``. See also :ref:`is_normalized<class_Vector3_method_is_normalized>`.
+返回该向量缩放至单位长度的结果。等价于 ``v / v.length()``\ 。如果 ``v.length() == 0`` 则返回 ``(0, 0, 0)``\ 。另见 :ref:`is_normalized<class_Vector3_method_is_normalized>`\ 。
 
-\ **Note:** This function may return incorrect values if the input vector length is near zero.
+\ **注意：**\ 如果输入向量的长度接近零，则这个函数可能返回不正确的值。
 
 .. rst-class:: classref-item-separator
 
@@ -982,9 +982,9 @@ Returns the result of scaling the vector to unit length. Equivalent to ``v / v.l
 
 :ref:`Vector3<class_Vector3>` **reflect**\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Vector3_method_reflect>`
 
-Returns the result of reflecting the vector through a plane defined by the given normal vector ``n``.
+返回通过给定法线向量 ``n`` 定义的平面反射向量的结果。
 
-\ **Note:** :ref:`reflect<class_Vector3_method_reflect>` differs from what other engines and frameworks call ``reflect()``. In other engines, ``reflect()`` returns the result of the vector reflected by the given plane. The reflection thus passes through the given normal. While in Godot the reflection passes through the plane and can be thought of as bouncing off the normal. See also :ref:`bounce<class_Vector3_method_bounce>` which does what most engines call ``reflect()``.
+\ **注意：**\ :ref:`reflect<class_Vector3_method_reflect>` 与其他引擎和框架调用的 ``reflect()`` 不同。在其他引擎中，\ ``reflect()`` 返回由给定平面反射的向量的结果。因此反射穿过给定的法线。而在 Godot 中，反射穿过平面，可以被认为是从法线反弹。另请参阅 :ref:`bounce<class_Vector3_method_bounce>`\ ，它执行大多数引擎调用的 ``reflect()``\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1084,7 +1084,7 @@ Returns the result of reflecting the vector through a plane defined by the given
 
 :ref:`Vector3<class_Vector3>` **snappedf**\ (\ step\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector3_method_snappedf>`
 
-Returns a new vector with each component snapped to the nearest multiple of ``step``. This can also be used to round the components to an arbitrary number of decimals.
+返回一个新向量，其中每个分量都吸附到 ``step`` 的最接近的倍数。这也可以用于将分量四舍五入为任意数位的小数。
 
 .. rst-class:: classref-section-separator
 
@@ -1092,7 +1092,7 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Vector3_operator_neq_Vector3:
@@ -1374,10 +1374,10 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 返回该 **Vector3** 的负值。和写 ``Vector3(-v.x, -v.y, -v.z)`` 是一样的。该操作在保持相同幅度的同时，翻转向量的方向。对于浮点数，零也有正负两种。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

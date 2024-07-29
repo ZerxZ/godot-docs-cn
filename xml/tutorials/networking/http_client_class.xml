@@ -7,7 +7,7 @@
         <title>HTTP 客户端类</title>
         <paragraph><reference internal="True" refuri="../../classes/class_httpclient#class-httpclient"><inline classes="std std-ref">HTTPClient</inline></reference> 提供了对HTTP通信的低层次访问. 对于一个更高级的接口, 你可能需要看看 <reference internal="True" refuri="../../classes/class_httprequest#class-httprequest"><inline classes="std std-ref">HTTPRequest</inline></reference> , 它有一个可用的教程 <reference internal="True" refuri="http_request_class#doc-http-request-class"><inline classes="std std-ref">here</inline></reference>.</paragraph>
         <warning>
-            <paragraph>当导出到 Android 时，在导出项目或使用一键部署之前，确保在 Android 导出预设中启用 <literal>INTERNET</literal> 权限。否则，任何形式的网络通信都会被 Android 系统阻止。</paragraph>
+            <paragraph>导出到 Android 时，在导出项目或使用一键部署之前，确保在 Android 导出预设中启用 <literal>INTERNET</literal> 权限。否则，Android 系统会阻止该程序任何形式的网络通信。</paragraph>
         </warning>
         <paragraph>这是使用 <reference internal="True" refuri="../../classes/class_httpclient#class-httpclient"><inline classes="std std-ref">HTTPClient</inline></reference> 类的示例. 它只是一个脚本, 因此它可以通过执行以下命令来运行:</paragraph>
         <container classes="sphinx-tabs" type="tab-element">

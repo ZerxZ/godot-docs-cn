@@ -145,7 +145,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#is-the-godot-editor-a-portable-application">Godot 编辑器是绿色应用吗？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">Why does Godot prioritize Vulkan and OpenGL over Direct3D?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-prioritize-vulkan-and-opengl-over-direct3d">为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#why-does-godot-aim-to-keep-its-core-feature-set-small">为什么 Godot 旨在保持其核心功能集较小？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#how-should-assets-be-created-to-handle-multiple-resolutions-and-aspect-ratios">如果要适配多种分辨率和纵横比，资产应做哪些处理？</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/faq.html#when-is-the-next-release-of-godot-out">Godot 的下一个版本什么时候发布？</a></li>
@@ -297,8 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/introduction_to_godot.html#what-do-i-need-to-know-to-use-godot">使用 Godot 我需要知道什么？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">Learn to code with GDScript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">Learn in your browser with the GDScript app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html">学习用 GDScript 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/introduction/learn_to_code_with_gdscript.html#learn-in-your-browser-with-the-gdscript-app">在你的浏览器中，使用GDScript应用程序学习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/introduction/key_concepts_overview.html">Godot 关键概念概述</a><ul>
@@ -574,7 +574,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-appears-frozen-after-clicking-the-system-console">点击系统控制台后，Godot 编辑器没有响应</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-godot-editor-s-macos-dock-icon-gets-duplicated-every-time-it-is-manually-moved">手动移动Godot编辑器的macOS dock 图标之后，会出现多余的编辑器图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口的左上角出现“NO DC”之类的文本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">在项目管理器和编辑器窗口右下角出现一个麦克风或刷新的图标</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">编辑器或项目显示得过于锐利或模糊</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">此编辑器或项目看起来颜色很淡</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">从挂起状态恢复 PC 后，编辑器/项目冻结或显示出现故障</a></li>
@@ -587,7 +587,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#creating-and-importing-projects">项目的创建与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#opening-and-importing-projects">项目的打开与导入</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#downloading-demos-and-templates">下载演示和模板</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">Managing projects with tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/project_manager.html#managing-projects-with-tags">用标签管理项目</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/inspector_dock.html">检查器</a><ul>
@@ -801,6 +801,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#tools">工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-1-drawing-a-custom-shape">示例 1：绘制自定义形状</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/custom_drawing_in_2d.html#example-2-drawing-a-dynamic-line">示例 2：绘制动态线条</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/2d_parallax.html">2D Parallax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-scale">Scroll scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#infinite-repeat">Infinite repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#scroll-offset">Scroll offset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#repeat-times">Repeat times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#split-screen">Split screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/2d/2d_parallax.html#previewing-in-the-editor">Previewing in the editor</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,7 +1159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#keyframes-for-other-properties">其他属性的关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#edit-keyframes">编辑关键帧</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#using-reset-tracks">使用 RESET 轨道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">Onion Skinning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/introduction.html#onion-skinning">洋葱皮</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/animation/animation_track_types.html">动画轨道类型</a><ul>
@@ -1308,7 +1318,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#editor-convert-colors-with-editor-theme">Editor &gt; Convert Colors With Editor Theme</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">Importing SVG images with text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#importing-svg-images-with-text">导入包含文本的 SVG 图像</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#best-practices">最佳实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#supporting-high-resolution-texture-sizes-in-2d-without-artifacts">在2D中支持没有伪影的高分辨率纹理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/assets_pipeline/importing_images.html#use-appropriate-texture-sizes-in-3d">在3D中使用适当的纹理大小</a></li>
@@ -1549,8 +1559,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-via-app-store">App 已签名并公证，通过 App Store 分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-notarized-and-distributed-outside-app-store">App 已签名并公证，在 App Store 外分发</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-signed-including-ad-hoc-signatures-but-not-notarized">应用已签名（包括 Ad-hoc 签名）但未公证</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App is not signed, executable is linker-signed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">Neither app nor executable is signed (relevant for Apple Silicon Macs only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#app-is-not-signed-executable-is-linker-signed">App 未签名，可执行文件由链接器签名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/running_on_macos.html#neither-app-nor-executable-is-signed-relevant-for-apple-silicon-macs-only">App 和可执行文件都没有签名（仅适用于 Apple Slilicon 的 mac）</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html">为 Windows 导出</a><ul>
@@ -1957,20 +1967,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationservers.html#server-avoidance-callbacks">服务器避障回调</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用 NavigationMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html">使用导航地图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#default-navigation-maps">默认导航地图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmaps.html#creating-new-navigation-maps">新建导航地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块（NavigationRegion）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html">使用导航区块</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationregions.html#creating-new-navigation-regions">新建导航区块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html">使用导航网格</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-a-navigationregion">使用导航区块 NavigationRegion 烘焙导航网格</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-a-navigation-mesh-with-the-navigationserver">使用 NavigationServer 烘焙导航网格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">Baking navigation mesh chunks for large worlds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">Navigation mesh baking common problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#baking-navigation-mesh-chunks-for-large-worlds">针对大世界烘焙导航网格块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-baking-common-problems">烘焙导航网格时的常见问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationmeshes.html#navigation-mesh-script-templates">Navigation mesh script templates</a></li>
 </ul>
 </li>
@@ -1995,17 +2005,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html">使用 NavigationObstacle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">Obstacles and navigation mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">Obstacles and agent avoidance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">Static avoidance obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">Dynamic avoidance obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-navigation-mesh">障碍物与导航网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#obstacles-and-agent-avoidance">障碍物与代理避障</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles">静态避障障碍物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles">动态避障障碍物</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">Procedural obstacles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationobstacles.html#procedural-obstacles">程序式障碍物</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html">使用 NavigationLink</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">Navigation link script templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlinks.html#navigation-link-script-templates">导航链接脚本模板</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/navigation/navigation_using_navigationlayers.html">使用 NavigationLayer</a></li>
@@ -2033,14 +2043,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/networking/index.html">网络</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html">高级多人游戏</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层与底层 API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中级抽象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">托管注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">初始化网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#high-level-vs-low-level-api">高层API vs 底层 API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#mid-level-abstraction">中层抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#hosting-considerations">服务器托管的注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#initializing-the-network">网络初始化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#managing-connections">管理连接</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#remote-procedure-calls">远程过程调用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">通道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅的示例实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">信道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">大厅实现示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">为专用服务器导出</a></li>
 </ul>
 </li>
@@ -2541,6 +2551,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/index.html">GDExtension</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html">GDExtension 是什么？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_cpp_example.html">GDExtension C++ 示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a></li>
 </ul>
 </li>
 </ul>
@@ -2864,10 +2875,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">Using a SubViewport as a texture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html">使用 SubViewport 作为纹理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#introduction">前言</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-scene">设置场景</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#applying-the-texture">应用纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#making-the-planet-texture">制作行星纹理</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/using_viewport_as_texture.html#coloring-the-planet">着色这个星球</a></li>
@@ -2887,7 +2898,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/advanced_postprocessing.html#an-optimization">优化</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">制作树</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/shaders/making_trees.html">树木的制作</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#start-with-a-tree">从一棵树开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#paint-with-vertex-colors">用顶点颜色绘制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/making_trees.html#write-a-custom-shader-for-the-leaves">为叶子编写自定义着色器</a></li>
@@ -2989,44 +3000,44 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">通过 Godot 编辑器在设备上运行</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">更好的 XR 启动脚本</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">脚本的信号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">脚本的变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">更新后的 <cite>_ready</cite> 函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">会话开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">进入可见状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">进入聚焦状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">进入停止状态</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">姿势重新居中</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">Environment blend modes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">Configuring your background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">增强现实（ AR ）与透视</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#environment-blend-modes">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#configuring-your-background">配置背景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#openxr-specific">OpenXR 特定功能</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#putting-it-together">Putting it together</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">Shadow to opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html#shadow-to-opacity">阴影转不透明模式</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">Where to go from here</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR Toolkits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html">接下来该做什么</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_next_steps.html#xr-toolkits">XR 工具套件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">高级专题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR 设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#enabled">Enabled</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">Default Action Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">Form Factor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">View Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">Reference Space</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">Environment Blend Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">Foveation Level</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">Foveation Dynamic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">Submit Depth Buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">Startup Alert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#default-action-map">默认动作映射</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#form-factor">构成因素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#view-configuration">视图配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#reference-space">参照空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#environment-blend-mode">环境混合模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-level">注视点级别</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#foveation-dynamic">动态注视点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#submit-depth-buffer">提交深度缓冲区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#startup-alert">启动警报</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">拓展选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">XR 动作映射</a><ul>
@@ -3053,17 +3064,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#introduction">前言</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">设置 SubViewport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR 手势跟踪</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#tracking-through-interaction-profiles">Tracking through interaction profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-extension">The hand tracking extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#body-tracking">Body tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#some-final-words">最后的话</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#introduction">前言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
 </ul>
 </li>
 </ul>
@@ -3090,18 +3106,21 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">贡献</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../contributing/ways_to_contribute.html">贡献方式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-code">贡献代码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-and-reporting-issues">测试和报告问题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#testing-development-versions">测试开发版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../contributing/ways_to_contribute.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-to-the-documentation">贡献文档</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contributing/ways_to_contribute.html#contributing-translations">贡献翻译</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/how_to_contribute.html">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#fundraising">Fundraising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#technical-contributions">Technical contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/how_to_contribute.html#community-support">Community support</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/workflow/index.html">贡献工作流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html">贡献代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-and-reporting-issues">测试和报告问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#testing-development-versions">测试开发版本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/first_steps.html#filing-an-issue-on-github">在 GitHub 上提交问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-to-the-documentation">贡献文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/first_steps.html#contributing-translations">贡献翻译</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html">Regression 的二分查找</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#what-is-bisecting">什么是两分法？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/workflow/bisecting_regressions.html#using-official-builds-to-speed-up-bisecting">使用官方版本加快平分</a></li>
@@ -3196,7 +3215,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#java">Java</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#python">Python</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">Using ruff locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#using-ruff-locally">本地使用 ruff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../contributing/development/code_style_guidelines.html#id3">预提交钩子</a></li>
 </ul>
 </li>
@@ -3393,7 +3412,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id3">方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id4">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id5">注解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_%40gdscript.html#id6">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_%40globalscope.html">&#64;GlobalScope</a><ul>
@@ -3483,7 +3502,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id10">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_animationplayer.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_animationtree.html">AnimationTree</a><ul>
@@ -3516,7 +3535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id5">信号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id6">枚举</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id7">属性说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id12">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_area3d.html#id8">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4712,8 +4731,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallax2d.html">Parallax2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id1">描述</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id3">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_parallax2d.html#id4">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_parallaxbackground.html">ParallaxBackground</a><ul>
@@ -6389,7 +6409,8 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id3">属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">属性说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gltfaccessor.html#id5">属性说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_gltfanimation.html">GLTFAnimation</a><ul>
@@ -8268,9 +8289,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html">AudioEffectSpectrumAnalyzerInstance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">枚举</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id1">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id2">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id3">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id4">枚举</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audioeffectspectrumanalyzerinstance.html#id5">方法说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiosample.html">AudioSample</a><ul>
@@ -10452,21 +10475,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_aabb.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_array.html">Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_array.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id8">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_array.html#id9">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id6">方法说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_basis.html">Basis</a><ul>
@@ -10475,30 +10498,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_basis.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_basis.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_bool.html">bool</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bool.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_bool.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_callable.html">Callable</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callable.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_callable.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_color.html">Color</a><ul>
@@ -10507,12 +10530,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_color.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_color.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_dictionary.html">Dictionary</a><ul>
@@ -10520,27 +10543,27 @@
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_dictionary.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_float.html">float</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id3">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_float.html#id5">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_float.html#id6">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_int.html">int</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id2">构造函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id3">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_int.html#id4">构造函数说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_int.html#id5">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_nodepath.html">NodePath</a><ul>
@@ -10548,10 +10571,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_nodepath.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_object.html">Object</a><ul>
@@ -10568,60 +10591,60 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedbytearray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedcolorarray.html">PackedColorArray</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedcolorarray.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat32array.html">PackedFloat32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedfloat64array.html">PackedFloat64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedfloat64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint32array.html">PackedInt32Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint32array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedint64array.html">PackedInt64Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedint64array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedstringarray.html">PackedStringArray</a><ul>
@@ -10629,10 +10652,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedstringarray.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector2array.html">PackedVector2Array</a><ul>
@@ -10640,30 +10663,30 @@
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector2array.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector3array.html">PackedVector3Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector3array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_packedvector4array.html">PackedVector4Array</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_packedvector4array.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_plane.html">Plane</a><ul>
@@ -10672,12 +10695,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_plane.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_plane.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_projection.html">Projection</a><ul>
@@ -10685,12 +10708,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_projection.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_projection.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_quaternion.html">Quaternion</a><ul>
@@ -10699,12 +10722,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_quaternion.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2.html">Rect2</a><ul>
@@ -10713,11 +10736,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rect2i.html">Rect2i</a><ul>
@@ -10726,21 +10749,21 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rect2i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rid.html">RID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rid.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rid.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_signal.html">Signal</a><ul>
@@ -10748,10 +10771,10 @@
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_signal.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_signal.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_string.html">String</a><ul>
@@ -10759,20 +10782,20 @@
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id2">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id6">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_string.html#id7">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_string.html#id8">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_stringname.html">StringName</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id1">描述</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id2">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id3">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id4">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id5">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id6">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_stringname.html#id7">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform2d.html">Transform2D</a><ul>
@@ -10781,12 +10804,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform2d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_transform3d.html">Transform3D</a><ul>
@@ -10795,12 +10818,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_transform3d.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2.html">Vector2</a><ul>
@@ -10809,12 +10832,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector2i.html">Vector2i</a><ul>
@@ -10823,12 +10846,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector2i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3.html">Vector3</a><ul>
@@ -10837,12 +10860,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector3i.html">Vector3i</a><ul>
@@ -10851,12 +10874,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id3">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id4">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id5">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id6">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id7">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id8">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id9">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id10">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector3i.html#id11">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4.html">Vector4</a><ul>
@@ -10864,12 +10887,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4.html#id10">运算符说明</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_vector4i.html">Vector4i</a><ul>
@@ -10877,12 +10900,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id2">属性</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id3">构造函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id4">方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id5">运算符</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id6">常量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id7">属性说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id8">构造函数说明</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id9">方法说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">操作符说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_vector4i.html#id10">运算符说明</a></li>
 </ul>
 </li>
 </ul>
@@ -11437,13 +11460,13 @@
 <table class="colwidths-auto docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-basematerial3d-method-get-feature"><span class="std std-ref">get_feature</span></a>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-basematerial3d-method-get-feature"><span class="std std-ref">get_feature</span></a>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a></p></td>
-<td><p><a class="reference internal" href="#class-basematerial3d-method-get-flag"><span class="std std-ref">get_flag</span></a>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-basematerial3d-method-get-flag"><span class="std std-ref">get_flag</span></a>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a></p></td>
-<td><p><a class="reference internal" href="#class-basematerial3d-method-get-texture"><span class="std std-ref">get_texture</span></a>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
+<td><p><a class="reference internal" href="#class-basematerial3d-method-get-texture"><span class="std std-ref">get_texture</span></a>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></td>
 </tr>
 <tr class="row-even"><td><p><abbr title="无返回值。">void</abbr></p></td>
 <td><p><a class="reference internal" href="#class-basematerial3d-method-set-feature"><span class="std std-ref">set_feature</span></a>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></td>
@@ -11584,7 +11607,7 @@
 <p class="classref-enumeration-constant" id="class-basematerial3d-constant-blend-mode-mul"><a class="reference internal" href="#enum-basematerial3d-blendmode"><span class="std std-ref">BlendMode</span></a> <strong>BLEND_MODE_MUL</strong> = <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p>对象的颜色与背景相乘。</p>
 <p class="classref-enumeration-constant" id="class-basematerial3d-constant-blend-mode-premult-alpha"><a class="reference internal" href="#enum-basematerial3d-blendmode"><span class="std std-ref">BlendMode</span></a> <strong>BLEND_MODE_PREMULT_ALPHA</strong> = <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
-<p>The color of the object is added to the background and the alpha channel is used to mask out the background. This is effectively a hybrid of the blend mix and add modes, useful for effects like fire where you want the flame to add but the smoke to mix. By default, this works with unshaded materials using premultiplied textures. For shaded materials, use the <code class="docutils literal notranslate"><span class="pre">PREMUL_ALPHA_FACTOR</span></code> built-in so that lighting can be modulated as well.</p>
+<p>对象的颜色被添加到背景中，而 alpha 通道用于遮盖背景。这实际上是混合模式和添加模式的混合，对于类似希望添加火焰但混合烟雾的火焰效果很有用。默认情况下，这适用于使用预乘纹理的未着色材质。对于着色材质，请使用内置的 <code class="docutils literal notranslate"><span class="pre">PREMUL_ALPHA_FACTOR</span></code>，以便也可以调节照明。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-enumeration" id="enum-basematerial3d-alphaantialiasing">enum <strong>AlphaAntiAliasing</strong>: <a class="reference internal" href="#enum-basematerial3d-alphaantialiasing"><span class="std std-ref">🔗</span></a></p>
 <p class="classref-enumeration-constant" id="class-basematerial3d-constant-alpha-antialiasing-off"><a class="reference internal" href="#enum-basematerial3d-alphaantialiasing"><span class="std std-ref">AlphaAntiAliasing</span></a> <strong>ALPHA_ANTIALIASING_OFF</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
@@ -11731,7 +11754,7 @@
 <p class="classref-property" id="class-basematerial3d-property-albedo-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>albedo_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-albedo-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>要乘以 <a class="reference internal" href="#class-basematerial3d-property-albedo-color"><span class="std std-ref">albedo_color</span></a> 的纹理。用于对象的基本纹理。</p>
 <p>如果纹理意外地显得太暗或太亮，请检查 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-force-srgb"><span class="std std-ref">albedo_texture_force_srgb</span></a>。</p>
@@ -11739,7 +11762,7 @@
 <p class="classref-property" id="class-basematerial3d-property-albedo-texture-force-srgb"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>albedo_texture_force_srgb</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-force-srgb"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则强制将 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture"><span class="std std-ref">albedo_texture</span></a> 从 sRGB 颜色空间转换为线性颜色空间。另见 <a class="reference internal" href="#class-basematerial3d-property-vertex-color-is-srgb"><span class="std std-ref">vertex_color_is_srgb</span></a>。</p>
 <p>该属性应该只在需要时启用（通常在使用 <a class="reference internal" href="class_viewporttexture.html#class-viewporttexture"><span class="std std-ref">ViewportTexture</span></a> 作为 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture"><span class="std std-ref">albedo_texture</span></a> 时）。如果 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-force-srgb"><span class="std std-ref">albedo_texture_force_srgb</span></a> 在不应该的情况下为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则纹理会显得太暗。如果 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-force-srgb"><span class="std std-ref">albedo_texture_force_srgb</span></a> 在不应该的情况下为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，则纹理会显得太亮。</p>
@@ -11747,7 +11770,7 @@
 <p class="classref-property" id="class-basematerial3d-property-albedo-texture-msdf"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>albedo_texture_msdf</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-msdf"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>启用多通道有符号距离场渲染着色器。使用 <a class="reference internal" href="#class-basematerial3d-property-msdf-pixel-range"><span class="std std-ref">msdf_pixel_range</span></a> 和 <a class="reference internal" href="#class-basematerial3d-property-msdf-outline-size"><span class="std std-ref">msdf_outline_size</span></a> 配置 MSDF 参数。</p>
 <hr class="classref-item-separator docutils" />
@@ -11789,7 +11812,7 @@
 <p class="classref-property" id="class-basematerial3d-property-anisotropy-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>anisotropy_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-anisotropy-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用各向异性。各向异性会改变镜面反射斑点的形状并将其与切线空间对齐。可用于拉丝铝材和毛发反射。</p>
 <p><strong>注意：</strong>各向异性需要网格切线才能正常工作。如果网格中不包含切线，则各向异性效果会显得破碎。</p>
@@ -11798,7 +11821,7 @@
 <p class="classref-property" id="class-basematerial3d-property-anisotropy-flowmap"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>anisotropy_flowmap</strong> <a class="reference internal" href="#class-basematerial3d-property-anisotropy-flowmap"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于对切线图进行偏移的纹理，用于各向异性的计算，（如果存在 Alpha 通道）还可以控制各向异性的效果。Flowmap 方向图纹理应该是一张派生图，红色通道表示 X 轴上的变形、绿色通道表示 Y 轴上的变形。小于 0.5 的值会朝负方向进行变形，而大于 0.5 的值则朝正方向变形。</p>
 <p>纹理的 Alpha 通道如果存在，则会用于与 <a class="reference internal" href="#class-basematerial3d-property-anisotropy"><span class="std std-ref">anisotropy</span></a> 效果的强度相乘。完全不透明的像素会保持原始强度，而完全透明的像素则会完全禁用各向异性效果。方向图纹理的蓝色通道会被忽略。</p>
@@ -11806,7 +11829,7 @@
 <p class="classref-property" id="class-basematerial3d-property-ao-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>ao_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-ao-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，启用环境遮挡。环境遮挡根据 <a class="reference internal" href="#class-basematerial3d-property-ao-texture"><span class="std std-ref">ao_texture</span></a> 使区域变暗。</p>
 <hr class="classref-item-separator docutils" />
@@ -11820,14 +11843,14 @@
 <p class="classref-property" id="class-basematerial3d-property-ao-on-uv2"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>ao_on_uv2</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-ao-on-uv2"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，请使用 <code class="docutils literal notranslate"><span class="pre">UV2</span></code> 坐标从 <a class="reference internal" href="#class-basematerial3d-property-ao-texture"><span class="std std-ref">ao_texture</span></a> 中查找。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-ao-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>ao_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-ao-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>定义物体上给定点的环境遮挡量的纹理。</p>
 <hr class="classref-item-separator docutils" />
@@ -11848,21 +11871,21 @@
 <p class="classref-property" id="class-basematerial3d-property-backlight-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>backlight_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-backlight-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用背光效果。另请参阅 <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-transmittance-enabled"><span class="std std-ref">subsurf_scatter_transmittance_enabled</span></a>。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-backlight-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>backlight_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-backlight-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于控制每像素背光效果的纹理。与 <a class="reference internal" href="#class-basematerial3d-property-backlight"><span class="std std-ref">backlight</span></a> 相加。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-billboard-keep-scale"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>billboard_keep_scale</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-billboard-keep-scale"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则着色器将保持为网格设置的缩放。否则，在做公告板时会丢失缩放。仅在 <a class="reference internal" href="#class-basematerial3d-property-billboard-mode"><span class="std std-ref">billboard_mode</span></a> 不为 <a class="reference internal" href="#class-basematerial3d-constant-billboard-disabled"><span class="std std-ref">BILLBOARD_DISABLED</span></a> 时适用。</p>
 <hr class="classref-item-separator docutils" />
@@ -11893,7 +11916,7 @@
 <p class="classref-property" id="class-basematerial3d-property-clearcoat-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>clearcoat_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-clearcoat-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用清漆渲染。将辅助透明通道添加到照明计算中，从而产生一个添加的镜面反射斑点。这使得材质看起来好像它们表面上有一层透明层，该透明层可以是有光泽的也可以是粗糙的。</p>
 <p><strong>注意：</strong>如果材质的 <a class="reference internal" href="#class-basematerial3d-property-shading-mode"><span class="std std-ref">shading_mode</span></a> 为 <a class="reference internal" href="#class-basematerial3d-constant-shading-mode-unshaded"><span class="std std-ref">SHADING_MODE_UNSHADED</span></a>，则清漆渲染不可见。</p>
@@ -11908,7 +11931,7 @@
 <p class="classref-property" id="class-basematerial3d-property-clearcoat-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>clearcoat_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-clearcoat-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>定义清漆效果的强度和清漆的光泽度的纹理。强度在红色通道中指定，光泽度在绿色通道中指定。</p>
 <hr class="classref-item-separator docutils" />
@@ -11929,7 +11952,7 @@
 <p class="classref-property" id="class-basematerial3d-property-detail-albedo"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>detail_albedo</strong> <a class="reference internal" href="#class-basematerial3d-property-detail-albedo"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于指定细节覆盖层颜色的纹理。<a class="reference internal" href="#class-basematerial3d-property-detail-albedo"><span class="std std-ref">detail_albedo</span></a> 的 alpha 通道会被用作遮罩，即使该材质不透明。要将专用纹理用作遮罩，请参阅 <a class="reference internal" href="#class-basematerial3d-property-detail-mask"><span class="std std-ref">detail_mask</span></a>。</p>
 <p><strong>注意：</strong><a class="reference internal" href="#class-basematerial3d-property-detail-albedo"><span class="std std-ref">detail_albedo</span></a> <em>不会</em>被 <a class="reference internal" href="#class-basematerial3d-property-albedo-color"><span class="std std-ref">albedo_color</span></a> 调制。</p>
@@ -11944,21 +11967,21 @@
 <p class="classref-property" id="class-basematerial3d-property-detail-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>detail_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-detail-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，启用细节叠加。细节是基于 <a class="reference internal" href="#class-basematerial3d-property-detail-mask"><span class="std std-ref">detail_mask</span></a> 和 <a class="reference internal" href="#class-basematerial3d-property-detail-albedo"><span class="std std-ref">detail_albedo</span></a> 的 Alpha 通道，在对象表面上混合的第二个纹理。这可用于为对象添加变化，或混合两种不同的反照率/法线纹理。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-detail-mask"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>detail_mask</strong> <a class="reference internal" href="#class-basematerial3d-property-detail-mask"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>纹理用于指定细节纹理如何与基础纹理混合。<a class="reference internal" href="#class-basematerial3d-property-detail-mask"><span class="std std-ref">detail_mask</span></a> 可以与 <a class="reference internal" href="#class-basematerial3d-property-detail-albedo"><span class="std std-ref">detail_albedo</span></a> 的 Alpha 通道（如果有）一起使用。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-detail-normal"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>detail_normal</strong> <a class="reference internal" href="#class-basematerial3d-property-detail-normal"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于指定细节覆盖层逐像素法线的纹理。<a class="reference internal" href="#class-basematerial3d-property-detail-normal"><span class="std std-ref">detail_normal</span></a> 纹理只使用红色和绿色通道；会忽略蓝色和 alpha 通道。从 <a class="reference internal" href="#class-basematerial3d-property-detail-normal"><span class="std std-ref">detail_normal</span></a> 读取的法线是围绕 <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> 所提供的表面法线的进行朝向的。</p>
 <p><strong>注意：</strong>Godot 期望法线贴图使用 X+、Y+、Z+ 坐标系。比较流行的引擎所期望的法线贴图坐标系见<a class="reference external" href="http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates">这个页面</a>。</p>
@@ -11980,21 +12003,21 @@
 <p class="classref-property" id="class-basematerial3d-property-disable-ambient-light"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>disable_ambient_light</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-disable-ambient-light"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则对象不接收环境光。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-disable-fog"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>disable_fog</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-disable-fog"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则对象不会受到雾的影响（包括体积雾和深度雾）。可用于不着色材质和透明材质（例如例子），不开启时即便完全透明也会受到影响。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-disable-receive-shadows"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>disable_receive_shadows</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-disable-receive-shadows"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则对象不会收到投射到其上的阴影。</p>
 <hr class="classref-item-separator docutils" />
@@ -12031,7 +12054,7 @@
 <p class="classref-property" id="class-basematerial3d-property-emission-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>emission_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-emission-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则实体会发光。发光会使物体看起来更亮。如果使用 <a class="reference internal" href="class_voxelgi.html#class-voxelgi"><span class="std std-ref">VoxelGI</span></a>、SDFGI 或 <a class="reference internal" href="class_lightmapgi.html#class-lightmapgi"><span class="std std-ref">LightmapGI</span></a>，并且该对象用于烘焙光照，则该对象还可以将光投射到其他对象上。</p>
 <hr class="classref-item-separator docutils" />
@@ -12052,7 +12075,7 @@
 <p class="classref-property" id="class-basematerial3d-property-emission-on-uv2"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>emission_on_uv2</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-emission-on-uv2"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">UV2</span></code> 从 <a class="reference internal" href="#class-basematerial3d-property-emission-texture"><span class="std std-ref">emission_texture</span></a> 中读取。</p>
 <hr class="classref-item-separator docutils" />
@@ -12066,14 +12089,14 @@
 <p class="classref-property" id="class-basematerial3d-property-emission-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>emission_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-emission-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>纹理，指定某点的表面发光的程度。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-fixed-size"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>fixed_size</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-fixed-size"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则无论距离远近，对象都以相同的大小渲染。</p>
 <hr class="classref-item-separator docutils" />
@@ -12102,7 +12125,7 @@
 <p class="classref-property" id="class-basematerial3d-property-heightmap-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>heightmap_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-heightmap-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用高度映射（也称为“视差映射”或“深度映射”）。另见 <a class="reference internal" href="#class-basematerial3d-property-normal-enabled"><span class="std std-ref">normal_enabled</span></a>。高度映射是 GPU 上的一项要求很高的功能，因此它只能用于具有显著视觉差异的材质。</p>
 <p><strong>注意：</strong>如果在同一材质上使用三平面贴图，则不支持高度图。如果 <a class="reference internal" href="#class-basematerial3d-property-uv1-triplanar"><span class="std std-ref">uv1_triplanar</span></a> 被启用，则 <a class="reference internal" href="#class-basematerial3d-property-heightmap-enabled"><span class="std std-ref">heightmap_enabled</span></a> 的值将被忽略。</p>
@@ -12124,7 +12147,7 @@
 <p class="classref-property" id="class-basematerial3d-property-heightmap-flip-texture"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>heightmap_flip_texture</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-heightmap-flip-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则将高度图纹理解释为深度图，与较暗的值相比，较亮的值在高度上显得“更低”。</p>
 <p>可以启用该功能以与为 Godot 3.x 编写的某些材质兼容。如果在 Godot 3.x 中使用反转导入选项来反转深度图，则不需要这样做，在这种情况下，<a class="reference internal" href="#class-basematerial3d-property-heightmap-flip-texture"><span class="std std-ref">heightmap_flip_texture</span></a> 应该保持为 <code class="docutils literal notranslate"><span class="pre">false</span></code>。</p>
@@ -12156,7 +12179,7 @@
 <p class="classref-property" id="class-basematerial3d-property-heightmap-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>heightmap_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-heightmap-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用作高度图的纹理。另见 <a class="reference internal" href="#class-basematerial3d-property-heightmap-enabled"><span class="std std-ref">heightmap_enabled</span></a>。</p>
 <p>为获得最佳效果，应将纹理归一化（减少 <a class="reference internal" href="#class-basematerial3d-property-heightmap-scale"><span class="std std-ref">heightmap_scale</span></a> 以进行补偿）。在 <a class="reference external" href="https://gimp.org">GIMP</a> 中，这可以使用<strong>颜色（Colors） &gt; 自动（Auto） &gt; 均衡（Equalize）</strong>来完成。如果纹理只使用其可用范围的一小部分，则视差效果可能看起来很奇怪，尤其是当相机移动时。</p>
@@ -12180,7 +12203,7 @@
 <p class="classref-property" id="class-basematerial3d-property-metallic-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>metallic_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-metallic-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于指定对象的金属质感。这个值会与 <a class="reference internal" href="#class-basematerial3d-property-metallic"><span class="std std-ref">metallic</span></a> 相乘。</p>
 <hr class="classref-item-separator docutils" />
@@ -12208,14 +12231,14 @@
 <p class="classref-property" id="class-basematerial3d-property-no-depth-test"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>no_depth_test</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-no-depth-test"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，深度测试被禁用，对象将按渲染顺序绘制。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-normal-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>normal_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-normal-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用法线映射。略微影响性能，尤其在移动 GPU 上。</p>
 <hr class="classref-item-separator docutils" />
@@ -12229,7 +12252,7 @@
 <p class="classref-property" id="class-basematerial3d-property-normal-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>normal_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-normal-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于指定给定像素的法线的纹理。<a class="reference internal" href="#class-basematerial3d-property-normal-texture"><span class="std std-ref">normal_texture</span></a> 只使用红色和绿色通道；会忽略蓝色和 alpha 通道。从 <a class="reference internal" href="#class-basematerial3d-property-normal-texture"><span class="std std-ref">normal_texture</span></a> 读取的法线是围绕 <a class="reference internal" href="class_mesh.html#class-mesh"><span class="std std-ref">Mesh</span></a> 所提供的表面法线的进行朝向的。</p>
 <p><strong>注意：</strong>该网格必须在其顶点数据中同时定义法线和切线。否则法线贴图将无法正确渲染，只会使整个表面变暗。如果使用 <a class="reference internal" href="class_surfacetool.html#class-surfacetool"><span class="std std-ref">SurfaceTool</span></a> 创建几何体，可以使用 <a class="reference internal" href="class_surfacetool.html#class-surfacetool-method-generate-normals"><span class="std std-ref">SurfaceTool.generate_normals</span></a> 和 <a class="reference internal" href="class_surfacetool.html#class-surfacetool-method-generate-tangents"><span class="std std-ref">SurfaceTool.generate_tangents</span></a> 分别自动生成法线和切线。</p>
@@ -12239,7 +12262,7 @@
 <p class="classref-property" id="class-basematerial3d-property-orm-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>orm_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-orm-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>要使用的遮挡/粗糙度/金属纹理。这是对 <a class="reference internal" href="class_ormmaterial3d.html#class-ormmaterial3d"><span class="std std-ref">ORMMaterial3D</span></a> 中 <a class="reference internal" href="#class-basematerial3d-property-ao-texture"><span class="std std-ref">ao_texture</span></a>、<a class="reference internal" href="#class-basematerial3d-property-roughness-texture"><span class="std std-ref">roughness_texture</span></a> 和 <a class="reference internal" href="#class-basematerial3d-property-metallic-texture"><span class="std std-ref">metallic_texture</span></a> 的更有效替代。环境遮挡被存储在红色通道中。粗糙度贴图被存储在绿色通道中。金属度贴图被存储在蓝色通道中。Alpha 通道将被忽略。</p>
 <hr class="classref-item-separator docutils" />
@@ -12288,7 +12311,7 @@
 <p class="classref-property" id="class-basematerial3d-property-refraction-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>refraction_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-refraction-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用折射效果。根据来自对象后面的光线来扭曲透明度。</p>
 <hr class="classref-item-separator docutils" />
@@ -12302,7 +12325,7 @@
 <p class="classref-property" id="class-basematerial3d-property-refraction-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>refraction_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-refraction-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>控制每个像素折射强度的纹理。会与 <a class="reference internal" href="#class-basematerial3d-property-refraction-scale"><span class="std std-ref">refraction_scale</span></a> 相乘。</p>
 <hr class="classref-item-separator docutils" />
@@ -12323,7 +12346,7 @@
 <p class="classref-property" id="class-basematerial3d-property-rim-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>rim_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-rim-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用边缘效果。边缘照明会增加物体上掠射角度的亮度。</p>
 <p><strong>注意：</strong>如果材质的 <a class="reference internal" href="#class-basematerial3d-property-shading-mode"><span class="std std-ref">shading_mode</span></a> 为 <a class="reference internal" href="#class-basematerial3d-constant-shading-mode-unshaded"><span class="std std-ref">SHADING_MODE_UNSHADED</span></a>，则边缘照明不可见。</p>
@@ -12331,7 +12354,7 @@
 <p class="classref-property" id="class-basematerial3d-property-rim-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>rim_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-rim-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>纹理用于设置每个像素的边缘光照效果的强度。会与 <a class="reference internal" href="#class-basematerial3d-property-rim"><span class="std std-ref">rim</span></a> 相乘。</p>
 <hr class="classref-item-separator docutils" />
@@ -12352,7 +12375,7 @@
 <p class="classref-property" id="class-basematerial3d-property-roughness-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>roughness_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-roughness-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于控制每个像素粗糙度的纹理。会与 <a class="reference internal" href="#class-basematerial3d-property-roughness"><span class="std std-ref">roughness</span></a> 相乘。</p>
 <hr class="classref-item-separator docutils" />
@@ -12374,7 +12397,7 @@
 <p class="classref-property" id="class-basematerial3d-property-shadow-to-opacity"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>shadow_to_opacity</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-shadow-to-opacity"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，启用“阴影到不透明度”的渲染模式，在该模式下，光照会修改 Alpha，使阴影区域不透明，非阴影区域透明。对于在 AR 中把阴影叠加到相机画面上很有用。</p>
 <hr class="classref-item-separator docutils" />
@@ -12389,14 +12412,14 @@
 <p class="classref-property" id="class-basematerial3d-property-subsurf-scatter-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>subsurf_scatter_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用次表面散射。模拟光线穿透物体表面，被散射，然后出现。次表面散射质量由 <a class="reference internal" href="class_projectsettings.html#class-projectsettings-property-rendering-environment-subsurface-scattering-subsurface-scattering-quality"><span class="std std-ref">ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality</span></a> 控制。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-subsurf-scatter-skin-mode"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>subsurf_scatter_skin_mode</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-skin-mode"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则次表面散射将使用针对人类皮肤的颜色和密度进行优化的特殊模式，例如提升次表面散射中红色通道的强度。</p>
 <hr class="classref-item-separator docutils" />
@@ -12410,7 +12433,7 @@
 <p class="classref-property" id="class-basematerial3d-property-subsurf-scatter-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>subsurf_scatter_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于控制次表面散射强度的纹理。存储在红色纹理通道中。会与 <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-strength"><span class="std std-ref">subsurf_scatter_strength</span></a> 相乘。</p>
 <hr class="classref-item-separator docutils" />
@@ -12438,14 +12461,14 @@
 <p class="classref-property" id="class-basematerial3d-property-subsurf-scatter-transmittance-enabled"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>subsurf_scatter_transmittance_enabled</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-transmittance-enabled"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用次表面散射透射率。仅当 <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-enabled"><span class="std std-ref">subsurf_scatter_enabled</span></a> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时有效。另请参见 <a class="reference internal" href="#class-basematerial3d-property-backlight-enabled"><span class="std std-ref">backlight_enabled</span></a>。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-subsurf-scatter-transmittance-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>subsurf_scatter_transmittance_texture</strong> <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-transmittance-texture"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>, texture: <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>用于乘以次表面散射透射率强度的纹理。另请参见 <a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-texture"><span class="std std-ref">subsurf_scatter_texture</span></a>。<a class="reference internal" href="#class-basematerial3d-property-subsurf-scatter-skin-mode"><span class="std std-ref">subsurf_scatter_skin_mode</span></a> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时忽略。</p>
 <hr class="classref-item-separator docutils" />
@@ -12460,7 +12483,7 @@
 <p class="classref-property" id="class-basematerial3d-property-texture-repeat"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>texture_repeat</strong> = <code class="docutils literal notranslate"><span class="pre">true</span></code> <a class="reference internal" href="#class-basematerial3d-property-texture-repeat"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>纹理的重复标志。可选项见 <a class="reference internal" href="#enum-basematerial3d-texturefilter"><span class="std std-ref">TextureFilter</span></a>。</p>
 <hr class="classref-item-separator docutils" />
@@ -12474,14 +12497,14 @@
 <p class="classref-property" id="class-basematerial3d-property-use-particle-trails"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>use_particle_trails</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-use-particle-trails"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则启用 <a class="reference internal" href="class_gpuparticles3d.html#class-gpuparticles3d"><span class="std std-ref">GPUParticles3D</span></a> 尾迹所需的部分着色器以发挥作用。这也需要使用具有适当蒙皮的网格，例如 <a class="reference internal" href="class_ribbontrailmesh.html#class-ribbontrailmesh"><span class="std std-ref">RibbonTrailMesh</span></a> 或 <a class="reference internal" href="class_tubetrailmesh.html#class-tubetrailmesh"><span class="std std-ref">TubeTrailMesh</span></a>。在 <a class="reference internal" href="class_gpuparticles3d.html#class-gpuparticles3d"><span class="std std-ref">GPUParticles3D</span></a> 网格中使用的材质之外启用该功能将破坏材质渲染。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-use-point-size"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>use_point_size</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-use-point-size"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，可以改变渲染点大小。</p>
 <p><strong>注意：</strong>这仅对几何形状基于点而非基于三角形的对象有效。另见 <a class="reference internal" href="#class-basematerial3d-property-point-size"><span class="std std-ref">point_size</span></a>。</p>
@@ -12503,7 +12526,7 @@
 <p class="classref-property" id="class-basematerial3d-property-uv1-triplanar"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>uv1_triplanar</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-uv1-triplanar"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，纹理将不使用 <code class="docutils literal notranslate"><span class="pre">UV</span></code>，而是使用三平面纹理查找来确定如何应用纹理。三平面纹理使用对象表面的方向来混合纹理坐标之间。它从源纹理中读取3次，每个轴一次，然后根据像素与每个轴的紧密程度在结果之间进行混合。这通常用于自然特征，以获得真实的材质混合。由于三平面纹理处理每一个像素需要更多的纹理读取，所以它比普通的UV纹理处理要慢得多。此外，由于它是在三个轴之间混合纹理，所以当你试图实现清晰的纹理时，它是不合适的。</p>
 <hr class="classref-item-separator docutils" />
@@ -12518,7 +12541,7 @@
 <p class="classref-property" id="class-basematerial3d-property-uv1-world-triplanar"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>uv1_world_triplanar</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-uv1-world-triplanar"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则 <code class="docutils literal notranslate"><span class="pre">UV</span></code> 的三平面映射是在世界空间而不是对象局部空间中计算的。另见 <a class="reference internal" href="#class-basematerial3d-property-uv1-triplanar"><span class="std std-ref">uv1_triplanar</span></a>。</p>
 <hr class="classref-item-separator docutils" />
@@ -12539,7 +12562,7 @@
 <p class="classref-property" id="class-basematerial3d-property-uv2-triplanar"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>uv2_triplanar</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-uv2-triplanar"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，纹理将不使用 <code class="docutils literal notranslate"><span class="pre">UV</span></code>，而是使用三平面纹理查找来确定如何应用纹理。三平面纹理使用对象表面的方向来混合纹理坐标之间。它从源纹理中读取 3 次，每个轴一次，然后根据像素与每个轴的紧密程度在结果之间进行混合。这通常用于自然特征，以获得真实的材质混合。由于三平面纹理处理每一个像素需要更多的纹理读取，所以它比普通的 UV 纹理处理要慢得多。此外，由于它是在三个轴之间混合纹理，所以当你试图实现清晰的纹理时，它是不合适的。</p>
 <hr class="classref-item-separator docutils" />
@@ -12554,14 +12577,14 @@
 <p class="classref-property" id="class-basematerial3d-property-uv2-world-triplanar"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>uv2_world_triplanar</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-uv2-world-triplanar"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则 <code class="docutils literal notranslate"><span class="pre">UV2</span></code> 的三平面映射是在世界空间而不是对象局部空间中计算的。另见 <a class="reference internal" href="#class-basematerial3d-property-uv2-triplanar"><span class="std std-ref">uv2_triplanar</span></a>。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-property" id="class-basematerial3d-property-vertex-color-is-srgb"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>vertex_color_is_srgb</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-vertex-color-is-srgb"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则顶点颜色被认为使用 sRGB 颜色空间存储，并在渲染期间被转换为线性颜色空间。如果为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，则顶点颜色被认为使用线性颜色空间存储并按原样渲染。另见 <a class="reference internal" href="#class-basematerial3d-property-albedo-texture-force-srgb"><span class="std std-ref">albedo_texture_force_srgb</span></a>。</p>
 <p><strong>注意：</strong>仅在使用 Forward+ 和移动渲染方式时有效，不支持兼容模式。</p>
@@ -12569,20 +12592,20 @@
 <p class="classref-property" id="class-basematerial3d-property-vertex-color-use-as-albedo"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>vertex_color_use_as_albedo</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-basematerial3d-property-vertex-color-use-as-albedo"><span class="std std-ref">🔗</span></a></p>
 <ul class="classref-property-setget simple">
 <li><p><abbr title="无返回值。">void</abbr> <strong>set_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>)</p></li>
-<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
+<li><p><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr></p></li>
 </ul>
 <p>如果为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则使用顶点颜色作为反射率颜色。</p>
 </section>
 <hr class="classref-section-separator docutils" />
 <section class="classref-descriptions-group" id="id7">
 <h2>方法说明<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<p class="classref-method" id="class-basematerial3d-method-get-feature"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-feature"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-basematerial3d-method-get-feature"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-feature"><span class="std std-ref">🔗</span></a></p>
 <p>如果指定的 <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a> 被启用，返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-basematerial3d-method-get-flag"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-flag"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-basematerial3d-method-get-flag"><a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a> <strong>get_flag</strong>(flag: <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-flag"><span class="std std-ref">🔗</span></a></p>
 <p>如果指定的标志被启用，返回 <code class="docutils literal notranslate"><span class="pre">true</span></code>。选项见 <a class="reference internal" href="#enum-basematerial3d-flags"><span class="std std-ref">Flags</span></a> 枚举值。</p>
 <hr class="classref-item-separator docutils" />
-<p class="classref-method" id="class-basematerial3d-method-get-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-texture"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-method" id="class-basematerial3d-method-get-texture"><a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a> <strong>get_texture</strong>(param: <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a>) <abbr title="本方法无副作用，不会修改该实例的任何成员变量。">const</abbr> <a class="reference internal" href="#class-basematerial3d-method-get-texture"><span class="std std-ref">🔗</span></a></p>
 <p>返回与指定 <a class="reference internal" href="#enum-basematerial3d-textureparam"><span class="std std-ref">TextureParam</span></a> 关联的 <a class="reference internal" href="class_texture2d.html#class-texture2d"><span class="std std-ref">Texture2D</span></a>。</p>
 <hr class="classref-item-separator docutils" />
 <p class="classref-method" id="class-basematerial3d-method-set-feature"><abbr title="无返回值。">void</abbr> <strong>set_feature</strong>(feature: <a class="reference internal" href="#enum-basematerial3d-feature"><span class="std std-ref">Feature</span></a>, enable: <a class="reference internal" href="class_bool.html#class-bool"><span class="std std-ref">bool</span></a>) <a class="reference internal" href="#class-basematerial3d-method-set-feature"><span class="std std-ref">🔗</span></a></p>

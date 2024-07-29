@@ -1719,7 +1719,7 @@ Alpha、红、绿、蓝通道数据格式，Alpha 占 1 位、红占 5 位、绿
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_UFLOAT_BLOCK** = ``142``
 
-显存压缩的无符号红、绿、蓝通道数据格式，浮点数值原样存储。该格式的精度为红通道 8 位、绿通道 8 位。使用 BC6H 纹理压缩（也叫 BPTC HDR）。
+VRAM-compressed unsigned red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 10 and 13 bits for the red/green/blue channels. Using BC6H texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC6H_SFLOAT_BLOCK:
 
@@ -1727,7 +1727,7 @@ Alpha、红、绿、蓝通道数据格式，Alpha 占 1 位、红占 5 位、绿
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_SFLOAT_BLOCK** = ``143``
 
-显存压缩的带符号红、绿、蓝通道数据格式，浮点数值原样存储。该格式的精度为红、绿、蓝通道在 4 到 7 位之间，Alpha 通道在 0 到 8 位之间。使用 BC7 纹理压缩（也叫 BPTC HDR）。
+VRAM-compressed signed red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 10 and 13 bits for the red/green/blue channels. Using BC6H texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC7_UNORM_BLOCK:
 
@@ -1807,7 +1807,7 @@ Alpha、红、绿、蓝通道数据格式，Alpha 占 1 位、红占 5 位、绿
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11_SNORM_BLOCK** = ``153``
 
-11 位显存压缩的带符号红通道数据格式，使用归一化的值。取值均在 ``[0.0, 1.0]`` 的范围内。使用 ETC2 纹理压缩。
+11-bit VRAM-compressed signed red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11G11_UNORM_BLOCK:
 
@@ -1823,7 +1823,7 @@ Alpha、红、绿、蓝通道数据格式，Alpha 占 1 位、红占 5 位、绿
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11G11_SNORM_BLOCK** = ``155``
 
-11 位显存压缩的带符号红、绿通道数据格式，使用归一化的值。取值均在 ``[0.0, 1.0]`` 的范围内。使用 ETC2 纹理压缩。
+11-bit VRAM-compressed signed red/green channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_4x4_UNORM_BLOCK:
 
@@ -2961,7 +2961,7 @@ flags **StorageBufferUsage**: :ref:`🔗<enum_RenderingDevice_StorageBufferUsage
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3793,7 +3793,7 @@ flags **PipelineDynamicStateFlags**: :ref:`🔗<enum_RenderingDevice_PipelineDyn
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_LINE_WIDTH** = ``1``
 
-Allows dynamically changing the width of rendering lines.
+允许动态改变渲染线的宽度。
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_DEPTH_BIAS:
 
@@ -3801,7 +3801,7 @@ Allows dynamically changing the width of rendering lines.
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_DEPTH_BIAS** = ``2``
 
-Allows dynamically changing the depth bias.
+允许动态改变深度偏差。
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_BLEND_CONSTANTS:
 
@@ -3811,7 +3811,7 @@ Allows dynamically changing the depth bias.
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3823,7 +3823,7 @@ Allows dynamically changing the depth bias.
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3835,7 +3835,7 @@ Allows dynamically changing the depth bias.
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3847,7 +3847,7 @@ Allows dynamically changing the depth bias.
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -3859,7 +3859,7 @@ Allows dynamically changing the depth bias.
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -4727,7 +4727,7 @@ enum **MemoryType**: :ref:`🔗<enum_RenderingDevice_MemoryType>`
 
 |void| **compute_list_dispatch_indirect**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_dispatch_indirect>`
 
-Submits the compute list for processing on the GPU with the given group counts stored in the ``buffer`` at ``offset``. Buffer must have been created with :ref:`STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT<class_RenderingDevice_constant_STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT>` flag.
+提交计算列表以供 GPU 处理，其中给定的组计数存储在 ``buffer`` 中的 ``offset`` 处。必须使用 :ref:`STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT<class_RenderingDevice_constant_STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT>` 标志创建缓冲区。
 
 .. rst-class:: classref-item-separator
 
@@ -5901,10 +5901,10 @@ RID 使用结束后，应该使用 RenderingServer 的 :ref:`free_rid<class_Rend
 新建顶点描述为 ``vertex_descriptions`` 的顶点格式。返回与新建顶点格式对应的唯一格式 ID。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

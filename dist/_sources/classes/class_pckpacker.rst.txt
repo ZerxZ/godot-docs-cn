@@ -19,7 +19,7 @@ PCKPacker
 描述
 ----
 
-The **PCKPacker** is used to create packages that can be loaded into a running project using :ref:`ProjectSettings.load_resource_pack<class_ProjectSettings_method_load_resource_pack>`.
+**PCKPacker** 可以创建打包文件，项目运行时可以使用 :ref:`ProjectSettings.load_resource_pack<class_ProjectSettings_method_load_resource_pack>` 来加载打包文件。
 
 
 .. tabs::
@@ -40,7 +40,7 @@ The **PCKPacker** is used to create packages that can be loaded into a running p
 
 
 
-The above **PCKPacker** creates package ``test.pck``, then adds a file named ``text.txt`` at the root of the package.
+上面的例子中，\ **PCKPacker** 创建了打包文件 ``test.pck``\ ，但后将名为 ``text.txt`` 的文件添加到了包的根目录。
 
 .. rst-class:: classref-reftable-group
 
@@ -100,10 +100,10 @@ The above **PCKPacker** creates package ``test.pck``, then adds a file named ``t
 创建一个名为 ``pck_name`` 的新 PCK 文件。不会自动添加 ``.pck`` 文件扩展名，因此它应该是 ``pck_name`` 的一部分（即使它不是必需的）。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

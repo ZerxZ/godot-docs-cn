@@ -9,9 +9,6 @@
             <image alt="粒子碰撞" candidates="{'*': 'tutorials/3d/particles/img/particle_collision.webp'}" uri="tutorials/3d/particles/img/particle_collision.webp"></image>
         </figure>
         <paragraph>由于 GPU 粒子完全在 GPU 中处理，所以它们无法访问游戏中的物理世界。如果你需要粒子与环境碰撞，你必须设置粒子碰撞节点。共有四种： <reference internal="True" refuri="../../../classes/class_gpuparticlescollisionbox3d#class-gpuparticlescollisionbox3d"><inline classes="std std-ref">GPUParticlesCollisionBox3D</inline></reference> ， <reference internal="True" refuri="../../../classes/class_gpuparticlescollisionsphere3d#class-gpuparticlescollisionsphere3d"><inline classes="std std-ref">GPUParticlesCollisionSphere3D</inline></reference> ， <reference internal="True" refuri="../../../classes/class_gpuparticlescollisionsdf3d#class-gpuparticlescollisionsdf3d"><inline classes="std std-ref">GPUParticlesCollisionSDF3D</inline></reference> 和 <reference internal="True" refuri="../../../classes/class_gpuparticlescollisionheightfield3d#class-gpuparticlescollisionheightfield3d"><inline classes="std std-ref">GPUParticlesCollisionHeightField3D</inline></reference>。</paragraph>
-        <note>
-            <paragraph>GPU 粒子碰撞还没有在 2D 粒子系统中实现。</paragraph>
-        </note>
         <section ids="common-properties" names="common\ properties">
             <title>Common properties</title>
             <figure align="right" ids="id1">
@@ -92,6 +89,28 @@
             </figure>
             <paragraph>厚度``Thickness``属性赋予距离场（通常内部是空心的）一定的厚度，以防止粒子高速穿透。如果发现有些粒子没有与场景中的几何体发生碰撞，而是直接穿透了它们，请尝试将此属性设置为更高的值。</paragraph>
             <paragraph>烘焙遮罩``Bake Mask``属性控制烘焙带符号距离场时将考虑哪些网格。只有在烘焙遮罩的活动图层上渲染的网格才会参与粒子碰撞。</paragraph>
+        </section>
+        <section ids="troubleshooting" names="troubleshooting 故障排除">
+            <title>故障排除</title>
+            <paragraph>For particle collision to work, the particle's <reference internal="True" refuri="properties#doc-3d-particles-properties-draw"><inline classes="std std-ref">visibility AABB</inline></reference>
+                must overlap with the collider's AABB. If collisions appear to be not working
+                despite colliders being set up, generate an updated visibility AABB by selecting
+                the GPUParticles3D node and choosing <strong>GPUParticles3D &gt; Generate Visibility AABB…</strong>
+                at the top of the 3D editor viewport.</paragraph>
+            <paragraph>If the particles move fast and colliders are thin. There are two solutions for this:</paragraph>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph>Make the colliders thicker. For instance, if particles cannot get below a
+                        solid floor, you could make the collider representing the floor thicker than
+                        its actual visual representation. The heightfield collider automatically
+                        handles this by design, as heightfields cannot represent "room over room"
+                        collision.</paragraph>
+                </list_item>
+                <list_item>
+                    <paragraph>Increased <literal>Fixed FPS</literal> in the GPUParticles3D node, which will perform collision
+                        checks more often. This comes at a performance cost, so avoid setting this too high.</paragraph>
+                </list_item>
+            </bullet_list>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

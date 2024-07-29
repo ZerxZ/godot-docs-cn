@@ -507,11 +507,11 @@ enum **Weekday**: :ref:`🔗<enum_Time_Weekday>`
 
 :ref:`Dictionary<class_Dictionary>` **get_time_zone_from_system**\ (\ ) |const| :ref:`🔗<class_Time_method_get_time_zone_from_system>`
 
-Returns the current time zone as a dictionary of keys: ``bias`` and ``name``.
+以字典的形式返回当前时区，包含的键为：\ ``bias`` 和 ``name``\ 。
 
-- ``bias`` is the offset from UTC in minutes, since not all time zones are multiples of an hour from UTC.
+- ``bias`` 是相对于 UTC 的偏移量，单位为分钟，因为并不是所有时区与 UTC 的时间差都是整数倍小时。
 
-- ``name`` is the localized name of the time zone, according to the OS locale settings of the current user.
+- ``name`` 是时区的本地化名称，取决于当前用户的操作系统区域设置。
 
 .. rst-class:: classref-item-separator
 
@@ -564,10 +564,10 @@ Returns the current time zone as a dictionary of keys: ``bias`` and ``name``.
 \ **注意：**\ 与其他使用整数时间戳的方法不同，这个方法返回的是 :ref:`float<class_float>` 类型的时间戳，可以表示比秒更高的精度。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

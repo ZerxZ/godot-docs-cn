@@ -14,9 +14,16 @@ really short.</comment>
         <paragraph>在本课中，我们将介绍信号。它们是节点在发生特定事件时发出的消息，例如按下按钮。其他节点可以连接到该信号，并在事件发生时调用函数。</paragraph>
         <paragraph>信号是 Godot 内置的委派机制，允许一个游戏对象对另一个游戏对象的变化做出反应，而无需相互引用。使用信号可以限制<reference name="耦合" refuri="https://zh.wikipedia.org/zh-cn/%E8%80%A6%E5%90%88%E6%80%A7_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)">耦合</reference><target ids="id1" names="耦合" refuri="https://zh.wikipedia.org/zh-cn/%E8%80%A6%E5%90%88%E6%80%A7_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)"></target>，并保持代码的灵活性。</paragraph>
         <paragraph>例如，你可能在屏幕上有一个代表玩家生命值的生命条。当玩家受到伤害或使用治疗药水时，你希望生命条反映变化。要做到这一点，在 Godot 中，你会使用到信号。</paragraph>
-        <note>
-            <paragraph>正如引言中提到的，信号是 Godot 版本的观察者模式。你可以在此处了解有关它的更多信息：<reference refuri="https://gameprogrammingpatterns.com/observer.html">https://gameprogrammingpatterns.com/observer.html</reference></paragraph>
-        </note>
+        <paragraph>Like methods (<reference internal="True" refuri="../../classes/class_callable#class-callable"><inline classes="std std-ref">Callable</inline></reference>), signals are a first-class type since Godot
+            4.0. This means you can pass them around as method arguments directly without
+            having to pass them as strings, which allows for better autocompletion and is
+            less error-prone. See the <reference internal="True" refuri="../../classes/class_signal#class-signal"><inline classes="std std-ref">Signal</inline></reference> class reference for a list of
+            what you can do with the Signal type directly.</paragraph>
+        <seealso>
+            <paragraph>As mentioned in the introduction, signals are Godot's version of the
+                observer pattern. You can learn more about it in
+                <reference name="Game Programming Patterns" refuri="https://gameprogrammingpatterns.com/observer.html">Game Programming Patterns</reference>.</paragraph>
+        </seealso>
         <paragraph>现在，我们将使用信号来使上一节课（<reference internal="True" refuri="scripting_player_input#doc-scripting-player-input"><inline classes="std std-ref">监听玩家的输入</inline></reference>）中的 Godot 图标移动，并通过按下按钮来停止。</paragraph>
         <note>
             <paragraph>对于此项目，我们将遵循 Godot 的命名约定。</paragraph>
@@ -29,7 +36,6 @@ really short.</comment>
                 </list_item>
             </bullet_list>
         </note>
-        <comment xml:space="preserve">Example</comment>
         <section ids="scene-setup" names="scene\ setup 场景设置">
             <title>场景设置</title>
             <paragraph>要为我们的游戏添加按钮，我们需要新建一个场景，包含一个<reference internal="True" refuri="../../classes/class_button#class-button"><inline classes="std std-ref">按钮</inline></reference>以及之前课程 <reference internal="True" refuri="scripting_first_script#doc-scripting-first-script"><inline classes="std std-ref">创建第一个脚本</inline></reference> 编写的 <literal>sprite_2d.tscn</literal> 场景。</paragraph>
@@ -70,9 +76,7 @@ really short.</comment>
                 <paragraph>你可以在高级视图中连接到任何节点和任何内置函数、向回调添加参数、设置选项。你可以单击窗口右下角的“高级”按钮来切换模式。</paragraph>
             </note>
             <note>
-                <paragraph>If you are using an external editor (such as VS Code) this
-                    automatic code generation might not work. In this case you need to to connect
-                    the signal via code as explained in the next section.</paragraph>
+                <paragraph>如果你在使用一个外部代码编辑器（例如VS Code），可能会没有自动代码生成。在这种情况下，你需要按照下一部分阐述的方法使用信号连接代码。</paragraph>
             </note>
             <paragraph>单击“连接”按钮以完成信号连接并跳转到脚本工作区。你应该会看到新方法，并在左边距中带有连接图标。</paragraph>
             <image candidates="{'*': 'getting_started/step_by_step/img/signals_13_signals_connection_icon.webp'}" uri="getting_started/step_by_step/img/signals_13_signals_connection_icon.webp"></image>
@@ -249,8 +253,7 @@ public partial class MySprite2D : Sprite2D
                 </div>
             </container>
             <paragraph><literal>visible</literal> 属性是一个布尔值，用于控制节点的可见性。<literal>visible = not visible</literal> 行切换该值。如果 <literal>visible</literal> 是 <literal>true</literal>，它就会变成 <literal>false</literal>，反之亦然。</paragraph>
-            <paragraph>If you run the Node2D scene now, you will see that the sprite blinks on and off, at one
-                second intervals.</paragraph>
+            <paragraph>如果你现在运行 Node2D 场景，就会看到精灵在闪啊闪的，间隔为一秒。</paragraph>
         </section>
         <section ids="complete-script" names="complete\ script 完整脚本">
             <title>完整脚本</title>

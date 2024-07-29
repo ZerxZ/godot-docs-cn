@@ -291,7 +291,7 @@ script="&lt;relative_path_to_the_export_tool_script&gt;"</literal_block>
 +--plugin.cfg               # plugin INI file
 |
 +--plugin.gdextension       # GDExtension config file</literal_block>
-                <paragraph>Here is what the <literal>plugin.gdextension</literal> config file should look like:</paragraph>
+                <paragraph>配置文件 <literal>plugin.gdextension</literal> 看上去是这样的：</paragraph>
                 <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">[configuration]
 
 entry_symbol = "plugin_library_init"
@@ -303,12 +303,9 @@ android_aar_plugin = true
 android.debug.arm64 = "res://addons/GDExtensionAndroidPluginTemplate/bin/debug/arm64-v8a/libGDExtensionAndroidPluginTemplate.so"
 android.release.arm64 = "res://addons/GDExtensionAndroidPluginTemplate/bin/release/arm64-v8a/libGDExtensionAndroidPluginTemplate.so"
 ...</literal_block>
-                <paragraph>Of note is the <literal>android_aar_plugin</literal> field that specifies this GDExtension module is provided as part of a v2 Android plugin.
-                    During the export process, this will indicate to the Godot Editor that the GDExtension native shared libraries are exported by the Android plugin AAR binaries.</paragraph>
-                <paragraph>For GDExtension Android plugins, the plugin init class must override <reference name="GodotPlugin::getPluginGDExtensionLibrariesPaths()" refuri="https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L277">GodotPlugin::getPluginGDExtensionLibrariesPaths()</reference><target ids="godotplugin-getplugingdextensionlibrariespaths" names="godotplugin::getplugingdextensionlibrariespaths()" refuri="https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L277"></target>,
-                    and return the paths to the bundled GDExtension libraries config files (<literal>*.gdextension</literal>).</paragraph>
-                <paragraph>The paths must be relative to the Android library's <literal>assets</literal> directory.
-                    At runtime, the plugin will provide these paths to the Godot engine which will use them to load and initialize the bundled GDExtension libraries.</paragraph>
+                <paragraph>需要注意的是这里的 <literal>android_aar_plugin</literal> 字段，这个字段说明该 GDExtension 模块是以 v2 Android 插件的形式提供的。导出过程中就会告诉 Godot 编辑器，这个 GDExtension 原生共享库是由 Android 插件 AAR 二进制导出的。</paragraph>
+                <paragraph>对 GDExtension Android 插件而言，插件的初始类必须覆盖 <reference name="GodotPlugin::getPluginGDExtensionLibrariesPaths()" refuri="https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L277">GodotPlugin::getPluginGDExtensionLibrariesPaths()</reference><target ids="godotplugin-getplugingdextensionlibrariespaths" names="godotplugin::getplugingdextensionlibrariespaths()" refuri="https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L277"></target>，并且返回所捆绑的 GDExtension 库配置文件的路径（<literal>*.gdextension</literal>）。</paragraph>
+                <paragraph>路径必须相对于 Android 库的 <literal>assets</literal> 目录。运行时，插件会向 Godot 引擎提供这些路径，用于加载并初始化所捆绑的 GDExtension 库。</paragraph>
             </section>
         </section>
         <section ids="using-a-v2-android-plugin" names="using\ a\ v2\ android\ plugin 使用\ v2\ android\ 插件">
@@ -415,7 +412,7 @@ func helloWorld():
                     developers / users intend to run the Godot Editor. Not doing so may prevent developers /
                     users from writing code that accesses the plugin from within the Godot Editor.</paragraph>
                 <paragraph>This may involve creating dummy plugins for the host OS just so the API is published to the
-                    editor. You can use the [godot-cpp-template](<reference refuri="https://github.com/godotengine/godot-cpp-template">https://github.com/godotengine/godot-cpp-template</reference>)
+                    editor. You can use the <reference name="godot-cpp-template" refuri="https://github.com/godotengine/godot-cpp-template">godot-cpp-template</reference>
                     github template for reference on how to do so.</paragraph>
             </section>
             <section ids="godot-crashes-upon-load" names="godot\ crashes\ upon\ load godot\ 在加载时崩溃">

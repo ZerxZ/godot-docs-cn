@@ -154,7 +154,7 @@ GLTFBufferView 是一个表示 GLTF 的数据结构，一个可以在 ``"bufferV
 - |void| **set_indices**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_indices**\ (\ )
 
-True if the GLTFBufferView's OpenGL GPU buffer type is an ``ELEMENT_ARRAY_BUFFER`` used for vertex indices (integer constant ``34963``). False if the buffer type is any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set on import and used on export.
+如果 GLTFBufferView 的 OpenGL GPU 缓冲区类型是用于顶点索引的 ``ELEMENT_ARRAY_BUFFER``\ （整数常量 ``34963``\ ），则为 True。如果该缓冲区类型是任何其他值，则为 False。有关可能的值，请参阅 `Buffers、BufferViews 和 Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__\ 。该属性在导入时设置，并在导出时使用。
 
 .. rst-class:: classref-item-separator
 
@@ -171,7 +171,7 @@ True if the GLTFBufferView's OpenGL GPU buffer type is an ``ELEMENT_ARRAY_BUFFER
 - |void| **set_vertex_attributes**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_vertex_attributes**\ (\ )
 
-True if the GLTFBufferView's OpenGL GPU buffer type is an ``ARRAY_BUFFER`` used for vertex attributes (integer constant ``34962``). False if the buffer type is any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set on import and used on export.
+如果 GLTFBufferView 的 OpenGL GPU 缓冲区类型是用于顶点属性的 ``ARRAY_BUFFER``\ （整数常量 ``34962``\ ），则为 True。如果该缓冲区类型是任何其他值，则为 False。有关可能的值，请参阅 `Buffers、BufferViews 和 Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__\ 。该属性在导入时设置，在导出时使用。
 
 .. rst-class:: classref-section-separator
 
@@ -191,10 +191,10 @@ True if the GLTFBufferView's OpenGL GPU buffer type is an ``ARRAY_BUFFER`` used 
 从给定 :ref:`GLTFState<class_GLTFState>` 中该缓冲区视图引用的缓冲区加载缓冲区视图数据。该方法尚不支持具有字节步幅的交错数据。数据以 :ref:`PackedByteArray<class_PackedByteArray>` 形式返回。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -231,7 +231,7 @@
 class_name TreeNode
 
 var _parent: TreeNode = null
-var _children: = [] setget
+var _children := []
 
 func _notification(p_what):
     match p_what:
@@ -270,7 +270,10 @@ public partial class TreeNode : GodotObject
         </section>
         <section ids="enumerations-int-vs-string" names="enumerations:\ int\ vs.\ string 枚举：整数\ vs\ 字符串">
             <title>枚举：整数 VS 字符串</title>
-            <paragraph>大多数语言都提供了一个枚举类型选项，GDScript也不例外。但与其他大多数语言不同的是，GDScript的枚举允许开发者使用整数或字符串作为枚举值（只有在GDScript中使用 <literal>@export</literal> 注解时才可使用后者）。 那么问题来了：“该用哪一种枚举？”</paragraph>
+            <paragraph>Most languages offer an enumeration type option. GDScript is no different, but
+                unlike most other languages, it allows one to use either integers or strings for
+                the enum values (the latter only when using the <literal>@export_enum</literal> annotation in GDScript).
+                The question then arises, "which should one use?"</paragraph>
             <paragraph>简单回答一下就是：“你觉得哪个更舒服就选哪个。” 这是 GDScript 特有的特性，并非（C++、C#等）一般的 Godot 脚本所特有的特性；该语言将可用性置于性能之上。</paragraph>
             <paragraph>在技术层面上，整数比较（常量时间）比字符串比较（线性时间）更快，若想保持其他语言中使用枚举的习惯，则应使用整数来表示枚举值。</paragraph>
             <paragraph>当你想要 <emphasis>打印</emphasis> 枚举值时，使用整数的主要问题就出现了：尝试直接打印以 <title_reference>int</title_reference> 型保存的枚举 <literal>MY_ENUM</literal> 会打印 <literal>5</literal> 之类的东西，而不是像 <literal>MyEnum</literal> 这样的字符。若要打印以 <title_reference>int</title_reference> 型保存的枚举。必须编写一个字典来映射每个枚举所对应的字符串值。</paragraph>

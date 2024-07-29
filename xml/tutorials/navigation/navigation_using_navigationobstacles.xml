@@ -16,25 +16,25 @@
             </list_item>
         </bullet_list>
         <tip>
-            <paragraph>Avoidance is enabled by default. If the obstacle is not used for avoidance disable <literal>enabled_avoidance</literal> to save performance.</paragraph>
+            <paragraph>避障默认是启用的。如果障碍物不需要参与避障，请禁用 <literal>enabled_avoidance</literal> 节省性能。</paragraph>
         </tip>
-        <section ids="obstacles-and-navigation-mesh" names="obstacles\ and\ navigation\ mesh">
-            <title>Obstacles and navigation mesh</title>
+        <section ids="obstacles-and-navigation-mesh" names="obstacles\ and\ navigation\ mesh 障碍物与导航网格">
+            <title>障碍物与导航网格</title>
             <figure align="center" ids="id1">
-                <image alt="Navigation obstacles affecting navigation mesh baking" candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles.webp"></image>
-                <caption>Navigation obstacles affecting navigation mesh baking.</caption>
+                <image alt="导航障碍物对导航网格烘焙的影响" candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles.webp"></image>
+                <caption>导航障碍物对导航网格烘焙的影响。</caption>
             </figure>
-            <paragraph>For navigation mesh baking obstacles can be used to discard parts of all other source geometry inside the obstacle shape.</paragraph>
+            <paragraph>烘焙导航网格时，可以用障碍物来丢弃来源几何体中所有位于障碍物形状内部的部分。</paragraph>
             <paragraph>This can be used to stop navigation meshes being baked in unwanted places,
                 e.g. inside "solid" geometry like thick walls or on top of other geometry that should not be included for gameplay like roofs.</paragraph>
             <figure align="center" ids="id2">
-                <image alt="Navigation obstacles discard of unwanted navigation mesh" candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles_discard.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles_discard.webp"></image>
-                <caption>Navigation obstacles discard of unwanted navigation mesh.</caption>
+                <image alt="导航障碍物弃置不需要的导航网格" candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles_discard.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles_discard.webp"></image>
+                <caption>导航障碍物弃置不需要的导航网格。</caption>
             </figure>
             <paragraph>An obstacle does not add geometry in the baking process, it only removes geometry.
                 It does so by nullifying all the (voxel) cells with rasterized source geometry that are within the obstacle shape.
                 As such its effect and shape detail is limited to the cell resolution used by the baking process.</paragraph>
-            <paragraph>For more details on the navigation mesh baking see <reference internal="True" refuri="navigation_using_navigationmeshes#doc-navigation-using-navigationmeshes"><inline classes="std std-ref">使用导航网格</inline></reference>.</paragraph>
+            <paragraph>更多关于导航网格烘焙的信息见 <reference internal="True" refuri="navigation_using_navigationmeshes#doc-navigation-using-navigationmeshes"><inline classes="std std-ref">使用导航网格</inline></reference>。</paragraph>
             <image candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles_properties.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles_properties.webp"></image>
             <paragraph>The property <literal>affect_navigation_mesh</literal> makes the obstacle contribute to the navigation mesh baking.
                 It will be parsed or unparsed like all other node objects in a navigation mesh baking process.</paragraph>
@@ -93,9 +93,9 @@ NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geomet
                 </div>
             </container>
         </section>
-        <section ids="obstacles-and-agent-avoidance" names="obstacles\ and\ agent\ avoidance">
-            <title>Obstacles and agent avoidance</title>
-            <paragraph>For avoidance navigation obstacles can be used either as static or dynamic obstacles to affect avoidance controlled agents.</paragraph>
+        <section ids="obstacles-and-agent-avoidance" names="obstacles\ and\ agent\ avoidance 障碍物与代理避障">
+            <title>障碍物与代理避障</title>
+            <paragraph>避障导航中的障碍物可以是静态障碍物也可以是动态障碍物，能够影响启用了避障处理的代理。</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph>当静态使用时，导览障碍会限制多边形定义区域外部或内部的回避控制代理。</paragraph>
@@ -104,12 +104,12 @@ NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geomet
                     <paragraph>当动态使用时，导览障碍会推开其周围半径范围内的回避控制代理。</paragraph>
                 </list_item>
             </bullet_list>
-            <section ids="static-avoidance-obstacles" names="static\ avoidance\ obstacles">
-                <title>Static avoidance obstacles</title>
-                <paragraph>An avoidance obstacle is considered static when its <literal>vertices</literal> property is populated with an outline array of positions to form a polygon.</paragraph>
+            <section ids="static-avoidance-obstacles" names="static\ avoidance\ obstacles 静态避障障碍物">
+                <title>静态避障障碍物</title>
+                <paragraph>避障障碍物的 <literal>vertices</literal> 属性填充轮廓位置数组形成多边形后，就会被认为是静态障碍物。</paragraph>
                 <figure align="center" ids="id3">
-                    <image alt="Static obstacle drawn in the editor to block or contain navigation agents" candidates="{'*': 'tutorials/navigation/img/nav_static_obstacle_build.gif'}" uri="tutorials/navigation/img/nav_static_obstacle_build.gif"></image>
-                    <caption>Static obstacle drawn in the editor to block or contain navigation agents.</caption>
+                    <image alt="编辑器中绘制的静态障碍物，障碍物可以阻挡或容纳导航代理" candidates="{'*': 'tutorials/navigation/img/nav_static_obstacle_build.gif'}" uri="tutorials/navigation/img/nav_static_obstacle_build.gif"></image>
+                    <caption>编辑器中绘制的静态障碍物，障碍物可以阻挡或容纳导航代理。</caption>
                 </figure>
                 <bullet_list bullet="-">
                     <list_item>
@@ -125,8 +125,7 @@ NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geomet
                         <paragraph>如果代理人被推出或吸入，静态障碍物透过顶点的缠绕顺序来定义。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph>Static obstacles can not change their position. They can only be warped to a new position and rebuilt from scratch.
-                            Static obstacles as a result are ill-suited for usages where the position is changed every frame, as the constant rebuild has a high performance cost.</paragraph>
+                        <paragraph>静态障碍物不能改变位置，只能先传送到新的位置，然后重新构建。因此，静态障碍物不适合位置每帧都会改变的场合，因为不断重建会产生很高的性能成本。</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph>代理无法预测扭曲到另一个位置的静态障碍物。如果静态障碍物扭曲到代理顶部，这就会产生代理被卡住的风险。</paragraph>
@@ -134,9 +133,9 @@ NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geomet
                 </bullet_list>
                 <paragraph>当在3D中使用2D回避时，Vector3顶点的y轴将被忽略。相反，障碍物的全局y轴位置用作海拔高度。代理将忽略3D中低于或高于其的静态障碍物。这是由障碍物和代理的全局y轴位置自动确定为海拔高度以及它们各自的高度属性。</paragraph>
             </section>
-            <section ids="dynamic-avoidance-obstacles" names="dynamic\ avoidance\ obstacles">
-                <title>Dynamic avoidance obstacles</title>
-                <paragraph>An avoidance obstacle is considered dynamic when its <literal>radius</literal> property is greater than zero.</paragraph>
+            <section ids="dynamic-avoidance-obstacles" names="dynamic\ avoidance\ obstacles 动态避障障碍物">
+                <title>动态避障障碍物</title>
+                <paragraph>避障障碍物的 <literal>radius</literal> 属性大于零时就会被认为是动态障碍物。</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph>对于启用了避障的代理而言，动态障碍物就是一个“请离我远点”的对象，类似于它们自己躲避其他代理的行为。</paragraph>
@@ -162,9 +161,9 @@ NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geomet
                 <paragraph>和代理类似，障碍物也能够使用 <literal>avoidance_layers</literal> 位掩码。自身的避障掩码中与之存在匹配位的代理都会躲避这个障碍物。</paragraph>
             </section>
         </section>
-        <section ids="procedural-obstacles" names="procedural\ obstacles">
-            <title>Procedural obstacles</title>
-            <paragraph>New obstacles can be created in a script without a Node by using the NavigationServer directly.</paragraph>
+        <section ids="procedural-obstacles" names="procedural\ obstacles 程序式障碍物">
+            <title>程序式障碍物</title>
+            <paragraph>可以不借助节点，直接在脚本中使用 NavigationServer 来新建障碍物。</paragraph>
             <paragraph>使用脚本创建的障碍物至少需要有一个 <literal>map</literal> 和一个 <literal>position</literal>。动态障碍物还需要 <literal>radius</literal>。静态障碍物还需要 <literal>vertices</literal> 属性。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">

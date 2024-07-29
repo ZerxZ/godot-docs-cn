@@ -162,7 +162,7 @@ var spell_targets = 0</literal_block>
             <paragraph>密存数组也可以使用导出，但需要构造对应的空密存数组去赋值：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export var vector3s = PackedVector3Array()
 @export var strings = PackedStringArray()</literal_block>
-            <paragraph>Other export variants can also be used when exporting arrays:</paragraph>
+            <paragraph>属性提示可以用来导出字符串作为路径：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_range(-360, 360, 0.001, "radians") var laser_angles: Array[float] = []
 @export_file("*.json") var skill_trees: Array[String] = []
 @export_color_no_alpha var hair_colors = PackedColorArray()
@@ -170,21 +170,17 @@ var spell_targets = 0</literal_block>
         </section>
         <section ids="export-storage" names="@export_storage">
             <title><literal>@export_storage</literal></title>
-            <paragraph>By default, exporting a property has two effects:</paragraph>
+            <paragraph>导出属性在默认情况下会产生以下两种效果：</paragraph>
             <enumerated_list enumtype="arabic" prefix="" suffix=".">
                 <list_item>
-                    <paragraph>makes the property stored in the scene/resource file (<reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-constant-property-usage-storage"><inline classes="std std-ref">PROPERTY_USAGE_STORAGE</inline></reference>);</paragraph>
+                    <paragraph>将属性存到场景/资源文件当中（即 :ref:<problematic ids="id2" refid="id1">`</problematic>PROPERTY_USAGE_STORAGE &lt;<reference refuri="mailto:class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE">class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE</reference>&gt;`位标志的作用）;</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>adds a field to the Inspector (<reference internal="True" refuri="../../../classes/class_@globalscope#class-globalscope-constant-property-usage-editor"><inline classes="std std-ref">PROPERTY_USAGE_EDITOR</inline></reference>).</paragraph>
+                    <paragraph>将字段加到检查器当中（即 :ref:<problematic ids="id2" refid="id1">`</problematic>PROPERTY_USAGE_EDITOR &lt;<reference refuri="mailto:class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR">class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR</reference>&gt;`位标志的作用）。</paragraph>
                 </list_item>
             </enumerated_list>
-            <paragraph>However, sometimes you may want to make a property serializable, but not display it
-                in the editor to prevent unintentional changes and cluttering the interface.</paragraph>
-            <paragraph>To do this you can use <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-export-storage"><inline classes="std std-ref">@export_storage</inline></reference>.
-                This can be useful for <reference internal="True" refuri="../../../classes/class_@gdscript#class-gdscript-annotation-tool"><inline classes="std std-ref">@tool</inline></reference> scripts.
-                Also the property value is copied when <reference internal="True" refuri="../../../classes/class_resource#class-resource-method-duplicate"><inline classes="std std-ref">Resource.duplicate()</inline></reference>
-                or <reference internal="True" refuri="../../../classes/class_node#class-node-method-duplicate"><inline classes="std std-ref">Node.duplicate()</inline></reference> is called, unlike non-exported variables.</paragraph>
+            <paragraph>然而有时你会想让某个属性能够序列化，不让它显示在编辑器当中，以防误修改其值，同时避免检查器窗口杂乱无章。</paragraph>
+            <paragraph>可以使用 <inline classes="xref std std-ref">@export_storage</inline> 脚本中十分有用。同时，与非导出属性不同的是，如果调用 <reference internal="True" refuri="../../../classes/class_resource#class-resource-method-duplicate"><inline classes="std std-ref">Resource.duplicate()</inline></reference> 或 :ref:<problematic ids="id2" refid="id1">`</problematic>Node.duplicate() &lt;class_Node_method_duplicate&gt;`方法，会复制该属性的值。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a # Not stored in the file, not displayed in the editor.
 @export_storage var b # Stored in the file, not displayed in the editor.
 @export var c: int # Stored in the file, displayed in the editor.</literal_block>
@@ -201,8 +197,7 @@ var spell_targets = 0</literal_block>
                 <paragraph>要在 C++ 中用上述方法绑定属性，请参阅 <reference internal="True" refuri="../../../contributing/development/core_and_modules/object_class#doc-binding-properties-using-set-get-property-list"><inline classes="std std-ref">使用 _set/_get/_get_property_list 绑定属性</inline></reference>。</paragraph>
             </seealso>
             <warning>
-                <paragraph>The script must operate in the <literal>@tool</literal> mode so the above methods
-                    can work from within the editor.</paragraph>
+                <paragraph>脚本必须在 <literal>@tool</literal> 注解的修饰下，才能使上述方法在编辑器内运行。</paragraph>
             </warning>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

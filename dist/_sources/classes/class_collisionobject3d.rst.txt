@@ -118,7 +118,7 @@ CollisionObject3D
 
 **input_event**\ (\ camera\: :ref:`Node<class_Node>`, event\: :ref:`InputEvent<class_InputEvent>`, event_position\: :ref:`Vector3<class_Vector3>`, normal\: :ref:`Vector3<class_Vector3>`, shape_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CollisionObject3D_signal_input_event>`
 
-Emitted when the object receives an unhandled :ref:`InputEvent<class_InputEvent>`. ``event_position`` is the location in world space of the mouse pointer on the surface of the shape with index ``shape_idx`` and ``normal`` is the normal vector of the surface at that point.
+当对象收到未处理的 :ref:`InputEvent<class_InputEvent>` 时发出。\ ``event_position`` 是鼠标指针在索引为 ``shape_idx`` 的形状表面上的世界空间位置，\ ``normal`` 是表面在该点的法向量。
 
 .. rst-class:: classref-item-separator
 
@@ -317,9 +317,9 @@ enum **DisableMode**: :ref:`🔗<enum_CollisionObject3D_DisableMode>`
 
 |void| **_input_event**\ (\ camera\: :ref:`Camera3D<class_Camera3D>`, event\: :ref:`InputEvent<class_InputEvent>`, event_position\: :ref:`Vector3<class_Vector3>`, normal\: :ref:`Vector3<class_Vector3>`, shape_idx\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_CollisionObject3D_private_method__input_event>`
 
-Receives unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``event_position`` is the location in world space of the mouse pointer on the surface of the shape with index ``shape_idx`` and ``normal`` is the normal vector of the surface at that point. Connect to the :ref:`input_event<class_CollisionObject3D_signal_input_event>` signal to easily pick up these events.
+接收未处理的 :ref:`InputEvent<class_InputEvent>`\ 。\ ``event_position`` 是鼠标指针在索引为 ``shape_idx`` 的形状表面上的世界空间位置，\ ``normal`` 是该点表面的法向量。连接到 :ref:`input_event<class_CollisionObject3D_signal_input_event>` 信号即可轻松获取这些事件。
 
-\ **Note:** :ref:`_input_event<class_CollisionObject3D_private_method__input_event>` requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
+\ **注意：**\ :ref:`_input_event<class_CollisionObject3D_private_method__input_event>` 要求 :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` 为 ``true``\ ，并且至少要设置一个 :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` 位。
 
 .. rst-class:: classref-item-separator
 
@@ -586,10 +586,10 @@ Receives unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``event_position`` is
 设置给定形状所有者的 :ref:`Transform3D<class_Transform3D>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

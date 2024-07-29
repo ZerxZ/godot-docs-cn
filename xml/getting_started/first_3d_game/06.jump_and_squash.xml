@@ -207,7 +207,10 @@ public int BounceImpulse { get; set; } = 16;</literal_block>
                 <paragraph>点积结果大于 <literal>0</literal> 时，两个向量的夹角小于 90 度。大于 <literal>0.1</literal> 表示我们大概位于怪物上方。</paragraph>
                 <paragraph>处理完踩扁和反弹逻辑后，我们通过 <literal>break</literal> 语句提前终止循环，以防止进一步重复调用 <literal>mob.squash()</literal> ，否则这可能会导致意外的错误，例如将一次击杀获得的分数算成好几倍。</paragraph>
                 <paragraph>我们调用了一个尚未定义的函数 <literal>mob.squash()</literal>。所以我们需要把它加入到 Mob 类中。</paragraph>
-                <paragraph>在<emphasis>文件系统</emphasis>面板中双击打开 <literal>Mob.gd</literal> 脚本。在脚本顶部，我们要定义一个新的信号叫作 <literal>squashed</literal>（被踩扁）。你可以在底部添加 squash 函数，在里面发出这个信号并销毁这个小怪。</paragraph>
+                <paragraph>Open the script <literal>mob.gd</literal> by double-clicking on it in the <emphasis>FileSystem</emphasis> dock. At
+                    the top of the script, we want to define a new signal named <literal>squashed</literal>. And at
+                    the bottom, you can add the squash function, where we emit the signal and
+                    destroy the mob.</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-4-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-4-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>

@@ -13,8 +13,8 @@
         <paragraph>提供用于文件读写操作的方法。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>This class can be used to permanently store data in the user device's file system and to read from it. This is useful for store game save data or player configuration files.</paragraph>
-            <paragraph>Here's a sample on how to write and read from a file:</paragraph>
+            <paragraph>这个类可以用于在用户设备的文件系统中永久存储数据，也可以从中读取数据。适用于存储游戏存档数据或玩家配置文件。</paragraph>
+            <paragraph>下面是一个关于如何写入和读取文件的示例：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -45,10 +45,10 @@ public string LoadFromFile()
 }</literal_block>
                 </div>
             </container>
-            <paragraph>In the example above, the file will be saved in the user data folder as specified in the <reference internal="True" refuri="../tutorials/io/data_paths"><inline classes="doc">Data paths</inline></reference> documentation.</paragraph>
-            <paragraph><strong>FileAccess</strong> will close when it's freed, which happens when it goes out of scope or when it gets assigned with <literal>null</literal>. <reference internal="True" refid="class-fileaccess-method-close"><inline classes="std std-ref">close</inline></reference> can be used to close it before then explicitly. In C# the reference must be disposed manually, which can be done with the <literal>using</literal> statement or by calling the <literal>Dispose</literal> method directly.</paragraph>
-            <paragraph><strong>Note:</strong> To access project resources once exported, it is recommended to use <reference internal="True" refuri="class_resourceloader#class-resourceloader"><inline classes="std std-ref">ResourceLoader</inline></reference> instead of <strong>FileAccess</strong>, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.</paragraph>
-            <paragraph><strong>Note:</strong> Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing <strong>Alt + F4</strong>). If you stop the project execution by pressing <strong>F8</strong> while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling <reference internal="True" refid="class-fileaccess-method-flush"><inline classes="std std-ref">flush</inline></reference> at regular intervals.</paragraph>
+            <paragraph>在上面的例子中，文件将被保存在<reference internal="True" refuri="../tutorials/io/data_paths"><inline classes="doc">数据路径</inline></reference>文件中指定的用户数据文件夹中。</paragraph>
+            <paragraph><strong>FileAccess</strong> 会在释放时关闭，超出作用于、赋值为 <literal>null</literal> 等情况都会导致释放。可以使用 <reference internal="True" refid="class-fileaccess-method-close"><inline classes="std std-ref">close</inline></reference> 在此之前显式关闭。在 C# 中，引用必须手动释放，可以通过 <literal>using</literal> 语句或直接调用 <literal>Dispose</literal> 方法来完成。</paragraph>
+            <paragraph><strong>注意：</strong>要在导出后访问项目资源，建议使用 <reference internal="True" refuri="class_resourceloader#class-resourceloader"><inline classes="std std-ref">ResourceLoader</inline></reference> 而不是 <strong>FileAccess</strong>，因为有些文件已被转换为特定于引擎的格式，并且它们的原始源文件可能并不存在于导出的 PCK 包中。</paragraph>
+            <paragraph><strong>注意：</strong>只有当进程“正常”退出时（例如通过单击窗口管理器的关闭按钮或按 <strong>Alt + F4</strong>），文件才会自动关闭。如果在项目运行时按 <strong>F8</strong> 停止项目执行，则不会关闭文件，因为游戏进程将被杀死。可以通过定期调用 <reference internal="True" refid="class-fileaccess-method-flush"><inline classes="std std-ref">flush</inline></reference> 来解决这个问题。</paragraph>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
             <title>教程</title>
@@ -103,7 +103,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-eof-reached"><inline classes="std std-ref">eof_reached</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-eof-reached"><inline classes="std std-ref">eof_reached</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -127,7 +127,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-8"><inline classes="std std-ref">get_8</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-8"><inline classes="std std-ref">get_8</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -135,7 +135,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-16"><inline classes="std std-ref">get_16</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-16"><inline classes="std std-ref">get_16</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -143,7 +143,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-32"><inline classes="std std-ref">get_32</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-32"><inline classes="std std-ref">get_32</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -151,7 +151,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-64"><inline classes="std std-ref">get_64</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-64"><inline classes="std std-ref">get_64</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -159,7 +159,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-as-text"><inline classes="std std-ref">get_as_text</inline></reference>(skip_cr: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-as-text"><inline classes="std std-ref">get_as_text</inline></reference>(skip_cr: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -167,7 +167,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-buffer"><inline classes="std std-ref">get_buffer</inline></reference>(length: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-buffer"><inline classes="std std-ref">get_buffer</inline></reference>(length: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -175,7 +175,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-csv-line"><inline classes="std std-ref">get_csv_line</inline></reference>(delim: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> = ",") <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-csv-line"><inline classes="std std-ref">get_csv_line</inline></reference>(delim: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> = ",") <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -183,7 +183,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-double"><inline classes="std std-ref">get_double</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-double"><inline classes="std std-ref">get_double</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -191,7 +191,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-error"><inline classes="std std-ref">get_error</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-error"><inline classes="std std-ref">get_error</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -215,7 +215,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-float"><inline classes="std std-ref">get_float</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-float"><inline classes="std std-ref">get_float</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -231,7 +231,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-length"><inline classes="std std-ref">get_length</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-length"><inline classes="std std-ref">get_length</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -239,7 +239,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-line"><inline classes="std std-ref">get_line</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-line"><inline classes="std std-ref">get_line</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -279,7 +279,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-path"><inline classes="std std-ref">get_path</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-path"><inline classes="std std-ref">get_path</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -287,7 +287,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-path-absolute"><inline classes="std std-ref">get_path_absolute</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-path-absolute"><inline classes="std std-ref">get_path_absolute</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -295,7 +295,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-position"><inline classes="std std-ref">get_position</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-position"><inline classes="std std-ref">get_position</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -311,7 +311,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-real"><inline classes="std std-ref">get_real</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-real"><inline classes="std std-ref">get_real</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -324,7 +324,7 @@ public string LoadFromFile()
                         </row>
                         <row>
                             <entry>
-                                <paragraph><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]</paragraph>
+                                <paragraph><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]</paragraph>
                             </entry>
                             <entry>
                                 <paragraph><reference internal="True" refid="class-fileaccess-method-get-unix-permissions"><inline classes="std std-ref">get_unix_permissions</inline></reference>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></paragraph>
@@ -335,7 +335,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-var"><inline classes="std std-ref">get_var</inline></reference>(allow_objects: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-get-var"><inline classes="std std-ref">get_var</inline></reference>(allow_objects: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -343,7 +343,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-is-open"><inline classes="std std-ref">is_open</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-is-open"><inline classes="std std-ref">is_open</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -423,7 +423,7 @@ public string LoadFromFile()
                                 <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-fileaccess-method-set-unix-permissions"><inline classes="std std-ref">set_unix_permissions</inline></reference>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, permissions: <abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-fileaccess-method-set-unix-permissions"><inline classes="std std-ref">set_unix_permissions</inline></reference>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, permissions: <abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -544,15 +544,15 @@ public string LoadFromFile()
             <paragraph>打开文件进行读取操作。光标位于文件的开头。</paragraph>
             <target refid="class-fileaccess-constant-write"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-fileaccess-constant-write" names="class_fileaccess_constant_write"><reference internal="True" refid="enum-fileaccess-modeflags"><inline classes="std std-ref">ModeFlags</inline></reference> <strong>WRITE</strong> = <literal>2</literal></paragraph>
-            <paragraph>Opens the file for write operations. The file is created if it does not exist, and truncated if it does.</paragraph>
-            <paragraph><strong>Note:</strong> When creating a file it must be in an already existing directory. To recursively create directories for a file path, see <reference internal="True" refuri="class_diraccess#class-diraccess-method-make-dir-recursive"><inline classes="std std-ref">DirAccess.make_dir_recursive</inline></reference>.</paragraph>
+            <paragraph>打开文件进行写操作。如果文件不存在则会创建该文件，如果存在则会截断。</paragraph>
+            <paragraph><strong>注意：</strong>创建文件必须在已有目录中执行。如果要递归创建文件路径中的目录，见 <reference internal="True" refuri="class_diraccess#class-diraccess-method-make-dir-recursive"><inline classes="std std-ref">DirAccess.make_dir_recursive</inline></reference>。</paragraph>
             <target refid="class-fileaccess-constant-read-write"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-fileaccess-constant-read-write" names="class_fileaccess_constant_read_write"><reference internal="True" refid="enum-fileaccess-modeflags"><inline classes="std std-ref">ModeFlags</inline></reference> <strong>READ_WRITE</strong> = <literal>3</literal></paragraph>
             <paragraph>打开文件用于读写操作。不截断文件。光标位于文件的开头。</paragraph>
             <target refid="class-fileaccess-constant-write-read"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-fileaccess-constant-write-read" names="class_fileaccess_constant_write_read"><reference internal="True" refid="enum-fileaccess-modeflags"><inline classes="std std-ref">ModeFlags</inline></reference> <strong>WRITE_READ</strong> = <literal>7</literal></paragraph>
-            <paragraph>Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The cursor is positioned at the beginning of the file.</paragraph>
-            <paragraph><strong>Note:</strong> When creating a file it must be in an already existing directory. To recursively create directories for a file path, see <reference internal="True" refuri="class_diraccess#class-diraccess-method-make-dir-recursive"><inline classes="std std-ref">DirAccess.make_dir_recursive</inline></reference>.</paragraph>
+            <paragraph>打开文件进行读写操作。如果文件不存在则会创建该文件，如果存在则会截断。光标位于文件的开头。</paragraph>
+            <paragraph><strong>注意：</strong>创建文件必须在已有目录中执行。如果要递归创建文件路径中的目录，见 <reference internal="True" refuri="class_diraccess#class-diraccess-method-make-dir-recursive"><inline classes="std std-ref">DirAccess.make_dir_recursive</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="enum-fileaccess-compressionmode"></target>
             <paragraph classes="classref-enumeration" ids="enum-fileaccess-compressionmode" names="enum_fileaccess_compressionmode">enum <strong>CompressionMode</strong>: <reference internal="True" refid="enum-fileaccess-compressionmode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -637,7 +637,7 @@ public string LoadFromFile()
             <paragraph><strong>注意：</strong><strong>FileAccess</strong> 被释放时会自动关闭，释放发生在离开作用域或被赋值为 <literal>null</literal> 时。在 C# 中，使用完后必须弃置该引用，可以使用 <literal>using</literal> 语句或直接调用 <literal>Dispose</literal> 方法。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-eof-reached"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-eof-reached" names="class_fileaccess_method_eof_reached"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>eof_reached</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-eof-reached"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-eof-reached" names="class_fileaccess_method_eof_reached"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>eof_reached</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-eof-reached"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果文件光标已经读到了文件末尾，则返回 <literal>true</literal>。</paragraph>
             <paragraph><strong>注意：</strong><literal>eof_reached() == false</literal> 不能用于检查是否有更多可用数据。要在有更多可用数据时循环，请使用：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
@@ -669,46 +669,46 @@ public string LoadFromFile()
             <paragraph><strong>注意：</strong>只有在你真正需要的时候才调用 <reference internal="True" refid="class-fileaccess-method-flush"><inline classes="std std-ref">flush</inline></reference>。否则，它会因不断的磁盘写入而降低性能。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-8"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-8" names="class_fileaccess_method_get_8"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_8</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-8"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-8" names="class_fileaccess_method_get_8"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_8</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-8"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以整数形式返回文件中接下来的 8 位。请参阅 <reference internal="True" refid="class-fileaccess-method-store-8"><inline classes="std std-ref">store_8</inline></reference>，详细了解哪些值可以通过这种方式存储和检索。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-16"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-16" names="class_fileaccess_method_get_16"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_16</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-16"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-16" names="class_fileaccess_method_get_16"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_16</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-16"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以整数形式返回文件中接下来的 16 位。请参阅 <reference internal="True" refid="class-fileaccess-method-store-16"><inline classes="std std-ref">store_16</inline></reference>，以获取有关可以通过这种方式存储和检索哪些值的详细信息。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-32"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-32" names="class_fileaccess_method_get_32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_32</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-32" names="class_fileaccess_method_get_32"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_32</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-32"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以整数形式返回文件中接下来的 32 位。请参阅<reference internal="True" refid="class-fileaccess-method-store-32"><inline classes="std std-ref">store_32</inline></reference>，以获取有关可以通过这种方式存储和检索哪些值的详细信息。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-64"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-64" names="class_fileaccess_method_get_64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_64</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-64" names="class_fileaccess_method_get_64"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_64</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-64"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以整数形式返回文件中接下来的 64 位。请参阅 <reference internal="True" refid="class-fileaccess-method-store-64"><inline classes="std std-ref">store_64</inline></reference>，以获取有关可以通过这种方式存储和检索哪些值的详细信息。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-as-text"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-as-text" names="class_fileaccess_method_get_as_text"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_as_text</strong>(skip_cr: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-as-text"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-as-text" names="class_fileaccess_method_get_as_text"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_as_text</strong>(skip_cr: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-as-text"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 形式返回整个文件。文本会按照 UTF-8 编码解析。</paragraph>
             <paragraph>如果 <literal>skip_cr</literal> 为 <literal>true</literal>，解析 UTF-8 时会忽略回车符（<literal>\r</literal>，CR），因此只使用换行符（<literal>\n</literal>，LF）表示新一行的开始（Unix 规范）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-buffer"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-buffer" names="class_fileaccess_method_get_buffer"><reference internal="True" refuri="class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference> <strong>get_buffer</strong>(length: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-buffer"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-buffer" names="class_fileaccess_method_get_buffer"><reference internal="True" refuri="class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference> <strong>get_buffer</strong>(length: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-buffer"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将文件中接下来的 <literal>length</literal> 个字节作为 <reference internal="True" refuri="class_packedbytearray#class-packedbytearray"><inline classes="std std-ref">PackedByteArray</inline></reference> 返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-csv-line"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-csv-line" names="class_fileaccess_method_get_csv_line"><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> <strong>get_csv_line</strong>(delim: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> = ",") <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-csv-line"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter <literal>delim</literal> to use other than the default <literal>","</literal> (comma). This delimiter must be one-character long, and cannot be a double quotation mark.</paragraph>
-            <paragraph>Text is interpreted as being UTF-8 encoded. Text values must be enclosed in double quotes if they include the delimiter character. Double quotes within a text value can be escaped by doubling their occurrence.</paragraph>
-            <paragraph>For example, the following CSV lines are valid and will be properly parsed as two strings each:</paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-csv-line" names="class_fileaccess_method_get_csv_line"><reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> <strong>get_csv_line</strong>(delim: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> = ",") <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-csv-line"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>以 CSV（逗号分隔值）格式返回文件的下一个值。可以传递不同的分隔符 <literal>delim</literal>，以使用默认 <literal>","</literal>（逗号）以外的其他分隔符。这个分隔符必须为一个字符长，且不能是双引号。</paragraph>
+            <paragraph>文本被解析为 UTF-8 编码。如果文本值包含分隔符，则它们必须用双引号引起来。文本值中的双引号可以通过将它们的出现次数加倍来转义。</paragraph>
+            <paragraph>例如，以下 CSV 行是有效的，每行将被正确解析为两个字符串：</paragraph>
             <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">Alice,"Hello, Bob!"
 Bob,Alice! What a surprise!
 Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
-            <paragraph>Note how the second line can omit the enclosing quotes as it does not include the delimiter. However it <emphasis>could</emphasis> very well use quotes, it was only written without for demonstration purposes. The third line must use <literal>""</literal> for each quotation mark that needs to be interpreted as such instead of the end of a text value.</paragraph>
+            <paragraph>请注意第二行如何省略封闭的引号，因为它不包含分隔符。然而它<emphasis>可以</emphasis>很好地使用引号，它只是为了演示目的而没有编写。第三行必须为每个需要被解析为引号而不是文本值的末尾而使用 <literal>""</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-double"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-double" names="class_fileaccess_method_get_double"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_double</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-double"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-double" names="class_fileaccess_method_get_double"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_double</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-double"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将文件中接下来的 64 位作为浮点数返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-error"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-error" names="class_fileaccess_method_get_error"><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> <strong>get_error</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-error"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-error" names="class_fileaccess_method_get_error"><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> <strong>get_error</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-error"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回试图执行操作时发生的最后一个错误。请与 <reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> 中的 <literal>ERR_FILE_*</literal> 常量比较。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-file-as-bytes"></target>
@@ -722,7 +722,7 @@ Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
             <paragraph>如果打开文件时发生错误，则返回空 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>。可以使用 <reference internal="True" refid="class-fileaccess-method-get-open-error"><inline classes="std std-ref">get_open_error</inline></reference> 来检查发生的错误。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-float"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-float" names="class_fileaccess_method_get_float"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_float</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-float"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-float" names="class_fileaccess_method_get_float"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_float</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-float"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将文件中接下来的 32 位作为浮点数返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-hidden-attribute"></target>
@@ -731,11 +731,11 @@ Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
             <paragraph><strong>注意：</strong>该方法在 iOS、BSD、macOS 和 Windows 上实现。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-length"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-length" names="class_fileaccess_method_get_length"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_length</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-length"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-length" names="class_fileaccess_method_get_length"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_length</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-length"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该文件的大小，单位为字节。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-line"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-line" names="class_fileaccess_method_get_line"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_line</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-line"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-line" names="class_fileaccess_method_get_line"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_line</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-line"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 的形式返回文件中的下一行。返回的字符串不包含换行符（<literal>\n</literal>）和回车符（<literal>\r</literal>），但是会包含开头和结尾的其他空白字符。</paragraph>
             <paragraph>文本按照 UTF-8 编码规则进行解析。</paragraph>
             <transition classes="classref-item-separator"></transition>
@@ -757,15 +757,15 @@ Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
             <paragraph>将按照 UTF-8 编码解析文本。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-path"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-path" names="class_fileaccess_method_get_path"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_path</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-path"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-path" names="class_fileaccess_method_get_path"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_path</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-path"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前打开的文件的路径为<reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-path-absolute"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-path-absolute" names="class_fileaccess_method_get_path_absolute"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_path_absolute</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-path-absolute"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-path-absolute" names="class_fileaccess_method_get_path_absolute"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_path_absolute</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-path-absolute"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回当前打开的文件的绝对路径为<reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-position"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-position" names="class_fileaccess_method_get_position"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_position</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-position"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-position" names="class_fileaccess_method_get_position"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_position</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-position"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回文件光标的位置。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-read-only-attribute"></target>
@@ -774,26 +774,26 @@ Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
             <paragraph><strong>注意：</strong>此方法在 iOS、BSD、macOS 和 Windows 上实现。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-real"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-real" names="class_fileaccess_method_get_real"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_real</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-real"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-real" names="class_fileaccess_method_get_real"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>get_real</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-real"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>将文件中接下来的若干位以浮点数形式返回。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-sha256"></target>
             <paragraph classes="classref-method" ids="class-fileaccess-method-get-sha256" names="class_fileaccess_method_get_sha256"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_sha256</strong>(path: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-sha256"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns an SHA-256 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> representing the file at the given path or an empty <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> on failure.</paragraph>
+            <paragraph>返回一个表示给定路径下文件的 SHA-256 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>，失败时返回一个空的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-unix-permissions"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-unix-permissions" names="class_fileaccess_method_get_unix_permissions"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>] <strong>get_unix_permissions</strong>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-unix-permissions"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-unix-permissions" names="class_fileaccess_method_get_unix_permissions"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>] <strong>get_unix_permissions</strong>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-unix-permissions"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回文件的 UNIX 权限。</paragraph>
             <paragraph><strong>注意：</strong>该方法在 iOS、Linux/BSD 和 macOS 上实现。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-get-var"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-get-var" names="class_fileaccess_method_get_var"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>get_var</strong>(allow_objects: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-var"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-get-var" names="class_fileaccess_method_get_var"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>get_var</strong>(allow_objects: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> = false) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-get-var"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回文件中的下一个 <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> 值。如果 <literal>allow_objects</literal> 为 <literal>true</literal>，则允许解码对象。</paragraph>
             <paragraph>在内部，这使用与 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-bytes-to-var"><inline classes="std std-ref">@GlobalScope.bytes_to_var</inline></reference> 方法相同的解码机制。</paragraph>
             <paragraph><strong>警告：</strong>反序列化得到的对象可能包含被执行的代码。如果序列化的对象来自不受信任的来源，请不要使用这个选项，以避免潜在的安全威胁，如远程代码执行。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-is-open"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-is-open" names="class_fileaccess_method_is_open"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_open</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-is-open"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-is-open" names="class_fileaccess_method_is_open"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_open</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-fileaccess-method-is-open"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果文件当前被打开，返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-open"></target>
@@ -842,7 +842,7 @@ Alice,"I thought you'd reply with ""Hello, world""."</literal_block>
             <paragraph><strong>注意：</strong>该方法在 iOS、BSD、macOS 和 Windows 上实现。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-fileaccess-method-set-unix-permissions"></target>
-            <paragraph classes="classref-method" ids="class-fileaccess-method-set-unix-permissions" names="class_fileaccess_method_set_unix_permissions"><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> <strong>set_unix_permissions</strong>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, permissions: <abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-fileaccess-method-set-unix-permissions"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-fileaccess-method-set-unix-permissions" names="class_fileaccess_method_set_unix_permissions"><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> <strong>set_unix_permissions</strong>(file: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, permissions: <abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation>[<reference internal="True" refid="enum-fileaccess-unixpermissionflags"><inline classes="std std-ref">UnixPermissionFlags</inline></reference>]) <abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation> <reference internal="True" refid="class-fileaccess-method-set-unix-permissions"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>设置文件的 UNIX 权限。</paragraph>
             <paragraph><strong>注意：</strong>该方法在 iOS、Linux/BSD 和 macOS 上实现。</paragraph>
             <transition classes="classref-item-separator"></transition>
@@ -946,12 +946,12 @@ func _ready():
             <paragraph>在内部，这使用与 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-var-to-bytes"><inline classes="std std-ref">@GlobalScope.var_to_bytes</inline></reference> 方法相同的编码机制。</paragraph>
             <paragraph><strong>注意：</strong>并非所有属性都包括在内。只有配置了 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-property-usage-storage"><inline classes="std std-ref">@GlobalScope.PROPERTY_USAGE_STORAGE</inline></reference> 标志集的属性才会被序列化。可以通过覆盖类中的 <reference internal="True" refuri="class_object#class-object-private-method-get-property-list"><inline classes="std std-ref">Object._get_property_list</inline></reference> 方法来向属性添加新的使用标志。还可以通过调用 <reference internal="True" refuri="class_object#class-object-private-method-get-property-list"><inline classes="std std-ref">Object._get_property_list</inline></reference> 来检查属性使用的配置方式。有关可能的使用标志，请参阅 <reference internal="True" refuri="class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

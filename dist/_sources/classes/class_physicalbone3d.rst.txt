@@ -22,7 +22,9 @@ PhysicalBone3D
 描述
 ----
 
-**PhysicalBone3D** 节点是一种能够让 :ref:`Skeleton3D<class_Skeleton3D>` 中的骨骼对物理作出反应的物理体。
+The **PhysicalBone3D** node is a physics body that can be used to make bones in a :ref:`Skeleton3D<class_Skeleton3D>` react to physics.
+
+\ **Note:** In order to detect physical bones with raycasts, the :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>` property of the parent :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` must be ``true`` and the :ref:`Skeleton3D<class_Skeleton3D>`'s bone must be assigned to **PhysicalBone3D** correctly; it means that :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` should return a valid id (``>= 0``).
 
 .. rst-class:: classref-reftable-group
 
@@ -137,7 +139,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -149,7 +151,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -161,7 +163,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -173,7 +175,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -185,7 +187,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -197,7 +199,7 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -327,9 +329,9 @@ enum **JointType**: :ref:`🔗<enum_PhysicalBone3D_JointType>`
 - |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
-If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` method, if that virtual method is overridden.
+如果为 ``true``\ ，则该物体的标准力积分（如重力或阻尼）将被禁用。除了碰撞响应之外，如果覆盖了 :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` 方法，则物体将仅按照该方法确定的方式移动。
 
-Setting this property will call the method :ref:`PhysicsServer3D.body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>` internally.
+设置该属性将在内部调用方法 :ref:`PhysicsServer3D.body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -501,7 +503,7 @@ Setting this property will call the method :ref:`PhysicsServer3D.body_set_omit_f
 
 |void| **_integrate_forces**\ (\ state\: :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`\ ) |virtual| :ref:`🔗<class_PhysicalBone3D_private_method__integrate_forces>`
 
-Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it is called before the standard force integration, but the :ref:`custom_integrator<class_PhysicalBone3D_property_custom_integrator>` property allows you to disable the standard force integration and do fully custom force integration for a body.
+在物理处理过程中被调用，允许你读取并安全地修改对象的模拟状态。默认情况下，它在标准力积分之前调用，但 :ref:`custom_integrator<class_PhysicalBone3D_property_custom_integrator>` 属性允许你禁用标准力积分并对物体进行完全自定义的力积分。
 
 .. rst-class:: classref-item-separator
 
@@ -515,7 +517,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -529,7 +531,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -543,7 +545,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -557,7 +559,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -571,13 +573,13 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. container:: contribute
 
-	目前没有这个方法的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该方法目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

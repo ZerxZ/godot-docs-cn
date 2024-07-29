@@ -255,9 +255,9 @@ enum **RPCMode**: :ref:`🔗<enum_MultiplayerAPI_RPCMode>`
 
 :ref:`int<class_int>` **get_remote_sender_id**\ (\ ) :ref:`🔗<class_MultiplayerAPI_method_get_remote_sender_id>`
 
-Returns the sender's peer ID for the RPC currently being executed.
+返回当前正在执行的 RPC 的发送方对等 ID。
 
-\ **Note:** This method returns ``0`` when called outside of an RPC. As such, the original peer ID may be lost when code execution is delayed (such as with GDScript's ``await`` keyword).
+\ **注意：**\ 在 RPC 之外调用时，该方法返回 ``0``\ 。因此，当代码延迟执行时（例如使用 GDScript 的 ``await`` 关键字），原始对等 ID 可能会丢失。
 
 .. rst-class:: classref-item-separator
 
@@ -364,10 +364,10 @@ Returns the sender's peer ID for the RPC currently being executed.
 设置默认的 MultiplayerAPI 实现类。模块和扩展可以使用这个方法来配置引擎启动时 :ref:`SceneTree<class_SceneTree>` 将使用哪个实现。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

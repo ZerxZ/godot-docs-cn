@@ -152,12 +152,9 @@
             </section>
             <section ids="autoplay-on-load" names="autoplay\ on\ load">
                 <title>Autoplay on load</title>
-                <paragraph>You can make it so an animation plays automatically when the AnimationPlayer nodes
-                    scene starts, or joins another scene. To do this click the "Autoplay on load"
-                    button in the animation editor, it's right next to the edit button.</paragraph>
+                <paragraph>为实现动画自动播放，点击动画编辑器中“编辑”按钮左边的“加载后自动播放”按钮即可。可在AnimationPlayer结点所在场景运行时或动画加入了另一个场景中时使用。</paragraph>
                 <image candidates="{'*': 'tutorials/animation/img/autoplay_on_load.webp'}" uri="tutorials/animation/img/autoplay_on_load.webp"></image>
-                <paragraph>The icon for it will also appear in front of the name of the animation, so you can
-                    easily identify which one is the autoplay animation.</paragraph>
+                <paragraph>它的图标也会出现在动画名称的前面，这样你就可以很容易地识别哪个是自动播放的动画。</paragraph>
             </section>
             <section ids="back-and-forth" names="back\ and\ forth 来来回回">
                 <title>来来回回</title>
@@ -259,22 +256,16 @@
             <paragraph>对于已存在的轨道，你可以添加一个名为“RESET”（大小写敏感）的动画，然后为每一个你希望重置的属性添加轨道。应该只在时间为 0 处存在一个关键帧，其值为每条轨道所期望的默认值。</paragraph>
             <paragraph>如果 AnimationPlayer 的 <strong>Reset On Save</strong>（保存时重置）属性为 <literal>true</literal>，场景在保存时会应用重置动画的效果（相当于寻道到 <literal>0.0</literal> 时间点的效果）。只有保存的文件会受到影响——编辑器中的属性轨道还是会保持原样。</paragraph>
             <paragraph>如果你想要在编辑器中重置轨道，请选中 AnimationPlayer 节点，打开 <strong>动画</strong> 底部面板，然后选择动画编辑器 <strong>动画</strong> 下拉菜单中的 <strong>应用重置</strong> 。</paragraph>
-            <paragraph>when using the keyframe icon next to a property in the inspector the editor will
-                ask you to automatically create a RESET track.</paragraph>
+            <paragraph>使用检查器中某个属性旁边的关键帧图标时，编辑器会询问你是否要自动创建一个RESET轨道。</paragraph>
             <note>
                 <paragraph>RESET轨道也被用作混合的参考值。另见<reference name="更好的混合" refuri="../animation/animation_tree.html#for-better-blending">更好的混合</reference>。</paragraph>
             </note>
         </section>
-        <section ids="onion-skinning" names="onion\ skinning">
-            <title>Onion Skinning</title>
-            <paragraph>Godot's animation editor allows you use onion skinning while creating an
-                animation. To turn this feature on click on the onion icon in the top right
-                of the animation editor. Now there will be transparent red copies of what
-                is being animated in its previous positions in the animation.</paragraph>
+        <section ids="onion-skinning" names="onion\ skinning 洋葱皮">
+            <title>洋葱皮</title>
+            <paragraph>Godot 的动画编辑器允许你在创建动画时使用洋葱蒙皮。要启用此功能，请单击动画编辑器右上角的洋葱图标。此时，在动画对象先前位置将有透明红色副本显示出来。</paragraph>
             <image candidates="{'*': 'tutorials/animation/img/onion_skin.webp'}" uri="tutorials/animation/img/onion_skin.webp"></image>
-            <paragraph>The three dots button next to the onion skinning button opens a dropdown
-                menu that lets you adjust how it works, including the ability to use
-                onion skinning for future frames.</paragraph>
+            <paragraph>与洋葱皮按钮相邻的三个圆点按钮可以打开一个下拉菜单，你可以用它来调整洋葱皮的工作方式，包括在未来的帧中使用洋葱皮的能力。</paragraph>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>
     </section>

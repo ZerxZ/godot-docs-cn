@@ -167,11 +167,11 @@ EditorInspectorPlugin
 
 |void| **add_property_editor**\ (\ property\: :ref:`String<class_String>`, editor\: :ref:`Control<class_Control>`, add_to_end\: :ref:`bool<class_bool>` = false, label\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorInspectorPlugin_method_add_property_editor>`
 
-Adds a property editor for an individual property. The ``editor`` control must extend :ref:`EditorProperty<class_EditorProperty>`.
+为单个属性添加属性编辑器。\ ``editor`` 控件必须继承自 :ref:`EditorProperty<class_EditorProperty>`\ 。
 
-There can be multiple property editors for a property. If ``add_to_end`` is ``true``, this newly added editor will be displayed after all the other editors of the property whose ``add_to_end`` is ``false``. For example, the editor uses this parameter to add an "Edit Region" button for :ref:`Sprite2D.region_rect<class_Sprite2D_property_region_rect>` below the regular :ref:`Rect2<class_Rect2>` editor.
+同一个属性可以有多个属性编辑器。如果 ``add_to_end`` 为 ``true`` 新添加的编辑器会显示在该属性所有 ``add_to_end`` 为 ``false`` 的编辑器之后。例如，\ :ref:`Sprite2D.region_rect<class_Sprite2D_property_region_rect>` 普通 :ref:`Rect2<class_Rect2>` 编辑器下面的“编辑区域”按钮就是使用这个参数添加的。
 
-\ ``label`` can be used to choose a custom label for the property editor in the inspector. If left empty, the label is computed from the name of the property instead.
+可以使用 ``label`` 选择该属性编辑器在检查器中的自定义标签。留空时则会根据属性的名称来计算标签。
 
 .. rst-class:: classref-item-separator
 
@@ -186,10 +186,10 @@ There can be multiple property editors for a property. If ``add_to_end`` is ``tr
 添加能够修改多个属性的编辑器。\ ``editor`` 控件必须扩展 :ref:`EditorProperty<class_EditorProperty>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

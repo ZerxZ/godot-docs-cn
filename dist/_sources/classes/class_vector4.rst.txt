@@ -137,7 +137,7 @@ Vector4
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -397,7 +397,7 @@ W 轴的枚举值。由 :ref:`max_axis_index<class_Vector4_method_max_axis_index
 
 :ref:`Vector4<class_Vector4>` **clampf**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector4_method_clampf>`
 
-Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+返回一个新向量，每个分量都使用 :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` 限制在 ``min`` 和 ``max`` 之间。
 
 .. rst-class:: classref-item-separator
 
@@ -669,9 +669,9 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 :ref:`Vector4<class_Vector4>` **normalized**\ (\ ) |const| :ref:`🔗<class_Vector4_method_normalized>`
 
-Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. Returns ``(0, 0, 0, 0)`` if ``v.length() == 0``. See also :ref:`is_normalized<class_Vector4_method_is_normalized>`.
+返回该向量缩放至单位长度的结果。等价于 ``v / v.length()``\ 。如果 ``v.length() == 0`` 则返回 ``(0, 0, 0, 0)``\ 。另见 :ref:`is_normalized<class_Vector4_method_is_normalized>`\ 。
 
-\ **Note:** This function may return incorrect values if the input vector length is near zero.
+\ **注意：**\ 如果输入向量的长度接近零，则这个函数可能返回不正确的值。
 
 .. rst-class:: classref-item-separator
 
@@ -743,7 +743,7 @@ Returns the result of scaling the vector to unit length. Equivalent to ``v / v.l
 
 :ref:`Vector4<class_Vector4>` **snappedf**\ (\ step\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Vector4_method_snappedf>`
 
-Returns a new vector with each component snapped to the nearest multiple of ``step``. This can also be used to round the components to an arbitrary number of decimals.
+返回一个新向量，其中每个分量都吸附到 ``step`` 的最接近的倍数。这也可以用于将分量四舍五入为任意数位的小数。
 
 .. rst-class:: classref-section-separator
 
@@ -751,7 +751,7 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Vector4_operator_neq_Vector4:
@@ -1009,10 +1009,10 @@ Returns a new vector with each component snapped to the nearest multiple of ``st
 返回该 **Vector4** 的负值。和写 ``Vector4(-v.x, -v.y, -v.z, -v.w)`` 是一样的。该操作在保持相同幅度的同时，翻转向量的方向。对于浮点数，零也有正负两种。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

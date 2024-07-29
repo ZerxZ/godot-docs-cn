@@ -126,7 +126,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-key-label"><inline classes="std std-ref">as_text_key_label</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-key-label"><inline classes="std std-ref">as_text_key_label</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -134,7 +134,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-keycode"><inline classes="std std-ref">as_text_keycode</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-keycode"><inline classes="std std-ref">as_text_keycode</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -142,7 +142,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-location"><inline classes="std std-ref">as_text_location</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-location"><inline classes="std std-ref">as_text_location</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -150,7 +150,7 @@
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-physical-keycode"><inline classes="std std-ref">as_text_physical_keycode</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-as-text-physical-keycode"><inline classes="std std-ref">as_text_physical_keycode</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -158,7 +158,7 @@
                                 <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-key-label-with-modifiers"><inline classes="std std-ref">get_key_label_with_modifiers</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-key-label-with-modifiers"><inline classes="std std-ref">get_key_label_with_modifiers</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -166,7 +166,7 @@
                                 <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-keycode-with-modifiers"><inline classes="std std-ref">get_keycode_with_modifiers</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-keycode-with-modifiers"><inline classes="std std-ref">get_keycode_with_modifiers</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -174,7 +174,7 @@
                                 <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-physical-keycode-with-modifiers"><inline classes="std std-ref">get_physical_keycode_with_modifiers</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-inputeventkey-method-get-physical-keycode-with-modifiers"><inline classes="std std-ref">get_physical_keycode_with_modifiers</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -194,7 +194,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_echo</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>如果为 <literal>true</literal>，则该键在此事件之前已被按下。这意味着用户正在按住该键。</paragraph>
+            <paragraph>If <literal>true</literal>, the key was already pressed before this event. An echo event is a repeated key event sent when the user is holding down the key.</paragraph>
+            <paragraph><strong>Note:</strong> The rate at which echo events are sent is typically around 20 events per second (after holding down the key for roughly half a second). However, the key repeat delay/speed can be changed by the user or disabled entirely in the operating system settings. To ensure your project works correctly on all configurations, do not assume the user has a specific key repeat configuration in your project's behavior.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-property-key-label"></target>
             <paragraph classes="classref-property" ids="class-inputeventkey-property-key-label" names="class_inputeventkey_property_key_label"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>key_label</strong> = <literal>0</literal> <reference internal="True" refid="class-inputeventkey-property-key-label"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -306,42 +307,42 @@
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-inputeventkey-method-as-text-key-label"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-key-label" names="class_inputeventkey_method_as_text_key_label"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_key_label</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-key-label"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-key-label" names="class_inputeventkey_method_as_text_key_label"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_key_label</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-key-label"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该事件 <reference internal="True" refid="class-inputeventkey-property-key-label"><inline classes="std std-ref">key_label</inline></reference> 及修饰键的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 字符串表示。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-as-text-keycode"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-keycode" names="class_inputeventkey_method_as_text_keycode"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_keycode</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-keycode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-keycode" names="class_inputeventkey_method_as_text_keycode"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_keycode</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-keycode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该事件 <reference internal="True" refid="class-inputeventkey-property-keycode"><inline classes="std std-ref">keycode</inline></reference> 及修饰键的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 字符串表示。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-as-text-location"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-location" names="class_inputeventkey_method_as_text_location"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_location</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-location"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-location" names="class_inputeventkey_method_as_text_location"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_location</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-location"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回事件的 <reference internal="True" refid="class-inputeventkey-property-location"><inline classes="std std-ref">location</inline></reference> 的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 表示形式。如果该事件不特定于某个位置，则这将是一个空白字符串。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-as-text-physical-keycode"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-physical-keycode" names="class_inputeventkey_method_as_text_physical_keycode"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_physical_keycode</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-physical-keycode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-as-text-physical-keycode" names="class_inputeventkey_method_as_text_physical_keycode"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>as_text_physical_keycode</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-as-text-physical-keycode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该事件 <reference internal="True" refid="class-inputeventkey-property-physical-keycode"><inline classes="std std-ref">physical_keycode</inline></reference> 及修饰键的 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 字符串表示。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-get-key-label-with-modifiers"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-key-label-with-modifiers" names="class_inputeventkey_method_get_key_label_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_key_label_with_modifiers</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-key-label-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-key-label-with-modifiers" names="class_inputeventkey_method_get_key_label_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_key_label_with_modifiers</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-key-label-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回与修饰键，例如 <literal classes="kbd">Shift</literal> 或 <literal classes="kbd">Alt</literal> 组合的本地化键标签。另见 <reference internal="True" refuri="class_inputeventwithmodifiers#class-inputeventwithmodifiers"><inline classes="std std-ref">InputEventWithModifiers</inline></reference>。</paragraph>
             <paragraph>要获得带有修饰键的 <strong>InputEventKey</strong> 的人类可读表示，请使用 <literal>OS.get_keycode_string(event.get_key_label_with_modifiers())</literal>，其中 <literal>event</literal> 是 <strong>InputEventKey</strong>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-get-keycode-with-modifiers"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-keycode-with-modifiers" names="class_inputeventkey_method_get_keycode_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_keycode_with_modifiers</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-keycode-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-keycode-with-modifiers" names="class_inputeventkey_method_get_keycode_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_keycode_with_modifiers</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-keycode-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回与 <literal classes="kbd">Shift</literal> 或 <literal classes="kbd">Alt</literal> 等修饰键组合的拉丁键码。另见 <reference internal="True" refuri="class_inputeventwithmodifiers#class-inputeventwithmodifiers"><inline classes="std std-ref">InputEventWithModifiers</inline></reference>。</paragraph>
             <paragraph>要获得带有修饰键的 <strong>InputEventKey</strong> 的人类可读表示，请使用 <literal>OS.get_keycode_string(event.get_keycode_with_modifiers())</literal>，其中 <literal>event</literal> 是 <strong>InputEventKey</strong>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-inputeventkey-method-get-physical-keycode-with-modifiers"></target>
-            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-physical-keycode-with-modifiers" names="class_inputeventkey_method_get_physical_keycode_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_physical_keycode_with_modifiers</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-physical-keycode-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-inputeventkey-method-get-physical-keycode-with-modifiers" names="class_inputeventkey_method_get_physical_keycode_with_modifiers"><reference internal="True" refuri="class_@globalscope#enum-globalscope-key"><inline classes="std std-ref">Key</inline></reference> <strong>get_physical_keycode_with_modifiers</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-inputeventkey-method-get-physical-keycode-with-modifiers"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回与诸如 <literal classes="kbd">Shift</literal> 或 <literal classes="kbd">Alt</literal> 的修饰键组合的物理键码。另请参阅 <reference internal="True" refuri="class_inputeventwithmodifiers#class-inputeventwithmodifiers"><inline classes="std std-ref">InputEventWithModifiers</inline></reference>。</paragraph>
             <paragraph>要获得带有修饰符的 <strong>InputEventKey</strong> 的人类可读表示，请使用 <literal>OS.get_keycode_string(event.get_physical_keycode_with_modifiers())</literal>，其中 <literal>event</literal> 是 <strong>InputEventKey</strong>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

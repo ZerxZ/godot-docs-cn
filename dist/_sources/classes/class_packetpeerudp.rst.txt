@@ -234,9 +234,9 @@ UDP 数据包对等体。可用于发送原始 UDP 数据包，也可以发送 :
 
 :ref:`Error<enum_@GlobalScope_Error>` **wait**\ (\ ) :ref:`🔗<class_PacketPeerUDP_method_wait>`
 
-Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPeerUDP_method_bind>`.
+等待数据包到达绑定的地址。见 :ref:`bind<class_PacketPeerUDP_method_bind>`\ 。
 
-\ **Note:** :ref:`wait<class_PacketPeerUDP_method_wait>` can't be interrupted once it has been called. This can be worked around by allowing the other party to send a specific "death pill" packet like this:
+\ **注意：**\ :ref:`wait<class_PacketPeerUDP_method_wait>` 一旦被调用就无法中断。解决方法是让对方发送一个特定的“毒药”数据包，如下所示：
 
 
 .. tabs::
@@ -244,11 +244,11 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
  .. code-tab:: gdscript
 
     socket = PacketPeerUDP.new()
-    # Server
+    # 服务器
     socket.set_dest_address("127.0.0.1", 789)
     socket.put_packet("Time to stop".to_ascii_buffer())
     
-    # Client
+    # 客户端
     while socket.wait() == OK:
         var data = socket.get_packet().get_string_from_ascii()
         if data == "Time to stop":
@@ -257,11 +257,11 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
  .. code-tab:: csharp
 
     var socket = new PacketPeerUdp();
-    // Server
+    // 服务器
     socket.SetDestAddress("127.0.0.1", 789);
     socket.PutPacket("Time to stop".ToAsciiBuffer());
     
-    // Client
+    // 客户端
     while (socket.Wait() == OK)
     {
         string data = socket.GetPacket().GetStringFromASCII();
@@ -274,10 +274,10 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
 
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

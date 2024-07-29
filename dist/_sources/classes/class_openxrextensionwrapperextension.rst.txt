@@ -114,9 +114,9 @@ OpenXRExtensionWrapperExtension
 
 :ref:`int<class_int>` **_get_composition_layer**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`
 
-Returns a pointer to an ``XrCompositionLayerBaseHeader`` struct to provide the given composition layer.
+返回指向 ``XrCompositionLayerBaseHeader`` 结构的指针以提供给定的合成层。
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+仅当扩展先前使用 :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>` 注册自身时才会调用该函数。
 
 .. rst-class:: classref-item-separator
 
@@ -128,9 +128,9 @@ This will only be called if the extension previously registered itself with :ref
 
 :ref:`int<class_int>` **_get_composition_layer_count**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_count>`
 
-Returns the number of composition layers this extension wrapper provides via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`.
+通过 :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>` 返回该扩展包装器提供的合成层数量。
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+仅当扩展先前使用 :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>` 注册自身时，才会调用该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -142,9 +142,9 @@ This will only be called if the extension previously registered itself with :ref
 
 :ref:`int<class_int>` **_get_composition_layer_order**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_order>`
 
-Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
+返回一个整数，该整数将用于对通过 :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>` 提供的给定合成层进行排序。数字越小，层就越容易移到列表的最前面，数字越大，层就越容易移到列表的最后面。默认投影层的顺序为 ``0``\ ，因此该方法提供的层可能应该位于（但不完全位于）\ ``0`` 的上方或下方。
 
-This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+仅当扩展程序先前使用 :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>` 注册自身时，才会调用该方法。
 
 .. rst-class:: classref-item-separator
 
@@ -184,7 +184,7 @@ This will only be called if the extension previously registered itself with :ref
 
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_viewport_composition_layer_extension_properties**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`
 
-Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent properties, just like :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`, that will be added to :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` nodes.
+获取表示属性的 :ref:`Dictionary<class_Dictionary>` 数组，就像 :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` 一样，将被添加到 :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` 节点。
 
 .. rst-class:: classref-item-separator
 
@@ -196,7 +196,7 @@ Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent propertie
 
 :ref:`Dictionary<class_Dictionary>` **_get_viewport_composition_layer_extension_property_defaults**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_property_defaults>`
 
-Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+获取一个 :ref:`Dictionary<class_Dictionary>`\ ，其中包含 :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>` 返回的属性的默认值。
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the
 
 |void| **_on_main_swapchains_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`
 
-Called right after the main swapchains are (re)created.
+在主交换链（重新）创建后立即调用。
 
 .. rst-class:: classref-item-separator
 
@@ -426,9 +426,9 @@ Called right after the main swapchains are (re)created.
 
 |void| **_on_viewport_composition_layer_destroyed**\ (\ layer\: ``const void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_viewport_composition_layer_destroyed>`
 
-Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` is destroyed.
+当通过 :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` 创建的合成层被销毁时调用。
 
-\ ``layer`` is a pointer to an ``XrCompositionLayerBaseHeader`` struct.
+\ ``layer`` 是指向 ``XrCompositionLayerBaseHeader`` 结构的指针。
 
 .. rst-class:: classref-item-separator
 
@@ -500,11 +500,11 @@ Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_O
 
 :ref:`int<class_int>` **_set_viewport_composition_layer_and_get_next_pointer**\ (\ layer\: ``const void*``, property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_viewport_composition_layer_and_get_next_pointer>`
 
-Adds additional data structures to composition layers created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
+向由 :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` 创建的合成层添加其他数据结构。
 
-\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+\ ``property_values`` 包含 :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>` 返回的属性值。
 
-\ ``layer`` is a pointer to an ``XrCompositionLayerBaseHeader`` struct.
+\ ``layer`` 是指向 ``XrCompositionLayerBaseHeader`` 结构的指针。
 
 .. rst-class:: classref-item-separator
 
@@ -531,10 +531,10 @@ Adds additional data structures to composition layers created by :ref:`OpenXRCom
 注册扩展程序。这应该发生在核心模块初始化级别。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

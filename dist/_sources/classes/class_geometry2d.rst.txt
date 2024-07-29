@@ -373,9 +373,9 @@ enum **PolyEndType**: :ref:`🔗<enum_Geometry2D_PolyEndType>`
 
 :ref:`bool<class_bool>` **is_polygon_clockwise**\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_Geometry2D_method_is_polygon_clockwise>`
 
-Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, otherwise returns ``false``.
+如果 ``polygon`` 的顶点按顺时针顺序排列，则返回 ``true``\ ，否则返回 ``false``\ 。
 
-\ **Note:** Assumes a Cartesian coordinate system where ``+x`` is right and ``+y`` is up. If using screen coordinates (``+y`` is down), the result will need to be flipped (i.e. a ``true`` result will indicate counter-clockwise).
+\ **注意：**\ 假设笛卡尔坐标系中 ``+x`` 为右，\ ``+y`` 为上。如果使用屏幕坐标（\ ``+y`` 为下），则需要翻转结果（即 ``true`` 结果将标识是逆时针）。
 
 .. rst-class:: classref-item-separator
 
@@ -533,10 +533,10 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 对由 ``polygon`` 中的点指定的多边形进行三角化。 返回一个 :ref:`PackedInt32Array<class_PackedInt32Array>`\ ，其中每个三角形由 ``polygon`` 中的三个连续点的索引组成（即返回的数组将具有 ``n * 3`` 个元素，其中 ``n`` 是找到的三角形的数量）。输出三角形将始终为逆时针旋转，如果为顺时针旋转，则轮廓将翻转。如果三角化没有成功，则返回一个空的 :ref:`PackedInt32Array<class_PackedInt32Array>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

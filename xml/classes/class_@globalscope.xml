@@ -12,11 +12,11 @@
         <paragraph>全局范围的常量和函数。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>全局范围的枚举常量和内置函数的列表。这是所有驻留在全局的，关于错误代码、键码、属性提示等的常量。</paragraph>
+            <paragraph>全局范围的枚举常量和内置函数的列表。这是所有驻留在全局的，关于错误代码、键码、属性提示等的常量的集合。</paragraph>
             <paragraph>单例也被记录在这里，因为它们可以从任何地方被访问。</paragraph>
             <paragraph>对于可以在任何脚本中访问的与 GDScript 相关的条目，请参阅 <reference internal="True" refuri="class_@gdscript#class-gdscript"><inline classes="std std-ref">@GDScript</inline></reference>。</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -2625,10 +2625,10 @@ hintString = $"{Variant.Type.Array:D}:{Variant.Type.Object:D}/{PropertyHint.Reso
             <paragraph>该属性不被存储，也不会显示在编辑器中。这是非导出属性的默认值。</paragraph>
             <target refid="class-globalscope-constant-property-usage-storage"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-globalscope-constant-property-usage-storage" names="class_@globalscope_constant_property_usage_storage"><reference internal="True" refid="enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> <strong>PROPERTY_USAGE_STORAGE</strong> = <literal>2</literal></paragraph>
-            <paragraph>将属性序列化并保存到场景文件中（默认）。</paragraph>
+            <paragraph>The property is serialized and saved in the scene file (default for exported properties).</paragraph>
             <target refid="class-globalscope-constant-property-usage-editor"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-globalscope-constant-property-usage-editor" names="class_@globalscope_constant_property_usage_editor"><reference internal="True" refid="enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> <strong>PROPERTY_USAGE_EDITOR</strong> = <literal>4</literal></paragraph>
-            <paragraph>该属性将被显示在 <reference internal="True" refuri="class_editorinspector#class-editorinspector"><inline classes="std std-ref">EditorInspector</inline></reference>（默认）中。</paragraph>
+            <paragraph>The property is shown in the <reference internal="True" refuri="class_editorinspector#class-editorinspector"><inline classes="std std-ref">EditorInspector</inline></reference> (default for exported properties).</paragraph>
             <target refid="class-globalscope-constant-property-usage-internal"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-globalscope-constant-property-usage-internal" names="class_@globalscope_constant_property_usage_internal"><reference internal="True" refid="enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference> <strong>PROPERTY_USAGE_INTERNAL</strong> = <literal>8</literal></paragraph>
             <paragraph>该属性排除在类参考手册之外。</paragraph>
@@ -3148,7 +3148,7 @@ var c = acos(0.866025)</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-acosh"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-acosh" names="class_@globalscope_method_acosh"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>acosh</strong>(x: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-acosh"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回参数 x 的双曲弧（也称为反余弦），返回弧度值。使用它来获取在双曲空间中，如果参数 x 大于或等于 1 ，角的余弦的角度。对于参数 x 小于 1 的值，将返回 0 ，以防止 <reference internal="True" refid="class-globalscope-method-acosh"><inline classes="std std-ref">acosh</inline></reference> 返回 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference> 。</paragraph>
+            <paragraph>返回 <literal>x</literal> 的反双曲余弦值，返回值为弧度。使用它来获取在双曲空间中，如果 <literal>x</literal> 大于或等于 1，角的余弦的角度。对于 <literal>x</literal> 小于 1 的值，将返回 0，以防止 <reference internal="True" refid="class-globalscope-method-acosh"><inline classes="std std-ref">acosh</inline></reference> 返回 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = acosh(2) # 返回 1.31695789692482
 cosh(a) # 返回 2
 
@@ -3166,13 +3166,13 @@ var s = asin(0.5)</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-asinh"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-asinh" names="class_@globalscope_method_asinh"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>asinh</strong>(x: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-asinh"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回参数 x 的双曲弧（也称为反正弦），返回弧度值。使用它来获取在双曲空间中，角的正弦角度。</paragraph>
+            <paragraph>返回 <literal>x</literal> 的反双曲正弦值，返回值为弧度。使用它来获取在双曲空间中，角的正弦角度。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = asinh(0.9) # 返回 0.8088669356527824
 sinh(a) # 返回 0.9</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-atan"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-atan" names="class_@globalscope_method_atan"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>atan</strong>(x: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-atan"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回 <literal>x</literal> 的反正切值，单位是弧度。在三角函数中用它来得到一个角上切线的角度。</paragraph>
+            <paragraph>返回 <literal>x</literal> 的反正切值，单位为弧度。在三角函数中用它来得到一个角上切线的角度。</paragraph>
             <paragraph>该方法无法确定角度应该落在哪个象限。如果你同时拥有 <literal>y</literal> 和 <literal>x</literal>，请参见 <reference internal="True" refid="class-globalscope-method-atan2"><inline classes="std std-ref">atan2</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = atan(0.5) # a=0.463648</literal_block>
             <paragraph>如果 <literal>x</literal> 在 <literal>-PI/2</literal> 和 <literal>PI/2</literal>（包括）之间，<literal>atan(tan(x))</literal> 等于 <literal>x</literal>。</paragraph>
@@ -3185,8 +3185,8 @@ sinh(a) # 返回 0.9</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-atanh"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-atanh" names="class_@globalscope_method_atanh"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>atanh</strong>(x: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-atanh"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回 <literal>x</literal> 的双曲弧（也称为反正切），以弧度为单位。如果 <literal>x</literal> 在 -1 和 1 之间（不包括 -1 和 1 ），则使用它从双曲空间中的角度的正切值获取角度。</paragraph>
-            <paragraph>在数学中，只有在实数集中，-1 &lt; <literal>x</literal> &lt; 1 的情况下，双曲反正切才有意义。因此，为了预防 <reference internal="True" refid="class-globalscope-method-atanh"><inline classes="std std-ref">atanh</inline></reference> 返回 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference> ，对于 <literal>x</literal> 等于或小于 -1 的值，返回负的 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference> ；对于<literal>x</literal>等于或大于 1 的值，返回正的 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-inf"><inline classes="std std-ref">@GDScript.INF</inline></reference> 。</paragraph>
+            <paragraph>返回 <literal>x</literal> 的反双曲正切值，返回值为弧度。如果 <literal>x</literal> 在 -1 和 1 之间（不包括 -1 和 1），则使用它从双曲空间中的角度的正切值获取角度。</paragraph>
+            <paragraph>在数学中，只有在实数集中，-1 &lt; <literal>x</literal> &lt; 1 的情况下，双曲反正切才有意义。因此，为了预防 <reference internal="True" refid="class-globalscope-method-atanh"><inline classes="std std-ref">atanh</inline></reference> 返回 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference>，对于 <literal>x</literal> 等于或小于 -1 的值，返回负的 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-nan"><inline classes="std std-ref">@GDScript.NAN</inline></reference>；对于 <literal>x</literal>等于或大于 1 的值，返回正的 <reference internal="True" refuri="class_@gdscript#class-gdscript-constant-inf"><inline classes="std std-ref">@GDScript.INF</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = atanh(0.9) # 返回 1.47221948958322
 tanh(a) # 返回 0.9
 
@@ -3290,7 +3290,7 @@ cos(deg_to_rad(90)) # 返回 0.0</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-db-to-linear"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-db-to-linear" names="class_@globalscope_method_db_to_linear"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>db_to_linear</strong>(db: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-db-to-linear"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>从分贝转换为线性能量（音频）。</paragraph>
+            <paragraph>将分贝值转换为线性能量（音频）值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-deg-to-rad"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-deg-to-rad" names="class_@globalscope_method_deg_to_rad"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>deg_to_rad</strong>(deg: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-deg-to-rad"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -3299,7 +3299,7 @@ cos(deg_to_rad(90)) # 返回 0.0</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-ease"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-ease" names="class_@globalscope_method_ease"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>ease</strong>(x: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, curve: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-ease"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>基于用 <literal>curve</literal> 定义的缓动函数返回 <literal>x</literal> 的“缓动后”的值。该缓动函数是基于指数的。<literal>curve</literal> 可以是任意浮点数，具体数值会导致以下行为：</paragraph>
+            <paragraph>基于用 <literal>curve</literal> 定义的缓动函数返回 <literal>x</literal> “缓动后”的值，该缓动函数是基于指数的缓动。<literal>curve</literal> 可以是任意浮点数，具体数值会导致以下行为：</paragraph>
             <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">- 低于 -1.0（开区间）：缓入缓出
 - -1.0：线性
 - 在 -1.0 和 0.0 之间（开区间）：缓出缓入
@@ -3864,10 +3864,10 @@ GD.RandRange(-10, 1000); // 返回介于 -10 和 1000 之间的随机整数</lit
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-remap"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-remap" names="class_@globalscope_method_remap"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>remap</strong>(value: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, istart: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, istop: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, ostart: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, ostop: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <reference internal="True" refid="class-globalscope-method-remap"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Maps a <literal>value</literal> from range <literal>[istart, istop]</literal> to <literal>[ostart, ostop]</literal>. See also <reference internal="True" refid="class-globalscope-method-lerp"><inline classes="std std-ref">lerp</inline></reference> and <reference internal="True" refid="class-globalscope-method-inverse-lerp"><inline classes="std std-ref">inverse_lerp</inline></reference>. If <literal>value</literal> is outside <literal>[istart, istop]</literal>, then the resulting value will also be outside <literal>[ostart, ostop]</literal>. If this is not desired, use <reference internal="True" refid="class-globalscope-method-clamp"><inline classes="std std-ref">clamp</inline></reference> on the result of this function.</paragraph>
-            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">remap(75, 0, 100, -1, 1) # Returns 0.5</literal_block>
-            <paragraph>For complex use cases where multiple ranges are needed, consider using <reference internal="True" refuri="class_curve#class-curve"><inline classes="std std-ref">Curve</inline></reference> or <reference internal="True" refuri="class_gradient#class-gradient"><inline classes="std std-ref">Gradient</inline></reference> instead.</paragraph>
-            <paragraph><strong>Note:</strong> If <literal>istart == istop</literal>, the return value is undefined (most likely NaN, INF, or -INF).</paragraph>
+            <paragraph>将 <literal>value</literal> 从范围 <literal>[istart, istop]</literal> 映射到 <literal>[ostart, ostop]</literal>。另见 <reference internal="True" refid="class-globalscope-method-lerp"><inline classes="std std-ref">lerp</inline></reference> 和 <reference internal="True" refid="class-globalscope-method-inverse-lerp"><inline classes="std std-ref">inverse_lerp</inline></reference>。如果 <literal>value</literal> 在 <literal>[istart, istop]</literal> 之外，那么结果值也将在 <literal>[ostart, ostop]</literal> 之外。如果不希望这样，请对该函数的结果使用 <reference internal="True" refid="class-globalscope-method-clamp"><inline classes="std std-ref">clamp</inline></reference>。</paragraph>
+            <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">remap(75, 0, 100, -1, 1) # 返回 0.5</literal_block>
+            <paragraph>对于需要多个范围的复杂用例，请考虑改用 <reference internal="True" refuri="class_curve#class-curve"><inline classes="std std-ref">Curve</inline></reference> 或 <reference internal="True" refuri="class_gradient#class-gradient"><inline classes="std std-ref">Gradient</inline></reference>。</paragraph>
+            <paragraph><strong>注意：</strong>如果 <literal>istart == istop</literal>，则返回值未定义（很可能是 NaN、INF 或 -INF）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-globalscope-method-rid-allocate-id"></target>
             <paragraph classes="classref-method" ids="class-globalscope-method-rid-allocate-id" names="class_@globalscope_method_rid_allocate_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>rid_allocate_id</strong>() <reference internal="True" refid="class-globalscope-method-rid-allocate-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -4162,12 +4162,12 @@ frame = wrapi(frame + 1, 5, 10)</literal_block>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># result 是 -2
 var result = wrapi(-6, -5, -1)</literal_block>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

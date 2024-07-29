@@ -9,7 +9,7 @@
         <paragraph>虽然其中许多问题可以通过配置解决，但其中一些问题是引擎错误造成的。有关物理引擎相关的已知问题，请参阅 <reference name="GitHub 上开放的物理相关问题" refuri="https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%3Aphysicals">GitHub 上开放的物理相关问题</reference> 。查看 <reference name="已关闭的问题" refuri="https://github.com/godotengine/godot/issues?q=+is%3Alined+is%3Aissue+label%3Atopic%3Aphysicals">已关闭的问题</reference> 也可以帮助回答与物理引擎行为相关的问题。</paragraph>
         <section ids="objects-are-passing-through-each-other-at-high-speeds" names="objects\ are\ passing\ through\ each\ other\ at\ high\ speeds 高速运动的对象会互相穿透">
             <title>高速运动的对象会互相穿透</title>
-            <paragraph>这被称为 <emphasis>隧道效应</emphasis>。在 RigidBody 中启用 <strong>连续碰撞检测模式</strong> 属性有时可以解决此问题。如果此方法无效，您可以尝试其他解决方案：</paragraph>
+            <paragraph>这被称为 <emphasis>隧道效应</emphasis>。在 RigidBody 中启用 <strong>连续碰撞检测模式</strong> 属性有时可以解决此问题。如果此方法无效，你可以尝试其他解决方案：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph>使你的静态碰撞形状更厚。例如，如果你有一个玩家无法以某种方式穿过的薄地板，你可以使碰撞器比地板看起来更厚。</paragraph>
@@ -18,23 +18,23 @@
                     <paragraph>根据你的快速移动物体的运动速度调整其碰撞形状。物体移动得越快，碰撞形状应该越向外扩展，以确保它能够更可靠地与薄墙发生碰撞。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>在项目设置中增加 <strong>每秒物理周期数</strong>。虽然这有其他好处（例如更稳定的模拟和减少输入延迟），但这会增加CPU的使用率，可能不适用于移动或网页平台。对于大多数显示器来说，应该优先选择默认值60的倍数（如120、180或240），以获得平滑的外观。</paragraph>
+                    <paragraph>在项目设置中增加<strong>每秒物理周期数</strong>。虽然这有其他好处（例如更稳定的模拟和减少输入延迟），但这会增加 CPU 的使用率，可能不适用于移动或网页平台。对于大多数显示器来说，应该优先选择默认值 <literal>60</literal> 的倍数（如 <literal>120</literal>、<literal>180</literal> 或 <literal>240</literal>），以获得平滑的外观。</paragraph>
                 </list_item>
             </bullet_list>
         </section>
         <section ids="stacked-objects-are-unstable-and-wobbly" names="stacked\ objects\ are\ unstable\ and\ wobbly 堆叠的对象摇摆不定">
             <title>堆叠的对象摇摆不定</title>
             <paragraph>尽管看起来像一个简单问题，但是在物理引擎中带有堆叠物体的稳定刚体模拟很难实现。这是因为力结合后的相互作用。堆叠的物体越多，相互之间的作用力越强。这最终导致了模拟变得不稳定，使得物体不能相互堆叠在一起而不发生移动。</paragraph>
-            <paragraph>提升物理模拟频率可以帮助减少这个问题。为了这么做，增加项目设置中的 <strong>每秒物理周期数</strong> 选项。请注意，这会增加CPU的使用率，可能不适用于移动或网页平台。对于大多数显示器来说，应该优先选择默认值60的倍数（如120、180或240），以获得平滑的外观。</paragraph>
+            <paragraph>提升物理模拟频率可以帮助减少这个问题。为了这么做，增加项目设置中的 <strong>每秒物理周期数</strong> 选项。请注意，这会增加 CPU 的使用率，可能不适用于移动或网页平台。对于大多数显示器来说，应该优先选择默认值 <literal>60</literal> 的倍数（如 <literal>120</literal>、<literal>180</literal> 或 <literal>240</literal>），以获得平滑的外观。</paragraph>
         </section>
         <section ids="scaled-physics-bodies-or-collision-shapes-do-not-collide-correctly" names="scaled\ physics\ bodies\ or\ collision\ shapes\ do\ not\ collide\ correctly 缩放后的物理体或碰撞形状无法正确碰撞">
             <title>缩放后的物理体或碰撞形状无法正确碰撞</title>
-            <paragraph>Godot当前没有支持缩放物理体或碰撞形状。作为替代方案，改变碰撞形状的范围而不是其缩放比例。如果你想让视觉表现的尺寸也发生变化，可以改变底层视觉表现（Sprite2D，MeshInstance3D， …）并单独改变它的碰撞形状的范围。在这种情况下，请确保碰撞形状不是视觉表现节点的子节点。</paragraph>
-            <paragraph>由于资源默认是共享的，如果你不想让更改应用于场景中使用相同碰撞形状资源的所有节点，你需要让这个碰撞形状资源变得独一无二。这可以通过在碰撞形状资源的脚本中调用 duplicate() 方法来实现，然后在改变其尺寸 之前 进行操作。这样，更改将只影响当前的资源实例，而不会影响其他使用相同资源的节点。</paragraph>
+            <paragraph>Godot 当前没有支持缩放物理体或碰撞形状。作为替代方案，改变碰撞形状的范围而不是其缩放比例。如果你想让视觉表现的尺寸也发生变化，可以改变底层视觉表现（Sprite2D、MeshInstance3D……）并单独改变它的碰撞形状的范围。在这种情况下，请确保碰撞形状不是视觉表现节点的子节点。</paragraph>
+            <paragraph>由于资源默认是共享的，如果你不想让更改应用于场景中使用相同碰撞形状资源的所有节点，你需要让这个碰撞形状资源变得独一无二。这可以通过在碰撞形状资源的脚本中调用 <literal>duplicate()</literal> 方法来实现，然后在改变其尺寸<emphasis>之前</emphasis>进行操作。这样，更改将只影响当前的资源实例，而不会影响其他使用相同资源的节点。</paragraph>
         </section>
         <section ids="thin-objects-are-wobbly-when-resting-on-the-floor" names="thin\ objects\ are\ wobbly\ when\ resting\ on\ the\ floor 当薄物体放在地板上时，它们会显得不稳定">
             <title>当薄物体放在地板上时，它们会显得不稳定</title>
-            <paragraph>This can be due to one of two causes:</paragraph>
+            <paragraph>可能是由以下两个原因之一造成的：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph>地板的碰撞形状太薄了。</paragraph>

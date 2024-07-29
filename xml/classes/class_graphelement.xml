@@ -132,7 +132,7 @@
             <transition classes="classref-item-separator"></transition>
             <target refid="class-graphelement-signal-resize-end"></target>
             <paragraph classes="classref-signal" ids="class-graphelement-signal-resize-end" names="class_graphelement_signal_resize_end"><strong>resize_end</strong>(new_size: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <reference internal="True" refid="class-graphelement-signal-resize-end"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Emitted when releasing the mouse button after dragging the resizer handle (see <reference internal="True" refid="class-graphelement-property-resizable"><inline classes="std std-ref">resizable</inline></reference>).</paragraph>
+            <paragraph>拖动调整大小手柄后释放鼠标按钮时发出（见 <reference internal="True" refid="class-graphelement-property-resizable"><inline classes="std std-ref">resizable</inline></reference>）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-graphelement-signal-resize-request"></target>
             <paragraph classes="classref-signal" ids="class-graphelement-signal-resize-request" names="class_graphelement_signal_resize_request"><strong>resize_request</strong>(new_size: <reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference>) <reference internal="True" refid="class-graphelement-signal-resize-request"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -175,8 +175,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_resizable</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If <literal>true</literal>, the user can resize the GraphElement.</paragraph>
-            <paragraph><strong>Note:</strong> Dragging the handle will only emit the <reference internal="True" refid="class-graphelement-signal-resize-request"><inline classes="std std-ref">resize_request</inline></reference> and <reference internal="True" refid="class-graphelement-signal-resize-end"><inline classes="std std-ref">resize_end</inline></reference> signals, the GraphElement needs to be resized manually.</paragraph>
+            <paragraph>如果为 <literal>true</literal>，则用户可以调整 GraphElement 的大小。</paragraph>
+            <paragraph><strong>注意：</strong>拖动手柄只会发出 <reference internal="True" refid="class-graphelement-signal-resize-request"><inline classes="std std-ref">resize_request</inline></reference> 和 <reference internal="True" refid="class-graphelement-signal-resize-end"><inline classes="std std-ref">resize_end</inline></reference> 信号，GraphElement 需要手动调整大小。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-graphelement-property-selectable"></target>
             <paragraph classes="classref-property" ids="class-graphelement-property-selectable" names="class_graphelement_property_selectable"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>selectable</strong> = <literal>true</literal> <reference internal="True" refid="class-graphelement-property-selectable"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -209,12 +209,12 @@
             <paragraph classes="classref-themeproperty" ids="class-graphelement-theme-icon-resizer" names="class_graphelement_theme_icon_resizer"><reference internal="True" refuri="class_texture2d#class-texture2d"><inline classes="std std-ref">Texture2D</inline></reference> <strong>resizer</strong> <reference internal="True" refid="class-graphelement-theme-icon-resizer"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>用于调整大小的图标，在 <reference internal="True" refid="class-graphelement-property-resizable"><inline classes="std std-ref">resizable</inline></reference> 被启用时可见。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

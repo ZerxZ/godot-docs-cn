@@ -275,8 +275,8 @@ Input.parse_input_event(ev)</literal_block>
                 <div aria-labelledby="tab-2-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-2-QyM=" name="QyM=" role="tabpanel" tabindex="0">
                     <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">var ev = new InputEventAction();
 // Set as ui_left, pressed.
-ev.SetAction("ui_left");
-ev.SetPressed(true);
+ev.Action = "ui_left";
+ev.Pressed = true;
 // Feedback.
 Input.ParseInputEvent(ev);</literal_block>
                 </div>

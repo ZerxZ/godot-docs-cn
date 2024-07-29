@@ -69,9 +69,9 @@ EditorPaths
 
 :ref:`String<class_String>` **get_cache_dir**\ (\ ) |const| :ref:`🔗<class_EditorPaths_method_get_cache_dir>`
 
-Returns the absolute path to the user's cache folder. This folder should be used for temporary data that can be removed safely whenever the editor is closed (such as generated resource thumbnails).
+返回用户缓存文件夹的绝对路径。该文件夹应该用于临时数据，关闭编辑器时应该能够安全地移除这些数据（例如生成的资源预览图）。
 
-\ **Default paths per platform:**\ 
+\ **各平台的默认路径：**\ 
 
 .. code:: text
 
@@ -89,14 +89,14 @@ Returns the absolute path to the user's cache folder. This folder should be used
 
 :ref:`String<class_String>` **get_config_dir**\ (\ ) |const| :ref:`🔗<class_EditorPaths_method_get_config_dir>`
 
-Returns the absolute path to the user's configuration folder. This folder should be used for *persistent* user configuration files.
+返回用户配置文件夹的绝对路径。该文件夹应该用于\ *持久化*\ 的用户配置文件。
 
-\ **Default paths per platform:**\ 
+\ **各平台的默认路径：**\ 
 
 .. code:: text
 
-    - Windows: %APPDATA%\Godot\                    (same as `get_data_dir()`)
-    - macOS: ~/Library/Application Support/Godot/  (same as `get_data_dir()`)
+    - Windows: %APPDATA%\Godot\                    （同 `get_data_dir()`）
+    - macOS: ~/Library/Application Support/Godot/  （同 `get_data_dir()`）
     - Linux: ~/.config/godot/
 
 .. rst-class:: classref-item-separator
@@ -109,15 +109,15 @@ Returns the absolute path to the user's configuration folder. This folder should
 
 :ref:`String<class_String>` **get_data_dir**\ (\ ) |const| :ref:`🔗<class_EditorPaths_method_get_data_dir>`
 
-Returns the absolute path to the user's data folder. This folder should be used for *persistent* user data files such as installed export templates.
+返回用户数据文件夹的绝对路径。该文件夹应该用于\ *持久化*\ 的用户数据文件，例如已安装的导出模板。
 
-\ **Default paths per platform:**\ 
+\ **各平台的默认路径：**\ 
 
 .. code:: text
 
-    - Windows: %APPDATA%\Godot\                    (same as `get_config_dir()`)
-    - macOS: ~/Library/Application Support/Godot/  (same as `get_config_dir()`)
-    - Linux: ~/.local/share/godot/
+    - Windows：%APPDATA%\Godot\                    （同 `get_config_dir()` ）
+    - macOS：~/Library/Application Support/Godot/  （同 `get_config_dir()` ）
+    - Linux：~/.local/share/godot/
 
 .. rst-class:: classref-item-separator
 
@@ -164,10 +164,10 @@ Returns the absolute path to the user's data folder. This folder should be used 
 \ **注意：**\ Godot 的 Steam 版本默认使用自包含模式。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

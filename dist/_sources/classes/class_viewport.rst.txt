@@ -646,7 +646,7 @@ enum **DebugDraw**: :ref:`🔗<enum_Viewport_DebugDraw>`
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SCENE_LUMINANCE** = ``11``
 
-Draws the scene luminance buffer (if available) in the upper left quadrant of the **Viewport**.
+在 **Viewport** 的左上象限中绘制场景亮度缓冲（如果可用）。
 
 .. _class_Viewport_constant_DEBUG_DRAW_SSAO:
 
@@ -686,9 +686,9 @@ Draws the scene luminance buffer (if available) in the upper left quadrant of th
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SDFGI** = ``16``
 
-Draws the cascades used to render signed distance field global illumination (SDFGI).
+绘制用于渲染带符号距离场全局光照（SDFGI）的级联。
 
-Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
+如果当前环境的 :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` 为 ``false`` 或平台不支持 SDFGI，则不执行任何操作。
 
 .. _class_Viewport_constant_DEBUG_DRAW_SDFGI_PROBES:
 
@@ -696,9 +696,9 @@ Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SDFGI_PROBES** = ``17``
 
-Draws the probes used for signed distance field global illumination (SDFGI).
+绘制用于带符号距离场全局照明（SDFGI）的探测器。
 
-Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
+如果当前环境的 :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` 为 ``false`` 或平台不支持 SDFGI，则不执行任何操作。
 
 .. _class_Viewport_constant_DEBUG_DRAW_GI_BUFFER:
 
@@ -706,7 +706,7 @@ Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_GI_BUFFER** = ``18``
 
-Draws the buffer used for global illumination (GI).
+绘制用于全局光照（GI）的缓冲。
 
 .. _class_Viewport_constant_DEBUG_DRAW_DISABLE_LOD:
 
@@ -714,7 +714,7 @@ Draws the buffer used for global illumination (GI).
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_DISABLE_LOD** = ``19``
 
-Draws all of the objects at their highest polycount, without low level of detail (LOD).
+使用最高多边形数绘制对象，不使用低细节层次（LOD）。
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_OMNI_LIGHTS:
 
@@ -722,7 +722,7 @@ Draws all of the objects at their highest polycount, without low level of detail
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_OMNI_LIGHTS** = ``20``
 
-Draws the cluster used by :ref:`OmniLight3D<class_OmniLight3D>` nodes to optimize light rendering.
+绘制 :ref:`OmniLight3D<class_OmniLight3D>` 节点优化光照渲染所使用的集群。
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS:
 
@@ -730,7 +730,7 @@ Draws the cluster used by :ref:`OmniLight3D<class_OmniLight3D>` nodes to optimiz
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = ``21``
 
-Draws the cluster used by :ref:`SpotLight3D<class_SpotLight3D>` nodes to optimize light rendering.
+绘制 :ref:`SpotLight3D<class_SpotLight3D>` 节点优化光照渲染所使用的集群。
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_DECALS:
 
@@ -738,7 +738,7 @@ Draws the cluster used by :ref:`SpotLight3D<class_SpotLight3D>` nodes to optimiz
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_DECALS** = ``22``
 
-Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rendering.
+绘制 :ref:`Decal<class_Decal>` 节点优化贴花渲染所使用的集群。
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES:
 
@@ -746,7 +746,7 @@ Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rend
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
-Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to optimize decal rendering.
+绘制 :ref:`ReflectionProbe<class_ReflectionProbe>` 节点优化贴花渲染所使用的集群。
 
 .. _class_Viewport_constant_DEBUG_DRAW_OCCLUDERS:
 
@@ -754,7 +754,7 @@ Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_OCCLUDERS** = ``24``
 
-Draws the buffer used for occlusion culling.
+绘制用于遮挡剔除的缓冲。
 
 .. _class_Viewport_constant_DEBUG_DRAW_MOTION_VECTORS:
 
@@ -762,7 +762,7 @@ Draws the buffer used for occlusion culling.
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_MOTION_VECTORS** = ``25``
 
-Draws vector lines over the viewport to indicate the movement of pixels between frames.
+在视口中绘制向量线段，表示帧与帧之间像素的移动。
 
 .. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
 
@@ -884,7 +884,7 @@ enum **SDFOversize**: :ref:`🔗<enum_Viewport_SDFOversize>`
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_100_PERCENT** = ``0``
 
-The signed distance field only covers the viewport's own rectangle.
+带符号距离场仅覆盖视口矩形本身。
 
 .. _class_Viewport_constant_SDF_OVERSIZE_120_PERCENT:
 
@@ -892,7 +892,7 @@ The signed distance field only covers the viewport's own rectangle.
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_120_PERCENT** = ``1``
 
-The signed distance field is expanded to cover 20% of the viewport's size around the borders.
+带符号距离场的每个边界都覆盖超出视口大小 20% 的范围。
 
 .. _class_Viewport_constant_SDF_OVERSIZE_150_PERCENT:
 
@@ -900,7 +900,7 @@ The signed distance field is expanded to cover 20% of the viewport's size around
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_150_PERCENT** = ``2``
 
-The signed distance field is expanded to cover 50% of the viewport's size around the borders.
+带符号距离场的每个边界都覆盖超出视口大小 50% 的范围。
 
 .. _class_Viewport_constant_SDF_OVERSIZE_200_PERCENT:
 
@@ -908,7 +908,7 @@ The signed distance field is expanded to cover 50% of the viewport's size around
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_200_PERCENT** = ``3``
 
-The signed distance field is expanded to cover 100% (double) of the viewport's size around the borders.
+带符号距离场的每个边界都覆盖超出视口大小 100% 的范围（翻倍）。
 
 .. _class_Viewport_constant_SDF_OVERSIZE_MAX:
 
@@ -934,7 +934,7 @@ enum **SDFScale**: :ref:`🔗<enum_Viewport_SDFScale>`
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_100_PERCENT** = ``0``
 
-The signed distance field is rendered at full resolution.
+使用完整分辨率渲染带符号距离场。
 
 .. _class_Viewport_constant_SDF_SCALE_50_PERCENT:
 
@@ -942,7 +942,7 @@ The signed distance field is rendered at full resolution.
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_50_PERCENT** = ``1``
 
-The signed distance field is rendered at half the resolution of this viewport.
+使用视口一半的分辨率渲染带符号距离场。
 
 .. _class_Viewport_constant_SDF_SCALE_25_PERCENT:
 
@@ -950,7 +950,7 @@ The signed distance field is rendered at half the resolution of this viewport.
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_25_PERCENT** = ``2``
 
-The signed distance field is rendered at a quarter the resolution of this viewport.
+使用视口四分之一的分辨率渲染带符号距离场。
 
 .. _class_Viewport_constant_SDF_SCALE_MAX:
 
@@ -976,7 +976,7 @@ enum **VRSMode**: :ref:`🔗<enum_Viewport_VRSMode>`
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_DISABLED** = ``0``
 
-Variable Rate Shading is disabled.
+禁用可变速率着色。
 
 .. _class_Viewport_constant_VRS_TEXTURE:
 
@@ -984,7 +984,7 @@ Variable Rate Shading is disabled.
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_TEXTURE** = ``1``
 
-Variable Rate Shading uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
+可变速率着色使用纹理。请注意，使用立体视觉时请使用为每个视图提供纹理的纹理图集。
 
 .. _class_Viewport_constant_VRS_XR:
 
@@ -992,7 +992,7 @@ Variable Rate Shading uses a texture. Note, for stereoscopic use a texture atlas
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_XR** = ``2``
 
-Variable Rate Shading's texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
+可变速率着色纹理由主 :ref:`XRInterface<class_XRInterface>` 提供。
 
 .. _class_Viewport_constant_VRS_MAX:
 
@@ -1018,7 +1018,7 @@ enum **VRSUpdateMode**: :ref:`🔗<enum_Viewport_VRSUpdateMode>`
 
 :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_DISABLED** = ``0``
 
-The input texture for variable rate shading will not be processed.
+可变速率着色的输入纹理将不会被处理。
 
 .. _class_Viewport_constant_VRS_UPDATE_ONCE:
 
@@ -1026,7 +1026,7 @@ The input texture for variable rate shading will not be processed.
 
 :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_ONCE** = ``1``
 
-The input texture for variable rate shading will be processed once.
+可变速率着色的输入纹理将被处理一次。
 
 .. _class_Viewport_constant_VRS_UPDATE_ALWAYS:
 
@@ -1034,7 +1034,7 @@ The input texture for variable rate shading will be processed once.
 
 :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_ALWAYS** = ``2``
 
-The input texture for variable rate shading will be processed each frame.
+可变速率着色的输入纹理将每帧进行处理。
 
 .. _class_Viewport_constant_VRS_UPDATE_MAX:
 
@@ -1602,9 +1602,9 @@ The input texture for variable rate shading will be processed each frame.
 - |void| **set_sdf_oversize**\ (\ value\: :ref:`SDFOversize<enum_Viewport_SDFOversize>`\ )
 - :ref:`SDFOversize<enum_Viewport_SDFOversize>` **get_sdf_oversize**\ (\ )
 
-Controls how much of the original viewport's size should be covered by the 2D signed distance field. This SDF can be sampled in :ref:`CanvasItem<class_CanvasItem>` shaders and is also used for :ref:`GPUParticles2D<class_GPUParticles2D>` collision. Higher values allow portions of occluders located outside the viewport to still be taken into account in the generated signed distance field, at the cost of performance. If you notice particles falling through :ref:`LightOccluder2D<class_LightOccluder2D>`\ s as the occluders leave the viewport, increase this setting.
+控制 2D 带符号距离场应该覆盖原始视口中多大的区域。该 SDF 可以在 :ref:`CanvasItem<class_CanvasItem>` 着色器中采样，用于 :ref:`GPUParticles2D<class_GPUParticles2D>` 碰撞。生成带符号距离场时，较高的值能够让部分处于视口外的遮挡器也纳入考虑范围，但会以牺牲性能为代价。如果你注意到 :ref:`LightOccluder2D<class_LightOccluder2D>` 离开视口时粒子会穿过遮挡器，就可以增大这个设置。
 
-The percentage is added on each axis and on both sides. For example, with the default :ref:`SDF_OVERSIZE_120_PERCENT<class_Viewport_constant_SDF_OVERSIZE_120_PERCENT>`, the signed distance field will cover 20% of the viewport's size outside the viewport on each side (top, right, bottom, left).
+每一侧每个轴上都会添加指定的百分比。例如，使用默认的 :ref:`SDF_OVERSIZE_120_PERCENT<class_Viewport_constant_SDF_OVERSIZE_120_PERCENT>`\ ，带符号距离场将覆盖视口外每侧（顶部、右侧、底部、左侧）20% 的视口大小。
 
 .. rst-class:: classref-item-separator
 
@@ -1621,7 +1621,7 @@ The percentage is added on each axis and on both sides. For example, with the de
 - |void| **set_sdf_scale**\ (\ value\: :ref:`SDFScale<enum_Viewport_SDFScale>`\ )
 - :ref:`SDFScale<enum_Viewport_SDFScale>` **get_sdf_scale**\ (\ )
 
-The resolution scale to use for the 2D signed distance field. Higher values lead to a more precise and more stable signed distance field as the camera moves, at the cost of performance.
+用于 2D 带符号距离场的分辨率比例。值越高，相机移动时带符号距离场越精确、越稳定，但性能会受到影响。
 
 .. rst-class:: classref-item-separator
 
@@ -1638,7 +1638,7 @@ The resolution scale to use for the 2D signed distance field. Higher values lead
 - |void| **set_snap_2d_transforms_to_pixel**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_snap_2d_transforms_to_pixel_enabled**\ (\ )
 
-If ``true``, :ref:`CanvasItem<class_CanvasItem>` nodes will internally snap to full pixels. Their position can still be sub-pixel, but the decimals will not have effect. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
+如果为 ``true``\ ，则 :ref:`CanvasItem<class_CanvasItem>` 节点将在内部捕捉到全像素。它们的位置仍然可以是亚像素，但小数不会产生影响。这会导致更清晰的外观，但代价是移动不太流畅，尤其是在启用 :ref:`Camera2D<class_Camera2D>` 平滑时。
 
 .. rst-class:: classref-item-separator
 
@@ -1655,7 +1655,7 @@ If ``true``, :ref:`CanvasItem<class_CanvasItem>` nodes will internally snap to f
 - |void| **set_snap_2d_vertices_to_pixel**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_snap_2d_vertices_to_pixel_enabled**\ (\ )
 
-If ``true``, vertices of :ref:`CanvasItem<class_CanvasItem>` nodes will snap to full pixels. Only affects the final vertex positions, not the transforms. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
+如果为 ``true``\ ，则 :ref:`CanvasItem<class_CanvasItem>` 节点的顶点将捕捉到完整像素。仅影响最终顶点位置，而不影响变换。这会导致更清晰的外观，但代价是移动不太流畅，尤其是在启用 :ref:`Camera2D<class_Camera2D>` 平滑时。
 
 .. rst-class:: classref-item-separator
 
@@ -1731,9 +1731,9 @@ If ``true``, vertices of :ref:`CanvasItem<class_CanvasItem>` nodes will snap to 
 - |void| **set_use_hdr_2d**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_hdr_2d**\ (\ )
 
-If ``true``, 2D rendering will use an high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
+如果为 ``true``\ ，则 2D 渲染将使用与 3D 帧缓冲的位深度相匹配的高动态范围（HDR）格式的帧缓冲。使用 Forward+ 渲染器时，这将是一个 ``RGBA16`` 帧缓冲，而使用 Mobile 渲染器时，这将是一个 ``RGB10_A2`` 帧缓冲。此外，2D 渲染将在线性色彩空间中进行，并将在传输到屏幕之前立即转换到 sRGB 空间（如果视口已连接到屏幕）。实际上，这意味着视口的最终结果不会被限制在 ``0-1`` 范围内，并且可以在 3D 渲染中使用而无需调整色彩空间。这使得 2D 渲染能够利用需要高动态范围的效果（例如 2D 辉光），并显著改善需要高度详细渐变的效果的外观。
 
-\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+\ **注意：**\ 使用 GL Compatibility 渲染器时该设置将不起作用，因为 GL Compatibility 渲染器出于性能原因始终在低动态范围内渲染。
 
 .. rst-class:: classref-item-separator
 
@@ -1824,22 +1824,22 @@ If ``true``, 2D rendering will use an high dynamic range (HDR) format framebuffe
 - |void| **set_vrs_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
 - :ref:`Texture2D<class_Texture2D>` **get_vrs_texture**\ (\ )
 
-Texture to use when :ref:`vrs_mode<class_Viewport_property_vrs_mode>` is set to :ref:`VRS_TEXTURE<class_Viewport_constant_VRS_TEXTURE>`.
+:ref:`vrs_mode<class_Viewport_property_vrs_mode>` 为 :ref:`VRS_TEXTURE<class_Viewport_constant_VRS_TEXTURE>` 时使用的纹理。
 
-The texture *must* use a lossless compression format so that colors can be matched precisely. The following VRS densities are mapped to various colors, with brighter colors representing a lower level of shading precision:
+该纹理\ *必须*\ 使用无损压缩格式，以便可以精确匹配颜色。以下 VRS 密度会映射为各种颜色，较亮的颜色代表较低的着色精度。
 
 .. code:: text
 
-    - 1×1 = rgb(0, 0, 0)     - #000000
-    - 1×2 = rgb(0, 85, 0)    - #005500
-    - 2×1 = rgb(85, 0, 0)    - #550000
-    - 2×2 = rgb(85, 85, 0)   - #555500
-    - 2×4 = rgb(85, 170, 0)  - #55aa00
-    - 4×2 = rgb(170, 85, 0)  - #aa5500
+    - 1×1 = rgb(0, 0, 0) - #000000
+    - 1×2 = rgb(0, 85, 0) - #005500
+    - 2×1 = rgb(85, 0, 0) - #550000
+    - 2×2 = rgb(85, 85, 0) - #555500
+    - 2×4 = rgb(85, 170, 0) - #55aa00
+    - 4×2 = rgb(170, 85, 0) - #aa5500
     - 4×4 = rgb(170, 170, 0) - #aaaa00
-    - 4×8 = rgb(170, 255, 0) - #aaff00 - Not supported on most hardware
-    - 8×4 = rgb(255, 170, 0) - #ffaa00 - Not supported on most hardware
-    - 8×8 = rgb(255, 255, 0) - #ffff00 - Not supported on most hardware
+    - 4×8 = rgb(170, 255, 0) - #aaff00 - 大多数硬件不支持
+    - 8×4 = rgb(255, 170, 0) - #ffaa00 - 大多数硬件不支持
+    - 8×8 = rgb(255, 255, 0) - #ffff00 - 大多数硬件不支持
 
 .. rst-class:: classref-item-separator
 
@@ -1856,7 +1856,7 @@ The texture *must* use a lossless compression format so that colors can be match
 - |void| **set_vrs_update_mode**\ (\ value\: :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>`\ )
 - :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **get_vrs_update_mode**\ (\ )
 
-Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requires the input texture to be converted to the format usable by the VRS method supported by the hardware. The update mode defines how often this happens. If the GPU does not support VRS, or VRS is not enabled, this property is ignored.
+设置视口的可变速率着色（VRS）的更新模式。VRS 要求将输入纹理转换为硬件支持的 VRS 方法可用的格式。更新模式定义该操作发生的频率。如果 GPU 不支持 VRS，或者未启用 VRS，则该属性将被忽略。
 
 .. rst-class:: classref-item-separator
 
@@ -2306,10 +2306,10 @@ Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requi
 \ **注意：**\ :ref:`warp_mouse<class_Viewport_method_warp_mouse>` 仅支持 Windows、macOS 和 Linux。它对 Android、iOS 和 Web 没有影响。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -184,6 +184,11 @@ func _ready():
         </section>
         <section ids="reference" names="reference 参考">
             <title>参考</title>
+            <seealso>
+                <paragraph><emphasis>Some</emphasis> of these BBCode tags can be used in tooltips for <literal>@export</literal> script
+                    variables as well as in the XML source of the class reference. For more
+                    information, see <reference internal="True" refuri="../../contributing/documentation/class_reference_primer#doc-class-reference-bbcode"><inline classes="std std-ref">Class reference BBCode</inline></reference>.</paragraph>
+            </seealso>
             <table classes="colwidths-given wrap-normal" width="100%">
                 <tgroup cols="2">
                     <colspec colwidth="60"></colspec>
@@ -379,7 +384,7 @@ func _ready():
                                         to that size.</line>
                                     <line>Add <literal>%</literal> to the end of <literal>{width}</literal> or <literal>{height}</literal> value to specify it as percentages of the control width instead of pixels.</line>
                                     <line>If <literal>{valign}</literal> configuration is provided, the image will try to align to the
-                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">Image and table vertical alignment</inline></reference>.</line>
+                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">图像和表格的垂直对齐</inline></reference>.</line>
                                     <line>Supports configuration options, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-options"><inline classes="std std-ref">图像选项</inline></reference>.</line>
                                 </line_block>
                             </entry>
@@ -535,7 +540,7 @@ func _ready():
                                     <line><strong>table</strong></line>
                                     <line>创建列数为 <literal>{number}</literal> 的表格。定义表格中的单元格请使用 <literal>cell</literal> 标签。</line>
                                     <line>If <literal>{valign}</literal> configuration is provided, the table will try to align to the
-                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">Image and table vertical alignment</inline></reference>.</line>
+                                        surrounding text, see <reference internal="True" refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"><inline classes="std std-ref">图像和表格的垂直对齐</inline></reference>.</line>
                                     <line>If baseline alignment is used, the table is aligned to the baseline of the row with index <literal>{alignment_row}</literal> (zero-based).</line>
                                 </line_block>
                             </entry>
@@ -977,7 +982,7 @@ func _richtextlabel_on_meta_clicked(meta):
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>If set to <literal>true</literal>, and the image is smaller than the size specified by <literal>width</literal> and <literal>height</literal>, the image padding is added to match the size instead of upscaling.</paragraph>
+                        <paragraph>如果设为 <literal>true</literal> 且图像小于 <literal>width</literal> 和 <literal>height</literal> 指定的大小，那么就会为图像加上边距让大小一致，不会进行缩放。</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><strong>tootip</strong></paragraph>
@@ -1004,13 +1009,13 @@ func _richtextlabel_on_meta_clicked(meta):
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Image tooltip.</paragraph>
+                        <paragraph>图像的工具提示。</paragraph>
                     </list_item>
                 </bullet_list>
                 <target refid="doc-bbcode-in-richtextlabel-image-and-table-alignment"></target>
             </section>
-            <section ids="image-and-table-vertical-alignment doc-bbcode-in-richtextlabel-image-and-table-alignment" names="image\ and\ table\ vertical\ alignment doc_bbcode_in_richtextlabel_image_and_table_alignment">
-                <title>Image and table vertical alignment</title>
+            <section ids="image-and-table-vertical-alignment doc-bbcode-in-richtextlabel-image-and-table-alignment" names="image\ and\ table\ vertical\ alignment 图像和表格的垂直对齐 doc_bbcode_in_richtextlabel_image_and_table_alignment">
+                <title>图像和表格的垂直对齐</title>
                 <paragraph>When a vertical alignment value is provided with the <literal>[img]</literal> or <literal>[table]`</literal> tag
                     the image/table will try to align itself against the surrounding text. Alignment is
                     performed using a vertical point of the image and a vertical point of the text.
@@ -1092,7 +1097,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                         <paragraph>自定义字体大小。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>glyph_spacing</strong>, <strong>gl</strong></paragraph>
+                        <paragraph><strong>glyph_spacing</strong>、<strong>gl</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1120,7 +1125,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                         <paragraph>Extra spacing for each glyph.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>glyph_spacing</strong>, <strong>sp</strong></paragraph>
+                        <paragraph><strong>glyph_spacing</strong>、<strong>sp</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1148,7 +1153,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                         <paragraph>Extra spacing for the space character.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>top_spacing</strong>, <strong>top</strong></paragraph>
+                        <paragraph><strong>top_spacing</strong>、<strong>top</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1176,7 +1181,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                         <paragraph>Extra spacing at the top of the line.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>bottom_spacing</strong>, <strong>bt</strong></paragraph>
+                        <paragraph><strong>bottom_spacing</strong>、<strong>bt</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1204,7 +1209,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                         <paragraph>Extra spacing at the bottom of the line.</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>embolden</strong>, <strong>emb</strong></paragraph>
+                        <paragraph><strong>embolden</strong>、<strong>emb</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1215,7 +1220,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>Floating-point number.</paragraph>
+                                            <paragraph>浮点数字。</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1229,10 +1234,10 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Font embolden strength, if it is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.</paragraph>
+                        <paragraph>字体加粗强度，非零时会加粗字体的轮廓。负值会降低轮廓的粗细。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>face_index</strong>, <strong>fi</strong></paragraph>
+                        <paragraph><strong>face_index</strong>、<strong>fi</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1243,7 +1248,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>Integer number.</paragraph>
+                                            <paragraph>整数。</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1257,10 +1262,10 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>An active face index in the TrueType / OpenType collection.</paragraph>
+                        <paragraph>TrueType / OpenType 合集中活动字体的索引号。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>slant</strong>, <strong>sln</strong></paragraph>
+                        <paragraph><strong>slant</strong>、<strong>sln</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1271,7 +1276,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>Floating-point number.</paragraph>
+                                            <paragraph>浮点数字。</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1285,10 +1290,10 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Font slant strength, positive values slant glyphs to the right. Negative values to the left.</paragraph>
+                        <paragraph>字体倾斜强度，正值会将字形向右倾斜，负值会将字形向左倾斜。</paragraph>
                     </list_item>
                     <list_item>
-                        <paragraph><strong>opentype_variation</strong>, <strong>otv</strong></paragraph>
+                        <paragraph><strong>opentype_variation</strong>、<strong>otv</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1299,7 +1304,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>Comma-separated list of the OpenType variation tags.</paragraph>
+                                            <paragraph>OpenType 变体标签列表，使用英文逗号分隔。</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1319,7 +1324,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                 <literal_block force="False" highlight_args="{}" language="none" linenos="False" xml:space="preserve">[font otv="wght=200,wdth=400"] # Sets variable font weight and width.</literal_block>
                 <bullet_list bullet="-">
                     <list_item>
-                        <paragraph><strong>opentype_features</strong>, <strong>otf</strong></paragraph>
+                        <paragraph><strong>opentype_features</strong>、<strong>otf</strong></paragraph>
                         <table>
                             <tgroup cols="2">
                                 <colspec colwidth="11"></colspec>
@@ -1330,7 +1335,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>Comma-separated list of the OpenType feature tags.</paragraph>
+                                            <paragraph>OpenType 特性标签列表，使用英文逗号分隔。</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1398,8 +1403,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Cell expansion ratio. This defines which cells will try to expand to
-                            proportionally to other cells and their expansion ratios.</paragraph>
+                        <paragraph>单元格扩张比例。定义的是哪些单元格会尝试按比例扩展到其他单元格，以及相应的扩张比例。</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><strong>border</strong></paragraph>
@@ -1455,8 +1459,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Cell background color. For alternating odd/even row backgrounds,
-                            you can use <literal>bg=odd_color,even_color</literal>.</paragraph>
+                        <paragraph>单元格背景色。如果想要单双行使用不同的背景色，请使用 <literal>bg=单行颜色,双行颜色</literal>。</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph><strong>padding</strong></paragraph>
@@ -1470,7 +1473,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                             <paragraph><title_reference>值</title_reference></paragraph>
                                         </entry>
                                         <entry>
-                                            <paragraph>4 comma-separated floating-point numbers</paragraph>
+                                            <paragraph>四个用英文逗号分隔的浮点数</paragraph>
                                         </entry>
                                     </row>
                                     <row>
@@ -1484,7 +1487,7 @@ text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row 
                                 </tbody>
                             </tgroup>
                         </table>
-                        <paragraph>Left, top, right, and bottom cell padding.</paragraph>
+                        <paragraph>单元格左侧、上方、右侧、下方的内边距。</paragraph>
                     </list_item>
                 </bullet_list>
                 <target refid="doc-bbcode-in-richtextlabel-unordered-list-bullet"></target>

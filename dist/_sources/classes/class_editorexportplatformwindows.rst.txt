@@ -19,7 +19,7 @@ Windows 导出器。
 描述
 ----
 
-The Windows exporter customizes how a Windows build is handled. In the editor's "Export" window, it is created when adding a new "Windows" preset.
+Windows 导出器可以自定义 Windows 构建的处理方法。在编辑器的“导出”窗口中，导出器是在添加“Windows”预设时创建的。
 
 .. rst-class:: classref-introduction-group
 
@@ -187,7 +187,7 @@ The Windows exporter customizes how a Windows build is handled. In the editor's 
 
 :ref:`int<class_int>` **application/export_d3d12** :ref:`🔗<class_EditorExportPlatformWindows_property_application/export_d3d12>`
 
-如果设置为 ``1``\ ，Direct3D 12 运行时（DXIL、Agility SDK、PIX）库将随导出的应用程序一起导出。如果设置为 ``0``\ ，则仅当 :ref:`ProjectSettings.rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>` 被设置为 ``"d3d12"`` 时，才会导出 Direct3D 12 库。
+If set to ``1``, the Direct3D 12 runtime libraries (Agility SDK, PIX) are exported with the exported application. If set to ``0``, Direct3D 12 libraries are exported only if :ref:`ProjectSettings.rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>` is set to ``"d3d12"``.
 
 .. rst-class:: classref-item-separator
 
@@ -594,10 +594,10 @@ The Windows exporter customizes how a Windows build is handled. In the editor's 
 如果为 ``true``\ ，则项目中的纹理在导出时使用 S3TC/BPTC 格式。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

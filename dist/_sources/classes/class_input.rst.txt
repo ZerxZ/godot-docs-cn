@@ -644,7 +644,7 @@ I 形光标。通常用于指示点击鼠标后文本光标的位置。
 
 :ref:`String<class_String>` **get_joy_guid**\ (\ device\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Input_method_get_joy_guid>`
 
-Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns ``"Default Gamepad"`` otherwise. Godot uses the `SDL2 game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__ to determine gamepad names and mappings based on this GUID.
+如果平台使用游戏手柄重映射，则返回设备的 GUID，与 SDL2 兼容，例如 ``030000004c050000c405000000010000``\ 。否则返回 ``"Default Gamepad"``\ 。Godot 会根据这个 GUI 使用 `SDL2 游戏控制器数据库 <https://github.com/gabomdq/SDL_GameControllerDB>`__\ 来确定游戏手柄的名称和映射。
 
 .. rst-class:: classref-item-separator
 
@@ -1115,19 +1115,19 @@ Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, 
 
 |void| **vibrate_handheld**\ (\ duration_ms\: :ref:`int<class_int>` = 500, amplitude\: :ref:`float<class_float>` = -1.0\ ) :ref:`🔗<class_Input_method_vibrate_handheld>`
 
-Vibrate the handheld device for the specified duration in milliseconds.
+使手持设备振动指定的持续时间，单位为毫秒。
 
-\ ``amplitude`` is the strength of the vibration, as a value between ``0.0`` and ``1.0``. If set to ``-1.0``, the default vibration strength of the device is used.
+\ ``amplitude`` 是振动的强度，取值范围为 ``0.0`` 为 ``1.0`` 之间。如果设为 ``-1.0`` 则表示该设备的默认振动强度。
 
-\ **Note:** This method is implemented on Android, iOS, and Web. It has no effect on other platforms.
+\ **注意：**\ 该方法在 Android、iOS 和 Web 上实现。在其他平台上无效。
 
-\ **Note:** For Android, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` requires enabling the ``VIBRATE`` permission in the export preset. Otherwise, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` will have no effect.
+\ **注意：**\ 在 Android 平台上，\ :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` 需要在导出预设中启用 ``VIBRATE`` 权限。否则 :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` 无效。
 
-\ **Note:** For iOS, specifying the duration is only supported in iOS 13 and later.
+\ **注意：**\ 在 iOS 平台上，仅 iOS 13 及更高版本支持指定持续时间。
 
-\ **Note:** For Web, the amplitude cannot be changed.
+\ **注意：**\ 在 Web 平台上，振幅无法修改。
 
-\ **Note:** Some web browsers such as Safari and Firefox for Android do not support :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`.
+\ **注意：**\ 部分浏览器不支持 :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`\ ，如 Android 版的 Safari、Firefox 等。
 
 .. rst-class:: classref-item-separator
 
@@ -1146,10 +1146,10 @@ Vibrate the handheld device for the specified duration in milliseconds.
 \ **注意：**\ :ref:`warp_mouse<class_Input_method_warp_mouse>` 仅支持 Windows、macOS 和 Linux。它对 Android、iOS 和 Web 没有影响。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

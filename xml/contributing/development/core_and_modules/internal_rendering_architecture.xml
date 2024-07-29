@@ -70,7 +70,7 @@
                         <paragraph><reference name="drivers/vulkan/vulkan_context.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/vulkan_context.cpp">drivers/vulkan/vulkan_context.cpp</reference></paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph><strong>Direct3D 12 context creation:</strong></paragraph>
+                <paragraph><strong>Direct3D 12 上下文的创建：</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="drivers/d3d12/d3d12_context.cpp" refuri="https://github.com/godotengine/godot/blob/master/drivers/d3d12/d3d12_context.cpp">drivers/d3d12/d3d12_context.cpp</reference></paragraph>
@@ -177,7 +177,7 @@
             <title>核心渲染类架构</title>
             <paragraph>This diagram represents the structure of rendering classes in Godot, including the RenderingDevice abstraction:</paragraph>
             <image candidates="{'*': 'contributing/development/core_and_modules/img/rendering_architecture_diagram.webp'}" uri="contributing/development/core_and_modules/img/rendering_architecture_diagram.webp"></image>
-            <paragraph><reference name="View at full size" refuri="https://raw.githubusercontent.com/godotengine/godot-docs/master/contributing/development/core_and_modules/img/rendering_architecture_diagram.webp">View at full size</reference></paragraph>
+            <paragraph><reference name="全屏查看" refuri="https://raw.githubusercontent.com/godotengine/godot-docs/master/contributing/development/core_and_modules/img/rendering_architecture_diagram.webp">全屏查看</reference></paragraph>
             <target refid="doc-internal-rendering-architecture-core-shaders"></target>
         </section>
         <section ids="core-shaders doc-internal-rendering-architecture-core-shaders" names="core\ shaders 核心着色器 doc_internal_rendering_architecture_core_shaders">
@@ -232,7 +232,7 @@
                     <paragraph>Forward Mobile: <reference name="servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl">servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl</reference></paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph>Compatibility: <reference name="drivers/gles3/shaders/scene.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/scene.glsl">drivers/gles3/shaders/scene.glsl</reference></paragraph>
+                    <paragraph>Compatibility：<reference name="drivers/gles3/shaders/scene.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/scene.glsl">drivers/gles3/shaders/scene.glsl</reference></paragraph>
                 </list_item>
             </bullet_list>
             <paragraph><strong>材质着色器生成：</strong></paragraph>
@@ -288,7 +288,7 @@
                     <paragraph><reference name="servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.cpp">servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.cpp</reference></paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><strong>FSR 1.0:</strong></paragraph>
+            <paragraph><strong>FSR 1.0：</strong></paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><reference name="servers/rendering/renderer_rd/effects/fsr.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/effects/fsr.cpp">servers/rendering/renderer_rd/effects/fsr.cpp</reference></paragraph>
@@ -433,7 +433,7 @@
                     Lightmapper class. This allows for implementing additional lightmappers, paving
                     the way for a future port of the CPU-based lightmapper present in Godot 3.x.
                     This would allow baking lightmaps while using the Compatibility backend.</paragraph>
-                <paragraph><strong>Core GI C++ code:</strong></paragraph>
+                <paragraph><strong>核心 GI C++ 代码：</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="servers/rendering/renderer_rd/environment/gi.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/environment/gi.cpp">servers/rendering/renderer_rd/environment/gi.cpp</reference></paragraph>
@@ -445,7 +445,7 @@
                         <paragraph><reference name="editor/plugins/voxel_gi_editor_plugin.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/editor/plugins/voxel_gi_editor_plugin.cpp">editor/plugins/voxel_gi_editor_plugin.cpp</reference> - Editor UI for the VoxelGI node</paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph><strong>Core GI GLSL shaders:</strong></paragraph>
+                <paragraph><strong>核心 GI GLSL 着色器：</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="servers/rendering/renderer_rd/shaders/environment/voxel_gi.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/environment/voxel_gi.glsl">servers/rendering/renderer_rd/shaders/environment/voxel_gi.glsl</reference></paragraph>
@@ -511,27 +511,27 @@
                 <paragraph>Box, hexagon and circle bokeh shapes are available (from fastest to slowest).
                     Depth of field can optionally be jittered every frame to improve its appearance
                     when temporal antialiasing is enabled.</paragraph>
-                <paragraph><strong>Depth of field C++ code:</strong></paragraph>
+                <paragraph><strong>景深 C++ 代码：</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="servers/rendering/renderer_rd/effects/bokeh_dof.cpp" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/effects/bokeh_dof.cpp">servers/rendering/renderer_rd/effects/bokeh_dof.cpp</reference></paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph><strong>Depth of field GLSL shader (compute - used for Forward+):</strong></paragraph>
+                <paragraph><strong>景深 GLSL 着色器（计算 - 用于 Forward+）</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl">servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl</reference></paragraph>
                     </list_item>
                 </bullet_list>
-                <paragraph><strong>Depth of field GLSL shader (raster - used for Forward Mobile):</strong></paragraph>
+                <paragraph><strong>景深 GLSL 着色器（光栅 - 用于 Forward 移动）</strong></paragraph>
                 <bullet_list bullet="-">
                     <list_item>
                         <paragraph><reference name="servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl" refuri="https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl">servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl</reference></paragraph>
                     </list_item>
                 </bullet_list>
             </section>
-            <section ids="screen-space-effects-ssao-ssil-ssr-sss" names="screen-space\ effects\ (ssao,\ ssil,\ ssr,\ sss)">
-                <title>Screen-space effects (SSAO, SSIL, SSR, SSS)</title>
+            <section ids="screen-space-effects-ssao-ssil-ssr-sss" names="screen-space\ effects\ (ssao,\ ssil,\ ssr,\ sss) 屏幕空间效果（ssao、ssil、ssr、sss）">
+                <title>屏幕空间效果（SSAO、SSIL、SSR、SSS）</title>
                 <note>
                     <paragraph>Only available in the Forward+ backend, not the Forward Mobile or
                         Compatibility methods.</paragraph>
@@ -731,8 +731,8 @@
                     </list_item>
                 </bullet_list>
             </section>
-            <section ids="automatic-mesh-lod" names="automatic\ mesh\ lod">
-                <title>Automatic mesh LOD</title>
+            <section ids="automatic-mesh-lod" names="automatic\ mesh\ lod 自动网格\ lod">
+                <title>自动网格 LOD</title>
                 <paragraph>The ImporterMesh class is used for the 3D mesh import workflow in the editor.
                     Its <literal>generate_lods()</literal> function handles generating using the
                     <reference name="meshoptimizer" refuri="https://meshoptimizer.org/">meshoptimizer</reference> library.</paragraph>

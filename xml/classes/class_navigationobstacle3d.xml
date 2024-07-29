@@ -149,7 +149,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-avoidance-layer-value"><inline classes="std std-ref">get_avoidance_layer_value</inline></reference>(layer_number: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-avoidance-layer-value"><inline classes="std std-ref">get_avoidance_layer_value</inline></reference>(layer_number: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -157,7 +157,7 @@
                                 <paragraph><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-navigation-map"><inline classes="std std-ref">get_navigation_map</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-navigation-map"><inline classes="std std-ref">get_navigation_map</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -165,7 +165,7 @@
                                 <paragraph><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-rid"><inline classes="std std-ref">get_rid</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-navigationobstacle3d-method-get-rid"><inline classes="std std-ref">get_rid</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -201,7 +201,7 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_affect_navigation_mesh</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If enabled and parsed in a navigation mesh baking process the obstacle will discard source geometry inside its <reference internal="True" refid="class-navigationobstacle3d-property-vertices"><inline classes="std std-ref">vertices</inline></reference> and <reference internal="True" refid="class-navigationobstacle3d-property-height"><inline classes="std std-ref">height</inline></reference> defined shape.</paragraph>
+            <paragraph>如果启用并在导航网格烘焙过程中解析，则障碍物将丢弃其 <reference internal="True" refid="class-navigationobstacle3d-property-vertices"><inline classes="std std-ref">vertices</inline></reference> 和 <reference internal="True" refid="class-navigationobstacle3d-property-height"><inline classes="std std-ref">height</inline></reference> 定义形状内的源几何体。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-navigationobstacle3d-property-avoidance-enabled"></target>
             <paragraph classes="classref-property" ids="class-navigationobstacle3d-property-avoidance-enabled" names="class_navigationobstacle3d_property_avoidance_enabled"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>avoidance_enabled</strong> = <literal>true</literal> <reference internal="True" refid="class-navigationobstacle3d-property-avoidance-enabled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -237,9 +237,9 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_carve_navigation_mesh</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If enabled the obstacle vertices will carve into the baked navigation mesh with the shape unaffected by additional offsets (e.g. agent radius).</paragraph>
-            <paragraph>It will still be affected by further postprocessing of the baking process, like edge and polygon simplification.</paragraph>
-            <paragraph>Requires <reference internal="True" refid="class-navigationobstacle3d-property-affect-navigation-mesh"><inline classes="std std-ref">affect_navigation_mesh</inline></reference> to be enabled.</paragraph>
+            <paragraph>如果启用，障碍物顶点将雕刻到烘焙的导航网格中，其形状不受额外偏移（例如代理半径）的影响。</paragraph>
+            <paragraph>它仍会受到烘焙过程的后续后处理的影响，例如边缘和多边形简化。</paragraph>
+            <paragraph>需要启用 <reference internal="True" refid="class-navigationobstacle3d-property-affect-navigation-mesh"><inline classes="std std-ref">affect_navigation_mesh</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-navigationobstacle3d-property-height"></target>
             <paragraph classes="classref-property" ids="class-navigationobstacle3d-property-height" names="class_navigationobstacle3d_property_height"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>height</strong> = <literal>1.0</literal> <reference internal="True" refid="class-navigationobstacle3d-property-height"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -307,15 +307,15 @@
         <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-navigationobstacle3d-method-get-avoidance-layer-value"></target>
-            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-avoidance-layer-value" names="class_navigationobstacle3d_method_get_avoidance_layer_value"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_avoidance_layer_value</strong>(layer_number: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-avoidance-layer-value"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-avoidance-layer-value" names="class_navigationobstacle3d_method_get_avoidance_layer_value"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_avoidance_layer_value</strong>(layer_number: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-avoidance-layer-value"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <reference internal="True" refid="class-navigationobstacle3d-property-avoidance-layers"><inline classes="std std-ref">avoidance_layers</inline></reference> 位掩码中指定的层是否启用，给定的 <literal>layer_number</literal> 应在 1 和 32 之间。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-navigationobstacle3d-method-get-navigation-map"></target>
-            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-navigation-map" names="class_navigationobstacle3d_method_get_navigation_map"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_navigation_map</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-navigation-map"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-navigation-map" names="class_navigationobstacle3d_method_get_navigation_map"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_navigation_map</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-navigation-map"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该 NavigationObstacle 节点的导航地图的 <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference>。该函数始终返回在 NavigationObstacle 节点上设置的地图，而不是 NavigationServer 上抽象障碍物所使用的地图。如果该障碍物地图使用 NavigationServer API 直接更改，则该 NavigationObstacle 节点将不会察觉该地图的更改。请使用 <reference internal="True" refid="class-navigationobstacle3d-method-set-navigation-map"><inline classes="std std-ref">set_navigation_map</inline></reference> 更改 NavigationObstacle 的导航地图，也会更新 NavigationServer 上的障碍物。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-navigationobstacle3d-method-get-rid"></target>
-            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-rid" names="class_navigationobstacle3d_method_get_rid"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_rid</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-get-rid" names="class_navigationobstacle3d_method_get_rid"><reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference> <strong>get_rid</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-navigationobstacle3d-method-get-rid"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回这个障碍物在 <reference internal="True" refuri="class_navigationserver3d#class-navigationserver3d"><inline classes="std std-ref">NavigationServer3D</inline></reference> 上的 <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-navigationobstacle3d-method-set-avoidance-layer-value"></target>
@@ -326,12 +326,12 @@
             <paragraph classes="classref-method" ids="class-navigationobstacle3d-method-set-navigation-map" names="class_navigationobstacle3d_method_set_navigation_map"><abbreviation explanation="无返回值。">void</abbreviation> <strong>set_navigation_map</strong>(navigation_map: <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference>) <reference internal="True" refid="class-navigationobstacle3d-method-set-navigation-map"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>设置该 NavigationObstacle 节点应使用的导航地图的 <reference internal="True" refuri="class_rid#class-rid"><inline classes="std std-ref">RID</inline></reference>，并会更新 NavigationServer 上的 <literal>obstacle</literal>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -17,17 +17,17 @@ PackedInt64Array
 描述
 ----
 
-An array specifically designed to hold 64-bit integer values. Packs data tightly, so it saves memory for large array sizes.
+专门设计用于保存 64 位整数值的数组。紧密打包数据，因此可为大型数组节省内存。
 
-\ **Note:** This type stores signed 64-bit integers, which means it can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around. If you only need to pack 32-bit integers tightly, see :ref:`PackedInt32Array<class_PackedInt32Array>` for a more memory-friendly alternative.
+\ **注意：**\ 该类型存储有符号的 64 位整数，这意味着它可以在区间 ``[-2^63, 2^63 - 1]`` 内取值，即 ``[-9223372036854775808, 9223372036854775807]``\ 。超出这些界限将出现回绕。如果只需要紧密打包 32 位整数，请参阅 :ref:`PackedInt32Array<class_PackedInt32Array>` 以获得更节省内存的替代方案。
 
-\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. :ref:`PackedInt32Array<class_PackedInt32Array>` versus ``Array[int]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`Array.map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+\ **紧缩数组、类型化数组和非类型化数组之间的差异：**\ 与同类型的类型化数组相比，紧缩数组的迭代和修改速度通常更快（例如 :ref:`PackedInt32Array<class_PackedInt32Array>` 与 ``Array[int]``\ ）。此外，紧缩数组消耗的内存更少。缺点是，紧缩数组不太灵活，因为它们不提供许多便利方法，例如 :ref:`Array.map<class_Array_method_map>`\ 。反过来，类型化数组的迭代和修改速度比非类型化数组更快。
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedInt64Array_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **注意：**\ 紧缩数组始终通过引用传递。要获取可以独立于原始数组进行修改的数组副本，请使用 :ref:`duplicate<class_PackedInt64Array_method_duplicate>`\ 。内置属性和方法并\ *非*\ 如此。这些返回的紧缩数组是副本，更改它\ *不*\ 会影响原始值。要更新内置属性，需要修改返回的数组，然后再次将其分配给该属性。
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -99,7 +99,7 @@ An array specifically designed to hold 64-bit integer values. Packs data tightly
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -423,7 +423,7 @@ An array specifically designed to hold 64-bit integer values. Packs data tightly
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_PackedInt64Array_operator_neq_PackedInt64Array:
@@ -471,10 +471,10 @@ An array specifically designed to hold 64-bit integer values. Packs data tightly
 返回索引 ``index`` 处的 :ref:`int<class_int>`\ 。负数索引可以用来从末尾开始访问元素。使用越界的数组索引会产生错误。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

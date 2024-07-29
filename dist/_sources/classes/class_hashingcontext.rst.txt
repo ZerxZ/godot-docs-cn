@@ -40,8 +40,9 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Open the file to hash.
         var file = FileAccess.open(path, FileAccess.READ)
         # Update the context after reading each chunk.
-        while not file.eof_reached():
-            ctx.update(file.get_buffer(CHUNK_SIZE))
+        while file.get_position() < file.get_length():
+            var remaining = file.get_length() - file.get_position()
+            ctx.update(file.get_buffer(min(remaining, CHUNK_SIZE)))
         # Get the computed hash.
         var res = ctx.finish()
         # Print the result as hex string and array.
@@ -64,9 +65,10 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         // Open the file to hash.
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
         // Update the context after reading each chunk.
-        while (!file.EofReached())
+        while (file.GetPosition() < file.GetLength())
         {
-            ctx.Update(file.GetBuffer(ChunkSize));
+            int remaining = (int)(file.GetLength() - file.GetPosition());
+            ctx.Update(file.GetBuffer(Mathf.Min(remaining, ChunkSize)));
         }
         // Get the computed hash.
         byte[] res = ctx.Finish();
@@ -158,7 +160,7 @@ enum **HashType**: :ref:`🔗<enum_HashingContext_HashType>`
 
 :ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ ) :ref:`🔗<class_HashingContext_method_start>`
 
-Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of an SHA-256).
+开始对给定类型 ``type`` 的哈希计算（例如 :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` 会开始计算 SHA-256）。
 
 .. rst-class:: classref-item-separator
 
@@ -173,10 +175,10 @@ Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<clas
 使用给定的数据块 ``chunk`` 更新计算。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

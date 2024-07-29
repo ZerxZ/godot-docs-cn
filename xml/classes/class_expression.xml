@@ -89,7 +89,7 @@ private void OnTextEntered(string command)
                                 <paragraph><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-expression-method-get-error-text"><inline classes="std std-ref">get_error_text</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-expression-method-get-error-text"><inline classes="std std-ref">get_error_text</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -97,7 +97,7 @@ private void OnTextEntered(string command)
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-expression-method-has-execute-failed"><inline classes="std std-ref">has_execute_failed</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-expression-method-has-execute-failed"><inline classes="std std-ref">has_execute_failed</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -121,11 +121,11 @@ private void OnTextEntered(string command)
             <paragraph>如果你在 <reference internal="True" refid="class-expression-method-parse"><inline classes="std std-ref">parse</inline></reference> 中定义了输入变量，你可以在输入数组中以同样的顺序指定它们的值。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-expression-method-get-error-text"></target>
-            <paragraph classes="classref-method" ids="class-expression-method-get-error-text" names="class_expression_method_get_error_text"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_error_text</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-expression-method-get-error-text"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-expression-method-get-error-text" names="class_expression_method_get_error_text"><reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> <strong>get_error_text</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-expression-method-get-error-text"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <reference internal="True" refid="class-expression-method-parse"><inline classes="std std-ref">parse</inline></reference> 或 <reference internal="True" refid="class-expression-method-execute"><inline classes="std std-ref">execute</inline></reference> 失败，则返回错误文本。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-expression-method-has-execute-failed"></target>
-            <paragraph classes="classref-method" ids="class-expression-method-has-execute-failed" names="class_expression_method_has_execute_failed"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_execute_failed</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-expression-method-has-execute-failed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-expression-method-has-execute-failed" names="class_expression_method_has_execute_failed"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_execute_failed</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-expression-method-has-execute-failed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果 <reference internal="True" refid="class-expression-method-execute"><inline classes="std std-ref">execute</inline></reference> 失败，返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-expression-method-parse"></target>
@@ -133,12 +133,12 @@ private void OnTextEntered(string command)
             <paragraph>解析表达式并返回 <reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> 代码。</paragraph>
             <paragraph>你也可以选择用 <literal>input_names</literal> 来指定可能出现在表达式中的变量名称，这样就可以在执行表达式时进行绑定。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

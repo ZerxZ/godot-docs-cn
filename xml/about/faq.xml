@@ -9,7 +9,9 @@
         <title>常见问题</title>
         <section ids="what-can-i-do-with-godot-how-much-does-it-cost-what-are-the-license-terms" names="what\ can\ i\ do\ with\ godot?\ how\ much\ does\ it\ cost?\ what\ are\ the\ license\ terms? 可以用\ godot\ 做什么？需要花多少钱？有哪些许可条款？">
             <title>可以用 Godot 做什么？需要花多少钱？有哪些许可条款？</title>
-            <paragraph>Godot 是在 <reference name="OSI 认可的" refuri="https://opensource.org/licenses/MIT">OSI 认可的</reference><target ids="osi" names="osi\ 认可的" refuri="https://opensource.org/licenses/MIT"></target> MIT 许可证下可用的<reference name="自由和开源软件" refuri="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6">自由和开源软件</reference><target ids="id1" names="自由和开源软件" refuri="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6"></target>。这意味着它不仅可以自由使用，也可以免费获取。</paragraph>
+            <paragraph>Godot is <reference name="Free and open source Software" refuri="https://en.wikipedia.org/wiki/Free_and_open_source_software">Free and open source Software</reference><target ids="free-and-open-source-software" names="free\ and\ open\ source\ software" refuri="https://en.wikipedia.org/wiki/Free_and_open_source_software"></target>
+                available under the <reference name="OSI-approved" refuri="https://opensource.org/licenses/MIT">OSI-approved</reference><target ids="osi-approved" names="osi-approved" refuri="https://opensource.org/licenses/MIT"></target> MIT license. This means it is
+                free as in "free speech" as well as in "free beer."</paragraph>
             <paragraph>简而言之：</paragraph>
             <bullet_list bullet="*">
                 <list_item>
@@ -183,17 +185,12 @@
             <title>Godot 编辑器是绿色应用吗？</title>
             <paragraph>默认配置下，Godot 是<emphasis>半绿色</emphasis>的。从任何位置运行都可以运行它的可执行文件（包括无法写入的位置），无须管理员权限。</paragraph>
             <paragraph>不过，配置文件会写入到针对用户的配置或数据目录。通常来说，这是不错的做法，但也意味着将包含 Godot 可执行文件的文件夹复制到另一台机器上是无法带走配置文件的。更多信息请参阅 <reference internal="True" refuri="../tutorials/io/data_paths#doc-data-paths"><inline classes="std std-ref">Godot 项目中的文件路径</inline></reference>。</paragraph>
-            <paragraph>If <emphasis>true</emphasis> portable operation is desired (e.g. for use on a USB stick),
-                follow the steps in <reference internal="True" refuri="../tutorials/io/data_paths#doc-data-paths-self-contained-mode"><inline classes="std std-ref">自包含模式</inline></reference>.</paragraph>
+            <paragraph>如果希望实现真正的便携操作（例如放到 U 盘上使用），请按照：ref:<title_reference>doc_data_paths_self_contained_mode</title_reference> 中的步骤操作。</paragraph>
         </section>
-        <section ids="why-does-godot-prioritize-vulkan-and-opengl-over-direct3d" names="why\ does\ godot\ prioritize\ vulkan\ and\ opengl\ over\ direct3d?">
-            <title>Why does Godot prioritize Vulkan and OpenGL over Direct3D?</title>
+        <section ids="why-does-godot-prioritize-vulkan-and-opengl-over-direct3d" names="why\ does\ godot\ prioritize\ vulkan\ and\ opengl\ over\ direct3d? 为什么\ godot\ 使用\ vulkan/opengl\ 而不是\ direct3d\ ？">
+            <title>为什么 Godot 使用 Vulkan/OpenGL 而不是 Direct3D ？</title>
             <paragraph>Godot 致力于实现跨平台兼容性和开放式标准。OpenGL 和 Vulkan 是几乎在所有平台上都开放且可用的技术。得益于这一设计，在 Windows 上使用 Godot 开发的项目也能在 Linux、macOS 等平台上开箱即用。</paragraph>
-            <paragraph>While Vulkan and OpenGL remain our primary focus for their open standard and
-                cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
-                This addition aims to enhance performance and compatibility on platforms where
-                Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
-                will continue as the default rendering backends on all platforms, including Windows.</paragraph>
+            <paragraph>虽然我们主要专注于 Vulkan 和 OpenGL，因为它们具有开放标准和跨平台的优势，但 Godot 4.3 引入了对 Direct3D 12 的实验性支持。此举旨在提升在 Direct3D 12 广泛使用的平台（如 Windows 和 Xbox）上的性能和兼容性。然而，Vulkan 和 OpenGL 将继续作为所有平台（包括 Windows）上的默认渲染后端。</paragraph>
         </section>
         <section ids="why-does-godot-aim-to-keep-its-core-feature-set-small" names="why\ does\ godot\ aim\ to\ keep\ its\ core\ feature\ set\ small? 为什么\ godot\ 旨在保持其核心功能集较小？">
             <title>为什么 Godot 旨在保持其核心功能集较小？</title>
@@ -252,7 +249,7 @@
             <paragraph>太棒了！作为一个开源项目，Godot 的发展得益于像你这样的开发者的创新和雄心。</paragraph>
             <paragraph>开始为 Godot 做出贡献的最佳方式是使用它并报告你可能遇到的任何<reference name="问题" refuri="https://github.com/godotengine/godot/issues">问题</reference><target ids="id1" names="问题" refuri="https://github.com/godotengine/godot/issues"></target>。一份带有清晰重现步骤的好 bug 报告可以帮助其他贡献者快速有效地修复 bug。你也可以在<reference name="在线文档" refuri="https://github.com/godotengine/godot-docs/issues">在线文档</reference><target ids="id2" names="在线文档" refuri="https://github.com/godotengine/godot-docs/issues"></target>中报告你发现的问题。</paragraph>
             <paragraph>如果你准备提交你的第一个 PR，请从上面的链接之一中选择你感兴趣的任何一个问题，并尝试解决它。你将需要学习如何从源代码编译引擎，或如何构建文档。你还需要熟悉 Git，这是 Godot 开发人员使用的版本控制系统。</paragraph>
-            <paragraph>我们在 <reference internal="True" refuri="../contributing/ways_to_contribute#doc-ways-to-contribute"><inline classes="std std-ref">贡献者文档</inline></reference> 中解释了如何使用引擎源代码、如何编辑文档以及其他形式的贡献方式。</paragraph>
+            <paragraph>我们在 <reference internal="True" refuri="../contributing/how_to_contribute#doc-ways-to-contribute"><inline classes="std std-ref">贡献者文档</inline></reference> 中解释了如何使用引擎源代码、如何编辑文档以及其他形式的贡献方式。</paragraph>
         </section>
         <section ids="i-have-a-great-idea-for-godot-how-can-i-share-it" names="i\ have\ a\ great\ idea\ for\ godot.\ how\ can\ i\ share\ it? 我有个关于\ godot\ 的好主意，该如何分享它？">
             <title>我有个关于 Godot 的好主意，该如何分享它？</title>
@@ -346,7 +343,7 @@
         </section>
         <section ids="how-can-i-support-godot-development-or-contribute" names="how\ can\ i\ support\ godot\ development\ or\ contribute? 如何支持或参与\ godot\ 的发展？">
             <title>如何支持或参与 Godot 的发展？</title>
-            <paragraph>见<reference internal="True" refuri="../contributing/ways_to_contribute#doc-ways-to-contribute"><inline classes="std std-ref">贡献方式</inline></reference>。</paragraph>
+            <paragraph>见<reference internal="True" refuri="../contributing/how_to_contribute#doc-ways-to-contribute"><inline classes="std std-ref">How to contribute</inline></reference>。</paragraph>
         </section>
         <section ids="who-is-working-on-godot-how-can-i-contact-you" names="who\ is\ working\ on\ godot?\ how\ can\ i\ contact\ you? 谁在为\ godot\ 工作？如何联系？">
             <title>谁在为 Godot 工作？如何联系？</title>

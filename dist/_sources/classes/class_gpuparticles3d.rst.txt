@@ -258,7 +258,7 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -270,7 +270,7 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -282,7 +282,7 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -294,7 +294,7 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 
 .. container:: contribute
 
-	目前没有这个枚举的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该枚举目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 
 
@@ -498,7 +498,7 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -515,11 +515,11 @@ enum **TransformAlign**: :ref:`🔗<enum_GPUParticles3D_TransformAlign>`
 - |void| **set_emitting**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_emitting**\ (\ )
 
-If ``true``, particles are being emitted. :ref:`emitting<class_GPUParticles3D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is ``true`` setting :ref:`emitting<class_GPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle unless all active particles have finished processing. Use the :ref:`finished<class_GPUParticles3D_signal_finished>` signal to be notified once all active particles finish processing.
+如果为 ``true``\ ，则正在发射粒子。\ :ref:`emitting<class_GPUParticles3D_property_emitting>` 可用于启动和停止粒子发射。但是，如果 :ref:`one_shot<class_GPUParticles3D_property_one_shot>` 为 ``true``\ ，则将 :ref:`emitting<class_GPUParticles3D_property_emitting>` 设置为 ``true`` 将不会重新启动该发射循环，除非所有活动粒子都已完成处理。一旦所有活动粒子完成处理，可以使用 :ref:`finished<class_GPUParticles3D_signal_finished>` 信号来收取通知。
 
-\ **Note:** For :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters, due to the particles being computed on the GPU, there may be a short period after receiving the :ref:`finished<class_GPUParticles3D_signal_finished>` signal during which setting this to ``true`` will not restart the emission cycle.
+\ **注意：**\ 对于 :ref:`one_shot<class_GPUParticles3D_property_one_shot>` 发射器，由于粒子是在 GPU 上计算的，因此在收到 :ref:`finished<class_GPUParticles3D_signal_finished>` 信号后可能会有一段短暂的时间，在此期间将其设置为 ``true`` 将不会重新启动发射循环。
 
-\ **Tip:** If your :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitter needs to immediately restart emitting particles once :ref:`finished<class_GPUParticles3D_signal_finished>` signal is received, consider calling :ref:`restart<class_GPUParticles3D_method_restart>` instead of setting :ref:`emitting<class_GPUParticles3D_property_emitting>`.
+\ **提示：**\ 如果你的 :ref:`one_shot<class_GPUParticles3D_property_one_shot>` 发射器需要在收到 :ref:`finished<class_GPUParticles3D_signal_finished>` 信号后立即重新启动发射粒子，请考虑调用 :ref:`restart<class_GPUParticles3D_method_restart>` 而不是设置 :ref:`emitting<class_GPUParticles3D_property_emitting>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -801,7 +801,7 @@ If ``true``, particles are being emitted. :ref:`emitting<class_GPUParticles3D_pr
 
 .. container:: contribute
 
-	目前没有这个属性的描述。请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ ！
+	该属性目前没有描述，请帮我们\ :ref:`贡献一个 <doc_updating_the_class_reference>`\ 吧！
 
 .. rst-class:: classref-item-separator
 
@@ -906,10 +906,10 @@ If ``true``, particles are being emitted. :ref:`emitting<class_GPUParticles3D_pr
 设置在索引 ``pass`` 处绘制的 :ref:`Mesh<class_Mesh>` 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

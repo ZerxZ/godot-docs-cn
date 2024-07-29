@@ -17,15 +17,15 @@ Transform3D
 描述
 ----
 
-**Transform3D** 即 3D 变换，是一种内置的 :ref:`Variant<class_Variant>` 类型，这种 3×4 矩阵代表的是 3D 空间中的变换。变换中包含了一个 :ref:`Basis<class_Basis>`\ ，表示的是旋转、缩放、切变。另外变换自身还提供了 :ref:`origin<class_Transform3D_property_origin>`\ ，这样就能够表示平移。
+The **Transform3D** built-in :ref:`Variant<class_Variant>` type is a 3×4 matrix representing a transformation in 3D space. It contains a :ref:`Basis<class_Basis>`, which on its own can represent rotation, scale, and shear. Additionally, combined with its own :ref:`origin<class_Transform3D_property_origin>`, the transform can also represent a translation.
 
-通用的介绍见教程\ :doc:`《矩阵和变换》 <../tutorials/math/matrices_and_transforms>`\ 。
+For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
-\ **注意：**\ Godot 使用\ `右手坐标系 <https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%89%87>`__\ ，这是一种普遍标准。方向方面，\ :ref:`Camera3D<class_Camera3D>` 等内置类型的约定是 -Z 指向前方（+X 为右、+Y 为上、+Z 为后）。其他对象可能使用不同的方向约定。更多信息见教程\ `《导入 3D 场景》 <../tutorials/assets_pipeline/importing_scenes.html#d-asset-direction-conventions>`__\ 。
+\ **Note:** Godot uses a `right-handed coordinate system <https://en.wikipedia.org/wiki/Right-hand_rule>`__, which is a common standard. For directions, the convention for built-in types like :ref:`Camera3D<class_Camera3D>` is for -Z to point forward (+X is right, +Y is up, and +Z is back). Other objects may use different direction conventions. For more information, see the `3D asset direction conventions <../tutorials/assets_pipeline/importing_3d_scenes/model_export_considerations.html#d-asset-direction-conventions>`__ tutorial.
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -116,7 +116,7 @@ Transform3D
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -204,7 +204,7 @@ Transform3D
 
 :ref:`Basis<class_Basis>` **basis** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` :ref:`🔗<class_Transform3D_property_basis>`
 
-The :ref:`Basis<class_Basis>` of this transform. It is composed by 3 axes (:ref:`Basis.x<class_Basis_property_x>`, :ref:`Basis.y<class_Basis_property_y>`, and :ref:`Basis.z<class_Basis_property_z>`). Together, these represent the transform's rotation, scale, and shear.
+该变换的 :ref:`Basis<class_Basis>`\ 。它由 3 个轴（\ :ref:`Basis.x<class_Basis_property_x>`\ 、\ :ref:`Basis.y<class_Basis_property_y>` 和 :ref:`Basis.z<class_Basis_property_z>`\ ）组成。它们共同代表变换的旋转、缩放和错切。
 
 .. rst-class:: classref-item-separator
 
@@ -292,9 +292,9 @@ The :ref:`Basis<class_Basis>` of this transform. It is composed by 3 axes (:ref:
 
 :ref:`Transform3D<class_Transform3D>` **affine_inverse**\ (\ ) |const| :ref:`🔗<class_Transform3D_method_affine_inverse>`
 
-Returns the inverted version of this transform. Unlike :ref:`inverse<class_Transform3D_method_inverse>`, this method works with almost any :ref:`basis<class_Transform3D_property_basis>`, including non-uniform ones, but is slower. See also :ref:`Basis.inverse<class_Basis_method_inverse>`.
+返回该变换的逆版本。与 :ref:`inverse<class_Transform3D_method_inverse>` 不同，则该方法几乎适用于任何 :ref:`basis<class_Transform3D_property_basis>`\ ，包括非均匀的，但速度较慢。另见 :ref:`Basis.inverse<class_Basis_method_inverse>`\ 。
 
-\ **Note:** For this method to return correctly, the transform's :ref:`basis<class_Transform3D_property_basis>` needs to have a determinant that is not exactly ``0`` (see :ref:`Basis.determinant<class_Basis_method_determinant>`).
+\ **注意：**\ 为了使该方法正确返回，该变换的 :ref:`basis<class_Transform3D_property_basis>` 需要具有一个不完全是 ``0`` 的行列式（参见 :ref:`Basis.determinant<class_Basis_method_determinant>`\ ）。
 
 .. rst-class:: classref-item-separator
 
@@ -306,9 +306,9 @@ Returns the inverted version of this transform. Unlike :ref:`inverse<class_Trans
 
 :ref:`Transform3D<class_Transform3D>` **interpolate_with**\ (\ xform\: :ref:`Transform3D<class_Transform3D>`, weight\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Transform3D_method_interpolate_with>`
 
-Returns the result of the linear interpolation between this transform and ``xform`` by the given ``weight``.
+返回将该变换和 ``xform`` 按照给定的权重 ``weight`` 进行线性插值结果。
 
-The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside this range are allowed and can be used to perform *extrapolation* instead.
+\ ``weight`` 应该在 ``0.0`` 到 ``1.0``\ （闭区间）的范围内。允许使用超出这个范围的值，表示进行\ *外插*\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -482,7 +482,7 @@ The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Transform3D_operator_neq_Transform3D:
@@ -630,10 +630,10 @@ The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside
 \ **注意：**\ 由于浮点精度误差，请考虑改用 :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>`\ ，这样更可靠。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

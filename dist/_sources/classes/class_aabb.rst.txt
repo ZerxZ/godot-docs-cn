@@ -27,7 +27,7 @@ AABB
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -134,7 +134,7 @@ AABB
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -441,7 +441,7 @@ AABB
 
 :ref:`Vector3<class_Vector3>` **get_shortest_axis**\ (\ ) |const| :ref:`🔗<class_AABB_method_get_shortest_axis>`
 
-返回该边界框的 :ref:`size<class_AABB_property_size>` 的最短归一化轴，作为 :ref:`Vector3<class_Vector3>`\ （\ :ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`\ 、\ :ref:`Vector3.UP<class_Vector3_constant_UP>` 或 :ref:`Vector3.BACK<class_Vector3_constant_BACK>`\ ）。
+Returns the shortest normalized axis of this bounding box's :ref:`size<class_AABB_property_size>`, as a :ref:`Vector3<class_Vector3>` (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`, :ref:`Vector3.UP<class_Vector3_constant_UP>`, or :ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
 
 
 .. tabs::
@@ -450,21 +450,21 @@ AABB
 
     var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
     
-    print(box.get_shortest_axis())       # 打印 (1, 0, 0)
-    print(box.get_shortest_axis_index()) # 打印 0
-    print(box.get_shortest_axis_size())  # 打印 2
+    print(box.get_shortest_axis())       # Prints (1, 0, 0)
+    print(box.get_shortest_axis_index()) # Prints 0
+    print(box.get_shortest_axis_size())  # Prints 2
 
  .. code-tab:: csharp
 
     var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
     
-    GD.Print(box.GetShortestAxis());      // 打印 (1, 0, 0)
-    GD.Print(box.GetShortestAxisIndex()); // 打印 0
-    GD.Print(box.GetShortestAxisSize());  // 打印 2
+    GD.Print(box.GetShortestAxis());      // Prints (1, 0, 0)
+    GD.Print(box.GetShortestAxisIndex()); // Prints 0
+    GD.Print(box.GetShortestAxisSize());  // Prints 2
 
 
 
-另见 :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` 和 :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>`\ 。
+See also :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` and :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -724,7 +724,7 @@ AABB
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_AABB_operator_neq_AABB:
@@ -768,10 +768,10 @@ AABB
 \ **注意：**\ 由于浮点数精度误差，请考虑改用 :ref:`is_equal_approx<class_AABB_method_is_equal_approx>`\ ，会更可靠。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

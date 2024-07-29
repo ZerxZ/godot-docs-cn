@@ -187,6 +187,8 @@ EditorSettings
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                                                                 |
@@ -305,6 +307,10 @@ EditorSettings
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`filesystem/tools/oidn/oidn_denoise_path<class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input/buffering/agile_event_flushing<class_EditorSettings_property_input/buffering/agile_event_flushing>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input/buffering/use_accumulated_input<class_EditorSettings_property_input/buffering/use_accumulated_input>`                                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                                                                             |
@@ -320,8 +326,6 @@ EditorSettings
    | :ref:`int<class_int>`                             | :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                                                                 |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/debug/enable_pseudolocalization<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -569,6 +573,8 @@ EditorSettings
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/indent/type<class_EditorSettings_property_text_editor/behavior/indent/type>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>`                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/drag_and_drop_selection<class_EditorSettings_property_text_editor/behavior/navigation/drag_and_drop_selection>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/move_caret_on_right_click<class_EditorSettings_property_text_editor/behavior/navigation/move_caret_on_right_click>`                                                         |
@@ -580,6 +586,10 @@ EditorSettings
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/behavior/navigation/stay_in_script_editor_on_node_selected>`                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1553,7 +1563,7 @@ EditorSettings
 
 :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/aabb** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/aabb>`
 
-The color to use for the AABB gizmo that displays the :ref:`GeometryInstance3D<class_GeometryInstance3D>`'s custom :ref:`AABB<class_AABB>`.
+显示 :ref:`GeometryInstance3D<class_GeometryInstance3D>` 自定义 :ref:`AABB<class_AABB>` 的 AABB 小工具所使用的颜色。
 
 .. rst-class:: classref-item-separator
 
@@ -1590,6 +1600,20 @@ The color to use for the AABB gizmo that displays the :ref:`GeometryInstance3D<c
 :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`
 
 如果为 ``true``\ ，则在“场景”面板中重命名节点或重设节点的父节点时，会自动更新动画轨道的目标路径。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/animation/confirm_insert_track:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/confirm_insert_track** :ref:`🔗<class_EditorSettings_property_editors/animation/confirm_insert_track>`
+
+If ``true``, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property. Holding Shift will bypass the dialog.
+
+If ``false``, the behavior is reversed, i.e. the dialog only appears when Shift is held.
 
 .. rst-class:: classref-item-separator
 
@@ -2341,6 +2365,38 @@ Blender 进程的最大空闲运行时间（单位为秒）。
 
 ----
 
+.. _class_EditorSettings_property_input/buffering/agile_event_flushing:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input/buffering/agile_event_flushing** :ref:`🔗<class_EditorSettings_property_input/buffering/agile_event_flushing>`
+
+If ``true``, input events will be flushed just before every idle and physics frame.
+
+If ``false``, these events will be flushed only once per process frame, between iterations of the engine.
+
+Enabling this setting can greatly improve input responsiveness, especially in devices that struggle to run at the project's intended frame rate.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_input/buffering/use_accumulated_input:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input/buffering/use_accumulated_input** :ref:`🔗<class_EditorSettings_property_input/buffering/use_accumulated_input>`
+
+If ``true``, similar input events sent by the operating system are accumulated. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
+
+Input accumulation can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage.
+
+\ **Note:** Input accumulation is *enabled* by default.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons:
 
 .. rst-class:: classref-property
@@ -2451,20 +2507,6 @@ Blender 进程的最大空闲运行时间（单位为秒）。
 
 ----
 
-.. _class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editor/debug/enable_pseudolocalization** :ref:`🔗<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`
-
-如果为 ``true``\ ，则延长编辑器的可本地化字符串，并将其字符替换为重音变体。这允许轻松发现不可本地化的字符串，同时还确保 UI 布局在字符串变长时不会中断（因为许多语言会要求字符串变长）。
-
-这是一个调试功能，只有在编辑器本身工作时才能启用。
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/editor/display_scale:
 
 .. rst-class:: classref-property
@@ -2487,7 +2529,7 @@ Blender 进程的最大空闲运行时间（单位为秒）。
 
 :ref:`int<class_int>` **interface/editor/dock_tab_style** :ref:`🔗<class_EditorSettings_property_interface/editor/dock_tab_style>`
 
-Tab style of editor docks.
+编辑器停靠面板的选项卡样式。
 
 .. rst-class:: classref-item-separator
 
@@ -2595,7 +2637,7 @@ FreeType 的字体抗锯齿模式，用于渲染编辑器字体。大多数字�
 
 :ref:`bool<class_bool>` **interface/editor/import_resources_when_unfocused** :ref:`🔗<class_EditorSettings_property_interface/editor/import_resources_when_unfocused>`
 
-If ``true``, (re)imports resources even if the editor window is unfocused or minimized. If ``false``, resources are only (re)imported when the editor window is focused. This can be set to ``true`` to speed up iteration by starting the import process earlier when saving files in the project folder. This also allows getting visual feedback on changes without having to click the editor window, which is useful with multi-monitor setups. The downside of setting this to ``true`` is that it increases idle CPU usage and may steal CPU time from other applications when importing resources.
+如果为 ``true``\ ，即使编辑器窗口未聚焦或最小化，也会（重新）导入资源。如果为 ``false``\ ，则仅在编辑器窗口聚焦时（重新）导入资源。可以将其设置为 ``true``\ ，以便在项目文件夹中保存文件时尽早启动导入过程来加快迭代速度。这还允许在无需点击编辑器窗口的情况下获得有关更改的视觉反馈，这在多显示器设置中很有用。将其设置为 ``true`` 的缺点是它会增加空闲 CPU 使用率，并且在导入资源时可能会窃取其他应用程序的 CPU 时间。
 
 .. rst-class:: classref-item-separator
 
@@ -2745,13 +2787,15 @@ If ``true``, (re)imports resources even if the editor window is unfocused or min
 
 :ref:`int<class_int>` **interface/editor/show_update_spinner** :ref:`🔗<class_EditorSettings_property_interface/editor/show_update_spinner>`
 
-如果启用，则会在编辑器右上角显示一个图标，会在编辑器发生帧重绘时旋转。可以用来诊断引擎不断重绘的问题，防止无意义地增加对 CPU 和 GPU 的占用。要进一步排查这种情况，请在启动编辑器时使用 ``--debug-canvas-item-redraw`` :doc:`命令行参数 <../tutorials/editor/command_line_tutorial>`\ 。
+If enabled, displays an icon in the top-right corner of the editor that spins when the editor redraws a frame. This can be used to diagnose situations where the engine is constantly redrawing, which should be avoided as this increases CPU and GPU utilization for no good reason. To further troubleshoot these situations, start the editor with the ``--debug-canvas-item-redraw`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
-如果你在开发编辑器插件，请考虑启用这个设置，确保只在必要时触发编辑器的重绘。
+Consider enabling this if you are developing editor plugins to ensure they only make the editor redraw when required.
 
-默认为 **Auto** 只会在编辑器是使用 ``dev_build=yes`` Scons 选项时启用这个图标（默认为 ``dev_build=no``\ ）。
+The default **Auto** value will only enable this if the editor was compiled with the ``dev_build=yes`` SCons option (the default is ``dev_build=no``).
 
-\ **注意：**\ 如果 :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>` 为 ``true``\ ，则旋转图会以红色显示。
+\ **Note:** If :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>` is ``true``, the spinner icon displays in red.
+
+\ **Note:** If the editor was started with the ``--debug-canvas-item-redraw`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, the update spinner will *never* display regardless of this setting's value. This is to avoid confusion with what would cause redrawing in real world scenarios.
 
 .. rst-class:: classref-item-separator
 
@@ -2831,7 +2875,7 @@ If ``true``, (re)imports resources even if the editor window is unfocused or min
 
 :ref:`bool<class_bool>` **interface/editor/use_native_file_dialogs** :ref:`🔗<class_EditorSettings_property_interface/editor/use_native_file_dialogs>`
 
-If ``true``, editor UI uses OS native file/directory selection dialogs.
+如果为 ``true``\ ，编辑器 UI 将使用操作系统原生的文件/目录选择对话框。
 
 .. rst-class:: classref-item-separator
 
@@ -3283,13 +3327,13 @@ If ``true``, editor UI uses OS native file/directory selection dialogs.
 
 :ref:`int<class_int>` **interface/theme/icon_and_font_color** :ref:`🔗<class_EditorSettings_property_interface/theme/icon_and_font_color>`
 
-The icon and font color scheme to use in the editor.
+在编辑器中使用的图标和字体的配色方案。
 
-- **Auto** determines the color scheme to use automatically based on :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`.
+- **Auto** 根据 :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>` 自动确定要使用的配色方案。
 
-- **Dark** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following the set of rules defined in `this file <https://github.com/godotengine/godot/blob/master/editor/themes/editor_theme_manager.cpp>`__.
+- **Dark** 使字体和图标变暗（适合浅色主题）。图标颜色由编辑器按照\ `该文件 <https://github.com/godotengine/godot/blob/master/editor/themes/editor_theme_manager.cpp>`__\ 中定义的一组规则自动转换。
 
-- **Light** makes fonts and icons light (suitable for dark themes).
+- **Light** 使字体和图标变亮（适合深色主题）。
 
 .. rst-class:: classref-item-separator
 
@@ -3567,7 +3611,7 @@ The icon and font color scheme to use in the editor.
 
 :ref:`int<class_int>` **run/bottom_panel/action_on_play** :ref:`🔗<class_EditorSettings_property_run/bottom_panel/action_on_play>`
 
-The action to execute on the bottom panel when running the project.
+运行项目时在底部面板上执行的操作。
 
 .. rst-class:: classref-item-separator
 
@@ -3579,7 +3623,7 @@ The action to execute on the bottom panel when running the project.
 
 :ref:`int<class_int>` **run/bottom_panel/action_on_stop** :ref:`🔗<class_EditorSettings_property_run/bottom_panel/action_on_stop>`
 
-The action to execute on the bottom panel when stopping the project.
+停止项目时在底部面板上执行的操作。
 
 .. rst-class:: classref-item-separator
 
@@ -3615,7 +3659,7 @@ The action to execute on the bottom panel when stopping the project.
 
 :ref:`int<class_int>` **run/output/max_lines** :ref:`🔗<class_EditorSettings_property_run/output/max_lines>`
 
-Maximum number of lines to show at any one time in the Output panel.
+输出面板中一次显示的最大行数。
 
 .. rst-class:: classref-item-separator
 
@@ -3977,7 +4021,7 @@ Maximum number of lines to show at any one time in the Output panel.
 
 :ref:`bool<class_bool>` **text_editor/behavior/files/trim_final_newlines_on_save** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/trim_final_newlines_on_save>`
 
-If ``true``, trims all empty newlines after the final newline when saving a script. Final newlines refer to the empty newlines found at the end of files. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
+如果为 ``true``\ ，则在保存脚本时修剪最后一个换行符后的所有空换行符。最后一个换行符指的是文件末尾的空换行符。由于这些换行符没有实际用途，因此可以且应该将其移除，以减少对版本控制差异的干扰。
 
 .. rst-class:: classref-item-separator
 
@@ -4013,7 +4057,7 @@ If ``true``, trims all empty newlines after the final newline when saving a scri
 
 :ref:`bool<class_bool>` **text_editor/behavior/indent/indent_wrapped_lines** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/indent/indent_wrapped_lines>`
 
-If ``true``, all wrapped lines are indented to the same amount as the unwrapped line.
+如果为 ``true``\ ，则所有换行的行都会缩进，缩进量与展开的行相同。
 
 .. rst-class:: classref-item-separator
 
@@ -4040,6 +4084,18 @@ If ``true``, all wrapped lines are indented to the same amount as the unwrapped 
 要使用的缩进风格（制表符或空格）。
 
 \ **注意：**\ :doc:`GDScript 风格指南 <../tutorials/scripting/gdscript/gdscript_styleguide>`\ 建议使用制表符进行缩进。建议仅当需要处理当前使用空格进行缩进的游戏项目时，才更改这项设置。
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/behavior/navigation/custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>`
+
+The characters to consider as word delimiters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is ``true``. This is in addition to default characters if :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>` is ``true``. The characters should be defined without separation, for example ``_♥=``.
 
 .. rst-class:: classref-item-separator
 
@@ -4075,7 +4131,7 @@ If ``true``, all wrapped lines are indented to the same amount as the unwrapped 
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method>`
 
-If ``true``, opens the script editor when connecting a signal to an existing script method from the Node dock.
+如果为 ``true``\ ，则在从 Node 面板将信号连接到现有脚本方法时打开脚本编辑器。
 
 .. rst-class:: classref-item-separator
 
@@ -4119,6 +4175,30 @@ If ``true``, opens the script editor when connecting a signal to an existing scr
 
 ----
 
+.. _class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/use_custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>`
+
+If ``true``, uses the characters in :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>` as word separators for word navigation and operations. This is in addition to the default characters if :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>` is also enabled. Word navigation and operations include double-clicking on a word or holding :kbd:`Ctrl` (:kbd:`Cmd` on macOS) while pressing :kbd:`left`, :kbd:`right`, :kbd:`backspace`, or :kbd:`delete`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/use_default_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`
+
+If ``true``, uses the characters in ```!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Unicode General Punctuation table, and the Unicode CJK Punctuation table as word separators for word navigation and operations. If ``false``, a subset of these characters are used and does not include the characters ``<>$~^=+|``. This is in addition to custom characters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is also enabled. These characters are used to determine where a word stops. Word navigation and operations include double-clicking on a word or holding :kbd:`Ctrl` (:kbd:`Cmd` on macOS) while pressing :kbd:`left`, :kbd:`right`, :kbd:`backspace`, or :kbd:`delete`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed:
 
 .. rst-class:: classref-property
@@ -4139,7 +4219,7 @@ If ``true``, opens the script editor when connecting a signal to an existing scr
 
 :ref:`bool<class_bool>` **text_editor/completion/add_node_path_literals** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_node_path_literals>`
 
-If ``true``, uses :ref:`NodePath<class_NodePath>` instead of :ref:`String<class_String>` when appropriate for code autocompletion or for drag and dropping object properties into the script editor.
+如果为 ``true``\ ，则在代码自动补全或将对象属性拖放到脚本编辑器时恰当地使用 :ref:`NodePath<class_NodePath>` 而不是 :ref:`String<class_String>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4151,7 +4231,7 @@ If ``true``, uses :ref:`NodePath<class_NodePath>` instead of :ref:`String<class_
 
 :ref:`bool<class_bool>` **text_editor/completion/add_string_name_literals** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_string_name_literals>`
 
-If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<class_String>` when appropriate for code autocompletion.
+如果为 ``true``\ ，则代码自动补全在合适时使用 :ref:`StringName<class_StringName>` 而不是 :ref:`String<class_String>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -4199,7 +4279,7 @@ If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<cl
 
 :ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled** :ref:`🔗<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`
 
-如果为 ``true``\ ，代码补全将在 :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>` 之后自动触发。如果为 ``false``\ ，你仍然可以通过按 :kbd:`Ctrl + Space`\ （在 macOS 上为 :kbd:`Cmd + Space`\ ）手动触发补全。
+If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. Even if ``false``, code completion can be triggered manually with the ``ui_text_completion_query`` action (by default :kbd:`Ctrl + Space` or :kbd:`Cmd + Space` on macOS).
 
 .. rst-class:: classref-item-separator
 
@@ -5069,10 +5149,10 @@ If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<cl
 将由 ``name`` 指定的设置项设置为 ``value``\ 。等价于在 EditorSettings 实例上使用 :ref:`Object.set<class_Object_method_set>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

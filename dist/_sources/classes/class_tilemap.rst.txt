@@ -308,11 +308,11 @@ enum **VisibilityMode**: :ref:`🔗<enum_TileMap_VisibilityMode>`
 - |void| **set_rendering_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_rendering_quadrant_size**\ (\ )
 
-The TileMap's quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
+TileMap 的象限大小。象限是在单个画布项上一起绘制的一组图块，用于优化。\ :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>` 定义的是形成象限的正方形的边长，使用地图坐标系。因此，默认象限大小将 ``16 * 16 = 256`` 个图块组合到了一起。
 
-The quadrant size does not apply on Y-sorted layers, as tiles are grouped by Y position instead in that case.
+Y 排序的图层不使用象限大小，这种图层中的图块会按 Y 位置分组。
 
-\ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the TileMap's local coordinate system.
+\ **注意：**\ 象限是根据地图坐标系创建的，“正方形”的象限在 TileMap 的局部坐标系中可能并不是正方形。
 
 .. rst-class:: classref-item-separator
 
@@ -458,11 +458,11 @@ The quadrant size does not apply on Y-sorted layers, as tiles are grouped by Y p
 
 :ref:`int<class_int>` **get_cell_alternative_tile**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_alternative_tile>`
 
-Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``.
+返回 ``layer`` 层中位于坐标 ``coords`` 单元格的图块备选 ID。
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+如果 ``use_proxies`` 为 ``false``\ ，则会忽略该 :ref:`TileSet<class_TileSet>` 的图块代理，返回原始的备选标识符。见 :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`\ 。
 
-If ``layer`` is negative, the layers are accessed from the last one.
+如果 ``layer`` 为负，则从最后一个图层开始访问。
 
 .. rst-class:: classref-item-separator
 
@@ -474,11 +474,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 :ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_atlas_coords>`
 
-Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``Vector2i(-1, -1)`` if the cell does not exist.
+返回图层 ``layer`` 上坐标 ``coords`` 处单元格的图块地图集坐标 ID。如果单元格不存在，则返回 ``Vector2i(-1, -1)``\ 。
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw atlas coordinate identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+如果 ``use_proxies`` 为 ``false``\ ，则忽略 :ref:`TileSet<class_TileSet>` 的图块代理，返回原始图集坐标标识符。请参阅 :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`\ 。
 
-If ``layer`` is negative, the layers are accessed from the last one.
+如果 ``layer`` 为负，则从最后一个图层开始访问。
 
 .. rst-class:: classref-item-separator
 
@@ -490,11 +490,11 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 :ref:`int<class_int>` **get_cell_source_id**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_get_cell_source_id>`
 
-Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``-1`` if the cell does not exist.
+返回坐标 ``coords`` 处图层 ``layer`` 上单元格的图块源 ID。如果单元格不存在，则返回 ``-1``\ 。
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw source identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+如果 ``use_proxies`` 为 ``false``\ ，则忽略 :ref:`TileSet<class_TileSet>` 的图块代理，返回原始源标识符。请参阅 :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`\ 。
 
-If ``layer`` is negative, the layers are accessed from the last one.
+如果 ``layer`` 为负，则从最后一个图层开始访问。
 
 .. rst-class:: classref-item-separator
 
@@ -1069,10 +1069,10 @@ Y 排序图层的 Z 索引一般应该和未 Y 排序的图层不同，否则未
 \ **警告：**\ 更新 TileMap 的计算量很大，可能会影响性能。请尽量限制更新的次数和受影响的图块。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

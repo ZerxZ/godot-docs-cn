@@ -277,9 +277,9 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 - |void| **set_access**\ (\ value\: :ref:`Access<enum_FileDialog_Access>`\ )
 - :ref:`Access<enum_FileDialog_Access>` **get_access**\ (\ )
 
-文件系统的访问范围。见 :ref:`Access<enum_FileDialog_Access>` 常量。
+The file system access scope. See :ref:`Access<enum_FileDialog_Access>` constants.
 
-\ **警告：**\ 目前，在 Web 构建或沙盒 macOS 应用程序等沙盒环境中，FileDialog 无法访问主机文件系统。参见 `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__\ 。
+\ **Warning:** In Web builds, FileDialog cannot access the host file system. In sandboxed Linux and macOS environments, :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>` is automatically used to allow limited access to host file system.
 
 .. rst-class:: classref-item-separator
 
@@ -296,7 +296,9 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 - |void| **set_current_dir**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_current_dir**\ (\ )
 
-文件对话框的当前工作目录。
+The current working directory of the file dialog.
+
+\ **Note:** For native file dialogs, this property is only treated as a hint and may not be respected by specific OS implementations.
 
 .. rst-class:: classref-item-separator
 
@@ -417,7 +419,9 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 - |void| **set_root_subfolder**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_root_subfolder**\ (\ )
 
-如果非空，则给定的子文件夹将是该 **FileDialog** 的“根”，即用户将无法转到其父目录。
+If non-empty, the given sub-folder will be "root" of this **FileDialog**, i.e. user won't be able to go to its parent directory.
+
+\ **Note:** This property is ignored by native file dialogs.
 
 .. rst-class:: classref-item-separator
 
@@ -434,7 +438,9 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 - |void| **set_show_hidden_files**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_showing_hidden_files**\ (\ )
 
-如果为 ``true``\ ，对话框将显示出隐藏文件。
+If ``true``, the dialog will show hidden files.
+
+\ **Note:** This property is ignored by native file dialogs on Linux.
 
 .. rst-class:: classref-item-separator
 
@@ -451,9 +457,13 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 - |void| **set_use_native_dialog**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_use_native_dialog**\ (\ )
 
-如果为 ``true``\ ，\ :ref:`access<class_FileDialog_property_access>` 被设置为\ :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`\ ，并且它被当前的 :ref:`DisplayServer<class_DisplayServer>` 支持，则将使用操作系统原生对话框而不是自定义对话框。
+If ``true``, :ref:`access<class_FileDialog_property_access>` is set to :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`, and it is supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
 
-\ **注意：**\ 在 macOS 上，沙盒应用程序始终使用原生对话框来访问主机文件系统。
+\ **Note:** On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.
+
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
+
+\ **Note:** Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.
 
 .. rst-class:: classref-section-separator
 
@@ -586,9 +596,11 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 
 :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox**\ (\ ) :ref:`🔗<class_FileDialog_method_get_vbox>`
 
-返回对话框的垂直框容器，可以向其中添加自定义控件。
+Returns the vertical box container of the dialog, custom controls can be added to it.
 
-\ **警告：**\ 这是一个必需的内部节点，删除和释放它可能会导致崩溃。如果你希望隐藏它或其任何子项，请使用它们的 :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` 属性。
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+
+\ **Note:** Changes to this node are ignored by native file dialogs, use :ref:`add_option<class_FileDialog_method_add_option>` to add custom elements to the dialog instead.
 
 .. rst-class:: classref-item-separator
 
@@ -600,7 +612,9 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 
 |void| **invalidate**\ (\ ) :ref:`🔗<class_FileDialog_method_invalidate>`
 
-使当前对话框内容列表无效并更新。
+Invalidate and update the current dialog content list.
+
+\ **Note:** This method does nothing on native file dialogs.
 
 .. rst-class:: classref-item-separator
 
@@ -776,10 +790,10 @@ enum **Access**: :ref:`🔗<enum_FileDialog_Access>`
 切换隐藏按钮的自定义图标。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -44,10 +44,12 @@ Despite their name, node paths may also point to a property:
 
 ::
 
-    ^"position"            # Points to this object's position.
-    ^"position:x"          # Points to this object's position in the x axis.
+    ^":position"           # Points to this object's position.
+    ^":position:x"         # Points to this object's position in the x axis.
     ^"Camera3D:rotation:y" # Points to the child Camera3D and its y rotation.
     ^"/root:size:x"        # Points to the root Window and its width.
+
+In some situations, it's possible to omit the leading ``:`` when pointing to an object's property. As an example, this is the case with :ref:`Object.set_indexed<class_Object_method_set_indexed>` and :ref:`Tween.tween_property<class_Tween_method_tween_property>`, as those methods call :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` under the hood. However, it's generally recommended to keep the ``:`` prefix.
 
 Node paths cannot check whether they are valid and may point to nodes or properties that do not exist. Their meaning depends entirely on the context in which they're used.
 
@@ -59,7 +61,7 @@ See also :ref:`StringName<class_StringName>`, which is a similar type designed f
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -118,7 +120,7 @@ See also :ref:`StringName<class_StringName>`, which is a similar type designed f
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -419,7 +421,7 @@ See also :ref:`StringName<class_StringName>`, which is a similar type designed f
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_NodePath_operator_neq_NodePath:
@@ -443,10 +445,10 @@ See also :ref:`StringName<class_StringName>`, which is a similar type designed f
 如果两个节点路径相等，即它们由相同的节点名称和子名称按相同的顺序组成，则返回 ``true``\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

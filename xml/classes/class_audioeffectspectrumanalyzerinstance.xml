@@ -10,10 +10,21 @@
     <section ids="audioeffectspectrumanalyzerinstance class-audioeffectspectrumanalyzerinstance" names="audioeffectspectrumanalyzerinstance class_audioeffectspectrumanalyzerinstance">
         <title>AudioEffectSpectrumAnalyzerInstance</title>
         <paragraph><strong>继承：</strong> <reference internal="True" refuri="class_audioeffectinstance#class-audioeffectinstance"><inline classes="std std-ref">AudioEffectInstance</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference></paragraph>
-        <container classes="contribute">
-            <paragraph>目前没有这个类的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
-        </container>
-        <section classes="classref-reftable-group" ids="id1" names="方法">
+        <paragraph>Queryable instance of an <reference internal="True" refuri="class_audioeffectspectrumanalyzer#class-audioeffectspectrumanalyzer"><inline classes="std std-ref">AudioEffectSpectrumAnalyzer</inline></reference>.</paragraph>
+        <section classes="classref-introduction-group" ids="id1" names="描述">
+            <title>描述</title>
+            <paragraph>The runtime part of an <reference internal="True" refuri="class_audioeffectspectrumanalyzer#class-audioeffectspectrumanalyzer"><inline classes="std std-ref">AudioEffectSpectrumAnalyzer</inline></reference>, which can be used to query the magnitude of a frequency range on its host bus.</paragraph>
+            <paragraph>An instance of this class can be acquired with <reference internal="True" refuri="class_audioserver#class-audioserver-method-get-bus-effect-instance"><inline classes="std std-ref">AudioServer.get_bus_effect_instance</inline></reference>.</paragraph>
+        </section>
+        <section classes="classref-introduction-group" ids="id2" names="教程">
+            <title>教程</title>
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph><reference name="音频频谱可视化演示" refuri="https://godotengine.org/asset-library/asset/2762">音频频谱可视化演示</reference></paragraph>
+                </list_item>
+            </bullet_list>
+        </section>
+        <section classes="classref-reftable-group" ids="id3" names="方法">
             <title>方法</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
@@ -25,7 +36,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range"><inline classes="std std-ref">get_magnitude_for_frequency_range</inline></reference>(from_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, to_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, mode: <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> = 1) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range"><inline classes="std std-ref">get_magnitude_for_frequency_range</inline></reference>(from_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, to_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, mode: <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> = 1) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -33,32 +44,31 @@
             </table>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id2" names="枚举">
+        <section classes="classref-descriptions-group" ids="id4" names="枚举">
             <title>枚举</title>
             <target refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"></target>
             <paragraph classes="classref-enumeration" ids="enum-audioeffectspectrumanalyzerinstance-magnitudemode" names="enum_audioeffectspectrumanalyzerinstance_magnitudemode">enum <strong>MagnitudeMode</strong>: <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <target refid="class-audioeffectspectrumanalyzerinstance-constant-magnitude-average"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-audioeffectspectrumanalyzerinstance-constant-magnitude-average" names="class_audioeffectspectrumanalyzerinstance_constant_magnitude_average"><reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> <strong>MAGNITUDE_AVERAGE</strong> = <literal>0</literal></paragraph>
-            <paragraph>用平均值作为幅度。</paragraph>
+            <paragraph>Use the average value across the frequency range as magnitude.</paragraph>
             <target refid="class-audioeffectspectrumanalyzerinstance-constant-magnitude-max"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-audioeffectspectrumanalyzerinstance-constant-magnitude-max" names="class_audioeffectspectrumanalyzerinstance_constant_magnitude_max"><reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> <strong>MAGNITUDE_MAX</strong> = <literal>1</literal></paragraph>
-            <paragraph>用最大值作为幅度。</paragraph>
+            <paragraph>Use the maximum value of the frequency range as magnitude.</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id3" names="方法说明">
+        <section classes="classref-descriptions-group" ids="id5" names="方法说明">
             <title>方法说明</title>
             <target refid="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range"></target>
-            <paragraph classes="classref-method" ids="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range" names="class_audioeffectspectrumanalyzerinstance_method_get_magnitude_for_frequency_range"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_magnitude_for_frequency_range</strong>(from_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, to_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, mode: <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> = 1) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
-            </container>
+            <paragraph classes="classref-method" ids="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range" names="class_audioeffectspectrumanalyzerinstance_method_get_magnitude_for_frequency_range"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>get_magnitude_for_frequency_range</strong>(from_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, to_hz: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>, mode: <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference> = 1) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-audioeffectspectrumanalyzerinstance-method-get-magnitude-for-frequency-range"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>Returns the magnitude of the frequencies from <literal>from_hz</literal> to <literal>to_hz</literal> in linear energy as a Vector2. The <literal>x</literal> component of the return value represents the left stereo channel, and <literal>y</literal> represents the right channel.</paragraph>
+            <paragraph><literal>mode</literal> determines how the frequency range will be processed. See <reference internal="True" refid="enum-audioeffectspectrumanalyzerinstance-magnitudemode"><inline classes="std std-ref">MagnitudeMode</inline></reference>.</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

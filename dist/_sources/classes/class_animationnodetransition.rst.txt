@@ -180,9 +180,9 @@ AnimationNodeTransition
 - |void| **set_xfade_time**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_xfade_time**\ (\ )
 
-连接到输入的每个动画之间的交叉衰落时间（以秒为单位）。
+输入所连接的动画之间交叉渐变的时间（单位为秒）。
 
-\ ** 注意：**\ **AnimationNodeTransition**\ 在渐变开始后立即转换当前状态。精确的剩余时间只能从主动画中推断出来。当\ :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`\ 被视为最上游时，因此\ :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`\ 不会根据下游增量进行缩放。另请参见\ :ref:`AnimationNodeOneShot.fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`\ 。
+\ **注意：**\ **AnimationNodeTransition** 是在淡入淡出结束后转换当前状态的。只能根据主动画推断精确的剩余时间。将 :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` 视为最上游时，\ :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>` 不会根据下游增量进行缩放。另见 :ref:`AnimationNodeOneShot.fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -262,10 +262,10 @@ AnimationNodeTransition
 如果为 ``true``\ ，则目标动画在动画过渡时重新启动。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

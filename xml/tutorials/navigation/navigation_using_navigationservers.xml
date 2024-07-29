@@ -9,30 +9,20 @@
         <paragraph>2D 和 3D 使用的 NavigationServer 是一样的，NavigationServer3D 是主要服务器。NavigationServer2D 只是一个前端，会进行 2D 位置和 3D 位置的相互转换。因此，完全可以只用 NavigationServer3D 的 API 来实现 2D 导航（就是会有点繁琐）。</paragraph>
         <section ids="communicating-with-the-navigationserver" names="communicating\ with\ the\ navigationserver 与\ navigationserver\ 通信">
             <title>与 NavigationServer 通信</title>
-            <paragraph>To work with the NavigationServer means to prepare parameters for a <strong>query</strong> that can be sent to the NavigationServer for updates or requesting data.</paragraph>
-            <paragraph>To reference the internal NavigationServer objects like maps, regions and agents RIDs are used as identification numbers.
-                Every navigation related node in the scene tree has a function that returns the RID for this node.</paragraph>
+            <paragraph>要使用 NavigationServer 首先就需要为<strong>请求</strong>准备参数，这个请求会被发送给 NavigationServer，用来进行更新和数据的请求。</paragraph>
+            <paragraph>地图、区块、代理等 NavigationServer 内部的对象使用 RID 来进行引用，这是一种用作标识符的数字。场景树中每个导航相关的节点都提供了返回该节点 RID 的函数。</paragraph>
         </section>
         <section ids="threading-and-synchronization" names="threading\ and\ synchronization 线程与同步">
             <title>线程与同步</title>
-            <paragraph>The NavigationServer does not update every change immediately but waits until
-                the end of the <strong>physics frame</strong> to synchronize all the changes together.</paragraph>
-            <paragraph>Waiting for synchronization is required to apply changes to all maps, regions and agents.
-                Synchronization is done because some updates like a recalculation of the entire navigation map are very expensive and require updated data from all other objects.
-                Also the NavigationServer uses a <strong>threadpool</strong> by default for some functionality like avoidance calculation between agents.</paragraph>
-            <paragraph>Waiting is not required for most <literal>get()</literal> functions that only request data from the NavigationServer without making changes.
-                Note that not all data will account for changes made in the same frame.
-                E.g. if an avoidance agent changed the navigation map this frame the <literal>agent_get_map()</literal> function will still return the old map before the synchronization.
-                The exception to this are nodes that store their values internally before sending the update to the NavigationServer.
-                When a getter on a node is used for a value that was updated in the same frame it will return the already updated value stored on the node.</paragraph>
-            <paragraph>The NavigationServer is <strong>thread-safe</strong> as it places all API calls that want to make changes in a queue to be executed in the synchronization phase.
-                Synchronization for the NavigationServer happens in the middle of the physics frame after scene input from scripts and nodes are all done.</paragraph>
+            <paragraph>NavigationServer 不会立即为所有更改执行更新，而是会等到<strong>物理帧</strong>的结尾再同步所有更改。</paragraph>
+            <paragraph>对地图、区块、代理进行更改都需要等待同步。之所以要进行同步，是因为部分更新的开销非常大，并且需要所有其他对象更新后的数据，例如重新计算整个导航地图。另外 NavigationServer 的部分功能默认会使用<strong>线程池</strong>，例如代理之间的避障计算。</paragraph>
+            <paragraph>大多数 <literal>get()</literal> 函数都不需要等待，因为这些函数只会从 NavigationServer 请求数据，不会进行修改。请注意，并不是所有数据都会考虑到同一帧里做出的更改。比如避障代理在当前帧更改了导航地图的话，那么 <literal>agent_get_map()</literal> 函数在同步之前就仍然会返回旧的地图。部分节点会在向 NavigationServer 发送更新前在内部存储对应的值，所以这些节点属于例外。在这种节点上使用某个值的 getter 时，如果同一帧存在更新，那么返回的就是存储在该节点上的更新后的值。</paragraph>
+            <paragraph>NavigationServer 是<strong>线程安全</strong>的，因为它会把所有需要执行更改的 API 调用放在队列中，在同步阶段再执行。NavigationServer 的同步发生在物理帧，在脚本以及节点的场景输入之后。</paragraph>
             <note>
-                <paragraph>The important takeaway is that most NavigationServer changes take effect after the next physics frame and not immediately.
-                    This includes all changes made by navigation related nodes in the scene tree or through scripts.</paragraph>
+                <paragraph>划重点：大多数对 NavigationServer 的更改都会在下一个物理帧之后生效，不会立即生效。包括场景树中导航相关节点做出的更改，以及脚本做出的更改。</paragraph>
             </note>
             <note>
-                <paragraph>All setters and delete functions require synchronization.</paragraph>
+                <paragraph>Setter 和删除函数都需要同步。</paragraph>
             </note>
         </section>
         <section ids="d-and-3d-navigationserver-differences" names="2d\ and\ 3d\ navigationserver\ differences 2d\ 和\ 3d\ navigationserver\ 的区别">
@@ -176,7 +166,7 @@ public partial class MyNode3D : Node3D
                     <paragraph><literal>_physics_process(delta)</literal>。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><literal>velocity</literal> property is set on NavigationAgent Node.</paragraph>
+                    <paragraph>设置 NavigationAgent 节点的 <literal>velocity</literal> 属性。</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph>代理向 NavigationServer 发送速度和位置。</paragraph>

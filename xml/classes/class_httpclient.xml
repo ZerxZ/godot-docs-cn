@@ -107,7 +107,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-httpclient-method-get-response-body-length"><inline classes="std std-ref">get_response_body_length</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-httpclient-method-get-response-body-length"><inline classes="std std-ref">get_response_body_length</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -115,7 +115,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-httpclient-method-get-response-code"><inline classes="std std-ref">get_response_code</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-httpclient-method-get-response-code"><inline classes="std std-ref">get_response_code</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -139,7 +139,7 @@
                                 <paragraph><reference internal="True" refid="enum-httpclient-status"><inline classes="std std-ref">Status</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-httpclient-method-get-status"><inline classes="std std-ref">get_status</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-httpclient-method-get-status"><inline classes="std std-ref">get_status</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -147,7 +147,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-httpclient-method-has-response"><inline classes="std std-ref">has_response</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-httpclient-method-has-response"><inline classes="std std-ref">has_response</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -155,7 +155,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-httpclient-method-is-response-chunked"><inline classes="std std-ref">is_response_chunked</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-httpclient-method-is-response-chunked"><inline classes="std std-ref">is_response_chunked</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -527,13 +527,13 @@
             <paragraph>如果未指定 <literal>port</literal>（或使用 <literal>-1</literal>），则自动将其设置为 80（用于 HTTP）和 443（用于 HTTPS）。可以传入可选的 <literal>tls_options</literal> 参数来自定义受信任的证书颁发机构，或者使用 HTTPS 时的通用名称验证。请参阅 <reference internal="True" refuri="class_tlsoptions#class-tlsoptions-method-client"><inline classes="std std-ref">TLSOptions.client</inline></reference> 和 <reference internal="True" refuri="class_tlsoptions#class-tlsoptions-method-client-unsafe"><inline classes="std std-ref">TLSOptions.client_unsafe</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-get-response-body-length"></target>
-            <paragraph classes="classref-method" ids="class-httpclient-method-get-response-body-length" names="class_httpclient_method_get_response_body_length"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_response_body_length</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-response-body-length"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-httpclient-method-get-response-body-length" names="class_httpclient_method_get_response_body_length"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_response_body_length</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-response-body-length"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回响应体长度。</paragraph>
             <paragraph><strong>注意：</strong>部分 Web 服务器可能不发送响应体长度，此时返回值将为 <literal>-1</literal>。如果使用分块传输编码，响应体的长度也将为 <literal>-1</literal>。</paragraph>
             <paragraph><strong>注意：</strong>由于浏览器的限制，该函数在 Web 平台上始终返回 <literal>-1</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-get-response-code"></target>
-            <paragraph classes="classref-method" ids="class-httpclient-method-get-response-code" names="class_httpclient_method_get_response_code"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_response_code</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-response-code"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-httpclient-method-get-response-code" names="class_httpclient_method_get_response_code"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_response_code</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-response-code"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回响应的 HTTP 状态码。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-get-response-headers"></target>
@@ -550,15 +550,15 @@
 }</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-get-status"></target>
-            <paragraph classes="classref-method" ids="class-httpclient-method-get-status" names="class_httpclient_method_get_status"><reference internal="True" refid="enum-httpclient-status"><inline classes="std std-ref">Status</inline></reference> <strong>get_status</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-status"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-httpclient-method-get-status" names="class_httpclient_method_get_status"><reference internal="True" refid="enum-httpclient-status"><inline classes="std std-ref">Status</inline></reference> <strong>get_status</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-get-status"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <reference internal="True" refid="enum-httpclient-status"><inline classes="std std-ref">Status</inline></reference> 常量。需要调用 <reference internal="True" refid="class-httpclient-method-poll"><inline classes="std std-ref">poll</inline></reference> 才能更新状态。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-has-response"></target>
-            <paragraph classes="classref-method" ids="class-httpclient-method-has-response" names="class_httpclient_method_has_response"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_response</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-has-response"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-httpclient-method-has-response" names="class_httpclient_method_has_response"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>has_response</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-has-response"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>为 <literal>true</literal> 时，则该 <strong>HTTPClient</strong> 有可用的响应。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-is-response-chunked"></target>
-            <paragraph classes="classref-method" ids="class-httpclient-method-is-response-chunked" names="class_httpclient_method_is_response_chunked"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_response_chunked</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-is-response-chunked"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-httpclient-method-is-response-chunked" names="class_httpclient_method_is_response_chunked"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_response_chunked</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-httpclient-method-is-response-chunked"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>为 <literal>true</literal> 时，则该 <strong>HTTPClient</strong> 有分块的响应。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-httpclient-method-poll"></target>
@@ -654,12 +654,12 @@ var result = new HttpClient().Request(HttpClient.Method.Post, "index.php", heade
             <paragraph>设置 HTTPS 请求使用的代理服务器。</paragraph>
             <paragraph>如果 <literal>host</literal> 为空或者 <literal>port</literal> 为 -1，则会取消设置代理服务器。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -27,7 +27,7 @@ Rect2
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-introduction-group
 
@@ -118,7 +118,7 @@ Rect2
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -288,7 +288,7 @@ Rect2
 
 :ref:`Rect2<class_Rect2>` **expand**\ (\ to\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Rect2_method_expand>`
 
-Returns a copy of this rectangle expanded to align the edges with the given ``to`` point, if necessary.
+返回该矩形的副本，如有必要，该矩形被扩展为将边缘与给定的 ``to`` 点对齐。
 
 
 .. tabs::
@@ -297,15 +297,15 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
 
     var rect = Rect2(0, 0, 5, 2)
     
-    rect = rect.expand(Vector2(10, 0)) # rect is Rect2(0, 0, 10, 2)
-    rect = rect.expand(Vector2(-5, 5)) # rect is Rect2(-5, 0, 15, 5)
+    rect = rect.expand(Vector2(10, 0)) # rect 为 Rect2(0, 0, 10, 2)
+    rect = rect.expand(Vector2(-5, 5)) # rect 为 Rect2(-5, 0, 15, 5)
 
  .. code-tab:: csharp
 
     var rect = new Rect2(0, 0, 5, 2);
     
-    rect = rect.Expand(new Vector2(10, 0)); // rect is Rect2(0, 0, 10, 2)
-    rect = rect.Expand(new Vector2(-5, 5)); // rect is Rect2(-5, 0, 15, 5)
+    rect = rect.Expand(new Vector2(10, 0)); // rect 为 Rect2(0, 0, 10, 2)
+    rect = rect.Expand(new Vector2(-5, 5)); // rect 为 Rect2(-5, 0, 15, 5)
 
 
 
@@ -497,7 +497,7 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_Rect2_operator_neq_Rect2:
@@ -541,10 +541,10 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
 \ **注意：**\ 由于浮点数精度误差，请考虑改用 :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>`\ ，会更可靠。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

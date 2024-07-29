@@ -714,6 +714,9 @@ void vertex() {
             <note>
                 <paragraph><literal>MODELVIEW_MATRIX</literal> combines both the <literal>MODEL_MATRIX</literal> and <literal>VIEW_MATRIX</literal> and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the separated <literal>MODEL_MATRIX</literal> and <literal>VIEW_MATRIX</literal>.</paragraph>
             </note>
+            <note>
+                <paragraph><literal>INV_VIEW_MATRIX</literal> is the matrix used for rendering the object in that pass, not like <literal>MAIN_CAM_INV_VIEW_MATRIX</literal>, which is the matrix of the camera in the scene. In the shadow pass, <literal>INV_VIEW_MATRIX</literal>'s view is based on the camera that is located at the position of the light.</paragraph>
+            </note>
         </section>
         <section ids="fragment-built-ins" names="fragment\ built-ins 片段内置">
             <title>片段内置</title>

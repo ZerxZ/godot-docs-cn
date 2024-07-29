@@ -635,9 +635,9 @@ FontFile
 
 |void| **clear_glyphs**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_FontFile_method_clear_glyphs>`
 
-Removes all rendered glyph information from the cache entry.
+从字体缓存条目中，移除所有渲染的字形信息。
 
-\ **Note:** This function will not remove textures associated with the glyphs, use :ref:`remove_texture<class_FontFile_method_remove_texture>` to remove them manually.
+\ **注意：**\ 该函数不会移除与字形相关的纹理，请使用 :ref:`remove_texture<class_FontFile_method_remove_texture>` 手动移除它们。
 
 .. rst-class:: classref-item-separator
 
@@ -1419,7 +1419,7 @@ Removes all rendered glyph information from the cache entry.
 
 |void| **set_transform**\ (\ cache_index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_FontFile_method_set_transform>`
 
-Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.
+设置应用于字体轮廓的 2D 变换，可用于倾斜、翻转、旋转字形。
 
 .. rst-class:: classref-item-separator
 
@@ -1434,10 +1434,10 @@ Sets 2D transform, applied to the font outlines, can be used for slanting, flipp
 为指定的字体缓存条目设置变体坐标。有关详细信息，请参阅 :ref:`Font.get_supported_variation_list<class_Font_method_get_supported_variation_list>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

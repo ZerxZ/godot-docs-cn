@@ -17,15 +17,15 @@ PackedByteArray
 描述
 ----
 
-An array specifically designed to hold bytes. Packs data tightly, so it saves memory for large array sizes.
+专门设计用于保存字节的数组。紧缩数组紧密打包数据，因此可为大型数组节省内存。
 
-\ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
+\ **PackedByteArray** 还提供了将各种类型编码为字节/从字节解码的方法。值的编码方式是实现细节，在与外部应用程序交互时不应依赖它。
 
-\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedByteArray_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+\ **注意：**\ 打包数组始终通过引用传递。要获取可以独立于原始数组进行修改的数组副本，请使用 :ref:`duplicate<class_PackedByteArray_method_duplicate>`\ 。内置属性和方法并\ *非*\ 如此。这些返回的打包数组是副本，更改它\ *不*\ 会影响原始值。要更新内置属性，需要修改返回的数组，然后再次将其分配给该属性。
 
 .. note::
 
-	通过 C# 使用这个 API 时有显著的不同。详见 :ref:`doc_c_sharp_differences`\ 。
+	通过 C# 使用该 API 时会有显著不同，详见 :ref:`doc_c_sharp_differences`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -173,7 +173,7 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 .. rst-class:: classref-reftable-group
 
-操作符
+运算符
 ------
 
 .. table::
@@ -990,7 +990,7 @@ GZIP 的最大压缩率为 1032:1，这意味着较小的压缩后负载很有�
 
 .. rst-class:: classref-descriptions-group
 
-操作符说明
+运算符说明
 ----------
 
 .. _class_PackedByteArray_operator_neq_PackedByteArray:
@@ -1040,10 +1040,10 @@ GZIP 的最大压缩率为 1032:1，这意味着较小的压缩后负载很有�
 请注意，返回的字节是 64 位 :ref:`int<class_int>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

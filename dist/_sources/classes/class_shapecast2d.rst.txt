@@ -346,9 +346,9 @@ ShapeCast2D
 
 :ref:`float<class_float>` **get_closest_collision_unsafe_fraction**\ (\ ) |const| :ref:`🔗<class_ShapeCast2D_method_get_closest_collision_unsafe_fraction>`
 
-The fraction from the **ShapeCast2D**'s origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` (between 0 and 1) of how far the shape must move to trigger a collision.
+从 **ShapeCast2D** 的原点到其 :ref:`target_position<class_ShapeCast2D_property_target_position>` 的分数（介于 0 和 1 之间），即形状必须移动多远才能触发碰撞。
 
-In ideal conditions this would be the same as :ref:`get_closest_collision_safe_fraction<class_ShapeCast2D_method_get_closest_collision_safe_fraction>`, however shape casting is calculated in discrete steps, so the precise point of collision can occur between two calculated positions.
+在理想条件下，这将与 :ref:`get_closest_collision_safe_fraction<class_ShapeCast2D_method_get_closest_collision_safe_fraction>` 相同，但是形状投射是分步骤计算的，因此精确的碰撞点可能发生在两个计算位置之间。
 
 .. rst-class:: classref-item-separator
 
@@ -485,10 +485,10 @@ In ideal conditions this would be the same as :ref:`get_closest_collision_safe_f
 根据 ``value``\ ，启用或禁用 :ref:`collision_mask<class_ShapeCast2D_property_collision_mask>` 中指定的层，给定的 ``layer_number`` 应在 1 和 32 之间。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

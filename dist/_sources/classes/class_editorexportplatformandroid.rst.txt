@@ -462,7 +462,7 @@ EditorExportPlatformAndroid
 
 :ref:`String<class_String>` **apk_expansion/public_key** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/public_key>`
 
-Base64 encoded RSA public key for your publisher account, available from the profile page on the "Google Play Console".
+你的发布者帐户的 Base64 编码的 RSA 公钥，可从“Google Play 管理中心”的个人资料页面获取。
 
 .. rst-class:: classref-item-separator
 
@@ -522,7 +522,7 @@ Base64 encoded RSA public key for your publisher account, available from the pro
 
 :ref:`String<class_String>` **command_line/extra_args** :ref:`🔗<class_EditorExportPlatformAndroid_property_command_line/extra_args>`
 
-A list of additional command line arguments, separated by space, which the exported project will receive when started.
+附加命令行参数的列表，以空格分隔，导出的项目将在启动时收到该列表。
 
 .. rst-class:: classref-item-separator
 
@@ -588,7 +588,7 @@ A list of additional command line arguments, separated by space, which the expor
 
 :ref:`int<class_int>` **gradle_build/export_format** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`
 
-Application export format (\*.apk or \*.aab).
+应用程序导出格式（\*.apk 或 \*.aab）。
 
 .. rst-class:: classref-item-separator
 
@@ -612,7 +612,7 @@ Gradle 构建目录的路径。如果留空，则将使用 ``res://android``\ �
 
 :ref:`String<class_String>` **gradle_build/min_sdk** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/min_sdk>`
 
-Minimum Android API level required for the application to run (used during Gradle build). See `android:minSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
+运行该应用所需的最低 Android API 等级（Gradle 构建时使用）。见 `android:minSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -624,7 +624,7 @@ Minimum Android API level required for the application to run (used during Gradl
 
 :ref:`String<class_String>` **gradle_build/target_sdk** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/target_sdk>`
 
-The Android API level on which the application is designed to run (used during Gradle build). See `android:targetSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
+该应用设计运行的 Android API 等级（Gradle 构建时使用）。见 `android:targetSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -750,7 +750,7 @@ The Android API level on which the application is designed to run (used during G
 
 :ref:`String<class_String>` **launcher_icons/adaptive_background_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_background_432x432>`
 
-Background layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
+自适应图标文件的背景层。见\ `《设计自适应图标》 <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -762,7 +762,7 @@ Background layer of the application adaptive icon file. See `Design adaptive ico
 
 :ref:`String<class_String>` **launcher_icons/adaptive_foreground_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_foreground_432x432>`
 
-Foreground layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
+自适应图标文件的前景层。见\ `《设计自适应图标》 <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -786,7 +786,7 @@ Foreground layer of the application adaptive icon file. See `Design adaptive ico
 
 :ref:`int<class_int>` **package/app_category** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/app_category>`
 
-Application category for the Google Play Store. Only define this if your application fits one of the categories well. See `android:appCategory <https://developer.android.com/guide/topics/manifest/application-element#appCategory>`__.
+Google Play 商店的应用程序类别。请在应用程序完全符合某个类别时定义。见 `android:appCategory <https://developer.android.com/guide/topics/manifest/application-element#appCategory>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -798,7 +798,7 @@ Application category for the Google Play Store. Only define this if your applica
 
 :ref:`bool<class_bool>` **package/exclude_from_recents** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/exclude_from_recents>`
 
-If ``true``, task initiated by main activity will be excluded from the list of recently used applications. See `android:excludeFromRecents <https://developer.android.com/guide/topics/manifest/activity-element#exclude>`__.
+如果为 ``true``\ ，则主 Activity 启动的任务将从最近使用的应用程序列表中排除。请参阅 `android:excludeFromRecents <https://developer.android.com/guide/topics/manifest/activity-element#exclude>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -822,7 +822,7 @@ If ``true``, task initiated by main activity will be excluded from the list of r
 
 :ref:`bool<class_bool>` **package/retain_data_on_uninstall** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/retain_data_on_uninstall>`
 
-If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown. See `android:hasFragileUserData <https://developer.android.com/guide/topics/manifest/application-element#fragileuserdata>`__.
+如果为 ``true``\ ，当用户卸载应用程序时，将显示保留应用程序数据的提示。请参阅 `android:hasFragileUserData <https://developer.android.com/guide/topics/manifest/application-element#fragileuserdata>`__\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -1456,7 +1456,7 @@ WallpaperService 必须要求此权限，确保只能系统能够进行绑定。
 
 :ref:`bool<class_bool>` **permissions/delete_cache_files** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/delete_cache_files>`
 
-**已弃用：** 未来版本中可能修改或移除该属性。
+**已弃用：** 未来版本中可能会修改或移除该属性。
 
 .. rst-class:: classref-item-separator
 
@@ -1878,7 +1878,7 @@ WallpaperService 必须要求此权限，确保只能系统能够进行绑定。
 
 **已弃用：** Deprecated in API level 15.
 
-Allows an application to make its activities persistent.
+允许应用程序使其 activity 持久化。
 
 .. rst-class:: classref-item-separator
 
@@ -2410,7 +2410,7 @@ Allows an application to make its activities persistent.
 
 :ref:`bool<class_bool>` **permissions/subscribed_feeds_write** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/subscribed_feeds_write>`
 
-**已弃用：** 未来版本中可能修改或移除该属性。
+**已弃用：** 未来版本中可能会修改或移除该属性。
 
 .. rst-class:: classref-item-separator
 
@@ -2446,7 +2446,7 @@ Allows an application to make its activities persistent.
 
 :ref:`bool<class_bool>` **permissions/uninstall_shortcut** :ref:`🔗<class_EditorExportPlatformAndroid_property_permissions/uninstall_shortcut>`
 
-**已弃用：** 未来版本中可能修改或移除该属性。
+**已弃用：** 未来版本中可能会修改或移除该属性。
 
 .. rst-class:: classref-item-separator
 
@@ -2782,13 +2782,13 @@ Allows an application to make its activities persistent.
 
 :ref:`int<class_int>` **xr_features/xr_mode** :ref:`🔗<class_EditorExportPlatformAndroid_property_xr_features/xr_mode>`
 
-The extended reality (XR) mode for this application.
+应用程序的扩展现实（XR）模式。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

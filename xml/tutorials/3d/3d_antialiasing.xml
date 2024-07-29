@@ -50,7 +50,12 @@
         </section>
         <section ids="amd-fidelityfx-super-resolution-2-2-fsr2 doc-3d-antialiasing-fsr2" names="amd\ fidelityfx\ super\ resolution\ 2.2\ (fsr2) amd\ fidelityfx\ super\ resolution\ 2.2\ （fsr2） doc_3d_antialiasing_fsr2">
             <title>AMD FidelityFX Super Resolution 2.2 （FSR2）</title>
-            <paragraph>自 Godot 4.2 起，内置了对 <reference name="AMD FidelityFX Super Resolution" refuri="https://www.amd.com/zh-hans/technologies/fidelityfx-super-resolution">AMD FidelityFX Super Resolution</reference> 2.2 的支持。这是一种与任何供应商的所有最新 GPU 兼容的 <reference internal="True" refuri="resolution_scaling#doc-resolution-scaling"><inline classes="std std-ref">放大方法</inline></reference>。 FSR2 旨在通过降低内部的 3D 渲染分辨率，然后放大到输出分辨率来提高性能。</paragraph>
+            <paragraph>Since Godot 4.2, there is built-in support for
+                <reference name="AMD FidelityFX Super Resolution" refuri="https://www.amd.com/en/products/graphics/technologies/fidelityfx/super-resolution.html">AMD FidelityFX Super Resolution</reference>
+                2.2. This is an <reference internal="True" refuri="resolution_scaling#doc-resolution-scaling"><inline classes="std std-ref">upscaling method</inline></reference>
+                compatible with all recent GPUs from any vendor. FSR2 is normally designed to
+                improve performance by lowering the internal 3D rendering resolution,
+                then upscaling to the output resolution.</paragraph>
             <paragraph>然而，与 FSR1 不同的是，FSR2 有时间抗锯齿功能。这意味着 FSR2 可以在原始分辨率下使用，以获得高质量的抗锯齿效果，并且输入分辨率等于输出分辨率。在这种情况下，启用 FSR2 实际上会 <emphasis>降低</emphasis> 性能，但会显着提高渲染质量。</paragraph>
             <paragraph>在原始分辨率下使用 FSR2 比在原始分辨率下使用 TAA 要求更高，因此，仅在你有足够大的 GPU 显存空间时才建议使用它。从好的方面来说，与 TAA 相比，FSR2 提供了更好的抗锯齿覆盖范围和更少的模糊度，尤其是在运动画面中。</paragraph>
             <paragraph>无抗锯齿（左）和原始分辨率下的 FSR2（右）之间的比较：</paragraph>

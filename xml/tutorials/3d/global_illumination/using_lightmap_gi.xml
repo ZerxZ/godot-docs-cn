@@ -13,29 +13,31 @@
         <seealso>
             <paragraph>不确定 LightmapGI 是否适合你的需求？Godot 4 中可用的 GI 技术的比较见 <reference internal="True" refuri="introduction_to_global_illumination#doc-introduction-to-global-illumination-comparison"><inline classes="std std-ref">我应该使用哪种全局光照技术？</inline></reference>。</paragraph>
         </seealso>
-        <section dupnames="visual\ comparison" ids="visual-comparison" names="视觉比较">
+        <section ids="visual-comparison" names="visual\ comparison 视觉比较">
             <title>视觉比较</title>
-            <figure ids="id2">
+            <figure ids="id1">
                 <image alt="LightmapGI 已禁用。" candidates="{'*': 'tutorials/3d/global_illumination/img/gi_none.webp'}" uri="tutorials/3d/global_illumination/img/gi_none.webp"></image>
                 <caption>LightmapGI 已禁用。</caption>
             </figure>
-            <figure ids="id3">
+            <figure ids="id2">
                 <image alt="LightmapGI 已启用（仅烘焙间接光照）。" candidates="{'*': 'tutorials/3d/global_illumination/img/gi_lightmap_gi_indirect_only.webp'}" uri="tutorials/3d/global_illumination/img/gi_lightmap_gi_indirect_only.webp"></image>
                 <caption>LightmapGI 已启用（仅烘焙间接光照）。直射光仍然是实时的，允许在游戏过程中进行细微的修改。</caption>
             </figure>
-            <figure ids="id4">
+            <figure ids="id3">
                 <image alt="LightmapGI 已启用（直接和间接烘焙光照）。" candidates="{'*': 'tutorials/3d/global_illumination/img/gi_lightmap_gi_direct_and_indirect.webp'}" uri="tutorials/3d/global_illumination/img/gi_lightmap_gi_direct_and_indirect.webp"></image>
                 <caption>LightmapGI 已启用（直接和间接烘焙光照）。最佳性能，但视觉效果质量较低。请注意右上角较模糊的太阳阴影。</caption>
             </figure>
-        </section>
-        <section dupnames="visual\ comparison" ids="id1" names="视觉比较">
-            <title>视觉比较</title>
             <paragraph>以下是 LightmapGI 和 VoxelGI 的一些显示效果比较。可以看到光照贴图更精确，但也由于光照事实上是位于展开纹理上的影响，所以过渡以及分辨率可能就没有那么理想。VoxelGI 看上去没有那么精确（因为是近似估算），但总体上更平滑。</paragraph>
             <image candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_comparison.png'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_comparison.png"></image>
             <paragraph>与 LightmapGI 相比，SDFGI 的准确性也较低。但是，SDFGI 可以支持大型开放世界，而无需烘焙。</paragraph>
         </section>
         <section ids="setting-up" names="setting\ up 设置">
             <title>设置</title>
+            <warning>
+                <paragraph>Baking lightmaps in the Android and web editors is not supported due to
+                    graphics API limitations on those devices. On Android and web platforms,
+                    only <emphasis>rendering</emphasis> lightmaps that were baked on a desktop PC is supported.</paragraph>
+            </warning>
             <paragraph>First of all, before the lightmapper can do anything, the objects to be baked need
                 a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
                 that ensures any face in the object has its own place in the UV map. Faces must
@@ -190,7 +192,7 @@
         <section ids="denoising doc-using-lightmap-gi-denoising" names="denoising 降噪 doc_using_lightmap_gi_denoising">
             <title>降噪</title>
             <paragraph>由于烘焙光照贴图依赖于光线追踪，因此“原始的”烘焙光照贴图中始终会存在可见的噪点。在反射光难以到达的区域（例如阳光可以进入的开口较小的室内区域），噪点尤其明显。提高烘焙质量可以减少噪点，但这样做会显着增加烘焙时间。</paragraph>
-            <figure align="center" ids="id5">
+            <figure align="center" ids="id4">
                 <image alt="禁用降噪和启用降噪之间的比较" candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_denoiser_comparison.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_denoiser_comparison.webp"></image>
                 <caption>禁用降噪和启用降噪之间的比较（使用默认的 JNLM 降噪器）。</caption>
             </figure>
@@ -202,7 +204,7 @@
                 <title>JNLM（Non-Local Means with Joint Filtering，联合过滤的非局部均值）</title>
                 <paragraph>JNLM 是 Godot 自带的默认的降噪方法。它使用一种简单但有效的降噪算法，称为 <emphasis>非局部均值</emphasis> （non-local means）。 JNLM 使用计算着色器在 GPU 上运行，并且与任何可以运行 Godot 4 的基于 Vulkan 的渲染方法的 GPU 相兼容。该方法无需额外设置。</paragraph>
                 <paragraph>JNLM 的降噪可以使用 <strong>Denoiser Strength</strong> 属性进行调整，该属性在启用 <strong>Use Denoiser</strong> 后可见。较高的 <strong>Denoiser Strength</strong> 值可以更有效地消除噪声，但代价是会抑制静态阴影的阴影细节。</paragraph>
-                <figure align="center" ids="id6">
+                <figure align="center" ids="id5">
                     <image alt="不同 JNLM 降噪强度值之间的对比" candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_denoiser_jnlm_strength.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_denoiser_jnlm_strength.webp"></image>
                     <caption>不同 JNLM 降噪强度值之间的对比。较高的值将会减少阴影细节。</caption>
                 </figure>
@@ -228,7 +230,7 @@
                 <note>
                     <paragraph>降噪方法需要在项目设置中配置，而不是在编辑器设置中。这样做是为了确保同一项目的不同团队成员使用相同的降噪方法，以最终获得一致的表现。</paragraph>
                 </note>
-                <figure align="center" ids="id7">
+                <figure align="center" ids="id6">
                     <image alt="JNLM 和 OIDN 降噪器的比较" candidates="{'*': 'tutorials/3d/global_illumination/img/lightmap_gi_denoiser_jnlm_vs_oidn.webp'}" uri="tutorials/3d/global_illumination/img/lightmap_gi_denoiser_jnlm_vs_oidn.webp"></image>
                     <caption>JNLM 和 OIDN 降噪器之间的比较。请注意 OIDN 如何更好地保留细节并减少不同对象之间的接缝。</caption>
                 </figure>

@@ -246,9 +246,9 @@ enum **RootNodeMode**: :ref:`🔗<enum_GLTFDocument_RootNodeMode>`
 
 :ref:`Node<class_Node>` **generate_scene**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GLTFDocument_method_generate_scene>`
 
-Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a Godot Engine scene node.
+通过 ``state`` 参数接收一个 :ref:`GLTFState<class_GLTFState>` 对象，并返回一个 Godot 引擎的场景节点。
 
-The ``bake_fps`` parameter overrides the bake_fps in ``state``.
+\ ``bake_fps`` 参数会覆盖 ``state`` 中的 bake_fps。
 
 .. rst-class:: classref-item-separator
 
@@ -291,10 +291,10 @@ The ``bake_fps`` parameter overrides the bake_fps in ``state``.
 \ **注意：**\ glTF 文件的扩展名决定了它是一个 .glb 二进制文件还是一个 .gltf 文本文件。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

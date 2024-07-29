@@ -6,28 +6,25 @@
     <section ids="background-loading doc-background-loading" names="background\ loading 后台加载 doc_background_loading">
         <title>后台加载</title>
         <paragraph>通常，游戏需要异步加载资源。当切换游戏的主场景时（例如，进入新的关卡），你可能想要显示一个加载画面，其中包含一些正在进行的指示，或者你可能希望在游戏过程中加载其他资源。</paragraph>
-        <paragraph>标准加载方法（<reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader-method-load"><inline classes="std std-ref">ResourceLoader.load</inline></reference> 或 GDScript 更简单的：ref:<title_reference>load &lt;class_@GDScript_method_load&gt;</title_reference> ）会阻塞你的线程，让你的游戏在加载资源时显得无响应。</paragraph>
-        <paragraph>解决这个问题的一种方法是使用「ResourceLoader」在后台线程中非同步加载资源。</paragraph>
+        <paragraph>标准加载方法（<reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader-method-load"><inline classes="std std-ref">ResourceLoader.load</inline></reference> 或 GDScript 中更简单的 <reference internal="True" refuri="../../classes/class_@gdscript#class-gdscript-method-load"><inline classes="std std-ref">load</inline></reference>）会阻塞线程，让你的游戏在加载资源时显得无响应。</paragraph>
+        <paragraph>解决这个问题的一种方法是使用 <literal>ResourceLoader</literal> 在后台线程中异步加载资源。</paragraph>
         <section ids="using-resourceloader" names="using\ resourceloader 使用\ resourceloader">
             <title>使用 ResourceLoader</title>
-            <paragraph>通常，你使用: ref:<title_reference>ResourceLoader.load_threaded_request &lt;class_ResourceLoader_method_load_threaded_request&gt;</title_reference> 对加载路径资源的请求进行排队，然后将在背景的线程中加载。</paragraph>
-            <paragraph>你可以使用: ref:<title_reference>ResourceLoader.load_threaded_get_status &lt;class_ResourceLoader_method_load_threaded_get_status&gt;</title_reference> 检查状态。可以透过Progress传递一个数组变数来取得进度，该变数将传回一个包含百分比的单元素数组。</paragraph>
-            <paragraph>最后，通过调用：ref:<title_reference>ResourceLoader.load_threadd_get&lt;class_ResourceLoader_method_load_threaded_get&gt;</title_reference> 来检索加载的资源。</paragraph>
-            <paragraph>一旦你呼叫 <literal>load_threaded_get()</literal> ，资源要么在后台完成加载并立即返回，要么加载将像 <literal>load()</literal> 一样在此时阻塞。如果你想保证这不会阻塞，你要么需要确保请求加载和检索资源之间有足够的时间，要么需要手动检查状态。</paragraph>
+            <paragraph>通常使用 <reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader-method-load-threaded-request"><inline classes="std std-ref">ResourceLoader.load_threaded_request</inline></reference> 将资源加载请求加入队列，其他线程会在后台进行加载。</paragraph>
+            <paragraph>你可以使用 <reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader-method-load-threaded-get-status"><inline classes="std std-ref">ResourceLoader.load_threaded_get_status</inline></reference> 检查状态。给 progress 传一个数组变量就可以获取进度，返回时该数组中包含一个元素，表示百分比。</paragraph>
+            <paragraph>最后调用 <reference internal="True" refuri="../../classes/class_resourceloader#class-resourceloader-method-load-threaded-get"><inline classes="std std-ref">ResourceLoader.load_threaded_get</inline></reference> 即可获取加载到的资源。</paragraph>
+            <paragraph>调用 <literal>load_threaded_get()</literal> 有两种结果：要么资源已经完成了后台加载，此时就会立即返回；要么加载尚未完成，此时就会和 <literal>load()</literal> 一样发生阻塞。如果你希望保证调用时不发生阻塞，就需要确保请求加载和获取资源之间留够时间，或者也可以先手动进行状态检查。</paragraph>
         </section>
         <section ids="example" names="example 示例">
             <title>示例</title>
-            <paragraph>This example demonstrates how to load a scene in the background.
-                We will have a button spawn an enemy when pressed.
-                The enemy will be <literal>Enemy.tscn</literal> which we will load on <literal>_ready</literal> and instantiate when pressed.
-                The path will be <literal>"Enemy.tscn"</literal> which is located at <literal>res://Enemy.tscn</literal>.</paragraph>
+            <paragraph>下面这个例子演示的是如何进行场景的后台加载。按下按钮后就会生成一个敌人。敌人使用的是 <literal>_onready</literal> 时加载的 <literal>Enemy.tscn</literal>，按下按钮时进行实例化。该场景的路径为 <literal>"Enemy.tscn"</literal>，位于 <literal>res://Enemy.tscn</literal>。</paragraph>
             <paragraph>首先，我们将启动一个请求来加载资源并连接按钮：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">const ENEMY_SCENE_PATH : String = "Enemy.tscn"
 
 func _ready():
     ResourceLoader.load_threaded_request(ENEMY_SCENE_PATH)
     self.pressed.connect(_on_button_pressed)</literal_block>
-            <paragraph>现在按下按钮时将呼叫``_on_button_pressed``。此方法将用于生成敌人。</paragraph>
+            <paragraph>现在按下按钮就会调用 <literal>_on_button_pressed</literal>。该方法的作用是生成敌人。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _on_button_pressed(): # Button was pressed
     # Obtain the resource now that we need it
     var enemy_scene = ResourceLoader.load_threaded_get(ENEMY_SCENE_PATH)

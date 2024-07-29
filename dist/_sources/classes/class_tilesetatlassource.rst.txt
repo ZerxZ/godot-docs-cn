@@ -175,16 +175,16 @@ enum **TileAnimationMode**: :ref:`🔗<enum_TileSetAtlasSource_TileAnimationMode
 
 **TRANSFORM_FLIP_H** = ``4096`` :ref:`🔗<class_TileSetAtlasSource_constant_TRANSFORM_FLIP_H>`
 
-Represents cell's horizontal flip flag. Should be used directly with :ref:`TileMap<class_TileMap>` to flip placed tiles by altering their alternative IDs.
+代表单元格的水平翻转标志。应该直接对 :ref:`TileMap<class_TileMap>` 使用，修改放置图块的备选 ID，将其进行翻转。
 
 ::
 
     var alternate_id = $TileMap.get_cell_alternative_tile(0, Vector2i(2, 2))
     if not alternate_id & TileSetAtlasSource.TRANSFORM_FLIP_H:
-        # If tile is not already flipped, flip it.
+        # 如果没有翻转过就进行翻转。
         $TileMap.set_cell(0, Vector2i(2, 2), source_id, atlas_coords, alternate_id | TileSetAtlasSource.TRANSFORM_FLIP_H)
 
-\ **Note:** These transformations can be combined to do the equivalent of 0, 90, 180, and 270 degree rotations, as shown below:
+\ **注意：**\ 可以将这些变换进行组合，从而实现 0、90、180、270 度旋转，示例如下：
 
 ::
 
@@ -693,10 +693,10 @@ Represents cell's horizontal flip flag. Should be used directly with :ref:`TileM
 设置位于坐标 ``atlas_coords`` 的图块的动画速度。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

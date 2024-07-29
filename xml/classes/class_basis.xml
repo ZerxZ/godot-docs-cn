@@ -12,14 +12,14 @@
         <paragraph>用于表示 3D 旋转和缩放的 3×3 矩阵。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph><strong>Basis</strong> 内置 <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> 类型是一种 3×3 <reference name="矩阵" refuri="https://en.wikipedia.org/wiki/Matrix_(mathematics)">矩阵</reference>，用于表示 3D 旋转、缩放和剪切。常用于 <reference internal="True" refuri="class_transform3d#class-transform3d"><inline classes="std std-ref">Transform3D</inline></reference>。</paragraph>
-            <paragraph><strong>Basis</strong> 由 3 个轴向量组成，每个轴向量代表矩阵的一列：<reference internal="True" refid="class-basis-property-x"><inline classes="std std-ref">x</inline></reference>、<reference internal="True" refid="class-basis-property-y"><inline classes="std std-ref">y</inline></reference> 和 <reference internal="True" refid="class-basis-property-z"><inline classes="std std-ref">z</inline></reference>。每个轴的长度（<reference internal="True" refuri="class_vector3#class-vector3-method-length"><inline classes="std std-ref">Vector3.length</inline></reference>）都会影响该基的缩放，而所有轴的方向将影响旋转。通常，这些轴彼此垂直。但是，当你单独旋转任意轴时，该基会被剪切。对 3D 模型应用剪切基将使模型显得扭曲。</paragraph>
-            <paragraph>如果 <strong>Basis</strong> 的轴彼此垂直，则它是<strong>正交的</strong>。如果每个轴的长度为 <literal>1</literal>，则该基是<strong>归一化的</strong>。如果所有轴共享相同的长度，则该基是<strong>均匀的</strong>（请参阅 <reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>）。如果一个基既是正交的又是归一化的，则它是<strong>正交归一的</strong>，这使得它只能表示旋转。如果一个基既正交又均匀，那么它就是<strong>共形的</strong>，这确保了它不被扭曲。</paragraph>
-            <paragraph>通用介绍见教程<reference internal="True" refuri="../tutorials/math/matrices_and_transforms"><inline classes="doc">《矩阵与变换》</inline></reference>。</paragraph>
-            <paragraph><strong>注意：</strong>Godot 使用<reference name="右手坐标系" refuri="https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%89%87">右手坐标系</reference>，这是一种普遍标准。方向方面，<reference internal="True" refuri="class_camera3d#class-camera3d"><inline classes="std std-ref">Camera3D</inline></reference> 等内置类型的约定是 -Z 指向前方（+X 为右、+Y 为上、+Z 为后）。其他对象可能使用不同的方向约定。更多信息见教程<reference name="《导入 3D 场景》" refuri="../tutorials/assets_pipeline/importing_scenes.html#d-asset-direction-conventions">《导入 3D 场景》</reference>。</paragraph>
-            <paragraph><strong>注意：</strong>基矩阵按<reference name="列为主" refuri="https://www.mindcontrol.org/~hplus/graphics/matrix-layout.html">列为主</reference>的顺序公开，这与 OpenGL 一致。但是内部使用行为主的顺序存储，这与 DirectX 一致。</paragraph>
+            <paragraph>The <strong>Basis</strong> built-in <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> type is a 3×3 <reference name="matrix" refuri="https://en.wikipedia.org/wiki/Matrix_(mathematics)">matrix</reference> used to represent 3D rotation, scale, and shear. It is frequently used within a <reference internal="True" refuri="class_transform3d#class-transform3d"><inline classes="std std-ref">Transform3D</inline></reference>.</paragraph>
+            <paragraph>A <strong>Basis</strong> is composed by 3 axis vectors, each representing a column of the matrix: <reference internal="True" refid="class-basis-property-x"><inline classes="std std-ref">x</inline></reference>, <reference internal="True" refid="class-basis-property-y"><inline classes="std std-ref">y</inline></reference>, and <reference internal="True" refid="class-basis-property-z"><inline classes="std std-ref">z</inline></reference>. The length of each axis (<reference internal="True" refuri="class_vector3#class-vector3-method-length"><inline classes="std std-ref">Vector3.length</inline></reference>) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.</paragraph>
+            <paragraph>A <strong>Basis</strong> is <strong>orthogonal</strong> if its axes are perpendicular to each other. A basis is <strong>normalized</strong> if the length of every axis is <literal>1</literal>. A basis is <strong>uniform</strong> if all axes share the same length (see <reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>). A basis is <strong>orthonormal</strong> if it is both orthogonal and normalized, which allows it to only represent rotations. A basis is <strong>conformal</strong> if it is both orthogonal and uniform, which ensures it is not distorted.</paragraph>
+            <paragraph>For a general introduction, see the <reference internal="True" refuri="../tutorials/math/matrices_and_transforms"><inline classes="doc">Matrices and transforms</inline></reference> tutorial.</paragraph>
+            <paragraph><strong>Note:</strong> Godot uses a <reference name="right-handed coordinate system" refuri="https://en.wikipedia.org/wiki/Right-hand_rule">right-handed coordinate system</reference>, which is a common standard. For directions, the convention for built-in types like <reference internal="True" refuri="class_camera3d#class-camera3d"><inline classes="std std-ref">Camera3D</inline></reference> is for -Z to point forward (+X is right, +Y is up, and +Z is back). Other objects may use different direction conventions. For more information, see the <reference name="3D asset direction conventions" refuri="../tutorials/assets_pipeline/importing_3d_scenes/model_export_considerations.html#d-asset-direction-conventions">3D asset direction conventions</reference> tutorial.</paragraph>
+            <paragraph><strong>Note:</strong> The basis matrices are exposed as <reference name="column-major" refuri="https://www.mindcontrol.org/~hplus/graphics/matrix-layout.html">column-major</reference> order, which is the same as OpenGL. However, they are stored internally in row-major order, which is the same as DirectX.</paragraph>
             <note>
-                <paragraph>通过 C# 使用这个 API 时有显著的不同。详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
+                <paragraph>通过 C# 使用该 API 时会有显著不同，详见 <reference internal="True" refuri="../tutorials/scripting/c_sharp/c_sharp_differences#doc-c-sharp-differences"><inline classes="std std-ref">C# API 与 GDScript 的差异</inline></reference>。</paragraph>
             </note>
         </section>
         <section classes="classref-introduction-group" ids="id2" names="教程">
@@ -156,7 +156,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-determinant"><inline classes="std std-ref">determinant</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-determinant"><inline classes="std std-ref">determinant</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -180,7 +180,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-get-euler"><inline classes="std std-ref">get_euler</inline></reference>(order: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-get-euler"><inline classes="std std-ref">get_euler</inline></reference>(order: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -188,7 +188,7 @@
                                 <paragraph><reference internal="True" refuri="class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-get-rotation-quaternion"><inline classes="std std-ref">get_rotation_quaternion</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-get-rotation-quaternion"><inline classes="std std-ref">get_rotation_quaternion</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -196,7 +196,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">get_scale</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -204,7 +204,7 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-inverse"><inline classes="std std-ref">inverse</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-inverse"><inline classes="std std-ref">inverse</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -212,7 +212,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-is-conformal"><inline classes="std std-ref">is_conformal</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-is-conformal"><inline classes="std std-ref">is_conformal</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -220,7 +220,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(b: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-is-equal-approx"><inline classes="std std-ref">is_equal_approx</inline></reference>(b: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -228,7 +228,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-is-finite"><inline classes="std std-ref">is_finite</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -244,7 +244,7 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -252,7 +252,7 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-rotated"><inline classes="std std-ref">rotated</inline></reference>(axis: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-rotated"><inline classes="std std-ref">rotated</inline></reference>(axis: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -260,7 +260,7 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-scaled"><inline classes="std std-ref">scaled</inline></reference>(scale: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-scaled"><inline classes="std std-ref">scaled</inline></reference>(scale: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -268,7 +268,7 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-slerp"><inline classes="std std-ref">slerp</inline></reference>(to: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-slerp"><inline classes="std std-ref">slerp</inline></reference>(to: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -276,7 +276,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-tdotx"><inline classes="std std-ref">tdotx</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-tdotx"><inline classes="std std-ref">tdotx</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -284,7 +284,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-tdoty"><inline classes="std std-ref">tdoty</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-tdoty"><inline classes="std std-ref">tdoty</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -292,7 +292,7 @@
                                 <paragraph><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-tdotz"><inline classes="std std-ref">tdotz</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-tdotz"><inline classes="std std-ref">tdotz</inline></reference>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -300,15 +300,15 @@
                                 <paragraph><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">transposed</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">transposed</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section classes="classref-reftable-group" ids="id6" names="操作符">
-            <title>操作符</title>
+        <section classes="classref-reftable-group" ids="id6" names="运算符">
+            <title>运算符</title>
             <table classes="colwidths-auto">
                 <tgroup cols="2">
                     <colspec colwidth="31"></colspec>
@@ -474,7 +474,7 @@ print("| %s | %s | %s" % [basis.x.z, basis.y.z, basis.z.z])
         <section classes="classref-descriptions-group" ids="id10" names="方法说明">
             <title>方法说明</title>
             <target refid="class-basis-method-determinant"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-determinant" names="class_basis_method_determinant"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>determinant</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-determinant"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-determinant" names="class_basis_method_determinant"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>determinant</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-determinant"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回基矩阵的<reference name="行列式" refuri="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">行列式</reference>。在高等数学中，这个数可以用来确定一些性质：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -546,7 +546,7 @@ GD.Print(myBasis.Z); // 输出 (0, 0, 8).</literal_block>
             <paragraph><strong>注意：</strong>在线性代数中，这种基矩阵也被称作<reference name="对角矩阵" refuri="https://zh.wikipedia.org/zh-cn/%E5%B0%8D%E8%A7%92%E7%9F%A9%E9%99%A3">对角矩阵</reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-get-euler"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-get-euler" names="class_basis_method_get_euler"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_euler</strong>(order: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-euler"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-get-euler" names="class_basis_method_get_euler"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_euler</strong>(order: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 2) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-euler"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> 的形式返回基的旋转，这个向量为 <reference name="欧拉角" refuri="https://zh.wikipedia.org/zh-cn/%E6%AC%A7%E6%8B%89%E8%A7%92">欧拉角</reference>，单位为弧度。</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -564,12 +564,12 @@ GD.Print(myBasis.Z); // 输出 (0, 0, 8).</literal_block>
             <paragraph><strong>注意：</strong>在检查器面板中，基的旋转通常是以欧拉角的形式显示的（单位为度），与 <reference internal="True" refuri="class_node3d#class-node3d-property-rotation"><inline classes="std std-ref">Node3D.rotation</inline></reference> 属性相同。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-get-rotation-quaternion"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-get-rotation-quaternion" names="class_basis_method_get_rotation_quaternion"><reference internal="True" refuri="class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference> <strong>get_rotation_quaternion</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-rotation-quaternion"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-get-rotation-quaternion" names="class_basis_method_get_rotation_quaternion"><reference internal="True" refuri="class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference> <strong>get_rotation_quaternion</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-rotation-quaternion"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>以 <reference internal="True" refuri="class_quaternion#class-quaternion"><inline classes="std std-ref">Quaternion</inline></reference> 的形式返回基的旋转。</paragraph>
             <paragraph><strong>注意：</strong>四元数更适合 3D 数学，但是并不那么符合直觉。用户界面相关的场合请考虑使用返回欧拉角的 <reference internal="True" refid="class-basis-method-get-euler"><inline classes="std std-ref">get_euler</inline></reference> 方法。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-get-scale"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-get-scale" names="class_basis_method_get_scale"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_scale</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-get-scale" names="class_basis_method_get_scale"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>get_scale</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-get-scale"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该基的每个轴的长度，作为一个 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>。如果该基没有被剪切，这就是缩放系数。它不受旋转的影响。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -604,19 +604,19 @@ GD.Print(myBasis.Scale); // 输出 (2, 4, 8)。</literal_block>
             <paragraph><strong>注意：</strong>如果 <reference internal="True" refid="class-basis-method-determinant"><inline classes="std std-ref">determinant</inline></reference> 返回的值为负数，则缩放也为负数。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-inverse"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-inverse" names="class_basis_method_inverse"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>inverse</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-inverse" names="class_basis_method_inverse"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>inverse</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-inverse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <reference name="该基矩阵的逆矩阵" refuri="https://en.wikipedia.org/wiki/Invertible_matrix">该基矩阵的逆矩阵</reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-is-conformal"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-is-conformal" names="class_basis_method_is_conformal"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_conformal</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-conformal"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-is-conformal" names="class_basis_method_is_conformal"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_conformal</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-conformal"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该基是共形的，则返回 <literal>true</literal>。共形的基既是<emphasis>正交的</emphasis>（轴彼此垂直）又是<emphasis>均匀的</emphasis>（轴共享相同长度）。该方法在物理计算过程中特别有用。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-is-equal-approx"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-is-equal-approx" names="class_basis_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(b: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-is-equal-approx" names="class_basis_method_is_equal_approx"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_equal_approx</strong>(b: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-equal-approx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该基和 <literal>b</literal> 近似相等，则返回 <literal>true</literal>，判断方法是在每个向量分量上调用 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-equal-approx"><inline classes="std std-ref">@GlobalScope.is_equal_approx</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-is-finite"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-is-finite" names="class_basis_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-is-finite" names="class_basis_method_is_finite"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_finite</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-is-finite"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果该基是有限的，则返回 <literal>true</literal>，判断方法是在每个向量分量上调用 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-finite"><inline classes="std std-ref">@GlobalScope.is_finite</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-looking-at"></target>
@@ -626,7 +626,7 @@ GD.Print(myBasis.Scale); // 输出 (2, 4, 8)。</literal_block>
             <paragraph>向上轴（+Y）尽可能靠近 <literal>up</literal> 向量，同时保持垂直于向前轴。返回的基是正交归一化的（参见 <reference internal="True" refid="class-basis-method-orthonormalized"><inline classes="std std-ref">orthonormalized</inline></reference>）。<literal>target</literal> 和 <literal>up</literal> 向量不能是 <reference internal="True" refuri="class_vector3#class-vector3-constant-zero"><inline classes="std std-ref">Vector3.ZERO</inline></reference>，并且不能彼此平行。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-orthonormalized"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-orthonormalized" names="class_basis_method_orthonormalized"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>orthonormalized</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-orthonormalized"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-orthonormalized" names="class_basis_method_orthonormalized"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>orthonormalized</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-orthonormalized"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该基的正交归一化版本。正交归一化基既是<emphasis>正交的</emphasis>（轴彼此垂直）又是<emphasis>归一化的</emphasis>（轴长度为 <literal>1</literal>），这也意味着它只能代表旋转。</paragraph>
             <paragraph>调用该方法通常很有用，以避免旋转基上的舍入错误：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
@@ -654,7 +654,7 @@ public override void _Process(double delta)
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-rotated"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-rotated" names="class_basis_method_rotated"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>rotated</strong>(axis: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-rotated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-rotated" names="class_basis_method_rotated"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>rotated</strong>(axis: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, angle: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-rotated"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回围绕给定 <literal>axis</literal> 旋转 <literal>angle</literal>（单位为弧度）的基。<literal>axis</literal> 必须是归一化的向量（请参阅 <reference internal="True" refuri="class_vector3#class-vector3-method-normalized"><inline classes="std std-ref">Vector3.normalized</inline></reference>）。</paragraph>
             <paragraph>正值绕该轴顺时针旋转该基，而负值则逆时针旋转该基。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
@@ -681,7 +681,7 @@ myBasis = myBasis.Rotated(Vector3.Back, angle);  // 绕向后轴旋转（滚动�
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-scaled"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-scaled" names="class_basis_method_scaled"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>scaled</strong>(scale: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-scaled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-scaled" names="class_basis_method_scaled"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>scaled</strong>(scale: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-scaled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该基，其中每个轴的分量都按给定的 <literal>scale</literal> 的分量缩放。</paragraph>
             <paragraph>该基矩阵的行乘以 <literal>scale</literal> 的分量。该操作是全局缩放（相对于父级）。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
@@ -716,7 +716,7 @@ GD.Print(myBasis.Z); // 输出 (0, 6, -6).</literal_block>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-slerp"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-slerp" names="class_basis_method_slerp"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>slerp</strong>(to: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-slerp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-slerp" names="class_basis_method_slerp"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>slerp</strong>(to: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>, weight: <reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-slerp"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>使用 <literal>to</literal> 基在给定 <literal>weight</literal> 的情况下执行球面线性插值。该基和 <literal>to</literal> 两者都应该代表一个旋转。</paragraph>
             <paragraph><strong>示例：</strong>使用 <reference internal="True" refuri="class_tween#class-tween"><inline classes="std std-ref">Tween</inline></reference> 随时间平滑地将 <reference internal="True" refuri="class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> 旋转到目标基。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var start_basis = Basis.IDENTITY
@@ -729,22 +729,22 @@ func interpolate(weight):
     basis = start_basis.slerp(target_basis, weight)</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-tdotx"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-tdotx" names="class_basis_method_tdotx"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdotx</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdotx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-tdotx" names="class_basis_method_tdotx"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdotx</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdotx"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <literal>with</literal> 和 <reference internal="True" refid="class-basis-property-x"><inline classes="std std-ref">x</inline></reference> 轴之间的转置点积（请参阅 <reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">transposed</inline></reference>）。</paragraph>
             <paragraph>这相当于 <literal>basis.x.dot(vector)</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-tdoty"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-tdoty" names="class_basis_method_tdoty"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdoty</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdoty"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-tdoty" names="class_basis_method_tdoty"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdoty</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdoty"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <literal>with</literal> 和 <reference internal="True" refid="class-basis-property-y"><inline classes="std std-ref">y</inline></reference> 轴之间的转置点积（请参阅 <reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">transposed</inline></reference>）。</paragraph>
             <paragraph>这相当于 <literal>basis.y.dot(vector)</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-tdotz"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-tdotz" names="class_basis_method_tdotz"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdotz</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdotz"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-tdotz" names="class_basis_method_tdotz"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>tdotz</strong>(with: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-tdotz"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回 <literal>with</literal> 和 <reference internal="True" refid="class-basis-property-z"><inline classes="std std-ref">z</inline></reference> 轴之间的转置点积（请参阅 <reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">transposed</inline></reference>）。</paragraph>
             <paragraph>这相当于 <literal>basis.z.dot(vector)</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-method-transposed"></target>
-            <paragraph classes="classref-method" ids="class-basis-method-transposed" names="class_basis_method_transposed"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>transposed</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-basis-method-transposed" names="class_basis_method_transposed"><reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference> <strong>transposed</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-basis-method-transposed"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回该基的转置版本。这会将基矩阵的列转换为行，并将其行转换为列。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -778,8 +778,8 @@ GD.Print(myBasis.Z); // 输出 (3, 6, 9).</literal_block>
             </container>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id11" names="操作符说明">
-            <title>操作符说明</title>
+        <section classes="classref-descriptions-group" ids="id11" names="运算符说明">
+            <title>运算符说明</title>
             <target refid="class-basis-operator-neq-basis"></target>
             <paragraph classes="classref-operator" ids="class-basis-operator-neq-basis" names="class_basis_operator_neq_basis"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>operator !=</strong>(right: <reference internal="True" refid="class-basis"><inline classes="std std-ref">Basis</inline></reference>) <reference internal="True" refid="class-basis-operator-neq-basis"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果两个 <strong>Basis</strong> 矩阵的分量不相等，则返回 <literal>true</literal>。</paragraph>
@@ -792,21 +792,21 @@ GD.Print(myBasis.Z); // 输出 (3, 6, 9).</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-basis-operator-mul-vector3"></target>
             <paragraph classes="classref-operator" ids="class-basis-operator-mul-vector3" names="class_basis_operator_mul_vector3"><reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> <strong>operator *</strong>(right: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <reference internal="True" refid="class-basis-operator-mul-vector3"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Transforms (multiplies) the <literal>right</literal> vector by this basis, returning a <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>.</paragraph>
+            <paragraph>由该基变换（乘以）<literal>right</literal> 向量，返回一个 <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-7-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
                     <button aria-controls="panel-7-QyM=" aria-selected="false" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-7-QyM=" name="QyM=" role="tab" tabindex="-1">C#</button>
                 </div>
                 <div aria-labelledby="tab-7-R0RTY3JpcHQ=" classes="sphinx-tabs-panel code-tab group-tab" ids="panel-7-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># Basis that swaps the X/Z axes and doubles the scale.
+                    <literal_block force="False" highlight_args="{}" language="gdscript" linenos="False" xml:space="preserve"># 交换 X/Z 轴并使缩放加倍的基。
 var my_basis = Basis(Vector3(0, 2, 0), Vector3(2, 0, 0), Vector3(0, 0, 2))
-print(my_basis * Vector3(1, 2, 3)) # Prints (4, 2, 6)</literal_block>
+print(my_basis * Vector3(1, 2, 3)) # 输出 (4, 2, 6)</literal_block>
                 </div>
                 <div aria-labelledby="tab-7-QyM=" classes="sphinx-tabs-panel code-tab group-tab" hidden="true" ids="panel-7-QyM=" name="QyM=" role="tabpanel" tabindex="0">
-                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// Basis that swaps the X/Z axes and doubles the scale.
+                    <literal_block force="False" highlight_args="{}" language="csharp" linenos="False" xml:space="preserve">// 交换 X/Z 轴并使缩放加倍的基。
 var myBasis = new Basis(new Vector3(0, 2, 0), new Vector3(2, 0, 0), new Vector3(0, 0, 2));
-GD.Print(myBasis * new Vector3(1, 2, 3)); // Prints (4, 2, 6)</literal_block>
+GD.Print(myBasis * new Vector3(1, 2, 3)); // 输出 (4, 2, 6)</literal_block>
                 </div>
             </container>
             <transition classes="classref-item-separator"></transition>
@@ -836,12 +836,12 @@ GD.Print(myBasis * new Vector3(1, 2, 3)); // Prints (4, 2, 6)</literal_block>
             <paragraph>通过索引访问该基的每个轴（列）。索引 <literal>0</literal> 与 <reference internal="True" refid="class-basis-property-x"><inline classes="std std-ref">x</inline></reference> 相同，索引 <literal>1</literal> 与 <reference internal="True" refid="class-basis-property-y"><inline classes="std std-ref">y</inline></reference> 相同，索引 <literal>2</literal> 与 <reference internal="True" refid="class-basis-property-z"><inline classes="std std-ref">z</inline></reference> 相同。</paragraph>
             <paragraph><strong>注意：</strong>在 C++ 中，该运算符访问基础矩阵的行，而<emphasis>不</emphasis>是列。对于与脚本语言相同的行为，请使用 <literal>set_column</literal> 和 <literal>get_column</literal> 方法。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

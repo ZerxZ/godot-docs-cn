@@ -91,7 +91,7 @@ WAV 是未经压缩的格式，能够提供比 Ogg Vorbis 和 MP3 更高的质�
 
 :ref:`int<class_int>` **edit/loop_begin** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_begin>`
 
-循环起始点，\ :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` 为 **Forward**\ 、\ **Ping-Pong**\ 、\ **Backward** 时使用。设置的是音频文件开始之后的秒数。
+The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file.
 
 .. rst-class:: classref-item-separator
 
@@ -103,7 +103,7 @@ WAV 是未经压缩的格式，能够提供比 Ogg Vorbis 和 MP3 更高的质�
 
 :ref:`int<class_int>` **edit/loop_end** = ``-1`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_end>`
 
-循环结束点，\ :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` 为 **Forward**\ 、\ **Ping-Pong**\ 、\ **Backward** 时使用。设置的是音频文件开始之后的秒数。\ ``-1`` 表示使用音频文件的末尾作为循环结束点。
+The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
 
 .. rst-class:: classref-item-separator
 
@@ -204,10 +204,10 @@ WAV 是未经压缩的格式，能够提供比 Ogg Vorbis 和 MP3 更高的质�
 如果为 ``true``\ ，则会在源文件为立体声时，强制让导入的音频使用单声道。将两个声道合并能够将文件大小降低 50%。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

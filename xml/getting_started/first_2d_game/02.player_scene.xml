@@ -13,11 +13,7 @@
             <image candidates="{'*': 'getting_started/first_2d_game/img/add_node.webp'}" uri="getting_started/first_2d_game/img/add_node.webp"></image>
             <paragraph>Godot 将在场景树中的节点旁边显示警告图标。你现在可以忽略它。我们稍后再谈。</paragraph>
             <paragraph>使用 <literal>Area2D</literal> 可以检测到与玩家重叠或进入玩家内的物体. 通过双击节点名称将其名称更改为 <literal>Player</literal>. 我们已经设置好了场景的根节点, 现在可以向该角色中添加其他节点来增加功能.</paragraph>
-            <paragraph>Before we add any children to the <literal>Player</literal> node, we want to make sure we don't
-                accidentally move or resize them by clicking on them. Select the node and click
-                the icon to the right of the lock. Its tooltip says "Groups the selected node
-                with its children. This causes the parent to be selected when any child
-                node is clicked in 2D and 3D view."</paragraph>
+            <paragraph>在将任何子节点添加到 <literal>Player</literal> 节点之前，我们要确保不会通过点击它们来意外移动它们或调整它们的大小。选择该节点并单击锁右侧的图标。其工具提示显示“将所选节点与其子节点组合。这样在 2D 和 3D 视图中点击子节点就会选中父节点。”</paragraph>
             <image candidates="{'*': 'getting_started/first_2d_game/img/lock_children.webp'}" uri="getting_started/first_2d_game/img/lock_children.webp"></image>
             <paragraph>保存场景。点击“场景 -&gt; 保存”，或者在 Windows/Linux 平台上按下 <literal classes="kbd">Ctrl+S</literal>，在 macOS 上按下 <literal classes="kbd">Cmd+S</literal>。</paragraph>
             <note>
@@ -34,13 +30,7 @@
         </section>
         <section ids="sprite-animation" names="sprite\ animation 精灵动画">
             <title>精灵动画</title>
-            <paragraph>Click on the <literal>Player</literal> node and add (<literal classes="kbd">Ctrl + A</literal> on Windows/Linux or
-                <literal classes="kbd">Cmd + A</literal> on macOS) a child node <reference internal="True" refuri="../../classes/class_animatedsprite2d#class-animatedsprite2d"><inline classes="std std-ref">AnimatedSprite2D</inline></reference>. The <literal>AnimatedSprite2D</literal> will handle the
-                appearance and animations for our player. Notice that there is a warning symbol
-                next to the node. An <literal>AnimatedSprite2D</literal> requires a <reference internal="True" refuri="../../classes/class_spriteframes#class-spriteframes"><inline classes="std std-ref">SpriteFrames</inline></reference> resource, which is a list of the animations it can
-                display. To create one, find the <literal>Sprite Frames</literal> property under the <literal>Animation</literal> tab in the Inspector and click
-                "[empty]" -&gt; "New SpriteFrames". Click on the <literal>SpriteFrames</literal> you just
-                created to open the "SpriteFrames" panel:</paragraph>
+            <paragraph>点击 <literal>Player</literal> 节点并添加 (<literal classes="kbd">Ctrl + A</literal> 在 Windows/Linux 上或 <literal classes="kbd">Cmd + A</literal> 在 macOS 上) 一个子节点 <reference internal="True" refuri="../../classes/class_animatedsprite2d#class-animatedsprite2d"><inline classes="std std-ref">AnimatedSprite2D</inline></reference>。<literal>AnimatedSprite2D</literal> 将处理我们玩家的外观和动画。注意节点旁边有一个警告符号。<literal>AnimatedSprite2D</literal> 需要一个 <reference internal="True" refuri="../../classes/class_spriteframes#class-spriteframes"><inline classes="std std-ref">SpriteFrames</inline></reference> 资源，这是它可以显示的动画列表。要创建一个，在检查器的 <literal>Animation</literal> 选项卡下找到 <literal>Sprite Frames</literal> 属性并点击 "[empty]" -&gt; "New SpriteFrames"。点击刚刚创建的 <literal>SpriteFrames</literal> 以打开 "SpriteFrames" 面板：</paragraph>
             <image candidates="{'*': 'getting_started/first_2d_game/img/spriteframes_panel.webp'}" uri="getting_started/first_2d_game/img/spriteframes_panel.webp"></image>
             <paragraph>左边是一个动画列表。点击“defalult”动画并将其重命名为“walk”。然后点击“Add Animation”按钮，创建另一个名为“up”的动画。在“FileSystem”选项卡中找到玩家图像——它们应该在你之前解压的 <literal>art</literal> 文件夹中。将每个动画的两张图像， <literal>playerGrey_up[1/2]</literal> 和 <literal>playerGrey_walk[1/2]</literal>，拖到对应动画的面板的“Animation Frames”处：</paragraph>
             <image candidates="{'*': 'getting_started/first_2d_game/img/spriteframes_panel2.webp'}" uri="getting_started/first_2d_game/img/spriteframes_panel2.webp"></image>

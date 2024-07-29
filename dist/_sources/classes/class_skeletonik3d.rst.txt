@@ -21,26 +21,26 @@ SkeletonIK3D
 描述
 ----
 
-SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain a way that places the end bone at a desired 3D position. A typical scenario for IK in games is to place a character's feet on the ground or a character's hands on a currently held object. SkeletonIK uses FabrikInverseKinematic internally to solve the bone chain and applies the results to the :ref:`Skeleton3D<class_Skeleton3D>` ``bones_global_pose_override`` property for all affected bones in the chain. If fully applied, this overwrites any bone transform from :ref:`Animation<class_Animation>`\ s or bone custom poses set by users. The applied amount can be controlled with the :ref:`SkeletonModifier3D.influence<class_SkeletonModifier3D_property_influence>` property.
+SkeletonIK3D 可以将 :ref:`Skeleton3D<class_Skeleton3D>` 骨骼链中的所有骨骼进行旋转，从而将末端骨骼放置在正确的 3D 位置。游戏中 IK 的典型场景是将角色的脚放在地面上，或者将角色的手放在当前持有的物体上。SkeletonIK 在内部使用 FabrikInverseKinematic 来解决骨骼链，并将结果应用于 :ref:`Skeleton3D<class_Skeleton3D>` ``bones_global_pose_override`` 属性中所有受影响的骨骼链。如果完全应用，这将覆盖任何来自 :ref:`Animation<class_Animation>` 的骨骼变换或用户设置的骨骼自定义姿势。应用量可以用 :ref:`SkeletonModifier3D.influence<class_SkeletonModifier3D_property_influence>` 属性来控制。
 
 ::
 
-    # Apply IK effect automatically on every new frame (not the current)
+    # 在每一个新的帧上自动应用 IK 效果（不是当前的）。
     skeleton_ik_node.start()
     
-    # Apply IK effect only on the current frame
+    # 只在当前帧上应用 IK 效果
     skeleton_ik_node.start(true)
     
-    # Stop IK effect and reset bones_global_pose_override on Skeleton
+    # 停止 IK 效果并重置骨骼上的 bones_global_pose_override
     skeleton_ik_node.stop()
     
-    # Apply full IK effect
+    # 应用完整的 IK 效果
     skeleton_ik_node.set_influence(1.0)
     
-    # Apply half IK effect
+    # 应用一半的 IK 效果
     skeleton_ik_node.set_influence(0.5)
     
-    # Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
+    # 应用零 IK 效果（数值为 0.01 或低于 0.01 也会移除 Skeleton 上的 bones_global_pose_override）
     skeleton_ik_node.set_influence(0.0)
 
 .. rst-class:: classref-reftable-group
@@ -113,7 +113,7 @@ SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>
 
 **已弃用：** Use :ref:`SkeletonModifier3D.influence<class_SkeletonModifier3D_property_influence>` instead.
 
-Interpolation value for how much the IK results are applied to the current skeleton bone chain. A value of ``1.0`` will overwrite all skeleton bone transforms completely while a value of ``0.0`` will visually disable the SkeletonIK.
+IK 效果被应用于当前骨架骨骼链的程度的插值。\ ``1.0`` 的值将完全覆盖所有骨架骨骼变换，而 ``0.0`` 的值将在视觉上禁用 SkeletonIK。
 
 .. rst-class:: classref-item-separator
 
@@ -322,10 +322,10 @@ IK 链的目标节点 :ref:`NodePath<class_NodePath>`\ 。如果有的话，将�
 停止将 IK 效果应用到每帧的 :ref:`Skeleton3D<class_Skeleton3D>` 骨骼，并调用 :ref:`Skeleton3D.clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>` 来移除所有骨骼上的现有覆盖。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -159,10 +159,10 @@
             <title>常量</title>
             <target refid="class-gdscript-constant-pi"></target>
             <paragraph classes="classref-constant" ids="class-gdscript-constant-pi" names="class_@gdscript_constant_pi"><strong>PI</strong> = <literal>3.14159265358979</literal> <reference internal="True" refid="class-gdscript-constant-pi"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>常量，表示圆的周长是直径的多少倍。相当于 <literal>TAU / 2</literal>，或以弧度表示的180度。</paragraph>
+            <paragraph>常量，表示圆的周长是直径的多少倍。相当于 <literal>TAU / 2</literal>，即 180 度旋转。</paragraph>
             <target refid="class-gdscript-constant-tau"></target>
             <paragraph classes="classref-constant" ids="class-gdscript-constant-tau" names="class_@gdscript_constant_tau"><strong>TAU</strong> = <literal>6.28318530717959</literal> <reference internal="True" refid="class-gdscript-constant-tau"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>圆常量，单位圆的周长，单位为弧度。相当于 <literal>PI * 2</literal>，即 360 度的弧度值。</paragraph>
+            <paragraph>圆常量，单位圆的周长，单位为弧度。相当于 <literal>PI * 2</literal>，即 360 度旋转。</paragraph>
             <target refid="class-gdscript-constant-inf"></target>
             <paragraph classes="classref-constant" ids="class-gdscript-constant-inf" names="class_@gdscript_constant_inf"><strong>INF</strong> = <literal>inf</literal> <reference internal="True" refid="class-gdscript-constant-inf"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>正浮点无穷大。这是除数为 <literal>0.0</literal> 时浮点除法的结果。对于负无穷大，使用 <literal>-INF</literal>。如果分子为正，除以 <literal>-0.0</literal> 将导致负无穷大，因此除以 <literal>0.0</literal> 与除以 <literal>-0.0</literal> 不同（尽管 <literal>0.0 == -0.0</literal> 返回 <literal>true</literal>）。</paragraph>
@@ -177,40 +177,40 @@
             <title>注解</title>
             <target refid="class-gdscript-annotation-export"></target>
             <paragraph classes="classref-annotation" ids="class-gdscript-annotation-export" names="class_@gdscript_annotation_@export"><strong>@export</strong>() <reference internal="True" refid="class-gdscript-annotation-export"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>将后续的属性标记为导出属性（可以在检查器面板中编辑并保存至磁盘）。要控制导出属性的类型，请使用类型提示标记。</paragraph>
+            <paragraph>Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property, use the type hint notation.</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">extends Node
 
 enum Direction {LEFT, RIGHT, UP, DOWN}
 
-# 内置类型。
+# Built-in types.
 @export var string = ""
 @export var int_number = 5
 @export var float_number: float = 5
 
-# 枚举。
+# Enums.
 @export var type: Variant.Type
 @export var format: Image.Format
 @export var direction: Direction
 
-# 资源。
+# Resources.
 @export var image: Image
 @export var custom_resource: CustomResource
 
-# 节点。
+# Nodes.
 @export var node: Node
 @export var custom_node: CustomNode
 
-# 类型数组。
+# Typed arrays.
 @export var int_array: Array[int]
 @export var direction_array: Array[Direction]
 @export var image_array: Array[Image]
 @export var node_array: Array[Node]</literal_block>
-            <paragraph><strong>注意：</strong>自定义资源和自定义节点必须使用 <literal>class_name</literal> 注册为全局类。</paragraph>
-            <paragraph><strong>注意：</strong>节点的导出只有派生自 <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference> 的类才支持，并且还有一些其他限制。</paragraph>
+            <paragraph><strong>Note:</strong> Custom resources and nodes should be registered as global classes using <literal>class_name</literal>, since the Inspector currently only supports global classes. Otherwise, a less specific type will be exported instead.</paragraph>
+            <paragraph><strong>Note:</strong> Node export is only supported in <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference>-derived classes and has a number of other limitations.</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-annotation-export-category"></target>
             <paragraph classes="classref-annotation" ids="class-gdscript-annotation-export-category" names="class_@gdscript_annotation_@export_category"><strong>@export_category</strong>(name: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>) <reference internal="True" refid="class-gdscript-annotation-export-category"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>为后续导出属性定义一个新类别。方便在检查器面板中组织属性。</paragraph>
+            <paragraph>为后续导出属性定义一个新类别，方便在检查器面板中组织属性。</paragraph>
             <paragraph>另见 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-property-usage-category"><inline classes="std std-ref">@GlobalScope.PROPERTY_USAGE_CATEGORY</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_category("Statistics")
 @export var hp = 30
@@ -225,14 +225,14 @@ enum Direction {LEFT, RIGHT, UP, DOWN}
 @export_color_no_alpha var dye_colors: Array[Color]</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-annotation-export-custom"></target>
-            <paragraph classes="classref-annotation" ids="class-gdscript-annotation-export-custom" names="class_@gdscript_annotation_@export_custom"><strong>@export_custom</strong>(hint: <reference internal="True" refuri="class_@globalscope#enum-globalscope-propertyhint"><inline classes="std std-ref">PropertyHint</inline></reference>, hint_string: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, usage: <abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation>[<reference internal="True" refuri="class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference>] = 6) <reference internal="True" refid="class-gdscript-annotation-export-custom"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the parameters to the editor.</paragraph>
+            <paragraph classes="classref-annotation" ids="class-gdscript-annotation-export-custom" names="class_@gdscript_annotation_@export_custom"><strong>@export_custom</strong>(hint: <reference internal="True" refuri="class_@globalscope#enum-globalscope-propertyhint"><inline classes="std std-ref">PropertyHint</inline></reference>, hint_string: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>, usage: <abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation>[<reference internal="True" refuri="class_@globalscope#enum-globalscope-propertyusageflags"><inline classes="std std-ref">PropertyUsageFlags</inline></reference>] = 6) <reference internal="True" refid="class-gdscript-annotation-export-custom"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>允许为导出的属性设置自定义提示、提示字符串、和使用标志。请注意，GDScript 中没有进行任何验证，它只是将参数传递给编辑器。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_custom(PROPERTY_HINT_NONE, "suffix:m") var suffix: Vector3</literal_block>
-            <paragraph><strong>Note:</strong> Regardless of the <literal>usage</literal> value, the <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-property-usage-script-variable"><inline classes="std std-ref">@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE</inline></reference> flag is always added, as with any explicitly declared script variable.</paragraph>
+            <paragraph><strong>注意：</strong>无论 <literal>usage</literal> 值如何，总会添加 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-property-usage-script-variable"><inline classes="std std-ref">@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE</inline></reference> 标志，就像和任何显式声明的脚本变量一样。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-annotation-export-dir"></target>
             <paragraph classes="classref-annotation" ids="class-gdscript-annotation-export-dir" names="class_@gdscript_annotation_@export_dir"><strong>@export_dir</strong>() <reference internal="True" refid="class-gdscript-annotation-export-dir"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>导出 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>、<reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>[<reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>] 或 <reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> 属性，用作指向目录的路径。该路径会被限制在项目文件夹及其子文件夹中。要允许在整个文件系统中选取，见 <reference internal="True" refid="class-gdscript-annotation-export-global-dir"><inline classes="std std-ref">@export_global_dir</inline></reference>。</paragraph>
+            <paragraph>导出 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>、<reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference>[<reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference>] 或 <reference internal="True" refuri="class_packedstringarray#class-packedstringarray"><inline classes="std std-ref">PackedStringArray</inline></reference> 属性，用作指向目录的路径。该路径会被限制在项目文件夹及其子文件夹中，要允许在整个文件系统中选取，见 <reference internal="True" refid="class-gdscript-annotation-export-global-dir"><inline classes="std std-ref">@export_global_dir</inline></reference>。</paragraph>
             <paragraph>另见 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-property-hint-dir"><inline classes="std std-ref">@GlobalScope.PROPERTY_HINT_DIR</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@export_dir var sprite_folder_path: String
 @export_dir var sprite_folder_paths: Array[String]</literal_block>
@@ -465,12 +465,12 @@ func fn_default(): pass</literal_block>
             <target refid="class-gdscript-annotation-static-unload"></target>
             <paragraph classes="classref-annotation" ids="class-gdscript-annotation-static-unload" names="class_@gdscript_annotation_@static_unload"><strong>@static_unload</strong>() <reference internal="True" refid="class-gdscript-annotation-static-unload"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>使具有静态变量的脚本在所有引用丢失后不持久化。如果再次加载脚本，静态变量将恢复为默认值。</paragraph>
-            <paragraph>** 注意：<problematic ids="id7" refid="id6">**</problematic>当注释描述其主题时，<reference internal="True" refid="class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference>注释必须放在类定义和继承之前。</paragraph>
-            <paragraph>** 警告：<problematic ids="id9" refid="id8">**</problematic>目前，由于一个错误，即使使用了<reference internal="True" refid="class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference> 注释，脚本也永远不会释放。</paragraph>
+            <paragraph><strong>注意：</strong>因为注解需要描述对象，所以 <reference internal="True" refid="class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference> 注解必须放在类定义和继承之前。</paragraph>
+            <paragraph><strong>警告：</strong>目前由于一个 bug，即使使用了<reference internal="True" refid="class-gdscript-annotation-static-unload"><inline classes="std std-ref">@static_unload</inline></reference> 注解，脚本也永远不会释放。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-annotation-tool"></target>
             <paragraph classes="classref-annotation" ids="class-gdscript-annotation-tool" names="class_@gdscript_annotation_@tool"><strong>@tool</strong>() <reference internal="True" refid="class-gdscript-annotation-tool"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>将当前脚本标记为工具脚本，允许它被编辑器加载和执行。见<reference internal="True" refuri="../tutorials/plugins/running_code_in_the_editor"><inline classes="doc">《在编辑器中运行代码》</inline></reference>。</paragraph>
+            <paragraph>将当前脚本标记为工具脚本，允许该脚本由编辑器所加载与执行。见<reference internal="True" refuri="../tutorials/plugins/running_code_in_the_editor"><inline classes="doc">《在编辑器中运行代码》</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">@tool
 extends Node</literal_block>
             <paragraph><strong>注意：</strong>因为注解描述对象的关系，必须把 <reference internal="True" refid="class-gdscript-annotation-tool"><inline classes="std std-ref">@tool</inline></reference> 注解放在类定义和继承之前。</paragraph>
@@ -485,21 +485,21 @@ extends Node</literal_block>
     print("无法到达")</literal_block>
         </section>
         <transition classes="classref-section-separator"></transition>
-        <section classes="classref-descriptions-group" ids="id10" names="方法说明">
+        <section classes="classref-descriptions-group" ids="id6" names="方法说明">
             <title>方法说明</title>
             <target refid="class-gdscript-method-color8"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-color8" names="class_@gdscript_method_color8"><reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> <strong>Color8</strong>(r8: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, g8: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, b8: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>, a8: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> = 255) <reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回一个由整数红通道（<literal>r8</literal>）、绿通道（<literal>g8</literal>）、蓝通道（<literal>b8</literal>）和可选的 Alpha 通道（<literal>a8</literal>）构造的 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference>，每个通道的最终值都会除以 <literal>255.0</literal>。如果你需要精确匹配 <reference internal="True" refuri="class_image#class-image"><inline classes="std std-ref">Image</inline></reference> 中的颜色值，<reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 比标准的 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数更有用。</paragraph>
+            <paragraph>返回一个由整数红通道（<literal>r8</literal>）、整数绿通道（<literal>g8</literal>）、整数蓝通道（<literal>b8</literal>）和可选的整数 Alpha 通道（<literal>a8</literal>）构造的 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference>，每个通道的最终值都会除以 <literal>255.0</literal>。如果你需要精确匹配 <reference internal="True" refuri="class_image#class-image"><inline classes="std std-ref">Image</inline></reference> 中的颜色值，<reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 比标准的 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数更有用。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var red = Color8(255, 0, 0)             # 与 Color(1, 0, 0) 相同
 var dark_blue = Color8(0, 0, 51)        # 与 Color(0, 0, 0.2) 相同。
 var my_color = Color8(306, 255, 0, 102) # 与 Color(1.2, 1, 0, 0.4) 相同。</literal_block>
-            <paragraph><strong>注意：</strong>因为 <reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 比标准 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数精度更低，所以使用 <reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 创建的颜色通常与使用标准 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数创建的相同颜色不相等。请使用 <reference internal="True" refuri="class_color#class-color-method-is-equal-approx"><inline classes="std std-ref">Color.is_equal_approx</inline></reference> 进行比较，避免浮点数精度误差。</paragraph>
+            <paragraph><strong>注意：</strong>由于 <reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 比标准 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数精度更低，故使用 <reference internal="True" refid="class-gdscript-method-color8"><inline classes="std std-ref">Color8</inline></reference> 创建的颜色通常与使用标准 <reference internal="True" refuri="class_color#class-color"><inline classes="std std-ref">Color</inline></reference> 构造函数创建的相同颜色不相等。请使用 <reference internal="True" refuri="class_color#class-color-method-is-equal-approx"><inline classes="std std-ref">Color.is_equal_approx</inline></reference> 进行比较，避免浮点数精度误差。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-assert"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-assert" names="class_@gdscript_method_assert"><abbreviation explanation="无返回值。">void</abbreviation> <strong>assert</strong>(condition: <reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference>, message: <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> = "") <reference internal="True" refid="class-gdscript-method-assert"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>断言条件 <literal>condition</literal> 为 <literal>true</literal>。如果条件 <literal>condition</literal> 为 <literal>false</literal> ，则会生成错误。如果是从编辑器运行的，正在运行的项目还会被暂停，直到手动恢复。该函数可以作为 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-push-error"><inline classes="std std-ref">@GlobalScope.push_error</inline></reference> 的加强版，用于向项目开发者和插件用户报错。</paragraph>
-            <paragraph>如果给出了可选的 <literal>message</literal> 参数，该信息会和通用的“Assertion failed”消息一起显示。你可以使用它来提供关于断言失败原因的其他详细信息。</paragraph>
-            <paragraph><strong>警告：</strong>出于对性能的考虑，<reference internal="True" refid="class-gdscript-method-assert"><inline classes="std std-ref">assert</inline></reference> 中的代码只会在调试版本或者从编辑器运行项目时执行。请勿在 <reference internal="True" refid="class-gdscript-method-assert"><inline classes="std std-ref">assert</inline></reference> 调用中加入具有副作用的代码。否则，项目在以发布模式导出后将有不一致的行为。</paragraph>
+            <paragraph>断言条件 <literal>condition</literal> 为 <literal>true</literal>。如果条件 <literal>condition</literal> 为 <literal>false</literal> ，则会生成错误。如果是从编辑器运行的断言，正在运行的项目还会被暂停，需要手动恢复。该函数可以作为 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-push-error"><inline classes="std std-ref">@GlobalScope.push_error</inline></reference> 的加强版使用，用于向项目开发者和插件用户报错。</paragraph>
+            <paragraph>如果给出了可选的 <literal>message</literal> 参数，该信息会和通用的“Assertion failed”消息一起显示。你可以使用它来提供关于断言失败原因等详细信息。</paragraph>
+            <paragraph><strong>警告：</strong>出于对性能的考虑，<reference internal="True" refid="class-gdscript-method-assert"><inline classes="std std-ref">assert</inline></reference> 中的代码只会在调试版本或者从编辑器运行项目时执行。请勿在 <reference internal="True" refid="class-gdscript-method-assert"><inline classes="std std-ref">assert</inline></reference> 调用中加入具有副作用的代码。否则，项目在以发布模式导出后将会出现行为不一致的现象。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve"># 比如说我们希望 speed 始终在 0 和 20 之间。
 speed = -10
 assert(speed &lt; 20) # True，程序会继续执行
@@ -518,7 +518,7 @@ a = char(8364)    # a 是“€”</literal_block>
             <target refid="class-gdscript-method-convert"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-convert" names="class_@gdscript_method_convert"><reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference> <strong>convert</strong>(what: <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference>, type: <reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference>) <reference internal="True" refid="class-gdscript-method-convert"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph><strong>已弃用：</strong> Use <reference internal="True" refuri="class_@globalscope#class-globalscope-method-type-convert"><inline classes="std std-ref">@GlobalScope.type_convert</inline></reference> instead.</paragraph>
-            <paragraph>在可能的情况下将 <literal>what</literal> 转换为 <literal>type</literal> 。 <literal>type</literal> 使用 <reference internal="True" refuri="class_@globalscope#enum-globalscope-variant-type"><inline classes="std std-ref">Variant.Type</inline></reference> 值。</paragraph>
+            <paragraph>在可能的情况下将 <literal>what</literal> 转换为 <literal>type</literal> 类型的值， <literal>type</literal> 使用 <reference internal="True" refuri="class_@globalscope#enum-globalscope-variant-type"><inline classes="std std-ref">Variant.Type</inline></reference> 值。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var a = [4, 2.5, 1.2]
 print(a is Array) # 输出 true
 
@@ -528,11 +528,11 @@ print(b is Array) # 输出 false</literal_block>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-dict-to-inst"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-dict-to-inst" names="class_@gdscript_method_dict_to_inst"><reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference> <strong>dict_to_inst</strong>(dictionary: <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference>) <reference internal="True" refid="class-gdscript-method-dict-to-inst"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>将一个 <literal>dictionary</literal> （用 <reference internal="True" refid="class-gdscript-method-inst-to-dict"><inline classes="std std-ref">inst_to_dict</inline></reference> 创建的）转换回为一个 Object 实例。在反序列化时可能很有用。</paragraph>
+            <paragraph>将一个 <literal>dictionary</literal> （用 <reference internal="True" refid="class-gdscript-method-inst-to-dict"><inline classes="std std-ref">inst_to_dict</inline></reference> 创建的）转换回为一个 Object 实例。在反序列化时可能会很有用。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-get-stack"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-get-stack" names="class_@gdscript_method_get_stack"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>get_stack</strong>() <reference internal="True" refid="class-gdscript-method-get-stack"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回一个表示当前调用堆栈的字典数组。另请参阅 <reference internal="True" refid="class-gdscript-method-print-stack"><inline classes="std std-ref">print_stack</inline></reference>。</paragraph>
+            <paragraph>返回一个表示当前调用堆栈的字典数组，另请参阅 <reference internal="True" refid="class-gdscript-method-print-stack"><inline classes="std std-ref">print_stack</inline></reference>。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">func _ready():
     foo()
 
@@ -544,12 +544,12 @@ func bar():
             <paragraph>从 <literal>_ready()</literal> 开始，<literal>bar()</literal> 将打印：</paragraph>
             <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">[{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]</literal_block>
             <paragraph><strong>注意：</strong>只有在运行的实例连接到调试服务器（即编辑器实例）后，该函数才有效。<reference internal="True" refid="class-gdscript-method-get-stack"><inline classes="std std-ref">get_stack</inline></reference> 不适用于以发布模式导出的项目；或者在未连接到调试服务器的情况下，以调试模式导出的项目。</paragraph>
-            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 调用此函数。这样做将返回一个空数组。</paragraph>
+            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 调用此函数，这样做将返回一个空数组。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-inst-to-dict"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-inst-to-dict" names="class_@gdscript_method_inst_to_dict"><reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> <strong>inst_to_dict</strong>(instance: <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference>) <reference internal="True" refid="class-gdscript-method-inst-to-dict"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回传入的 <literal>instance</literal> 转换为的字典。可用于序列化。</paragraph>
-            <paragraph><strong>注意：</strong>不能用于序列化附加了内置脚本的对象，或在内置脚本中分配的对象。</paragraph>
+            <paragraph>将传入的 <literal>instance</literal> 转换为字典，并将该字典返回，可用于序列化。</paragraph>
+            <paragraph><strong>注意：</strong>不能用于序列化附加了内置脚本的对象，也不能用于序列化在内置脚本中分配的对象。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">var foo = "bar"
 func _ready():
     var d = inst_to_dict(self)
@@ -564,27 +564,27 @@ func _ready():
             <paragraph>如果 <literal>value</literal> 为 <literal>type</literal> 类型的实例，则返回 <literal>true</literal>。<literal>type</literal> 的值必须为下列值之一：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-variant-type"><inline classes="std std-ref">Variant.Type</inline></reference> 枚举常量，例如 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-type-int"><inline classes="std std-ref">@GlobalScope.TYPE_INT</inline></reference>。</paragraph>
+                    <paragraph><reference internal="True" refuri="class_@globalscope#enum-globalscope-variant-type"><inline classes="std std-ref">Variant.Type</inline></reference> 枚举常量，如 <reference internal="True" refuri="class_@globalscope#class-globalscope-constant-type-int"><inline classes="std std-ref">@GlobalScope.TYPE_INT</inline></reference>。</paragraph>
                 </list_item>
                 <list_item>
-                    <paragraph><reference internal="True" refuri="class_classdb#class-classdb"><inline classes="std std-ref">ClassDB</inline></reference> 中存在的派生自 <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference> 的类，例如 <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference>。</paragraph>
+                    <paragraph><reference internal="True" refuri="class_classdb#class-classdb"><inline classes="std std-ref">ClassDB</inline></reference> 中存在的派生自 <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference> 的类，如 <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference>。</paragraph>
                 </list_item>
                 <list_item>
                     <paragraph><reference internal="True" refuri="class_script#class-script"><inline classes="std std-ref">Script</inline></reference>（可以用任何类，包括内部类）。</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph><literal>type</literal> 可以不是常量，这一点与 <literal>is</literal> 的右操作数不同。<literal>is</literal> 运算符支持的功能更多（例如类型化数组）。如果你不需要动态类型检查，请使用该运算符，不要使用此方法。</paragraph>
+            <paragraph><literal>type</literal> 可以不是常量，这一点与 <literal>is</literal> 的右操作数不同，<literal>is</literal> 运算符支持的功能更多（例如类型化数组）。如果你不需要动态类型检查，请使用该运算符，不要使用此方法。</paragraph>
             <paragraph>示例：</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">print(is_instance_of(a, TYPE_INT))
 print(is_instance_of(a, Node))
 print(is_instance_of(a, MyClass))
 print(is_instance_of(a, MyClass.InnerClass))</literal_block>
-            <paragraph><strong>注意：</strong>如果 <literal>value</literal> 和/或 <literal>type</literal> 为已释放的对象（见 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-instance-valid"><inline classes="std std-ref">@GlobalScope.is_instance_valid</inline></reference>），或者 <literal>type</literal> 不是以上选项之一，则此方法会报运行时错误。</paragraph>
+            <paragraph><strong>注意：</strong>如果 <literal>value</literal> 和/或 <literal>type</literal> 为已释放的对象（见 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-is-instance-valid"><inline classes="std std-ref">@GlobalScope.is_instance_valid</inline></reference>），或者 <literal>type</literal> 的数值不为以上选项中的任何一项，则此方法会报运行时错误。</paragraph>
             <paragraph>另见 <reference internal="True" refuri="class_@globalscope#class-globalscope-method-typeof"><inline classes="std std-ref">@GlobalScope.typeof</inline></reference>、<reference internal="True" refid="class-gdscript-method-type-exists"><inline classes="std std-ref">type_exists</inline></reference>、<reference internal="True" refuri="class_array#class-array-method-is-same-typed"><inline classes="std std-ref">Array.is_same_typed</inline></reference>（以及其他 <reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> 方法）。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-len"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-len" names="class_@gdscript_method_len"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>len</strong>(var: <reference internal="True" refuri="class_variant#class-variant"><inline classes="std std-ref">Variant</inline></reference>) <reference internal="True" refid="class-gdscript-method-len"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>返回给定 Variant <literal>var</literal> 的长度。长度可以是 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 或 <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> 的字符数、任意数组类型的元素数或 <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> 的大小等。对于所有其他 Variant 类型，都会生成运行时错误并停止执行。</paragraph>
+            <paragraph>返回给定 Variant <literal>var</literal> 的长度，该长度可以是 <reference internal="True" refuri="class_string#class-string"><inline classes="std std-ref">String</inline></reference> 或 <reference internal="True" refuri="class_stringname#class-stringname"><inline classes="std std-ref">StringName</inline></reference> 的字符数，也可以是任意数组类型的元素数或 <reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> 的大小等。对于所有其他 Variant 类型，都会生成运行时错误并停止执行。</paragraph>
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">a = [1, 2, 3, 4]
 len(a) # 返回 4
 
@@ -616,7 +616,7 @@ var diamond = preload("res://diamond.tscn").instantiate()</literal_block>
             <paragraph>控制台中的输出应该是类似这样的：</paragraph>
             <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">Test print
 At: res://test.gd:15:_process()</literal_block>
-            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 中调用此方法。调用时会输出线程 ID。</paragraph>
+            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 中调用此方法，这样做会输出线程 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-print-stack"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-print-stack" names="class_@gdscript_method_print_stack"><abbreviation explanation="无返回值。">void</abbreviation> <strong>print_stack</strong>() <reference internal="True" refid="class-gdscript-method-print-stack"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -624,7 +624,7 @@ At: res://test.gd:15:_process()</literal_block>
             <paragraph>控制台中的输出是类似这样的：</paragraph>
             <literal_block force="False" highlight_args="{}" language="text" linenos="False" xml:space="preserve">Frame 0 - res://test.gd:16 in function '_process'</literal_block>
             <paragraph><strong>注意：</strong>只有在运行的实例连接到调试服务器（即编辑器实例）后，该函数才有效。<reference internal="True" refid="class-gdscript-method-print-stack"><inline classes="std std-ref">print_stack</inline></reference> 不适用于以发布模式导出的项目；或者在未连接到调试服务器的情况下，以调试模式导出的项目。</paragraph>
-            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 调用此函数。这样做将改为打印线程 ID。</paragraph>
+            <paragraph><strong>注意：</strong>不支持从 <reference internal="True" refuri="class_thread#class-thread"><inline classes="std std-ref">Thread</inline></reference> 调用此函数，这样做将改为打印线程 ID。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-gdscript-method-range"></target>
             <paragraph classes="classref-method" ids="class-gdscript-method-range" names="class_@gdscript_method_range"><reference internal="True" refuri="class_array#class-array"><inline classes="std std-ref">Array</inline></reference> <strong>range</strong>(...) <abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation> <reference internal="True" refid="class-gdscript-method-range"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -661,12 +661,12 @@ for i in range(array.size() - 1, -1, -1):
             <literal_block force="False" language="gdscript" linenos="False" xml:space="preserve">type_exists("Sprite2D") # 返回 true
 type_exists("NonExistentClass") # 返回 false</literal_block>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

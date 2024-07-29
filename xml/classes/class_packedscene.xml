@@ -132,7 +132,7 @@ if (result == Error.Ok)
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-packedscene-method-can-instantiate"><inline classes="std std-ref">can_instantiate</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-packedscene-method-can-instantiate"><inline classes="std std-ref">can_instantiate</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -140,7 +140,7 @@ if (result == Error.Ok)
                                 <paragraph><reference internal="True" refuri="class_scenestate#class-scenestate"><inline classes="std std-ref">SceneState</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-packedscene-method-get-state"><inline classes="std std-ref">get_state</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-packedscene-method-get-state"><inline classes="std std-ref">get_state</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -148,7 +148,7 @@ if (result == Error.Ok)
                                 <paragraph><reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-packedscene-method-instantiate"><inline classes="std std-ref">instantiate</inline></reference>(edit_state: <reference internal="True" refid="enum-packedscene-geneditstate"><inline classes="std std-ref">GenEditState</inline></reference> = 0) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-packedscene-method-instantiate"><inline classes="std std-ref">instantiate</inline></reference>(edit_state: <reference internal="True" refid="enum-packedscene-geneditstate"><inline classes="std std-ref">GenEditState</inline></reference> = 0) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -189,34 +189,34 @@ if (result == Error.Ok)
             <title>属性说明</title>
             <target refid="class-packedscene-property-bundled"></target>
             <paragraph classes="classref-property" ids="class-packedscene-property-bundled" names="class_packedscene_property__bundled"><reference internal="True" refuri="class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> <strong>_bundled</strong> = <literal>{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }</literal> <reference internal="True" refid="class-packedscene-property-bundled"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>A dictionary representation of the scene contents.</paragraph>
-            <paragraph>Available keys include "names" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for paths to overridden nodes, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.</paragraph>
+            <paragraph>场景内容的字典表示。</paragraph>
+            <paragraph>可用的键包括资源的“names”和“variants”，节点的“node_count”、“nodes”、“node_paths”，覆盖节点的路径的“editable_instances”，信号连接的“conn_count”和“conns”，以及 PackedScene 格式样式的版本“version”。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id7" names="方法说明">
             <title>方法说明</title>
             <target refid="class-packedscene-method-can-instantiate"></target>
-            <paragraph classes="classref-method" ids="class-packedscene-method-can-instantiate" names="class_packedscene_method_can_instantiate"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>can_instantiate</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-can-instantiate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-packedscene-method-can-instantiate" names="class_packedscene_method_can_instantiate"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>can_instantiate</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-can-instantiate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>如果场景文件有节点，返回 <literal>true</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-packedscene-method-get-state"></target>
-            <paragraph classes="classref-method" ids="class-packedscene-method-get-state" names="class_packedscene_method_get_state"><reference internal="True" refuri="class_scenestate#class-scenestate"><inline classes="std std-ref">SceneState</inline></reference> <strong>get_state</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-get-state"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-packedscene-method-get-state" names="class_packedscene_method_get_state"><reference internal="True" refuri="class_scenestate#class-scenestate"><inline classes="std std-ref">SceneState</inline></reference> <strong>get_state</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-get-state"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>返回代表场景文件内容的 <reference internal="True" refuri="class_scenestate#class-scenestate"><inline classes="std std-ref">SceneState</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-packedscene-method-instantiate"></target>
-            <paragraph classes="classref-method" ids="class-packedscene-method-instantiate" names="class_packedscene_method_instantiate"><reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference> <strong>instantiate</strong>(edit_state: <reference internal="True" refid="enum-packedscene-geneditstate"><inline classes="std std-ref">GenEditState</inline></reference> = 0) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-instantiate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-packedscene-method-instantiate" names="class_packedscene_method_instantiate"><reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference> <strong>instantiate</strong>(edit_state: <reference internal="True" refid="enum-packedscene-geneditstate"><inline classes="std std-ref">GenEditState</inline></reference> = 0) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-packedscene-method-instantiate"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <paragraph>实例化该场景的节点架构。触发子场景的实例化。在根节点上触发 <reference internal="True" refuri="class_node#class-node-constant-notification-scene-instantiated"><inline classes="std std-ref">Node.NOTIFICATION_SCENE_INSTANTIATED</inline></reference> 通知。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-packedscene-method-pack"></target>
             <paragraph classes="classref-method" ids="class-packedscene-method-pack" names="class_packedscene_method_pack"><reference internal="True" refuri="class_@globalscope#enum-globalscope-error"><inline classes="std std-ref">Error</inline></reference> <strong>pack</strong>(path: <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference>) <reference internal="True" refid="class-packedscene-method-pack"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Packs the <literal>path</literal> node, and all owned sub-nodes, into this <strong>PackedScene</strong>. Any existing data will be cleared. See <reference internal="True" refuri="class_node#class-node-property-owner"><inline classes="std std-ref">Node.owner</inline></reference>.</paragraph>
+            <paragraph>将 <literal>path</literal> 节点及其所有子节点打包到该 <strong>PackedScene</strong> 中。所有现有数据都将被清除。请参阅 <reference internal="True" refuri="class_node#class-node-property-owner"><inline classes="std std-ref">Node.owner</inline></reference>。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

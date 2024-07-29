@@ -26,7 +26,7 @@
                 <caption>根据代理半径和几何体之间的偏移量烘焙导航网格。</caption>
             </figure>
             <paragraph>使用导航区块节点可以更方便地进行导航网格烘焙。使用导航区域节点进行烘焙时，所有解析、烘焙和区块更新步骤都会合并到一个函数中。</paragraph>
-            <paragraph>The nodes are available in 2D and 3D as <reference internal="True" refuri="../../classes/class_navigationregion2d#class-navigationregion2d"><inline classes="std std-ref">NavigationRegion2D</inline></reference> and <reference internal="True" refuri="../../classes/class_navigationregion3d#class-navigationregion3d"><inline classes="std std-ref">NavigationRegion3D</inline></reference> respectively.</paragraph>
+            <paragraph>2D 和 3D 版本分别为 <reference internal="True" refuri="../../classes/class_navigationregion2d#class-navigationregion2d"><inline classes="std std-ref">NavigationRegion2D</inline></reference> 和 <reference internal="True" refuri="../../classes/class_navigationregion3d#class-navigationregion3d"><inline classes="std std-ref">NavigationRegion3D</inline></reference>。</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-0-0" aria-selected="true" classes="sphinx-tabs-tab" ids="tab-0-0-0" name="0-0" role="tab" tabindex="0">Baking with a NavigationRegion2D</button>
@@ -38,7 +38,7 @@
                     <paragraph>为了使区块工作，需要添加一个 <reference internal="True" refuri="../../classes/class_navigationpolygon#class-navigationpolygon"><inline classes="std std-ref">NavigationPolygon</inline></reference> 资源。</paragraph>
                     <paragraph>解析和烘焙导航网格的属性是所用资源的一部分，可以在资源检查器中找到。</paragraph>
                     <image candidates="{'*': 'tutorials/navigation/img/nav_region_baking_02.webp'}" uri="tutorials/navigation/img/nav_region_baking_02.webp"></image>
-                    <paragraph>The result of the source geometry parsing can be influenced with the following properties.</paragraph>
+                    <paragraph>下列属性会影响来源几何体的解析结果。</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph>“parsed_geometry_type”用于筛选是否应从 :ref:<problematic ids="id2" refid="id1">`</problematic>SceneTree&lt;class_SceneTree&gt;`解析视觉对象或物理对象或两者。有关解析哪些对象以及如何解析的更多详细信息，请参阅下面关于解析源几何体的部分。</paragraph>
@@ -53,7 +53,7 @@
                             <paragraph><literal>source_geometry_group_name</literal> 在只应解析某个节点组时使用。取决于所选的 <literal>source_geometry_mode</literal> 。</paragraph>
                         </list_item>
                     </bullet_list>
-                    <paragraph>With the source geometry added, the result of the baking can be controlled with the following properties.</paragraph>
+                    <paragraph>添加来源几何体后，以下属性可以控制烘焙的结果。</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph><literal>cell_size</literal> 设置栅格网格大小，并且应与导航地图大小相匹配。</paragraph>
@@ -99,10 +99,10 @@ bake_navigation_polygon(on_thread)</literal_block>
                 <div aria-labelledby="tab-0-0-1" classes="sphinx-tabs-panel" hidden="true" ids="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0">
                     <paragraph>在编辑器中选择NavigationRegion3D节点后，烘焙选项将显示在编辑器的顶部栏中。</paragraph>
                     <image candidates="{'*': 'tutorials/navigation/img/nav_mesh_bake_toolbar.webp'}" uri="tutorials/navigation/img/nav_mesh_bake_toolbar.webp"></image>
-                    <paragraph>In order for the region to work a <reference internal="True" refuri="../../classes/class_navigationmesh#class-navigationmesh"><inline classes="std std-ref">NavigationMesh</inline></reference> resource needs to be added.</paragraph>
+                    <paragraph>添加 <reference internal="True" refuri="../../classes/class_navigationmesh#class-navigationmesh"><inline classes="std std-ref">NavigationMesh</inline></reference> 资源后，区块才能够正常工作。</paragraph>
                     <paragraph>解析和烘焙导航网格的属性是所用资源的一部分，可以在资源检查器中找到。</paragraph>
                     <image candidates="{'*': 'tutorials/navigation/img/nav_region3d_baking_01.webp'}" uri="tutorials/navigation/img/nav_region3d_baking_01.webp"></image>
-                    <paragraph>The result of the source geometry parsing can be influenced with the following properties.</paragraph>
+                    <paragraph>下列属性会影响来源几何体的解析结果。</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph>“parsed_geometry_type”用于筛选是否应从 :ref:<problematic ids="id2" refid="id1">`</problematic>SceneTree&lt;class_SceneTree&gt;`解析视觉对象或物理对象或两者。有关解析哪些对象以及如何解析的更多详细信息，请参阅下面关于解析源几何体的部分。</paragraph>
@@ -117,7 +117,7 @@ bake_navigation_polygon(on_thread)</literal_block>
                             <paragraph><literal>source_geometry_group_name</literal> 在只应解析某个节点组时使用。取决于所选的 <literal>source_geometry_mode</literal> 。</paragraph>
                         </list_item>
                     </bullet_list>
-                    <paragraph>With the source geometry added, the result of the baking can be controlled with the following properties.</paragraph>
+                    <paragraph>添加来源几何体后，以下属性可以控制烘焙的结果。</paragraph>
                     <bullet_list bullet="-">
                         <list_item>
                             <paragraph><literal>cell_size</literal> 和``cell_height`` 设置光栅栅格大小，并且应与导航地图大小相匹配。</paragraph>
@@ -171,7 +171,7 @@ bake_navigation_mesh(on_thread)</literal_block>
         </section>
         <section ids="baking-a-navigation-mesh-with-the-navigationserver doc-navigation-using-navigationmeshes-baking-navigation-mesh-with-navigationserver" names="baking\ a\ navigation\ mesh\ with\ the\ navigationserver 使用\ navigationserver\ 烘焙导航网格 doc_navigation_using_navigationmeshes_baking_navigation_mesh_with_navigationserver">
             <title>使用 NavigationServer 烘焙导航网格</title>
-            <paragraph>The <reference internal="True" refuri="../../classes/class_navigationserver2d#class-navigationserver2d"><inline classes="std std-ref">NavigationServer2D</inline></reference> and <reference internal="True" refuri="../../classes/class_navigationserver3d#class-navigationserver3d"><inline classes="std std-ref">NavigationServer3D</inline></reference> have API functions to call each step of the navigation mesh baking process individually.</paragraph>
+            <paragraph><reference internal="True" refuri="../../classes/class_navigationserver2d#class-navigationserver2d"><inline classes="std std-ref">NavigationServer2D</inline></reference> 和 <reference internal="True" refuri="../../classes/class_navigationserver3d#class-navigationserver3d"><inline classes="std std-ref">NavigationServer3D</inline></reference> 都提供了烘焙导航网格相关的 API 函数，可以在烘焙过程中的不同阶段单独调用。</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph><literal>parse_source_geometry_data()</literal> 可用于将源几何体解析为可重用和可序列化的资源。</paragraph>
@@ -200,9 +200,7 @@ bake_navigation_mesh(on_thread)</literal_block>
                 </list_item>
             </bullet_list>
             <paragraph>若要使用NavigationServer烘焙导航网格，则需要源几何体。源几何体是导航网格烘焙过程中应考虑的几何体数据。二维和三维导航网格都是通过从源几何体烘焙来创建的。</paragraph>
-            <paragraph>2D and 3D versions of the source geometry resources are available as
-                <reference internal="True" refuri="../../classes/class_navigationmeshsourcegeometrydata2d#class-navigationmeshsourcegeometrydata2d"><inline classes="std std-ref">NavigationMeshSourceGeometryData2D</inline></reference> and
-                <reference internal="True" refuri="../../classes/class_navigationmeshsourcegeometrydata3d#class-navigationmeshsourcegeometrydata3d"><inline classes="std std-ref">NavigationMeshSourceGeometryData3D</inline></reference>  respectively.</paragraph>
+            <paragraph>2D 和 3D 版本的源几何体资源分别为 <reference internal="True" refuri="../../classes/class_navigationmeshsourcegeometrydata2d#class-navigationmeshsourcegeometrydata2d"><inline classes="std std-ref">NavigationMeshSourceGeometryData2D</inline></reference> 和 <reference internal="True" refuri="../../classes/class_navigationmeshsourcegeometrydata3d#class-navigationmeshsourcegeometrydata3d"><inline classes="std std-ref">NavigationMeshSourceGeometryData3D</inline></reference>。</paragraph>
             <paragraph>源几何体可以是从视觉网格、物理碰撞或程序创建的数据阵列（如轮廓（2D）和三角面（3D））解析的几何体。为方便起见，通常直接从场景树中的节点设置解析源几何体。对于运行时导航网格（重新）烘焙，请注意几何体解析始终发生在主线程上。</paragraph>
             <note>
                 <paragraph>SceneTree不是线程安全的。从SceneTree解析源几何体只能在主线程上完成。</paragraph>
@@ -213,18 +211,18 @@ bake_navigation_mesh(on_thread)</literal_block>
             <paragraph>源几何图形存储在资源中，因此创建的几何图形可以重复用于多次烘焙。例如，为来自同一源几何体的不同代理大小烘焙多个导航网格。这也允许将源几何体保存到磁盘，以便稍后加载，例如避免在运行时再次解析的开销。</paragraph>
             <paragraph>几何数据通常应保持非常简单。需要尽可能多的边缘，但尽可能少。尤其是在2D中，应避免重复和嵌套几何体，因为它会强制计算多边形孔，从而导致翻转多边形。嵌套几何体的示例是完全放置在另一个StaticBody2D形状的边界内的较小StaticBody2D形状。</paragraph>
         </section>
-        <section ids="baking-navigation-mesh-chunks-for-large-worlds" names="baking\ navigation\ mesh\ chunks\ for\ large\ worlds">
-            <title>Baking navigation mesh chunks for large worlds</title>
+        <section ids="baking-navigation-mesh-chunks-for-large-worlds" names="baking\ navigation\ mesh\ chunks\ for\ large\ worlds 针对大世界烘焙导航网格块">
+            <title>针对大世界烘焙导航网格块</title>
             <figure align="center" ids="id3">
-                <image alt="Building navigation mesh chunks" candidates="{'*': 'tutorials/navigation/img/navmesh_chunk_build.gif'}" uri="tutorials/navigation/img/navmesh_chunk_build.gif"></image>
-                <caption>Building and updating individual navigation mesh chunks at runtime.</caption>
+                <image alt="构建导航网格块" candidates="{'*': 'tutorials/navigation/img/navmesh_chunk_build.gif'}" uri="tutorials/navigation/img/navmesh_chunk_build.gif"></image>
+                <caption>在运行时构建并更新导航网格块。</caption>
             </figure>
             <paragraph>To avoid misaligned edges between different region chunks the navigation meshes have two important properties
                 for the navigation mesh baking process. The baking bound and the border size.
                 Together they can be used to ensure perfectly aligned edges between region chunks.</paragraph>
             <figure align="center" ids="id4">
-                <image alt="Navigation mesh chunk with bake bound and border size" candidates="{'*': 'tutorials/navigation/img/navmesh_bound_bordersize.webp'}" uri="tutorials/navigation/img/navmesh_bound_bordersize.webp"></image>
-                <caption>Navigation mesh chunk baked with bake bound or baked with additional border size.</caption>
+                <image alt="指定烘焙范围和边框大小的导航网格块" candidates="{'*': 'tutorials/navigation/img/navmesh_bound_bordersize.webp'}" uri="tutorials/navigation/img/navmesh_bound_bordersize.webp"></image>
+                <caption>指定烘焙范围和额外边框大小的导航网格块。</caption>
             </figure>
             <paragraph>The baking bound, which is an axis-aligned <reference internal="True" refuri="../../classes/class_rect2#class-rect2"><inline classes="std std-ref">Rect2</inline></reference> for 2D and <reference internal="True" refuri="../../classes/class_aabb#class-aabb"><inline classes="std std-ref">AABB</inline></reference> for 3D,
                 limits the used source geometry by discarding all the geometry that is outside of the bounds.</paragraph>
@@ -235,8 +233,8 @@ bake_navigation_mesh(on_thread)</literal_block>
             <paragraph>With only the baking bound set another problem still exists. The resulting navigation mesh will
                 inevitably be affected by necessary offsets like the <literal>agent_radius</literal> which makes the edges not align properly.</paragraph>
             <figure align="center" ids="id5">
-                <image alt="Navigation mesh chunks with gaps" candidates="{'*': 'tutorials/navigation/img/navmesh_chunk_gaps.webp'}" uri="tutorials/navigation/img/navmesh_chunk_gaps.webp"></image>
-                <caption>Navigation mesh chunks with noticeable gaps due to baked agent radius offset.</caption>
+                <image alt="导航网格块之间有间隙" candidates="{'*': 'tutorials/navigation/img/navmesh_chunk_gaps.webp'}" uri="tutorials/navigation/img/navmesh_chunk_gaps.webp"></image>
+                <caption>受到烘焙代理半径偏移的影响，导航网格块之间有明显的间隙。</caption>
             </figure>
             <paragraph>This is where the <literal>border_size</literal> property for navigation mesh comes in. The border size is an inward margin
                 from the baking bound. The important characteristic of the border size is that it is unaffected by most
@@ -245,15 +243,15 @@ bake_navigation_mesh(on_thread)</literal_block>
                 If the baking bound is large enough the border size can remove the problematic surface
                 parts so that only the intended chunk size is left.</paragraph>
             <figure align="center" ids="id6">
-                <image alt="Navigation mesh chunks without gaps" candidates="{'*': 'tutorials/navigation/img/navmesh_chunks.webp'}" uri="tutorials/navigation/img/navmesh_chunks.webp"></image>
-                <caption>Navigation mesh chunks with aligned edges and without gaps.</caption>
+                <image alt="导航网格块之间没有间隙" candidates="{'*': 'tutorials/navigation/img/navmesh_chunks.webp'}" uri="tutorials/navigation/img/navmesh_chunks.webp"></image>
+                <caption>导航网格块互相对齐了边缘，没有间隙。</caption>
             </figure>
             <note>
                 <paragraph>The baking bounds need to be large enough to include a reasonable amount of source geometry from all the neighboring chunks.</paragraph>
             </note>
         </section>
-        <section ids="navigation-mesh-baking-common-problems" names="navigation\ mesh\ baking\ common\ problems">
-            <title>Navigation mesh baking common problems</title>
+        <section ids="navigation-mesh-baking-common-problems" names="navigation\ mesh\ baking\ common\ problems 烘焙导航网格时的常见问题">
+            <title>烘焙导航网格时的常见问题</title>
             <paragraph>在创建或烘焙导航网格时，需要考虑一些常见的用户问题和重要的注意事项。</paragraph>
             <bullet_list bullet="-">
                 <list_item>
@@ -286,11 +284,16 @@ bake_navigation_mesh(on_thread)</literal_block>
                             <term>导航网格显示在三维几何体内部。</term>
                             <definition>
                                 <paragraph>3D中的导航网格烘焙没有“内部”的概念。用于光栅化几何体的体素单元被占用或未被占用。删除其他几何图形中位于地面上的几何图形。如果无法做到这一点，请在内部添加较小的“虚拟”几何体，并尽可能少地添加三角形，这样单元就会被一些东西占据。</paragraph>
+                                <paragraph>A <reference internal="True" refuri="../../classes/class_navigationobstacle3d#class-navigationobstacle3d"><inline classes="std std-ref">NavigationObstacle3D</inline></reference> shape set to bake with navigation mesh can be used to discard geometry as well.</paragraph>
                             </definition>
                         </definition_list_item>
                     </definition_list>
                 </list_item>
             </bullet_list>
+            <figure align="center" ids="id7">
+                <image alt="NavigationObstacle3D unwanted geometry discard" candidates="{'*': 'tutorials/navigation/img/nav_mesh_obstacles_discard.webp'}" uri="tutorials/navigation/img/nav_mesh_obstacles_discard.webp"></image>
+                <caption>A NavigationObstacle3D shape can be used to discard unwanted navigation mesh parts.</caption>
+            </figure>
         </section>
         <section ids="navigation-mesh-script-templates" names="navigation\ mesh\ script\ templates">
             <title>Navigation mesh script templates</title>

@@ -2213,9 +2213,9 @@ enum **ProcessInfo**: :ref:`🔗<enum_NavigationServer3D_ProcessInfo>`
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **simplify_path**\ (\ path\: :ref:`PackedVector3Array<class_PackedVector3Array>`, epsilon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer3D_method_simplify_path>`
 
-Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in worlds units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
+返回 ``path`` 的简化版本，其中移除了不太重要的路径点。简化量以世界单位表示，由 ``epsilon`` 控制。简化使用 Ramer-Douglas-Peucker 算法的变体进行曲线点抽取。
 
-Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
+路径简化有助于缓解某些代理类型和脚本行为可能出现的各种路径跟踪问题。例如“转向”代理或“开放场”中的避让。
 
 .. rst-class:: classref-item-separator
 
@@ -2227,7 +2227,7 @@ Path simplification can be helpful to mitigate various path following issues tha
 
 :ref:`RID<class_RID>` **source_geometry_parser_create**\ (\ ) :ref:`🔗<class_NavigationServer3D_method_source_geometry_parser_create>`
 
-Creates a new source geometry parser. If a :ref:`Callable<class_Callable>` is set for the parser with :ref:`source_geometry_parser_set_callback<class_NavigationServer3D_method_source_geometry_parser_set_callback>` the callback will be called for every single node that gets parsed whenever :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` is used.
+创建一个新的源几何解析器。如果使用 :ref:`source_geometry_parser_set_callback<class_NavigationServer3D_method_source_geometry_parser_set_callback>` 为解析器设置了 :ref:`Callable<class_Callable>`\ ，则每当使用 :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` 时，都会为每个解析的节点调用回调。
 
 .. rst-class:: classref-item-separator
 
@@ -2239,19 +2239,19 @@ Creates a new source geometry parser. If a :ref:`Callable<class_Callable>` is se
 
 |void| **source_geometry_parser_set_callback**\ (\ parser\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_NavigationServer3D_method_source_geometry_parser_set_callback>`
 
-Sets the ``callback`` :ref:`Callable<class_Callable>` for the specific source geometry ``parser``. The :ref:`Callable<class_Callable>` will receive a call with the following parameters:
+为特定源几何体 ``parser`` 设置 ``callback`` :ref:`Callable<class_Callable>`\ 。\ :ref:`Callable<class_Callable>` 将接收具有以下参数的调用：
 
-- ``navigation_mesh`` - The :ref:`NavigationMesh<class_NavigationMesh>` reference used to define the parse settings. Do NOT edit or add directly to the navigation mesh.
+- ``navigation_mesh`` - 用于定义解析设置的 :ref:`NavigationMesh<class_NavigationMesh>` 引用。请勿直接编辑或添加到导航网格。
 
-- ``source_geometry_data`` - The :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` reference. Add custom source geometry for navigation mesh baking to this object.
+- ``source_geometry_data`` - :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` 引用。将用于导航网格烘焙的自定义源几何体添加到该对象。
 
-- ``node`` - The :ref:`Node<class_Node>` that is parsed.
+- ``node`` - 解析的 :ref:`Node<class_Node>`\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

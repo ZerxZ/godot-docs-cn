@@ -353,7 +353,7 @@ enum **SkinWeightCount**: :ref:`🔗<enum_SurfaceTool_SkinWeightCount>`
 
 :ref:`Array<class_Array>` **commit_to_arrays**\ (\ ) :ref:`🔗<class_SurfaceTool_method_commit_to_arrays>`
 
-Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`, :ref:`ImporterMesh.add_surface<class_ImporterMesh_method_add_surface>`, and :ref:`create_from_arrays<class_SurfaceTool_method_create_from_arrays>`. This way you can further process the mesh data using the :ref:`ArrayMesh<class_ArrayMesh>` or :ref:`ImporterMesh<class_ImporterMesh>` APIs.
+将数据提交为 :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`\ 、\ :ref:`ImporterMesh.add_surface<class_ImporterMesh_method_add_surface>` 和 :ref:`create_from_arrays<class_SurfaceTool_method_create_from_arrays>` 使用的相同格式。这样，你可以使用 :ref:`ArrayMesh<class_ArrayMesh>` 或 :ref:`ImporterMesh<class_ImporterMesh>` API 进一步处理网格数据。
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +377,7 @@ Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arr
 
 |void| **create_from_arrays**\ (\ arrays\: :ref:`Array<class_Array>`, primitive_type\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` = 3\ ) :ref:`🔗<class_SurfaceTool_method_create_from_arrays>`
 
-Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`, :ref:`Mesh.surface_get_arrays<class_Mesh_method_surface_get_arrays>`, :ref:`Mesh.surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>`, :ref:`ImporterMesh.get_surface_arrays<class_ImporterMesh_method_get_surface_arrays>`, and :ref:`ImporterMesh.get_surface_blend_shape_arrays<class_ImporterMesh_method_get_surface_blend_shape_arrays>`. ``primitive_type`` controls the type of mesh data, defaulting to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+从现有顶点数组（例如 :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`\ 、\ :ref:`Mesh.surface_get_arrays<class_Mesh_method_surface_get_arrays>`\ 、\ :ref:`Mesh.surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>`\ 、\ :ref:`ImporterMesh.get_surface_arrays<class_ImporterMesh_method_get_surface_arrays>` 和 :ref:`ImporterMesh.get_surface_blend_shape_arrays<class_ImporterMesh_method_get_surface_blend_shape_arrays>` 返回的数组）创建该 SurfaceTool。\ ``primitive_type`` 控制网格数据的类型，默认为 :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`\ 。
 
 .. rst-class:: classref-item-separator
 
@@ -415,7 +415,7 @@ Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`c
 
 **已弃用：** This method is unused internally, as it does not preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
 
-Generates an LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
+为给定的 ``nd_threshold`` 生成 LOD，使用线性单位（四次误差的平方根），最多使用 ``target_index_count`` 个索引。
 
 .. rst-class:: classref-item-separator
 
@@ -678,10 +678,10 @@ Generates an LOD for a given ``nd_threshold`` in linear units (square root of qu
 指定用于\ *下一个*\ 顶点的权重值。\ ``weights`` 必须包含 4 个值。如果每个顶点都需要设置该信息，且为第一个顶点提交失败，则可能根本不会使用该信息。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

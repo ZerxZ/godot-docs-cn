@@ -151,24 +151,12 @@
         </section>
         <section ids="decal-rendering-order" names="decal\ rendering\ order">
             <title>Decal rendering order</title>
-            <paragraph>By default, decals are ordered based on the size of their <abbreviation explanation="Axis-Aligned Bounding Box">AABB</abbreviation> and the distance to the camera. AABBs that are
-                closer to the camera are rendered first, which means that decal rendering order
-                can sometimes appear to change depending on camera position if some decals are
-                positioned at the same location.</paragraph>
-            <paragraph>To resolve this, you can adjust the <strong>Sorting Offset</strong> property in the
-                VisualInstance3D section of the Decal node inspector. This offset is not a
-                strict priority order, but a <emphasis>guideline</emphasis> that the renderer will use as the AABB
-                size still affects how decal sorting works. Therefore, higher values will
-                <emphasis>always</emphasis> result in the decal being drawn above other decals with a lower sorting
-                offset.</paragraph>
-            <paragraph>If you want to ensure a decal is always rendered on top of other decals,
-                you need to set its <strong>Sorting Offset</strong> property to a positive value greater than
-                the AABB length of the largest decal that may overlap it. To make this decal
-                drawn behind other decals instead, set the <strong>Sorting Offset</strong> to the same
-                negative value.</paragraph>
+            <paragraph>默认情况下，贴花的渲染顺序是基于他们的:abbr:<title_reference>AABB (Axis-Aligned Bounding Box)</title_reference> 和相机的距离排序的。距离相机更近的AABB会优先被渲染，这意味着如果有些贴花处于相同的位置，那贴花的渲染顺序有时会随相机位置的变化而变化。</paragraph>
+            <paragraph>为解决贴花重叠导致的闪烁问题，你可以调整贴花Node检查器下的VisualInstance3D中的**Sorting Offset**属性。这个offset不是一个严格的优先级排序，而是一个*准则*，虽然渲染器会依据该准则决定渲染顺序，但贴花排序方式仍会受到AABB大小的影响。因此，offset值更高的贴花*总是*会被绘制在offset值更低的贴花上。</paragraph>
+            <paragraph>如果你想让某个贴花总是渲染在其他贴花上，你需要将该贴花的**Sorting Offset**属性设置成正值，该值要大于可能与其重叠的其他最大贴花的AABB长度。相反，如果想让该贴花绘制在其他贴花后，将**Sorting Offset**设置为负值即可。</paragraph>
             <figure align="center" ids="id3">
-                <image alt="VisualInstance3D Sorting Offset comparison on Decals" candidates="{'*': 'tutorials/3d/img/decals_sorting_offset.webp'}" uri="tutorials/3d/img/decals_sorting_offset.webp"></image>
-                <caption>VisualInstance3D Sorting Offset comparison on Decals</caption>
+                <image alt="不同VisualInstance3D Sorting Offset的贴花相比较" candidates="{'*': 'tutorials/3d/img/decals_sorting_offset.webp'}" uri="tutorials/3d/img/decals_sorting_offset.webp"></image>
+                <caption>不同VisualInstance3D Sorting Offset的贴花相比较</caption>
             </figure>
         </section>
         <section ids="tweaking-performance-and-quality" names="tweaking\ performance\ and\ quality 调整性能和质量">

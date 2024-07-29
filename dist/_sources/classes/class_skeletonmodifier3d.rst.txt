@@ -21,11 +21,11 @@ SkeletonModifier3D
 描述
 ----
 
-**SkeletonModifier3D** retrieves a target :ref:`Skeleton3D<class_Skeleton3D>` by having a :ref:`Skeleton3D<class_Skeleton3D>` parent.
+**SkeletonModifier3D** 会将父级 :ref:`Skeleton3D<class_Skeleton3D>` 节点作为目标 :ref:`Skeleton3D<class_Skeleton3D>`\ 。
 
-If there is :ref:`AnimationMixer<class_AnimationMixer>`, modification always performs after playback process of the :ref:`AnimationMixer<class_AnimationMixer>`.
+如果存在 :ref:`AnimationMixer<class_AnimationMixer>`\ ，则修改会在 :ref:`AnimationMixer<class_AnimationMixer>` 的播放处理后执行。
 
-This node should be used to implement custom IK solvers, constraints, or skeleton physics
+该节点应该用于实现自定义 IK 解算器、约束、骨架物理。
 
 .. rst-class:: classref-reftable-group
 
@@ -70,9 +70,9 @@ This node should be used to implement custom IK solvers, constraints, or skeleto
 
 **modification_processed**\ (\ ) :ref:`🔗<class_SkeletonModifier3D_signal_modification_processed>`
 
-Notifies when the modification have been finished.
+修改完成后通知。
 
-\ **Note:** If you want to get the modified bone pose by the modifier, you must use :ref:`Skeleton3D.get_bone_pose<class_Skeleton3D_method_get_bone_pose>` or :ref:`Skeleton3D.get_bone_global_pose<class_Skeleton3D_method_get_bone_global_pose>` at the moment this signal is fired.
+\ **注意：**\ 如果要获取修改器修改后的骨骼姿势，必须在触发该信号时使用 :ref:`Skeleton3D.get_bone_pose<class_Skeleton3D_method_get_bone_pose>` 或 :ref:`Skeleton3D.get_bone_global_pose<class_Skeleton3D_method_get_bone_global_pose>`\ 。
 
 .. rst-class:: classref-section-separator
 
@@ -111,9 +111,9 @@ Notifies when the modification have been finished.
 - |void| **set_influence**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_influence**\ (\ )
 
-Sets the influence of the modification.
+设置修改的影响。
 
-\ **Note:** This value is used by :ref:`Skeleton3D<class_Skeleton3D>` to blend, so the **SkeletonModifier3D** should always apply only 100% of the result without interpolation.
+\ **注意：**\ 该值由 :ref:`Skeleton3D<class_Skeleton3D>` 用来混合，因此 **SkeletonModifier3D** 应始终仅应用结果的 100% 而不进行插值。
 
 .. rst-class:: classref-section-separator
 
@@ -130,9 +130,9 @@ Sets the influence of the modification.
 
 |void| **_process_modification**\ (\ ) |virtual| :ref:`🔗<class_SkeletonModifier3D_private_method__process_modification>`
 
-Override this virtual method to implement a custom skeleton modifier. You should do things like get the :ref:`Skeleton3D<class_Skeleton3D>`'s current pose and apply the pose here.
+覆盖该虚拟方法以实现自定义骨架修改器。你应该执行诸如获取 :ref:`Skeleton3D<class_Skeleton3D>` 的当前姿势并在此处应用姿势之类的操作。
 
-\ :ref:`_process_modification<class_SkeletonModifier3D_private_method__process_modification>` must not apply :ref:`influence<class_SkeletonModifier3D_property_influence>` to bone poses because the :ref:`Skeleton3D<class_Skeleton3D>` automatically applies influence to all bone poses set by the modifier.
+\ :ref:`_process_modification<class_SkeletonModifier3D_private_method__process_modification>` 不得将 :ref:`influence<class_SkeletonModifier3D_property_influence>` 应用于骨骼姿势，因为 :ref:`Skeleton3D<class_Skeleton3D>` 会自动将影响应用于修改器设置的所有骨骼姿势。
 
 .. rst-class:: classref-item-separator
 
@@ -144,13 +144,13 @@ Override this virtual method to implement a custom skeleton modifier. You should
 
 :ref:`Skeleton3D<class_Skeleton3D>` **get_skeleton**\ (\ ) |const| :ref:`🔗<class_SkeletonModifier3D_method_get_skeleton>`
 
-Get parent :ref:`Skeleton3D<class_Skeleton3D>` node if found.
+存在 :ref:`Skeleton3D<class_Skeleton3D>` 父节点时将其返回。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

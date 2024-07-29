@@ -15,7 +15,8 @@
         <paragraph>用于让 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 中的骨骼对物理作出反应的物理体。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph><strong>PhysicalBone3D</strong> 节点是一种能够让 <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> 中的骨骼对物理作出反应的物理体。</paragraph>
+            <paragraph>The <strong>PhysicalBone3D</strong> node is a physics body that can be used to make bones in a <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference> react to physics.</paragraph>
+            <paragraph><strong>Note:</strong> In order to detect physical bones with raycasts, the <reference internal="True" refuri="class_skeletonmodifier3d#class-skeletonmodifier3d-property-active"><inline classes="std std-ref">SkeletonModifier3D.active</inline></reference> property of the parent <reference internal="True" refuri="class_physicalbonesimulator3d#class-physicalbonesimulator3d"><inline classes="std std-ref">PhysicalBoneSimulator3D</inline></reference> must be <literal>true</literal> and the <reference internal="True" refuri="class_skeleton3d#class-skeleton3d"><inline classes="std std-ref">Skeleton3D</inline></reference>'s bone must be assigned to <strong>PhysicalBone3D</strong> correctly; it means that <reference internal="True" refid="class-physicalbone3d-method-get-bone-id"><inline classes="std std-ref">get_bone_id</inline></reference> should return a valid id (<literal>&gt;= 0</literal>).</paragraph>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="属性">
             <title>属性</title>
@@ -241,7 +242,7 @@
                                 <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-physicalbone3d-method-get-bone-id"><inline classes="std std-ref">get_bone_id</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-physicalbone3d-method-get-bone-id"><inline classes="std std-ref">get_bone_id</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -281,32 +282,32 @@
             <target refid="class-physicalbone3d-constant-joint-type-none"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-none" names="class_physicalbone3d_constant_joint_type_none"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_NONE</strong> = <literal>0</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <target refid="class-physicalbone3d-constant-joint-type-pin"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-pin" names="class_physicalbone3d_constant_joint_type_pin"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_PIN</strong> = <literal>1</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <target refid="class-physicalbone3d-constant-joint-type-cone"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-cone" names="class_physicalbone3d_constant_joint_type_cone"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_CONE</strong> = <literal>2</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <target refid="class-physicalbone3d-constant-joint-type-hinge"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-hinge" names="class_physicalbone3d_constant_joint_type_hinge"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_HINGE</strong> = <literal>3</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <target refid="class-physicalbone3d-constant-joint-type-slider"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-slider" names="class_physicalbone3d_constant_joint_type_slider"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_SLIDER</strong> = <literal>4</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <target refid="class-physicalbone3d-constant-joint-type-6dof"></target>
             <paragraph classes="classref-enumeration-constant" ids="class-physicalbone3d-constant-joint-type-6dof" names="class_physicalbone3d_constant_joint_type_6dof"><reference internal="True" refid="enum-physicalbone3d-jointtype"><inline classes="std std-ref">JointType</inline></reference> <strong>JOINT_TYPE_6DOF</strong> = <literal>5</literal></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个枚举的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该枚举目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
         </section>
         <transition classes="classref-section-separator"></transition>
@@ -396,8 +397,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_using_custom_integrator</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>If <literal>true</literal>, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the <reference internal="True" refid="class-physicalbone3d-private-method-integrate-forces"><inline classes="std std-ref">_integrate_forces</inline></reference> method, if that virtual method is overridden.</paragraph>
-            <paragraph>Setting this property will call the method <reference internal="True" refuri="class_physicsserver3d#class-physicsserver3d-method-body-set-omit-force-integration"><inline classes="std std-ref">PhysicsServer3D.body_set_omit_force_integration</inline></reference> internally.</paragraph>
+            <paragraph>如果为 <literal>true</literal>，则该物体的标准力积分（如重力或阻尼）将被禁用。除了碰撞响应之外，如果覆盖了 <reference internal="True" refid="class-physicalbone3d-private-method-integrate-forces"><inline classes="std std-ref">_integrate_forces</inline></reference> 方法，则物体将仅按照该方法确定的方式移动。</paragraph>
+            <paragraph>设置该属性将在内部调用方法 <reference internal="True" refuri="class_physicsserver3d#class-physicsserver3d-method-body-set-omit-force-integration"><inline classes="std std-ref">PhysicsServer3D.body_set_omit_force_integration</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-property-friction"></target>
             <paragraph classes="classref-property" ids="class-physicalbone3d-property-friction" names="class_physicalbone3d_property_friction"><reference internal="True" refuri="class_float#class-float"><inline classes="std std-ref">float</inline></reference> <strong>friction</strong> = <literal>1.0</literal> <reference internal="True" refid="class-physicalbone3d-property-friction"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -513,44 +514,44 @@
             <title>方法说明</title>
             <target refid="class-physicalbone3d-private-method-integrate-forces"></target>
             <paragraph classes="classref-method" ids="class-physicalbone3d-private-method-integrate-forces" names="class_physicalbone3d_private_method__integrate_forces"><abbreviation explanation="无返回值。">void</abbreviation> <strong>_integrate_forces</strong>(state: <reference internal="True" refuri="class_physicsdirectbodystate3d#class-physicsdirectbodystate3d"><inline classes="std std-ref">PhysicsDirectBodyState3D</inline></reference>) <abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation> <reference internal="True" refid="class-physicalbone3d-private-method-integrate-forces"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it is called before the standard force integration, but the <reference internal="True" refid="class-physicalbone3d-property-custom-integrator"><inline classes="std std-ref">custom_integrator</inline></reference> property allows you to disable the standard force integration and do fully custom force integration for a body.</paragraph>
+            <paragraph>在物理处理过程中被调用，允许你读取并安全地修改对象的模拟状态。默认情况下，它在标准力积分之前调用，但 <reference internal="True" refid="class-physicalbone3d-property-custom-integrator"><inline classes="std std-ref">custom_integrator</inline></reference> 属性允许你禁用标准力积分并对物体进行完全自定义的力积分。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-method-apply-central-impulse"></target>
             <paragraph classes="classref-method" ids="class-physicalbone3d-method-apply-central-impulse" names="class_physicalbone3d_method_apply_central_impulse"><abbreviation explanation="无返回值。">void</abbreviation> <strong>apply_central_impulse</strong>(impulse: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <reference internal="True" refid="class-physicalbone3d-method-apply-central-impulse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该方法目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-method-apply-impulse"></target>
             <paragraph classes="classref-method" ids="class-physicalbone3d-method-apply-impulse" names="class_physicalbone3d_method_apply_impulse"><abbreviation explanation="无返回值。">void</abbreviation> <strong>apply_impulse</strong>(impulse: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, position: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference> = Vector3(0, 0, 0)) <reference internal="True" refid="class-physicalbone3d-method-apply-impulse"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该方法目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-method-get-bone-id"></target>
-            <paragraph classes="classref-method" ids="class-physicalbone3d-method-get-bone-id" names="class_physicalbone3d_method_get_bone_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_bone_id</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-physicalbone3d-method-get-bone-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph classes="classref-method" ids="class-physicalbone3d-method-get-bone-id" names="class_physicalbone3d_method_get_bone_id"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_bone_id</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-physicalbone3d-method-get-bone-id"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该方法目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-method-get-simulate-physics"></target>
             <paragraph classes="classref-method" ids="class-physicalbone3d-method-get-simulate-physics" names="class_physicalbone3d_method_get_simulate_physics"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_simulate_physics</strong>() <reference internal="True" refid="class-physicalbone3d-method-get-simulate-physics"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该方法目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-physicalbone3d-method-is-simulating-physics"></target>
             <paragraph classes="classref-method" ids="class-physicalbone3d-method-is-simulating-physics" names="class_physicalbone3d_method_is_simulating_physics"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_simulating_physics</strong>() <reference internal="True" refid="class-physicalbone3d-method-is-simulating-physics"><inline classes="std std-ref">🔗</inline></reference></paragraph>
             <container classes="contribute">
-                <paragraph>目前没有这个方法的描述。请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>！</paragraph>
+                <paragraph>该方法目前没有描述，请帮我们<reference internal="True" refuri="../contributing/documentation/updating_the_class_reference#doc-updating-the-class-reference"><inline classes="std std-ref">贡献一个</inline></reference>吧！</paragraph>
             </container>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -5,10 +5,10 @@
     <target refid="doc-navigation-advanced-using-navigationlayers"></target>
     <section ids="using-navigationlayers doc-navigation-advanced-using-navigationlayers" names="using\ navigationlayers 使用\ navigationlayer doc_navigation_advanced_using_navigationlayers">
         <title>使用 NavigationLayer</title>
-        <paragraph>NavigationLayers是一项可选功能，用于进一步控制在路径查询中考虑哪些导览网格以及可以连接哪些区域。它们的工作方式类似于物理层如何控制碰撞物件之间的碰撞或视觉层如何控制算绘到视窗的内容。</paragraph>
+        <paragraph>NavigationLayers are an optional feature to further control which navigation meshes are considered in a path query.
+            They work similar to how physics layers control collision between collision objects or how visual layers control what is rendered to the Viewport.</paragraph>
         <paragraph>NavigationLayers可以在 <strong>ProjectSettings</strong> 中与物理层或视觉层相同地命名。</paragraph>
         <image candidates="{'*': 'tutorials/navigation/img/navigationlayers_naming.png'}" uri="tutorials/navigation/img/navigationlayers_naming.png"></image>
-        <paragraph>如果两个区域没有一个兼容的层，NavigationServer将不会合并它们。有关合并导航网格的详细信息，请参见 <reference internal="True" refuri="navigation_connecting_navmesh#doc-navigation-connecting-navmesh"><inline classes="std std-ref">连接导航网格</inline></reference> 。</paragraph>
         <paragraph>如果一个区域没有一个与路径查询的 <literal>navigation_layers</literal> 参数兼容的导览层，则在寻路时将跳过该区域的导览网格。有关查询导览服务器路径的更多信息，请参阅 <reference internal="True" refuri="navigation_using_navigationpaths#doc-navigation-using-navigationpaths"><inline classes="std std-ref">使用 NavigationPath</inline></reference> 。</paragraph>
         <paragraph>NavigationLayers是用作 <strong>bitmask</strong> 的单个 <literal>int</literal> 值。许多与导航相关的节点都具有 <literal>set_navigation_layer_value()</literal> 和 <literal>get_navigation_layer_value()</literal> 函数，可以直接设置和获取层数，而不需要更复杂的逐位操作。</paragraph>
         <paragraph>在脚本中，以下辅助函数可用于处理 <literal>navigation_layers</literal> 位掩码。</paragraph>
@@ -83,7 +83,9 @@ static func disable_bitmask_inx(_bitmask: int, _index: int) -&gt; int:
             </div>
         </container>
         <paragraph>更改路径查询的导览层是 enabling / disabling (启用/停用)整个导览区域的一种性能友善的替代方案。与区域变更相比，具有不同导览层的导览路径查询不会触发导览服务器上的大规模更新。</paragraph>
-        <paragraph>更改NavigationAgent节点的导航层将对下一个路径查询产生直接影响。更改区域的导航层将立即对区域产生影响，但任何新的区域连接或断开连接都将仅在下一个物理帧之后生效。</paragraph>
+        <paragraph>Changing the navigation layers of NavigationAgent nodes will have an immediate
+            effect on the next path query. Changing the navigation layers of
+            regions will have an effect after the next NavigationServer sync.</paragraph>
         <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="翻译状态" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
     </section>
 </document>

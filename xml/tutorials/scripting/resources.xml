@@ -147,12 +147,7 @@ private void OnShoot()
                 inherit the ability to freely translate between object properties and serialized
                 text or binary data (*.tres, *.res). They also inherit the reference-counting
                 memory management from the RefCounted type.</paragraph>
-            <paragraph>This comes with many distinct advantages over alternative data
-                structures, such as JSON, CSV, or custom TXT files. Users can only import these
-                assets as a <reference internal="True" refuri="../../classes/class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> (JSON) or as a
-                <reference internal="True" refuri="../../classes/class_fileaccess#class-fileaccess"><inline classes="std std-ref">FileAccess</inline></reference> to parse. What sets Resources apart is their
-                inheritance of <reference internal="True" refuri="../../classes/class_object#class-object"><inline classes="std std-ref">Object</inline></reference>, <reference internal="True" refuri="../../classes/class_refcounted#class-refcounted"><inline classes="std std-ref">RefCounted</inline></reference>,
-                and <reference internal="True" refuri="../../classes/class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference> features:</paragraph>
+            <paragraph>与 JSON、CSV 和自定义 TXT 文件等其他数据结构相比，资源具有许多明显的优势。用户只能将前者导入为 <reference internal="True" refuri="../../classes/class_dictionary#class-dictionary"><inline classes="std std-ref">Dictionary</inline></reference> (JSON) 或要解析的 <inline classes="xref std std-ref">File</inline>。而资源则不同，它们继承了 <reference internal="True" refuri="../../classes/class_object#class-object"><inline classes="std std-ref">Object</inline></reference>、 <inline classes="xref std std-ref">Reference</inline> 和 <reference internal="True" refuri="../../classes/class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference> 的如下特性：</paragraph>
             <bullet_list bullet="-">
                 <list_item>
                     <paragraph>它们可以定义常量, 因此不需要其他数据字段或对象中的常量.</paragraph>
@@ -195,7 +190,7 @@ private void OnShoot()
             <paragraph>如果脚本的语言支持<reference internal="True" refuri="gdscript/gdscript_basics#doc-gdscript-basics-class-name"><inline classes="std std-ref">脚本类</inline></reference>，则可以简化该过程。仅为脚本定义名称会将其添加到“检查器”的创建对话框。这会将脚本自动添加到你创建的 Resource 对象中。</paragraph>
             <paragraph>让我们来看一个例子。创建一个 <reference internal="True" refuri="../../classes/class_resource#class-resource"><inline classes="std std-ref">Resource</inline></reference> 然后把它命名为 <literal>bot_stats</literal>。此时文件面板中会显示全名 <literal>bot_stats.tres</literal>。不带脚本的话这个文件没什么意义，那我们就来添加一些数据和逻辑吧！给它附加一个名叫 <literal>bot_stats.gd</literal> 的脚本（或者新建一个脚本之后把它拖上来）。</paragraph>
             <note>
-                <paragraph>If you're using C#, you need to annotate your Resource class with the <literal>[GlobalClass]</literal> attribute for it to show up in the create resource GUI.</paragraph>
+                <paragraph>如果使用 C# 实现，则需要用 [GlobalClass] 属性修饰你的自定义资源类，以使它能够显示在编辑器的创建 Resource 界面中。</paragraph>
             </note>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">

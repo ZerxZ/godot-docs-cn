@@ -12,14 +12,14 @@ PhysicalBoneSimulator3D
 
 **继承：** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that can be the parent of :ref:`PhysicalBone3D<class_PhysicalBone3D>` and can apply the simulation results to :ref:`Skeleton3D<class_Skeleton3D>`.
+可以作为 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 的父节点，并可以将模拟结果应用到 :ref:`Skeleton3D<class_Skeleton3D>` 的节点。
 
 .. rst-class:: classref-introduction-group
 
 描述
 ----
 
-Node that can be the parent of :ref:`PhysicalBone3D<class_PhysicalBone3D>` and can apply the simulation results to :ref:`Skeleton3D<class_Skeleton3D>`.
+可以作为 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 的父节点，并可以将模拟结果应用到 :ref:`Skeleton3D<class_Skeleton3D>` 的节点。
 
 .. rst-class:: classref-reftable-group
 
@@ -56,7 +56,7 @@ Node that can be the parent of :ref:`PhysicalBone3D<class_PhysicalBone3D>` and c
 
 :ref:`bool<class_bool>` **is_simulating_physics**\ (\ ) |const| :ref:`🔗<class_PhysicalBoneSimulator3D_method_is_simulating_physics>`
 
-Returns a boolean that indicates whether the **PhysicalBoneSimulator3D** is running and simulating.
+返回一个布尔值，指示 **PhysicalBoneSimulator3D** 是否正在运行和模拟。
 
 .. rst-class:: classref-item-separator
 
@@ -113,10 +113,10 @@ Returns a boolean that indicates whether the **PhysicalBoneSimulator3D** is runn
 让 Skeleton 中的 :ref:`PhysicalBone3D<class_PhysicalBone3D>` 节点停止仿真模拟。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

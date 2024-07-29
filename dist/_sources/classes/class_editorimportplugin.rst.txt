@@ -391,10 +391,10 @@ EditorImportPlugin 通过与特定的文件扩展名和资源类型相关联来�
 该函数只能在 :ref:`_import<class_EditorImportPlugin_private_method__import>` 回调期间调用，它允许从中手动导入资源。当导入的文件生成需要导入的外部资源（例如图像）时，这很有用。“.import”文件的自定义参数可以通过 ``custom_options`` 传递。此外，在多个导入器可以处理一个文件的情况下，可以指定 ``custom_importer`` 以强制使用某个特定的导入器。该函数会执行一次资源导入并立即返回成功或错误代码。\ ``generator_parameters`` 定义可选的额外元数据，这些元数据将作为 ``generator_parameters`` 存储在 ``.import`` 文件的 ``remap`` 小节中，例如存储源数据的一个 md5 散列值。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

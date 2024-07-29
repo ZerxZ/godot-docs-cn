@@ -19,9 +19,9 @@ PhysicalSkyMaterial
 描述
 ----
 
-The **PhysicalSkyMaterial** uses the Preetham analytic daylight model to draw a sky based on physical properties. This results in a substantially more realistic sky than the :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, but it is slightly slower and less flexible.
+该 **PhysicalSkyMaterial** 使用 Preetham 解析日光模型，根据物理属性绘制一个天空。这会产生比 :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>` 更加逼真的天空，但速度稍慢且灵活性较差。
 
-The **PhysicalSkyMaterial** only supports one sun. The color, energy, and direction of the sun are taken from the first :ref:`DirectionalLight3D<class_DirectionalLight3D>` in the scene tree.
+该 **PhysicalSkyMaterial** 仅支持一个太阳。太阳的颜色、能量和方向，取自场景树中的第一个 :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ 。
 
 .. rst-class:: classref-reftable-group
 
@@ -248,10 +248,10 @@ The **PhysicalSkyMaterial** only supports one sun. The color, energy, and direct
 如果为 ``true``\ ，则启用去色带。去色带会增加少量噪点，这有助于减少天空中颜色的平滑变化而出现的色带。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

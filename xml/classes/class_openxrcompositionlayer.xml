@@ -12,11 +12,11 @@
         <paragraph><strong>实验性：</strong> This class may be changed or removed in future versions.</paragraph>
         <paragraph><strong>继承：</strong> <reference internal="True" refuri="class_node3d#class-node3d"><inline classes="std std-ref">Node3D</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_node#class-node"><inline classes="std std-ref">Node</inline></reference> <strong>&lt;</strong> <reference internal="True" refuri="class_object#class-object"><inline classes="std std-ref">Object</inline></reference></paragraph>
         <paragraph><strong>派生：</strong> <reference internal="True" refuri="class_openxrcompositionlayercylinder#class-openxrcompositionlayercylinder"><inline classes="std std-ref">OpenXRCompositionLayerCylinder</inline></reference>, <reference internal="True" refuri="class_openxrcompositionlayerequirect#class-openxrcompositionlayerequirect"><inline classes="std std-ref">OpenXRCompositionLayerEquirect</inline></reference>, <reference internal="True" refuri="class_openxrcompositionlayerquad#class-openxrcompositionlayerquad"><inline classes="std std-ref">OpenXRCompositionLayerQuad</inline></reference></paragraph>
-        <paragraph>The parent class of all OpenXR composition layer nodes.</paragraph>
+        <paragraph>所有 OpenXR 合成层节点的父类。</paragraph>
         <section classes="classref-introduction-group" ids="id1" names="描述">
             <title>描述</title>
-            <paragraph>Composition layers allow 2D viewports to be displayed inside of the headset by the XR compositor through special projections that retain their quality. This allows for rendering clear text while keeping the layer at a native resolution.</paragraph>
-            <paragraph><strong>Note:</strong> If the OpenXR runtime doesn't support the given composition layer type, a fallback mesh can be generated with a <reference internal="True" refuri="class_viewporttexture#class-viewporttexture"><inline classes="std std-ref">ViewportTexture</inline></reference>, in order to emulate the composition layer.</paragraph>
+            <paragraph>合成层允许 XR 合成器通过保留其质量的特殊投影，从而在头戴式设备内显示 2D 视口。这样可以在保持图层的原始分辨率的同时，渲染清晰的文本。</paragraph>
+            <paragraph><strong>注意：</strong>如果 OpenXR 运行时不支持给定的合成层类型，则可以使用 <reference internal="True" refuri="class_viewporttexture#class-viewporttexture"><inline classes="std std-ref">ViewportTexture</inline></reference> 生成后备网格，以模拟合成层。</paragraph>
         </section>
         <section classes="classref-reftable-group" ids="id2" names="属性">
             <title>属性</title>
@@ -85,7 +85,7 @@
                                 <paragraph><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-openxrcompositionlayer-method-intersects-ray"><inline classes="std std-ref">intersects_ray</inline></reference>(origin: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, direction: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-openxrcompositionlayer-method-intersects-ray"><inline classes="std std-ref">intersects_ray</inline></reference>(origin: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, direction: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                         <row>
@@ -93,7 +93,7 @@
                                 <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference></paragraph>
                             </entry>
                             <entry>
-                                <paragraph><reference internal="True" refid="class-openxrcompositionlayer-method-is-natively-supported"><inline classes="std std-ref">is_natively_supported</inline></reference>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
+                                <paragraph><reference internal="True" refid="class-openxrcompositionlayer-method-is-natively-supported"><inline classes="std std-ref">is_natively_supported</inline></reference>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></paragraph>
                             </entry>
                         </row>
                     </tbody>
@@ -113,8 +113,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_alpha_blend</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Enables the blending the layer using its alpha channel.</paragraph>
-            <paragraph>Can be combined with <reference internal="True" refuri="class_viewport#class-viewport-property-transparent-bg"><inline classes="std std-ref">Viewport.transparent_bg</inline></reference> to give the layer a transparent background.</paragraph>
+            <paragraph>启用使用其 alpha 通道混合图层的功能。</paragraph>
+            <paragraph>可以与 <reference internal="True" refuri="class_viewport#class-viewport-property-transparent-bg"><inline classes="std std-ref">Viewport.transparent_bg</inline></reference> 结合使用，以便为图层提供透明背景。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-openxrcompositionlayer-property-enable-hole-punch"></target>
             <paragraph classes="classref-property" ids="class-openxrcompositionlayer-property-enable-hole-punch" names="class_openxrcompositionlayer_property_enable_hole_punch"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>enable_hole_punch</strong> = <literal>false</literal> <reference internal="True" refid="class-openxrcompositionlayer-property-enable-hole-punch"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -126,8 +126,8 @@
                     <paragraph><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>get_enable_hole_punch</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>Enables a technique called "hole punching", which allows putting the composition layer behind the main projection layer (i.e. setting <reference internal="True" refid="class-openxrcompositionlayer-property-sort-order"><inline classes="std std-ref">sort_order</inline></reference> to a negative value) while "punching a hole" through everything rendered by Godot so that the layer is still visible.</paragraph>
-            <paragraph>This can be used to create the illusion that the composition layer exists in the same 3D space as everything rendered by Godot, allowing objects to appear to pass both behind or in front of the composition layer.</paragraph>
+            <paragraph>启用一种称为“打孔”的技术，该技术允许将合成层置于主投影层后面（即将 <reference internal="True" refid="class-openxrcompositionlayer-property-sort-order"><inline classes="std std-ref">sort_order</inline></reference> 设置为负值），同时在 Godot 渲染的所有内容上“打一个洞”，以便该层仍然可见。</paragraph>
+            <paragraph>这可用于创建合成层与 Godot 渲染的所有内容存在于同一 3D 空间中的幻觉，使对象看起来既从合成层的后面又从合成层的前面经过。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-openxrcompositionlayer-property-layer-viewport"></target>
             <paragraph classes="classref-property" ids="class-openxrcompositionlayer-property-layer-viewport" names="class_openxrcompositionlayer_property_layer_viewport"><reference internal="True" refuri="class_subviewport#class-subviewport"><inline classes="std std-ref">SubViewport</inline></reference> <strong>layer_viewport</strong> <reference internal="True" refid="class-openxrcompositionlayer-property-layer-viewport"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -139,7 +139,7 @@
                     <paragraph><reference internal="True" refuri="class_subviewport#class-subviewport"><inline classes="std std-ref">SubViewport</inline></reference> <strong>get_layer_viewport</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The <reference internal="True" refuri="class_subviewport#class-subviewport"><inline classes="std std-ref">SubViewport</inline></reference> to render on the composition layer.</paragraph>
+            <paragraph>合成层上渲染的 <reference internal="True" refuri="class_subviewport#class-subviewport"><inline classes="std std-ref">SubViewport</inline></reference>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-openxrcompositionlayer-property-sort-order"></target>
             <paragraph classes="classref-property" ids="class-openxrcompositionlayer-property-sort-order" names="class_openxrcompositionlayer_property_sort_order"><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>sort_order</strong> = <literal>1</literal> <reference internal="True" refid="class-openxrcompositionlayer-property-sort-order"><inline classes="std std-ref">🔗</inline></reference></paragraph>
@@ -151,28 +151,28 @@
                     <paragraph><reference internal="True" refuri="class_int#class-int"><inline classes="std std-ref">int</inline></reference> <strong>get_sort_order</strong>()</paragraph>
                 </list_item>
             </bullet_list>
-            <paragraph>The sort order for this composition layer. Higher numbers will be shown in front of lower numbers.</paragraph>
-            <paragraph><strong>Note:</strong> This will have no effect if a fallback mesh is being used.</paragraph>
+            <paragraph>合成层的排序顺序。数字较大的层显示在数字较小的层之前。</paragraph>
+            <paragraph><strong>注意：</strong>使用回退网格时无效。</paragraph>
         </section>
         <transition classes="classref-section-separator"></transition>
         <section classes="classref-descriptions-group" ids="id5" names="方法说明">
             <title>方法说明</title>
             <target refid="class-openxrcompositionlayer-method-intersects-ray"></target>
-            <paragraph classes="classref-method" ids="class-openxrcompositionlayer-method-intersects-ray" names="class_openxrcompositionlayer_method_intersects_ray"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>intersects_ray</strong>(origin: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, direction: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-openxrcompositionlayer-method-intersects-ray"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns UV coordinates where the given ray intersects with the composition layer. <literal>origin</literal> and <literal>direction</literal> must be in global space.</paragraph>
-            <paragraph>Returns <literal>Vector2(-1.0, -1.0)</literal> if the ray doesn't intersect.</paragraph>
+            <paragraph classes="classref-method" ids="class-openxrcompositionlayer-method-intersects-ray" names="class_openxrcompositionlayer_method_intersects_ray"><reference internal="True" refuri="class_vector2#class-vector2"><inline classes="std std-ref">Vector2</inline></reference> <strong>intersects_ray</strong>(origin: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>, direction: <reference internal="True" refuri="class_vector3#class-vector3"><inline classes="std std-ref">Vector3</inline></reference>) <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-openxrcompositionlayer-method-intersects-ray"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>返回给定射线与合成层相交的 UV 坐标。<literal>origin</literal> 和 <literal>direction</literal> 必须位于全局空间中。</paragraph>
+            <paragraph>如果射线不相交，则返回 <literal>Vector2(-1.0, -1.0)</literal>。</paragraph>
             <transition classes="classref-item-separator"></transition>
             <target refid="class-openxrcompositionlayer-method-is-natively-supported"></target>
-            <paragraph classes="classref-method" ids="class-openxrcompositionlayer-method-is-natively-supported" names="class_openxrcompositionlayer_method_is_natively_supported"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_natively_supported</strong>() <abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-openxrcompositionlayer-method-is-natively-supported"><inline classes="std std-ref">🔗</inline></reference></paragraph>
-            <paragraph>Returns true if the OpenXR runtime natively supports this composition layer type.</paragraph>
-            <paragraph><strong>Note:</strong> This will only return an accurate result after the OpenXR session has started.</paragraph>
+            <paragraph classes="classref-method" ids="class-openxrcompositionlayer-method-is-natively-supported" names="class_openxrcompositionlayer_method_is_natively_supported"><reference internal="True" refuri="class_bool#class-bool"><inline classes="std std-ref">bool</inline></reference> <strong>is_natively_supported</strong>() <abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation> <reference internal="True" refid="class-openxrcompositionlayer-method-is-natively-supported"><inline classes="std std-ref">🔗</inline></reference></paragraph>
+            <paragraph>如果 OpenXR 运行时本身支持该合成层类型，则返回 true。</paragraph>
+            <paragraph><strong>注意：</strong>仅在 OpenXR 会话启动后才会返回准确结果。</paragraph>
             <substitution_definition names="virtual"><abbreviation explanation="本方法通常需要用户覆盖才能生效。">virtual</abbreviation></substitution_definition>
-            <substitution_definition names="const"><abbreviation explanation="本方法没有副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
+            <substitution_definition names="const"><abbreviation explanation="本方法无副作用，不会修改该实例的任何成员变量。">const</abbreviation></substitution_definition>
             <substitution_definition names="vararg"><abbreviation explanation="本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。">vararg</abbreviation></substitution_definition>
             <substitution_definition names="constructor"><abbreviation explanation="本方法用于构造某个类型。">constructor</abbreviation></substitution_definition>
             <substitution_definition names="static"><abbreviation explanation="调用本方法无需实例，可直接使用类名进行调用。">static</abbreviation></substitution_definition>
-            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效操作符。">operator</abbreviation></substitution_definition>
-            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列标志构成的位掩码整数。">BitField</abbreviation></substitution_definition>
+            <substitution_definition names="operator"><abbreviation explanation="本方法描述的是使用本类型作为左操作数的有效运算符。">operator</abbreviation></substitution_definition>
+            <substitution_definition names="bitfield"><abbreviation explanation="这个值是由下列位标志构成位掩码的整数。">BitField</abbreviation></substitution_definition>
             <substitution_definition names="void"><abbreviation explanation="无返回值。">void</abbreviation></substitution_definition>
             <substitution_definition names="weblate_widget"><reference refuri="https://hosted.weblate.org/engage/godot-engine/zh_CN/?utm_source=widget"><image alt="Translation status" candidates="{'?': 'https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png'}" height="66" uri="https://hosted.weblate.org/widgets/godot-engine/zh_CN/godot-docs/287x66-white.png" width="287"></image></reference></substitution_definition>
         </section>

@@ -480,7 +480,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_NEAREST** = ``0``
 
-查找最近的时间键。
+查找与时间最接近的关键帧。
 
 .. _class_Animation_constant_FIND_MODE_APPROX:
 
@@ -488,7 +488,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_APPROX** = ``1``
 
-仅查找与时间相近的键。
+仅查找与时间近似的关键帧。
 
 .. _class_Animation_constant_FIND_MODE_EXACT:
 
@@ -496,7 +496,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_EXACT** = ``2``
 
-仅查找与时间匹配的键。
+仅查找与时间一致的关键帧。
 
 .. rst-class:: classref-section-separator
 
@@ -749,7 +749,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`Vector2<class_Vector2>` **bezier_track_get_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_get_key_in_handle>`
 
-返回由 ``key_idx`` 识别的键的入点手柄，\ ``track_idx`` 必须是贝赛尔曲线轨道的索引。
+返回由 ``key_idx`` 识别的关键帧的入点句柄，\ ``track_idx`` 必须是贝赛尔曲线轨道的索引。
 
 .. rst-class:: classref-item-separator
 
@@ -761,7 +761,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`Vector2<class_Vector2>` **bezier_track_get_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_get_key_out_handle>`
 
-返回由 ``key_idx`` 识别的键的出点手柄，\ ``track_idx`` 必须是贝赛尔曲线轨道的索引。
+返回由 ``key_idx`` 识别的关键帧的出点句柄，\ ``track_idx`` 必须是贝赛尔曲线轨道的索引。
 
 .. rst-class:: classref-item-separator
 
@@ -785,7 +785,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`int<class_int>` **bezier_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, value\: :ref:`float<class_float>`, in_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0), out_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) :ref:`🔗<class_Animation_method_bezier_track_insert_key>`
 
-在给定的时间 ``time`` 秒处插入贝塞尔轨道键。\ ``track_idx`` 必须是贝塞尔轨道的索引。
+在给定的时间 ``time`` 秒处插入贝塞尔轨道关键帧。\ ``track_idx`` 必须是贝塞尔轨道的索引。
 
 \ ``in_handle`` 是添加的贝塞尔曲线点的左侧权重，\ ``out_handle`` 是右侧权重，而 ``value`` 是这个点的实际值。
 
@@ -811,7 +811,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 |void| **bezier_track_set_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, in_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Animation_method_bezier_track_set_key_in_handle>`
 
-将 ``key_idx`` 所标识的键的入点手柄设置为 ``in_handle`` 值。\ ``track_idx`` 必须是贝塞尔轨道的索引。
+将 ``key_idx`` 所标识的关键帧的入点句柄设置为 ``in_handle`` 值。\ ``track_idx`` 必须是贝塞尔轨道的索引。
 
 .. rst-class:: classref-item-separator
 
@@ -823,7 +823,7 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 |void| **bezier_track_set_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, out_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Animation_method_bezier_track_set_key_out_handle>`
 
-将由 ``key_idx`` 确定的关键帧的出点手柄设置为 ``out_handle``\ 。参数 ``track_idx`` 必须是贝塞尔轨道的索引。
+将由 ``key_idx`` 确定的关键帧的出点句柄设置为 ``out_handle``\ 。参数 ``track_idx`` 必须是贝塞尔轨道的索引。
 
 .. rst-class:: classref-item-separator
 
@@ -1041,13 +1041,13 @@ enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 :ref:`int<class_int>` **track_find_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, find_mode\: :ref:`FindMode<enum_Animation_FindMode>` = 0, limit\: :ref:`bool<class_bool>` = false, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_track_find_key>`
 
-Finds the key index by time in a given track. Optionally, only find it if the approx/exact time is given.
+根据时间查找给定轨道中的关键帧索引号。查找时可以要求与给定时间近似/一致。
 
-If ``limit`` is ``true``, it does not return keys outside the animation range.
+如果 ``limit`` 为 ``true``\ ，则不会返回动画范围外的关键帧。
 
-If ``backward`` is ``true``, the direction is reversed in methods that rely on one directional processing.
+如果 ``backward`` 为 ``true``\ ，则会按照反方向执行需要单向处理的方法。
 
-For example, in case ``find_mode`` is :ref:`FIND_MODE_NEAREST<class_Animation_constant_FIND_MODE_NEAREST>`, if there is no key in the current position just after seeked, the first key found is retrieved by searching before the position, but if ``backward`` is ``true``, the first key found is retrieved after the position.
+例如 ``find_mode`` 为 :ref:`FIND_MODE_NEAREST<class_Animation_constant_FIND_MODE_NEAREST>` 时，如果查找的位置不存在关键帧，那么就会查找并返回该位置之前的第一个关键帧，而如果 ``backward`` 为 ``true``\ ，则会返回该位置之后的第一个关键帧。
 
 .. rst-class:: classref-item-separator
 
@@ -1347,9 +1347,9 @@ For example, in case ``find_mode`` is :ref:`FIND_MODE_NEAREST<class_Animation_co
 
 |void| **track_set_path**\ (\ track_idx\: :ref:`int<class_int>`, path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_Animation_method_track_set_path>`
 
-设置轨道的路径。路径必须是指向场景树节点的有效路径，必须从将要实现动画的节点的父节点开始指定。控制属性或骨骼的轨道必须在路径后面加上它们的名字，用 ``":"`` 分隔。
+Sets the path of a track. Paths must be valid scene-tree paths to a node and must be specified starting from the :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>` that will reproduce the animation. Tracks that control properties or bones must append their name after the path, separated by ``":"``.
 
-例如，\ ``"character/skeleton:ankle"`` 或 ``"character/mesh:transform/local"``\ 。
+For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
 
 .. rst-class:: classref-item-separator
 
@@ -1385,9 +1385,9 @@ For example, in case ``find_mode`` is :ref:`FIND_MODE_NEAREST<class_Animation_co
 
 :ref:`Variant<class_Variant>` **value_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_value_track_interpolate>`
 
-Returns the interpolated value at the given time (in seconds). The ``track_idx`` must be the index of a value track.
+返回在给定时间点（单位为秒）插值后的值。\ ``track_idx`` 必须是值轨道的索引号。
 
-A ``backward`` mainly affects the direction of key retrieval of the track with :ref:`UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` converted by :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS>` to match the result with :ref:`track_find_key<class_Animation_method_track_find_key>`.
+\ ``backward`` 影响的主要是从轨道获取关键帧的方向，与 :ref:`track_find_key<class_Animation_method_track_find_key>` 的结果一致，此处的轨道指根据 :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS>` 转换的 :ref:`UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` 轨道。
 
 .. rst-class:: classref-item-separator
 
@@ -1402,10 +1402,10 @@ A ``backward`` mainly affects the direction of key retrieval of the track with :
 设置值轨道的更新模式（请参阅 :ref:`UpdateMode<enum_Animation_UpdateMode>`\ ）。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

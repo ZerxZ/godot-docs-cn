@@ -123,19 +123,19 @@ Engine
 - |void| **set_max_fps**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_fps**\ (\ )
 
-The maximum number of frames that can be rendered every second (FPS). A value of ``0`` means the framerate is uncapped.
+每秒可渲染的最大帧数（FPS）。值为 ``0`` 表示帧速率不受限制。
 
-Limiting the FPS can be useful to reduce the host machine's power consumption, which reduces heat, noise emissions, and improves battery life.
+限制 FPS 会对降低主机功耗很有帮助，可以减少热量、噪音排放并延长电池寿命。
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled** or **Adaptive**, the setting takes precedence and the max FPS number cannot exceed the monitor's refresh rate.
+如果 :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 **Enabled** 或 **Adaptive** ，则该设置将被优先考虑，并且最大 FPS 数不能超过显示器的刷新率。
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+如果 :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 **Enabled**\ ，在启用了可变刷新率（G-Sync/FreeSync）的显示器上，使用比显示器刷新率低几帧的 FPS 限制，将\ `减少输入延迟，同时可以避免撕裂 <https://blurbusters.com/howto-low-lag-vsync-on/>`__\ 。
 
-See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
+另见 :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` 和 :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`\ 。
 
-\ **Note:** The actual number of frames per second may still be below this value if the CPU or GPU cannot keep up with the project's logic and rendering.
+\ **注意：**\ 如果CPU或GPU跟不上项目的逻辑和渲染，则每秒的实际帧数可能仍低于该值。
 
-\ **Note:** If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Disabled**, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
+\ **注意：**\ 如果 :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` 为 **Disabled**\ ，则与无上限的帧率相比，将 FPS 限制为可以在系统上持续达到的较高值，可以减少输入滞后。由于这是通过确保 GPU 负载低于 100% 来实现的，因此这种延迟减少仅在 GPU 瓶颈场景中有效，在 CPU 瓶颈场景中无效。
 
 .. rst-class:: classref-item-separator
 
@@ -753,10 +753,10 @@ See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_
 移除在 ``name`` 下注册的单例。该单例对象\ *不会*\ 被释放。仅适用于使用 :ref:`register_singleton<class_Engine_method_register_singleton>` 注册的用户定义的单例。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

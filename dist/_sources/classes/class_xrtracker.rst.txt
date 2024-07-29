@@ -21,7 +21,7 @@ XRTracker
 描述
 ----
 
-This object is the base of all XR trackers.
+所有 XR 追踪器的基类对象。
 
 .. rst-class:: classref-introduction-group
 
@@ -83,21 +83,21 @@ This object is the base of all XR trackers.
 - |void| **set_tracker_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
 - :ref:`StringName<class_StringName>` **get_tracker_name**\ (\ )
 
-The unique name of this tracker. The trackers that are available differ between various XR runtimes and can often be configured by the user. Godot maintains a number of reserved names that it expects the :ref:`XRInterface<class_XRInterface>` to implement if applicable:
+该追踪器的唯一名称。可用的追踪器因各种 XR 运行时而异，并且通常可以由用户配置。Godot 维护了一些保留名称，如果可应用，它希望 :ref:`XRInterface<class_XRInterface>` 实现这些名称：
 
-- ``head`` identifies the :ref:`XRPositionalTracker<class_XRPositionalTracker>` of the players head
+- ``head`` 标识玩家头部的 :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ 
 
-- ``left_hand`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the players left hand
+- ``left_hand`` 标识玩家左手的 :ref:`XRControllerTracker<class_XRControllerTracker>`\ 
 
-- ``right_hand`` identifies the :ref:`XRControllerTracker<class_XRControllerTracker>` in the players right hand
+- ``right_hand`` 标识玩家右手的 :ref:`XRControllerTracker<class_XRControllerTracker>`\ 
 
-- ``/user/hand_tracker/left`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the players left hand
+- ``/user/hand_tracker/left`` 标识玩家左手的 :ref:`XRHandTracker<class_XRHandTracker>`\ 
 
-- ``/user/hand_tracker/right`` identifies the :ref:`XRHandTracker<class_XRHandTracker>` for the players right hand
+- ``/user/hand_tracker/right`` 标识玩家右手的 :ref:`XRHandTracker<class_XRHandTracker>`\ 
 
-- ``/user/body_tracker`` identifies the :ref:`XRBodyTracker<class_XRBodyTracker>` for the players body
+- ``/user/body_tracker`` 标识玩家身体的 :ref:`XRBodyTracker<class_XRBodyTracker>`\ 
 
-- ``/user/face_tracker`` identifies the :ref:`XRFaceTracker<class_XRFaceTracker>` for the players face
+- ``/user/face_tracker`` 标识玩家脸部的 :ref:`XRFaceTracker<class_XRFaceTracker>`
 
 .. rst-class:: classref-item-separator
 
@@ -117,10 +117,10 @@ The unique name of this tracker. The trackers that are available differ between 
 该追踪器的类型。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

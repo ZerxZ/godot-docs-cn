@@ -12,22 +12,22 @@ SkinReference
 
 **继承：** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A reference-counted holder object for a skeleton RID used in the :ref:`RenderingServer<class_RenderingServer>`.
+骨架 RID 的引用计数占位对象，\ :ref:`RenderingServer<class_RenderingServer>` 中会使用该 RID。
 
 .. rst-class:: classref-introduction-group
 
 描述
 ----
 
-An internal object containing a mapping from a :ref:`Skin<class_Skin>` used within the context of a particular :ref:`MeshInstance3D<class_MeshInstance3D>` to refer to the skeleton's :ref:`RID<class_RID>` in the RenderingServer.
+包含来自 :ref:`Skin<class_Skin>` （在特定 :ref:`MeshInstance3D<class_MeshInstance3D>` 上下文中使用）的映射的内部对象，用于引用 RenderingServer 中的骨架 :ref:`RID<class_RID>`\ 。
 
-See also :ref:`MeshInstance3D.get_skin_reference<class_MeshInstance3D_method_get_skin_reference>` and :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`.
+另请参阅 :ref:`MeshInstance3D.get_skin_reference<class_MeshInstance3D_method_get_skin_reference>` 和 :ref:`RenderingServer.instance_attach_skeleton<class_RenderingServer_method_instance_attach_skeleton>`\ 。
 
-Note that despite the similar naming, the skeleton RID used in the :ref:`RenderingServer<class_RenderingServer>` does not have a direct one-to-one correspondence to a :ref:`Skeleton3D<class_Skeleton3D>` node.
+请注意，尽管命名相似，但 :ref:`RenderingServer<class_RenderingServer>` 中使用的骨架 RID 与 :ref:`Skeleton3D<class_Skeleton3D>` 节点没有直接的一一对应关系。
 
-In particular, a :ref:`Skeleton3D<class_Skeleton3D>` node with no :ref:`MeshInstance3D<class_MeshInstance3D>` children may be unknown to the :ref:`RenderingServer<class_RenderingServer>`.
+特别是，没有 :ref:`MeshInstance3D<class_MeshInstance3D>` 子节点的 :ref:`Skeleton3D<class_Skeleton3D>` 节点可能对 :ref:`RenderingServer<class_RenderingServer>` 来说是未知的。
 
-On the other hand, a :ref:`Skeleton3D<class_Skeleton3D>` with multiple :ref:`MeshInstance3D<class_MeshInstance3D>` nodes which each have different :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>` objects may have multiple SkinReference instances (and hence, multiple skeleton :ref:`RID<class_RID>`\ s).
+另一方面，具有多个 :ref:`MeshInstance3D<class_MeshInstance3D>` 节点（每个节点都有不同的 :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>` 对象）的 :ref:`Skeleton3D<class_Skeleton3D>` 可能具有多个 SkinReference 实例（因此，有多个骨架 :ref:`RID<class_RID>`\ ）。
 
 .. rst-class:: classref-reftable-group
 
@@ -58,7 +58,7 @@ On the other hand, a :ref:`Skeleton3D<class_Skeleton3D>` with multiple :ref:`Mes
 
 :ref:`RID<class_RID>` **get_skeleton**\ (\ ) |const| :ref:`🔗<class_SkinReference_method_get_skeleton>`
 
-Returns the :ref:`RID<class_RID>` owned by this SkinReference, as returned by :ref:`RenderingServer.skeleton_create<class_RenderingServer_method_skeleton_create>`.
+返回该 SkinReference 所拥有的 :ref:`RID<class_RID>`\ ，如 :ref:`RenderingServer.skeleton_create<class_RenderingServer_method_skeleton_create>` 返回的那样。
 
 .. rst-class:: classref-item-separator
 
@@ -70,15 +70,15 @@ Returns the :ref:`RID<class_RID>` owned by this SkinReference, as returned by :r
 
 :ref:`Skin<class_Skin>` **get_skin**\ (\ ) |const| :ref:`🔗<class_SkinReference_method_get_skin>`
 
-Returns the :ref:`Skin<class_Skin>` connected to this SkinReference. In the case of :ref:`MeshInstance3D<class_MeshInstance3D>` with no :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>` assigned, this will reference an internal default :ref:`Skin<class_Skin>` owned by that :ref:`MeshInstance3D<class_MeshInstance3D>`.
+返回连接到该 SkinReference 的 :ref:`Skin<class_Skin>`\ 。如果 :ref:`MeshInstance3D<class_MeshInstance3D>` 未分配 :ref:`MeshInstance3D.skin<class_MeshInstance3D_property_skin>`\ ，则这将引用该 :ref:`MeshInstance3D<class_MeshInstance3D>` 拥有的内部默认 :ref:`Skin<class_Skin>`\ 。
 
-Note that a single :ref:`Skin<class_Skin>` may have more than one **SkinReference** in the case that it is shared by meshes across multiple :ref:`Skeleton3D<class_Skeleton3D>` nodes.
+请注意，如果单个 :ref:`Skin<class_Skin>` 由多个 :ref:`Skeleton3D<class_Skeleton3D>` 节点之间的网格共享，则它可能具有多个 **SkinReference**\ 。
 
 .. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法没有副作用，不会修改该实例的任何成员变量。)`
+.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
 .. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
 .. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
 .. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效操作符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列标志构成的位掩码整数。)`
+.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
+.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
 .. |void| replace:: :abbr:`void (无返回值。)`

@@ -41,45 +41,37 @@
                 <paragraph>当调用 <literal>move_and_slide()</literal> 时，该函数使用许多节点属性来计算其滑动行为。这些属性可以在检查器中找到，或在代码中设置。</paragraph>
                 <bullet_list bullet="-">
                     <list_item>
-                        <paragraph><literal>velocity</literal> - <emphasis>default value:</emphasis> <literal>Vector2( 0, 0 )</literal></paragraph>
+                        <paragraph><literal>velocity</literal> - <emphasis>默认值：</emphasis> <literal>Vector2( 0, 0 )</literal></paragraph>
                         <block_quote>
                             <paragraph>此属性表示身体的速度向量（以每秒像素为单位）。 <literal>move_and_slide()</literal> 会在碰撞时自动修改此值。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>motion_mode</literal> - <emphasis>default value:</emphasis> <literal>MOTION_MODE_GROUNDED</literal></paragraph>
+                        <paragraph><literal>motion_mode</literal> - <emphasis>默认值：</emphasis> <literal>MOTION_MODE_GROUNDED</literal></paragraph>
                         <block_quote>
-                            <paragraph>This property is typically used to distinguish between side-scrolling and
-                                top-down movement. When using the default value, you can use the <literal>is_on_floor()</literal>,
-                                <literal>is_on_wall()</literal>, and <literal>is_on_ceiling()</literal> methods to detect what type of
-                                surface the body is in contact with, and the body will interact with slopes.
-                                When using <literal>MOTION_MODE_FLOATING</literal>, all collisions will be considered "walls".</paragraph>
+                            <paragraph>这个属性通常用于区分 <emphasis>横向滚动视角</emphasis> 和 <emphasis>俯视角</emphasis> 。默认情况下，你可以使用 <literal>is_on_floor()</literal> ， <literal>is_on_wall()</literal> 和 <literal>is_on_ceiling()</literal> 方法来检测物体与哪种表面接触，以及物体会与这些斜坡互动。当使用 <literal>MOTION_MODE_FLOATING</literal> 时，所有碰撞都会被认为是“墙”。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>up_direction</literal> - <emphasis>default value:</emphasis> <literal>Vector2( 0, -1 )</literal></paragraph>
+                        <paragraph><literal>up_direction</literal> - <emphasis>默认值：</emphasis> <literal>Vector2( 0, -1 )</literal></paragraph>
                         <block_quote>
-                            <paragraph>This property allows you to define what surfaces the engine should consider
-                                being the floor. Its value lets you use the <literal>is_on_floor()</literal>, <literal>is_on_wall()</literal>,
-                                and <literal>is_on_ceiling()</literal> methods to detect what type of surface the body is
-                                in contact with. The default value means that the top side of horizontal surfaces
-                                will be considered "ground".</paragraph>
+                            <paragraph>这个参数允许你定义哪些表面应该被引擎视为地板。设置这个参数然后使用 <literal>is_on_floor()</literal> ， <literal>is_on_wall()</literal> 和 <literal>is_on_ceiling()</literal> 方法来检测物体接触的表面类型。默认值意味着所有水平表面的顶部都被认为是“地面”。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>floor_stop_on_slope</literal> - <emphasis>default value:</emphasis> <literal>true</literal></paragraph>
+                        <paragraph><literal>floor_stop_on_slope</literal> - <emphasis>默认值：</emphasis> <literal>true</literal></paragraph>
                         <block_quote>
                             <paragraph>该参数可以防止物体站立不动时从斜坡上滑落.</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>wall_min_slide_angle</literal> - <emphasis>default value:</emphasis> <literal>0.261799</literal> (in radians, equivalent to <literal>15</literal> degrees)</paragraph>
+                        <paragraph><literal>wall_min_slide_angle</literal> - <emphasis>默认值：</emphasis> <literal>0.261799</literal> （以弧度表示，相当于 <literal>15</literal> 度）</paragraph>
                         <block_quote>
                             <paragraph>这是当身体在遇到斜坡时允许滑动的最小角度。</paragraph>
                         </block_quote>
                     </list_item>
                     <list_item>
-                        <paragraph><literal>floor_max_angle</literal> - <emphasis>默认值:</emphasis> <literal>0.785398</literal> (以弧度表示, 相当于 <literal>45</literal> 度)</paragraph>
+                        <paragraph><literal>floor_max_angle</literal> - <emphasis>默认值：</emphasis> <literal>0.785398</literal> （以弧度表示，相当于 <literal>45</literal> 度）</paragraph>
                         <block_quote>
                             <paragraph>这是表面不再被视为 "地板" 之前的最大角度</paragraph>
                         </block_quote>
@@ -91,9 +83,7 @@
         <section ids="detecting-collisions" names="detecting\ collisions 检测碰撞">
             <title>检测碰撞</title>
             <paragraph>当使用 <literal>move_and_collide()</literal> 时, 函数直接返回一个 <literal>KinematicCollision2D</literal> , 你可以在代码中使用这个.</paragraph>
-            <paragraph>When using <literal>move_and_slide()</literal> it's possible to have multiple collisions occur,
-                as the slide response is calculated. To process these collisions, use <literal>get_slide_collision_count()</literal>
-                and <literal>get_slide_collision()</literal>:</paragraph>
+            <paragraph>当使用 <literal>move_and_slide()</literal> 时，有可能发生多次碰撞，因为滑动响应也被计算在内。要处理这些碰撞，使用 <literal>get_slide_collision_count()</literal> 和 <literal>get_slide_collision()</literal>：</paragraph>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
                     <button aria-controls="panel-0-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-0-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -129,18 +119,13 @@ for (int i = 0; i &lt; GetSlideCollisionCount(); i++)
                 </div>
             </container>
             <note>
-                <paragraph><title_reference>get_slide_collision_count()</title_reference> only counts times the body has collided and changed direction.</paragraph>
+                <paragraph><title_reference>get_slide_collision_count()</title_reference> 只计算物体碰撞和改变方向的次数。</paragraph>
             </note>
             <paragraph>关于返回哪些碰撞数据, 请参见 <reference internal="True" refuri="../../classes/class_kinematiccollision2d#class-kinematiccollision2d"><inline classes="std std-ref">KinematicCollision2D</inline></reference> .</paragraph>
         </section>
         <section ids="which-movement-method-to-use" names="which\ movement\ method\ to\ use? 使用哪种移动方式？">
             <title>使用哪种移动方式？</title>
-            <paragraph>A common question from new Godot users is: "How do you decide which movement
-                function to use?" Often, the response is to use <literal>move_and_slide()</literal> because
-                it seems simpler, but this is not necessarily the case. One way to think of it
-                is that <literal>move_and_slide()</literal> is a special case, and <literal>move_and_collide()</literal>
-                is more general. For example, the following two code snippets result in
-                the same collision response:</paragraph>
+            <paragraph>Godot 新手的一个常见问题是：“你如何决定使用哪个移动函数？”通常，回答是 <literal>move_and_slide()</literal> ，因为它“更简单”，但情况不一定如此。有一种思路是， <literal>move_and_slide()</literal> 是一种特殊情况，而 <literal>move_and_collide()</literal> 更通用。例如，下面两个代码片段的结果是相同的碰撞响应：</paragraph>
             <image candidates="{'*': 'tutorials/physics/img/k2d_compare.gif'}" uri="tutorials/physics/img/k2d_compare.gif"></image>
             <container classes="sphinx-tabs" type="tab-element">
                 <div aria-label="Tabbed content" role="tablist">
@@ -169,31 +154,21 @@ MoveAndSlide();</literal_block>
                 </div>
             </container>
             <paragraph>你用 <literal>move_and_slide()</literal> 做的任何事情都可以用 <literal>move_and_collide()</literal> 来完成, 但它可能需要更多的代码. 但是, 正如我们在下面的示例中将看到的, 有些情况下 <literal>move_and_slide()</literal> 不能提供你想要的响应.</paragraph>
-            <paragraph>In the example above, <literal>move_and_slide()</literal> automatically alters the <literal>velocity</literal>
-                variable. This is because when the character collides with the environment,
-                the function recalculates the speed internally to reflect
-                the slowdown.</paragraph>
+            <paragraph>在上面的例子中， <literal>move_and_slide()</literal> 自动更改了 <literal>velocity</literal> 变量。这是因为当角色与环境发生碰撞时，函数会在内部重新计算速度，以反映减速的情况。</paragraph>
             <paragraph>例如, 如果角色倒在地上, 不希望它因为重力的影响而积累垂直速度, 而希望它的垂直速度重置为零.</paragraph>
-            <paragraph><literal>move_and_slide()</literal> may also recalculate the kinematic body's velocity several
-                times in a loop as, to produce a smooth motion, it moves the character and
-                collides up to five times by default. At the end of the process, the character's
-                new velocity is available for use on the next frame.</paragraph>
+            <paragraph><literal>move_and_slide()</literal> 将会在循环中多次重新计算运动物体的速度，以产生平滑的运动。默认情况下，他会移动角色并最多与环境碰撞5次。在这个过程结束时，角色的的新速度将会用于下一帧。</paragraph>
         </section>
         <section ids="examples" names="examples 示例">
             <title>示例</title>
             <paragraph>若要查看这些案例的实际效果，请下载示例项目：<reference name="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip">character_body_2d_starter.zip</reference><target ids="character-body-2d-starter-zip" names="character_body_2d_starter.zip" refuri="https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip"></target></paragraph>
             <section ids="movement-and-walls" names="movement\ and\ walls 移动和墙壁">
                 <title>移动和墙壁</title>
-                <paragraph>If you've downloaded the sample project, this example is in "basic_movement.tscn".</paragraph>
-                <paragraph>For this example, add a <literal>CharacterBody2D</literal> with two children: a <literal>Sprite2D</literal> and a
-                    <literal>CollisionShape2D</literal>. Use the Godot "icon.svg" as the Sprite2D's texture (drag it
-                    from the Filesystem dock to the <emphasis>Texture</emphasis> property of the <literal>Sprite2D</literal>). In the
-                    <literal>CollisionShape2D</literal>'s <emphasis>Shape</emphasis> property, select "New RectangleShape2D" and
-                    size the rectangle to fit over the sprite image.</paragraph>
+                <paragraph>如果你已经下载了示例项目，这个例子在“basic_movement.tscn”中。</paragraph>
+                <paragraph>在这个例子中，添加一个 <literal>CharacterBody2D</literal> ，并有两个子级： <literal>Sprite2D</literal> 和 <literal>CollisionShape2D</literal> 。使用 Godot 的 “icon.svg” 作为 Sprite2D 的纹理（将其从文件系统栏拖到 <literal>Sprite2D</literal> 的 <emphasis>Texture</emphasis> 属性）。在 <literal>CollisionShape2D</literal> 的 <emphasis>Shape</emphasis> 属性中，选择“New RectangleShape2D”，并将矩形的大小调整到适合sprite图像的大小。</paragraph>
                 <note>
                     <paragraph>有关实现2D移动方案的示例, 请参阅 <reference internal="True" refuri="../2d/2d_movement#doc-2d-movement"><inline classes="std std-ref">2D 运动概述</inline></reference> .</paragraph>
                 </note>
-                <paragraph>Attach a script to the CharacterBody2D and add the following code:</paragraph>
+                <paragraph>将脚本附加到CharacterBody2D并添加以下代码：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-2-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-2-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -233,26 +208,17 @@ public partial class MyCharacterBody2D : CharacterBody2D
 }</literal_block>
                     </div>
                 </container>
-                <paragraph>Run this scene and you'll see that <literal>move_and_collide()</literal> works as expected, moving
-                    the body along the velocity vector. Now let's see what happens when you add
-                    some obstacles. Add a <reference internal="True" refuri="../../classes/class_staticbody2d#class-staticbody2d"><inline classes="std std-ref">StaticBody2D</inline></reference> with a
-                    rectangular collision shape. For visibility, you can use a Sprite2D, a
-                    Polygon2D, or turn on "Visible Collision Shapes" from the "Debug" menu.</paragraph>
-                <paragraph>Run the scene again and try moving into the obstacle. You'll see that the <literal>CharacterBody2D</literal>
-                    can't penetrate the obstacle. However, try moving into the obstacle at an angle and
-                    you'll find that the obstacle acts like glue - it feels like the body gets stuck.</paragraph>
+                <paragraph>运行这个场景，你会看到 <literal>move_and_collide()</literal> 按预期工作，沿着速度向量方向移动物体。现在让我们看看当你添加一些障碍时会发生什么。添加一个具有矩形碰撞形状的 <reference internal="True" refuri="../../classes/class_staticbody2d#class-staticbody2d"><inline classes="std std-ref">StaticBody2D</inline></reference> 。为了可见性，你可以使用Sprite2D，Polygon2D，或从“调试”菜单中打开“可见碰撞形状”。</paragraph>
+                <paragraph>再次运行场景并尝试移动到障碍物上，你会看到 <literal>CharacterBody2D</literal> 无法穿过障碍物。 不过，当你以一个角度移动到障碍物上，你会发现障碍物就像胶水一样——感觉被卡住了。</paragraph>
                 <paragraph>发生这种情况是因为没有 <emphasis>碰撞响应</emphasis> . <literal>move_and_collide()</literal> 在碰撞发生时停止物体的运动. 我们需要编写我们想要的碰撞响应.</paragraph>
-                <paragraph>Try changing the function to <literal>move_and_slide()</literal> and running again.</paragraph>
+                <paragraph>尝试将函数更改为 <literal>move_and_slide()</literal> 并再次运行。</paragraph>
                 <paragraph><literal>move_and_slide()</literal> 提供了一个沿碰撞对象滑动物体的默认碰撞响应. 这对于许多游戏类型都很有用, 并且可能是获得所需行为所需的全部内容.</paragraph>
             </section>
             <section ids="bouncing-reflecting" names="bouncing/reflecting 弹跳/反射">
                 <title>弹跳/反射</title>
-                <paragraph>What if you don't want a sliding collision response? For this example ("bounce_and_collide.tscn"
-                    in the sample project), we have a character shooting bullets and we want the bullets to
-                    bounce off the walls.</paragraph>
+                <paragraph>如果你不想要滑动碰撞响应怎么办？ 对于这个示例（示例项目中的 “bounce_and_collide.tscn”）， 我们有一个角色射击子弹，我们希望子弹从墙上反弹。</paragraph>
                 <paragraph>此示例使用三个场景. 主场景包含游戏角色和墙壁. 子弹和墙是单独的场景, 以便它们可以实例化.</paragraph>
-                <paragraph>The Player is controlled by the <literal>w</literal> and <literal>s</literal> keys for forward and back. Aiming
-                    uses the mouse pointer. Here is the code for the Player, using <literal>move_and_slide()</literal>:</paragraph>
+                <paragraph>游戏角色由 <literal>w</literal> 和 <literal>s</literal> 键控制前进和后退。瞄准使用鼠标指针。这是游戏角色的代码，使用 <literal>move_and_slide()</literal> ：</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
                         <button aria-controls="panel-3-R0RTY3JpcHQ=" aria-selected="true" classes="sphinx-tabs-tab code-tab group-tab" ids="tab-3-R0RTY3JpcHQ=" name="R0RTY3JpcHQ=" role="tab" tabindex="0">GDScript</button>
@@ -388,21 +354,15 @@ public partial class Bullet : CharacterBody2D
 }</literal_block>
                     </div>
                 </container>
-                <paragraph>The action happens in <literal>_physics_process()</literal>. After using <literal>move_and_collide()</literal>, if a
-                    collision occurs, a <literal>KinematicCollision2D</literal> object is returned (otherwise, the return
-                    is <literal>null</literal>).</paragraph>
+                <paragraph>动作发生在 <literal>_physics_process()</literal> 中。在使用 <literal>move_and_collide()</literal> 后，如果发生碰撞，将返回一个 <literal>KinematicCollision2D</literal> 对象，否则，返回 <literal>null</literal> 。</paragraph>
                 <paragraph>如果有一个返回的碰撞, 我们使用碰撞的 <literal>normal</literal> 来反映子弹的 <literal>velocity</literal> 和 <literal>Vector2.bounce()</literal> 方法.</paragraph>
                 <paragraph>如果碰撞对象( <literal>collider</literal> )有一个 <literal>hit</literal> 方法, 我们也调用它. 在示例项目中, 我们为墙壁添加了一个颜色闪烁效果来演示这一点.</paragraph>
                 <image candidates="{'*': 'tutorials/physics/img/k2d_bullet_bounce.gif'}" uri="tutorials/physics/img/k2d_bullet_bounce.gif"></image>
             </section>
             <section ids="platformer-movement" names="platformer\ movement 平台移动">
                 <title>平台移动</title>
-                <paragraph>Let's try one more popular example: the 2D platformer. <literal>move_and_slide()</literal>
-                    is ideal for quickly getting a functional character controller up and running.
-                    If you've downloaded the sample project, you can find this in "platformer.tscn".</paragraph>
-                <paragraph>For this example, we'll assume you have a level made of one or more <literal>StaticBody2D</literal>
-                    objects. They can be any shape and size. In the sample project, we're using
-                    <reference internal="True" refuri="../../classes/class_polygon2d#class-polygon2d"><inline classes="std std-ref">Polygon2D</inline></reference> to create the platform shapes.</paragraph>
+                <paragraph>让我们尝试一个更流行的示例：2D平台游戏。 <literal>move_and_slide()</literal> 非常适合快速创建一个功能性的角色控制器。如果你已下载示例项目，可以在“platformer.tscn”中找到它。</paragraph>
+                <paragraph>在这个示例中，我们假设你的关卡由一个或多个 <literal>StaticBody2D</literal> 组成。它们可以是任何形状和大小。在示例项目中，我们使用 <reference internal="True" refuri="../../classes/class_polygon2d#class-polygon2d"><inline classes="std std-ref">Polygon2D</inline></reference> 来创建平台的形状。</paragraph>
                 <paragraph>这是游戏角色物体的代码:</paragraph>
                 <container classes="sphinx-tabs" type="tab-element">
                     <div aria-label="Tabbed content" role="tablist">
