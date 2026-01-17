@@ -1,10 +1,10 @@
 name: Build documentation for offline usage
 on:
   workflow_dispatch:
-  schedule:
+  # schedule:
     # Every week on Monday at midnight (UTC).
     # This keeps the generated HTML documentation fresh.
-    - cron: '0 0 * * 1'
+    # - cron: '0 0 * * 1'
 
 
 jobs:
