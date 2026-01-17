@@ -66,8 +66,9 @@ corner of the editor *before* running the project:
 
    Movie Maker mode is disabled, click the "movie reel" icon to enable
 
-The icon gets a background matching the accent color when Movie Maker mode is
-enabled:
+A menu will be displayed with options to enable Movie Maker mode and to go to
+the settings. The icon gets a background matching the accent color when Movie
+Maker mode is enabled:
 
 .. figure:: img/creating_movies_disable_movie_maker_mode.webp
    :align: center
@@ -110,7 +111,7 @@ Once you've configured and enabled Movie Maker mode, it will be automatically us
 when running the project from the editor.
 
 Command line usage
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tutorial>`:
 
@@ -153,27 +154,56 @@ Choosing an output format
 -------------------------
 
 Output formats are provided by the :ref:`MovieWriter <class_MovieWriter>` class.
-Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
+Godot has 3 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
 implemented by extensions:
 
-AVI (recommended)
-^^^^^^^^^^^^^^^^^
+OGV (recommended)
+~~~~~~~~~~~~~~~~~
+
+OGV container with Theora for video and Vorbis for audio. Features lossy video
+and audio compression with a good balance of file size and encoding speed, with
+a better image quality than MJPEG. It has 4 speed levels that can be adjusted
+by changing **Editor > Movie Writer > Encoding Speed** with the fastest one
+being around as fast as AVI with better compression. At slower speed levels, it
+can compress even better while keeping the same image quality. The lossy
+compression quality can be adjusted by changing **Editor > Movie Writer > Video
+Quality** for video and **Editor > Movie Writer > Audio Quality** for audio.
+
+The Keyframe Interval can be adjusted by changing **Editor > Movie Writer >
+Keyframe Interval**. In some cases, increasing this setting can improve
+compression efficiency without downsides.
+
+The resulting file can be viewed in Godot with :ref:`VideoStreamPlayer
+<class_VideoStreamPlayer>` and most video players but not web browsers. OGV
+does not support transparency.
+
+To use OGV, specify a path to a ``.ogv`` file to be created in the **Editor >
+Movie Writer > Movie File** project setting.
+
+.. note::
+
+   OGV can only be recorded in editor builds.
+   On the other hand, :ref:`OGV playback <doc_playing_videos>`
+   is possible in both editor and export template builds.
+
+AVI
+~~~
 
 AVI container with MJPEG for video and uncompressed audio. Features lossy video
 compression, resulting in medium file sizes and fast encoding. The lossy
 compression quality can be adjusted by changing
-**Editor > Movie Writer > MJPEG Quality**.
+**Editor > Movie Writer > Video Quality**.
 
 The resulting file can be viewed in most video players, but it must be converted
 to another format for viewing on the web or by Godot with the VideoStreamPlayer
 node. MJPEG does not support transparency. AVI output is currently limited to a
 file of 4 GB in size at most.
 
-To use AVI, specify a path to an ``.avi`` file to be created in the
+To use AVI, specify a path to a ``.avi`` file to be created in the
 **Editor > Movie Writer > Movie File** project setting.
 
 PNG
-^^^
+~~~
 
 PNG image sequence for video and WAV for audio. Features lossless video
 compression, at the cost of large file sizes and slow encoding. This is designed
@@ -193,7 +223,7 @@ To use PNG, specify a ``.png`` file to be created in the
 file will have the same name as the ``.png`` file (minus the extension).
 
 Custom
-^^^^^^
+~~~~~~
 
 If you need to encode directly to a different format or pipe a stream through
 third-party software, you can extend the MovieWriter class to create your own
@@ -213,12 +243,12 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
   desynchronizing over time.
 - **Speaker Mode:** The speaker mode to use in the recorded audio when writing
   a movie (stereo, 5.1 surround or 7.1 surround).
-- **MJPEG Quality:** The JPEG quality to use when writing a video to an AVI
-  file, between ``0.01`` and ``1.0`` (inclusive). Higher quality values result
+- **Video Quality:** The image quality to use when writing a video to an OGV or
+  AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher quality values result
   in better-looking output at the cost of larger file sizes. Recommended quality
-  values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, JPEG
-  compression remains lossy. This setting does not affect audio quality and is
-  ignored when writing to a PNG image sequence.
+  values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, compression
+  remains lossy. This setting does not affect audio quality and is ignored when
+  writing to a PNG image sequence.
 - **Movie File:** The output path for the movie. This can be absolute or
   relative to the project root.
 - **Disable V-Sync:** If enabled, requests V-Sync to be disabled when writing a
@@ -231,6 +261,18 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
   output file sizes. Most video hosting platforms do not support FPS values
   higher than 60, but you can use a higher value and use that to generate motion
   blur.
+- **Audio Quality:** The audio quality to use when writing a video to an OGV
+  file, between ``-0.1`` and ``1.0`` (inclusive). Higher quality values result
+  in better audio quality at the cost of very slightly larger file sizes.
+  Recommended quality values are between ``0.3`` and ``0.5``. Even at quality
+  ``1.0``, compression remains lossy.
+- **Encoding Speed:** The speed level to use when writing a video to an OGV
+  file. Faster speed levels have less compression efficiency. The image quality
+  stays barely the same.
+- **Keyframe Interval:** Also known as GOP (Group Of Pictures), the maximum
+  number of inter-frames to use when writing to an OGV file. Higher values can
+  improve compression efficiency without quality loss but at the cost of slower
+  video seeks.
 
 .. note::
 
@@ -254,8 +296,9 @@ to render before quitting.
 Pressing :kbd:`F8` (:kbd:`Cmd + .` on macOS) or pressing :kbd:`Ctrl + C` on the
 terminal running Godot is **not recommended**, as it will result in an
 improperly formatted AVI file with no duration information. For PNG image
-sequences, PNG images will not be negatively altered, but the associated WAV file
-will still lack duration information.
+sequences, PNG images will not be negatively altered, but the associated WAV
+file will still lack duration information. OGV files might end up with slightly
+different duration video and audio tracks but still valid.
 
 Some video players may still be able to play the AVI or WAV file with working
 video and audio. However, software that makes use of the AVI or WAV file such as
@@ -285,7 +328,8 @@ This feature tag can also be queried in a script to increase quality settings
 that are set in the Environment resource. For example, to further improve SDFGI
 detail and reduce light leaking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     extends Node3D
 
@@ -295,6 +339,24 @@ detail and reduce light leaking:
             # without decreasing its maximum distance.
             get_viewport().world_3d.environment.sdfgi_min_cell_size *= 0.25
             get_viewport().world_3d.environment.sdfgi_cascades = 8
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            if (OS.HasFeature("movie"))
+            {
+                // When recording a movie, improve SDFGI cell density
+                // without decreasing its maximum distance.
+                GetViewport().World3D.Environment.SdfgiMinCellSize *= 0.25f;
+                GetViewport().World3D.Environment.SdfgiCascades = 8;
+            }
+        }
+    }
 
 .. _doc_creating_movies_recording_at_higher_resolution:
 
@@ -351,18 +413,18 @@ Some common post-processing steps are listed below.
 
 .. _doc_creating_movies_converting_avi:
 
-Converting AVI video to MP4
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Converting OGV/AVI video to MP4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While some platforms such as YouTube support uploading the AVI file directly, many
 others will require a conversion step beforehand. `HandBrake <https://handbrake.fr/>`__
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-The command below converts an AVI video to an MP4 (H.264) video with a Constant
-Rate Factor (CRF) of 15. This results in a relatively large file, but is
-well-suited for platforms that will re-encode your videos to reduce their size
-(such as most video sharing websites):
+The command below converts an OGV/AVI video to an MP4 (H.264) video with a
+Constant Rate Factor (CRF) of 15. This results in a relatively large file, but
+is well-suited for platforms that will re-encode your videos to reduce their
+size (such as most video sharing websites):
 
 ::
 
@@ -379,7 +441,7 @@ cost of a worse size/quality ratio.
 .. _doc_creating_movies_converting_image_sequence:
 
 Converting PNG image sequence + WAV audio to a video
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you chose to record a PNG image sequence with a WAV file beside it,
 you need to convert it to a video before you can use it elsewhere.
@@ -409,7 +471,7 @@ storing transparency, so you can use WebM/VP9 as an alternative:
 .. _doc_creating_movies_motion_blur:
 
 Cutting video
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 You can trim parts of the video you don't want to keep after the video is
 recorded. For example, to discard everything before 12.1 seconds and keep
@@ -423,7 +485,7 @@ Cutting videos can also be done with the GUI tool
 `LosslessCut <https://mifi.github.io/lossless-cut/>`__.
 
 Resizing video
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The following command resizes a video to be 1080 pixels tall (1080p),
 while preserving its existing aspect ratio:
@@ -436,7 +498,7 @@ while preserving its existing aspect ratio:
 .. _doc_creating_movies_reducing_framerate:
 
 Reducing framerate
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The following command changes a video's framerate to 30 FPS, dropping some of
 the original frames if there are more in the input video:
@@ -446,7 +508,7 @@ the original frames if there are more in the input video:
     ffmpeg -i input.avi -r 30 -crf 15 output.mp4
 
 Generating accumulation motion blur with FFmpeg
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot does not have built-in support for motion blur, but it can still be
 created in recorded videos.

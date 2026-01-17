@@ -3,6 +3,8 @@
 Exporting for dedicated servers
 ===============================
 
+.. highlight:: none
+
 If you want to run a dedicated server for your project on a machine that doesn't
 have a GPU or display server available, you'll need to run Godot with the ``headless``
 display server and ``Dummy`` :ref:`audio driver <class_ProjectSettings_property_audio/driver/driver>`.
@@ -129,8 +131,6 @@ use **Keep** for that particular image.
 With the above options used, a PCK for the client (which exports all resources
 normally) will look as follows:
 
-.. highlight:: none
-
 ::
 
     .
@@ -158,8 +158,6 @@ normally) will look as follows:
     ├── scene.tscn.remap
 
 The PCK's file structure for the server will look as follows:
-
-.. highlight:: none
 
 ::
 
@@ -281,7 +279,10 @@ On Linux, to make your dedicated server restart after a crash or system reboot,
 you can
 `create a systemd service <https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6>`__.
 This also lets you view server logs in a more convenient fashion, with automatic
-log rotation provided by systemd.
+log rotation provided by systemd. When making your project hostable as a systemd service,
+you should also enable the ``application/run/flush_stdout_on_print``
+project setting. This way, journald (the systemd logging service) can collect
+logs while the process is running.
 
 If you have experience with containers, you could also look into wrapping your
 dedicated server in a `Docker <https://www.docker.com/>`__ container. This way,

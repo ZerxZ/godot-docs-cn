@@ -78,7 +78,7 @@ These nodes allow you to draw the shape directly in the editor workspace.
                 the ``Node2D`` scale handles. Scaling a shape can result in unexpected
                 collision behavior.
 
-.. image:: img/player_coll_shape.png
+.. image:: img/player_coll_shape.webp
 
 Physics process callback
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,9 +132,9 @@ These properties can be configured via code, or by editing them in the Inspector
 
 Keeping track of what you're using each layer for can be difficult, so you
 may find it useful to assign names to the layers you're using. Names can
-be assigned in Project Settings -> Layer Names.
+be assigned in **Project Settings > Layer Names > 2D Physics**.
 
-.. image:: img/physics_layer_names.png
+.. image:: img/physics_layer_names.webp
 
 GUI example
 ^^^^^^^^^^^
@@ -149,8 +149,8 @@ place each node type in its respective layer using the "Layer" property.
 Then set each node's "Mask" property by selecting the layers it should
 interact with. For example, the Player's settings would look like this:
 
-.. image:: img/player_collision_layers.png
-.. image:: img/player_collision_mask.png
+.. image:: img/player_collision_layers.webp
+.. image:: img/player_collision_mask.webp
 
 .. _doc_physics_introduction_collision_layer_code_example:
 
@@ -163,23 +163,52 @@ can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
 The code equivalent of the above example where layers 1, 3 and 4 were enabled
-would be as follows::
+would be as follows:
+
+::
 
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
     # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
-    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
+    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4, 3 and 1 is therefore:
     0b00000000_00000000_00000000_00001101
     # (This can be shortened to 0b1101)
 
-    # Hexadecimal equivalent (1101 binary converted to hexadecimal)
+    # Hexadecimal equivalent (1101 binary converted to hexadecimal).
     0x000d
-    # (This value can be shortened to 0xd)
+    # (This value can be shortened to 0xd.)
 
     # Decimal - Add the results of 2 to the power of (layer to be enabled - 1).
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
-    pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
+    #
+    # We can use the `<<` operator to shift the bit to the left by the layer number we want to enable.
+    # This is a faster way to multiply by powers of 2 than `pow()`.
+    # Additionally, we use the `|` (binary OR) operator to combine the results of each layer.
+    # This ensures we don't add the same layer multiple times, which would behave incorrectly.
+    (1 << 1 - 1) | (1 << 3 - 1) | (1 << 4 - 1)
 
+    # The above can alternatively be written as:
+    # pow(2, 1 - 1) + pow(2, 3 - 1) + pow(2, 4 - 1)
+
+You can also set bits independently by calling ``set_collision_layer_value(layer_number, value)``
+or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows:
+
+::
+
+    # Example: Setting mask value to enable layers 1, 3, and 4.
+
+    var collider: CollisionObject2D = $CollisionObject2D  # Any given collider.
+    collider.set_collision_mask_value(1, true)
+    collider.set_collision_mask_value(3, true)
+    collider.set_collision_mask_value(4, true)
+
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI:
+
+::
+
+    @export_flags_2d_physics var layers_2d_physics
+
+Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`doc_gdscript_exports_exporting_bit_flags`.
 
 Area2D
 ------
@@ -229,7 +258,7 @@ You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in
-`Project Settings -> Physics`, or by entering an :ref:`Area2D <class_Area2D>`
+**Project Settings > Physics**, or by entering an :ref:`Area2D <class_Area2D>`
 that is overriding the global physics properties.
 
 When a rigid body is at rest and hasn't moved for a while, it goes to sleep.
@@ -289,15 +318,23 @@ For example, here is the code for an "Asteroids" style spaceship:
         public override void _IntegrateForces(PhysicsDirectBodyState2D state)
         {
             if (Input.IsActionPressed("ui_up"))
+            {
                 state.ApplyForce(_thrust.Rotated(Rotation));
+            }
             else
+            {
                 state.ApplyForce(new Vector2());
+            }
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
+            {
                 rotationDir += 1;
+            }
             if (Input.IsActionPressed("ui_left"))
+            {
                 rotationDir -= 1;
+            }
             state.ApplyTorque(rotationDir * _torque);
         }
     }
@@ -414,7 +451,9 @@ Or to bounce off of the colliding object:
         {
             var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
+            {
                 _velocity = _velocity.Bounce(collisionInfo.GetNormal());
+            }
         }
     }
 
@@ -483,11 +522,17 @@ the ground (including slopes) and jump when standing on the ground:
             var jump = Input.IsActionPressed("ui_select");
 
             if (IsOnFloor() && jump)
+            {
                 velocity.Y = _jumpSpeed;
+            }
             if (right)
+            {
                 velocity.X += _runSpeed;
+            }
             if (left)
+            {
                 velocity.X -= _runSpeed;
+            }
 
             Velocity = velocity;
         }

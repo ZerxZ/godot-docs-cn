@@ -10,7 +10,7 @@ declarative code.
 Each system's capabilities are different as a result.
 Scenes can define how an extended class initializes, but not what its
 behavior actually is. Scenes are often used in conjunction with a script,
-the scene declaring a composition of nodes, and the script adding behaviour with imperative code.
+the scene declaring a composition of nodes, and the script adding behavior with imperative code.
 
 Anonymous types
 ---------------
@@ -117,8 +117,6 @@ There are two systems for registering types:
 
    - Engine developers must add support for languages manually (both name exposure and
      runtime accessibility).
-
-   - Godot 3.1+ only.
 
    - The Editor scans project folders and registers any exposed names for all
      scripting languages. Each scripting language must implement its own

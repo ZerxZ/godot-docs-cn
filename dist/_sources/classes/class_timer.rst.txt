@@ -10,63 +10,65 @@
 Timer
 =====
 
-**继承：** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-倒数计时器。
+A countdown timer.
 
 .. rst-class:: classref-introduction-group
 
-描述
-----
+Description
+-----------
 
-**Timer** 即计时器节点，是一种倒计时器，也是引擎中最简单的处理基于时间的逻辑的方法。计时器在等待 :ref:`wait_time<class_Timer_property_wait_time>` 结束后就会发出 :ref:`timeout<class_Timer_signal_timeout>` 信号。
+The **Timer** node is a countdown timer and is the simplest way to handle time-based logic in the engine. When a timer reaches the end of its :ref:`wait_time<class_Timer_property_wait_time>`, it will emit the :ref:`timeout<class_Timer_signal_timeout>` signal.
 
-计时器进入场景树时，可以使用 :ref:`start<class_Timer_method_start>` 手动启动。如果 :ref:`autostart<class_Timer_property_autostart>` 为 ``true``\ ，计时器节点也会自动启动。
+After a timer enters the scene tree, it can be manually started with :ref:`start()<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
 
-可以在编辑器中添加并配置计时器节点，无需编写特别多的代码。计时器发出的 :ref:`timeout<class_Timer_signal_timeout>` 信号可以在编辑器的“节点”面板中连接：
+Without requiring much code, a timer node can be added and configured in the editor. The :ref:`timeout<class_Timer_signal_timeout>` signal it emits can also be connected through the Signals dock in the editor:
 
 ::
 
     func _on_timer_timeout():
-        print("是时候表演真正的技术了！")
+        print("Time to attack!")
 
-\ **注意：**\ 如果只想创建一次性的计时器，不想实例化节点，请使用 :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`\ 。
+\ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer()<class_SceneTree_method_create_timer>`.
 
-\ **注意：**\ 计时器会受到 :ref:`Engine.time_scale<class_Engine_property_time_scale>` 的影响。时间缩放值越大，计时器结束得越早。计时器的处理频率取决于帧率或 :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`\ 。
+\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>` unless :ref:`ignore_time_scale<class_Timer_property_ignore_time_scale>` is ``true``. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
 .. rst-class:: classref-introduction-group
 
-教程
-----
+Tutorials
+---------
 
-- `2D Dodge The Creeps 演示 <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
 .. rst-class:: classref-reftable-group
 
-属性
-----
+Properties
+----------
 
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`               | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                 | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                     |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>` | ``1``     |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`               |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`               | ``1.0``   |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`                 | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`ignore_time_scale<class_Timer_property_ignore_time_scale>` | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                   | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                       |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>`   | ``1``     |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`                 |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`                 | ``1.0``   |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
-方法
-----
+Methods
+-------
 
 .. table::
    :widths: auto
@@ -85,8 +87,8 @@ Timer
 
 .. rst-class:: classref-descriptions-group
 
-信号
-----
+Signals
+-------
 
 .. _class_Timer_signal_timeout:
 
@@ -94,7 +96,7 @@ Timer
 
 **timeout**\ (\ ) :ref:`🔗<class_Timer_signal_timeout>`
 
-当计时器计时完成时发出。
+Emitted when the timer reaches the end.
 
 .. rst-class:: classref-section-separator
 
@@ -102,8 +104,8 @@ Timer
 
 .. rst-class:: classref-descriptions-group
 
-枚举
-----
+Enumerations
+------------
 
 .. _enum_Timer_TimerProcessCallback:
 
@@ -117,7 +119,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_PHYSICS** = ``0``
 
-在物理处理帧中更新计时器（见 :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`\ ）。
+Update the timer every physics process frame (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_Timer_constant_TIMER_PROCESS_IDLE:
 
@@ -125,7 +127,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_IDLE** = ``1``
 
-在处理（渲染）帧中更新计时器（见 :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`\ ）。
+Update the timer every process (rendered) frame (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. rst-class:: classref-section-separator
 
@@ -133,8 +135,8 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 .. rst-class:: classref-descriptions-group
 
-属性说明
---------
+Property Descriptions
+---------------------
 
 .. _class_Timer_property_autostart:
 
@@ -147,9 +149,28 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 - |void| **set_autostart**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **has_autostart**\ (\ )
 
-如果为 ``true``\ ，则计时器将在进入场景树时自动启动。
+If ``true``, the timer will start immediately when it enters the scene tree.
 
-\ **注意：**\ 计时器进入场景树后，该属性会自动设置为 ``false``\ 。
+\ **Note:** After the timer enters the tree, this property is automatically set to ``false``.
+
+\ **Note:** This property does nothing when the timer is running in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Timer_property_ignore_time_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_time_scale** = ``false`` :ref:`🔗<class_Timer_property_ignore_time_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_time_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_time_scale**\ (\ )
+
+If ``true``, the timer will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time.
 
 .. rst-class:: classref-item-separator
 
@@ -166,7 +187,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 - |void| **set_one_shot**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_one_shot**\ (\ )
 
-如果为 ``true``\ ，则计时器将在完成时停止。否则默认情况下会自动重新启动。
+If ``true``, the timer will stop after reaching the end. Otherwise, as by default, the timer will automatically restart.
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +204,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 - |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_paused**\ (\ )
 
-如果为 ``true``\ ，则计时器处于暂停状态。即便调用了 :ref:`start<class_Timer_method_start>`\ ，处于暂停状态的计时器也不会进行处理，必须将这个属性设回 ``false`` 才会继续。
+If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start()<class_Timer_method_start>` is called. See also :ref:`stop()<class_Timer_method_stop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -200,7 +221,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 - |void| **set_timer_process_callback**\ (\ value\: :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`\ )
 - :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback**\ (\ )
 
-指定计时器在主循环的哪个时间点进行更新（见 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`\ ）。
+Specifies when the timer is updated during the main loop.
 
 .. rst-class:: classref-item-separator
 
@@ -216,9 +237,9 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 - :ref:`float<class_float>` **get_time_left**\ (\ )
 
-计时器的剩余时间，单位为秒。如果计时器处于停止状态，则始终为 ``0``\ 。
+The timer's remaining time in seconds. This is always ``0`` if the timer is stopped.
 
-\ **注意：**\ 这个属性是只读的，无法进行修改。基于的是 :ref:`wait_time<class_Timer_property_wait_time>`\ 。
+\ **Note:** This property is read-only and cannot be modified. It is based on :ref:`wait_time<class_Timer_property_wait_time>`.
 
 .. rst-class:: classref-item-separator
 
@@ -235,9 +256,9 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 - |void| **set_wait_time**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_wait_time**\ (\ )
 
-计时器完成计时所需的时间，单位为秒。这个属性也可以在每次调用 :ref:`start<class_Timer_method_start>` 时设置。
+The time required for the timer to end, in seconds. This property can also be set every time :ref:`start()<class_Timer_method_start>` is called.
 
-\ **注意：**\ 计时器的处理只能在物理帧或处理帧进行一次（取决于 :ref:`process_callback<class_Timer_property_process_callback>`\ ）。如果帧率不稳定，则计时完成所需的时间也可能不一致，等待时间小于 ``0.05`` 秒左右的情况下尤为明显。如果计时器非常短，建议自己编写代码，不要使用 **Timer** 节点。计时器还会受到 :ref:`Engine.time_scale<class_Engine_property_time_scale>` 的影响。
+\ **Note:** Timers can only process once per physics or process frame (depending on the :ref:`process_callback<class_Timer_property_process_callback>`). An unstable framerate may cause the timer to end inconsistently, which is especially noticeable if the wait time is lower than roughly ``0.05`` seconds. For very short timers, it is recommended to write your own code instead of using a **Timer** node. Timers are also affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 
 .. rst-class:: classref-section-separator
 
@@ -245,8 +266,8 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 .. rst-class:: classref-descriptions-group
 
-方法说明
---------
+Method Descriptions
+-------------------
 
 .. _class_Timer_method_is_stopped:
 
@@ -254,7 +275,7 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 :ref:`bool<class_bool>` **is_stopped**\ (\ ) |const| :ref:`🔗<class_Timer_method_is_stopped>`
 
-如果定时器处于停止状态或尚未启动，则返回 ``true``\ 。
+Returns ``true`` if the timer is stopped or has not started.
 
 .. rst-class:: classref-item-separator
 
@@ -266,9 +287,9 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 |void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_Timer_method_start>`
 
-如果计时器尚未启动，则启动计时器。如果计时器不在场景树中则会失败。如果 ``time_sec`` 大于 ``0``\ ，则会将其用于 :ref:`wait_time<class_Timer_property_wait_time>`\ 。
+Starts the timer, or resets the timer if it was started already. Fails if the timer is not inside the scene tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
-\ **注意：**\ 这个方法不会恢复已暂停的定时器。见 :ref:`paused<class_Timer_property_paused>`\ 。
+\ **Note:** This method does not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
 .. rst-class:: classref-item-separator
 
@@ -280,13 +301,16 @@ enum **TimerProcessCallback**: :ref:`🔗<enum_Timer_TimerProcessCallback>`
 
 |void| **stop**\ (\ ) :ref:`🔗<class_Timer_method_stop>`
 
-停止计时器。
+Stops the timer. See also :ref:`paused<class_Timer_property_paused>`. Unlike :ref:`start()<class_Timer_method_start>`, this can safely be called if the timer is not inside the scene tree.
 
-.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
-.. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
-.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
-.. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
-.. |void| replace:: :abbr:`void (无返回值。)`
+\ **Note:** Calling :ref:`stop()<class_Timer_method_stop>` does not emit the :ref:`timeout<class_Timer_signal_timeout>` signal, as the timer is not considered to have timed out. If this is desired, use ``$Timer.timeout.emit()`` after calling :ref:`stop()<class_Timer_method_stop>` to manually emit the signal.
+
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

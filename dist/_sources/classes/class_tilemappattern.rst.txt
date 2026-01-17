@@ -10,23 +10,23 @@
 TileMapPattern
 ==============
 
-**继承：** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-存放 :ref:`TileMap<class_TileMap>` 的图案，用于复制粘贴。
+Holds a pattern to be copied from or pasted into :ref:`TileMap<class_TileMap>`\ s.
 
 .. rst-class:: classref-introduction-group
 
-描述
-----
+Description
+-----------
 
-这个资源存放的是一组单元格，能够帮助进行 :ref:`TileMap<class_TileMap>` 的批量操作。
+This resource holds a set of cells to help bulk manipulations of :ref:`TileMap<class_TileMap>`.
 
-图案始终从 ``(0,0)`` 坐标开始，不能存在负数坐标的单元格。
+A pattern always starts at the ``(0, 0)`` coordinates and cannot have cells with negative coordinates.
 
 .. rst-class:: classref-reftable-group
 
-方法
-----
+Methods
+-------
 
 .. table::
    :widths: auto
@@ -59,8 +59,8 @@ TileMapPattern
 
 .. rst-class:: classref-descriptions-group
 
-方法说明
---------
+Method Descriptions
+-------------------
 
 .. _class_TileMapPattern_method_get_cell_alternative_tile:
 
@@ -68,7 +68,7 @@ TileMapPattern
 
 :ref:`int<class_int>` **get_cell_alternative_tile**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMapPattern_method_get_cell_alternative_tile>`
 
-返回位于 ``coords`` 的单元格的备选图块 ID。
+Returns the tile alternative ID of the cell at ``coords``.
 
 .. rst-class:: classref-item-separator
 
@@ -80,7 +80,7 @@ TileMapPattern
 
 :ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMapPattern_method_get_cell_atlas_coords>`
 
-返回位于 ``coords`` 的单元格的图块图集坐标 ID。
+Returns the tile atlas coordinates ID of the cell at ``coords``.
 
 .. rst-class:: classref-item-separator
 
@@ -92,7 +92,7 @@ TileMapPattern
 
 :ref:`int<class_int>` **get_cell_source_id**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMapPattern_method_get_cell_source_id>`
 
-返回位于 ``coords`` 的单元格的图块源 ID。
+Returns the tile source ID of the cell at ``coords``.
 
 .. rst-class:: classref-item-separator
 
@@ -104,7 +104,7 @@ TileMapPattern
 
 :ref:`Vector2i<class_Vector2i>` **get_size**\ (\ ) |const| :ref:`🔗<class_TileMapPattern_method_get_size>`
 
-返回该图案的大小（单位为单元格）。
+Returns the size, in cells, of the pattern.
 
 .. rst-class:: classref-item-separator
 
@@ -116,7 +116,7 @@ TileMapPattern
 
 :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells**\ (\ ) |const| :ref:`🔗<class_TileMapPattern_method_get_used_cells>`
 
-返回该图案中使用的单元格坐标列表。
+Returns the list of used cell coordinates in the pattern.
 
 .. rst-class:: classref-item-separator
 
@@ -128,7 +128,7 @@ TileMapPattern
 
 :ref:`bool<class_bool>` **has_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TileMapPattern_method_has_cell>`
 
-返回该图案是否在给定坐标处有图块。
+Returns whether the pattern has a tile at the given coordinates.
 
 .. rst-class:: classref-item-separator
 
@@ -140,7 +140,7 @@ TileMapPattern
 
 :ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_TileMapPattern_method_is_empty>`
 
-返回该图案是否为空。
+Returns whether the pattern is empty or not.
 
 .. rst-class:: classref-item-separator
 
@@ -152,7 +152,7 @@ TileMapPattern
 
 |void| **remove_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, update_size\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileMapPattern_method_remove_cell>`
 
-移除给定坐标的单元格。
+Remove the cell at the given coordinates.
 
 .. rst-class:: classref-item-separator
 
@@ -164,7 +164,7 @@ TileMapPattern
 
 |void| **set_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileMapPattern_method_set_cell>`
 
-设置位于 ``coords`` 的单元格的图块标识符。见 :ref:`TileMap.set_cell<class_TileMap_method_set_cell>`\ 。
+Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell()<class_TileMap_method_set_cell>`.
 
 .. rst-class:: classref-item-separator
 
@@ -176,13 +176,14 @@ TileMapPattern
 
 |void| **set_size**\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileMapPattern_method_set_size>`
 
-设置图案的大小。
+Sets the size of the pattern.
 
-.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
-.. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
-.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
-.. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
-.. |void| replace:: :abbr:`void (无返回值。)`
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

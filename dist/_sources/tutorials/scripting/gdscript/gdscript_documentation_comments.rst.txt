@@ -45,7 +45,9 @@ Tags
 |                   | | ``@experimental: This class is unstable.``           |
 +-------------------+--------------------------------------------------------+
 
-For example::
+For example:
+
+::
 
     extends Node2D
     ## A brief description of the class's role and functionality.
@@ -73,13 +75,13 @@ Documenting script members
 
 Members that are applicable for documentation:
 
-- Inner class
-- Constant
-- Function
 - Signal
-- Variable
 - Enum
 - Enum value
+- Constant
+- Variable
+- Function
+- Inner class
 
 Documentation of a script member must immediately precede the member or its annotations
 if it has any. The description can have more than one line but every line must start with
@@ -98,13 +100,19 @@ Tags
 |              | | ``@experimental: This method is incomplete.``  |
 +--------------+--------------------------------------------------+
 
-For example::
+For example:
+
+::
 
     ## The description of the variable.
     ## @deprecated: Use [member other_var] instead.
     var my_var
 
-Alternatively, you can use inline documentation comments::
+Alternatively, you can use inline documentation comments:
+
+::
+
+    signal my_signal ## My signal.
 
     enum MyEnum { ## My enum.
         VALUE_A = 0, ## Value A.
@@ -115,10 +123,10 @@ Alternatively, you can use inline documentation comments::
 
     var my_var ## My variable.
 
-    signal my_signal ## My signal.
 
     func my_func(): ## My func.
         pass
+
 
     class MyClass: ## My class.
         pass
@@ -142,9 +150,6 @@ Complete script example
     ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
 
-    ## The description of a constant.
-    const GRAVITY = 9.8
-
     ## The description of a signal.
     signal my_signal
 
@@ -159,6 +164,9 @@ Complete script example
         ## Direction right.
         RIGHT = 3,
     }
+
+    ## The description of a constant.
+    const GRAVITY = 9.8
 
     ## The description of the variable v1.
     var v1
@@ -220,6 +228,8 @@ This can be especially useful for plugin and library creators.
 
     While technically you can use both ``@deprecated`` and ``@experimental`` tags on the same
     class/member, this is not recommended as it is against common conventions.
+
+.. _doc_gdscript_documentation_comments_bbcode_and_class_reference:
 
 BBCode and class reference
 --------------------------

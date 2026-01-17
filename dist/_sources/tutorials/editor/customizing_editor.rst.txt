@@ -7,6 +7,8 @@ Godot's interface lives in a single window by default. Since Godot 4.0, you can
 split several elements to separate windows to better make use of multi-monitor
 setups.
 
+.. _doc_customizing_editor_moving_docks:
+
 Moving and resizing docks
 -------------------------
 
@@ -108,7 +110,7 @@ After making changes, open the **Editor** menu at the top of the editor then
 choose **Editor Layouts**. In the dropdown list, you will see a list of saved
 editor layouts, plus **Default** which is a hardcoded editor layout that can't
 be removed. The default layout matches a fresh Godot installation with no
-changes made to the docks' position and size, and no floating docks.
+changes made to the docks' positions and sizes, and no floating docks.
 
 You can remove a layout using the **Delete** option in the **Editor Layouts**
 dropdown.

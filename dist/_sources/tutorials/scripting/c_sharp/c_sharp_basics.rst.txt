@@ -1,5 +1,3 @@
-.. _doc_c_sharp:
-
 C# basics
 =========
 
@@ -14,7 +12,7 @@ and (re)visit the :ref:`Scripting section <doc_scripting>` of the
 step-by-step tutorial.
 
 C# is a high-level programming language developed by Microsoft. In Godot,
-it is implemented with .NET 6.0.
+it is implemented with the modern .NET runtime.
 
 .. attention::
 
@@ -35,7 +33,7 @@ it is implemented with .NET 6.0.
 Prerequisites
 -------------
 
-Godot bundles the parts of .NET needed to run already compiled games.
+Godot bundles the parts of .NET needed to run already-compiled games.
 However, Godot does not bundle the tools required to build and compile
 games, such as MSBuild and the C# compiler. These are
 included in the .NET SDK, and need to be installed separately.
@@ -45,6 +43,7 @@ version of Godot.
 
 Download and install the latest stable version of the SDK from the
 `.NET download page <https://dotnet.microsoft.com/download>`__.
+Godot 4.5 requires .NET 8 or later, but exporting to Android requires .NET 9 or later.
 
 .. important::
 
@@ -62,7 +61,7 @@ Configuring an external editor
 
 C# support in Godot's built-in script editor is minimal. Consider using an
 external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.com/>`__
-or MonoDevelop. These provide autocompletion, debugging, and other
+or `Visual Studio <https://visualstudio.microsoft.com/>`__. These provide autocompletion, debugging, and other
 useful features for C#. To select an external editor in Godot,
 click on **Editor → Editor Settings** and scroll down to
 **Dotnet**. Under **Dotnet**, click on **Editor**, and select your
@@ -90,7 +89,7 @@ In Godot's **Editor → Editor Settings** menu:
 In Rider:
 
 - Set **MSBuild version** to **.NET Core**.
-- Install the **Godot support** plugin.
+- If you are using a Rider version below 2024.2, install the **Godot support** plugin. This functionality is now built into Rider.
 
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
@@ -105,11 +104,6 @@ In Godot's **Editor → Editor Settings** menu:
 In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
-
-.. note::
-
-    If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
-    for the C# tools plugin to work.
 
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
 the ``.vscode`` folder with the necessary configuration.
@@ -328,7 +322,7 @@ objects, e.g. when trying to change the X coordinate of a ``Node2D``:
 
     public partial class MyNode2D : Node2D
     {
-        public override _Ready()
+        public override void _Ready()
         {
             Position.X = 100.0f;
             // CS1612: Cannot modify the return value of 'Node2D.Position' because
@@ -362,11 +356,10 @@ You can read more about this error on the `C# language reference <https://learn.
 Performance of C# in Godot
 --------------------------
 
-According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_,
-the performance of C# in Godot — while generally in the same order of magnitude
-— is roughly **~4×** that of GDScript in some naive cases. C++ is still
-a little faster; the specifics are going to vary according to your use case.
-GDScript is likely fast enough for most general scripting workloads.
+.. seealso::
+
+    For a performance comparison of the languages Godot supports,
+    see :ref:`doc_faq_which_programming_language_is_fastest`.
 
 Most properties of Godot C# objects that are based on ``GodotObject``
 (e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
@@ -427,8 +420,8 @@ the ``.csproj`` file located in the project root:
         ...
     </Project>
 
-As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
-packages the next time it builds the project.
+Godot automatically downloads and sets up newly added NuGet packages
+the next time it builds the project.
 
 Profiling your C# code
 ----------------------

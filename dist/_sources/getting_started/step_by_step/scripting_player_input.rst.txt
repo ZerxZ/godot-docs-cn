@@ -61,9 +61,10 @@ which the player wants to turn. A value of ``0`` means the player isn't pressing
 the left or the right arrow key. A value of ``1`` means the player wants to turn
 right, and ``-1`` means they want to turn left.
 
-To produce these values, we introduce conditions and the use of ``Input``. A
-condition starts with the ``if`` keyword in GDScript and ends with a colon. The
-condition is the expression between the keyword and the end of the line.
+To produce these values, we introduce conditional statements and the use of ``Input``.
+A conditional statement starts with the ``if`` keyword in GDScript and ends with a colon. The
+condition is specifically the expression between the keyword and the colon at
+the end of the line.
 
 To check if a key was pressed this frame, we call ``Input.is_action_pressed()``.
 The method takes a text string representing an input action and returns ``true``
@@ -73,8 +74,8 @@ The two actions we use above, "ui_left" and "ui_right", are predefined in every
 Godot project. They respectively trigger when the player presses the left and
 right arrows on the keyboard or left and right on a gamepad's D-pad.
 
-.. note:: You can see and edit input actions in your project by going to Project
-          -> Project Settings and clicking on the Input Map tab.
+.. note:: You can see and edit input actions in your project by going to
+          :menu:`Project > Project Settings` and clicking on the :ui:`Input Map` tab.
 
 Finally, we use the ``direction`` as a multiplier when we update the node's
 ``rotation``: ``rotation += angular_speed * direction * delta``.
@@ -211,7 +212,7 @@ with the engine. These include ``_process()``, to apply changes to the node
 every frame, and ``_unhandled_input()``, to receive input events like key and
 button presses from the users. There are quite a few more.
 
-The ``Input`` singleton allows you to react to the players' input anywhere in
+The ``Input`` singleton allows you to react to the player's input anywhere in
 your code. In particular, you'll get to use it in the ``_process()`` loop.
 
 In the next lesson, :ref:`doc_signals`, we'll build upon the relationship between

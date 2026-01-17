@@ -15,7 +15,7 @@ take place in a small area, however things can quickly become problematic in
 larger levels.
 
 Occlusion culling
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Walking around a town for example, you may only be able to see a few buildings
 in the street you are in, as well as the sky and a few birds flying overhead. As
@@ -32,7 +32,7 @@ Compatibility rendering methods. However, unneeded objects are still reducing
 performance.
 
 One way we can potentially reduce the amount to be rendered is to **take advantage
-of occlusion**. Godot 4.0 and later offers a new approach to occlusion culling
+of occlusion**. Godot offers an approach to occlusion culling
 using occluder nodes. See :ref:`doc_occlusion_culling` for instructions on
 setting up occlusion culling in your scene.
 
@@ -85,7 +85,7 @@ Visibility ranges are also a good way to set up *impostors* for distant geometry
 (see below).
 
 Billboards and imposters
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The simplest version of using transparency to deal with LOD is billboards. For
 example, you can use a single transparent quad to represent a tree at distance.
@@ -104,8 +104,22 @@ the viewer a considerable distance for the angle of view to change
 significantly. This can be complex to get working, but may be worth it depending
 on the type of project you are making.
 
-Use instancing (MultiMesh)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use automatic instancing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+*This is only implemented in the Forward+ renderer, not Mobile or Compatibility.*
+
+If you have many identical objects in your scene, you can use automatic
+instancing to reduce the number of draw calls. This automatically happens for
+MeshInstance3D nodes that use the same mesh and material: no manual setup is required.
+
+For automatic instancing to be effective, the material must be opaque or
+alpha-tested (alpha scissor or alpha hash). Alpha-blended or depth pre-pass
+materials are never instanced this way. Instead, you must use MultiMesh as
+described below.
+
+Use manual instancing (MultiMesh)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If several identical objects have to be drawn in the same place or nearby, try
 using :ref:`MultiMesh <class_MultiMesh>` instead. MultiMesh allows the drawing

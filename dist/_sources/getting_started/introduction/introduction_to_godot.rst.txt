@@ -33,18 +33,31 @@ Godot was initially developed in-house by an Argentinian game studio. Its
 development started in 2001, and the engine was rewritten and improved
 tremendously since its open source release in 2014.
 
-Some examples of games created with Godot include Ex-Zodiac and Helms of Fury.
+Some examples of games created with Godot include Cassette Beasts, PVKK, and
+Usagi Shima. As for applications, the open source pixel art drawing program
+Pixelorama is powered by Godot, and so is the voxel RPG creator RPG in a Box.
+You can find many more examples in the `Official Showcase
+<https://godotengine.org/showcase/>`_.
 
-.. image:: img/introduction_ex_zodiac.png
+.. figure:: img/introduction_usagi_shima.webp
+   :align: center
 
-.. image:: img/introduction_helms_of_fury.jpg
+   Usagi Shima
 
-As for applications, the open source pixel art drawing program Pixelorama is
-powered by Godot, and so is the voxel RPG creator RPG in a box.
+.. figure:: img/introduction_cassette_beasts.webp
+   :align: center
 
-.. image:: img/introduction_rpg_in_a_box.png
+   Cassette Beasts
 
-You can find many more examples in the `official showcase videos`_.
+.. figure:: img/introduction_pvkk.webp
+   :align: center
+
+   PVKK: Planetenverteidigungskanonenkommandant
+
+.. figure:: img/introduction_rpg_in_a_box.webp
+   :align: center
+
+   RPG in a Box
 
 How does it work and look?
 --------------------------
@@ -71,20 +84,21 @@ Programming languages
 
 Let's talk about the available programming languages.
 
-You can code your games using :ref:`GDScript <toc-learn-scripting-gdscript>`, a
+You can code your games using :ref:`GDScript <doc_gdscript>`, a
 Godot-specific and tightly integrated language with a lightweight syntax, or
-:ref:`C# <toc-learn-scripting-C#>`, which is popular in the games industry.
+:ref:`C# <doc_c_sharp>`, which is popular in the games industry.
 These are the two main scripting languages we support.
 
-With the GDExtension technology, you can also write
-gameplay or high-performance algorithms in C or C++ without recompiling the
-engine. You can use this technology to integrate third-party libraries and other
+With the :ref:`GDExtension <doc_what_is_gdextension>` technology, you can also
+write gameplay or high-performance algorithms in :ref:`C++ <doc_godot_cpp>` or
+:ref:`other languages <doc_scripting_languages>` without recompiling the engine.
+You can use this technology to integrate third-party libraries and other
 Software Development Kits (SDK) in the engine.
 
 Of course, you can also directly add modules and features to the engine, as it's
 completely free and open source.
 
-.. doc_learning_programming
+.. _doc_introduction_learning_programming:
 
 What do I need to know to use Godot?
 ------------------------------------
@@ -97,14 +111,11 @@ how to think like a programmer first.
 Godot relies on the object-oriented programming paradigm. Being comfortable with
 concepts such as classes and objects will help you code efficiently in it.
 
-If you are entirely new to programming, we recommend following the `CS50 open
-courseware`_ from Harvard University. It's a great free course that will teach
-you everything you need to know to be off to a good start. It will save you
-countless hours and hurdles learning any game engine afterward.
-
-.. note:: In CS50, you will learn multiple programming languages. Don't be
-          afraid of that: programming languages have many similarities. The
-          skills you learn with one language transfer well to others.
+If you are entirely new to programming, GDQuest's *Learn GDScript From Zero*
+is a free and open source interactive tutorial for absolute beginners to
+learn to program with Godot's GDScript language. It is available as a
+`desktop application <https://gdquest.itch.io/learn-godot-gdscript>`__
+or `in the browser <https://gdquest.github.io/learn-gdscript>`__.
 
 We will provide you with more Godot-specific learning resources in
 :ref:`doc_learning_new_features`.
@@ -115,4 +126,3 @@ In the next part, you will get an overview of the engine's essential concepts.
 .. _VSCode: https://github.com/godotengine/godot-vscode-plugin
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
 .. _official showcase videos: https://www.youtube.com/playlist?list=PLeG_dAglpVo6EpaO9A1nkwJZOwrfiLdQ8
-.. _CS50 open courseware: https://cs50.harvard.edu/x

@@ -38,7 +38,7 @@ There are several nodes involved in a complete 2D lighting setup:
 - :ref:`PointLight2D <class_PointLight2D>` (for omnidirectional or spot lights)
 - :ref:`DirectionalLight2D <class_DirectionalLight2D>` (for sunlight or moonlight)
 - :ref:`LightOccluder2D <class_LightOccluder2D>` (for light shadow casters)
-- Other 2D nodes that receive lighting, such as Sprite2D or TileMap.
+- Other 2D nodes that receive lighting, such as Sprite2D or TileMapLayer.
 
 :ref:`CanvasModulate <class_CanvasModulate>` is used to darken the scene by
 specifying a color that will act as the base "ambient" color. This is the final
@@ -55,7 +55,7 @@ to simulate lighting.
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` are used to tell the shader
 which parts of the scene cast shadows. These occluders can be placed as
-independent nodes or can be part of a TileMap node.
+independent nodes or can be part of a TileMapLayer node.
 
 The shadows appear only on areas covered by the :ref:`PointLight2D
 <class_PointLight2D>` and their direction is based on the center of the
@@ -114,10 +114,9 @@ transparent white, and move its starting location to be in the center.
 Directional light
 -----------------
 
-New in Godot 4.0 is the ability to have directional lighting in 2D. Directional
-lighting is used to represent sunlight or moonlight. Light rays are casted
-parallel to each other, as if the sun or moon was infinitely far away from the
-surface that is receiving the light.
+Directional lighting is used to represent sunlight or moonlight. Light rays are
+casted parallel to each other, as if the sun or moon was infinitely far away
+from the surface that is receiving the light.
 
 DirectionalLight2D offers the following properties:
 
@@ -200,7 +199,7 @@ LightOccluder2D nodes have 2 properties:
 There are two ways to create light occluders:
 
 Automatically generating a light occluder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Occluders can be created automatically from Sprite2D nodes by selecting the
 node, clicking the **Sprite2D** menu at the top of the 2D editor then choosing
@@ -213,7 +212,7 @@ edges), adjust **Grow (pixels)** and **Shrink (pixels)**, then click **Update
 Preview**. Repeat this operation until you get satisfactory results.
 
 Manually drawing a light occluder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a LightOccluder2D node, then select the node and click the "+" button at
 the top of the 2D editor. When asked to create a polygon resource, answer
@@ -237,6 +236,46 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 - **Item Cull Mask:** Controls which LightOccluder2D nodes cast shadows,
   depending on their respective **Occluder Light Mask** properties.
 
+.. note::
+
+    **Lighting and shadow resolution in pixel-art games**
+
+    The engine computes 2D lighting and shadows at the **Viewport's pixel resolution**,
+    not at the source texture's texel resolution. The appearance of lights and shadows
+    depends on your window or Viewport resolution, not on the resolution of individual
+    sprite textures.
+
+    If you create a pixel-art game and want pixelated or blocky lighting and shadows
+    that match your art style, **Nearest** texture filtering will **not** achieve
+    this effect. Nearest filtering affects only how the engine samples textures — it
+    does not change how the engine renders lighting and shadows.
+
+    To achieve pixelated lighting and shadows, use a custom shader to modify 
+    ``LIGHT_VERTEX`` and ``SHADOW_VERTEX`` to snap light sampling to a pixel grid.
+    The following shader snaps lighting to a grid using the ``floor()`` function:
+
+    .. code-block:: glsl
+
+        shader_type canvas_item;
+
+        uniform float pixel_size = 4.0;
+
+        void fragment() {
+            // Snap lighting and shadows to pixel grid.
+            LIGHT_VERTEX.xy = floor(LIGHT_VERTEX.xy / pixel_size) * pixel_size;
+            SHADOW_VERTEX = floor(SHADOW_VERTEX / pixel_size) * pixel_size;
+
+            // Normal rendering.
+            COLOR = texture(TEXTURE, UV);
+        }
+
+    This works by dividing the position by ``pixel_size`` to convert to grid space,
+    using ``floor()`` to round down to the nearest grid point, then multiplying back
+    to convert to screen space. The result forces the engine to sample lighting from
+    discrete grid positions, which creates the pixelated effect.
+
+    For more information on canvas item shaders, see :ref:`CanvasItem shaders <doc_canvas_item_shader>`.
+
 .. figure:: img/2d_lights_and_shadows_hard_shadow.webp
    :align: center
    :alt: Hard shadows
@@ -255,20 +294,6 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
 
    Soft shadows with streaking artifacts due to Filter Smooth being too high (PCF5, Filter Smooth 4)
 
-Occluder draw order
-^^^^^^^^^^^^^^^^^^^
-
-**LightOccluder2Ds follows the usual 2D drawing order.** This is important for 2D
-lighting, as this is how you control whether the occluder should occlude the
-sprite itself or not.
-
-If the LightOccluder2D node is a *sibling* of the sprite, the occluder will
-occlude the sprite itself if it's placed *below* the sprite in the scene tree.
-
-If the LightOccluder2D node is a *child* of the sprite, the occluder will
-occlude the sprite itself if **Show Behind Parent** is disabled on the
-LightOccluder2D node (which is the default).
-
 Normal and specular maps
 ------------------------
 
@@ -279,8 +304,8 @@ the surface receiving light (on a per-pixel basis). Specular maps further help
 improve visuals by making some of the light reflect back to the viewer.
 
 Both PointLight2D and DirectionalLight2D support normal mapping and specular
-mapping. Since Godot 4.0, normal and specular maps can be assigned to any 2D
-element, including nodes that inherit from Node2D or Control.
+mapping. Normal and specular maps can be assigned to any 2D element,
+including nodes that inherit from Node2D or Control.
 
 A normal map represents the direction in which each pixel is "pointing" towards.
 This information is then used by the engine to correctly apply lighting to 2D

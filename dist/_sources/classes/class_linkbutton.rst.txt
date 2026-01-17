@@ -10,29 +10,31 @@
 LinkButton
 ==========
 
-**继承：** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-代表链接的按钮。
+A button that represents a link.
 
 .. rst-class:: classref-introduction-group
 
-描述
-----
+Description
+-----------
 
-代表链接的按钮。这种按钮主要用于与按钮的交互引起上下文变化时（如链接到网页）。
+A button that represents a link. This type of button is primarily used for interactions that cause a context change (like linking to a web page).
 
-另见 :ref:`BaseButton<class_BaseButton>`\ ，它包含了该节点相关的常用属性和方法。
+See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
 .. rst-class:: classref-reftable-group
 
-属性
-----
+Properties
+----------
 
 .. table::
    :widths: auto
 
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                                                    | ``0`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
+   | :ref:`String<class_String>`                                       | :ref:`ellipsis_char<class_LinkButton_property_ellipsis_char>`                                                 | ``"…"``                                                                             |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                                                    | ``3`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`language<class_LinkButton_property_language>`                                                           | ``""``                                                                              |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -46,6 +48,8 @@ LinkButton
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_LinkButton_property_text_direction>`                                               | ``0``                                                                               |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_LinkButton_property_text_overrun_behavior>`                                 | ``0``                                                                               |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`               | :ref:`underline<class_LinkButton_property_underline>`                                                         | ``0``                                                                               |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`uri<class_LinkButton_property_uri>`                                                                     | ``""``                                                                              |
@@ -53,8 +57,8 @@ LinkButton
 
 .. rst-class:: classref-reftable-group
 
-主题属性
---------
+Theme Properties
+----------------
 
 .. table::
    :widths: auto
@@ -91,8 +95,8 @@ LinkButton
 
 .. rst-class:: classref-descriptions-group
 
-枚举
-----
+Enumerations
+------------
 
 .. _enum_LinkButton_UnderlineMode:
 
@@ -106,7 +110,7 @@ enum **UnderlineMode**: :ref:`🔗<enum_LinkButton_UnderlineMode>`
 
 :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **UNDERLINE_MODE_ALWAYS** = ``0``
 
-LinkButton 将始终在其文本底部显示下划线。
+The LinkButton will always show an underline at the bottom of its text.
 
 .. _class_LinkButton_constant_UNDERLINE_MODE_ON_HOVER:
 
@@ -114,7 +118,7 @@ LinkButton 将始终在其文本底部显示下划线。
 
 :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **UNDERLINE_MODE_ON_HOVER** = ``1``
 
-LinkButton 将在鼠标光标悬停时，在文本底部显示下划线。
+The LinkButton will show an underline at the bottom of its text when the mouse cursor is over it.
 
 .. _class_LinkButton_constant_UNDERLINE_MODE_NEVER:
 
@@ -122,7 +126,7 @@ LinkButton 将在鼠标光标悬停时，在文本底部显示下划线。
 
 :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **UNDERLINE_MODE_NEVER** = ``2``
 
-LinkButton 永远不会在其文本底部显示下划线。
+The LinkButton will never show an underline at the bottom of its text.
 
 .. rst-class:: classref-section-separator
 
@@ -130,8 +134,25 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 .. rst-class:: classref-descriptions-group
 
-属性说明
---------
+Property Descriptions
+---------------------
+
+.. _class_LinkButton_property_ellipsis_char:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **ellipsis_char** = ``"…"`` :ref:`🔗<class_LinkButton_property_ellipsis_char>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ellipsis_char**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_ellipsis_char**\ (\ )
+
+Ellipsis character used for text clipping.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_LinkButton_property_language:
 
@@ -144,7 +165,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_language**\ (\ )
 
-语言代码，用于断行和文本塑形算法，如果留空则使用当前区域设置。
+Language code used for line-breaking and text shaping algorithms. If left empty, the current locale is used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -161,7 +182,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_structured_text_bidi_override**\ (\ value\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`\ )
 - :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override**\ (\ )
 
-为结构化文本设置 BiDi 算法覆盖。
+Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +199,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_structured_text_bidi_override_options**\ (\ value\: :ref:`Array<class_Array>`\ )
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options**\ (\ )
 
-设置 BiDi 覆盖的附加选项。
+Set additional options for BiDi override.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +216,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_text**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_text**\ (\ )
 
-该按钮的文本，将显示在按钮的区域内。
+The button's text that will be displayed inside the button's area.
 
 .. rst-class:: classref-item-separator
 
@@ -212,7 +233,24 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
 - :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
 
-基础文本书写方向。
+Base text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LinkButton_property_text_overrun_behavior:
+
+.. rst-class:: classref-property
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``0`` :ref:`🔗<class_LinkButton_property_text_overrun_behavior>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
+
+Sets the clipping behavior when the text exceeds the node's bounding rectangle.
 
 .. rst-class:: classref-item-separator
 
@@ -229,7 +267,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_underline_mode**\ (\ value\: :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`\ )
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode**\ (\ )
 
-文本的下划线模式。可用模式见 :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`\ 。
+The underline mode to use for the text.
 
 .. rst-class:: classref-item-separator
 
@@ -246,24 +284,22 @@ LinkButton 永远不会在其文本底部显示下划线。
 - |void| **set_uri**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_uri**\ (\ )
 
-这个 **LinkButton** 的 `URI <https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E5%BF%97%E7%AC%A6>`__\ 。如果设置为有效的 URI，按下按钮就会使用操作系统中与该协议对应的默认程序打开该 URI（使用 :ref:`OS.shell_open<class_OS_method_shell_open>`\ ）。HTTP 和 HTTPS 的 URL 会打开默认的浏览器。
-
-\ **示例：**\ 
+The `URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`__ for this **LinkButton**. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via :ref:`OS.shell_open()<class_OS_method_shell_open>`). HTTP and HTTPS URLs open the default web browser.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    uri = "https://godotengine.org"  # 在默认浏览器中打开 URL。
-    uri = "C:\SomeFolder"  # 将文件浏览器打开到给定的路径。
-    uri = "C:\SomeImage.png"  # 在默认查看应用中打开给定的图像。
+    uri = "https://godotengine.org"  # Opens the URL in the default web browser.
+    uri = "C:\SomeFolder"  # Opens the file explorer at the given path.
+    uri = "C:\SomeImage.png"  # Opens the given image in the default viewing app.
 
  .. code-tab:: csharp
 
-    Uri = "https://godotengine.org"; // 在默认浏览器中打开 URL。
-    Uri = "C:\SomeFolder"; // 将文件浏览器打开到给定的路径。
-    Uri = "C:\SomeImage.png"; // 在默认查看应用中打开给定的图像。
+    Uri = "https://godotengine.org"; // Opens the URL in the default web browser.
+    Uri = "C:\SomeFolder"; // Opens the file explorer at the given path.
+    Uri = "C:\SomeImage.png"; // Opens the given image in the default viewing app.
 
 
 
@@ -273,8 +309,8 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 .. rst-class:: classref-descriptions-group
 
-主题属性说明
-------------
+Theme Property Descriptions
+---------------------------
 
 .. _class_LinkButton_theme_color_font_color:
 
@@ -282,7 +318,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_color>`
 
-**LinkButton** 默认的字体颜色 :ref:`Color<class_Color>`\ 。
+Default text :ref:`Color<class_Color>` of the **LinkButton**.
 
 .. rst-class:: classref-item-separator
 
@@ -294,7 +330,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_disabled_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_disabled_color>`
 
-该 **LinkButton** 处于禁用状态时，使用的文本 :ref:`Color<class_Color>`\ 。
+Text :ref:`Color<class_Color>` used when the **LinkButton** is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +342,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_focus_color>`
 
-当 **LinkButton** 获得焦点时使用的文本 :ref:`Color<class_Color>`\ 。只替换按钮的正常文本颜色。禁用、悬停和按下状态优先于这个颜色。
+Text :ref:`Color<class_Color>` used when the **LinkButton** is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +354,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_hover_color>`
 
-当 **LinkButton** 被悬停时使用的文本颜色 :ref:`Color<class_Color>`\ 。
+Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered.
 
 .. rst-class:: classref-item-separator
 
@@ -330,7 +366,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_hover_pressed_color>`
 
-该 **LinkButton** 处于悬停并按下状态时，使用的文本 :ref:`Color<class_Color>`\ 。
+Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered and pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -342,7 +378,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_outline_color>`
 
-**LinkButton** 的文本轮廓的色调。
+The tint of text outline of the **LinkButton**.
 
 .. rst-class:: classref-item-separator
 
@@ -354,7 +390,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LinkButton_theme_color_font_pressed_color>`
 
-当 **LinkButton** 被按下时使用的文本颜色 :ref:`Color<class_Color>`\ 。
+Text :ref:`Color<class_Color>` used when the **LinkButton** is being pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -366,9 +402,9 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_LinkButton_theme_constant_outline_size>`
 
-文字轮廓的大小。
+The size of the text outline.
 
-\ **注意：**\ 如果使用启用了 :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` 的字体，其 :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` 必须至少设置为 :ref:`outline_size<class_LinkButton_theme_constant_outline_size>` 的\ *两倍*\ ，轮廓渲染才能看起来正确。否则，轮廓可能会比预期的更早被切断。
+\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_LinkButton_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
 .. rst-class:: classref-item-separator
 
@@ -380,7 +416,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`int<class_int>` **underline_spacing** = ``2`` :ref:`🔗<class_LinkButton_theme_constant_underline_spacing>`
 
-文本基线和下划线之间的垂直空间。
+The vertical space between the baseline of text and the underline.
 
 .. rst-class:: classref-item-separator
 
@@ -392,7 +428,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`Font<class_Font>` **font** :ref:`🔗<class_LinkButton_theme_font_font>`
 
-该 **LinkButton** 文本的字体 :ref:`Font<class_Font>`\ 。
+:ref:`Font<class_Font>` of the **LinkButton**'s text.
 
 .. rst-class:: classref-item-separator
 
@@ -404,7 +440,7 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`int<class_int>` **font_size** :ref:`🔗<class_LinkButton_theme_font_size_font_size>`
 
-该 **LinkButton** 文本的字体大小。
+Font size of the **LinkButton**'s text.
 
 .. rst-class:: classref-item-separator
 
@@ -416,13 +452,14 @@ LinkButton 永远不会在其文本底部显示下划线。
 
 :ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_LinkButton_theme_style_focus>`
 
-该 **LinkButton** 处于聚焦状态时使用的 :ref:`StyleBox<class_StyleBox>`\ 。\ :ref:`focus<class_LinkButton_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` 显示在基础 :ref:`StyleBox<class_StyleBox>` *之上*\ ，所以应该使用部分透明的 :ref:`StyleBox<class_StyleBox>`\ ，确保基础 :ref:`StyleBox<class_StyleBox>` 仍然可见。代表轮廓或下划线的 :ref:`StyleBox<class_StyleBox>` 可以很好地实现这个目的。要禁用聚焦的视觉效果，请指定 :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` 资源。请注意，禁用聚焦的视觉效果会影响使用键盘/手柄进行导航的可用性，所以出于可访问性的原因，不建议这样做。
+:ref:`StyleBox<class_StyleBox>` used when the **LinkButton** is focused. The :ref:`focus<class_LinkButton_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
-.. |virtual| replace:: :abbr:`virtual (本方法通常需要用户覆盖才能生效。)`
-.. |const| replace:: :abbr:`const (本方法无副作用，不会修改该实例的任何成员变量。)`
-.. |vararg| replace:: :abbr:`vararg (本方法除了能接受在此处描述的参数外，还能够继续接受任意数量的参数。)`
-.. |constructor| replace:: :abbr:`constructor (本方法用于构造某个类型。)`
-.. |static| replace:: :abbr:`static (调用本方法无需实例，可直接使用类名进行调用。)`
-.. |operator| replace:: :abbr:`operator (本方法描述的是使用本类型作为左操作数的有效运算符。)`
-.. |bitfield| replace:: :abbr:`BitField (这个值是由下列位标志构成位掩码的整数。)`
-.. |void| replace:: :abbr:`void (无返回值。)`
+.. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
+.. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
+.. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
+.. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
+.. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

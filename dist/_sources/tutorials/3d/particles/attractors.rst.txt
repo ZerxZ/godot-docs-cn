@@ -13,6 +13,9 @@ and :ref:`class_GPUParticlesAttractorVectorField3D`. You can instantiate them at
 change their properties from gameplay code; you can even animate and combine them for complex
 attraction effects.
 
+.. UPDATE: Not implemented. When particle attractors are implemented for 2D
+.. particle systems, remove this note and remove this comment.
+
 .. note::
 
    Particle attractors are not yet implemented for 2D particle systems.
@@ -69,12 +72,6 @@ The ``Cull Mask`` property controls which particle systems are affected by an at
 on each system's :ref:`visibility layers <class_VisualInstance3D>`. A particle system is only
 affected by an attractor if at least one of the system's visibility layers is enabled in the
 attractor's cull mask.
-
-.. warning::
-
-   There is a `known issue <https://github.com/godotengine/godot/issues/61014>`_ with
-   GPU particle attractors that prevent the cull mask from working properly in Godot 4.0. We will
-   update the documentation as soon as it is fixed.
 
 Box attractors
 ~~~~~~~~~~~~~~

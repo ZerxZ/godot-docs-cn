@@ -22,7 +22,9 @@ An iOS plugin requires a ``.gdip`` configuration file, a binary file which can b
 
 .. image:: img/ios_export_preset_plugins_section.png
 
-When a plugin is active, you can access it in your using ``Engine.get_singleton()``::
+When a plugin is active, you can access it in your code using ``Engine.get_singleton()``:
+
+::
 
     if Engine.has_singleton("MyPlugin"):
         var singleton = Engine.get_singleton("MyPlugin")
@@ -80,7 +82,9 @@ To build an iOS plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
-    -   The configuration file format is as follow::
+    -   The configuration file format is as follow:
+
+    ::
 
             [config]
             name="MyPlugin"
